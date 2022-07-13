@@ -7,10 +7,11 @@ for Data Science for Humans.
 
 - set `cd` to this repo
 - run `jupyter-book build .` By default only changed pages. Use `jupyter-book build --all .` to force full build.
-- Copy into docs (where github pages looks): `cp -R _build/html docs/.`
+- Copy into docs (where github pages looks): `cp -R _build/html/* docs`
 - Push to github and it'll update online shortly!
 - You can also open `_build/index.html` (just double click!) and it'll open in your browser locally.
 
+For copy-paste ease: `jupyter-book build --all .; cp -R _build/html/* docs; git add .; git commit`
 
 ## Syntax
 

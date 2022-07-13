@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DS 4 Human &#8212; Data Science for Humans</title>
+    <title>Introduction to Data Science for Humans &#8212; Data Science for Humans</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -106,7 +106,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   DS 4 Human
+   Introduction to Data Science for Humans
   </a>
  </li>
 </ul>
@@ -232,7 +232,11 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-is-data-science">
-   What is Data Science?
+   What
+   <em>
+    is
+   </em>
+   Data Science?
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -246,6 +250,11 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#types-of-questions">
+   Types of Questions
+  </a>
  </li>
 </ul>
 
@@ -257,7 +266,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>DS 4 Human</h1>
+                <h1>Introduction to Data Science for Humans</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -269,7 +278,11 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-is-data-science">
-   What is Data Science?
+   What
+   <em>
+    is
+   </em>
+   Data Science?
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -284,6 +297,11 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#types-of-questions">
+   Types of Questions
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -293,20 +311,45 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="ds-4-human">
-<h1>DS 4 Human<a class="headerlink" href="#ds-4-human" title="Permalink to this headline">¶</a></h1>
-<p>Welcome to our book!</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-data-science-for-humans">
+<h1>Introduction to Data Science for Humans<a class="headerlink" href="#introduction-to-data-science-for-humans" title="Permalink to this headline">¶</a></h1>
+<p>Welcome to Data Science for Humans!</p>
+<p>The goal for this book is to ensure that, by the time you have finished, you will be able to do four things:</p>
+<ol class="simple">
+<li><p>Understand how all the different activities referred to as Data Science relate to one another,</p></li>
+<li><p>Think critically about how data science is being used in the world around you,</p></li>
+<li><p>Manipulate data and answer the questions you care about <em>yourself</em>,</p></li>
+<li><p>Evaluate the strengths and weaknesses of different data science tools.</p></li>
+</ol>
+<p>As this list suggests, the emphasis of this book is not on learning the nuances of a handful of algorithms, or learning abstract programming principles; rather, our focus in this text is on developing the skills necessary to think critically about the application of Data Science tools in the real world. To that end, in addition to empowering you to use a range of data science tools yourself to answer the questions you care about, we will spend as much time analyzing case studies of data science tools being used—both successfully and unsuccessfully—as learning new methods. It is our hope that, by the end of this book, we will have provided you with a unified perspective on the emerging field of Data Science, and empowered you to think critically about the promises and perils of this emerging field.</p>
 <div class="section" id="what-is-data-science">
-<h2>What is Data Science?<a class="headerlink" href="#what-is-data-science" title="Permalink to this headline">¶</a></h2>
-<p>Good question! Could be interpreted in two ways.</p>
+<h2>What <em>is</em> Data Science?<a class="headerlink" href="#what-is-data-science" title="Permalink to this headline">¶</a></h2>
+<p>The question of what Data Science is actually a surprisingly tricky question, and one that can be interpreted in two ways: what <em>should</em> data science be, and what is the field today.</p>
 <div class="section" id="what-should-data-science-be">
 <h3>What Should Data Science Be?<a class="headerlink" href="#what-should-data-science-be" title="Permalink to this headline">¶</a></h3>
-<p>Answering questions about the world using data.</p>
+<p>This book takes the perspective that Data Science is best understood as <strong>the practice of <em>answering questions</em> about the world using computational methods.</strong> You will notice that in this definition, we put the “answering questions” part of our definition first to emphasize its importance. While it is true that for many people “Data Science” is synonymous with terms like <em>machine learning</em> or <em>cloud computing</em>, we believe that it is more fruitful to approach Data Science by focusing on the different things that Data Scientists seek to accomplish—their goals—than on the specific tools that they use.</p>
+<p>This may strike some readers as… odd. If you came to this book because you wanted to create the next Artificial Intelligence / Machine Learning Model to make video recommendations that could outperform TikTok, you may wonder how that would constitute “answering a question about the world.” But as we will discuss in detail, nearly all data science methods can be thought of—and indeed, we would argue are <em>best</em> thought of—as tools for answering questions. The TikTok recommendation algorithm, for example, is an algorithm designed to answer the question “given how this user has responded to past videos, what video can I show them next that they are most likely to watch for the longest period of time?”</p>
+<p>Why do we focus on the objectives of data scientists rather than their tools? First, and most practically, the specific tools the data scientists use are changing at an unbelievable speed. As a result, any education in data science that overemphasizes a specific set of methods is doomed to become obsolete quickly. The <em>goals</em> of data scientists, by contrast, are much more fundamental, and learning to think in terms of how different data science tools may serve different objectives will provide you with a more resilient conceptual framework not just to help you understand today’s data science tools, but also to provide you with a framework for thinking about new tools as they emerge.</p>
+<p>Second, and more importantly, the success of a data scientist will always be evaluated with respect to their original goals. And as we will see from innumerable case studies, <em>so many</em> of the failures of data science in the real world come it not from some technical failure to use a statistical model correctly, but from people grabbing a trendy tool without really understanding whether it is serving the purpose to which it is being applied.</p>
 </div>
 <div class="section" id="what-is-data-science-today">
 <h3>What Is “Data Science” Today?<a class="headerlink" href="#what-is-data-science-today" title="Permalink to this headline">¶</a></h3>
-<p>attempt to integration lessons from different silos!</p>
+<ul class="simple">
+<li><p>Academia is organized into silos</p></li>
+<li><p>Over the last decade lots of computational tools have been developed in relative isolation in each of the silos, often leading to duplication of effort / the same tools being rediscovered but with different names.</p></li>
+<li><p>Data Science is, in many ways, an attempt to integration lessons from different silos!</p></li>
+<li><p>But it’s still a work in progress, and most Data Scientists in the field were trained in a silo, and so tend to have a tendency to see things from one perspective.</p>
+<ul>
+<li><p>Blind men and the elephant. CS loves prediction; Stats loves modeling uncertainly; social scientists love causal inference; etc.</p></li>
+<li><p>So be aware YOU may have better perspective on data science than many of your senior colleagues!</p></li>
+</ul>
+</li>
+</ul>
 </div>
+</div>
+<div class="section" id="types-of-questions">
+<h2>Types of Questions<a class="headerlink" href="#types-of-questions" title="Permalink to this headline">¶</a></h2>
+<p>In particular, in this book we take the view that nearly all Data Science problems can be thought of as efforts to answer one of three types of questions: descriptive or exploratory questions, classification questions, or causal questions.</p>
 </div>
 </div>
 

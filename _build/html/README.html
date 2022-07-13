@@ -104,7 +104,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="introduction.html">
-   DS 4 Human
+   Introduction to Data Science for Humans
   </a>
  </li>
 </ul>
@@ -286,10 +286,11 @@ for Data Science for Humans.</p>
 <ul class="simple">
 <li><p>set <code class="docutils literal notranslate"><span class="pre">cd</span></code> to this repo</p></li>
 <li><p>run <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">.</span></code> By default only changed pages. Use <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">--all</span> <span class="pre">.</span></code> to force full build.</p></li>
-<li><p>Copy into docs (where github pages looks): <code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">-R</span> <span class="pre">_build/html</span> <span class="pre">docs/.</span></code></p></li>
+<li><p>Copy into docs (where github pages looks): <code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">-R</span> <span class="pre">_build/html/*</span> <span class="pre">docs</span></code></p></li>
 <li><p>Push to github and it’ll update online shortly!</p></li>
 <li><p>You can also open <code class="docutils literal notranslate"><span class="pre">_build/index.html</span></code> (just double click!) and it’ll open in your browser locally.</p></li>
 </ul>
+<p>For copy-paste ease: <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">--all</span> <span class="pre">.;</span> <span class="pre">cp</span> <span class="pre">-R</span> <span class="pre">_build/html/*</span> <span class="pre">docs;</span> <span class="pre">git</span> <span class="pre">add</span> <span class="pre">.;</span> <span class="pre">git</span> <span class="pre">commit</span></code></p>
 </div>
 <div class="section" id="syntax">
 <h2>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
