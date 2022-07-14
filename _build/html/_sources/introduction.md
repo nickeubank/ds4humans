@@ -37,3 +37,21 @@ Second, and more importantly, the success of a data scientist will always be eva
 ## Types of Questions
 
 In particular, in this book we take the view that nearly all Data Science problems can be thought of as efforts to answer one of three types of questions: descriptive or exploratory questions, classification questions, or causal questions. 
+
+
+### Descriptive / Exploratory Questions
+
+Imagine you woke up one morning and found yourself in the middle of the forest. You don't know where you are or how you got there. What's the first thing that you would do (after pinching yourself)? You would probably look around and explore your surroundings to figure out where you are and what's around you so can plan your next steps.
+
+Well, the same often make sense when you're starting a new project!
+
+
+```{note}
+The term *Exploratory Data Analysis* (EDA) is often used in statistics courses to describe the process of poking around in a new data set that you have been given before you fit a more complicated statistical model. While many of the tools that you may use to do that type of poking around are the same tools that you would use to answer more sophisticated Descriptive Questions, when we talk about answering Descriptive Questions in this book, we are generally talking about a much more involved process—one that often requires locating or bringing together new data sources—then this type of "data checking."
+```
+
+### Classification Questions
+
+
+### Causal Questions
+
