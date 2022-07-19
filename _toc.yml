@@ -17,6 +17,7 @@ parts:
     - file: 20_questions/20_passive_prediction_questions
     - file: 20_questions/30_causal_questions
   - caption: Data Science in Practice
+    chapters:
     - file: 30_in_practice/10_ethics
     - file: 30_in_practice/20_from_data_to_decisions
     - file: 30_in_practice/30_interpretability
