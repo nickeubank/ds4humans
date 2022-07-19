@@ -6,12 +6,17 @@ root: landing_page
 parts:
   - caption: Introduction
     chapters:
-    - file: introduction
+    - file: 00_introduction
   - caption: Working with Data
     chapters:
-    - file: programming/welcome_to_r
+    - file: 10_programming/welcome_to_r
   - caption: Types of Questions
     chapters:
-    - file: questions/exploratory_questions
-    - file: questions/classification_questions
-    - file: questions/causal_questions
+    - file: 20_questions/00_from_problems_or_questions
+    - file: 20_questions/10_exploratory_questions
+    - file: 20_questions/20_passive_prediction_questions
+    - file: 20_questions/30_causal_questions
+  - caption: Data Science in Practice
+    - file: 30_in_practice/10_ethics
+    - file: 30_in_practice/20_from_data_to_decisions
+    - file: 30_in_practice/30_interpretability
