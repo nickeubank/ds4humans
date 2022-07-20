@@ -12,7 +12,7 @@ parts:
     - file: 10_programming/welcome_to_r
   - caption: Types of Questions
     chapters:
-    - file: 20_questions/00_from_problems_or_questions
+    - file: 20_questions/00_from_problems_to_questions
     - file: 20_questions/10_exploratory_questions
     - file: 20_questions/20_passive_prediction_questions
     - file: 20_questions/30_causal_questions
