@@ -272,6 +272,9 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="ethics-in-data-science">
 <h1>Ethics in Data Science<a class="headerlink" href="#ethics-in-data-science" title="Permalink to this headline">¶</a></h1>
+<p>In recent years, for example, we’ve seen near endless examples of data science systems not just failing to solve societal inequities, but instead reinforcing them. A hiring algorithm at Amazon was recently scrapped after it was discovered that it systematically <a class="reference external" href="https://www.reuters.com/article/us-amazon-com-jobs-automation-insight/amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK08G">discriminated against female job candidates</a>. An algorithm for prioritizing kidney transplants was found to make it less likely that <a class="reference external" href="https://www.wired.com/story/how-algorithm-blocked-kidney-transplants-black-patients/">Black patients would receive kidney transplants than White patients</a>. Another medical algorithm recommended less preventative care for <a class="reference external" href="https://www.washingtonpost.com/health/2019/10/24/racial-bias-medical-algorithm-favors-white-patients-over-sicker-black-patients/">sick Black patients than White patients</a>. And a popular “risk assessment” algorithm used by judges around the country to make decisions about whether defendants should be released pending trial, held on bond, or held without bonds—as well as how convicted criminals should be sentenced—<a class="reference external" href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">was found to make more mistakes for Black defendants than White defendants, systematically reporting to judges that they were more likely to re-offend than they actually were according to subsequent analyses.</a></p>
+<p>Similarly, in the political sphere <a class="reference external" href="https://www.wsj.com/articles/facebook-knows-it-encourages-division-top-executives-nixed-solutions-11590507499">Facebook’s own research</a> has shown that its algorithms polarize users and drive division, a fact that internal documents show its own executives chose to largely ignore.<a class="footnote-reference brackets" href="#facebook-engagement" id="id1">1</a> Facebook’s internal research also found that “64% of all extremist group joins are due to our recommendation tools” like “Groups You Should Join” and the Discover tools.</p>
+<p>While much of these problems are the result of a lack of carelessness or a lack of critical thought on the part of the data scientists developing these algorithms, in other cases problems have arisen because of a lack of critical evaluation of data science tools by their <em>users</em>. In 2020, for example, it was discovered that company that provided doctors with (suspiciously free) software designed to provide “clinical decision support” (advice on tests that might be advisable or drugs that might be prescribed for patients based on their medical records) was taking kickbacks from an opioid producing pharmaceutical company to ensure opioids remained a suggested treatment for patients, despite the strong recommendation of groups like the American Medical Association to reduce opioid use in light of the opioid overdose epidemic the US.</p>
 <ul class="simple">
 <li><p>Motivation: piles of case studies. See list under “Prediction: ML Bias” (March 29 at the moment) here
 Two types of “unethical algorithms: biased performance and biased predictions.</p></li>
@@ -294,6 +297,12 @@ Two types of “unethical algorithms: biased performance and biased predictions.
 <p>But… it’s data? How do our values come into play!
 Like… checking performance of algorithms for different racial/ethnic groups.
 Or looking for racial/gender heterogeneity during descriptive analyses.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="facebook-engagement"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>This research found the key driver of polarization was Facebook’s decision to design recommendations algorithms that prioritized “user engagement” (clicks, shares, comments) which resulted in promoting partisan, polarizing, sensationalist, or extreme content.</p>
+</dd>
+</dl>
 </div>
 
     <script type="text/x-thebe-config">
