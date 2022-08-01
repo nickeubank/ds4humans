@@ -16,7 +16,7 @@ Our approach is to begin by carefully specifying the problem one needs to solve.
 
 Once we have successfully articulated our *problem*, we must then figure out how to solve it. And as data scientists, we are somewhat restricted in the types of solutions to which we have access; data science cannot just raise funds for a project, for example, or invent a new technology. Rather, as we will explore in detail in this book, all data science models and algorithms can be fundamentally understood as instruments for **answering questions** about the world using quantitative methods.
 
-```{sidebar}
+```{sidebar} Answering Questions
 All data science models and algorithms can be fundamentally understood as instruments for **answering questions** about the world using quantitative methods.
 ```
 
