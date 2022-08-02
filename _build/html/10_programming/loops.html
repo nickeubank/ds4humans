@@ -996,7 +996,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   user  system elapsed 
-  0.077   0.019   0.095 
+  0.088   0.022   0.110 
 </pre></div>
 </div>
 </div>
@@ -1025,7 +1025,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   user  system elapsed 
-  0.735   0.012   0.748 
+  0.657   0.017   0.674 
 </pre></div>
 </div>
 </div>
@@ -1039,7 +1039,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><strong>user.self:</strong> 9.55</div></div>
+<div class="output text_html"><strong>user.self:</strong> 7.47</div></div>
 </div>
 <p>So… yeah, &gt;7x slower (the ratio varies over runs depending on things like how many other processes are running on your computer, so the code output may not quite match that text). Don’t do it.</p>
 <p>Of course, in this example, the actual manipulations we’re doing are small enough that in absolute terms both operations are fast enough that it wouldn’t really matter which one you choose, but as you get into more complicated data manipulations, this kind of 10x speed difference (and often the differences are much much larger, on the order of 100x or more) can be the difference between your code running in a couple of seconds and versus a couple of hours (or the difference between running in a couple minutes and taking a couple days).</p>
