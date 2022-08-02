@@ -1,0 +1,1160 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manipulating Dataframes &#8212; Data Science for Humans</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="dplyr and the Tidyverse" href="intro_to_tidyverse.html" />
+    <link rel="prev" title="Intro to Dataframes" href="intro_to_dataframes.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Data Science for Humans</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../landing_page.html">
+   Welcome to Data Science for Humans
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00_introduction/00_overview.html">
+   Introduction to Data Science for Humans
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00_introduction/10_data_science_in_historical_context.html">
+   What
+   <em>
+    is
+   </em>
+   Data Science: An Historical Perspective
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00_introduction/20_our_approach.html">
+   Solving Problems with Data Science
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Working with Data
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="welcome_to_r.html">
+   We’re gonna learn R!
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_r.html">
+   Intro to R
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_datatypes.html">
+   Intro to Data Types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_vectors.html">
+   Intro to Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="manipulating_vectors.html">
+   Manipulating Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_matrices.html">
+   Intro to Matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="manipulating_matrices.html">
+   Manipulating Matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_dataframes.html">
+   Intro to Dataframes
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Manipulating Dataframes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_tidyverse.html">
+   dplyr and the Tidyverse
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="defensive_programming.html">
+   Defensive Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_merging.html">
+   Intro to Merging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="defensive_merging.html">
+   Defensive Merging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="missing_data.html">
+   Missing Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="loops.html">
+   Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="functions.html">
+   Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="function_example.html">
+   Function Example
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Types of Questions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../20_questions/00_from_problems_to_questions.html">
+   From Problems to Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../20_questions/10_exploratory_questions.html">
+   Exploratory Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../20_questions/20_passive_prediction_questions.html">
+   Classification Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../20_questions/30_causal_questions.html">
+   Causal Questions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data Science in Practice
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_in_practice/10_ethics.html">
+   Ethics in Data Science
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_in_practice/20_from_data_to_decisions.html">
+   Making Decisions Using Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_in_practice/30_interpretability.html">
+   Interpretable Models
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/10_programming/manipulating_dataframes.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/nickeubank/ds4humans"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F10_programming/manipulating_dataframes.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/nickeubank/ds4humans/master?urlpath=tree/docs/10_programming/manipulating_dataframes.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dataframes-are-like-matrices-plus">
+   Dataframes Are Like Matrices-Plus
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#columns-operations">
+   Columns Operations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modifying-columns">
+     Modifying Columns
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-new-columns">
+     Creating New Columns
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analyzing-columns">
+     Analyzing Columns
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dropping-columns">
+     Dropping Columns
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#row-operations">
+   Row Operations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#subsetting">
+     Subsetting
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sorting-dataframes">
+     Sorting Dataframes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#avoiding-subsetting-by-index">
+   Avoiding Subsetting by Index
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recap">
+   Recap
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises-for-class">
+   Exercises for Class
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Manipulating Dataframes</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dataframes-are-like-matrices-plus">
+   Dataframes Are Like Matrices-Plus
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#columns-operations">
+   Columns Operations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modifying-columns">
+     Modifying Columns
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-new-columns">
+     Creating New Columns
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analyzing-columns">
+     Analyzing Columns
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dropping-columns">
+     Dropping Columns
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#row-operations">
+   Row Operations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#subsetting">
+     Subsetting
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sorting-dataframes">
+     Sorting Dataframes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#avoiding-subsetting-by-index">
+   Avoiding Subsetting by Index
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recap">
+   Recap
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises-for-class">
+   Exercises for Class
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="manipulating-dataframes">
+<h1>Manipulating Dataframes<a class="headerlink" href="#manipulating-dataframes" title="Permalink to this headline">¶</a></h1>
+<p>In our previous lessons, we learn how to create dataframes from vectors, and how to load them from files. In this lesson, we will learn how to work with our dataframe once we have it loaded up!</p>
+<p>Being able to quickly modify datasets – often referred to as “data wrangling” – is critical to being a social scientist. Indeed, most social scientists and data scientists spend a huge proportion of their time of their time cleaning and organizing their data. (<a class="reference external" href="https://www.forbes.com/sites/gilpress/2016/03/23/data-preparation-most-time-consuming-least-enjoyable-data-science-task-survey-says/?sh=44a70ffb6f63">about 80 percent in surveys</a>). So this is probably one of the most important readings of the course!</p>
+<p>Be aware that there will be a <strong>lot</strong> of syntax in this reading. However, the goal of the reading is <strong>not</strong> to have you memorize all the syntax, but rather to understand the <em>logic</em> of how dataframes work. To help with that, I’ve provided a recap section at the end of the reading with examples of all the commands we cover in one place.</p>
+<p>So as you read, try and focus on the logic of how dataframes work, not the exact syntax. Syntax is something you can always look up later so long as you understand enough about the logic of what’s going on to realize what you need to look up!</p>
+<p>To begin, let’s start by recreating the dataframe we had in our last exercise as an example to work with:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">country</span> <span class="o">&lt;-</span> <span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;USA&quot;</span><span class="p">,</span> <span class="s">&quot;China&quot;</span><span class="p">,</span> <span class="s">&quot;Sudan&quot;</span><span class="p">),</span> <span class="m">3</span><span class="p">)</span>
+<span class="n">year</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1994</span><span class="p">,</span> <span class="m">1994</span><span class="p">,</span> <span class="m">1994</span><span class="p">,</span> <span class="m">1995</span><span class="p">,</span> <span class="m">1995</span><span class="p">,</span> <span class="m">1995</span><span class="p">,</span> <span class="m">1996</span><span class="p">,</span> <span class="m">1996</span><span class="p">,</span> <span class="m">1996</span><span class="p">)</span>
+<span class="n">gdp_pc</span> <span class="o">&lt;-</span> <span class="nf">round</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">9</span><span class="p">,</span> <span class="m">1000</span><span class="p">,</span> <span class="m">20000</span><span class="p">))</span>
+
+<span class="n">countries</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">gdp_pc</span><span class="p">)</span>
+<span class="n">countries</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 9 × 3</caption>
+<thead>
+	<tr><th scope=col>country</th><th scope=col>year</th><th scope=col>gdp_pc</th></tr>
+	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>USA  </td><td>1994</td><td> 2712</td></tr>
+	<tr><td>China</td><td>1994</td><td>16246</td></tr>
+	<tr><td>Sudan</td><td>1994</td><td>15942</td></tr>
+	<tr><td>USA  </td><td>1995</td><td>15307</td></tr>
+	<tr><td>China</td><td>1995</td><td>17582</td></tr>
+	<tr><td>Sudan</td><td>1995</td><td>12033</td></tr>
+	<tr><td>USA  </td><td>1996</td><td>19088</td></tr>
+	<tr><td>China</td><td>1996</td><td>13531</td></tr>
+	<tr><td>Sudan</td><td>1996</td><td> 4360</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="section" id="dataframes-are-like-matrices-plus">
+<h2>Dataframes Are Like Matrices-Plus<a class="headerlink" href="#dataframes-are-like-matrices-plus" title="Permalink to this headline">¶</a></h2>
+<p>Dataframes, like matrices, are just two dimensional grids of data. And so everything we learned about matrices also applies to dataframes (hooray!).</p>
+<p>For example, if we want to get the GDP of China in 1994 from our dataframe, we can subset our dataframe using square brackets and logical / name vectors, just like named matrices:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span><span class="p">[</span><span class="n">countries</span><span class="p">[,</span> <span class="s">&quot;gdp_pc&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="m">10000</span><span class="p">,</span> <span class="s">&quot;year&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>1994</li><li>1996</li></ol>
+</div></div>
+</div>
+<p>So remember that: if you could do it with a matrix, you can do it with a dataframe!</p>
+<p>As we’ll see, though, dataframes <em>do</em> have few augmentations designed to make the life of the R users a little easier, and so can kinda be thought of as being like matrices+.</p>
+</div>
+<div class="section" id="columns-operations">
+<h2>Columns Operations<a class="headerlink" href="#columns-operations" title="Permalink to this headline">¶</a></h2>
+<p>Unlike matrices, which could have column names, dataframe columns <strong>always</strong> have names. As a result, we will basically always address columns using their names for reasons will discuss in more detail below.</p>
+<p>It is also convention that columns in most datasets correspond to variables, so you we’ll often want to do things like take the average of a single column (e.g. the average of a single variable), or edit the values in a single column.</p>
+<p>In fact, accessing a single column is so common with dataframes that there are <strong>two</strong> exactly-identical ways to get a single column, and <strong>one nearly</strong> equivalent way. The equivalent ways are:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># What we&#39;re used to from matrices</span>
+<span class="n">countries</span><span class="p">[,</span> <span class="s">&quot;gdp_pc&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>2712</li><li>16246</li><li>15942</li><li>15307</li><li>17582</li><li>12033</li><li>19088</li><li>13531</li><li>4360</li></ol>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># The shortcut for a single dataframe column</span>
+<span class="n">countries</span><span class="o">$</span><span class="n">gdp_pc</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>2712</li><li>16246</li><li>15942</li><li>15307</li><li>17582</li><li>12033</li><li>19088</li><li>13531</li><li>4360</li></ol>
+</div></div>
+</div>
+<p>These are exactly equivalent for single columns! But note that you can’t always use this trick – for example, it doesn’t work for trying to get several columns from a dataframe. Most of the time, though, it’s a very convenient shorthand for single-column manipulations.</p>
+<p>And the <em>nearly</em> equivalent way is the following, which is slightly different from those above in that instead of returning a vector, it returns a dataframe with one column:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># And if you don&#39;t have a comma, R assumes you&#39;re accessing columns</span>
+<span class="n">countries</span><span class="p">[</span><span class="s">&quot;gdp_pc&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 9 × 1</caption>
+<thead>
+	<tr><th scope=col>gdp_pc</th></tr>
+	<tr><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td> 2712</td></tr>
+	<tr><td>16246</td></tr>
+	<tr><td>15942</td></tr>
+	<tr><td>15307</td></tr>
+	<tr><td>17582</td></tr>
+	<tr><td>12033</td></tr>
+	<tr><td>19088</td></tr>
+	<tr><td>13531</td></tr>
+	<tr><td> 4360</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="section" id="modifying-columns">
+<h3>Modifying Columns<a class="headerlink" href="#modifying-columns" title="Permalink to this headline">¶</a></h3>
+<p>As with matrices, we can use subsetting to make modifications to columns. For example, suppose, as with our matrix version, we wanted to multiple GDP per capita by 1.02 to adjust for inflation. We could either do:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># re-create with original gdp_pc </span>
+<span class="n">countries</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">gdp_pc</span><span class="p">)</span>
+<span class="n">countries</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 9 × 3</caption>
+<thead>
+	<tr><th scope=col>country</th><th scope=col>year</th><th scope=col>gdp_pc</th></tr>
+	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>USA  </td><td>1994</td><td> 2712</td></tr>
+	<tr><td>China</td><td>1994</td><td>16246</td></tr>
+	<tr><td>Sudan</td><td>1994</td><td>15942</td></tr>
+	<tr><td>USA  </td><td>1995</td><td>15307</td></tr>
+	<tr><td>China</td><td>1995</td><td>17582</td></tr>
+	<tr><td>Sudan</td><td>1995</td><td>12033</td></tr>
+	<tr><td>USA  </td><td>1996</td><td>19088</td></tr>
+	<tr><td>China</td><td>1996</td><td>13531</td></tr>
+	<tr><td>Sudan</td><td>1996</td><td> 4360</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span><span class="p">[,</span> <span class="s">&quot;gdp_pc&quot;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">countries</span><span class="p">[,</span><span class="s">&quot;gdp_pc&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="m">1.02</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Or</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span><span class="o">$</span><span class="n">gdp_pc</span> <span class="o">&lt;-</span> <span class="n">countries</span><span class="o">$</span><span class="n">gdp_pc</span> <span class="o">*</span> <span class="m">1.02</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="creating-new-columns">
+<h3>Creating New Columns<a class="headerlink" href="#creating-new-columns" title="Permalink to this headline">¶</a></h3>
+<p>If we wanted to keep both the original <code class="docutils literal notranslate"><span class="pre">gdp_pc</span></code> column and add a <em>new</em> column with the inflation adjusted values, we can do so just by using a <em>new</em> column name when we assign our values back into the dataframe:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># re-create with original gdp_pc </span>
+<span class="n">countries</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">gdp_pc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add new column</span>
+<span class="n">countries</span><span class="o">$</span><span class="n">adjusted_gdp_pc</span> <span class="o">&lt;-</span> <span class="n">countries</span><span class="o">$</span><span class="n">gdp_pc</span> <span class="o">*</span> <span class="m">1.02</span>
+<span class="n">countries</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 9 × 4</caption>
+<thead>
+	<tr><th scope=col>country</th><th scope=col>year</th><th scope=col>gdp_pc</th><th scope=col>adjusted_gdp_pc</th></tr>
+	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>USA  </td><td>1994</td><td> 2712</td><td> 2766.24</td></tr>
+	<tr><td>China</td><td>1994</td><td>16246</td><td>16570.92</td></tr>
+	<tr><td>Sudan</td><td>1994</td><td>15942</td><td>16260.84</td></tr>
+	<tr><td>USA  </td><td>1995</td><td>15307</td><td>15613.14</td></tr>
+	<tr><td>China</td><td>1995</td><td>17582</td><td>17933.64</td></tr>
+	<tr><td>Sudan</td><td>1995</td><td>12033</td><td>12273.66</td></tr>
+	<tr><td>USA  </td><td>1996</td><td>19088</td><td>19469.76</td></tr>
+	<tr><td>China</td><td>1996</td><td>13531</td><td>13801.62</td></tr>
+	<tr><td>Sudan</td><td>1996</td><td> 4360</td><td> 4447.20</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="analyzing-columns">
+<h3>Analyzing Columns<a class="headerlink" href="#analyzing-columns" title="Permalink to this headline">¶</a></h3>
+<p>Finally, as long as we’re talking about columns, it’s worth emphasizing that once you pull a column out of your dataframe, you can analyze it like any other vector (since it is just a vector!). For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">mean</span><span class="p">(</span><span class="n">countries</span><span class="o">$</span><span class="n">gdp_pc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">12977.8888888889</div></div>
+</div>
+<p>But two summary functions are worth noting here: <code class="docutils literal notranslate"><span class="pre">table()</span></code>, to get the number of observations that have a given value in a vector, and the combination <code class="docutils literal notranslate"><span class="pre">prop.table(table())</span></code>, to get the share of observations with a given value in a vector:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Number of observations by country </span>
+<span class="nf">table</span><span class="p">(</span><span class="n">countries</span><span class="o">$</span><span class="n">country</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>China Sudan   USA 
+    3     3     3 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Proportion of observations by country </span>
+<span class="nf">prop.table</span><span class="p">(</span><span class="nf">table</span><span class="p">(</span><span class="n">countries</span><span class="o">$</span><span class="n">country</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    China     Sudan       USA 
+0.3333333 0.3333333 0.3333333 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dropping-columns">
+<h3>Dropping Columns<a class="headerlink" href="#dropping-columns" title="Permalink to this headline">¶</a></h3>
+<p>Dropping columns can be done in a couple ways. The easiest is to just list the columns one wishes to keep:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span><span class="p">[,</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;gdp_pc&quot;</span><span class="p">,</span> <span class="s">&quot;year&quot;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 9 × 2</caption>
+<thead>
+	<tr><th scope=col>gdp_pc</th><th scope=col>year</th></tr>
+	<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td> 2712</td><td>1994</td></tr>
+	<tr><td>16246</td><td>1994</td></tr>
+	<tr><td>15942</td><td>1994</td></tr>
+	<tr><td>15307</td><td>1995</td></tr>
+	<tr><td>17582</td><td>1995</td></tr>
+	<tr><td>12033</td><td>1995</td></tr>
+	<tr><td>19088</td><td>1996</td></tr>
+	<tr><td>13531</td><td>1996</td></tr>
+	<tr><td> 4360</td><td>1996</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>But in big dataframes, we sometimes have lots of columns, and don’t want to list all the columns <em>except</em> the one we want to drop. For that there are two solutions. The first is like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Drop columns gdp_pc and year</span>
+<span class="n">countries</span><span class="p">[,</span> <span class="o">!</span><span class="p">(</span><span class="nf">names</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span> <span class="o">%in%</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;gdp_pc&quot;</span><span class="p">,</span> <span class="s">&quot;year&quot;</span><span class="p">))]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 9 × 2</caption>
+<thead>
+	<tr><th scope=col>country</th><th scope=col>adjusted_gdp_pc</th></tr>
+	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>USA  </td><td> 2766.24</td></tr>
+	<tr><td>China</td><td>16570.92</td></tr>
+	<tr><td>Sudan</td><td>16260.84</td></tr>
+	<tr><td>USA  </td><td>15613.14</td></tr>
+	<tr><td>China</td><td>17933.64</td></tr>
+	<tr><td>Sudan</td><td>12273.66</td></tr>
+	<tr><td>USA  </td><td>19469.76</td></tr>
+	<tr><td>China</td><td>13801.62</td></tr>
+	<tr><td>Sudan</td><td> 4447.20</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>This is a little weird looking, so it’s worth breaking down.</p>
+<p>First, <code class="docutils literal notranslate"><span class="pre">names(countries)</span></code> returns all the column names of <code class="docutils literal notranslate"><span class="pre">countries</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">names</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>'country'</li><li>'year'</li><li>'gdp_pc'</li><li>'adjusted_gdp_pc'</li></ol>
+</div></div>
+</div>
+<p>Then <code class="docutils literal notranslate"><span class="pre">names(countries)</span> <span class="pre">%in%</span> <span class="pre">c(&quot;gdp_pc&quot;,</span> <span class="pre">&quot;year&quot;)</span></code> returns a logical vector the length of the column names of <code class="docutils literal notranslate"><span class="pre">countries</span></code> that’s <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> if the name is in the list, and <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> otherwise:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">names</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span> <span class="o">%in%</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;gdp_pc&quot;</span><span class="p">,</span> <span class="s">&quot;year&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>FALSE</li><li>TRUE</li><li>TRUE</li><li>FALSE</li></ol>
+</div></div>
+</div>
+<p>Then finally the <code class="docutils literal notranslate"><span class="pre">!</span></code> before that expression is the logical <code class="docutils literal notranslate"><span class="pre">NOT</span></code>, meaning that it makes all <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> values into <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> and vice-versa. So in the end <code class="docutils literal notranslate"><span class="pre">!(names(countries)</span> <span class="pre">%in%</span> <span class="pre">c(&quot;gdp_pc&quot;,</span> <span class="pre">&quot;year&quot;))</span></code> returns a logical vector that is <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> for all values <em>not</em> in the list, and <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> for those in the list. That is then interpreted as a logical subsetting vector, and all columns not in the list are kept, and those not in the list are dropped.</p>
+<p>I know, it’s kinda a lot… but it is a good example of how you can compose simple building blocks to do complicated things in R!</p>
+<p>Finally, if you’re dropping a single columns, you can also assign the value of <code class="docutils literal notranslate"><span class="pre">NULL</span></code> to the column:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span><span class="o">$</span><span class="n">gdp_pc</span> <span class="o">&lt;-</span> <span class="kc">NULL</span>
+<span class="n">countries</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 9 × 3</caption>
+<thead>
+	<tr><th scope=col>country</th><th scope=col>year</th><th scope=col>adjusted_gdp_pc</th></tr>
+	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>USA  </td><td>1994</td><td> 2766.24</td></tr>
+	<tr><td>China</td><td>1994</td><td>16570.92</td></tr>
+	<tr><td>Sudan</td><td>1994</td><td>16260.84</td></tr>
+	<tr><td>USA  </td><td>1995</td><td>15613.14</td></tr>
+	<tr><td>China</td><td>1995</td><td>17933.64</td></tr>
+	<tr><td>Sudan</td><td>1995</td><td>12273.66</td></tr>
+	<tr><td>USA  </td><td>1996</td><td>19469.76</td></tr>
+	<tr><td>China</td><td>1996</td><td>13801.62</td></tr>
+	<tr><td>Sudan</td><td>1996</td><td> 4447.20</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>Which… well, just works! :)</p>
+</div>
+</div>
+<div class="section" id="row-operations">
+<h2>Row Operations<a class="headerlink" href="#row-operations" title="Permalink to this headline">¶</a></h2>
+<p>In most datasets you work with, each row will correspond to a single observation in your data. Given that, we often manipulate rows as a way of manipulating the sample in our analyses.</p>
+<div class="section" id="subsetting">
+<h3>Subsetting<a class="headerlink" href="#subsetting" title="Permalink to this headline">¶</a></h3>
+<p>Subsetting with logicals is exactly the same with dataframes as it was with matrices, except that we can access column names with the <code class="docutils literal notranslate"><span class="pre">$</span></code> notation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span><span class="p">[</span><span class="n">countries</span><span class="o">$</span><span class="n">year</span> <span class="o">==</span> <span class="m">1995</span> <span class="o">&amp;</span> <span class="n">countries</span><span class="o">$</span><span class="n">country</span> <span class="o">==</span> <span class="s">&quot;USA&quot;</span><span class="p">,</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 1 × 3</caption>
+<thead>
+	<tr><th></th><th scope=col>country</th><th scope=col>year</th><th scope=col>adjusted_gdp_pc</th></tr>
+	<tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>4</th><td>USA</td><td>1995</td><td>15613.14</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="sorting-dataframes">
+<h3>Sorting Dataframes<a class="headerlink" href="#sorting-dataframes" title="Permalink to this headline">¶</a></h3>
+<p>Often, we’ll want to sort the rows of our dataframe by the values in one of our columns. To do so, we use the <code class="docutils literal notranslate"><span class="pre">order</span></code> command:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sort by GDP</span>
+<span class="n">countries</span><span class="p">[</span><span class="nf">order</span><span class="p">(</span><span class="n">countries</span><span class="o">$</span><span class="n">adjusted_gdp_pc</span><span class="p">),]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 9 × 3</caption>
+<thead>
+	<tr><th></th><th scope=col>country</th><th scope=col>year</th><th scope=col>adjusted_gdp_pc</th></tr>
+	<tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>1</th><td>USA  </td><td>1994</td><td> 2766.24</td></tr>
+	<tr><th scope=row>9</th><td>Sudan</td><td>1996</td><td> 4447.20</td></tr>
+	<tr><th scope=row>6</th><td>Sudan</td><td>1995</td><td>12273.66</td></tr>
+	<tr><th scope=row>8</th><td>China</td><td>1996</td><td>13801.62</td></tr>
+	<tr><th scope=row>4</th><td>USA  </td><td>1995</td><td>15613.14</td></tr>
+	<tr><th scope=row>3</th><td>Sudan</td><td>1994</td><td>16260.84</td></tr>
+	<tr><th scope=row>2</th><td>China</td><td>1994</td><td>16570.92</td></tr>
+	<tr><th scope=row>5</th><td>China</td><td>1995</td><td>17933.64</td></tr>
+	<tr><th scope=row>7</th><td>USA  </td><td>1996</td><td>19469.76</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>What’s happening? <code class="docutils literal notranslate"><span class="pre">order()</span></code> returns a vector with the indices of the rows of the dataset in sorted order:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">order</span><span class="p">(</span><span class="n">countries</span><span class="o">$</span><span class="n">adjusted_gdp_pc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>1</li><li>9</li><li>6</li><li>8</li><li>4</li><li>3</li><li>2</li><li>5</li><li>7</li></ol>
+</div></div>
+</div>
+<p>And then, because it’s a vector of indices being passed in the first position of our square brackets, we get all the rows of <code class="docutils literal notranslate"><span class="pre">countries</span></code> “subset” by index (though obviously it’s not really a subset, since all row indices appear in the vector – just a re-ordering)!</p>
+<p>We can also sort by multiple columns:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span><span class="p">[</span><span class="nf">order</span><span class="p">(</span><span class="n">countries</span><span class="o">$</span><span class="n">year</span><span class="p">,</span> <span class="n">countries</span><span class="o">$</span><span class="n">country</span><span class="p">),]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 9 × 3</caption>
+<thead>
+	<tr><th></th><th scope=col>country</th><th scope=col>year</th><th scope=col>adjusted_gdp_pc</th></tr>
+	<tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>2</th><td>China</td><td>1994</td><td>16570.92</td></tr>
+	<tr><th scope=row>3</th><td>Sudan</td><td>1994</td><td>16260.84</td></tr>
+	<tr><th scope=row>1</th><td>USA  </td><td>1994</td><td> 2766.24</td></tr>
+	<tr><th scope=row>5</th><td>China</td><td>1995</td><td>17933.64</td></tr>
+	<tr><th scope=row>6</th><td>Sudan</td><td>1995</td><td>12273.66</td></tr>
+	<tr><th scope=row>4</th><td>USA  </td><td>1995</td><td>15613.14</td></tr>
+	<tr><th scope=row>8</th><td>China</td><td>1996</td><td>13801.62</td></tr>
+	<tr><th scope=row>9</th><td>Sudan</td><td>1996</td><td> 4447.20</td></tr>
+	<tr><th scope=row>7</th><td>USA  </td><td>1996</td><td>19469.76</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>And we can use <code class="docutils literal notranslate"><span class="pre">-</span></code> to sort any variable in descending order rather than ascending order:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span><span class="p">[</span><span class="nf">order</span><span class="p">(</span><span class="o">-</span><span class="n">countries</span><span class="o">$</span><span class="n">adjusted_gdp_pc</span><span class="p">),</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 9 × 3</caption>
+<thead>
+	<tr><th></th><th scope=col>country</th><th scope=col>year</th><th scope=col>adjusted_gdp_pc</th></tr>
+	<tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>7</th><td>USA  </td><td>1996</td><td>19469.76</td></tr>
+	<tr><th scope=row>5</th><td>China</td><td>1995</td><td>17933.64</td></tr>
+	<tr><th scope=row>2</th><td>China</td><td>1994</td><td>16570.92</td></tr>
+	<tr><th scope=row>3</th><td>Sudan</td><td>1994</td><td>16260.84</td></tr>
+	<tr><th scope=row>4</th><td>USA  </td><td>1995</td><td>15613.14</td></tr>
+	<tr><th scope=row>8</th><td>China</td><td>1996</td><td>13801.62</td></tr>
+	<tr><th scope=row>6</th><td>Sudan</td><td>1995</td><td>12273.66</td></tr>
+	<tr><th scope=row>9</th><td>Sudan</td><td>1996</td><td> 4447.20</td></tr>
+	<tr><th scope=row>1</th><td>USA  </td><td>1994</td><td> 2766.24</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</div>
+</div>
+<div class="section" id="avoiding-subsetting-by-index">
+<h2>Avoiding Subsetting by Index<a class="headerlink" href="#avoiding-subsetting-by-index" title="Permalink to this headline">¶</a></h2>
+<p>As you’ve seen, we almost always access columns by name rather than by using their index numbers. That’s because when working with real data, there’s always a possibility that the order of columns gets jumbled up – maybe you get an updated version of the data set you’re working with that has the columns in different orders, or maybe in a large research project one of your collaborators has modified the order of columns in some of the code that runs before your code.</p>
+<p>In these situations, trying to extract a column using its index may give you the wrong answer, while pulling out a column by name will and sure you’re always getting the variable that you intended!</p>
+<p>The same logic also applies to subsetting by rows. While subsetting by row index <em>works</em>, we generally avoid using indices for the same reason we avoid subsetting columns by index – if the order or our data changes (say, it gets sorted unexpectedly), we can’t predict how our index subsets will change! That’s why in nearly all the examples above we subset with a logical vector.</p>
+<p>Obviously there are exceptions to this rule – <code class="docutils literal notranslate"><span class="pre">order()</span></code> and <code class="docutils literal notranslate"><span class="pre">sample()</span></code> are both implicitly subsetting by index. But those functions generate the indices they use from the values of row immediately before they use them, so there is no opportunity for the order of row to change between when those indices are generated and when they are used.</p>
+</div>
+<div class="section" id="recap">
+<h2>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">¶</a></h2>
+<p>Phew. OK, I know this reading covered <em>a lot</em>, so here’s a quick recap and a summary table for reference.</p>
+<ul class="simple">
+<li><p>Dataframes really are just like matrices. The main difference is that each column can be a different type, and dataframes always have column names.</p></li>
+<li><p>We subset single dataframe columns using <code class="docutils literal notranslate"><span class="pre">$</span></code>, but that’s just a shorthand for the syntax we learned before (<code class="docutils literal notranslate"><span class="pre">df[,</span> <span class="pre">&quot;colname&quot;]</span></code>).</p></li>
+<li><p>The columns of a dataframe are just vectors.</p></li>
+<li><p>We usually subset dataframes with logicals (for rows) or by name (columns) for safety.</p></li>
+</ul>
+<p>And now a reference table, written with a toy dataset called <code class="docutils literal notranslate"><span class="pre">df</span></code> with columns <code class="docutils literal notranslate"><span class="pre">col1</span></code>, <code class="docutils literal notranslate"><span class="pre">col2</span></code>, and <code class="docutils literal notranslate"><span class="pre">col3</span></code> in mind:</p>
+<p><strong>Looking at your dataframe:</strong></p>
+<ul class="simple">
+<li><p>Number of rows: <code class="docutils literal notranslate"><span class="pre">nrow(df)</span></code></p></li>
+<li><p>Number of columns: <code class="docutils literal notranslate"><span class="pre">ncol(df)</span></code></p></li>
+<li><p>First six rows: <code class="docutils literal notranslate"><span class="pre">head(df)</span></code></p></li>
+<li><p>Last six rows: <code class="docutils literal notranslate"><span class="pre">tail(df)</span></code></p></li>
+<li><p>Quick summary of all data: <code class="docutils literal notranslate"><span class="pre">summary(df)</span></code></p></li>
+</ul>
+<p><strong>Row Operations</strong></p>
+<ul class="simple">
+<li><p>Subset rows by logical: <code class="docutils literal notranslate"><span class="pre">df[df$col1</span> <span class="pre">&lt;</span> <span class="pre">42,</span> <span class="pre">]</span></code> or <code class="docutils literal notranslate"><span class="pre">df[df[,</span> <span class="pre">col1]</span> <span class="pre">&lt;</span> <span class="pre">42,</span> <span class="pre">]</span></code></p></li>
+<li><p>Random sample of N rows: <code class="docutils literal notranslate"><span class="pre">df[sample(nrow(df),</span> <span class="pre">N),</span> <span class="pre">]</span></code></p></li>
+<li><p>Sort rows (ascending, one column): <code class="docutils literal notranslate"><span class="pre">df[order(df$col1),</span> <span class="pre">]</span></code></p></li>
+<li><p>Sort rows (descending, one column): <code class="docutils literal notranslate"><span class="pre">df[order(-df$col1),</span> <span class="pre">]</span></code></p></li>
+<li><p>Sort rows (multiple columns): <code class="docutils literal notranslate"><span class="pre">df[order(df$col1,</span> <span class="pre">df$col2),</span> <span class="pre">]</span></code></p></li>
+</ul>
+<p><strong>Column Operations</strong></p>
+<ul class="simple">
+<li><p>Subset one column by name: <code class="docutils literal notranslate"><span class="pre">df$col1</span></code> or <code class="docutils literal notranslate"><span class="pre">df[,</span> <span class="pre">&quot;col1&quot;]</span></code></p></li>
+<li><p>Subset multiple columns by name: <code class="docutils literal notranslate"><span class="pre">df[</span> <span class="pre">,</span> <span class="pre">c(&quot;col1&quot;,</span> <span class="pre">&quot;col2&quot;)]</span></code></p></li>
+<li><p>Drop one column: <code class="docutils literal notranslate"><span class="pre">df$col1</span> <span class="pre">&lt;-</span> <span class="pre">NULL</span></code></p></li>
+<li><p>Drop set of columns: <code class="docutils literal notranslate"><span class="pre">df[</span> <span class="pre">,</span> <span class="pre">!(names(df)</span> <span class="pre">%in%</span> <span class="pre">c(&quot;col1&quot;,</span> <span class="pre">&quot;col2&quot;))]</span></code></p></li>
+<li><p>Editing a single column: <code class="docutils literal notranslate"><span class="pre">df$col1</span> <span class="pre">&lt;-</span> <span class="pre">df$col1</span> <span class="pre">*</span> <span class="pre">42</span></code> or <code class="docutils literal notranslate"><span class="pre">df[,</span> <span class="pre">&quot;col1&quot;]</span> <span class="pre">&lt;-</span> <span class="pre">df[,</span> <span class="pre">&quot;col1&quot;]</span> <span class="pre">*</span> <span class="pre">42</span></code></p></li>
+<li><p>Create new column: <code class="docutils literal notranslate"><span class="pre">df$newcol</span> <span class="pre">&lt;-</span> <span class="pre">df$col1</span> <span class="pre">*</span> <span class="pre">42</span></code> or <code class="docutils literal notranslate"><span class="pre">df[,</span> <span class="pre">&quot;newcol&quot;]</span> <span class="pre">&lt;-</span> <span class="pre">df[,</span> <span class="pre">&quot;col1&quot;]</span> <span class="pre">*</span> <span class="pre">42</span></code></p></li>
+</ul>
+<p><strong>Learn About a Column:</strong></p>
+<ul class="simple">
+<li><p>Tabulate number of observations of each value: <code class="docutils literal notranslate"><span class="pre">table(df$col1)</span></code></p></li>
+<li><p>Share of observations of each value: <code class="docutils literal notranslate"><span class="pre">prop.table(table(df$col1))</span></code></p></li>
+<li><p>Quick summary of one column: <code class="docutils literal notranslate"><span class="pre">summary(df$col1)</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="exercises-for-class">
+<h2>Exercises for Class<a class="headerlink" href="#exercises-for-class" title="Permalink to this headline">¶</a></h2>
+<p>And now it’s time to put these new <a class="reference internal" href="exercises/exercise_dataframe.html"><span class="doc std std-doc">skills into action with some exercises!</span></a> As usual, if you are a synchronous student, <strong>please don’t start these before class!</strong></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./10_programming"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="intro_to_dataframes.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Intro to Dataframes</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="intro_to_tidyverse.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">dplyr and the Tidyverse</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Josh Clinton and Nick Eubank<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,1133 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loops &#8212; Data Science for Humans</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Functions" href="functions.html" />
+    <link rel="prev" title="Missing Data" href="missing_data.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Data Science for Humans</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../landing_page.html">
+   Welcome to Data Science for Humans
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00_introduction/00_overview.html">
+   Introduction to Data Science for Humans
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00_introduction/10_data_science_in_historical_context.html">
+   What
+   <em>
+    is
+   </em>
+   Data Science: An Historical Perspective
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00_introduction/20_our_approach.html">
+   Solving Problems with Data Science
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Working with Data
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="welcome_to_r.html">
+   We’re gonna learn R!
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_r.html">
+   Intro to R
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_datatypes.html">
+   Intro to Data Types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_vectors.html">
+   Intro to Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="manipulating_vectors.html">
+   Manipulating Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_matrices.html">
+   Intro to Matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="manipulating_matrices.html">
+   Manipulating Matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_dataframes.html">
+   Intro to Dataframes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="manipulating_dataframes.html">
+   Manipulating Dataframes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_tidyverse.html">
+   dplyr and the Tidyverse
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="defensive_programming.html">
+   Defensive Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_merging.html">
+   Intro to Merging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="defensive_merging.html">
+   Defensive Merging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="missing_data.html">
+   Missing Data
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="functions.html">
+   Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="function_example.html">
+   Function Example
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Types of Questions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../20_questions/00_from_problems_to_questions.html">
+   From Problems to Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../20_questions/10_exploratory_questions.html">
+   Exploratory Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../20_questions/20_passive_prediction_questions.html">
+   Classification Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../20_questions/30_causal_questions.html">
+   Causal Questions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data Science in Practice
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_in_practice/10_ethics.html">
+   Ethics in Data Science
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_in_practice/20_from_data_to_decisions.html">
+   Making Decisions Using Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_in_practice/30_interpretability.html">
+   Interpretable Models
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/10_programming/loops.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/nickeubank/ds4humans"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F10_programming/loops.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/nickeubank/ds4humans/master?urlpath=tree/docs/10_programming/loops.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-for-loop">
+   The For-Loop
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#building-a-loop">
+   Building a Loop
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-for-loop-idioms">
+   Other For-Loop Idioms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#if-else">
+   If / Else
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#while-loops">
+   While Loops
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loops-and-the-tidyverse">
+   Loops and the Tidyverse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#don-t-loop-over-your-full-data">
+   Don’t Loop Over Your Full Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises-for-now">
+   Exercises for Now
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises-for-class">
+   Exercises for Class
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Loops</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-for-loop">
+   The For-Loop
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#building-a-loop">
+   Building a Loop
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-for-loop-idioms">
+   Other For-Loop Idioms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#if-else">
+   If / Else
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#while-loops">
+   While Loops
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loops-and-the-tidyverse">
+   Loops and the Tidyverse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#don-t-loop-over-your-full-data">
+   Don’t Loop Over Your Full Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises-for-now">
+   Exercises for Now
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises-for-class">
+   Exercises for Class
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="loops">
+<h1>Loops<a class="headerlink" href="#loops" title="Permalink to this headline">¶</a></h1>
+<p>Until this point, the scripts we’ve been writing are quite straightforward: each line of code runs in sequence, one after another. Moreover, everything we want R to do, we have to write out by hand.</p>
+<p>In this lesson, we’ll learn about loops – a programming structure ideal for getting R to do LOTS of work with very little code.</p>
+<p>The basic idea of a loop is that in situations where you want R to do lots of very similar things, we can decompose our code into (a) generic code we want to run over and over, and (b) an input to that code that changes each time we repeat the generic code.</p>
+<p>Let’s start with a simple example – suppose I wanted to thank my TAs and everyone in class for a great bootcamp.I <em>could</em> type it out with:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Happy Birthday Yi!&quot;</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">&quot;Happy Birthday Zoe!&quot;</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">&quot;Happy Birthday Ishani!&quot;</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">&quot;Happy Birthday Kelly!&quot;</span><span class="p">)</span>
+<span class="kc">...</span>
+</pre></div>
+</div>
+<p>etc. But that’d take FOREVER! Moreover, it’s easy to see that most of what I’m typing out is exactly the same on every line. If only there were some way to leverage that information…</p>
+<p>Enter the loop!</p>
+<div class="section" id="the-for-loop">
+<h2>The For-Loop<a class="headerlink" href="#the-for-loop" title="Permalink to this headline">¶</a></h2>
+<p>The most basic loop is called a for-loop, and it loops over a collection of items, doing the loop once per item in the collection.</p>
+<p>In this case, our collection would be a vector with the names of all the students in the class. I won’t make you look at the full list, though, so here’s a little toy vector:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Yi&quot;</span><span class="p">,</span> <span class="s">&quot;Zoe&quot;</span><span class="p">,</span> <span class="s">&quot;Ishani&quot;</span><span class="p">,</span> <span class="s">&quot;Kelly&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then we need to write out a for-loop, which looks like this:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="n">names</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">[</span><span class="n">code</span> <span class="n">to</span> <span class="n">repeat</span> <span class="n">here</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The way this loop works is that it iterates over the names in <code class="docutils literal notranslate"><span class="pre">names</span></code>, and each time it reaches a new name, it sets <code class="docutils literal notranslate"><span class="pre">i</span></code> to equal that name, then runs the code in the middle. For example, I could print all the names like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="n">names</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;Yi&quot;
+[1] &quot;Zoe&quot;
+[1] &quot;Ishani&quot;
+[1] &quot;Kelly&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p>But of course, we usually don’t just want to print <code class="docutils literal notranslate"><span class="pre">i</span></code>, we want to use it. So let’s try and thank everyone in the class with a loop.</p>
+<p>Before we write code inside our loop, though, we’ll start by testing our code <em>outside</em> the loop to make it easier to troubleshoot, setting <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;-</span> <span class="pre">names[1]</span></code> by hand at the top to practice:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set `i` to first entry in `names`</span>
+<span class="c1"># When we put this inside the loop,</span>
+<span class="c1"># this will be done automatically by the loop</span>
+<span class="n">i</span> <span class="o">&lt;-</span> <span class="n">names</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>
+
+<span class="c1"># Now write the code you want to put in your loop.</span>
+<span class="n">message</span> <span class="o">&lt;-</span> <span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;Thank you &quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s">&quot; for a great class! &quot;</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;Thank you Yi for a great class! &quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you haven’t seen <code class="docutils literal notranslate"><span class="pre">paste0()</span></code> before, it’s a function that takes characters and concatenates them (sticks them together). (There’s also a function called <code class="docutils literal notranslate"><span class="pre">paste()</span></code> that does the same thing but also adds a space between entries).</p>
+<p>OK, so now that we’ve got working code to put in the middle, we can move it into our loop:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="n">names</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">message</span> <span class="o">&lt;-</span> <span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;Thank you &quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span>
+                      <span class="s">&quot; for a great class! &quot;</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="s">&quot;OK, bye now!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;Thank you Yi for a great class! &quot;
+[1] &quot;Thank you Zoe for a great class! &quot;
+[1] &quot;Thank you Ishani for a great class! &quot;
+[1] &quot;Thank you Kelly for a great class! &quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;OK, bye now!&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p>A few things to note about this:</p>
+<ul class="simple">
+<li><p>When developing the code to go into our loop, we started by assigning one of our names to <code class="docutils literal notranslate"><span class="pre">i</span></code>. In the real loop, we don’t do that because it’s done automatically at the top of the loop.</p></li>
+<li><p>Remember how <code class="docutils literal notranslate"><span class="pre">print()</span></code> always seemed pointless, since you could always just type the name of a variable to see its value? Well that trick doesn’t work in loops, which is why we need a tool like <code class="docutils literal notranslate"><span class="pre">print()</span></code>.</p></li>
+<li><p>I also added a print statement at the end of my code – as you can see, when the loop has iterated over all the values in <code class="docutils literal notranslate"><span class="pre">names</span></code>, R just moves on and runs the next command it sees.</p></li>
+</ul>
+<p>OK, let’s take a moment to diagram what’s happening here just to make sure everything is clear. For length, though, we’ll shorten our name vector to just have Yi and Zoe.</p>
+<p><img alt="loop1" src="../_images/loop1.png" /></p>
+<p><img alt="loop2" src="../_images/loop2.png" /></p>
+<p><img alt="loop3" src="../_images/loop3.png" /></p>
+<p><img alt="loop4" src="../_images/loop4.png" /></p>
+<p><img alt="loop5" src="../_images/loop5.png" /></p>
+<p><img alt="loop6" src="../_images/loop6.png" /></p>
+<p><img alt="loop7" src="../_images/loop7.png" /></p>
+</div>
+<div class="section" id="building-a-loop">
+<h2>Building a Loop<a class="headerlink" href="#building-a-loop" title="Permalink to this headline">¶</a></h2>
+<p>As noted above, the way to write a loop usually isn’t just to write a loop – troubleshooting code inside a loop is much harder than troubleshooting code that isn’t in the loop because you can’t run your code one line at a time if it is inside the loop. So when you’re writing a loop, I recommend following the following steps:</p>
+<ol class="simple">
+<li><p>Write the first line of your loop. This will help you visualize what you’re looping over and what your looping variable (e.g. <code class="docutils literal notranslate"><span class="pre">i</span></code> in the example above) will be.</p></li>
+<li><p>Write the code that you want to put inside your loop on its own. So that it runs the same way it will eventually run inside the loop, define your looping variable (<code class="docutils literal notranslate"><span class="pre">i</span></code>) to be equal to the first entry in the vector you’re looping over (e.g. <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;-</span> <span class="pre">names[1]</span></code>). In that way the code you’re writing will have access to the same variable that it will have later.</p></li>
+<li><p>Move the code you have written separately into the loop (without that initial assignment <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;-</span> <span class="pre">names[1]</span></code>, obviously).</p></li>
+<li><p>If you have problems, put <code class="docutils literal notranslate"><span class="pre">print()</span></code> statements inside your loop to give you information about what’s going on.</p></li>
+</ol>
+</div>
+<div class="section" id="other-for-loop-idioms">
+<h2>Other For-Loop Idioms<a class="headerlink" href="#other-for-loop-idioms" title="Permalink to this headline">¶</a></h2>
+<p>There are couple common patterns with for loops to be aware of. Above, we saw how we can loop over vector of predefined values, but another common idiom to be aware of is looping over a vector created with the <code class="docutils literal notranslate"><span class="pre">1:N</span></code> operator (or the <code class="docutils literal notranslate"><span class="pre">seq()</span></code>) operator. For example, if I have a for loop that I want to run 5 times, I could write:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="if-else">
+<h2>If / Else<a class="headerlink" href="#if-else" title="Permalink to this headline">¶</a></h2>
+<p>Another useful tool for loops is <code class="docutils literal notranslate"><span class="pre">if</span></code> / <code class="docutils literal notranslate"><span class="pre">else</span></code>.</p>
+<p>With <code class="docutils literal notranslate"><span class="pre">if</span></code>, you create a block of code that will only execute if a given condition is true. For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="m">5</span>
+
+<span class="nf">if </span><span class="p">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="m">10</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="m">5</span>
+
+<span class="nf">if </span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="m">10</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you <em>just</em> use <code class="docutils literal notranslate"><span class="pre">if</span></code>, then the code between the squiggly brackets you write will run if the condition is true, and otherwise the code will move on. But sometimes you want different code to run if the test is false. For that we use an <code class="docutils literal notranslate"><span class="pre">else</span></code> block, written:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="m">5</span>
+
+<span class="nf">if </span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="m">10</span><span class="p">){</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">&quot;a is greater than 10!&quot;</span><span class="p">)</span>
+<span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">&quot;a is less than 10!&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;a is less than 10!&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="m">20</span>
+
+<span class="nf">if </span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="m">10</span><span class="p">){</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">&quot;a is greater than 10!&quot;</span><span class="p">)</span>
+<span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">&quot;a is less than 10!&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;a is greater than 10!&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p>How is this helpful in loops? Suppose you want to loop over a bunch of file names and do different things depending on whether the file name starts with <code class="docutils literal notranslate"><span class="pre">data</span></code>, or <code class="docutils literal notranslate"><span class="pre">code</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">files</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;data12.txt&quot;</span><span class="p">,</span> <span class="s">&quot;code38978.R&quot;</span><span class="p">,</span> <span class="s">&quot;data_2021_08_01.dta&quot;</span><span class="p">,</span>
+           <span class="s">&quot;data_123.csv&quot;</span><span class="p">,</span> <span class="s">&quot;code13.R&quot;</span><span class="p">)</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">f</span> <span class="n">in</span> <span class="n">files</span><span class="p">){</span>
+
+    <span class="c1"># substr gets a portion of a character,</span>
+    <span class="c1"># starting at the second argument and</span>
+    <span class="c1"># ending at the third. So this will </span>
+    <span class="c1"># get either &quot;code&quot; or &quot;data&quot;</span>
+    <span class="n">prefix</span> <span class="o">&lt;-</span> <span class="nf">substr</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">4</span><span class="p">)</span>
+
+    <span class="nf">if </span><span class="p">(</span><span class="n">prefix</span> <span class="o">==</span> <span class="s">&quot;data&quot;</span><span class="p">){</span>
+        <span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s">&quot; is data. So I&#39;d do a data thing here.&quot;</span><span class="p">))</span>
+    <span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s">&quot; is code. So I&#39;d do a code thinghere .&quot;</span><span class="p">))</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;data12.txt is data. So I&#39;d do a data thing here.&quot;
+[1] &quot;code38978.R is code. So I&#39;d do a code thinghere .&quot;
+[1] &quot;data_2021_08_01.dta is data. So I&#39;d do a data thing here.&quot;
+[1] &quot;data_123.csv is data. So I&#39;d do a data thing here.&quot;
+[1] &quot;code13.R is code. So I&#39;d do a code thinghere .&quot;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="while-loops">
+<h2>While Loops<a class="headerlink" href="#while-loops" title="Permalink to this headline">¶</a></h2>
+<p>There’s one other kind of loop used in advanced programming I’ll mention here, though you probably won’t use it for some time: a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop. A <code class="docutils literal notranslate"><span class="pre">while</span></code> loop just keeps iterating until some condition is met. They’re useful for things like simulations or numerical optimizers where you want it to keep running till some condition (like convergence) is met. For example, if we wanted to know what $<span class="math notranslate nohighlight">\(\Sigma_{n=1}^{\infty} \frac{1}{2^n}\)</span>$ equaled, we could just keep guessing and checking, or we could ask R to keep adding on new terms until the total stopping moving much.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Our sum:</span>
+<span class="n">sum</span> <span class="o">&lt;-</span> <span class="m">0</span>
+
+<span class="c1"># Our index n</span>
+<span class="n">n</span> <span class="o">&lt;-</span> <span class="m">1</span>
+
+<span class="c1"># How we measure change. Start with big number. </span>
+<span class="n">change</span> <span class="o">&lt;-</span> <span class="m">1</span>
+
+<span class="nf">while </span><span class="p">(</span><span class="n">change</span> <span class="o">&gt;</span> <span class="m">0.00000001</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">old_sum</span> <span class="o">&lt;-</span> <span class="n">sum</span>
+    <span class="n">sum</span> <span class="o">&lt;-</span> <span class="n">sum</span> <span class="o">+</span> <span class="m">1</span> <span class="o">/</span> <span class="p">(</span><span class="m">2</span><span class="o">^</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">change</span> <span class="o">&lt;-</span> <span class="nf">abs</span><span class="p">(</span><span class="n">sum</span> <span class="o">-</span> <span class="n">old_sum</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">&lt;-</span> <span class="n">n</span> <span class="o">+</span> <span class="m">1</span>
+<span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;A sum of &quot;</span><span class="p">,</span> <span class="n">sum</span><span class="p">,</span> <span class="s">&quot; was reached after &quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="s">&quot; iterations&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;A sum of 0.999999992549419 was reached after 28 iterations&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p>So we can clearly see we’re headed to 1.</p>
+<p><strong>WARNING:</strong> Be careful with while loops as they may never stop!</p>
+<p>A problem with while loops is that if you write them wrong, the condition at the top may never be met, and so they’ll just keep running till you force-shutdown your R session.</p>
+</div>
+<div class="section" id="loops-and-the-tidyverse">
+<h2>Loops and the Tidyverse<a class="headerlink" href="#loops-and-the-tidyverse" title="Permalink to this headline">¶</a></h2>
+<p>As you may recall from our discussion of dplyr and the tidyverse, most functions in the tidyverse use a form of nonstandard evaluation within their functions – namely, text appearing within a function is interpreted as data (e.g. the name of a column), not as the name of a variable. As will discuss in the section, that becomes problematic when we start working with loops.</p>
+<p>To illustrate, suppose we have a dataframe with the columns <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">column_to_keep</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">),</span> <span class="n">column_to_keep</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">4</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">))</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 3 × 2</caption>
+<thead>
+	<tr><th scope=col>a</th><th scope=col>column_to_keep</th></tr>
+	<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>1</td><td>4</td></tr>
+	<tr><td>2</td><td>5</td></tr>
+	<tr><td>3</td><td>6</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>Now, suppose we also created a variable called <code class="docutils literal notranslate"><span class="pre">column_to_keep</span></code> and assigned to it the character <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code>. So we now have a column named <code class="docutils literal notranslate"><span class="pre">column_to_keep</span></code>, and a variable named <code class="docutils literal notranslate"><span class="pre">column_to_keep</span></code> that has the value <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code> assigned to it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">column_to_keep</span> <span class="o">&lt;-</span> <span class="s">&quot;a&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>With normal array indexing, it’s not hard to make clear when we’re talking about the variable and when we’re talking about the column name: if you write <code class="docutils literal notranslate"><span class="pre">column_to_keep</span></code> without quotes, you mean the variable; if you write <code class="docutils literal notranslate"><span class="pre">&quot;column_to_keep&quot;</span></code> with quotes, you mean the literal set of characters “column_to_keep”, which correspond to the name of a column. So:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># No quotes -&gt; read as a variable -&gt;</span>
+<span class="c1"># R substitutes the value assigned</span>
+<span class="c1"># to the variable before evaluating,</span>
+<span class="c1"># so this is the same as `df[, &quot;a&quot;]`:</span>
+<span class="n">df</span><span class="p">[,</span> <span class="n">column_to_keep</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>1</li><li>2</li><li>3</li></ol>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># With quotes -&gt; read as a character -&gt;</span>
+<span class="c1"># get column &quot;column_to_keep&quot;</span>
+<span class="n">df</span><span class="p">[,</span> <span class="s">&quot;column_to_keep&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>4</li><li>5</li><li>6</li></ol>
+</div></div>
+</div>
+<p>But this is harder to deal with in tidyverse functions, because when they see text without quotes they assume you <strong>are not</strong> talking about a variable, you’re talking about the actual name of a column:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Attaching package: ‘dplyr’
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following objects are masked from ‘package:stats’:
+
+    filter, lag
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get column &quot;column_to_keep&quot;</span>
+<span class="nf">select</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">column_to_keep</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 3 × 1</caption>
+<thead>
+	<tr><th scope=col>column_to_keep</th></tr>
+	<tr><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>4</td></tr>
+	<tr><td>5</td></tr>
+	<tr><td>6</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>For normal scripting, this can save you from having to type double quotes around column names all the time. But when we write loops, we <em>need</em> to get our tidyverse functions to interpret text as variables, because the whole point of a loop is that we have a variable that’s changing every time we go through the loop.</p>
+<p>For example, if I wanted to loop over the columns of this dataset, with array indexing I could write:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">column_to_keep</span> <span class="n">in</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;column_to_keep&quot;</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">[,</span> <span class="n">column_to_keep</span><span class="p">])</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 1 2 3
+[1] 4 5 6
+</pre></div>
+</div>
+</div>
+</div>
+<p>But… how do I do that if I’m using <code class="docutils literal notranslate"><span class="pre">select</span></code>? If I do what I did here, I’d just get <code class="docutils literal notranslate"><span class="pre">column_to_keep</span></code> twice:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">column_to_keep</span> <span class="n">in</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;column_to_keep&quot;</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="nf">select</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">column_to_keep</span><span class="p">))</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  column_to_keep
+1              4
+2              5
+3              6
+  column_to_keep
+1              4
+2              5
+3              6
+</pre></div>
+</div>
+</div>
+</div>
+<p>To get around this, there are some hacks to make tidyverse work with loops. For example, we can wrap our text in <code class="docutils literal notranslate"><span class="pre">.data[[]]</span></code> if that text refers to a column name to ensure it’s interpreted as a variable and not a literal value. For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">column_to_keep</span> <span class="n">in</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;column_to_keep&quot;</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="nf">select</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">.data</span><span class="p">[[</span><span class="n">column_to_keep</span><span class="p">]]))</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  a
+1 1
+2 2
+3 3
+  column_to_keep
+1              4
+2              5
+3              6
+</pre></div>
+</div>
+</div>
+</div>
+<p>Of course, that trick doesn’t solve all problems from looping over things in the tidyverse… For example, if wanted to do this with <code class="docutils literal notranslate"><span class="pre">mutate</span></code> I couldn’t use <code class="docutils literal notranslate"><span class="pre">.data[[c]]</span></code> for the name of the new column:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">column_to_keep</span> <span class="n">in</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;column_to_keep&quot;</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">.data</span><span class="p">[[</span><span class="n">column_to_keep</span><span class="p">]]</span> <span class="o">=</span> <span class="n">.data</span><span class="p">[[</span><span class="n">column_to_keep</span><span class="p">]]</span><span class="o">/</span> <span class="m">1000</span>
+<span class="p">}</span>
+
+<span class="o">&gt;</span> <span class="n">ERROR</span><span class="o">:</span> <span class="n">Error</span> <span class="n">in</span> <span class="nf">parse</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">srcfile</span> <span class="o">=</span> <span class="n">src</span><span class="p">)</span><span class="o">:</span> <span class="o">&lt;</span><span class="n">text</span><span class="o">&gt;:</span><span class="m">2</span><span class="o">:</span><span class="m">46</span><span class="o">:</span> <span class="n">unexpected</span> <span class="s">&#39;=&#39;</span>
+<span class="o">&gt;</span> <span class="m">1</span><span class="o">:</span> <span class="nf">for </span><span class="p">(</span><span class="n">column_to_keep</span> <span class="n">in</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;column_to_keep&quot;</span><span class="p">))</span> <span class="p">{</span>
+<span class="o">&gt;</span> <span class="m">2</span><span class="o">:</span>     <span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">.data</span><span class="p">[[</span><span class="n">column_to_keep</span><span class="p">]]</span> <span class="o">=</span>
+<span class="o">&gt;</span>                                                 <span class="o">^</span>
+<span class="o">&gt;</span> <span class="n">Error</span> <span class="n">in</span> <span class="nf">parse</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">srcfile</span> <span class="o">=</span> <span class="n">src</span><span class="p">)</span><span class="o">:</span> <span class="o">&lt;</span><span class="n">text</span><span class="o">&gt;:</span><span class="m">2</span><span class="o">:</span><span class="m">46</span><span class="o">:</span> <span class="n">unexpected</span> <span class="s">&#39;=&#39;</span>
+<span class="o">&gt;</span> <span class="m">1</span><span class="o">:</span> <span class="nf">for </span><span class="p">(</span><span class="n">column_to_keep</span> <span class="n">in</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;column_to_keep&quot;</span><span class="p">))</span> <span class="p">{</span>
+<span class="o">&gt;</span> <span class="m">2</span><span class="o">:</span>     <span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">.data</span><span class="p">[[</span><span class="n">column_to_keep</span><span class="p">]]</span> <span class="o">=</span>
+<span class="o">&gt;</span>                                                 <span class="o">^</span>
+<span class="o">&gt;</span> <span class="n">Traceback</span><span class="o">:</span>
+</pre></div>
+</div>
+<p>And this is one of the reasons that it’s good not to become <em>over-reliant</em> on tidyverse libraries – for basic scripting they can be very convenient, but it’s important to be comfortable with traditional tools like array indexing when things break down.</p>
+<p>But we <em>will</em> do some less-contrived looping over tidyverse functions in our exercises, so I wanted a simple example here.</p>
+</div>
+<div class="section" id="don-t-loop-over-your-full-data">
+<h2>Don’t Loop Over Your Full Data<a class="headerlink" href="#don-t-loop-over-your-full-data" title="Permalink to this headline">¶</a></h2>
+<p>Finally, a super super important note about loops:</p>
+<div class="alert alert-warning">
+<p><strong>CAUTION</strong> Do not loop over your dataset rows</p>
+<p>Loops are powerful, but one thing you almost never want to do is loop over the rows of your dataset. The reason is that looping is <strong>much</strong> slower than doing an operation using vector math (a practice called “vectorization”).</p>
+</div><p>To illustrate, suppose I want to add up two vectors, each with 10,000,000 entries, and time the operation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Two random variables:</span>
+<span class="n">v1</span> <span class="o">&lt;-</span> <span class="nf">rnorm</span><span class="p">(</span><span class="m">10000000</span><span class="p">)</span>
+<span class="n">v2</span> <span class="o">&lt;-</span> <span class="nf">rnorm</span><span class="p">(</span><span class="m">10000000</span><span class="p">)</span>
+
+<span class="c1"># add up with vector math:</span>
+
+<span class="c1"># Record the current time</span>
+<span class="n">start</span> <span class="o">&lt;-</span> <span class="nf">proc.time</span><span class="p">()</span>
+
+<span class="c1"># Multiply entries in two vectors</span>
+<span class="n">v1</span> <span class="o">&lt;-</span> <span class="n">v1</span> <span class="o">/</span> <span class="n">v2</span> <span class="o">+</span> <span class="m">20</span>
+
+<span class="c1"># Record current time</span>
+<span class="n">stop</span> <span class="o">&lt;-</span> <span class="nf">proc.time</span><span class="p">()</span>
+
+<span class="c1"># Measure how much time elapsed</span>
+<span class="n">run_time_vector_addition</span> <span class="o">&lt;-</span> <span class="n">stop</span> <span class="o">-</span> <span class="n">start</span>
+<span class="n">run_time_vector_addition</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   user  system elapsed 
+  0.077   0.019   0.095 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note I have to put them in a function to do it because of how</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now add them up in a loop.</span>
+
+<span class="c1"># Record the current time</span>
+<span class="n">start</span> <span class="o">&lt;-</span> <span class="nf">proc.time</span><span class="p">()</span>
+
+<span class="c1"># Multiplying entries in a loop</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">10000000</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">v1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">v1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">v2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="m">20</span>
+<span class="p">}</span>
+
+<span class="c1"># Record current time</span>
+<span class="n">stop</span> <span class="o">&lt;-</span> <span class="nf">proc.time</span><span class="p">()</span>
+
+<span class="c1"># Measure how much time elapsed</span>
+<span class="n">run_time_loop_addition</span> <span class="o">&lt;-</span> <span class="n">stop</span> <span class="o">-</span> <span class="n">start</span>
+<span class="n">run_time_loop_addition</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   user  system elapsed 
+  0.735   0.012   0.748 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Looped took about this many time longer:</span>
+
+<span class="nf">round</span><span class="p">(</span><span class="n">run_time_loop_addition</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">run_time_vector_addition</span><span class="p">[</span><span class="m">1</span><span class="p">],</span> <span class="m">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><strong>user.self:</strong> 9.55</div></div>
+</div>
+<p>So… yeah, &gt;7x slower (the ratio varies over runs depending on things like how many other processes are running on your computer, so the code output may not quite match that text). Don’t do it.</p>
+<p>Of course, in this example, the actual manipulations we’re doing are small enough that in absolute terms both operations are fast enough that it wouldn’t really matter which one you choose, but as you get into more complicated data manipulations, this kind of 10x speed difference (and often the differences are much much larger, on the order of 100x or more) can be the difference between your code running in a couple of seconds and versus a couple of hours (or the difference between running in a couple minutes and taking a couple days).</p>
+<p>(If you want to know why, I have an explanation for the <a class="reference external" href="https://www.practicaldatascience.org/html/performance_understanding.html">same phenomenon in Python here</a>. The examples have Python code, but the principles are the same.)</p>
+<p>So what should you do instead? You always want to write <em>vectorized code</em>, meaning code that operates on vectors as a whole rather than on the entries of a vector one at a time.</p>
+</div>
+<div class="section" id="exercises-for-now">
+<h2>Exercises for Now<a class="headerlink" href="#exercises-for-now" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Use a for loop to take the square root of each value in the following
+vector: <code class="docutils literal notranslate"><span class="pre">vec1</span> <span class="pre">&lt;-</span> <span class="pre">c(4,</span> <span class="pre">9,</span> <span class="pre">81,</span> <span class="pre">100,</span> <span class="pre">1000,</span> <span class="pre">10^6)</span></code>. Save the results to a new
+vector called <code class="docutils literal notranslate"><span class="pre">vec2</span></code>.</p></li>
+<li><p>Monte Carlo Simulation (ambitious exercise): Imagine that the values in the vector <code class="docutils literal notranslate"><span class="pre">pop</span></code> below represent vote shares for a presidential candidate across the 3,144 counties in the United States. If we were to take a sample of 50 counties and estimate mean support for the presidential candidate, would we, on average, estimate the vote share across all counties accurately?</p></li>
+</ol>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># Draw vector of length 3144 with random vectors</span>
+<span class="c1"># containing values uniformally distributed between</span>
+<span class="c1"># 0 and 1. </span>
+<span class="n">pop</span> <span class="o">&lt;-</span> <span class="nf">runif</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="m">3144</span><span class="p">,</span> <span class="n">min</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">max</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(Don’t worry about the fact that we really should be weighing counties by their population size to estimate overall
+support.)</p>
+<p>Draw 10,000 samples of 50 counties from <code class="docutils literal notranslate"><span class="pre">pop</span></code> and estimate mean support for each sample, saving each mean estimate into a vector called <code class="docutils literal notranslate"><span class="pre">smpl_means</span></code>. How does the mean of the sample means compare to the population mean? Do we, on average, do a good job of estimating the population mean?</p>
+</div>
+<div class="section" id="exercises-for-class">
+<h2>Exercises for Class<a class="headerlink" href="#exercises-for-class" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="exercises/exercise_loops.html"><span class="doc std std-doc">Here are some exercises</span></a> we’ll be doing in our synchronous class. If you are enrolled in our synchronous sessions, <strong>please do not</strong> do these before class! If you’re reading these materials on your own or are enrolled in our asynchronous class, feel free to take a look now.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./10_programming"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="missing_data.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Missing Data</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="functions.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Functions</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Josh Clinton and Nick Eubank<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,1048 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manipulating Vectors &#8212; Data Science for Humans</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Intro to Matrices" href="intro_to_matrices.html" />
+    <link rel="prev" title="Intro to Vectors" href="intro_to_vectors.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Data Science for Humans</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../landing_page.html">
+   Welcome to Data Science for Humans
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00_introduction/00_overview.html">
+   Introduction to Data Science for Humans
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00_introduction/10_data_science_in_historical_context.html">
+   What
+   <em>
+    is
+   </em>
+   Data Science: An Historical Perspective
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00_introduction/20_our_approach.html">
+   Solving Problems with Data Science
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Working with Data
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="welcome_to_r.html">
+   We’re gonna learn R!
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_r.html">
+   Intro to R
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_datatypes.html">
+   Intro to Data Types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_vectors.html">
+   Intro to Vectors
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Manipulating Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_matrices.html">
+   Intro to Matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="manipulating_matrices.html">
+   Manipulating Matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_dataframes.html">
+   Intro to Dataframes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="manipulating_dataframes.html">
+   Manipulating Dataframes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_tidyverse.html">
+   dplyr and the Tidyverse
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="defensive_programming.html">
+   Defensive Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_merging.html">
+   Intro to Merging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="defensive_merging.html">
+   Defensive Merging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="missing_data.html">
+   Missing Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="loops.html">
+   Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="functions.html">
+   Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="function_example.html">
+   Function Example
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Types of Questions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../20_questions/00_from_problems_to_questions.html">
+   From Problems to Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../20_questions/10_exploratory_questions.html">
+   Exploratory Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../20_questions/20_passive_prediction_questions.html">
+   Classification Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../20_questions/30_causal_questions.html">
+   Causal Questions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data Science in Practice
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_in_practice/10_ethics.html">
+   Ethics in Data Science
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_in_practice/20_from_data_to_decisions.html">
+   Making Decisions Using Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_in_practice/30_interpretability.html">
+   Interpretable Models
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/10_programming/manipulating_vectors.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/nickeubank/ds4humans"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F10_programming/manipulating_vectors.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/nickeubank/ds4humans/master?urlpath=tree/docs/10_programming/manipulating_vectors.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-subsetting">
+   What is Subsetting?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subsetting-by-index">
+   Subsetting By Index
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subsetting-with-logicals">
+   Subsetting with Logicals
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logical-operations">
+     Logical Operations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subsetting-by-name">
+   Subsetting by Name
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-subsetting-to-modifying-vectors">
+   Using Subsetting to Modifying Vectors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recap">
+   Recap
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises-for-now">
+   Exercises for Now
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises-for-class">
+   Exercises for Class
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Manipulating Vectors</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-subsetting">
+   What is Subsetting?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subsetting-by-index">
+   Subsetting By Index
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subsetting-with-logicals">
+   Subsetting with Logicals
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logical-operations">
+     Logical Operations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subsetting-by-name">
+   Subsetting by Name
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-subsetting-to-modifying-vectors">
+   Using Subsetting to Modifying Vectors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recap">
+   Recap
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises-for-now">
+   Exercises for Now
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises-for-class">
+   Exercises for Class
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="manipulating-vectors">
+<h1>Manipulating Vectors<a class="headerlink" href="#manipulating-vectors" title="Permalink to this headline">¶</a></h1>
+<p>In our last reading, we learned what vectors were, and how to do operations on entire vectors. But often times we want to work with <em>subsets</em> of a vector. Indeed, extracting a subset of elements from a vector is an extremely important task, not least because it generalizes nicely to datasets (which are at the heart of data science). This process — whether applied to a vector or a dataset — is often referred to as “taking a subset”, “subsetting”, or “filtering”. If there is one skill you need to master as quickly as possible, it’s this.</p>
+<p>Subsetting can be accomplished in three ways:</p>
+<ul class="simple">
+<li><p>By index</p></li>
+<li><p>By logical vectors (remember I said logicals would be important? :))</p></li>
+<li><p>By name</p></li>
+</ul>
+<div class="section" id="what-is-subsetting">
+<h2>What is Subsetting?<a class="headerlink" href="#what-is-subsetting" title="Permalink to this headline">¶</a></h2>
+<p>As you’ve probably already realized, vectors don’t just contain a jumble of data – they also have a concept of “order”. When I create a vector with <code class="docutils literal notranslate"><span class="pre">c(42,</span> <span class="pre">47,</span> <span class="pre">-1)</span></code>, I have in mind that 42 is the first entry, 47 is the second, and -1 is the third. And we can use that concept of order to subset vectors by passing the index (order number) of an entry we want to our vector in square brackets. For example, consider the following vector:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">42</span><span class="p">,</span> <span class="m">47</span><span class="p">,</span> <span class="m">-1</span><span class="p">)</span>
+<span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>42</li><li>47</li><li>-1</li></ol>
+</div></div>
+</div>
+<p>If I wanted to pull out the second entry in that vector, I could do so with <em>array indexing</em> using square brackets (<code class="docutils literal notranslate"><span class="pre">[]</span></code>):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="m">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">47</div></div>
+</div>
+<p>And of course, if I wanted to assign that second entry to a new variable, I could!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">new</span> <span class="o">&lt;-</span> <span class="n">a</span><span class="p">[</span><span class="m">2</span><span class="p">]</span>
+<span class="n">new</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">47</div></div>
+</div>
+<p>But what, exactly, is happening when I subset? Let’s return to the idea that a variable is just a box holding some data, and walk-through the following block of code:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">42</span><span class="p">,</span> <span class="m">47</span><span class="p">,</span> <span class="m">-1</span><span class="p">)</span>
+<span class="n">new</span> <span class="o">&lt;-</span> <span class="n">a</span><span class="p">[</span><span class="m">2</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>In the first line of code, we create a new vector with three entries and assign it to the variable <code class="docutils literal notranslate"><span class="pre">a</span></code>. Just as in our previous reading, we can think of the variable <code class="docutils literal notranslate"><span class="pre">a</span></code> as a box that is holding this new vector.</p>
+<p><img alt="vector_subsetting1" src="../_images/vector_subsetting1.png" /></p>
+<p>In the second line, the first thing that happens is R evaluates the expression on the right side of the assignment operator: <code class="docutils literal notranslate"><span class="pre">a[2]</span></code>. The use of <code class="docutils literal notranslate"><span class="pre">a</span></code> and square brackets indicates to R that we’re not trying to access a portion of the data stored in the box labelled <code class="docutils literal notranslate"><span class="pre">a</span></code>. In particular, by putting a <code class="docutils literal notranslate"><span class="pre">2</span></code> between the square brackets, we’re telling R we want the second item in the box <code class="docutils literal notranslate"><span class="pre">a</span></code>: <code class="docutils literal notranslate"><span class="pre">47</span></code>.</p>
+<p><img alt="vector_subsetting2" src="../_images/vector_subsetting2.png" /></p>
+<p>Then when we assign that value – 47 – to <code class="docutils literal notranslate"><span class="pre">new</span></code>, we create a new variable, and insert our data into that box:</p>
+<p><img alt="vector_subsetting3" src="../_images/vector_subsetting3.png" /></p>
+<p>This <code class="docutils literal notranslate"><span class="pre">variable[]</span></code> notation is something we’ll use a <em>lot</em> in R, and it will always mean the same thing: we’re trying to access some data in the data stored in the box <code class="docutils literal notranslate"><span class="pre">variable</span></code>.</p>
+</div>
+<div class="section" id="subsetting-by-index">
+<h2>Subsetting By Index<a class="headerlink" href="#subsetting-by-index" title="Permalink to this headline">¶</a></h2>
+<p>What we just did is an example of subsetting by index, where we just specify the location (index) of the data we want:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">42</span><span class="p">,</span> <span class="m">47</span><span class="p">,</span> <span class="m">-1</span><span class="p">)</span>
+<span class="n">a</span><span class="p">[</span><span class="m">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">47</div></div>
+</div>
+<p>But of course, because everything in R is a vector, if I can pass a single index, then I can pass any other numeric vector of indices, either directly:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">3</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>42</li><li>-1</li></ol>
+</div></div>
+</div>
+<p>Or as a variable:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">subset</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+<span class="n">a</span><span class="p">[</span><span class="n">subset</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>42</li><li>-1</li></ol>
+</div></div>
+</div>
+<p>Also, you don’t have to subset entries in order! If you pass indices out of order, you’ll get a vector with a new order!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">1</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>-1</li><li>42</li></ol>
+</div></div>
+</div>
+<p>Again, this is all working the same was as our example with just one entry – R interprets the square brackets as a request for some data in the box <code class="docutils literal notranslate"><span class="pre">a</span></code>, and if we pass multiple indices, it just grabs multiple items from that box.</p>
+</div>
+<div class="section" id="subsetting-with-logicals">
+<h2>Subsetting with Logicals<a class="headerlink" href="#subsetting-with-logicals" title="Permalink to this headline">¶</a></h2>
+<p>Subsetting with logicals is a little hard to explain, so instead let’s jump right into an example.</p>
+<p>Suppose we have a character vector with only two elements (“apple” and “banana”). Subsetting it to “apple” could be done by passing a logical vector as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fruits</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;apple&quot;</span><span class="p">,</span> <span class="s">&quot;banana&quot;</span><span class="p">)</span>
+<span class="n">fruits</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">,</span> <span class="kc">FALSE</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">'apple'</div></div>
+</div>
+<p>Within these brackets is a vector with the same number of logical elements as there are elements in the vector you want to subset. Elements across the two vectors are matched by order: elements that match with <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> are kept while elements that match with <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> are dropped.</p>
+<p>Visualized with the same tools we used before, we can draw out what’s happening in this block of code:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">42</span><span class="p">,</span> <span class="m">47</span><span class="p">,</span> <span class="m">-1</span><span class="p">)</span>
+<span class="n">my_subset</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">,</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">&lt;-</span> <span class="n">a</span><span class="p">[</span><span class="n">my_subset</span><span class="p">]</span>
+<span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>42</li><li>-1</li></ol>
+</div></div>
+</div>
+<p>First we create <code class="docutils literal notranslate"><span class="pre">a</span></code>:
+<img alt="logical_subset_1" src="../_images/logical_subset_1.png" /></p>
+<p>Then we create <code class="docutils literal notranslate"><span class="pre">my_subset</span></code>:</p>
+<p><img alt="logical_subset_2" src="../_images/logical_subset_2.png" /></p>
+<p>Then the magic: R lines up the entries in the data in the box labelled <code class="docutils literal notranslate"><span class="pre">a</span></code> and the data in the box labelled <code class="docutils literal notranslate"><span class="pre">my_subset</span></code>, and keeps any entries from <code class="docutils literal notranslate"><span class="pre">a</span></code> that line up with values of <code class="docutils literal notranslate"><span class="pre">my_subset</span></code> that are <code class="docutils literal notranslate"><span class="pre">TRUE</span></code>.</p>
+<p>Then it assigns the values in <code class="docutils literal notranslate"><span class="pre">a</span></code> that line up with <code class="docutils literal notranslate"><span class="pre">TRUE</span></code>s in <code class="docutils literal notranslate"><span class="pre">my_subset</span></code> to a new variable <code class="docutils literal notranslate"><span class="pre">b</span></code>:</p>
+<p><img alt="logical_subset_3" src="../_images/logical_subset_3.png" /></p>
+<div class="section" id="logical-operations">
+<h3>Logical Operations<a class="headerlink" href="#logical-operations" title="Permalink to this headline">¶</a></h3>
+<p>This process is extremely useful when combined with a <em>logical operation</em> to combine multiple conditions. For example, you can use:</p>
+<ul class="simple">
+<li><p>the logical “and” (written <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> in R) to say “only be true if both conditions are true”,</p></li>
+<li><p>the logical “or” (written <code class="docutils literal notranslate"><span class="pre">|</span></code>) to say “be true if at least one of these conditions is true”,</p></li>
+<li><p>the logical “equals” (written <code class="docutils literal notranslate"><span class="pre">==</span></code>) to say “be true if values are equal”,</p></li>
+<li><p>the logical “not equals (written <code class="docutils literal notranslate"><span class="pre">!=</span></code>) to say “be true if values are not equal”, or</p></li>
+<li><p>the logical “not” (written <code class="docutils literal notranslate"><span class="pre">!</span></code>) to say “make everything the opposite of what it is now”.</p></li>
+</ul>
+<p>For example, using a logical operation we can filter a large vector of oranges, apples and bananas:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a vector with 30 fruits </span>
+<span class="n">fruits</span> <span class="o">&lt;-</span> <span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;orange&quot;</span><span class="p">,</span> <span class="s">&quot;apple&quot;</span><span class="p">,</span> <span class="s">&quot;banana&quot;</span><span class="p">),</span> <span class="m">10</span><span class="p">)</span>
+<span class="n">fruits</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>'orange'</li><li>'apple'</li><li>'banana'</li><li>'orange'</li><li>'apple'</li><li>'banana'</li><li>'orange'</li><li>'apple'</li><li>'banana'</li><li>'orange'</li><li>'apple'</li><li>'banana'</li><li>'orange'</li><li>'apple'</li><li>'banana'</li><li>'orange'</li><li>'apple'</li><li>'banana'</li><li>'orange'</li><li>'apple'</li><li>'banana'</li><li>'orange'</li><li>'apple'</li><li>'banana'</li><li>'orange'</li><li>'apple'</li><li>'banana'</li><li>'orange'</li><li>'apple'</li><li>'banana'</li></ol>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a logical vector for dropping bananas</span>
+
+<span class="n">orange_or_apple</span> <span class="o">&lt;-</span> <span class="n">fruits</span> <span class="o">==</span> <span class="s">&quot;orange&quot;</span> <span class="o">|</span> <span class="n">fruits</span> <span class="o">==</span> <span class="s">&quot;apple&quot;</span> <span class="c1"># TRUE if orange OR apple</span>
+<span class="n">not_banana</span> <span class="o">&lt;-</span> <span class="n">fruits</span> <span class="o">!=</span> <span class="s">&quot;banana&quot;</span>                            <span class="c1"># TRUE if not equal</span>
+<span class="n">not_banana2</span> <span class="o">&lt;-</span> <span class="o">!</span><span class="p">(</span><span class="n">fruits</span> <span class="o">==</span> <span class="s">&quot;banana&quot;</span><span class="p">)</span>                        <span class="c1"># Also TRUE if not equal</span>
+
+<span class="c1"># Carry out the subset</span>
+<span class="n">fruits</span><span class="p">[</span><span class="n">orange_or_apple</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li></ol>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fruits</span><span class="p">[</span><span class="n">not_banana</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li></ol>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fruits</span><span class="p">[</span><span class="n">not_banana2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li></ol>
+</div></div>
+</div>
+<p>We applied the same logic as above: We have a vector (<code class="docutils literal notranslate"><span class="pre">fruits</span></code>) that
+we want to subset. We do so using a logical vector (<code class="docutils literal notranslate"><span class="pre">orange_or_apple</span></code>, <code class="docutils literal notranslate"><span class="pre">not_banana</span></code>, and <code class="docutils literal notranslate"><span class="pre">orange_or_apple2</span></code>), where elements that match with <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> are kept. The only difference here is that we create the logical vector with a logical operation. The logical operators (e.g., <code class="docutils literal notranslate"><span class="pre">!=</span></code>, <code class="docutils literal notranslate"><span class="pre">|</span></code>) used here are discussed in the link above.</p>
+<p>In addition, we can also use the <code class="docutils literal notranslate"><span class="pre">%in%</span></code> operator as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">orange_or_apple2</span> <span class="o">&lt;-</span> <span class="n">fruits</span> <span class="o">%in%</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;orange&quot;</span><span class="p">,</span> <span class="s">&quot;apple&quot;</span><span class="p">)</span>
+<span class="n">fruits</span><span class="p">[</span><span class="n">orange_or_apple2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li><li>'orange'</li><li>'apple'</li></ol>
+</div></div>
+</div>
+<div class="general-note">
+<p><strong> General note about <code class="docutils literal notranslate"><span class="pre">%in%</span></code>: </strong> This operator is
+extremely useful as an alternative for repeated “or” (<code class="docutils literal notranslate"><span class="pre">|</span></code>) statements. For example, say you have a vector with 10 types of fruits and you want to keep elements that are equal to “orange”, “apple”, “mango”,
+“mandarin”, or “kiwi”. You could accomplish this by creating a logical vector like so: <code class="docutils literal notranslate"><span class="pre">lv</span> <span class="pre">&lt;-</span> <span class="pre">fruits</span> <span class="pre">==</span> <span class="pre">&quot;orange&quot;</span> <span class="pre">|</span> <span class="pre">fruits</span> <span class="pre">==</span> <span class="pre">&quot;apple&quot;</span> <span class="pre">|</span> <span class="pre">fruits</span> <span class="pre">==</span> <span class="pre">&quot;mango&quot;</span> <span class="pre">|</span> <span class="pre">fruits</span> <span class="pre">==</span> <span class="pre">&quot;mandarin&quot;</span> <span class="pre">|</span> <span class="pre">fruits</span> <span class="pre">==</span> <span class="pre">&quot;kiwi&quot;</span></code>.</p>
+<p><br> What a nighmarishly long statement compared to the <code class="docutils literal notranslate"><span class="pre">%in%</span></code> option that accomplishes the exact same thing: <code class="docutils literal notranslate"><span class="pre">lv</span> <span class="pre">&lt;-</span> <span class="pre">fruits</span> <span class="pre">%in%</span> <span class="pre">c(&quot;orange&quot;,</span> <span class="pre">&quot;apple&quot;,</span> <span class="pre">&quot;mango&quot;,</span> <span class="pre">&quot;mandarin&quot;,</span> <span class="pre">&quot;kiwi&quot;)</span></code>.</p>
+</div><p>Of course, subsetting using logicals can also be done on numeric vectors.</p>
+<p>Here are a few examples:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a numeric vector</span>
+<span class="n">numbers</span> <span class="o">&lt;-</span> <span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">100</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="m">10</span><span class="p">)</span>
+<span class="n">numbers</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>0</li><li>10</li><li>20</li><li>30</li><li>40</li><li>50</li><li>60</li><li>70</li><li>80</li><li>90</li><li>100</li></ol>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Illustrate three different filters</span>
+<span class="n">numbers</span><span class="p">[</span><span class="n">numbers</span> <span class="o">&lt;=</span> <span class="m">50</span> <span class="o">&amp;</span> <span class="n">numbers</span> <span class="o">!=</span> <span class="m">30</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>0</li><li>10</li><li>20</li><li>40</li><li>50</li></ol>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span><span class="p">[</span><span class="n">numbers</span> <span class="o">==</span> <span class="m">0</span> <span class="o">|</span> <span class="n">numbers</span> <span class="o">==</span> <span class="m">100</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>0</li><li>100</li></ol>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span><span class="p">[</span><span class="n">numbers</span> <span class="o">&gt;</span> <span class="m">100</span><span class="p">]</span> <span class="c1">#returns an empty vector</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="subsetting-by-name">
+<h2>Subsetting by Name<a class="headerlink" href="#subsetting-by-name" title="Permalink to this headline">¶</a></h2>
+<p>In R, it’s also possible to assign names to entries in a vector, then use those names to subset entries. To illustrate, let me tell you about the zoo I wished I owned. It’s a small zoo, but a happy one, and here was our imagined attendance last week:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Day of Week</p></th>
+<th class="head"><p>Attendees</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Monday</p></td>
+<td><p>132 people</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tuesday</p></td>
+<td><p>94 people</p></td>
+</tr>
+<tr class="row-even"><td><p>Wednesday</p></td>
+<td><p>112 people</p></td>
+</tr>
+<tr class="row-odd"><td><p>Thursday</p></td>
+<td><p>84 people</p></td>
+</tr>
+<tr class="row-even"><td><p>Friday</p></td>
+<td><p>254 people</p></td>
+</tr>
+<tr class="row-odd"><td><p>Saturday</p></td>
+<td><p>322 people</p></td>
+</tr>
+<tr class="row-even"><td><p>Sunday</p></td>
+<td><p>472 people</p></td>
+</tr>
+</tbody>
+</table>
+<p>I can now represent this as a vector by putting attendance in the vector, and then labeling entries by the day of the week:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">attendance</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">132</span><span class="p">,</span> <span class="m">94</span><span class="p">,</span> <span class="m">112</span><span class="p">,</span> <span class="m">84</span><span class="p">,</span> <span class="m">254</span><span class="p">,</span> <span class="m">322</span><span class="p">,</span> <span class="m">472</span><span class="p">)</span>
+<span class="n">attendance</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>132</li><li>94</li><li>112</li><li>84</li><li>254</li><li>322</li><li>472</li></ol>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">names</span><span class="p">(</span><span class="n">attendance</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Monday&quot;</span><span class="p">,</span> <span class="s">&quot;Tuesday&quot;</span><span class="p">,</span> <span class="s">&quot;Wednesday&quot;</span><span class="p">,</span> <span class="s">&quot;Thursday&quot;</span><span class="p">,</span> <span class="s">&quot;Friday&quot;</span><span class="p">,</span> <span class="s">&quot;Saturday&quot;</span><span class="p">,</span> <span class="s">&quot;Sunday&quot;</span><span class="p">)</span>
+<span class="n">attendance</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.dl-inline {width: auto; margin:0; padding: 0}
+.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
+.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
+.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
+</style><dl class=dl-inline><dt>Monday</dt><dd>132</dd><dt>Tuesday</dt><dd>94</dd><dt>Wednesday</dt><dd>112</dd><dt>Thursday</dt><dd>84</dd><dt>Friday</dt><dd>254</dd><dt>Saturday</dt><dd>322</dd><dt>Sunday</dt><dd>472</dd></dl>
+</div></div>
+</div>
+<p>Now if I wanted to just get attendance from the weekend I could subset with a vector of names:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">attendance</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Saturday&quot;</span><span class="p">,</span> <span class="s">&quot;Sunday&quot;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.dl-inline {width: auto; margin:0; padding: 0}
+.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
+.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
+.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
+</style><dl class=dl-inline><dt>Saturday</dt><dd>322</dd><dt>Sunday</dt><dd>472</dd></dl>
+</div></div>
+</div>
+</div>
+<div class="section" id="using-subsetting-to-modifying-vectors">
+<h2>Using Subsetting to Modifying Vectors<a class="headerlink" href="#using-subsetting-to-modifying-vectors" title="Permalink to this headline">¶</a></h2>
+<p>The subsetting logic from above isn’t just for extracting subsets of vectors to analyze – it’s also useful for modifying vectors. The idea here is that instead of keeping elements that meet a logical condition or occur at a specific index, we can change them. For example, what if we had mis-entered grandpa’s age above? We can fix it using indexing, a logical statement, or naming.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Recreate vector with age values</span>
+<span class="n">age</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">50</span><span class="p">,</span> <span class="m">55</span><span class="p">,</span> <span class="m">80</span><span class="p">)</span>
+
+<span class="c1"># Three ways of changing grandpa&#39;s age</span>
+<span class="c1"># Note: you&#39;d only need to use one of these</span>
+<span class="n">age</span><span class="p">[</span><span class="n">age</span> <span class="o">==</span> <span class="m">80</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="m">82</span> <span class="c1"># using a logical statement</span>
+<span class="n">age</span><span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="m">45</span>         <span class="c1"># using indexing</span>
+<span class="n">age</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>50</li><li>45</li><li>82</li></ol>
+</div></div>
+</div>
+<p>A logical statement is most efficient when we need to change a lot
+of elements.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fruits</span> <span class="o">&lt;-</span> <span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;orange&quot;</span><span class="p">,</span> <span class="s">&quot;apple&quot;</span><span class="p">,</span> <span class="s">&quot;bamama&quot;</span><span class="p">),</span> <span class="m">5</span><span class="p">)</span> 
+<span class="n">fruits</span> <span class="c1">#bamamas anyone? </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>'orange'</li><li>'apple'</li><li>'bamama'</li><li>'orange'</li><li>'apple'</li><li>'bamama'</li><li>'orange'</li><li>'apple'</li><li>'bamama'</li><li>'orange'</li><li>'apple'</li><li>'bamama'</li><li>'orange'</li><li>'apple'</li><li>'bamama'</li></ol>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s fix the misspelled element</span>
+<span class="n">fruits</span><span class="p">[</span><span class="n">fruits</span> <span class="o">==</span> <span class="s">&quot;bamama&quot;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&quot;banana&quot;</span>
+<span class="n">fruits</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>'orange'</li><li>'apple'</li><li>'banana'</li><li>'orange'</li><li>'apple'</li><li>'banana'</li><li>'orange'</li><li>'apple'</li><li>'banana'</li><li>'orange'</li><li>'apple'</li><li>'banana'</li><li>'orange'</li><li>'apple'</li><li>'banana'</li></ol>
+</div></div>
+</div>
+</div>
+<div class="section" id="recap">
+<h2>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Vectors can be subset by index, with a logical, or by name</p></li>
+<li><p>Subsetting with logicals allows you to extract subsets based on the values of vector elements.</p></li>
+<li><p>Assigning values to subsets modifies subsets of vectors.</p></li>
+</ul>
+</div>
+<div class="section" id="exercises-for-now">
+<h2>Exercises for Now<a class="headerlink" href="#exercises-for-now" title="Permalink to this headline">¶</a></h2>
+<p>Want to practice these skills? Head on over to <a class="reference internal" href="exercises/exercise_vectors_now.html"><span class="doc std std-doc">this site</span></a> to find some exercises you can do right now!</p>
+</div>
+<div class="section" id="exercises-for-class">
+<h2>Exercises for Class<a class="headerlink" href="#exercises-for-class" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="exercises/exercise_vectors.html"><span class="doc std std-doc">Here are some exercises</span></a> we’ll be doing in our synchronous class. If you are enrolled in our synchronous sessions, <strong>please do not</strong> do these before class! If you’re reading these materials on your own or are enrolled in our asynchronous class, feel free to take a look now.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./10_programming"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="intro_to_vectors.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Intro to Vectors</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="intro_to_matrices.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Intro to Matrices</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Josh Clinton and Nick Eubank<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

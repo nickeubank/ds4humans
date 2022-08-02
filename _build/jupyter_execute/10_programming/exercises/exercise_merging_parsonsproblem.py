@@ -1,0 +1,28 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# # Economic Inequality Parson's Problem 
+# 
+# 
+# Today we will be borrowing an exercise from [Simon Ejdemyr](https://sejdemyr.github.io/), a former classmate of mine and the author of the set of R tutorials that inspired this page.
+# 
+# ## Our Goal
+# 
+# A prominent economic theory predicts that higher income inequality should be associated with more redistribution from the rich to the poor (Meltzer and Richard 1981). Let’s create a dataset that will allow us to test this prediction using U.S. state-level data. Our goal is to look at the correlation between income inequality and state taxes per capita (i.e. the amount of taxes each state collects from each resident on average). I am happy if we just look at this for one year (say 2010).
+# 
+# ## Our Data
+# 
+# We have four datasets:
+# 
+# - State-level measure of inequality (Gini coefficient, and Share of Income Going to Top 1% and 10%s).
+# - Total state taxes and total state income taxes.
+# - State populations.
+# - A dataset that has state names (written out) and state codes (called FIPS codes).
+# 
+# ## Parson's Problem
+# 
+# Our approach to analyzing this data will be a little different from past exercises -- instead of having you write all the code, I'm going to *give* you all the code we need. The catch? It's all out of order. 
+# 
+# Your job will be to take the jumbled code I give you and put it the correct order to accomplish all the steps required to analyze this data laid out in an outline script. 
+# 
+# You can find [all the code you'll need here](https://github.com/nickeubank/computational_methods_boot_camp/blob/main/source/exercises/MergingAndAnalyzing_Inequality_Code.R), and [your project outline here](https://github.com/nickeubank/computational_methods_boot_camp/blob/main/source/exercises/MergingAndAnalyzing_Inequality_Outline.R). (You will probably want to click `Raw` and "Save Page As..." to save these to your computer as .R files.) Open both in RStudio to get started. 

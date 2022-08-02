@@ -1,0 +1,900 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intro to Vectors &#8212; Data Science for Humans</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Manipulating Vectors" href="manipulating_vectors.html" />
+    <link rel="prev" title="Intro to Data Types" href="intro_to_datatypes.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Data Science for Humans</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../landing_page.html">
+   Welcome to Data Science for Humans
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00_introduction/00_overview.html">
+   Introduction to Data Science for Humans
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00_introduction/10_data_science_in_historical_context.html">
+   What
+   <em>
+    is
+   </em>
+   Data Science: An Historical Perspective
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00_introduction/20_our_approach.html">
+   Solving Problems with Data Science
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Working with Data
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="welcome_to_r.html">
+   We’re gonna learn R!
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_r.html">
+   Intro to R
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_datatypes.html">
+   Intro to Data Types
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Intro to Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="manipulating_vectors.html">
+   Manipulating Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_matrices.html">
+   Intro to Matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="manipulating_matrices.html">
+   Manipulating Matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_dataframes.html">
+   Intro to Dataframes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="manipulating_dataframes.html">
+   Manipulating Dataframes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_tidyverse.html">
+   dplyr and the Tidyverse
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="defensive_programming.html">
+   Defensive Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_merging.html">
+   Intro to Merging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="defensive_merging.html">
+   Defensive Merging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="missing_data.html">
+   Missing Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="loops.html">
+   Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="functions.html">
+   Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="function_example.html">
+   Function Example
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Types of Questions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../20_questions/00_from_problems_to_questions.html">
+   From Problems to Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../20_questions/10_exploratory_questions.html">
+   Exploratory Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../20_questions/20_passive_prediction_questions.html">
+   Classification Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../20_questions/30_causal_questions.html">
+   Causal Questions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data Science in Practice
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_in_practice/10_ethics.html">
+   Ethics in Data Science
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_in_practice/20_from_data_to_decisions.html">
+   Making Decisions Using Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_in_practice/30_interpretability.html">
+   Interpretable Models
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/10_programming/intro_to_vectors.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/nickeubank/ds4humans"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F10_programming/intro_to_vectors.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/nickeubank/ds4humans/master?urlpath=tree/docs/10_programming/intro_to_vectors.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-do-we-need-vectors">
+   Why Do We Need Vectors?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-vectors">
+   Creating vectors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vector-math">
+   Vector Math
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summarizing-vectors">
+   Summarizing vectors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#type-promotion">
+   Type Promotion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recap">
+   Recap
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-steps">
+   Next Steps
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Intro to Vectors</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-do-we-need-vectors">
+   Why Do We Need Vectors?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-vectors">
+   Creating vectors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vector-math">
+   Vector Math
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summarizing-vectors">
+   Summarizing vectors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#type-promotion">
+   Type Promotion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recap">
+   Recap
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-steps">
+   Next Steps
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="intro-to-vectors">
+<h1>Intro to Vectors<a class="headerlink" href="#intro-to-vectors" title="Permalink to this headline">¶</a></h1>
+<p>Now that we have a solid grasp on how R actually interprets code, how to assign values to variables, and some of the main types of data in R, we can now turn to the fundamental building block of R: vectors.</p>
+<p>In this reading, we’ll learn about how we can use vectors to manage data about things like age, height, eye color, GDP per capita, and war initiation. By the end of this tutorial, you’ll know how to create vectors, how to subset them, how to modify them, and how to summarize them.</p>
+<div class="section" id="why-do-we-need-vectors">
+<h2>Why Do We Need Vectors?<a class="headerlink" href="#why-do-we-need-vectors" title="Permalink to this headline">¶</a></h2>
+<p>It is rarely the case in science that we work with singular values (e.g. the number <code class="docutils literal notranslate"><span class="pre">7</span></code>, or a person’s name <code class="docutils literal notranslate"><span class="pre">&quot;Jill&quot;</span></code>). Most of the time, we’re working with lots of similar observations from different entities, such as the ages of everyone who responded to a survey, or the GDP of all the countries in the world.</p>
+<p>To accommodate this need, one of the objects you’ll use most in R is a vector. A vector is a <strong>collection</strong> of values, all of the same data type (e.g. we might have a <code class="docutils literal notranslate"><span class="pre">numeric</span></code> vector full of the ages of all survey respondents, or a <code class="docutils literal notranslate"><span class="pre">character</span></code> vector full of the names of countries).</p>
+<p>In fact… OK, it’s time to come clean: you’ve been working with vectors this whole time! Vectors are <em>so</em> fundamental to R that <strong>all data in R is stored as vectors.</strong> Even something simple like the number 7, in R, is actually stored as a numeric vector of length 1:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="m">7</span>
+<span class="nf">length</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">1</div></div>
+</div>
+</div>
+<div class="section" id="creating-vectors">
+<h2>Creating vectors<a class="headerlink" href="#creating-vectors" title="Permalink to this headline">¶</a></h2>
+<p>In our previous exercises, you learned how to create single-entry vectors using the assignment operator (e.g. <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;-</span> <span class="pre">6</span></code>).</p>
+<p>But usually we want vectors with more than one entry (otherwise, why have vectors?). There are a number of ways to create vectors in R, but the most fundamental is by using the <code class="docutils literal notranslate"><span class="pre">c()</span></code> function to concatenate data into a vector:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Numeric vectors </span>
+<span class="n">a_numeric_vector</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">20</span><span class="p">,</span> <span class="m">25</span><span class="p">,</span> <span class="m">60</span><span class="p">,</span> <span class="m">55</span><span class="p">)</span>
+<span class="n">a_numeric_vector</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>20</li><li>25</li><li>60</li><li>55</li></ol>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Character vectors</span>
+<span class="n">a_character_vector</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Red&quot;</span><span class="p">,</span> <span class="s">&quot;Green&quot;</span><span class="p">,</span> <span class="s">&quot;Purple&quot;</span><span class="p">)</span>
+<span class="n">a_character_vector</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>'Red'</li><li>'Green'</li><li>'Purple'</li></ol>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Logical vectors</span>
+<span class="n">a_logical_vector</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">,</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="kc">TRUE</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">c()</span></code> doesn’t just work with values you write by hand, though – you can also use <code class="docutils literal notranslate"><span class="pre">c()</span></code> with variables to combine longer vectors:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">4</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li></ol>
+</div></div>
+</div>
+<p>There are also a lot of other convenience functions for creating commonly used vectors. For example, it’s very common to want to get a vector of sequential numbers, so if you type <code class="docutils literal notranslate"><span class="pre">1:20</span></code> you get a vector of all of the counting numbers from 1 to 20:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">1</span><span class="o">:</span><span class="m">20</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li><li>11</li><li>12</li><li>13</li><li>14</li><li>15</li><li>16</li><li>17</li><li>18</li><li>19</li><li>20</li></ol>
+</div></div>
+</div>
+<p>And if you want a more unusual sequence, you can use <code class="docutils literal notranslate"><span class="pre">seq()</span></code>, which takes a starting point, and ending point, and a step size to create any sequence you may want. Here’s all the even numbers from 2 to 20:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">seq</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">20</span><span class="p">,</span> <span class="m">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>2</li><li>4</li><li>6</li><li>8</li><li>10</li><li>12</li><li>14</li><li>16</li><li>18</li><li>20</li></ol>
+</div></div>
+</div>
+<p>(This is the first time we’ve seen a function in practice that takes multiple <strong>arguments</strong>. Recall they’re just like the functions that only take one argument, just with different arguments separate by commas).</p>
+<p>And if you want a vector of length <code class="docutils literal notranslate"><span class="pre">N</span></code> with the same value repeated over and over, you can use <code class="docutils literal notranslate"><span class="pre">rep()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a vector with the value 42</span>
+<span class="c1"># repeated 10 times.</span>
+
+<span class="nf">rep</span><span class="p">(</span><span class="m">42</span><span class="p">,</span> <span class="m">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>42</li><li>42</li><li>42</li><li>42</li><li>42</li><li>42</li><li>42</li><li>42</li><li>42</li><li>42</li></ol>
+</div></div>
+</div>
+</div>
+<div class="section" id="vector-math">
+<h2>Vector Math<a class="headerlink" href="#vector-math" title="Permalink to this headline">¶</a></h2>
+<p>One of the great things about vectors is that we can do all sorts of mathematical operations to vectors efficiently.</p>
+<p>If you do math with two vectors, one of which has length one, you basically just get the operation applied to every entry.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here&#39;s what we&#39;ll start with</span>
+<span class="n">numbers</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span>
+<span class="n">numbers</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li></ol>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># You can modify all values in a vector </span>
+<span class="c1"># by doing math with a vector of length 1</span>
+<span class="n">numbers</span> <span class="o">/</span> <span class="m">10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>0.1</li><li>0.2</li><li>0.3</li><li>0.4</li><li>0.5</li><li>0.6</li><li>0.7</li><li>0.8</li><li>0.9</li><li>1</li></ol>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">+</span> <span class="m">10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>11</li><li>12</li><li>13</li><li>14</li><li>15</li><li>16</li><li>17</li><li>18</li><li>19</li><li>20</li></ol>
+</div></div>
+</div>
+<p>The same thing happens with mathematical functions – the function gets applied to each entry:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Modify a vector using a function</span>
+<span class="nf">sqrt</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="c1">#square root</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>1</li><li>1.4142135623731</li><li>1.73205080756888</li><li>2</li><li>2.23606797749979</li><li>2.44948974278318</li><li>2.64575131106459</li><li>2.82842712474619</li><li>3</li><li>3.16227766016838</li></ol>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">exp</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="c1">#exponentiate</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>2.71828182845905</li><li>7.38905609893065</li><li>20.0855369231877</li><li>54.5981500331442</li><li>148.413159102577</li><li>403.428793492735</li><li>1096.63315842846</li><li>2980.95798704173</li><li>8103.08392757538</li><li>22026.4657948067</li></ol>
+</div></div>
+</div>
+<p>If you have two vectors of the same length, mathematical operations will occur “element-wise”, meaning the mathematical operation will be applied to the two 1st entries, then the two 2nd entries, then the two 3rd entries, etc. For example, if we were to add our vector of the values 1 through 10 to a vector with five 0s, then five 1s, R would do the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span>    <span class="o">+</span>     <span class="mi">0</span>    <span class="o">=</span>    <span class="mi">1</span>  <span class="o">+</span>  <span class="mi">0</span>    <span class="o">=</span>    <span class="mi">1</span> 
+<span class="mi">2</span>    <span class="o">+</span>     <span class="mi">0</span>    <span class="o">=</span>    <span class="mi">2</span>  <span class="o">+</span>  <span class="mi">0</span>    <span class="o">=</span>    <span class="mi">2</span> 
+<span class="mi">3</span>    <span class="o">+</span>     <span class="mi">0</span>    <span class="o">=</span>    <span class="mi">3</span>  <span class="o">+</span>  <span class="mi">0</span>    <span class="o">=</span>    <span class="mi">3</span> 
+<span class="mi">4</span>    <span class="o">+</span>     <span class="mi">0</span>    <span class="o">=</span>    <span class="mi">4</span>  <span class="o">+</span>  <span class="mi">0</span>    <span class="o">=</span>    <span class="mi">4</span> 
+<span class="mi">5</span>    <span class="o">+</span>     <span class="mi">0</span>    <span class="o">=</span>    <span class="mi">5</span>  <span class="o">+</span>  <span class="mi">0</span>    <span class="o">=</span>    <span class="mi">5</span> 
+<span class="mi">6</span>    <span class="o">+</span>     <span class="mi">1</span>    <span class="o">=</span>    <span class="mi">6</span>  <span class="o">+</span>  <span class="mi">1</span>    <span class="o">=</span>    <span class="mi">7</span> 
+<span class="mi">7</span>    <span class="o">+</span>     <span class="mi">1</span>    <span class="o">=</span>    <span class="mi">7</span>  <span class="o">+</span>  <span class="mi">1</span>    <span class="o">=</span>    <span class="mi">8</span> 
+<span class="mi">8</span>    <span class="o">+</span>     <span class="mi">1</span>    <span class="o">=</span>    <span class="mi">8</span>  <span class="o">+</span>  <span class="mi">1</span>    <span class="o">=</span>    <span class="mi">9</span> 
+<span class="mi">9</span>    <span class="o">+</span>     <span class="mi">1</span>    <span class="o">=</span>    <span class="mi">9</span>  <span class="o">+</span>  <span class="mi">1</span>    <span class="o">=</span>    <span class="mi">10</span> 
+<span class="mi">10</span>   <span class="o">+</span>     <span class="mi">1</span>    <span class="o">=</span>    <span class="mi">10</span> <span class="o">+</span>  <span class="mi">1</span>    <span class="o">=</span>    <span class="mi">11</span>
+</pre></div>
+</div>
+<p>(Obviously, R likes to print out vectors sideways, but personally I think of them as column vectors, so have written them out like that here).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Two vectors with the same number of elements </span>
+<span class="n">numbers2</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
+<span class="n">numbers3</span> <span class="o">&lt;-</span> <span class="n">numbers2</span> <span class="o">+</span> <span class="n">numbers</span>
+<span class="n">numbers3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>7</li><li>8</li><li>9</li><li>10</li><li>11</li></ol>
+</div></div>
+</div>
+<p>Vector arithmetics can also be carried out in R on two multi-value vectors with different lengths using the <a class="reference external" href="http://www.r-tutor.com/r-introduction/vector/vector-arithmetics">recycling rule</a>, but… that’s a thing you probably don’t want to do anyway. That’s a <em>weird</em> behavior! :)</p>
+<p>I’d stick to interacting your vector with either a length-1 vector, or with another vector of the same length to avoid confusion.</p>
+</div>
+<div class="section" id="summarizing-vectors">
+<h2>Summarizing vectors<a class="headerlink" href="#summarizing-vectors" title="Permalink to this headline">¶</a></h2>
+<p>We often want to get summary statistics from a vector — that is,
+learn something general about it by looking beyond its constituent
+elements. If we have a vector in which each element represents a
+person’s height, for example, we may want to know who the shortest or tallest
+person is, what the median or mean height is, what the standard deviation is.</p>
+<p>So for example, we can use <code class="docutils literal notranslate"><span class="pre">summary(numbers)</span></code> to get a lot of summary stats at once:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   1.00    3.25    5.50    5.50    7.75   10.00 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Or we can use any one of a handful of other helper functions!</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">class</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="c1">#check the class</span>
+<span class="nf">length</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="c1">#number of elements </span>
+<span class="nf">max</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="c1">#maximum value</span>
+<span class="nf">min</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="c1">#minimum value</span>
+<span class="nf">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="c1">#sum of all values in the vector</span>
+<span class="nf">mean</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="c1">#mean</span>
+<span class="nf">median</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="c1">#median</span>
+<span class="nf">var</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="c1">#variance</span>
+<span class="nf">sd</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="c1">#standard deviation</span>
+<span class="nf">quantile</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="c1">#percentiles in intervals of .25 </span>
+<span class="nf">quantile</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">probs</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0.1</span><span class="p">))</span> <span class="c1">#percentiles in invervals of 0.1</span>
+</pre></div>
+</div>
+<p><strong>Don’t</strong> worry about memorizing these or anything – basically, you just need to have a sense of the kinds of things you can do with functions, and if you ever need one can can’t remember the name of the function, you can google it to get the specific function name.</p>
+</div>
+<div class="section" id="type-promotion">
+<h2>Type Promotion<a class="headerlink" href="#type-promotion" title="Permalink to this headline">¶</a></h2>
+<p>There’s one last lesson that’s worth learning about vectors, because it can get you in trouble.</p>
+<p>As noted above, vectors can only contain one type of data, but if you try and use <code class="docutils literal notranslate"><span class="pre">c()</span></code> to combine vectors of different types, R will try and be clever and <em>find</em> a way to combine that by doing something called “Type Promotion”, which is a way of converting all the data you give it to the same type. For example, if I tried to create a vector by combining a character vector and a numeric vector, R would convert the numeric vector to a character vector so all the data could fit in a numeric vector:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Nick&quot;</span><span class="p">,</span> <span class="m">42</span><span class="p">)</span>
+<span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>'Nick'</li><li>'42'</li></ol>
+</div></div>
+</div>
+<p>Why did R convert <code class="docutils literal notranslate"><span class="pre">42</span></code> to <code class="docutils literal notranslate"><span class="pre">&quot;42&quot;</span></code> and not convert <code class="docutils literal notranslate"><span class="pre">&quot;Nick&quot;</span></code> to a numeric type? Well because <code class="docutils literal notranslate"><span class="pre">&quot;Nick&quot;</span></code> can’t be represented as a numeric type in any meaningful sense while any number (like <code class="docutils literal notranslate"><span class="pre">42</span></code>) can always be represented as a character in a meaningful way.</p>
+<p>Indeed, there’s a hierarchy of data types, where a type lower on the hierarchy can <strong>always</strong> be converted into something higher in the order, but not the other way around. That hierarchy is:</p>
+<p><code class="docutils literal notranslate"><span class="pre">logical</span></code> –&gt; <code class="docutils literal notranslate"><span class="pre">numeric</span></code> –&gt; <code class="docutils literal notranslate"><span class="pre">character</span></code></p>
+<p>When R is asked to combine vectors of different data types, it will try to move things up this hierarchy by the smallest amount possible in order to make everything the same type.</p>
+<p>(Note there are individual cases that can move backwards – the character <code class="docutils literal notranslate"><span class="pre">&quot;5&quot;</span></code> could logically be turned into <code class="docutils literal notranslate"><span class="pre">5</span></code> – but you can’t always convert a character to a numeric, so for consistently R only moves in directions that are <strong>always</strong> possible.</p>
+<p>For example, if you combine <code class="docutils literal notranslate"><span class="pre">logical</span></code> and <code class="docutils literal notranslate"><span class="pre">numeric</span></code> vectors, R will convert all of the data into <code class="docutils literal notranslate"><span class="pre">numeric</span></code> (remember from our previous lesson that R thanks of <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> as being like <code class="docutils literal notranslate"><span class="pre">1</span></code>, and <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> as being like <code class="docutils literal notranslate"><span class="pre">0</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="kc">TRUE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>1</li><li>2</li><li>1</li></ol>
+</div></div>
+</div>
+<p>But it <strong>doesn’t</strong> convert that data into a <code class="docutils literal notranslate"><span class="pre">character</span></code> vector (even though it could!) because it’s trying to make the smallest movements up that hierarchy that it can. But if we try to combine <code class="docutils literal notranslate"><span class="pre">logical</span></code>, <code class="docutils literal notranslate"><span class="pre">numeric</span></code>, <em>and</em> <code class="docutils literal notranslate"><span class="pre">character</span></code> vectors, R would be forced to convert everything into a <code class="docutils literal notranslate"><span class="pre">character</span></code> vector:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">c</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">,</span> <span class="m">42</span><span class="p">,</span> <span class="s">&quot;Julio&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>'TRUE'</li><li>'42'</li><li>'Julio'</li></ol>
+</div></div>
+</div>
+</div>
+<div class="section" id="recap">
+<h2>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Vectors are one of <em>the</em> fundamental building blocks of R. Even a number like <code class="docutils literal notranslate"><span class="pre">7</span></code> is just a vector of length 1.</p></li>
+<li><p>Vectors are collections of data of the same type.</p></li>
+<li><p>Vectors can be created with the <code class="docutils literal notranslate"><span class="pre">c()</span></code> function.</p></li>
+<li><p>You can easily do math between any vector and a vector of length 1, or a vector of the same length.</p></li>
+<li><p>You <em>can</em> do math between vectors of different lengths that aren’t length 1, but… the way it works is weird, so don’t.</p></li>
+<li><p>If data of different types are passed to the <code class="docutils literal notranslate"><span class="pre">c()</span></code> function, it will type promote them to the lowest type that can store all the input types.</p></li>
+</ul>
+</div>
+<div class="section" id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>Now that we’re familiar with vectors, <a class="reference internal" href="manipulating_vectors.html"><span class="doc std std-doc">it’s time to learn to manipulate them!</span></a></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./10_programming"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="intro_to_datatypes.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Intro to Data Types</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="manipulating_vectors.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Manipulating Vectors</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Josh Clinton and Nick Eubank<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

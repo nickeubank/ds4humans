@@ -1,0 +1,1000 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intro to R &#8212; Data Science for Humans</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Intro to Data Types" href="intro_to_datatypes.html" />
+    <link rel="prev" title="We’re gonna learn R!" href="welcome_to_r.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Data Science for Humans</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../landing_page.html">
+   Welcome to Data Science for Humans
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00_introduction/00_overview.html">
+   Introduction to Data Science for Humans
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00_introduction/10_data_science_in_historical_context.html">
+   What
+   <em>
+    is
+   </em>
+   Data Science: An Historical Perspective
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00_introduction/20_our_approach.html">
+   Solving Problems with Data Science
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Working with Data
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="welcome_to_r.html">
+   We’re gonna learn R!
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Intro to R
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_datatypes.html">
+   Intro to Data Types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_vectors.html">
+   Intro to Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="manipulating_vectors.html">
+   Manipulating Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_matrices.html">
+   Intro to Matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="manipulating_matrices.html">
+   Manipulating Matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_dataframes.html">
+   Intro to Dataframes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="manipulating_dataframes.html">
+   Manipulating Dataframes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_tidyverse.html">
+   dplyr and the Tidyverse
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="defensive_programming.html">
+   Defensive Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_merging.html">
+   Intro to Merging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="defensive_merging.html">
+   Defensive Merging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="missing_data.html">
+   Missing Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="loops.html">
+   Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="functions.html">
+   Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="function_example.html">
+   Function Example
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Types of Questions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../20_questions/00_from_problems_to_questions.html">
+   From Problems to Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../20_questions/10_exploratory_questions.html">
+   Exploratory Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../20_questions/20_passive_prediction_questions.html">
+   Classification Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../20_questions/30_causal_questions.html">
+   Causal Questions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data Science in Practice
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_in_practice/10_ethics.html">
+   Ethics in Data Science
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_in_practice/20_from_data_to_decisions.html">
+   Making Decisions Using Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_in_practice/30_interpretability.html">
+   Interpretable Models
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/10_programming/intro_to_r.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/nickeubank/ds4humans"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F10_programming/intro_to_r.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/nickeubank/ds4humans/master?urlpath=tree/docs/10_programming/intro_to_r.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installing-r">
+   Installing R
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code-examples-on-this-site">
+   Code Examples On This Site
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-math-in-r">
+   Basic Math in R
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variables">
+   Variables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-variable-is-a-box">
+     A Variable is a Box
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#checking-variable-values">
+   Checking Variable Values
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#order-of-evaluation">
+   Order of Evaluation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions">
+   Functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assigning-return-values">
+     Assigning Return Values
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evaluating-nested-functions">
+     Evaluating Nested Functions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-do-functions-work">
+     How Do Functions Work?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recap">
+   Recap
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-steps">
+   Next Steps
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#where-s-the-social-science">
+     Where’s the Social Science?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Intro to R</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installing-r">
+   Installing R
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code-examples-on-this-site">
+   Code Examples On This Site
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-math-in-r">
+   Basic Math in R
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variables">
+   Variables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-variable-is-a-box">
+     A Variable is a Box
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#checking-variable-values">
+   Checking Variable Values
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#order-of-evaluation">
+   Order of Evaluation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions">
+   Functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assigning-return-values">
+     Assigning Return Values
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evaluating-nested-functions">
+     Evaluating Nested Functions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-do-functions-work">
+     How Do Functions Work?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recap">
+   Recap
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-steps">
+   Next Steps
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#where-s-the-social-science">
+     Where’s the Social Science?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="intro-to-r">
+<h1>Intro to R<a class="headerlink" href="#intro-to-r" title="Permalink to this headline">¶</a></h1>
+<p>In this first tutorial, we’ll cover the very basics of R, including installation.</p>
+<p>If you’ve worked with R before, you will probably want to move through this quickly. With that said, I would still encourage you to read it as you may find this reading provides new ways of thinking about concepts you have seen before.</p>
+<div class="section" id="installing-r">
+<h2>Installing R<a class="headerlink" href="#installing-r" title="Permalink to this headline">¶</a></h2>
+<p>Everything we do in this course we’ll be doing using the <em>free!</em> open-source programming language R.</p>
+<p>But the way we’ll mostly <em>use</em> R is with an application called <a class="reference external" href="https://www.rstudio.com/">RStudio</a>. RStudio is a “helper” program that makes it easier to work with R (it is what is referred to as an “editor” or “integrated development environment” (IDE)). When you’re working in RStudio, all the code you run is being run by R itself, but RStudio provides tools to make it easier to see what R is doing, to organize the code your write to run in R, to look at plots R generates, and more. In other words, you don’t need RStudio to use R (some people use other editors, like VS Code), but you definitely need R to run RStudio, and any code you write in RStudio will work anywhere R is available.</p>
+<p>For an installation tutorial and introduction to RStudio functionality, please <a class="reference external" href="https://www.youtube.com/watch?v=ulIv0NiVTs4"><strong>go watch this video</strong></a>, then come back here.</p>
+</div>
+<div class="section" id="code-examples-on-this-site">
+<h2>Code Examples On This Site<a class="headerlink" href="#code-examples-on-this-site" title="Permalink to this headline">¶</a></h2>
+<p>On this website, you’ll find that code examples don’t look quite like they do when you’re typing in R yourself. Instead, you’ll see code appear in grey blocks with a number on the left side. Below these blocks, you will see the output R has returned after running that code. For example, here’s that same <code class="docutils literal notranslate"><span class="pre">&quot;Hello!&quot;</span></code> line in the style used on this site:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;Hello!&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">'Hello!'</div></div>
+</div>
+<p>In addition, some code will include “comments”. Comments are notes placed in someone’s code to explain what’s going on to other programmers. Comments always start with a <code class="docutils literal notranslate"><span class="pre">#</span></code> in R, which tells R that the text that follows is not something it should try and execute. Comments will always appear in italics and in a different color.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is a comment. In the next line, I&#39;ll add 2 and 3.</span>
+<span class="m">2</span> <span class="o">+</span> <span class="m">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">5</div></div>
+</div>
+</div>
+<div class="section" id="basic-math-in-r">
+<h2>Basic Math in R<a class="headerlink" href="#basic-math-in-r" title="Permalink to this headline">¶</a></h2>
+<p>As you saw in the RStudio welcome video above, we can run code in R from RStudio either by:</p>
+<ul class="simple">
+<li><p>putting our cursor on a line / highlighting a line and pressing <code class="docutils literal notranslate"><span class="pre">command-enter</span></code> (on a mac) or <code class="docutils literal notranslate"><span class="pre">control-enter</span></code> (in Windows), or</p></li>
+<li><p>typing directly into the R console window and pressing return,</p></li>
+</ul>
+<p>at which point that line of code will be executed in the R console.</p>
+<p>Now that we’ve learned how to execute code in R, we can start asking R to do things for us. For example, R can do all the normal math operations you are familiar with:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Addition</span>
+<span class="m">2</span> <span class="o">+</span> <span class="m">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">4</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Multiplication</span>
+<span class="m">2</span> <span class="o">*</span> <span class="m">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">6</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Division</span>
+<span class="m">4</span> <span class="o">/</span> <span class="m">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">2</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># And even exponentiation (e.g. 2 raised to the third power)</span>
+<span class="m">2</span> <span class="o">^</span> <span class="m">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">8</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># R can also do logical comparisons</span>
+<span class="m">5</span> <span class="o">&lt;</span> <span class="m">7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">TRUE</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">3</span> <span class="o">&gt;=</span> <span class="m">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">FALSE</div></div>
+</div>
+</div>
+<div class="section" id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<p>Congratulations! You now know how to do math in R!</p>
+<p>If we want to do more than use R as a calculator, though, we need to be able to store the results of our calculations. That will allow us to reuse those results in the future, or combine the results of different calculations. In the examples above, R did the math we asked it to do, and printed out the results, but it didn’t store a copy of those results anywhere.</p>
+<p>In order to store the result of a calculation, we need to <em>assign it to a variable</em>. We do this with the assignment operator: <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code>.</p>
+<p>For example, if we wanted to assign the value of <code class="docutils literal notranslate"><span class="pre">6</span></code> to the variable <code class="docutils literal notranslate"><span class="pre">a</span></code>, we’d type:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="m">6</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then if we asked R for the value of <code class="docutils literal notranslate"><span class="pre">a</span></code>, we’d get that <code class="docutils literal notranslate"><span class="pre">6</span></code> back:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">6</div></div>
+</div>
+<p>And if we tried to do math with <code class="docutils literal notranslate"><span class="pre">a</span></code>, R would treat that variable <code class="docutils literal notranslate"><span class="pre">a</span></code> as though it were <code class="docutils literal notranslate"><span class="pre">6</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">*</span> <span class="m">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">12</div></div>
+</div>
+<div class="section" id="a-variable-is-a-box">
+<h3>A Variable is a Box<a class="headerlink" href="#a-variable-is-a-box" title="Permalink to this headline">¶</a></h3>
+<p>So what is a variable? <strong>A variable is a box that stores a value.</strong> And assigning a value to a variable is how we put a value in the box.</p>
+<p>To illustrate, let’s step through a few lines of code and illustrate what’s going using this idea of a variable as a box. In particular, let’s walk through the following code to see what’s happening on each line:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="m">6</span>
+<span class="n">b</span> <span class="o">&lt;-</span> <span class="m">7</span>
+<span class="n">c</span> <span class="o">&lt;-</span> <span class="n">b</span> <span class="o">*</span> <span class="n">a</span>
+<span class="n">a</span> <span class="o">&lt;-</span> <span class="m">2</span>
+</pre></div>
+</div>
+<p>Here, in the first line, we’re assigning the value of <code class="docutils literal notranslate"><span class="pre">6</span></code> to <code class="docutils literal notranslate"><span class="pre">a</span></code>, so as we see R is putting a <code class="docutils literal notranslate"><span class="pre">6</span></code> in the box labelled <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
+<p><img alt="reading_assignment_1" src="../_images/reading_assignment_1.png" /></p>
+<p>Then R does the same thing with <code class="docutils literal notranslate"><span class="pre">b</span></code>, putting the assigned value of <code class="docutils literal notranslate"><span class="pre">7</span></code> in a box named <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
+<p><img alt="reading_assignment_2" src="../_images/reading_assignment_2.png" /></p>
+<p>Now things get a little more interesting. Instead of a single value being assigned to a variable, we now have an <em>expression</em> on the right side of the assignment operator. The way R handles this is by first evaluating the expression on the right side of the assignment operator (<code class="docutils literal notranslate"><span class="pre">&lt;-</span></code>), then assigning it to the variable.</p>
+<p>Note there’s something a little weird about this: even though most of us are used to reading from left-to-right, R evaluates the expression on the right <em>first</em>, <em>then</em> assigning it to the variable on the left.</p>
+<p><img alt="reading_assignment_3" src="../_images/reading_assignment_3.png" /></p>
+<p>Finally, we see an example of re-assignment – here a new value is assigned to <code class="docutils literal notranslate"><span class="pre">a</span></code> (<code class="docutils literal notranslate"><span class="pre">2</span></code>), and that value <em>overwrites</em> the old value that was in the box <code class="docutils literal notranslate"><span class="pre">a</span></code>. The old value (<code class="docutils literal notranslate"><span class="pre">6</span></code>) has been lost by this re-assignment, it’s job done.</p>
+<p><img alt="reading_assignment_4" src="../_images/reading_assignment_4.png" /></p>
+<p>This method of reading code may seem unnecessarily complicated, but as we’ll see when we return to this way of writing out code in a few lectures, it is an extremely powerful approach.</p>
+<p>Indeed, this idea of variables as boxes is so fundamental to programming that it’s even embodied in RStudio. If you look at the top right corner of RStudio, you’ll find a tab called “Environment”. That tab displays all the variables defined in the current session of R. And if you run the code we just worked through, you’ll see that it displays the values of <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, and <code class="docutils literal notranslate"><span class="pre">c</span></code> basically the same way we wrote them above: as values in boxes with the variable name next to them as a label! (Don’t worry if you don’t have that <code class="docutils literal notranslate"><span class="pre">p</span></code> variable in your RStudio – that’s just a variable my R session loads automatically on startup.):</p>
+<p><img alt="rstudio_variables" src="../_images/rstudio_variables.png" /></p>
+<div class="alert alert-info">
+<p><b>NOTE:</b> There are actually <b>two</b> ways to assign a value to a variable name in R.</p>
+<p>The first, which we will use in these tutorials, is to use a less than sign and a dash to create an arrow (<code class="docutils literal notranslate"><span class="pre">&lt;-</span></code>):</p>
+<p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;-</span> <span class="pre">42</span></code></p>
+<p>and the second is to use a single equal sign (<code class="docutils literal notranslate"><span class="pre">=</span></code>):</p>
+<p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">42</span></code></p>
+<p>When R was first created it only supported the <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code> operator, but most other languages use <code class="docutils literal notranslate"><span class="pre">=</span></code> is the assignment operator, so eventually R decided to support both, so you can use them interchangeably.</p>
+<p>However, be aware that most style guides for R still suggested that the <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code> operator is the preferred choice (though I will admit that I often just use <code class="docutils literal notranslate"><span class="pre">=</span></code> in my own code… ;)).</p>
+</div></div>
+</div>
+<div class="section" id="checking-variable-values">
+<h2>Checking Variable Values<a class="headerlink" href="#checking-variable-values" title="Permalink to this headline">¶</a></h2>
+<p>One way to see the value of variables is to just look at “Environment” tab in RStudio, as shown above. But while this is a nice feature of RStudio – and sufficient in many cases – it’s good to know how to get the values of variables directly in the R console.</p>
+<p>There are two ways to see the value of a variable in R:</p>
+<ol class="simple">
+<li><p>Type in the variable name (or any other expression) without assigning it to a variable.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">print()</span></code> statement.</p></li>
+</ol>
+<p>The first is what we were doing at the top of this tutorial – if you run a line of code and don’t assignment to a variable, then R will evaluate the expression and print out the result. This is true whether the expression is just the name of a variable (e.g. if you run <code class="docutils literal notranslate"><span class="pre">a</span></code>, R just prints the value that’s been assigned to <code class="docutils literal notranslate"><span class="pre">a</span></code>), or something more complicated (<code class="docutils literal notranslate"><span class="pre">(a</span> <span class="pre">*</span> <span class="pre">123)</span> <span class="pre">/</span> <span class="pre">42</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">&lt;-</span> <span class="m">42</span>
+<span class="n">z</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">42</div></div>
+</div>
+<p>The second option is to use the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function in R. Basically, any expression you put between the two parenthesis of the print function will get printed out. For simple scripts like what we’re writing now, there’s rarely a reason to use <code class="docutils literal notranslate"><span class="pre">print()</span></code> instead of typing out the expression you want evaluated and printed, but it’ll become really useful later when we write some fancier code!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 42
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="order-of-evaluation">
+<h2>Order of Evaluation<a class="headerlink" href="#order-of-evaluation" title="Permalink to this headline">¶</a></h2>
+<p>As noted above, the way that R evaluates a line of code is by (1) evaluating the expression on the right-hand side of the assignment operator, <em>then</em> inserting that value into the box associated with the variable on the left-hand side of the assignment operator.</p>
+<p>Given that, can you predict what the value of <code class="docutils literal notranslate"><span class="pre">a</span></code> will be after the following code is run?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="m">4</span>
+<span class="n">a</span> <span class="o">&lt;-</span> <span class="n">a</span> <span class="o">+</span> <span class="m">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you said <code class="docutils literal notranslate"><span class="pre">5</span></code>, you’d be right! Even though <code class="docutils literal notranslate"><span class="pre">a</span></code> is on both sides of the assignment operator, because there’s a clear order-of-operations, there’s no ambiguity in the result.</p>
+<p>When the expression on the right-hand side is more complex, R will evaluate it using the same order of operations you learned in high school math (parenthesis, exponents, multiplication and division, addition and subtraction, or <a class="reference external" href="https://www.mathsisfun.com/operation-order-pemdas.html">PEMDAS</a>). So R will parse the following code:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">5</span> <span class="o">+</span> <span class="m">2</span> <span class="o">*</span> <span class="p">(</span><span class="m">20</span> <span class="o">-</span> <span class="m">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">41</div></div>
+</div>
+<p>By evaluating things in parentheses, then any multiplication/division operations, and then any addition, subtraction operations:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span>  <span class="m">5</span> <span class="o">+</span> <span class="m">2</span> <span class="o">*</span> <span class="p">(</span><span class="m">20</span> <span class="o">-</span> <span class="m">2</span><span class="p">)</span>
+<span class="o">=</span> <span class="m">5</span> <span class="o">+</span> <span class="m">2</span> <span class="o">*</span> <span class="m">18</span> <span class="c1"># Parenthesis evaluated</span>
+<span class="o">=</span> <span class="m">5</span> <span class="o">+</span> <span class="m">36</span>     <span class="c1"># Multiplication evaluated</span>
+<span class="o">=</span> <span class="m">41</span>         <span class="c1"># Addition evaluated. </span>
+</pre></div>
+</div>
+<p><strong>NOT</strong> left-to-right:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span>  <span class="m">5</span> <span class="o">+</span> <span class="m">2</span> <span class="o">*</span> <span class="p">(</span><span class="m">20</span> <span class="o">-</span> <span class="m">2</span><span class="p">)</span>
+<span class="o">=</span> <span class="m">7</span> <span class="o">*</span> <span class="p">(</span><span class="m">20</span> <span class="o">-</span> <span class="m">2</span><span class="p">)</span>
+<span class="o">=</span> <span class="m">7</span> <span class="o">*</span> <span class="m">18</span>
+<span class="o">=</span> <span class="m">126</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<p>The last thing to talk about in this reading is one of the most useful concepts in computer science: the function!</p>
+<p>Functions are small packages of code that take inputs from the user, do some manipulations with those inputs, and return a result. For example, <code class="docutils literal notranslate"><span class="pre">sqrt()</span></code> is a function that calculates the square root of a number. To use it, you “pass” a number to the function by putting between the two parentheses that follow the function name, and it returns the square root of that number:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">sqrt</span><span class="p">(</span><span class="m">9</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">3</div></div>
+</div>
+<p>The inputs you pass to a function are called “arguments,” and whatever the function returns to you is called the “return value.”</p>
+<p>Different functions may take different numbers of arguments. The function <code class="docutils literal notranslate"><span class="pre">choose()</span></code>, for example, calculates the number of ways that you could pull <code class="docutils literal notranslate"><span class="pre">N</span></code> items from a collection of <code class="docutils literal notranslate"><span class="pre">K</span></code> total items.</p>
+<p>To illustrate, suppose we wanted to know how many five card poker hands we could make from a deck of 52 cards (If you’ve taken probability, you’ll recognize this as a way of doing combinatorics!)</p>
+<p>The function <code class="docutils literal notranslate"><span class="pre">choose()</span></code> takes 2 arguments: the first is the total number of items (52 cards, in our example), and the second is the number of items you want to draw (say, 5 cards). So to answer our question, we’d type:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">choose</span><span class="p">(</span><span class="m">52</span><span class="p">,</span> <span class="m">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">2598960</div></div>
+</div>
+<p>Some functions also have optional <em>keyword arguments</em>. To use these optional arguments, you have to type the name of the argument and <code class="docutils literal notranslate"><span class="pre">=</span></code> before you put in a specific value. For example, R has a function called <code class="docutils literal notranslate"><span class="pre">round</span></code> that rounds off numeric data. By default, <code class="docutils literal notranslate"><span class="pre">round</span></code> will round numbers off to the nearest integer (i.e. no decimal places):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">round</span><span class="p">(</span><span class="m">3.141592653589793</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">3</div></div>
+</div>
+<p>But it accepts a keyword argument called <code class="docutils literal notranslate"><span class="pre">digits</span></code> that allows you to change its behavior. For example, if I wanted pi rounded to 2 decimal places, I could type:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">round</span><span class="p">(</span><span class="m">3.141592653589793</span><span class="p">,</span> <span class="n">digits</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">3.14</div></div>
+</div>
+<p>How do you know what arguments a function takes? Every (well-written) function comes with documentation! Just type <code class="docutils literal notranslate"><span class="pre">?function_name</span></code> in R, and you’ll see it’s documentation. For example, here’s the (abridged) documentation for <code class="docutils literal notranslate"><span class="pre">round</span></code>, which has a section called “arguments” that tells you about the <code class="docutils literal notranslate"><span class="pre">digits</span></code> keyword:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt; ?round
+
+Round                   package:base                   R Documentation
+
+Rounding of Numbers
+
+...
+
+Arguments:
+
+       x: a numeric vector.  Or, for ‘round’ and ‘signif’, a complex
+          vector.
+
+  digits: integer indicating the number of decimal places (‘round’) or
+          significant digits (‘signif’) to be used.  Negative values
+          are allowed (see ‘Details’).
+
+     ...: arguments to be passed to methods.
+
+</pre></div>
+</div>
+<p><strong>To get out of one of these help files, type <code class="docutils literal notranslate"><span class="pre">q</span></code></strong></p>
+<div class="section" id="assigning-return-values">
+<h3>Assigning Return Values<a class="headerlink" href="#assigning-return-values" title="Permalink to this headline">¶</a></h3>
+<p>Just like any other expression, if you ask R to evaluate a line of code with a function in it and don’t assign that value back to a variable, that return value gets printed out and immediately forgotten. So if you want to keep the result of a function, remember you always have to assign it to a variable. e.g.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s get the value of 7!</span>
+<span class="c1"># (e.g. 7 x 6 x 5 x 4 x 3 x 2 x 1, also known as 7 factorial)</span>
+
+<span class="n">a</span> <span class="o">&lt;-</span> <span class="m">7</span>
+<span class="n">a_factorial</span> <span class="o">&lt;-</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a_factorial</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">5040</div></div>
+</div>
+</div>
+<div class="section" id="evaluating-nested-functions">
+<h3>Evaluating Nested Functions<a class="headerlink" href="#evaluating-nested-functions" title="Permalink to this headline">¶</a></h3>
+<p>Functions can also be nested, in which case R just evaluates them from the inside out. For example, can you figure out what this code would return (<code class="docutils literal notranslate"><span class="pre">abs</span></code> returns the absolute value of the input)?</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="m">-9</span>
+<span class="n">b</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>?</p>
+<p>Let’s run it and find out:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="m">-9</span>
+<span class="n">b</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">3</div></div>
+</div>
+<p>R evaluates the expression <code class="docutils literal notranslate"><span class="pre">sqrt(abs(a))</span></code> by starting at the innermost level and working its way out, effectively saying: “well, <code class="docutils literal notranslate"><span class="pre">a</span></code> is <code class="docutils literal notranslate"><span class="pre">-9</span></code>, so <code class="docutils literal notranslate"><span class="pre">abs(a)</span></code> is <code class="docutils literal notranslate"><span class="pre">abs(-9)</span></code>. And that’s <code class="docutils literal notranslate"><span class="pre">9</span></code>. So then <code class="docutils literal notranslate"><span class="pre">sqrt(9)</span></code> is <code class="docutils literal notranslate"><span class="pre">3</span></code>.”</p>
+</div>
+<div class="section" id="how-do-functions-work">
+<h3>How Do Functions Work?<a class="headerlink" href="#how-do-functions-work" title="Permalink to this headline">¶</a></h3>
+<p>There’s nothing magic about functions – they’re just bundles of code in a neat little package. Indeed, later in this course we’ll show you how to write functions of your own!</p>
+<p>But you also shouldn’t worry about the fact that you can’t immediately see the code that is making a function like <code class="docutils literal notranslate"><span class="pre">sqrt()</span></code> work. In fact, this is the best thing about functions – you don’t actually need to know what’s going on inside the function. You only need to know the arguments you need to pass to it to get back the thing that you want.</p>
+<p>In this sense, a function is kind of like a toaster: you put bread in, you get toast back; how the toaster is turning the bread into toast isn’t really something you need to worry about. I <em>think</em> that my toaster is making toast by running electricity through metal wires until they heat up, but if it turned out that my toaster were actually capturing the energy of passing cosmic rays, it wouldn’t change the way that I make my breakfast – I would still put bread in, get toast back, and eat. And functions are the same way!</p>
+</div>
+</div>
+<div class="section" id="recap">
+<h2>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">¶</a></h2>
+<p>At the end of each of these tutorials, I will write a little recap of the lessons we’ve covered. Part of this is to help you, the learner, remember which points are most salient. But it’s also to help provide you with a summary of all the <em>syntax</em> – the specific way we write code to do certain things – we’ve learned in one place so you don’t feel anxious about remembering it as we go. In general, the <em>least</em> important thing to learn in programming is the specifics of how the code is written – that’s something you can always google. What’s important to learn are the concepts and the logic of how the program works.</p>
+<ul class="simple">
+<li><p>Variables are boxes that store data.</p></li>
+<li><p>To save the results of a calculation, you have to assign it to a variable.</p></li>
+<li><p>Assignment in R can be done with either <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code> or <code class="docutils literal notranslate"><span class="pre">=</span></code>.</p></li>
+<li><p>You can check the value assigned to a variable or result of an expression by typing it without assigning it, or using <code class="docutils literal notranslate"><span class="pre">print()</span></code>.</p></li>
+<li><p>Functions are just bundles of code that take certain inputs (arguments) and give you back a result (the return value).</p></li>
+<li><p>Different functions accept different numbers of arguments, and some keyword arguments are optional.</p></li>
+<li><p>Function help can be found with <code class="docutils literal notranslate"><span class="pre">?function_name</span></code>. Use <code class="docutils literal notranslate"><span class="pre">q</span></code> to get out of the help file.</p></li>
+</ul>
+</div>
+<div class="section" id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>Congratulations! You now know the basics of how a programming language works. In <span class="xref myst">our next reading</span>, we’ll discuss some of the ways data can be represented within R, after which we’ll do a handful of exercises so you can practice variable assignment and using functions.</p>
+<p>If you’ve never worked with the programming language before, this may feel like a lot – don’t worry! We will have lots of opportunities to practice what you’ve read, and I don’t expect you to feel comfortable with any of this until you’ve had a chance do some exercises. Programming is a skill that you learn by doing.</p>
+<p>If you have worked with R before, I recognize that this might feel a little slow – please bear with me! Our goal in this course is to ensure everyone has a solid foundation in R, which means the first couple readings may be review for some of you. We’ll get into material I feel confident will be novel soon.</p>
+<div class="section" id="where-s-the-social-science">
+<h3>Where’s the Social Science?<a class="headerlink" href="#where-s-the-social-science" title="Permalink to this headline">¶</a></h3>
+<p>It’s normal at this point to find yourself saying “wait… this isn’t what I signed up for when I chose to pursue social science! This feels like computer science.” Hang in there – I promise we’ll get to good, applied social science examples within a couple classes.</p>
+<p>No discipline is changing faster than data science / computational social science. As a result, I don’t want to just teach you how to chain together a handful of specific functions to do basic data manipulations. That might be the faster path to getting to work with social science datasets, but when those functions change in the future (which they inevitably will), or your research demands you move on to other tools, you won’t have the understanding of how R works required to adapt.</p>
+<p>But by learning the fundamental principles of <em>how</em> programming languages work, you’ll develop a more robust, less “brittle” skill set that will provide you with a solid foundation for learning new tools over the course of your entire social science career. It may feel a little slow at first, but I promise it’ll pay off over the years.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./10_programming"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="welcome_to_r.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">We’re gonna learn R!</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="intro_to_datatypes.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Intro to Data Types</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Josh Clinton and Nick Eubank<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
