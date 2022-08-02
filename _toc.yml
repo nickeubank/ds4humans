@@ -6,7 +6,9 @@ root: landing_page
 parts:
   - caption: Introduction
     chapters:
-    - file: 00_introduction
+    - file: 00_introduction/00_overview
+    - file: 00_introduction/10_data_science_in_historical_context
+    - file: 00_introduction/20_our_approach
   - caption: Working with Data
     chapters:
     - file: 10_programming/welcome_to_r
