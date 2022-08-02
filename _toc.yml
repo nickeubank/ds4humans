@@ -36,6 +36,9 @@ parts:
     - file: 20_questions/30_causal_questions
   - caption: Data Science in Practice
     chapters:
+    - file: 30_in_practice/00_backwards_design
     - file: 30_in_practice/10_ethics
     - file: 30_in_practice/20_from_data_to_decisions
-    - file: 30_in_practice/30_interpretability
+    - file: 30_in_practice/25_writing_to_stakeholders
+  - caption: Advanced Topics
+    - file: 40_advanced_topics/30_interpretability

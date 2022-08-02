@@ -4,6 +4,7 @@
 title: Data Science for Humans
 author: Josh Clinton and Nick Eubank
 logo: logo.png
+copyright: "2022"
 
 sphinx:
   config:
