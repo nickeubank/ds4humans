@@ -252,6 +252,11 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../30_in_practice/00_backwards_design.html">
+   Backwards Design
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../30_in_practice/10_ethics.html">
    Ethics in Data Science
   </a>
@@ -262,7 +267,19 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../30_in_practice/30_interpretability.html">
+  <a class="reference internal" href="../30_in_practice/25_writing_to_stakeholders.html">
+   Writing Data Science Report for Non-Technical Audiences
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Advanced Topics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../40_advanced_topics/30_interpretability.html">
    Interpretable Models
   </a>
  </li>
@@ -996,7 +1013,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   user  system elapsed 
-  0.088   0.022   0.110 
+  0.101   0.028   0.128 
 </pre></div>
 </div>
 </div>
@@ -1025,7 +1042,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   user  system elapsed 
-  0.657   0.017   0.674 
+  1.088   0.030   1.119 
 </pre></div>
 </div>
 </div>
@@ -1039,7 +1056,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><strong>user.self:</strong> 7.47</div></div>
+<div class="output text_html"><strong>user.self:</strong> 10.77</div></div>
 </div>
 <p>So… yeah, &gt;7x slower (the ratio varies over runs depending on things like how many other processes are running on your computer, so the code output may not quite match that text). Don’t do it.</p>
 <p>Of course, in this example, the actual manipulations we’re doing are small enough that in absolute terms both operations are fast enough that it wouldn’t really matter which one you choose, but as you get into more complicated data manipulations, this kind of 10x speed difference (and often the differences are much much larger, on the order of 100x or more) can be the difference between your code running in a couple of seconds and versus a couple of hours (or the difference between running in a couple minutes and taking a couple days).</p>
@@ -1118,7 +1135,7 @@ support.)</p>
     
       By Josh Clinton and Nick Eubank<br/>
     
-        &copy; Copyright 2021.<br/>
+        &copy; Copyright 2022.<br/>
   </p>
 </footer>
 </main>

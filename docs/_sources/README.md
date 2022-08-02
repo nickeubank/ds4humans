@@ -13,7 +13,7 @@ The files here are hosted at the domain [ds4humans.com](http://ds4humans.com).
 - Push to github and it'll update online shortly!
 - You can also open `_build/index.html` (just double click!) and it'll open in your browser locally.
 
-For copy-paste ease: `jupyter-book build .; cp -R _build/html/* docs; git add .; git commit; git push`
+For copy-paste ease: `jupyter-book build --all .; cp -R _build/html/* docs; git add .; git commit; git push`
 
 ## Syntax
 

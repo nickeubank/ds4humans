@@ -41,4 +41,5 @@ parts:
     - file: 30_in_practice/20_from_data_to_decisions
     - file: 30_in_practice/25_writing_to_stakeholders
   - caption: Advanced Topics
+    chapters:
     - file: 40_advanced_topics/30_interpretability

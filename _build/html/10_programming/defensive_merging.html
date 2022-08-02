@@ -250,6 +250,11 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../30_in_practice/00_backwards_design.html">
+   Backwards Design
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../30_in_practice/10_ethics.html">
    Ethics in Data Science
   </a>
@@ -260,7 +265,19 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../30_in_practice/30_interpretability.html">
+  <a class="reference internal" href="../30_in_practice/25_writing_to_stakeholders.html">
+   Writing Data Science Report for Non-Technical Audiences
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Advanced Topics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../40_advanced_topics/30_interpretability.html">
    Interpretable Models
   </a>
  </li>
@@ -496,15 +513,15 @@ const thebe_selector_output = ".output, .cell_output"
 	<tr><th scope=col>&lt;int&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>1994</td><td>United States</td><td>17855</td></tr>
-	<tr><td>1995</td><td>United States</td><td>17664</td></tr>
-	<tr><td>1996</td><td>United States</td><td>18466</td></tr>
-	<tr><td>1994</td><td>China        </td><td>18704</td></tr>
-	<tr><td>1995</td><td>China        </td><td>12720</td></tr>
-	<tr><td>1996</td><td>China        </td><td>11725</td></tr>
-	<tr><td>1994</td><td>Sudan        </td><td>15693</td></tr>
-	<tr><td>1995</td><td>Sudan        </td><td>15371</td></tr>
-	<tr><td>1996</td><td>Sudan        </td><td>13592</td></tr>
+	<tr><td>1994</td><td>United States</td><td> 7153</td></tr>
+	<tr><td>1995</td><td>United States</td><td> 2155</td></tr>
+	<tr><td>1996</td><td>United States</td><td> 8667</td></tr>
+	<tr><td>1994</td><td>China        </td><td> 7370</td></tr>
+	<tr><td>1995</td><td>China        </td><td>13852</td></tr>
+	<tr><td>1996</td><td>China        </td><td>13776</td></tr>
+	<tr><td>1994</td><td>Sudan        </td><td> 2378</td></tr>
+	<tr><td>1995</td><td>Sudan        </td><td> 4521</td></tr>
+	<tr><td>1996</td><td>Sudan        </td><td> 3373</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -527,12 +544,12 @@ const thebe_selector_output = ".output, .cell_output"
 	<tr><th scope=col>&lt;int&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>1994</td><td>China</td><td>18704</td><td> 5</td></tr>
-	<tr><td>1995</td><td>China</td><td>12720</td><td> 5</td></tr>
-	<tr><td>1996</td><td>China</td><td>11725</td><td> 5</td></tr>
-	<tr><td>1994</td><td>Sudan</td><td>15693</td><td>10</td></tr>
-	<tr><td>1995</td><td>Sudan</td><td>15371</td><td>10</td></tr>
-	<tr><td>1996</td><td>Sudan</td><td>13592</td><td>10</td></tr>
+	<tr><td>1994</td><td>China</td><td> 7370</td><td> 5</td></tr>
+	<tr><td>1995</td><td>China</td><td>13852</td><td> 5</td></tr>
+	<tr><td>1996</td><td>China</td><td>13776</td><td> 5</td></tr>
+	<tr><td>1994</td><td>Sudan</td><td> 2378</td><td>10</td></tr>
+	<tr><td>1995</td><td>Sudan</td><td> 4521</td><td>10</td></tr>
+	<tr><td>1996</td><td>Sudan</td><td> 3373</td><td>10</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -661,15 +678,15 @@ const thebe_selector_output = ".output, .cell_output"
 	<tr><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>USA  </td><td>1994</td><td> 9</td></tr>
-	<tr><td>China</td><td>1994</td><td> 6</td></tr>
-	<tr><td>Sudan</td><td>1994</td><td>11</td></tr>
-	<tr><td>USA  </td><td>1995</td><td> 4</td></tr>
-	<tr><td>China</td><td>1995</td><td>20</td></tr>
-	<tr><td>Sudan</td><td>1995</td><td> 8</td></tr>
-	<tr><td>USA  </td><td>1996</td><td> 9</td></tr>
-	<tr><td>China</td><td>1996</td><td>10</td></tr>
-	<tr><td>Sudan</td><td>1996</td><td> 5</td></tr>
+	<tr><td>USA  </td><td>1994</td><td>10</td></tr>
+	<tr><td>China</td><td>1994</td><td> 4</td></tr>
+	<tr><td>Sudan</td><td>1994</td><td>18</td></tr>
+	<tr><td>USA  </td><td>1995</td><td>13</td></tr>
+	<tr><td>China</td><td>1995</td><td>17</td></tr>
+	<tr><td>Sudan</td><td>1995</td><td>17</td></tr>
+	<tr><td>USA  </td><td>1996</td><td> 4</td></tr>
+	<tr><td>China</td><td>1996</td><td>14</td></tr>
+	<tr><td>Sudan</td><td>1996</td><td>14</td></tr>
 </tbody>
 </table>
 </div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Joining, by = c(&quot;year&quot;, &quot;country&quot;)
@@ -682,18 +699,18 @@ const thebe_selector_output = ".output, .cell_output"
 	<tr><th scope=col>&lt;int&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>1994</td><td>United States</td><td>17855</td><td>NA</td><td>1</td></tr>
-	<tr><td>1995</td><td>United States</td><td>17664</td><td>NA</td><td>1</td></tr>
-	<tr><td>1996</td><td>United States</td><td>18466</td><td>NA</td><td>1</td></tr>
-	<tr><td>1994</td><td>China        </td><td>18704</td><td> 6</td><td>3</td></tr>
-	<tr><td>1995</td><td>China        </td><td>12720</td><td>20</td><td>3</td></tr>
-	<tr><td>1996</td><td>China        </td><td>11725</td><td>10</td><td>3</td></tr>
-	<tr><td>1994</td><td>Sudan        </td><td>15693</td><td>11</td><td>3</td></tr>
-	<tr><td>1995</td><td>Sudan        </td><td>15371</td><td> 8</td><td>3</td></tr>
-	<tr><td>1996</td><td>Sudan        </td><td>13592</td><td> 5</td><td>3</td></tr>
-	<tr><td>1994</td><td>USA          </td><td>   NA</td><td> 9</td><td>2</td></tr>
-	<tr><td>1995</td><td>USA          </td><td>   NA</td><td> 4</td><td>2</td></tr>
-	<tr><td>1996</td><td>USA          </td><td>   NA</td><td> 9</td><td>2</td></tr>
+	<tr><td>1994</td><td>United States</td><td> 7153</td><td>NA</td><td>1</td></tr>
+	<tr><td>1995</td><td>United States</td><td> 2155</td><td>NA</td><td>1</td></tr>
+	<tr><td>1996</td><td>United States</td><td> 8667</td><td>NA</td><td>1</td></tr>
+	<tr><td>1994</td><td>China        </td><td> 7370</td><td> 4</td><td>3</td></tr>
+	<tr><td>1995</td><td>China        </td><td>13852</td><td>17</td><td>3</td></tr>
+	<tr><td>1996</td><td>China        </td><td>13776</td><td>14</td><td>3</td></tr>
+	<tr><td>1994</td><td>Sudan        </td><td> 2378</td><td>18</td><td>3</td></tr>
+	<tr><td>1995</td><td>Sudan        </td><td> 4521</td><td>17</td><td>3</td></tr>
+	<tr><td>1996</td><td>Sudan        </td><td> 3373</td><td>14</td><td>3</td></tr>
+	<tr><td>1994</td><td>USA          </td><td>   NA</td><td>10</td><td>2</td></tr>
+	<tr><td>1995</td><td>USA          </td><td>   NA</td><td>13</td><td>2</td></tr>
+	<tr><td>1996</td><td>USA          </td><td>   NA</td><td> 4</td><td>2</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -750,12 +767,12 @@ const thebe_selector_output = ".output, .cell_output"
 	<tr><th></th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><th scope=row>1</th><td>1994</td><td>United States</td><td>17855</td><td>NA</td><td>1</td></tr>
-	<tr><th scope=row>2</th><td>1995</td><td>United States</td><td>17664</td><td>NA</td><td>1</td></tr>
-	<tr><th scope=row>3</th><td>1996</td><td>United States</td><td>18466</td><td>NA</td><td>1</td></tr>
-	<tr><th scope=row>10</th><td>1994</td><td>USA          </td><td>   NA</td><td> 9</td><td>2</td></tr>
-	<tr><th scope=row>11</th><td>1995</td><td>USA          </td><td>   NA</td><td> 4</td><td>2</td></tr>
-	<tr><th scope=row>12</th><td>1996</td><td>USA          </td><td>   NA</td><td> 9</td><td>2</td></tr>
+	<tr><th scope=row>1</th><td>1994</td><td>United States</td><td>7153</td><td>NA</td><td>1</td></tr>
+	<tr><th scope=row>2</th><td>1995</td><td>United States</td><td>2155</td><td>NA</td><td>1</td></tr>
+	<tr><th scope=row>3</th><td>1996</td><td>United States</td><td>8667</td><td>NA</td><td>1</td></tr>
+	<tr><th scope=row>10</th><td>1994</td><td>USA          </td><td>  NA</td><td>10</td><td>2</td></tr>
+	<tr><th scope=row>11</th><td>1995</td><td>USA          </td><td>  NA</td><td>13</td><td>2</td></tr>
+	<tr><th scope=row>12</th><td>1996</td><td>USA          </td><td>  NA</td><td> 4</td><td>2</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -842,7 +859,7 @@ const thebe_selector_output = ".output, .cell_output"
     
       By Josh Clinton and Nick Eubank<br/>
     
-        &copy; Copyright 2021.<br/>
+        &copy; Copyright 2022.<br/>
   </p>
 </footer>
 </main>
