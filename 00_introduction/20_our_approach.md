@@ -1,3 +1,27 @@
+# About that title...Data Science for Humans?!?
+
+On the one hand, our title is ridiculous.  Of course our book is written for humans given that we are the only species capable of doing Data Science (on this planet?).  Despite our curiosity as to what it may contain, *Data Science for Cats* would not make much sense.
+
+But our title is intentional as it highlights that when doing Data Science it is important to distinguish how we use data from how computers are able to use information.  Computers are exceptional pattern-finders and maximizers.  Given a dataset, computers are able to find complex relationships through brute-force computing that well exceeds human capabilities.  The ability to process and consider so many relationships also allows computers to maximize (or minimize) complex optimization problems for difficult situations (e.g., when calculus cannot be used to solve for the optimal solution).  
+
+But computers are limited.  They are completely dependent on the data that is given to them -- i.e., what data is collected and missing, how important quantities are measured -- and while they can find patterns and optimize using the data they are given, they lack the ability to evaluate the meaning and importance of what they may find.
+
+Humans, on the other hand, are defined by their curiosity.  Questions drive us and are often central to what we do.  What is going on in the world around us, and why?  While we can be faulted by reaching too quickly for answers to the *what* and *why* -- perhaps given that our brain seems wired to do so as we quickly reach for generalizations and assertions about the world even when our ability to evaluate the claims are limited -- human curiosity is a defining and important feature that Data Science complements.
+
+In addition to being question-driven -- by which we mean to have inquiries and analyses following from pre-defined questions rather than using pattern-recognition processes find relationships which are then used to generate questions -- two other traits are critical for our approach.  A second is fallibility.  We make mistakes.  Lots of them.  And the consequences can be tremendously impactful not only for ourselves, but also for others.  
+
+In answering questions it is important to always think about the uncertainty that we may have about our answers.  How confident should we be in our answer?  What assumptions did we have to make in getting our answer and how might our results change?  Developing our question-solving skills in Data Science with an forward-looking appreciation for quantifying our uncertainty as best we can is essential for placing our results in context.  Our data (and methods) are rarely perfect and it is critical that we help quantity -- as best we can -- how robust and sensitive our answers may be.
+
+A final human trait is that we are social creatures.  It is not enough to answer a question for ourselves.  We also want to communicate our findings to others.  This implicates considerations both when conducting Data Science and also for reporting the results from Data Science.
+
+When conducting Data Science we want to be mindful of the importance of replication and clarity and do our analyses in ways that minimize errors.  Science, by definition, is based on replication by others and the idea that others should be able to exactly replicate our processes to get the same results.  Art, on the other hand, is more personality driven -- what matters is the product rather than the process.  We are doing Data Science, not Data Art and a guiding principle is to make our analyses as easy to follow as possible and to minimize the potential for user-induced error by using defensive-based programming approaches and file management.
+
+It is not enough to obtain (a replicable) result, however.  We must also communicate that result to others -- including those who may not be aware of the precise details and complexities of the analyses -- in ways that are not deceptive or misleading.  In Data Science we are sometimes, if not often, trying to solve a question that was given by someone else (e.g., a CEO) and it is incumbent on us to communicate our results as cleanly as possible in ways that minimize the potential for misinterpretation.  Data Science is increasingly being used to describe important conditions and the characterizations are often consumed by non-experts -- think, for example, of analyses of the incidence of COVID-19 during the pandemic or the results of public opinion polls -- and it is essential that we think about our audience when communicating those results.  Visualization is often essential here.
+
+Pulling these thoughts together then, a human-centered Data Science takes account of three aspects of the human condition: 1) being question-driven, 2) accounting for our uncertainty/faliability, 3) ensuring our analyses and findings can be understood by others.     
+
+
+
 # Solving Problems with Data Science
 
 ## Defining the Problem
