@@ -4,11 +4,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Solving Problems with Data Science &#8212; Data Science for Humans</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>About that title…Data Science for Humans?!? &#8212; Data Science for Humans</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -53,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="We’re gonna learn R!" href="../10_programming/welcome_to_r.html" />
+    <link rel="next" title="From Problems to Questions" href="../20_questions/00_from_problems_to_questions.html" />
     <link rel="prev" title="What is Data Science: An Historical Perspective" href="10_data_science_in_historical_context.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
@@ -62,7 +61,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -71,9 +84,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -91,14 +105,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../landing_page.html">
-   Welcome to Data Science for Humans
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../landing_page.html">
+                    Welcome to Data Science for Humans
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Introduction
  </span>
@@ -120,99 +135,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Solving Problems with Data Science
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Working with Data
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../10_programming/welcome_to_r.html">
-   We’re gonna learn R!
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../10_programming/intro_to_r.html">
-   Intro to R
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../10_programming/intro_to_datatypes.html">
-   Intro to Data Types
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../10_programming/intro_to_vectors.html">
-   Intro to Vectors
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../10_programming/manipulating_vectors.html">
-   Manipulating Vectors
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../10_programming/intro_to_matrices.html">
-   Intro to Matrices
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../10_programming/manipulating_matrices.html">
-   Manipulating Matrices
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../10_programming/intro_to_dataframes.html">
-   Intro to Dataframes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../10_programming/manipulating_dataframes.html">
-   Manipulating Dataframes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../10_programming/intro_to_tidyverse.html">
-   dplyr and the Tidyverse
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../10_programming/defensive_programming.html">
-   Defensive Programming
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../10_programming/intro_to_merging.html">
-   Intro to Merging
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../10_programming/defensive_merging.html">
-   Defensive Merging
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../10_programming/missing_data.html">
-   Missing Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../10_programming/loops.html">
-   Loops
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../10_programming/functions.html">
-   Functions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../10_programming/function_example.html">
-   Function Example
+   About that title…Data Science for Humans?!?
   </a>
  </li>
 </ul>
@@ -284,133 +207,234 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/00_introduction/20_our_approach.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/nickeubank/ds4humans"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F00_introduction/20_our_approach.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#defining-the-problem">
-   Defining the Problem
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/nickeubank/ds4humans"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F00_introduction/20_our_approach.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/00_introduction/20_our_approach.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   About that title…Data Science for Humans?!?
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-question-if-answered-would-help-solve-our-problem">
-   What Question, If Answered, Would Help Solve Our Problem?
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solving-problems-with-data-science">
+   Solving Problems with Data Science
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#types-of-questions-and-how-to-answer-them">
-   Types of Questions, And How To Answer Them
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#descriptive-exploratory-questions">
-     Descriptive / Exploratory Questions
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#defining-the-problem">
+     Defining the Problem
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#passive-prediction-questions">
-     Passive Prediction Questions
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-question-if-answered-would-help-solve-our-problem">
+     What Question, If Answered, Would Help Solve Our Problem?
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#causal-questions">
-     Causal Questions
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#types-of-questions-and-how-to-answer-them">
+     Types of Questions, And How To Answer Them
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#descriptive-exploratory-questions">
+       Descriptive / Exploratory Questions
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#passive-prediction-questions">
+       Passive Prediction Questions
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#causal-questions">
+       Causal Questions
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Solving Problems with Data Science</h1>
+                <h1>About that title…Data Science for Humans?!?</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -420,35 +444,47 @@ const thebe_selector_output = ".output, .cell_output"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#defining-the-problem">
-   Defining the Problem
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   About that title…Data Science for Humans?!?
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-question-if-answered-would-help-solve-our-problem">
-   What Question, If Answered, Would Help Solve Our Problem?
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solving-problems-with-data-science">
+   Solving Problems with Data Science
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#types-of-questions-and-how-to-answer-them">
-   Types of Questions, And How To Answer Them
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#descriptive-exploratory-questions">
-     Descriptive / Exploratory Questions
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#defining-the-problem">
+     Defining the Problem
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#passive-prediction-questions">
-     Passive Prediction Questions
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-question-if-answered-would-help-solve-our-problem">
+     What Question, If Answered, Would Help Solve Our Problem?
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#causal-questions">
-     Causal Questions
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#types-of-questions-and-how-to-answer-them">
+     Types of Questions, And How To Answer Them
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#descriptive-exploratory-questions">
+       Descriptive / Exploratory Questions
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#passive-prediction-questions">
+       Passive Prediction Questions
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#causal-questions">
+       Causal Questions
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -458,24 +494,38 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="solving-problems-with-data-science">
-<h1>Solving Problems with Data Science<a class="headerlink" href="#solving-problems-with-data-science" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="defining-the-problem">
-<h2>Defining the Problem<a class="headerlink" href="#defining-the-problem" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="about-that-title-data-science-for-humans">
+<h1>About that title…Data Science for Humans?!?<a class="headerlink" href="#about-that-title-data-science-for-humans" title="Permalink to this headline">#</a></h1>
+<p>On the one hand, our title is ridiculous.  Of course our book is written for humans given that we are the only species capable of doing Data Science (on this planet?).  Despite our curiosity as to what it may contain, <em>Data Science for Cats</em> would not make much sense.</p>
+<p>But our title is intentional as it highlights that when doing Data Science it is important to distinguish how we use data from how computers are able to use information.  Computers are exceptional pattern-finders and maximizers.  Given a dataset, computers are able to find complex relationships through brute-force computing that well exceeds human capabilities.  The ability to process and consider so many relationships also allows computers to maximize (or minimize) complex optimization problems for difficult situations (e.g., when calculus cannot be used to solve for the optimal solution).</p>
+<p>But computers are limited.  They are completely dependent on the data that is given to them – i.e., what data is collected and missing, how important quantities are measured – and while they can find patterns and optimize using the data they are given, they lack the ability to evaluate the meaning and importance of what they may find.</p>
+<p>Humans, on the other hand, are defined by their curiosity.  Questions drive us and are often central to what we do.  What is going on in the world around us, and why?  While we can be faulted by reaching too quickly for answers to the <em>what</em> and <em>why</em> – perhaps given that our brain seems wired to do so as we quickly reach for generalizations and assertions about the world even when our ability to evaluate the claims are limited – human curiosity is a defining and important feature that Data Science complements.</p>
+<p>In addition to being question-driven – by which we mean to have inquiries and analyses following from pre-defined questions rather than using pattern-recognition processes find relationships which are then used to generate questions – two other traits are critical for our approach.  A second is fallibility.  We make mistakes.  Lots of them.  And the consequences can be tremendously impactful not only for ourselves, but also for others.</p>
+<p>In answering questions it is important to always think about the uncertainty that we may have about our answers.  How confident should we be in our answer?  What assumptions did we have to make in getting our answer and how might our results change?  Developing our question-solving skills in Data Science with an forward-looking appreciation for quantifying our uncertainty as best we can is essential for placing our results in context.  Our data (and methods) are rarely perfect and it is critical that we help quantity – as best we can – how robust and sensitive our answers may be.</p>
+<p>A final human trait is that we are social creatures.  It is not enough to answer a question for ourselves.  We also want to communicate our findings to others.  This implicates considerations both when conducting Data Science and also for reporting the results from Data Science.</p>
+<p>When conducting Data Science we want to be mindful of the importance of replication and clarity and do our analyses in ways that minimize errors.  Science, by definition, is based on replication by others and the idea that others should be able to exactly replicate our processes to get the same results.  Art, on the other hand, is more personality driven – what matters is the product rather than the process.  We are doing Data Science, not Data Art and a guiding principle is to make our analyses as easy to follow as possible and to minimize the potential for user-induced error by using defensive-based programming approaches and file management.</p>
+<p>It is not enough to obtain (a replicable) result, however.  We must also communicate that result to others – including those who may not be aware of the precise details and complexities of the analyses – in ways that are not deceptive or misleading.  In Data Science we are sometimes, if not often, trying to solve a question that was given by someone else (e.g., a CEO) and it is incumbent on us to communicate our results as cleanly as possible in ways that minimize the potential for misinterpretation.  Data Science is increasingly being used to describe important conditions and the characterizations are often consumed by non-experts – think, for example, of analyses of the incidence of COVID-19 during the pandemic or the results of public opinion polls – and it is essential that we think about our audience when communicating those results.  Visualization is often essential here.</p>
+<p>Pulling these thoughts together then, a human-centered Data Science takes account of three aspects of the human condition: 1) being question-driven, 2) accounting for our uncertainty/faliability, 3) ensuring our analyses and findings can be understood by others.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="solving-problems-with-data-science">
+<h1>Solving Problems with Data Science<a class="headerlink" href="#solving-problems-with-data-science" title="Permalink to this headline">#</a></h1>
+<section id="defining-the-problem">
+<h2>Defining the Problem<a class="headerlink" href="#defining-the-problem" title="Permalink to this headline">#</a></h2>
 <p>Gotta start here, yo!</p>
-</div>
-<div class="section" id="what-question-if-answered-would-help-solve-our-problem">
-<h2>What Question, If Answered, Would Help Solve Our Problem?<a class="headerlink" href="#what-question-if-answered-would-help-solve-our-problem" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="what-question-if-answered-would-help-solve-our-problem">
+<h2>What Question, If Answered, Would Help Solve Our Problem?<a class="headerlink" href="#what-question-if-answered-would-help-solve-our-problem" title="Permalink to this headline">#</a></h2>
 <p>that’s the next step!</p>
-</div>
-<div class="section" id="types-of-questions-and-how-to-answer-them">
-<h2>Types of Questions, And How To Answer Them<a class="headerlink" href="#types-of-questions-and-how-to-answer-them" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="types-of-questions-and-how-to-answer-them">
+<h2>Types of Questions, And How To Answer Them<a class="headerlink" href="#types-of-questions-and-how-to-answer-them" title="Permalink to this headline">#</a></h2>
 <p>In this book we take the view that nearly all Data Science tools can be thought of as efforts to answer one of three types of questions: descriptive or exploratory questions, passive-prediction questions, or causal questions.</p>
-<div class="section" id="descriptive-exploratory-questions">
-<h3>Descriptive / Exploratory Questions<a class="headerlink" href="#descriptive-exploratory-questions" title="Permalink to this headline">¶</a></h3>
+<section id="descriptive-exploratory-questions">
+<h3>Descriptive / Exploratory Questions<a class="headerlink" href="#descriptive-exploratory-questions" title="Permalink to this headline">#</a></h3>
 <p>Imagine you woke up one morning and found yourself in the middle of the forest. You don’t know where you are or how you got there. What’s the first thing that you would do (after pinching yourself)? You would probably look around and explore your surroundings to figure out where you are and what’s around you so can plan your next steps.</p>
 <p>Well, the same often makes sense when you’re starting a new project—the first thing you want to do is better understand the world to aid in prioritization of your efforts.</p>
 <p>For example, suppose you are interested in developing machine learning algorithms they could be used to improve the energy efficiency of buildings. Before you run off and try to start training a neural network, the first thing you might want to do is figure out what <em>type</em> of buildings are actually using the most energy so you can think about where you can have the most impact—is more CO2 being generated by air conditioning office buildings in hot climates, or heating office buildings in cold climates? And if you’re hoping to run a business, you might also want to know about the relative costs of electricity and different parts of the country, since you’re more likely to find customers in places where energy costs are high.</p>
@@ -485,22 +535,22 @@ const thebe_selector_output = ".output, .cell_output"
 <p class="admonition-title">Note</p>
 <p>The term <em>Exploratory Data Analysis</em> (EDA) is often used in statistics courses to describe the process of poking around in a new data set that you have been given before you fit a more complicated statistical model. While many of the tools that you may use to do that type of poking around are the same tools that you would use to answer more sophisticated Descriptive Questions, when we talk about answering Descriptive Questions in this book, we are generally talking about a much more involved process—one that often requires locating or bringing together new data sources—then this type of “data checking.”</p>
 </div>
-</div>
-<div class="section" id="passive-prediction-questions">
-<h3>Passive Prediction Questions<a class="headerlink" href="#passive-prediction-questions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="passive-prediction-questions">
+<h3>Passive Prediction Questions<a class="headerlink" href="#passive-prediction-questions" title="Permalink to this headline">#</a></h3>
 <p>Answering descriptive questions generally serves the purpose of helping the data scientist prioritize their efforts, but once they have zeroed in on a specific problem they want to address, many data science projects take the form of answering “passive prediction” questions.</p>
 <p>What we mean by passive prediction questions? These are questions like “given this new customer’s behavior when they arrive on my website, are they likely to spend a lot with my business?,” or “given the symptoms of this patient and their test results, how likely are they to develop complications after surgery?” In other words, we’re hoping to <em>predict</em> something about individuals we can’t immediately observe.</p>
 <p>The “passive” in passive prediction emphasizes that these are questions about predicting what is likely to happen if we don’t change our own behavior. As we will discuss below, understanding the effect of changes we deliberately introduce in the world—for example, by changing a government policy, or re-designing our website—requires a different set of tools.</p>
 <p>Not all passive prediction questions are about events in the future; some passive prediction questions are about predicting how a third party <em>would</em> classify data if given the chance. For example, suppose we wanted to use data science to look at mammograms and tell us which scans showed cancer—one way to think about this is that we want to answer the question “if a radiologist looked at this scan, would they think the patient had cancer?” Or if we wanted to use data science to review job applicants resumés to determine who a company should hire, we could think of what we’re doing as answering the question “if a hiring manager looked at this resumé, would they want to interview this candidate?”</p>
 <p>This may seem a slightly odd way to think about these types of problems, but as we’ll discuss later, this way of framing data science problems it can be very powerful, in large part because it is a more accurate description of what many data science models are actually doing. That’s because many data science problems are solved using a practice called <em>supervised machine learning</em> in which a statistical model is “trained” using data that a human has already analyzed. The statistical model is then designed to try to emulate the behavior of the humans that analyzed the training data when it sees new data. So, for example, we might train an algorithm to detect cancer in mammograms by first asking a radiologist to look at dozens of mammograms and then write down whether they think the mammogram show evidence of cancer. We could then give this pre-analyzed (“labeled”) training data to an algorithm that will then try to emulate the behavior of the radiologist. If successful, we would end up with an algorithm that looks like it is “detecting cancer,” but what it is really trying to do is answer the question “if a radiologist looked at the scan, would they diagnose the patient with cancer.” This distinction is subtle, but it is important, because it helps us to understand that any algorithm that we create through this type of process will inherent all of the biases and limitations of the radiologists who created the data used to train the algorithm.</p>
-</div>
-<div class="section" id="causal-questions">
-<h3>Causal Questions<a class="headerlink" href="#causal-questions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="causal-questions">
+<h3>Causal Questions<a class="headerlink" href="#causal-questions" title="Permalink to this headline">#</a></h3>
 <p>The final type of question regularly faced by data scientists is perhaps the hardest to answer: causal questions.</p>
 <p>Learning to answer the previous two classes of questions can take a data scientist a long way in life—learning to answer descriptive questions will ensure you prioritize your efforts when wrestling with new problems, and the value of passive-prediction to automate a huge number of analysis tasks is self-evident. But often in life we want to go beyond <em>characterizing</em> the world around us; we want to <em>act</em> to change the world. But before we <em>manipulate</em> the world around us—by launching an advertising campaign, or a new government program—we often want to get some sense of the likely <em>effect</em> our actions will <em>cause</em>. And that is the domain of causal questions.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -524,9 +574,11 @@ const thebe_selector_output = ".output, .cell_output"
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="10_data_science_in_historical_context.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -534,32 +586,36 @@ const thebe_selector_output = ".output, .cell_output"
             <p class="prev-next-title">What <em>is</em> Data Science: An Historical Perspective</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../10_programming/welcome_to_r.html" title="next page">
+    <a class='right-next' id="next-link" href="../20_questions/00_from_problems_to_questions.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">We’re gonna learn R!</p>
+        <p class="prev-next-title">From Problems to Questions</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Josh Clinton and Nick Eubank<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Josh Clinton and Nick Eubank<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

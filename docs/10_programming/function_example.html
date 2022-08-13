@@ -4,11 +4,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Function Example &#8212; Data Science for Humans</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -53,8 +52,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="From Problems to Questions" href="../20_questions/00_from_problems_to_questions.html" />
-    <link rel="prev" title="Functions" href="functions.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -62,7 +59,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -71,9 +82,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -91,14 +103,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../landing_page.html">
-   Welcome to Data Science for Humans
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../landing_page.html">
+                    Welcome to Data Science for Humans
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Introduction
  </span>
@@ -120,99 +133,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../00_introduction/20_our_approach.html">
-   Solving Problems with Data Science
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Working with Data
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="welcome_to_r.html">
-   We’re gonna learn R!
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="intro_to_r.html">
-   Intro to R
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="intro_to_datatypes.html">
-   Intro to Data Types
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="intro_to_vectors.html">
-   Intro to Vectors
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="manipulating_vectors.html">
-   Manipulating Vectors
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="intro_to_matrices.html">
-   Intro to Matrices
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="manipulating_matrices.html">
-   Manipulating Matrices
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="intro_to_dataframes.html">
-   Intro to Dataframes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="manipulating_dataframes.html">
-   Manipulating Dataframes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="intro_to_tidyverse.html">
-   dplyr and the Tidyverse
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="defensive_programming.html">
-   Defensive Programming
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="intro_to_merging.html">
-   Intro to Merging
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="defensive_merging.html">
-   Defensive Merging
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="missing_data.html">
-   Missing Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="loops.html">
-   Loops
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="functions.html">
-   Functions
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Function Example
+   About that title…Data Science for Humans?!?
   </a>
  </li>
 </ul>
@@ -284,107 +205,209 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/10_programming/function_example.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/nickeubank/ds4humans"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F10_programming/function_example.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/nickeubank/ds4humans/master?urlpath=tree/docs/10_programming/function_example.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/nickeubank/ds4humans/master?urlpath=tree/docs/10_programming/function_example.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/nickeubank/ds4humans"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F10_programming/function_example.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/10_programming/function_example.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#reading-several-files">
    Reading several files
@@ -392,12 +415,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Function Example</h1>
@@ -421,17 +443,18 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="function-example">
-<h1>Function Example<a class="headerlink" href="#function-example" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="function-example">
+<h1>Function Example<a class="headerlink" href="#function-example" title="Permalink to this headline">#</a></h1>
 <p>Functions are nice tools both for creating generalizable code, and also just for organizing your work. Because a function is a bundle of code that does one thing, putting parts of your work in functions can be helpful in defining the goal of that chunk of code.</p>
 <p>To illustrate one use of a function, we’ll write a function that reads and manipulates a .csv file. We can then put this in a for loop to iterate over several files with a similar structure and combine the resulting data frames into one data frame.</p>
 <p>As you’ll see, one <em>could</em> cram all the code we’re gonna write directly into the for-loop at the end, but by breaking out part of it into a function, the problem is more easily broken into smaller parts.</p>
 <p>What follows is an example of how you might use functions in a real data science workflow. The goal is not for you to be comfortable with everything that you see – for example, the code uses a couple of tricks for manipulating data on dates – but rather just to get to see what some of this stuff looks like!</p>
-<div class="section" id="reading-several-files">
-<h2>Reading several files<a class="headerlink" href="#reading-several-files" title="Permalink to this headline">¶</a></h2>
+<section id="reading-several-files">
+<h2>Reading several files<a class="headerlink" href="#reading-several-files" title="Permalink to this headline">#</a></h2>
 <p>Begin by downloading a <a class="reference external" href="https://github.com/nickeubank/computational_methods_boot_camp/blob/main/source/data/nyc-311-sample.zip">.zip file with service request data from NYC</a>. The zip file contains six files for years 2004-2009, each with 10,000 observations. The data are originally from <a class="reference external" href="https://nycopendata.socrata.com/data?cat=social%20services">NYC’s Open Data portal</a>, which hosts datasets with millions of service requests filed by residents through the city’s 311 program. For the purpose of this example, I have taken a random sample of 10,000 for each year.</p>
 <p>Here’s what the 2004 file looks like (the other years have the same structure).</p>
 <div class="cell tag_remove_input docutils container">
@@ -591,24 +614,24 @@ and 0 otherwise.</p></li>
 	<tr><th></th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;date&gt;</th><th scope=col>&lt;date&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><th scope=row>48671</th><td>10243371</td><td>01/09/2008 12:00:00 AM</td><td>01/23/2008 12:00:00 AM</td><td>Building/Use            </td><td>(40.821360321138926, -73.84670632143052)</td><td>2008-01-09</td><td>2008-01-23</td><td>14</td><td>0</td></tr>
-	<tr><th scope=row>32395</th><td> 4009726</td><td>05/04/2007 12:00:00 AM</td><td>05/04/2007 12:00:00 AM</td><td>Blocked Driveway        </td><td>(40.77006240086818, -73.9067834279182)  </td><td>2007-05-04</td><td>2007-05-04</td><td> 0</td><td>1</td></tr>
-	<tr><th scope=row>45121</th><td>11624787</td><td>07/16/2008 12:00:00 AM</td><td>07/16/2008 12:00:00 AM</td><td>Derelict Vehicle        </td><td>(40.6762295496644, -73.78831883264624)  </td><td>2008-07-16</td><td>2008-07-16</td><td> 0</td><td>1</td></tr>
-	<tr><th scope=row>35287</th><td> 9560395</td><td>10/11/2007 12:00:00 AM</td><td>11/30/2007 12:00:00 AM</td><td>Tree Work Permit Request</td><td>(40.62083398862786, -73.9202802639757)  </td><td>2007-10-11</td><td>2007-11-30</td><td>50</td><td>0</td></tr>
-	<tr><th scope=row>33544</th><td> 8150642</td><td>04/10/2007 12:00:00 AM</td><td>04/28/2007 12:00:00 AM</td><td>PLUMBING                </td><td>(40.79889639710989, -73.9599847568556)  </td><td>2007-04-10</td><td>2007-04-28</td><td>18</td><td>0</td></tr>
-	<tr><th scope=row>15837</th><td> 8181725</td><td>01/24/2005 12:00 AM   </td><td>02/01/2005 12:00 AM   </td><td>HEATING                 </td><td>(40.6432408161149, -73.90712996178739)  </td><td>2005-01-24</td><td>2005-02-01</td><td> 8</td><td>0</td></tr>
-	<tr><th scope=row>19754</th><td> 8157074</td><td>09/26/2005 12:00 AM   </td><td>10/17/2005 12:00 AM   </td><td>PAINT - PLASTER         </td><td>(40.72769918383688, -74.0036187749042)  </td><td>2005-09-26</td><td>2005-10-17</td><td>21</td><td>0</td></tr>
-	<tr><th scope=row>41704</th><td>11630253</td><td>07/16/2008 12:00:00 AM</td><td>07/22/2008 12:00:00 AM</td><td>Vacant Lot              </td><td>(40.6835675478112, -73.94105624667937)  </td><td>2008-07-16</td><td>2008-07-22</td><td> 6</td><td>1</td></tr>
-	<tr><th scope=row>31773</th><td> 4120850</td><td>05/25/2007 12:00:00 AM</td><td>05/25/2007 12:00:00 AM</td><td>Traffic Signal Condition</td><td>(40.729501574577164, -73.95395768923491)</td><td>2007-05-25</td><td>2007-05-25</td><td> 0</td><td>1</td></tr>
-	<tr><th scope=row>35098</th><td> 5169571</td><td>07/01/2007 12:00:00 AM</td><td>07/01/2007 12:00:00 AM</td><td>Sewer                   </td><td>(40.63282335415578, -73.99599366226667) </td><td>2007-07-01</td><td>2007-07-01</td><td> 0</td><td>1</td></tr>
+	<tr><th scope=row>47610</th><td>10534075</td><td>02/15/2008 12:00:00 AM</td><td>02/15/2008 12:00:00 AM</td><td>Street Light Condition </td><td>                                        </td><td>2008-02-15</td><td>2008-02-15</td><td>  0</td><td> 1</td></tr>
+	<tr><th scope=row>55940</th><td>14159031</td><td>06/11/2009 12:00:00 AM</td><td>07/06/2009 12:00:00 AM</td><td>NONCONST               </td><td>(40.80362587765516, -73.95351270174837) </td><td>2009-06-11</td><td>2009-07-06</td><td> 25</td><td> 0</td></tr>
+	<tr><th scope=row>19349</th><td> 8641144</td><td>10/25/2005 12:00 AM   </td><td>10/31/2005 12:00 AM   </td><td>HEATING                </td><td>(40.746848991250026, -73.9905408420637) </td><td>2005-10-25</td><td>2005-10-31</td><td>  6</td><td> 1</td></tr>
+	<tr><th scope=row>33128</th><td> 7974827</td><td>02/09/2007 12:00:00 AM</td><td>05/29/2007 12:00:00 AM</td><td>PLUMBING               </td><td>(40.75447146564592, -73.93333435494856) </td><td>2007-02-09</td><td>2007-05-29</td><td>109</td><td> 0</td></tr>
+	<tr><th scope=row>39401</th><td> 9751168</td><td>11/03/2007 12:00:00 AM</td><td>11/14/2007 12:00:00 AM</td><td>HEATING                </td><td>(40.886383760684275, -73.91066002823293)</td><td>2007-11-03</td><td>2007-11-14</td><td> 11</td><td> 0</td></tr>
+	<tr><th scope=row>41988</th><td>10997116</td><td>04/23/2008 12:00:00 AM</td><td>04/27/2008 12:00:00 AM</td><td>HEATING                </td><td>(40.807353671821666, -73.94236985912137)</td><td>2008-04-23</td><td>2008-04-27</td><td>  4</td><td> 1</td></tr>
+	<tr><th scope=row>45031</th><td>11377107</td><td>06/12/2008 12:00:00 AM</td><td>09/02/2008 12:00:00 AM</td><td>Noise                  </td><td>(40.7334958937171, -74.00788405885584)  </td><td>2008-06-12</td><td>2008-09-02</td><td> 82</td><td> 0</td></tr>
+	<tr><th scope=row>59148</th><td>15253874</td><td>11/09/2009 12:00:00 AM</td><td>11/09/2009 12:00:00 AM</td><td>Noise - Street/Sidewalk</td><td>(40.6299313034894, -74.13686171825081)  </td><td>2009-11-09</td><td>2009-11-09</td><td>  0</td><td> 1</td></tr>
+	<tr><th scope=row>54523</th><td>14467277</td><td>07/25/2009 12:00:00 AM</td><td>07/25/2009 12:00:00 AM</td><td>Derelict Vehicles      </td><td>                                        </td><td>2009-07-25</td><td>2009-07-25</td><td>  0</td><td> 1</td></tr>
+	<tr><th scope=row>26562</th><td>  128904</td><td>07/18/2006 12:00 AM   </td><td>                      </td><td>Rodent                 </td><td>(40.725347095007834, -73.83909818770928)</td><td>2006-07-18</td><td>NA</td><td> NA</td><td>NA</td></tr>
 </tbody>
 </table>
 </div></div>
 </div>
 <p>Ta-da! We cleaned a whole bunch of different datasets and merged them all together in only handful of lines of code!</p>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -632,42 +655,34 @@ and 0 otherwise.</p></li>
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="functions.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Functions</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="../20_questions/00_from_problems_to_questions.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">From Problems to Questions</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Josh Clinton and Nick Eubank<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Josh Clinton and Nick Eubank<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
