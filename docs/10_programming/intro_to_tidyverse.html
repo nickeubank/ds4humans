@@ -4,13 +4,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>dplyr and the Tidyverse &#8212; Data Science for Humans</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -20,16 +18,20 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -37,13 +39,12 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -59,21 +60,7 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -82,17 +69,16 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
       
       
-      <img src="../_static/logo.png" class="logo" alt="logo">
+      <img src="../_static/logo.jpg" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Data Science for Humans</h1>
@@ -103,15 +89,14 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../landing_page.html">
-                    Welcome to Data Science for Humans
-                </a>
-            </li>
-        </ul>
-        <p aria-level="2" class="caption" role="heading">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../landing_page.html">
+   Welcome to Data Science for Humans
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Introduction
  </span>
@@ -202,20 +187,20 @@ const thebe_selector_output = ".output, .cell_output"
    Interpretable Models
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00_introduction/01_JoshTest.html">
+   Test
+  </a>
+ </li>
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
-    </div>
-    <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -223,191 +208,94 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="header-article row sticky-top noprint">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/nickeubank/ds4humans/master?urlpath=tree/docs/10_programming/intro_to_tidyverse.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/nickeubank/ds4humans"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F10_programming/intro_to_tidyverse.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/10_programming/intro_to_tidyverse.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/10_programming/intro_to_tidyverse.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/nickeubank/ds4humans"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F10_programming/intro_to_tidyverse.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
     </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/nickeubank/ds4humans/master?urlpath=tree/docs/10_programming/intro_to_tidyverse.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-philosophy-of-dplyr">
    The Philosophy of dplyr
@@ -447,11 +335,12 @@ title="Print to PDF"
  </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>dplyr and the Tidyverse</h1>
@@ -507,18 +396,17 @@ title="Print to PDF"
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="dplyr-and-the-tidyverse">
-<h1>dplyr and the Tidyverse<a class="headerlink" href="#dplyr-and-the-tidyverse" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="dplyr-and-the-tidyverse">
+<h1>dplyr and the Tidyverse<a class="headerlink" href="#dplyr-and-the-tidyverse" title="Permalink to this headline">¶</a></h1>
 <p>In our previous readings, we learned how to accomplish tasks like subsetting and modifying variables using what’s called “array indexing” (using those <code class="docutils literal notranslate"><span class="pre">[]</span></code> square brackets).</p>
 <p>There is, however, another approach to manipulating dataframes in R that is very popular: using a set of functions provided by the <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> package.</p>
 <p>dplyr is one of a collection of libraries known collectively as the <a class="reference external" href="https://www.tidyverse.org/">tidyverse</a> designed to essentially provide a way of working with data in R that’s a little different from the array-indexing approach we’ve been focused on up to this point.</p>
 <p>To be clear <em>dplyr doesn’t allow you to do anything you couldn’t do with array indexing, it just provides different ways to write your commands.</em> But the way it allows you to write commands is something that many people find quite compelling.</p>
-<section id="the-philosophy-of-dplyr">
-<h2>The Philosophy of dplyr<a class="headerlink" href="#the-philosophy-of-dplyr" title="Permalink to this headline">#</a></h2>
+<div class="section" id="the-philosophy-of-dplyr">
+<h2>The Philosophy of dplyr<a class="headerlink" href="#the-philosophy-of-dplyr" title="Permalink to this headline">¶</a></h2>
 <p>Before we get into dplyr, however, a quick word on the philosophy of dplyr and the tidyverse more generally. The tidyverse is <em>very</em> popular, but it also has some detractors. The basic concern people have with dplyr is that it provides a big library specialized commands for doing specific dataframe manipulations. <em>But</em>…</p>
 <p>As a result, learning the tidyverse amounts to learning lots of specific functions rather than generalized concepts. In most cases, tidyverse packages don’t embrace <em>generalized abstractions</em>, like array indexing.</p>
 <p>As we’ve seen in our past readings, in regular R the logic that dictates how vectors work informs how matrices work, which in turn informs how dataframes work. And if you move into three or four dimensional arrays for modeling time series or real world volumes at some point, what you know about vectors and matrices will also apply there. Indeed, the concept of an array and the idea of array indexing is such a fundamental abstraction in data science that you’ll also find it in languages like Python, Matlab, and Julia you may sometime end up using.</p>
@@ -526,9 +414,9 @@ title="Print to PDF"
 <p>(If you want to read a more eloquent version of this critique, <a class="reference external" href="https://towardsdatascience.com/a-thousand-gadgets-my-thoughts-on-the-r-tidyverse-2441d8504433">you can find one here</a>.)</p>
 <p>None of that is to suggest you should avoid dplyr or the rest of the tidyverse entirely. To the contrary, I think the tidyverse plotting library (<code class="docutils literal notranslate"><span class="pre">ggplot</span></code>) is the best plotting library around, and I’m a fan of several dplyr functions (especially <code class="docutils literal notranslate"><span class="pre">rename</span></code>, which makes an otherwise tedious task quite simple).</p>
 <p>But as you use it, be mindful of its different philosophy of programming it embodies, and how using it shapes the way you think about using R.</p>
-</section>
-<section id="mapping-array-indexing-onto-dplyr">
-<h2>Mapping Array Indexing onto dplyr<a class="headerlink" href="#mapping-array-indexing-onto-dplyr" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="mapping-array-indexing-onto-dplyr">
+<h2>Mapping Array Indexing onto dplyr<a class="headerlink" href="#mapping-array-indexing-onto-dplyr" title="Permalink to this headline">¶</a></h2>
 <p>The easiest way to introduce dplyr, I think, is just to show how the things we did in our last reading are done in dplyr:</p>
 <p><strong>Row Operations</strong></p>
 <ul class="simple">
@@ -602,17 +490,17 @@ title="Print to PDF"
 </ul>
 </li>
 </ul>
-</section>
-<section id="installing-dplyr">
-<h2>Installing dplyr<a class="headerlink" href="#installing-dplyr" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="installing-dplyr">
+<h2>Installing dplyr<a class="headerlink" href="#installing-dplyr" title="Permalink to this headline">¶</a></h2>
 <p>If you want to play with dplyr, you need to:</p>
 <ul class="simple">
 <li><p>Install dplyr with the command <code class="docutils literal notranslate"><span class="pre">install.packages(&quot;dplyr&quot;)</span></code>. You only have to do this once on a given computer.</p></li>
 <li><p>Load it into your R session with <code class="docutils literal notranslate"><span class="pre">library(dplyr)</span></code>. This you have to run every time you open R and want to use dplyr.</p></li>
 </ul>
-</section>
-<section id="chaining">
-<h2>Chaining<a class="headerlink" href="#chaining" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="chaining">
+<h2>Chaining<a class="headerlink" href="#chaining" title="Permalink to this headline">¶</a></h2>
 <p>The last feature of dplyr to be aware of is <em>chaining</em>. Chaining is a way of combining commands to make code more concise. Basically, you use the command <code class="docutils literal notranslate"><span class="pre">%&gt;%</span></code> to tell R to take the result of one function and make it the first argument in the next.</p>
 <p>In dplyr, if we wanted to change <code class="docutils literal notranslate"><span class="pre">country</span></code> into all lower case text, we could do:</p>
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">mutate</span><span class="p">(</span><span class="n">countries</span><span class="p">,</span> <span class="n">country</span> <span class="o">=</span> <span class="nf">tolower</span><span class="p">(</span><span class="n">country</span><span class="p">))</span>
@@ -639,10 +527,6 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message:
-“replacing previous import ‘lifecycle::last_warnings’ by ‘rlang::last_warnings’ when loading ‘tibble’”
-</pre></div>
-</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Attaching package: ‘dplyr’
 </pre></div>
 </div>
@@ -663,15 +547,15 @@ title="Print to PDF"
 	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>USA  </td><td>1994</td><td>18670</td></tr>
-	<tr><td>China</td><td>1994</td><td> 6147</td></tr>
-	<tr><td>Sudan</td><td>1994</td><td> 7604</td></tr>
-	<tr><td>USA  </td><td>1995</td><td>10914</td></tr>
-	<tr><td>China</td><td>1995</td><td>19424</td></tr>
-	<tr><td>Sudan</td><td>1995</td><td> 7881</td></tr>
-	<tr><td>USA  </td><td>1996</td><td> 7189</td></tr>
-	<tr><td>China</td><td>1996</td><td>16827</td></tr>
-	<tr><td>Sudan</td><td>1996</td><td> 4576</td></tr>
+	<tr><td>USA  </td><td>1994</td><td>17645</td></tr>
+	<tr><td>China</td><td>1994</td><td>12741</td></tr>
+	<tr><td>Sudan</td><td>1994</td><td>13320</td></tr>
+	<tr><td>USA  </td><td>1995</td><td>10664</td></tr>
+	<tr><td>China</td><td>1995</td><td> 4689</td></tr>
+	<tr><td>Sudan</td><td>1995</td><td>15539</td></tr>
+	<tr><td>USA  </td><td>1996</td><td> 1537</td></tr>
+	<tr><td>China</td><td>1996</td><td> 2294</td></tr>
+	<tr><td>Sudan</td><td>1996</td><td>13132</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -694,12 +578,12 @@ title="Print to PDF"
 	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>china</td><td>1995</td><td>19424</td><td>19.424</td></tr>
-	<tr><td>china</td><td>1996</td><td>16827</td><td>16.827</td></tr>
-	<tr><td>sudan</td><td>1995</td><td> 7881</td><td> 7.881</td></tr>
-	<tr><td>sudan</td><td>1996</td><td> 4576</td><td> 4.576</td></tr>
-	<tr><td>usa  </td><td>1995</td><td>10914</td><td>10.914</td></tr>
-	<tr><td>usa  </td><td>1996</td><td> 7189</td><td> 7.189</td></tr>
+	<tr><td>china</td><td>1995</td><td> 4689</td><td> 4.689</td></tr>
+	<tr><td>china</td><td>1996</td><td> 2294</td><td> 2.294</td></tr>
+	<tr><td>sudan</td><td>1995</td><td>15539</td><td>15.539</td></tr>
+	<tr><td>sudan</td><td>1996</td><td>13132</td><td>13.132</td></tr>
+	<tr><td>usa  </td><td>1995</td><td>10664</td><td>10.664</td></tr>
+	<tr><td>usa  </td><td>1996</td><td> 1537</td><td> 1.537</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -723,12 +607,12 @@ title="Print to PDF"
 	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>china</td><td>1995</td><td>19424</td><td>19.424</td></tr>
-	<tr><td>china</td><td>1996</td><td>16827</td><td>16.827</td></tr>
-	<tr><td>sudan</td><td>1995</td><td> 7881</td><td> 7.881</td></tr>
-	<tr><td>sudan</td><td>1996</td><td> 4576</td><td> 4.576</td></tr>
-	<tr><td>usa  </td><td>1995</td><td>10914</td><td>10.914</td></tr>
-	<tr><td>usa  </td><td>1996</td><td> 7189</td><td> 7.189</td></tr>
+	<tr><td>china</td><td>1995</td><td> 4689</td><td> 4.689</td></tr>
+	<tr><td>china</td><td>1996</td><td> 2294</td><td> 2.294</td></tr>
+	<tr><td>sudan</td><td>1995</td><td>15539</td><td>15.539</td></tr>
+	<tr><td>sudan</td><td>1996</td><td>13132</td><td>13.132</td></tr>
+	<tr><td>usa  </td><td>1995</td><td>10664</td><td>10.664</td></tr>
+	<tr><td>usa  </td><td>1996</td><td> 1537</td><td> 1.537</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -738,9 +622,9 @@ title="Print to PDF"
 <p>Is chaining <em>better</em>? Some people find chaining makes code more readable. It certainly makes it more concise.</p>
 <p>Personally, my preference is actually to break down long chains of manipulations into a series of distinct commands. Why? Because it allows me to look at each intermediate step and make sure I didn’t mess something up. And as we’ll discuss in a later reading, I think you should <em>always</em> assume you’ve messed something up, because humans are bad at programming! And if you chain a bunch of manipulations, there’s no way to look at the intermediate outputs to check for errors.</p>
 <p>But again, chaining is definitely the more popular approach to R these days, so it’s important to introduce!</p>
-</section>
-<section id="warning-non-standard-evaluation-in-the-tidyverse">
-<h2>WARNING: Non-standard Evaluation in the Tidyverse<a class="headerlink" href="#warning-non-standard-evaluation-in-the-tidyverse" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="warning-non-standard-evaluation-in-the-tidyverse">
+<h2>WARNING: Non-standard Evaluation in the Tidyverse<a class="headerlink" href="#warning-non-standard-evaluation-in-the-tidyverse" title="Permalink to this headline">¶</a></h2>
 <p>One feature of the tidyverse syntax that may not immediately jump out at you but which is important to bear in mind is that when you type column names in tidyverse functions, you don’t have to put them in double-quotes:</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># To select the column named country:</span>
 <span class="nf">select</span><span class="p">(</span><span class="n">countries</span><span class="p">,</span> <span class="n">country</span><span class="p">)</span> 
@@ -799,18 +683,18 @@ title="Print to PDF"
 <li><p>Normally, text without quotes is interpreted as the name of a variable, <em>but</em></p></li>
 <li><p>In tidyverse functions, text without quotes is interpreted as data.</p></li>
 </ul>
-</section>
-<section id="summing-up">
-<h2>Summing Up<a class="headerlink" href="#summing-up" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="summing-up">
+<h2>Summing Up<a class="headerlink" href="#summing-up" title="Permalink to this headline">¶</a></h2>
 <p>In conclusion, dplyr allows you to write more concise commands with more familiar terminology – <code class="docutils literal notranslate"><span class="pre">select</span></code> and <code class="docutils literal notranslate"><span class="pre">filter</span></code> rather than array notation. Chaining, similarly, can definitely make code more concise. As a result, many people are drawn to dplyr, and you may be too!</p>
 <p>So should you use it? Well, first of all, this isn’t a yes or no question – you may decide there are a couple <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> functions you really love, but that you don’t like all of them. And more generally, at this point you know a lot about these different approaches to dataframe manipulation, and how tidyverse modifies how R works. That means you can make <em>your own</em> educated decision based on your <em>own</em> preferences.</p>
 <p>As for me, I use elements of the tidyverse – especially <code class="docutils literal notranslate"><span class="pre">ggplot</span></code> for plotting, which we’ll cover in a later lesson – with some frequency. But I’m comfortable doing so because I know that anytime I need to do something that doesn’t feel natural within the tidyverse framework, or where I run into problems (we’ll discuss how easily that happens when you’re writing loops in a later lesson), I know I’m not reliant on the tidyverse and can turn to other tools when necessary.</p>
-<section id="want-to-learn-more">
-<h3>Want to Learn More?<a class="headerlink" href="#want-to-learn-more" title="Permalink to this headline">#</a></h3>
+<div class="section" id="want-to-learn-more">
+<h3>Want to Learn More?<a class="headerlink" href="#want-to-learn-more" title="Permalink to this headline">¶</a></h3>
 <p>If there’s anything the tidyverse is good at, it’s documentation! <a class="reference external" href="https://dplyr.tidyverse.org/">Here are the docs for dplyr.</a></p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -834,34 +718,28 @@ title="Print to PDF"
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Josh Clinton and Nick Eubank<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+      By Josh Clinton and Nick Eubank<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
 
 
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

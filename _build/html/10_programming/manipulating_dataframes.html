@@ -74,6 +74,11 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.jpg" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Data Science for Humans</h1>
@@ -474,15 +479,15 @@ const thebe_selector_output = ".output, .cell_output"
 	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>USA  </td><td>1994</td><td>15029</td></tr>
-	<tr><td>China</td><td>1994</td><td>19456</td></tr>
-	<tr><td>Sudan</td><td>1994</td><td>15866</td></tr>
-	<tr><td>USA  </td><td>1995</td><td>16913</td></tr>
-	<tr><td>China</td><td>1995</td><td> 6651</td></tr>
-	<tr><td>Sudan</td><td>1995</td><td>17597</td></tr>
-	<tr><td>USA  </td><td>1996</td><td> 4624</td></tr>
-	<tr><td>China</td><td>1996</td><td>16615</td></tr>
-	<tr><td>Sudan</td><td>1996</td><td> 4294</td></tr>
+	<tr><td>USA  </td><td>1994</td><td> 8866</td></tr>
+	<tr><td>China</td><td>1994</td><td>15063</td></tr>
+	<tr><td>Sudan</td><td>1994</td><td>11125</td></tr>
+	<tr><td>USA  </td><td>1995</td><td>19946</td></tr>
+	<tr><td>China</td><td>1995</td><td> 5137</td></tr>
+	<tr><td>Sudan</td><td>1995</td><td>14811</td></tr>
+	<tr><td>USA  </td><td>1996</td><td>13598</td></tr>
+	<tr><td>China</td><td>1996</td><td>10012</td></tr>
+	<tr><td>Sudan</td><td>1996</td><td>15721</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -503,7 +508,7 @@ const thebe_selector_output = ".output, .cell_output"
 .list-inline>li {display: inline-block}
 .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
 </style>
-<ol class=list-inline><li>1995</li><li>1996</li><li>1996</li></ol>
+<ol class=list-inline><li>1994</li><li>1995</li></ol>
 </div></div>
 </div>
 <p>So remember that: if you could do it with a matrix, you can do it with a dataframe!</p>
@@ -527,7 +532,7 @@ const thebe_selector_output = ".output, .cell_output"
 .list-inline>li {display: inline-block}
 .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
 </style>
-<ol class=list-inline><li>15029</li><li>19456</li><li>15866</li><li>16913</li><li>6651</li><li>17597</li><li>4624</li><li>16615</li><li>4294</li></ol>
+<ol class=list-inline><li>8866</li><li>15063</li><li>11125</li><li>19946</li><li>5137</li><li>14811</li><li>13598</li><li>10012</li><li>15721</li></ol>
 </div></div>
 </div>
 <div class="cell docutils container">
@@ -543,7 +548,7 @@ const thebe_selector_output = ".output, .cell_output"
 .list-inline>li {display: inline-block}
 .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
 </style>
-<ol class=list-inline><li>15029</li><li>19456</li><li>15866</li><li>16913</li><li>6651</li><li>17597</li><li>4624</li><li>16615</li><li>4294</li></ol>
+<ol class=list-inline><li>8866</li><li>15063</li><li>11125</li><li>19946</li><li>5137</li><li>14811</li><li>13598</li><li>10012</li><li>15721</li></ol>
 </div></div>
 </div>
 <p>These are exactly equivalent for single columns! But note that you can’t always use this trick – for example, it doesn’t work for trying to get several columns from a dataframe. Most of the time, though, it’s a very convenient shorthand for single-column manipulations.</p>
@@ -563,15 +568,15 @@ const thebe_selector_output = ".output, .cell_output"
 	<tr><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>15029</td></tr>
-	<tr><td>19456</td></tr>
-	<tr><td>15866</td></tr>
-	<tr><td>16913</td></tr>
-	<tr><td> 6651</td></tr>
-	<tr><td>17597</td></tr>
-	<tr><td> 4624</td></tr>
-	<tr><td>16615</td></tr>
-	<tr><td> 4294</td></tr>
+	<tr><td> 8866</td></tr>
+	<tr><td>15063</td></tr>
+	<tr><td>11125</td></tr>
+	<tr><td>19946</td></tr>
+	<tr><td> 5137</td></tr>
+	<tr><td>14811</td></tr>
+	<tr><td>13598</td></tr>
+	<tr><td>10012</td></tr>
+	<tr><td>15721</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -595,15 +600,15 @@ const thebe_selector_output = ".output, .cell_output"
 	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>USA  </td><td>1994</td><td>15029</td></tr>
-	<tr><td>China</td><td>1994</td><td>19456</td></tr>
-	<tr><td>Sudan</td><td>1994</td><td>15866</td></tr>
-	<tr><td>USA  </td><td>1995</td><td>16913</td></tr>
-	<tr><td>China</td><td>1995</td><td> 6651</td></tr>
-	<tr><td>Sudan</td><td>1995</td><td>17597</td></tr>
-	<tr><td>USA  </td><td>1996</td><td> 4624</td></tr>
-	<tr><td>China</td><td>1996</td><td>16615</td></tr>
-	<tr><td>Sudan</td><td>1996</td><td> 4294</td></tr>
+	<tr><td>USA  </td><td>1994</td><td> 8866</td></tr>
+	<tr><td>China</td><td>1994</td><td>15063</td></tr>
+	<tr><td>Sudan</td><td>1994</td><td>11125</td></tr>
+	<tr><td>USA  </td><td>1995</td><td>19946</td></tr>
+	<tr><td>China</td><td>1995</td><td> 5137</td></tr>
+	<tr><td>Sudan</td><td>1995</td><td>14811</td></tr>
+	<tr><td>USA  </td><td>1996</td><td>13598</td></tr>
+	<tr><td>China</td><td>1996</td><td>10012</td></tr>
+	<tr><td>Sudan</td><td>1996</td><td>15721</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -651,15 +656,15 @@ const thebe_selector_output = ".output, .cell_output"
 	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>USA  </td><td>1994</td><td>15029</td><td>15329.58</td></tr>
-	<tr><td>China</td><td>1994</td><td>19456</td><td>19845.12</td></tr>
-	<tr><td>Sudan</td><td>1994</td><td>15866</td><td>16183.32</td></tr>
-	<tr><td>USA  </td><td>1995</td><td>16913</td><td>17251.26</td></tr>
-	<tr><td>China</td><td>1995</td><td> 6651</td><td> 6784.02</td></tr>
-	<tr><td>Sudan</td><td>1995</td><td>17597</td><td>17948.94</td></tr>
-	<tr><td>USA  </td><td>1996</td><td> 4624</td><td> 4716.48</td></tr>
-	<tr><td>China</td><td>1996</td><td>16615</td><td>16947.30</td></tr>
-	<tr><td>Sudan</td><td>1996</td><td> 4294</td><td> 4379.88</td></tr>
+	<tr><td>USA  </td><td>1994</td><td> 8866</td><td> 9043.32</td></tr>
+	<tr><td>China</td><td>1994</td><td>15063</td><td>15364.26</td></tr>
+	<tr><td>Sudan</td><td>1994</td><td>11125</td><td>11347.50</td></tr>
+	<tr><td>USA  </td><td>1995</td><td>19946</td><td>20344.92</td></tr>
+	<tr><td>China</td><td>1995</td><td> 5137</td><td> 5239.74</td></tr>
+	<tr><td>Sudan</td><td>1995</td><td>14811</td><td>15107.22</td></tr>
+	<tr><td>USA  </td><td>1996</td><td>13598</td><td>13869.96</td></tr>
+	<tr><td>China</td><td>1996</td><td>10012</td><td>10212.24</td></tr>
+	<tr><td>Sudan</td><td>1996</td><td>15721</td><td>16035.42</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -675,7 +680,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">13005</div></div>
+<div class="output text_html">12697.6666666667</div></div>
 </div>
 <p>But two summary functions are worth noting here: <code class="docutils literal notranslate"><span class="pre">table()</span></code>, to get the number of observations that have a given value in a vector, and the combination <code class="docutils literal notranslate"><span class="pre">prop.table(table())</span></code>, to get the share of observations with a given value in a vector:</p>
 <div class="cell docutils container">
@@ -724,15 +729,15 @@ const thebe_selector_output = ".output, .cell_output"
 	<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>15029</td><td>1994</td></tr>
-	<tr><td>19456</td><td>1994</td></tr>
-	<tr><td>15866</td><td>1994</td></tr>
-	<tr><td>16913</td><td>1995</td></tr>
-	<tr><td> 6651</td><td>1995</td></tr>
-	<tr><td>17597</td><td>1995</td></tr>
-	<tr><td> 4624</td><td>1996</td></tr>
-	<tr><td>16615</td><td>1996</td></tr>
-	<tr><td> 4294</td><td>1996</td></tr>
+	<tr><td> 8866</td><td>1994</td></tr>
+	<tr><td>15063</td><td>1994</td></tr>
+	<tr><td>11125</td><td>1994</td></tr>
+	<tr><td>19946</td><td>1995</td></tr>
+	<tr><td> 5137</td><td>1995</td></tr>
+	<tr><td>14811</td><td>1995</td></tr>
+	<tr><td>13598</td><td>1996</td></tr>
+	<tr><td>10012</td><td>1996</td></tr>
+	<tr><td>15721</td><td>1996</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -753,15 +758,15 @@ const thebe_selector_output = ".output, .cell_output"
 	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>USA  </td><td>15329.58</td></tr>
-	<tr><td>China</td><td>19845.12</td></tr>
-	<tr><td>Sudan</td><td>16183.32</td></tr>
-	<tr><td>USA  </td><td>17251.26</td></tr>
-	<tr><td>China</td><td> 6784.02</td></tr>
-	<tr><td>Sudan</td><td>17948.94</td></tr>
-	<tr><td>USA  </td><td> 4716.48</td></tr>
-	<tr><td>China</td><td>16947.30</td></tr>
-	<tr><td>Sudan</td><td> 4379.88</td></tr>
+	<tr><td>USA  </td><td> 9043.32</td></tr>
+	<tr><td>China</td><td>15364.26</td></tr>
+	<tr><td>Sudan</td><td>11347.50</td></tr>
+	<tr><td>USA  </td><td>20344.92</td></tr>
+	<tr><td>China</td><td> 5239.74</td></tr>
+	<tr><td>Sudan</td><td>15107.22</td></tr>
+	<tr><td>USA  </td><td>13869.96</td></tr>
+	<tr><td>China</td><td>10212.24</td></tr>
+	<tr><td>Sudan</td><td>16035.42</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -817,15 +822,15 @@ const thebe_selector_output = ".output, .cell_output"
 	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>USA  </td><td>1994</td><td>15329.58</td></tr>
-	<tr><td>China</td><td>1994</td><td>19845.12</td></tr>
-	<tr><td>Sudan</td><td>1994</td><td>16183.32</td></tr>
-	<tr><td>USA  </td><td>1995</td><td>17251.26</td></tr>
-	<tr><td>China</td><td>1995</td><td> 6784.02</td></tr>
-	<tr><td>Sudan</td><td>1995</td><td>17948.94</td></tr>
-	<tr><td>USA  </td><td>1996</td><td> 4716.48</td></tr>
-	<tr><td>China</td><td>1996</td><td>16947.30</td></tr>
-	<tr><td>Sudan</td><td>1996</td><td> 4379.88</td></tr>
+	<tr><td>USA  </td><td>1994</td><td> 9043.32</td></tr>
+	<tr><td>China</td><td>1994</td><td>15364.26</td></tr>
+	<tr><td>Sudan</td><td>1994</td><td>11347.50</td></tr>
+	<tr><td>USA  </td><td>1995</td><td>20344.92</td></tr>
+	<tr><td>China</td><td>1995</td><td> 5239.74</td></tr>
+	<tr><td>Sudan</td><td>1995</td><td>15107.22</td></tr>
+	<tr><td>USA  </td><td>1996</td><td>13869.96</td></tr>
+	<tr><td>China</td><td>1996</td><td>10212.24</td></tr>
+	<tr><td>Sudan</td><td>1996</td><td>16035.42</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -853,7 +858,7 @@ const thebe_selector_output = ".output, .cell_output"
 	<tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><th scope=row>4</th><td>USA</td><td>1995</td><td>17251.26</td></tr>
+	<tr><th scope=row>4</th><td>USA</td><td>1995</td><td>20344.92</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -877,15 +882,15 @@ const thebe_selector_output = ".output, .cell_output"
 	<tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><th scope=row>9</th><td>Sudan</td><td>1996</td><td> 4379.88</td></tr>
-	<tr><th scope=row>7</th><td>USA  </td><td>1996</td><td> 4716.48</td></tr>
-	<tr><th scope=row>5</th><td>China</td><td>1995</td><td> 6784.02</td></tr>
-	<tr><th scope=row>1</th><td>USA  </td><td>1994</td><td>15329.58</td></tr>
-	<tr><th scope=row>3</th><td>Sudan</td><td>1994</td><td>16183.32</td></tr>
-	<tr><th scope=row>8</th><td>China</td><td>1996</td><td>16947.30</td></tr>
-	<tr><th scope=row>4</th><td>USA  </td><td>1995</td><td>17251.26</td></tr>
-	<tr><th scope=row>6</th><td>Sudan</td><td>1995</td><td>17948.94</td></tr>
-	<tr><th scope=row>2</th><td>China</td><td>1994</td><td>19845.12</td></tr>
+	<tr><th scope=row>5</th><td>China</td><td>1995</td><td> 5239.74</td></tr>
+	<tr><th scope=row>1</th><td>USA  </td><td>1994</td><td> 9043.32</td></tr>
+	<tr><th scope=row>8</th><td>China</td><td>1996</td><td>10212.24</td></tr>
+	<tr><th scope=row>3</th><td>Sudan</td><td>1994</td><td>11347.50</td></tr>
+	<tr><th scope=row>7</th><td>USA  </td><td>1996</td><td>13869.96</td></tr>
+	<tr><th scope=row>6</th><td>Sudan</td><td>1995</td><td>15107.22</td></tr>
+	<tr><th scope=row>2</th><td>China</td><td>1994</td><td>15364.26</td></tr>
+	<tr><th scope=row>9</th><td>Sudan</td><td>1996</td><td>16035.42</td></tr>
+	<tr><th scope=row>4</th><td>USA  </td><td>1995</td><td>20344.92</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -903,7 +908,7 @@ const thebe_selector_output = ".output, .cell_output"
 .list-inline>li {display: inline-block}
 .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
 </style>
-<ol class=list-inline><li>9</li><li>7</li><li>5</li><li>1</li><li>3</li><li>8</li><li>4</li><li>6</li><li>2</li></ol>
+<ol class=list-inline><li>5</li><li>1</li><li>8</li><li>3</li><li>7</li><li>6</li><li>2</li><li>9</li><li>4</li></ol>
 </div></div>
 </div>
 <p>And then, because it’s a vector of indices being passed in the first position of our square brackets, we get all the rows of <code class="docutils literal notranslate"><span class="pre">countries</span></code> “subset” by index (though obviously it’s not really a subset, since all row indices appear in the vector – just a re-ordering)!</p>
@@ -922,15 +927,15 @@ const thebe_selector_output = ".output, .cell_output"
 	<tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><th scope=row>2</th><td>China</td><td>1994</td><td>19845.12</td></tr>
-	<tr><th scope=row>3</th><td>Sudan</td><td>1994</td><td>16183.32</td></tr>
-	<tr><th scope=row>1</th><td>USA  </td><td>1994</td><td>15329.58</td></tr>
-	<tr><th scope=row>5</th><td>China</td><td>1995</td><td> 6784.02</td></tr>
-	<tr><th scope=row>6</th><td>Sudan</td><td>1995</td><td>17948.94</td></tr>
-	<tr><th scope=row>4</th><td>USA  </td><td>1995</td><td>17251.26</td></tr>
-	<tr><th scope=row>8</th><td>China</td><td>1996</td><td>16947.30</td></tr>
-	<tr><th scope=row>9</th><td>Sudan</td><td>1996</td><td> 4379.88</td></tr>
-	<tr><th scope=row>7</th><td>USA  </td><td>1996</td><td> 4716.48</td></tr>
+	<tr><th scope=row>2</th><td>China</td><td>1994</td><td>15364.26</td></tr>
+	<tr><th scope=row>3</th><td>Sudan</td><td>1994</td><td>11347.50</td></tr>
+	<tr><th scope=row>1</th><td>USA  </td><td>1994</td><td> 9043.32</td></tr>
+	<tr><th scope=row>5</th><td>China</td><td>1995</td><td> 5239.74</td></tr>
+	<tr><th scope=row>6</th><td>Sudan</td><td>1995</td><td>15107.22</td></tr>
+	<tr><th scope=row>4</th><td>USA  </td><td>1995</td><td>20344.92</td></tr>
+	<tr><th scope=row>8</th><td>China</td><td>1996</td><td>10212.24</td></tr>
+	<tr><th scope=row>9</th><td>Sudan</td><td>1996</td><td>16035.42</td></tr>
+	<tr><th scope=row>7</th><td>USA  </td><td>1996</td><td>13869.96</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -950,15 +955,15 @@ const thebe_selector_output = ".output, .cell_output"
 	<tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><th scope=row>2</th><td>China</td><td>1994</td><td>19845.12</td></tr>
-	<tr><th scope=row>6</th><td>Sudan</td><td>1995</td><td>17948.94</td></tr>
-	<tr><th scope=row>4</th><td>USA  </td><td>1995</td><td>17251.26</td></tr>
-	<tr><th scope=row>8</th><td>China</td><td>1996</td><td>16947.30</td></tr>
-	<tr><th scope=row>3</th><td>Sudan</td><td>1994</td><td>16183.32</td></tr>
-	<tr><th scope=row>1</th><td>USA  </td><td>1994</td><td>15329.58</td></tr>
-	<tr><th scope=row>5</th><td>China</td><td>1995</td><td> 6784.02</td></tr>
-	<tr><th scope=row>7</th><td>USA  </td><td>1996</td><td> 4716.48</td></tr>
-	<tr><th scope=row>9</th><td>Sudan</td><td>1996</td><td> 4379.88</td></tr>
+	<tr><th scope=row>4</th><td>USA  </td><td>1995</td><td>20344.92</td></tr>
+	<tr><th scope=row>9</th><td>Sudan</td><td>1996</td><td>16035.42</td></tr>
+	<tr><th scope=row>2</th><td>China</td><td>1994</td><td>15364.26</td></tr>
+	<tr><th scope=row>6</th><td>Sudan</td><td>1995</td><td>15107.22</td></tr>
+	<tr><th scope=row>7</th><td>USA  </td><td>1996</td><td>13869.96</td></tr>
+	<tr><th scope=row>3</th><td>Sudan</td><td>1994</td><td>11347.50</td></tr>
+	<tr><th scope=row>8</th><td>China</td><td>1996</td><td>10212.24</td></tr>
+	<tr><th scope=row>1</th><td>USA  </td><td>1994</td><td> 9043.32</td></tr>
+	<tr><th scope=row>5</th><td>China</td><td>1995</td><td> 5239.74</td></tr>
 </tbody>
 </table>
 </div></div>

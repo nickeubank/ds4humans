@@ -74,6 +74,11 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.jpg" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Data Science for Humans</h1>
@@ -499,15 +504,15 @@ const thebe_selector_output = ".output, .cell_output"
 	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>USA  </td><td>1994</td><td> 7808</td></tr>
-	<tr><td>China</td><td>1994</td><td>15713</td></tr>
-	<tr><td>Sudan</td><td>1994</td><td> 5638</td></tr>
-	<tr><td>USA  </td><td>1995</td><td> 7681</td></tr>
-	<tr><td>China</td><td>1995</td><td> 7625</td></tr>
-	<tr><td>Sudan</td><td>1995</td><td> 2695</td></tr>
-	<tr><td>USA  </td><td>1996</td><td>13742</td></tr>
-	<tr><td>China</td><td>1996</td><td> 2456</td></tr>
-	<tr><td>Sudan</td><td>1996</td><td>17511</td></tr>
+	<tr><td>USA  </td><td>1994</td><td>14106</td></tr>
+	<tr><td>China</td><td>1994</td><td>13221</td></tr>
+	<tr><td>Sudan</td><td>1994</td><td> 6048</td></tr>
+	<tr><td>USA  </td><td>1995</td><td>13274</td></tr>
+	<tr><td>China</td><td>1995</td><td> 5005</td></tr>
+	<tr><td>Sudan</td><td>1995</td><td>12367</td></tr>
+	<tr><td>USA  </td><td>1996</td><td> 6308</td></tr>
+	<tr><td>China</td><td>1996</td><td> 4895</td></tr>
+	<tr><td>Sudan</td><td>1996</td><td>10958</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -551,12 +556,12 @@ const thebe_selector_output = ".output, .cell_output"
 	<tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><th scope=row>1</th><td>USA  </td><td>1994</td><td> 7808</td></tr>
-	<tr><th scope=row>2</th><td>China</td><td>1994</td><td>15713</td></tr>
-	<tr><th scope=row>3</th><td>Sudan</td><td>1994</td><td> 5638</td></tr>
-	<tr><th scope=row>4</th><td>USA  </td><td>1995</td><td> 7681</td></tr>
-	<tr><th scope=row>5</th><td>China</td><td>1995</td><td> 7625</td></tr>
-	<tr><th scope=row>6</th><td>Sudan</td><td>1995</td><td> 2695</td></tr>
+	<tr><th scope=row>1</th><td>USA  </td><td>1994</td><td>14106</td></tr>
+	<tr><th scope=row>2</th><td>China</td><td>1994</td><td>13221</td></tr>
+	<tr><th scope=row>3</th><td>Sudan</td><td>1994</td><td> 6048</td></tr>
+	<tr><th scope=row>4</th><td>USA  </td><td>1995</td><td>13274</td></tr>
+	<tr><th scope=row>5</th><td>China</td><td>1995</td><td> 5005</td></tr>
+	<tr><th scope=row>6</th><td>Sudan</td><td>1995</td><td>12367</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -575,12 +580,12 @@ const thebe_selector_output = ".output, .cell_output"
 	<tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><th scope=row>4</th><td>USA  </td><td>1995</td><td> 7681</td></tr>
-	<tr><th scope=row>5</th><td>China</td><td>1995</td><td> 7625</td></tr>
-	<tr><th scope=row>6</th><td>Sudan</td><td>1995</td><td> 2695</td></tr>
-	<tr><th scope=row>7</th><td>USA  </td><td>1996</td><td>13742</td></tr>
-	<tr><th scope=row>8</th><td>China</td><td>1996</td><td> 2456</td></tr>
-	<tr><th scope=row>9</th><td>Sudan</td><td>1996</td><td>17511</td></tr>
+	<tr><th scope=row>4</th><td>USA  </td><td>1995</td><td>13274</td></tr>
+	<tr><th scope=row>5</th><td>China</td><td>1995</td><td> 5005</td></tr>
+	<tr><th scope=row>6</th><td>Sudan</td><td>1995</td><td>12367</td></tr>
+	<tr><th scope=row>7</th><td>USA  </td><td>1996</td><td> 6308</td></tr>
+	<tr><th scope=row>8</th><td>China</td><td>1996</td><td> 4895</td></tr>
+	<tr><th scope=row>9</th><td>Sudan</td><td>1996</td><td>10958</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -595,12 +600,12 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   country               year          gdp_pc     
- Length:9           Min.   :1994   Min.   : 2456  
- Class :character   1st Qu.:1994   1st Qu.: 5638  
- Mode  :character   Median :1995   Median : 7681  
-                    Mean   :1995   Mean   : 8985  
-                    3rd Qu.:1996   3rd Qu.:13742  
-                    Max.   :1996   Max.   :17511  
+ Length:9           Min.   :1994   Min.   : 4895  
+ Class :character   1st Qu.:1994   1st Qu.: 6048  
+ Mode  :character   Median :1995   Median :10958  
+                    Mean   :1995   Mean   : 9576  
+                    3rd Qu.:1996   3rd Qu.:13221  
+                    Max.   :1996   Max.   :14106  
 </pre></div>
 </div>
 </div>

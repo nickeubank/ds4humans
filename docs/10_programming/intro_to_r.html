@@ -4,13 +4,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Intro to R &#8212; Data Science for Humans</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -20,16 +18,20 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -37,13 +39,12 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -59,21 +60,7 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -82,17 +69,16 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
       
       
-      <img src="../_static/logo.png" class="logo" alt="logo">
+      <img src="../_static/logo.jpg" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Data Science for Humans</h1>
@@ -103,15 +89,14 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../landing_page.html">
-                    Welcome to Data Science for Humans
-                </a>
-            </li>
-        </ul>
-        <p aria-level="2" class="caption" role="heading">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../landing_page.html">
+   Welcome to Data Science for Humans
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Introduction
  </span>
@@ -202,20 +187,20 @@ const thebe_selector_output = ".output, .cell_output"
    Interpretable Models
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00_introduction/01_JoshTest.html">
+   Test
+  </a>
+ </li>
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
-    </div>
-    <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -223,191 +208,94 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="header-article row sticky-top noprint">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/nickeubank/ds4humans/master?urlpath=tree/docs/10_programming/intro_to_r.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/nickeubank/ds4humans"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F10_programming/intro_to_r.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/10_programming/intro_to_r.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/10_programming/intro_to_r.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/nickeubank/ds4humans"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F10_programming/intro_to_r.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
     </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/nickeubank/ds4humans/master?urlpath=tree/docs/10_programming/intro_to_r.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#installing-r">
    Installing R
@@ -486,11 +374,12 @@ title="Print to PDF"
  </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Intro to R</h1>
@@ -585,22 +474,21 @@ title="Print to PDF"
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="intro-to-r">
-<h1>Intro to R<a class="headerlink" href="#intro-to-r" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="intro-to-r">
+<h1>Intro to R<a class="headerlink" href="#intro-to-r" title="Permalink to this headline">¶</a></h1>
 <p>In this first tutorial, we’ll cover the very basics of R, including installation.</p>
 <p>If you’ve worked with R before, you will probably want to move through this quickly. With that said, I would still encourage you to read it as you may find this reading provides new ways of thinking about concepts you have seen before.</p>
-<section id="installing-r">
-<h2>Installing R<a class="headerlink" href="#installing-r" title="Permalink to this headline">#</a></h2>
+<div class="section" id="installing-r">
+<h2>Installing R<a class="headerlink" href="#installing-r" title="Permalink to this headline">¶</a></h2>
 <p>Everything we do in this course we’ll be doing using the <em>free!</em> open-source programming language R.</p>
 <p>But the way we’ll mostly <em>use</em> R is with an application called <a class="reference external" href="https://www.rstudio.com/">RStudio</a>. RStudio is a “helper” program that makes it easier to work with R (it is what is referred to as an “editor” or “integrated development environment” (IDE)). When you’re working in RStudio, all the code you run is being run by R itself, but RStudio provides tools to make it easier to see what R is doing, to organize the code your write to run in R, to look at plots R generates, and more. In other words, you don’t need RStudio to use R (some people use other editors, like VS Code), but you definitely need R to run RStudio, and any code you write in RStudio will work anywhere R is available.</p>
 <p>For an installation tutorial and introduction to RStudio functionality, please <a class="reference external" href="https://www.youtube.com/watch?v=ulIv0NiVTs4"><strong>go watch this video</strong></a>, then come back here.</p>
-</section>
-<section id="code-examples-on-this-site">
-<h2>Code Examples On This Site<a class="headerlink" href="#code-examples-on-this-site" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="code-examples-on-this-site">
+<h2>Code Examples On This Site<a class="headerlink" href="#code-examples-on-this-site" title="Permalink to this headline">¶</a></h2>
 <p>On this website, you’ll find that code examples don’t look quite like they do when you’re typing in R yourself. Instead, you’ll see code appear in grey blocks with a number on the left side. Below these blocks, you will see the output R has returned after running that code. For example, here’s that same <code class="docutils literal notranslate"><span class="pre">&quot;Hello!&quot;</span></code> line in the style used on this site:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -622,9 +510,9 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output text_html">5</div></div>
 </div>
-</section>
-<section id="basic-math-in-r">
-<h2>Basic Math in R<a class="headerlink" href="#basic-math-in-r" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="basic-math-in-r">
+<h2>Basic Math in R<a class="headerlink" href="#basic-math-in-r" title="Permalink to this headline">¶</a></h2>
 <p>As you saw in the RStudio welcome video above, we can run code in R from RStudio either by:</p>
 <ul class="simple">
 <li><p>putting our cursor on a line / highlighting a line and pressing <code class="docutils literal notranslate"><span class="pre">command-enter</span></code> (on a mac) or <code class="docutils literal notranslate"><span class="pre">control-enter</span></code> (in Windows), or</p></li>
@@ -691,9 +579,9 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output text_html">FALSE</div></div>
 </div>
-</section>
-<section id="variables">
-<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
 <p>Congratulations! You now know how to do math in R!</p>
 <p>If we want to do more than use R as a calculator, though, we need to be able to store the results of our calculations. That will allow us to reuse those results in the future, or combine the results of different calculations. In the examples above, R did the math we asked it to do, and printed out the results, but it didn’t store a copy of those results anywhere.</p>
 <p>In order to store the result of a calculation, we need to <em>assign it to a variable</em>. We do this with the assignment operator: <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code>.</p>
@@ -725,8 +613,8 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output text_html">12</div></div>
 </div>
-<section id="a-variable-is-a-box">
-<h3>A Variable is a Box<a class="headerlink" href="#a-variable-is-a-box" title="Permalink to this headline">#</a></h3>
+<div class="section" id="a-variable-is-a-box">
+<h3>A Variable is a Box<a class="headerlink" href="#a-variable-is-a-box" title="Permalink to this headline">¶</a></h3>
 <p>So what is a variable? <strong>A variable is a box that stores a value.</strong> And assigning a value to a variable is how we put a value in the box.</p>
 <p>To illustrate, let’s step through a few lines of code and illustrate what’s going using this idea of a variable as a box. In particular, let’s walk through the following code to see what’s happening on each line:</p>
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="m">6</span>
@@ -755,10 +643,10 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">42</span></code></p>
 <p>When R was first created it only supported the <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code> operator, but most other languages use <code class="docutils literal notranslate"><span class="pre">=</span></code> is the assignment operator, so eventually R decided to support both, so you can use them interchangeably.</p>
 <p>However, be aware that most style guides for R still suggested that the <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code> operator is the preferred choice (though I will admit that I often just use <code class="docutils literal notranslate"><span class="pre">=</span></code> in my own code… ;)).</p>
-</div></section>
-</section>
-<section id="checking-variable-values">
-<h2>Checking Variable Values<a class="headerlink" href="#checking-variable-values" title="Permalink to this headline">#</a></h2>
+</div></div>
+</div>
+<div class="section" id="checking-variable-values">
+<h2>Checking Variable Values<a class="headerlink" href="#checking-variable-values" title="Permalink to this headline">¶</a></h2>
 <p>One way to see the value of variables is to just look at “Environment” tab in RStudio, as shown above. But while this is a nice feature of RStudio – and sufficient in many cases – it’s good to know how to get the values of variables directly in the R console.</p>
 <p>There are two ways to see the value of a variable in R:</p>
 <ol class="simple">
@@ -789,9 +677,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-<section id="order-of-evaluation">
-<h2>Order of Evaluation<a class="headerlink" href="#order-of-evaluation" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="order-of-evaluation">
+<h2>Order of Evaluation<a class="headerlink" href="#order-of-evaluation" title="Permalink to this headline">¶</a></h2>
 <p>As noted above, the way that R evaluates a line of code is by (1) evaluating the expression on the right-hand side of the assignment operator, <em>then</em> inserting that value into the box associated with the variable on the left-hand side of the assignment operator.</p>
 <p>Given that, can you predict what the value of <code class="docutils literal notranslate"><span class="pre">a</span></code> will be after the following code is run?</p>
 <div class="cell docutils container">
@@ -827,9 +715,9 @@ title="Print to PDF"
 <span class="o">=</span> <span class="m">126</span>
 </pre></div>
 </div>
-</section>
-<section id="functions">
-<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
 <p>The last thing to talk about in this reading is one of the most useful concepts in computer science: the function!</p>
 <p>Functions are small packages of code that take inputs from the user, do some manipulations with those inputs, and return a result. For example, <code class="docutils literal notranslate"><span class="pre">sqrt()</span></code> is a function that calculates the square root of a number. To use it, you “pass” a number to the function by putting between the two parentheses that follow the function name, and it returns the square root of that number:</p>
 <div class="cell docutils container">
@@ -897,8 +785,8 @@ Arguments:
 </pre></div>
 </div>
 <p><strong>To get out of one of these help files, type <code class="docutils literal notranslate"><span class="pre">q</span></code></strong></p>
-<section id="assigning-return-values">
-<h3>Assigning Return Values<a class="headerlink" href="#assigning-return-values" title="Permalink to this headline">#</a></h3>
+<div class="section" id="assigning-return-values">
+<h3>Assigning Return Values<a class="headerlink" href="#assigning-return-values" title="Permalink to this headline">¶</a></h3>
 <p>Just like any other expression, if you ask R to evaluate a line of code with a function in it and don’t assign that value back to a variable, that return value gets printed out and immediately forgotten. So if you want to keep the result of a function, remember you always have to assign it to a variable. e.g.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -920,9 +808,9 @@ Arguments:
 <div class="cell_output docutils container">
 <div class="output text_html">5040</div></div>
 </div>
-</section>
-<section id="evaluating-nested-functions">
-<h3>Evaluating Nested Functions<a class="headerlink" href="#evaluating-nested-functions" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="evaluating-nested-functions">
+<h3>Evaluating Nested Functions<a class="headerlink" href="#evaluating-nested-functions" title="Permalink to this headline">¶</a></h3>
 <p>Functions can also be nested, in which case R just evaluates them from the inside out. For example, can you figure out what this code would return (<code class="docutils literal notranslate"><span class="pre">abs</span></code> returns the absolute value of the input)?</p>
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="m">-9</span>
 <span class="n">b</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
@@ -942,16 +830,16 @@ Arguments:
 <div class="output text_html">3</div></div>
 </div>
 <p>R evaluates the expression <code class="docutils literal notranslate"><span class="pre">sqrt(abs(a))</span></code> by starting at the innermost level and working its way out, effectively saying: “well, <code class="docutils literal notranslate"><span class="pre">a</span></code> is <code class="docutils literal notranslate"><span class="pre">-9</span></code>, so <code class="docutils literal notranslate"><span class="pre">abs(a)</span></code> is <code class="docutils literal notranslate"><span class="pre">abs(-9)</span></code>. And that’s <code class="docutils literal notranslate"><span class="pre">9</span></code>. So then <code class="docutils literal notranslate"><span class="pre">sqrt(9)</span></code> is <code class="docutils literal notranslate"><span class="pre">3</span></code>.”</p>
-</section>
-<section id="how-do-functions-work">
-<h3>How Do Functions Work?<a class="headerlink" href="#how-do-functions-work" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="how-do-functions-work">
+<h3>How Do Functions Work?<a class="headerlink" href="#how-do-functions-work" title="Permalink to this headline">¶</a></h3>
 <p>There’s nothing magic about functions – they’re just bundles of code in a neat little package. Indeed, later in this course we’ll show you how to write functions of your own!</p>
 <p>But you also shouldn’t worry about the fact that you can’t immediately see the code that is making a function like <code class="docutils literal notranslate"><span class="pre">sqrt()</span></code> work. In fact, this is the best thing about functions – you don’t actually need to know what’s going on inside the function. You only need to know the arguments you need to pass to it to get back the thing that you want.</p>
 <p>In this sense, a function is kind of like a toaster: you put bread in, you get toast back; how the toaster is turning the bread into toast isn’t really something you need to worry about. I <em>think</em> that my toaster is making toast by running electricity through metal wires until they heat up, but if it turned out that my toaster were actually capturing the energy of passing cosmic rays, it wouldn’t change the way that I make my breakfast – I would still put bread in, get toast back, and eat. And functions are the same way!</p>
-</section>
-</section>
-<section id="recap">
-<h2>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+<div class="section" id="recap">
+<h2>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">¶</a></h2>
 <p>At the end of each of these tutorials, I will write a little recap of the lessons we’ve covered. Part of this is to help you, the learner, remember which points are most salient. But it’s also to help provide you with a summary of all the <em>syntax</em> – the specific way we write code to do certain things – we’ve learned in one place so you don’t feel anxious about remembering it as we go. In general, the <em>least</em> important thing to learn in programming is the specifics of how the code is written – that’s something you can always google. What’s important to learn are the concepts and the logic of how the program works.</p>
 <ul class="simple">
 <li><p>Variables are boxes that store data.</p></li>
@@ -962,20 +850,20 @@ Arguments:
 <li><p>Different functions accept different numbers of arguments, and some keyword arguments are optional.</p></li>
 <li><p>Function help can be found with <code class="docutils literal notranslate"><span class="pre">?function_name</span></code>. Use <code class="docutils literal notranslate"><span class="pre">q</span></code> to get out of the help file.</p></li>
 </ul>
-</section>
-<section id="next-steps">
-<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
 <p>Congratulations! You now know the basics of how a programming language works. In <span class="xref myst">our next reading</span>, we’ll discuss some of the ways data can be represented within R, after which we’ll do a handful of exercises so you can practice variable assignment and using functions.</p>
 <p>If you’ve never worked with the programming language before, this may feel like a lot – don’t worry! We will have lots of opportunities to practice what you’ve read, and I don’t expect you to feel comfortable with any of this until you’ve had a chance do some exercises. Programming is a skill that you learn by doing.</p>
 <p>If you have worked with R before, I recognize that this might feel a little slow – please bear with me! Our goal in this course is to ensure everyone has a solid foundation in R, which means the first couple readings may be review for some of you. We’ll get into material I feel confident will be novel soon.</p>
-<section id="where-s-the-social-science">
-<h3>Where’s the Social Science?<a class="headerlink" href="#where-s-the-social-science" title="Permalink to this headline">#</a></h3>
+<div class="section" id="where-s-the-social-science">
+<h3>Where’s the Social Science?<a class="headerlink" href="#where-s-the-social-science" title="Permalink to this headline">¶</a></h3>
 <p>It’s normal at this point to find yourself saying “wait… this isn’t what I signed up for when I chose to pursue social science! This feels like computer science.” Hang in there – I promise we’ll get to good, applied social science examples within a couple classes.</p>
 <p>No discipline is changing faster than data science / computational social science. As a result, I don’t want to just teach you how to chain together a handful of specific functions to do basic data manipulations. That might be the faster path to getting to work with social science datasets, but when those functions change in the future (which they inevitably will), or your research demands you move on to other tools, you won’t have the understanding of how R works required to adapt.</p>
 <p>But by learning the fundamental principles of <em>how</em> programming languages work, you’ll develop a more robust, less “brittle” skill set that will provide you with a solid foundation for learning new tools over the course of your entire social science career. It may feel a little slow at first, but I promise it’ll pay off over the years.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -999,34 +887,28 @@ Arguments:
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Josh Clinton and Nick Eubank<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+      By Josh Clinton and Nick Eubank<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
 
 
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

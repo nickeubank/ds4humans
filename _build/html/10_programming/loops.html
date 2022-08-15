@@ -76,6 +76,11 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.jpg" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Data Science for Humans</h1>
@@ -919,7 +924,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   user  system elapsed 
-  0.072   0.020   0.092 
+  0.080   0.021   0.110 
 </pre></div>
 </div>
 </div>
@@ -948,7 +953,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   user  system elapsed 
-   0.65    0.01    0.66 
+  0.677   0.009   0.686 
 </pre></div>
 </div>
 </div>
@@ -962,7 +967,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><strong>user.self:</strong> 9.03</div></div>
+<div class="output text_html"><strong>user.self:</strong> 8.46</div></div>
 </div>
 <p>So… yeah, &gt;7x slower (the ratio varies over runs depending on things like how many other processes are running on your computer, so the code output may not quite match that text). Don’t do it.</p>
 <p>Of course, in this example, the actual manipulations we’re doing are small enough that in absolute terms both operations are fast enough that it wouldn’t really matter which one you choose, but as you get into more complicated data manipulations, this kind of 10x speed difference (and often the differences are much much larger, on the order of 100x or more) can be the difference between your code running in a couple of seconds and versus a couple of hours (or the difference between running in a couple minutes and taking a couple days).</p>

@@ -4,13 +4,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Defensive Programming &#8212; Data Science for Humans</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -20,16 +18,20 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -37,21 +39,20 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -61,21 +62,7 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -84,17 +71,16 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
       
       
-      <img src="../_static/logo.png" class="logo" alt="logo">
+      <img src="../_static/logo.jpg" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Data Science for Humans</h1>
@@ -105,15 +91,14 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../landing_page.html">
-                    Welcome to Data Science for Humans
-                </a>
-            </li>
-        </ul>
-        <p aria-level="2" class="caption" role="heading">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../landing_page.html">
+   Welcome to Data Science for Humans
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Introduction
  </span>
@@ -204,20 +189,20 @@ const thebe_selector_output = ".output, .cell_output"
    Interpretable Models
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00_introduction/01_JoshTest.html">
+   Test
+  </a>
+ </li>
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
-    </div>
-    <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -225,191 +210,94 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="header-article row sticky-top noprint">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/nickeubank/ds4humans/master?urlpath=tree/docs/10_programming/defensive_programming.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/nickeubank/ds4humans"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F10_programming/defensive_programming.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/10_programming/defensive_programming.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/10_programming/defensive_programming.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/nickeubank/ds4humans"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F10_programming/defensive_programming.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
     </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/nickeubank/ds4humans/master?urlpath=tree/docs/10_programming/defensive_programming.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#style-matters">
    Style Matters
@@ -458,11 +346,12 @@ title="Print to PDF"
  </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Defensive Programming</h1>
@@ -527,18 +416,17 @@ title="Print to PDF"
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="defensive-programming">
-<h1>Defensive Programming<a class="headerlink" href="#defensive-programming" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="defensive-programming">
+<h1>Defensive Programming<a class="headerlink" href="#defensive-programming" title="Permalink to this headline">¶</a></h1>
 <p>In recent years, the social sciences have been struggling with a wave of papers that have turned out to have problems not because of problems of theory, or choice of statistical models, but rather because of simple programming errors. In perhaps the most embarassing, Steven Levitt (co-author of the acclaimed Freakonomics, and winner of one of the most prestigious awards in economics) had a paper about the political explosive (at least in the US) topic of abortion and crime that turned out to be wrong <a class="reference external" href="https://www.economist.com/finance-and-economics/2005/12/01/oops-onomics">because he hadn’t put a set of controls into a regression he thought he had (may require sign-in, though I think you can see without paying).</a> Moreover, as some of <a class="reference external" href="https://thepoliticalmethodologist.com/2014/12/09/a-decade-of-replications-lessons-from-the-quarterly-journal-of-political-science/">my own work has shown</a>, the replication packages that come with a substantial number of political science papers have problems, often generating results that do not match those in the published paper.</p>
 <p>In reading this, it’s natural to think that the reason we find problems in the code behind published papers is carelessness or inattention on behalf of authors, and that the key to minimizing problems in our code is to be more careful. The truth, I have come to believe, is more subtle: humans are effectively incapable of writing error-free code, and that if we wish to improve the quality of the code we write, we must start learning and teaching coding skills that help maximize the probability our mistakes will be found and corrected.</p>
 <p>I myself once firmly believed the fallacy that the key to preventing errors was “to be more careful.” Indeed, I fear this belief may have colored the tone of of my past work on this subject in unproductive ways. Over the last several years, however, my research has brought me into close contact with computer scientists, and I discovered that computer scientists’ mentality about programming is fundamentally different from the mental model I had been carrying around as a social scientist. Computer scientists <em>assume</em> programmers will make mistakes, and instead of chiding people to “just be careful,” they have developed a battery of practices to address the problem. These practices – often referred to as “defensive programming” skills – are designed to (a) minimize the probability mistakes occur and (b) maximize the probability that mistakes that do occur are caught.</p>
 <p>In this tutorial, we’ll cover a number of these defensive programming practices with an eye towards their application in the context of applied data science. I did not invent any of these practices, but you will likely find that the way I present them (and the use-cases I emphasize) will differ from most other presentations you will find online. That is because in this tutorial, I will focus on the type of applied data analysis common in the social sciences, natural science, or business analysis, rather than the type of “software engineering” applications where these methods are most commonly applied.</p>
-<section id="style-matters">
-<h2>Style Matters<a class="headerlink" href="#style-matters" title="Permalink to this headline">#</a></h2>
+<div class="section" id="style-matters">
+<h2>Style Matters<a class="headerlink" href="#style-matters" title="Permalink to this headline">¶</a></h2>
 <p>Formatting isn’t just about aesthetics, they also make code easier to read. This not only helps other people read your code, but it will also help you recognize potential problems in our own code.</p>
 <p>Here are a few rules of thumb for good code:</p>
 <ul class="simple">
@@ -574,8 +462,8 @@ title="Print to PDF"
 </div>
 <p>These two blocks of code do exactly the same thing, but if you wrote them at 1am, guess which one you’d understand better the next morning?</p>
 <p>You can find a full guide to R styling <a class="reference external" href="https://style.tidyverse.org/index.html">here</a>, but if you use the tools below you won’t really need to read that to have well styled code.</p>
-<section id="auto-formatting-code-in-rstudio">
-<h3>Auto-Formatting Code in RStudio<a class="headerlink" href="#auto-formatting-code-in-rstudio" title="Permalink to this headline">#</a></h3>
+<div class="section" id="auto-formatting-code-in-rstudio">
+<h3>Auto-Formatting Code in RStudio<a class="headerlink" href="#auto-formatting-code-in-rstudio" title="Permalink to this headline">¶</a></h3>
 <p>A really good way to ensure that your code has consistent formatting is to (a) set your editor to check for style problems, and (b) use a program that automatically formats your code. I <strong>love</strong> these tools, and thankfully RStudio has one built in! An auto-formatter won’t help ensure your variable names are descriptive, but it will ensure you use consistent spacing and indentation, which can be really helpful recognizing patterns and problems in your code.</p>
 <p>To use this functionality in RStudio, we’ll do two things:</p>
 <p><strong>To have RStudio flag style violations:</strong></p>
@@ -588,10 +476,10 @@ title="Print to PDF"
 <p>First, install the <code class="docutils literal notranslate"><span class="pre">styler</span></code> package in R by running <code class="docutils literal notranslate"><span class="pre">install.packages(&quot;styler&quot;)</span></code> in an active R session.</p>
 <p>Then click on the “Add-ons” menu over your editor and select “Style Active File” (note R may ask for permission to install some packages the first time you do this):</p>
 <p><img alt="use_r_to_format_code" src="../_images/use_r_to_format_code.png" /></p>
-</section>
-</section>
-<section id="adding-tests">
-<h2>Adding Tests<a class="headerlink" href="#adding-tests" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+<div class="section" id="adding-tests">
+<h2>Adding Tests<a class="headerlink" href="#adding-tests" title="Permalink to this headline">¶</a></h2>
 <p>Tests are simple true-false statements users place in their code. A test checks for a certain condition (like whether the sample size in a regression is what you expect), and if the condition is not met, stops your code and alerts you to the problem.</p>
 <p><em>Why do I need to always check things? I know my data!</em></p>
 <p>In most of the exercises we’ve done in this boot camp, we’ve been using small data sets that are easy to just look at. In the real world of data science and computational social science, however, you will be working with data sets with hundreds of variables and tens of thousands of observation. So you can never really <em>know</em> your data – you only get to see bits and pieces through your analyses, plots, and summary statistics.</p>
@@ -605,8 +493,8 @@ title="Print to PDF"
 <li><p><strong>Tests catch more than anticipated problems.</strong> When problems emerge in code, they often manifest in lots of different ways. Duplicate observations, for example, will not only lead to inaccurate observation counts, but may also give rise to bizarre summary statistics, bad subsequent merges, etc. Thus adding tests not only guards against errors we’ve thought of, but may also guard against errors we don’t anticipate during the test writing process.</p></li>
 </ol>
 <p>OK, but is this really necessary? <strong>YES.</strong></p>
-<section id="writing-tests">
-<h3>Writing Tests<a class="headerlink" href="#writing-tests" title="Permalink to this headline">#</a></h3>
+<div class="section" id="writing-tests">
+<h3>Writing Tests<a class="headerlink" href="#writing-tests" title="Permalink to this headline">¶</a></h3>
 <p>In R, I recommend using the <code class="docutils literal notranslate"><span class="pre">assertthat</span></code> package for testing. Once installed, you just use <code class="docutils literal notranslate"><span class="pre">assert_that()</span></code> to test any logical statement:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -691,10 +579,10 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>If you run this interactively, you’ll see a red error message, but the print statement will still run. If you save this file and execute it with the source command / Source button, the print statement will never be run.</p>
-</section>
-</section>
-<section id="when-should-i-write-tests">
-<h2>When Should I Write Tests?<a class="headerlink" href="#when-should-i-write-tests" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+<div class="section" id="when-should-i-write-tests">
+<h2>When Should I Write Tests?<a class="headerlink" href="#when-should-i-write-tests" title="Permalink to this headline">¶</a></h2>
 <p>The best way to get into writing tests is to think about how you check your data interactively to make stuff work. After a <code class="docutils literal notranslate"><span class="pre">merge</span></code> or another complicated command, most people pause to browse the data and/or watch the code step by step, or do a set of quick tabs or plots.  But these are not systematic, and you generally only do them once (when you’re first writing the code).</p>
 <p>A great way to write tests is to think about what you’re looking for when you do these interactive tests and convert the logic of those interactive interrogations into systematic assert statements. That way they’ll be baked into your code, and will be executed every time your code runs!1</p>
 <ul class="simple">
@@ -702,8 +590,8 @@ title="Print to PDF"
 <li><p>After complicated manipulations: If you have to think more than a little about how to get R to do something, there’s a chance you missed something. Add a test or two to make sure you did it right!</p></li>
 <li><p>Before dropping observations: Dropping observations masks problems. Before you drop variables, add a test to, say, count the number of observations you expect to drop.</p></li>
 </ul>
-<section id="common-test-examples">
-<h3>Common Test Examples<a class="headerlink" href="#common-test-examples" title="Permalink to this headline">#</a></h3>
+<div class="section" id="common-test-examples">
+<h3>Common Test Examples<a class="headerlink" href="#common-test-examples" title="Permalink to this headline">¶</a></h3>
 <p>Test number of observations is right:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -759,10 +647,10 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output text_html">TRUE</div></div>
 </div>
-</section>
-</section>
-<section id="don-t-duplicate-information">
-<h2>Don’t Duplicate Information<a class="headerlink" href="#don-t-duplicate-information" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+<div class="section" id="don-t-duplicate-information">
+<h2>Don’t Duplicate Information<a class="headerlink" href="#don-t-duplicate-information" title="Permalink to this headline">¶</a></h2>
 <p>Tricks to minimize the probability of errors often require a little more sophisticated programming, so they won’t be for everyone (tests, I feel, are more accessible to everyone). Nevertheless, here’s another valuable practice: <strong>Never replicate information.</strong></p>
 <p>Information should only be expressed once in a file. For example, say you want to drop observations from a dataset if a person’s income has ever dropped below 20,000. You <em>could</em> do this like this:</p>
 <div class="cell docutils container">
@@ -824,9 +712,9 @@ title="Print to PDF"
 </div></div>
 </div>
 <p>Written like this, if you ever decide to go back and change the common cutoff, you only have to make <em>in one place</em>, and there’s no way to make the change in some cases but forget others.</p>
-</section>
-<section id="never-transcribe">
-<h2>Never Transcribe<a class="headerlink" href="#never-transcribe" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="never-transcribe">
+<h2>Never Transcribe<a class="headerlink" href="#never-transcribe" title="Permalink to this headline">¶</a></h2>
 <p>We’ve already covered tricks to maximize the probability we catch our mistakes, but how do we minimize the probability they will occur? If there is anything I learned working as the Replication Assistant at the <em>Quarterly Journal of Political Science</em> testing people’s replication packages, it is that authors should <strong>never</strong> transcribe numbers from their statistical software into their papers by hand. This was <em>easily</em> the largest source of replication issues we encountered, as doing so introduced two types of errors:</p>
 <ul class="simple">
 <li><p><strong>Mis-transcriptions:</strong> Humans just aren’t built to transcribe dozens of numbers by hand reliably. If the error is in the last decimal place, it doesn’t mean much, but when a decimal point drifts or a negative sign is dropped, the results are often quite substantively important.</p></li>
@@ -834,8 +722,8 @@ title="Print to PDF"
 </ul>
 <p>So, how do you avoid this problem? Use tools that will directly export your results into plain text or formatted tables you can use in the program where you are working, like <a class="reference external" href="https://www.rdocumentation.org/packages/stargazer/versions/5.2.2/topics/stargazer">stargazer</a> in R.</p>
 <p>I also suggest users not only do this for tables - which is increasingly common - but also statistics that appear in text. For example, to put a single number into <span class="math notranslate nohighlight">\(\LaTeX\)</span>, you just generate the number you want to put in your paper, convert it to a string, and save it to disk as a <code class="docutils literal notranslate"><span class="pre">.tex</span></code> file (e.g. <code class="docutils literal notranslate"><span class="pre">exported_statistic.tex</span></code>). Then in your paper, simply add a <code class="docutils literal notranslate"><span class="pre">\input{exported_statistic.tex}</span></code>call, and LaTeX will insert the contents of that <code class="docutils literal notranslate"><span class="pre">.tex</span></code> file verbatim into your paper.</p>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -859,34 +747,28 @@ title="Print to PDF"
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Josh Clinton and Nick Eubank<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+      By Josh Clinton and Nick Eubank<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
 
 
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

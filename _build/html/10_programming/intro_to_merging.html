@@ -74,6 +74,11 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.jpg" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Data Science for Humans</h1>
@@ -503,14 +508,14 @@ const thebe_selector_output = ".output, .cell_output"
 	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>USA  </td><td>1994</td><td>14</td></tr>
-	<tr><td>China</td><td>1994</td><td>13</td></tr>
-	<tr><td>Sudan</td><td>1994</td><td> 0</td></tr>
+	<tr><td>USA  </td><td>1994</td><td>16</td></tr>
+	<tr><td>China</td><td>1994</td><td>17</td></tr>
+	<tr><td>Sudan</td><td>1994</td><td>12</td></tr>
 	<tr><td>India</td><td>1994</td><td> 9</td></tr>
-	<tr><td>USA  </td><td>1995</td><td>15</td></tr>
-	<tr><td>China</td><td>1995</td><td>20</td></tr>
-	<tr><td>Sudan</td><td>1995</td><td>14</td></tr>
-	<tr><td>India</td><td>1995</td><td>15</td></tr>
+	<tr><td>USA  </td><td>1995</td><td>17</td></tr>
+	<tr><td>China</td><td>1995</td><td>16</td></tr>
+	<tr><td>Sudan</td><td>1995</td><td> 7</td></tr>
+	<tr><td>India</td><td>1995</td><td> 8</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -534,15 +539,15 @@ const thebe_selector_output = ".output, .cell_output"
 	<tr><th scope=col>&lt;int&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>1994</td><td>USA  </td><td>11048</td></tr>
-	<tr><td>1995</td><td>USA  </td><td>12286</td></tr>
-	<tr><td>1996</td><td>USA  </td><td> 1833</td></tr>
-	<tr><td>1994</td><td>China</td><td>16713</td></tr>
-	<tr><td>1995</td><td>China</td><td> 7931</td></tr>
-	<tr><td>1996</td><td>China</td><td>17065</td></tr>
-	<tr><td>1994</td><td>Sudan</td><td>12802</td></tr>
-	<tr><td>1995</td><td>Sudan</td><td>13996</td></tr>
-	<tr><td>1996</td><td>Sudan</td><td>12812</td></tr>
+	<tr><td>1994</td><td>USA  </td><td>16367</td></tr>
+	<tr><td>1995</td><td>USA  </td><td>12873</td></tr>
+	<tr><td>1996</td><td>USA  </td><td>18012</td></tr>
+	<tr><td>1994</td><td>China</td><td>10061</td></tr>
+	<tr><td>1995</td><td>China</td><td> 2972</td></tr>
+	<tr><td>1996</td><td>China</td><td>10778</td></tr>
+	<tr><td>1994</td><td>Sudan</td><td>15411</td></tr>
+	<tr><td>1995</td><td>Sudan</td><td> 6435</td></tr>
+	<tr><td>1996</td><td>Sudan</td><td> 2564</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -566,12 +571,12 @@ const thebe_selector_output = ".output, .cell_output"
 	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>USA  </td><td>1994</td><td>14</td><td>11048</td></tr>
-	<tr><td>China</td><td>1994</td><td>13</td><td>16713</td></tr>
-	<tr><td>Sudan</td><td>1994</td><td> 0</td><td>12802</td></tr>
-	<tr><td>USA  </td><td>1995</td><td>15</td><td>12286</td></tr>
-	<tr><td>China</td><td>1995</td><td>20</td><td> 7931</td></tr>
-	<tr><td>Sudan</td><td>1995</td><td>14</td><td>13996</td></tr>
+	<tr><td>USA  </td><td>1994</td><td>16</td><td>16367</td></tr>
+	<tr><td>China</td><td>1994</td><td>17</td><td>10061</td></tr>
+	<tr><td>Sudan</td><td>1994</td><td>12</td><td>15411</td></tr>
+	<tr><td>USA  </td><td>1995</td><td>17</td><td>12873</td></tr>
+	<tr><td>China</td><td>1995</td><td>16</td><td> 2972</td></tr>
+	<tr><td>Sudan</td><td>1995</td><td> 7</td><td> 6435</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -608,17 +613,17 @@ const thebe_selector_output = ".output, .cell_output"
 	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>USA  </td><td>1994</td><td>14</td><td>11048</td></tr>
-	<tr><td>China</td><td>1994</td><td>13</td><td>16713</td></tr>
-	<tr><td>Sudan</td><td>1994</td><td> 0</td><td>12802</td></tr>
+	<tr><td>USA  </td><td>1994</td><td>16</td><td>16367</td></tr>
+	<tr><td>China</td><td>1994</td><td>17</td><td>10061</td></tr>
+	<tr><td>Sudan</td><td>1994</td><td>12</td><td>15411</td></tr>
 	<tr><td>India</td><td>1994</td><td> 9</td><td>   NA</td></tr>
-	<tr><td>USA  </td><td>1995</td><td>15</td><td>12286</td></tr>
-	<tr><td>China</td><td>1995</td><td>20</td><td> 7931</td></tr>
-	<tr><td>Sudan</td><td>1995</td><td>14</td><td>13996</td></tr>
-	<tr><td>India</td><td>1995</td><td>15</td><td>   NA</td></tr>
-	<tr><td>USA  </td><td>1996</td><td>NA</td><td> 1833</td></tr>
-	<tr><td>China</td><td>1996</td><td>NA</td><td>17065</td></tr>
-	<tr><td>Sudan</td><td>1996</td><td>NA</td><td>12812</td></tr>
+	<tr><td>USA  </td><td>1995</td><td>17</td><td>12873</td></tr>
+	<tr><td>China</td><td>1995</td><td>16</td><td> 2972</td></tr>
+	<tr><td>Sudan</td><td>1995</td><td> 7</td><td> 6435</td></tr>
+	<tr><td>India</td><td>1995</td><td> 8</td><td>   NA</td></tr>
+	<tr><td>USA  </td><td>1996</td><td>NA</td><td>18012</td></tr>
+	<tr><td>China</td><td>1996</td><td>NA</td><td>10778</td></tr>
+	<tr><td>Sudan</td><td>1996</td><td>NA</td><td> 2564</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -642,14 +647,14 @@ const thebe_selector_output = ".output, .cell_output"
 	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>USA  </td><td>1994</td><td>14</td><td>11048</td></tr>
-	<tr><td>China</td><td>1994</td><td>13</td><td>16713</td></tr>
-	<tr><td>Sudan</td><td>1994</td><td> 0</td><td>12802</td></tr>
+	<tr><td>USA  </td><td>1994</td><td>16</td><td>16367</td></tr>
+	<tr><td>China</td><td>1994</td><td>17</td><td>10061</td></tr>
+	<tr><td>Sudan</td><td>1994</td><td>12</td><td>15411</td></tr>
 	<tr><td>India</td><td>1994</td><td> 9</td><td>   NA</td></tr>
-	<tr><td>USA  </td><td>1995</td><td>15</td><td>12286</td></tr>
-	<tr><td>China</td><td>1995</td><td>20</td><td> 7931</td></tr>
-	<tr><td>Sudan</td><td>1995</td><td>14</td><td>13996</td></tr>
-	<tr><td>India</td><td>1995</td><td>15</td><td>   NA</td></tr>
+	<tr><td>USA  </td><td>1995</td><td>17</td><td>12873</td></tr>
+	<tr><td>China</td><td>1995</td><td>16</td><td> 2972</td></tr>
+	<tr><td>Sudan</td><td>1995</td><td> 7</td><td> 6435</td></tr>
+	<tr><td>India</td><td>1995</td><td> 8</td><td>   NA</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -679,14 +684,14 @@ const thebe_selector_output = ".output, .cell_output"
 	<tr><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>USA  </td><td>1994</td><td> 9</td></tr>
-	<tr><td>China</td><td>1994</td><td>19</td></tr>
-	<tr><td>Sudan</td><td>1994</td><td>12</td></tr>
-	<tr><td>USA  </td><td>1995</td><td>11</td></tr>
+	<tr><td>USA  </td><td>1994</td><td>19</td></tr>
+	<tr><td>China</td><td>1994</td><td> 7</td></tr>
+	<tr><td>Sudan</td><td>1994</td><td> 2</td></tr>
+	<tr><td>USA  </td><td>1995</td><td>18</td></tr>
 	<tr><td>China</td><td>1995</td><td> 3</td></tr>
-	<tr><td>Sudan</td><td>1995</td><td> 6</td></tr>
-	<tr><td>USA  </td><td>1996</td><td>18</td></tr>
-	<tr><td>China</td><td>1996</td><td>17</td></tr>
+	<tr><td>Sudan</td><td>1995</td><td>10</td></tr>
+	<tr><td>USA  </td><td>1996</td><td>12</td></tr>
+	<tr><td>China</td><td>1996</td><td>18</td></tr>
 	<tr><td>Sudan</td><td>1996</td><td>14</td></tr>
 </tbody>
 </table>
@@ -736,14 +741,14 @@ const thebe_selector_output = ".output, .cell_output"
 	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>USA  </td><td>1994</td><td> 9</td><td>America</td></tr>
-	<tr><td>China</td><td>1994</td><td>19</td><td>Asia   </td></tr>
-	<tr><td>Sudan</td><td>1994</td><td>12</td><td>Africa </td></tr>
-	<tr><td>USA  </td><td>1995</td><td>11</td><td>America</td></tr>
+	<tr><td>USA  </td><td>1994</td><td>19</td><td>America</td></tr>
+	<tr><td>China</td><td>1994</td><td> 7</td><td>Asia   </td></tr>
+	<tr><td>Sudan</td><td>1994</td><td> 2</td><td>Africa </td></tr>
+	<tr><td>USA  </td><td>1995</td><td>18</td><td>America</td></tr>
 	<tr><td>China</td><td>1995</td><td> 3</td><td>Asia   </td></tr>
-	<tr><td>Sudan</td><td>1995</td><td> 6</td><td>Africa </td></tr>
-	<tr><td>USA  </td><td>1996</td><td>18</td><td>America</td></tr>
-	<tr><td>China</td><td>1996</td><td>17</td><td>Asia   </td></tr>
+	<tr><td>Sudan</td><td>1995</td><td>10</td><td>Africa </td></tr>
+	<tr><td>USA  </td><td>1996</td><td>12</td><td>America</td></tr>
+	<tr><td>China</td><td>1996</td><td>18</td><td>Asia   </td></tr>
 	<tr><td>Sudan</td><td>1996</td><td>14</td><td>Africa </td></tr>
 </tbody>
 </table>
