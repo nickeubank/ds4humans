@@ -4,13 +4,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Functions &#8212; Data Science for Humans</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -20,16 +18,20 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -37,13 +39,12 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -59,21 +60,7 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -82,17 +69,11 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
-      
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Data Science for Humans</h1>
@@ -103,15 +84,14 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../landing_page.html">
-                    Welcome to Data Science for Humans
-                </a>
-            </li>
-        </ul>
-        <p aria-level="2" class="caption" role="heading">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../landing_page.html">
+   Welcome to Data Science for Humans
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Introduction
  </span>
@@ -202,20 +182,20 @@ const thebe_selector_output = ".output, .cell_output"
    Interpretable Models
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00_introduction/01_JoshTest.html">
+   Test
+  </a>
+ </li>
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
-    </div>
-    <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -223,191 +203,94 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="header-article row sticky-top noprint">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/nickeubank/ds4humans/master?urlpath=tree/docs/10_programming/functions.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/nickeubank/ds4humans"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F10_programming/functions.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/10_programming/functions.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/10_programming/functions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/nickeubank/ds4humans"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F10_programming/functions.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
     </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/nickeubank/ds4humans/master?urlpath=tree/docs/10_programming/functions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#defining-a-function">
    Defining a Function
@@ -440,11 +323,12 @@ title="Print to PDF"
  </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Functions</h1>
@@ -493,19 +377,18 @@ title="Print to PDF"
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="functions">
-<h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="functions">
+<h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h1>
 <p>Up to this point in our course, we’ve mostly <em>used</em> functions without really thinking about how they work. And to some degree, that’s by design – as discussed in our earlier reading, you don’t actually need to know what’s going on inside the function. You only need to know the arguments you need to pass to it to get back the thing that you want. In that sense, function is kind of like a toaster: you put bread in, you get toast back; how the toaster is turning the bread into toast isn’t really something you need to worry about.</p>
 <p>But in your career, you will often find it useful to write your own functions, and to do that we have to understand a little more about how functions work.</p>
 <p>Why do we care about writing functions? Functions are useful when you want to execute a task over and over again, resulting in less verbose and more easily interpretable code. And as we learned in our <a class="reference internal" href="defensive_programming.html"><span class="doc std std-doc">defensive programming reading</span></a>, that will not only save you time, but it will also make it less likely that you will end up with errors in your code!</p>
 <p><strong>But wait… isn’t that what you told me loops were for?</strong></p>
 <p>Yes! Both loops and functions are, broadly speaking, for the same purpose: helping write more succinct code when you’re doing something similar over and over. The big difference is that with a loop you only really get one variable the changes with each pass, whereas with the function, you can generalize behavior a lot more. In addition, as you’ll see, functions are a little more flexible and reusable than loops.</p>
-<section id="defining-a-function">
-<h2>Defining a Function<a class="headerlink" href="#defining-a-function" title="Permalink to this headline">#</a></h2>
+<div class="section" id="defining-a-function">
+<h2>Defining a Function<a class="headerlink" href="#defining-a-function" title="Permalink to this headline">¶</a></h2>
 <p>To illustrate how function works, let’s begin with a very simple function that takes a number, adds one to that number, then doubles it. It is admittedly a bit of a contrived example, but it has just enough complexity to be interesting.</p>
 <p>We would write this function as follows:</p>
 <div class="cell docutils container">
@@ -535,9 +418,9 @@ title="Print to PDF"
 <p>Text between the parentheses after <code class="docutils literal notranslate"><span class="pre">function</span></code> (here, <code class="docutils literal notranslate"><span class="pre">input_number</span></code>) are the arguments the function will accept. We are writing this function to only accept one argument, so we’ve only put one thing between the parentheses. This is called the function signature.</p>
 <p>Then between the curly brackets is the actual function – the argument passed to the function is referred to by whatever you called the argument in the function signature (here, <code class="docutils literal notranslate"><span class="pre">input_number</span></code>). So here within the function we had one to the input, double that value.</p>
 <p>Finally, we passed that doubled value to the <code class="docutils literal notranslate"><span class="pre">return()</span></code> function, which means that we want the value assigned to <code class="docutils literal notranslate"><span class="pre">doubled</span></code> to be what the function returns.</p>
-</section>
-<section id="what-happens-when-a-function-is-called">
-<h2>What Happens When a Function is Called<a class="headerlink" href="#what-happens-when-a-function-is-called" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="what-happens-when-a-function-is-called">
+<h2>What Happens When a Function is Called<a class="headerlink" href="#what-happens-when-a-function-is-called" title="Permalink to this headline">¶</a></h2>
 <p>Now that we’ve seen how to write a function, let’s pause for a moment to work through exactly what happens when that function is called. For example, above we ran the code <code class="docutils literal notranslate"><span class="pre">above_1_and_double(x)</span></code> and got back 12. How did that happen? Well…</p>
 <p>We begin with a simple assignment of <code class="docutils literal notranslate"><span class="pre">5</span></code> to <code class="docutils literal notranslate"><span class="pre">x</span></code>:</p>
 <p><img alt="function1" src="../_images/function1.png" /></p>
@@ -552,9 +435,9 @@ title="Print to PDF"
 <p>The return statement tells R that the function is done. When R encounters a return statement, it does two things: it (a) returns the value given to <code class="docutils literal notranslate"><span class="pre">return()</span></code>, and (b) it ends the function and deletes the function’s frame:</p>
 <p><img alt="function6" src="../_images/function6.png" /></p>
 <p>Notice that all the variables that had been defined within the frame <code class="docutils literal notranslate"><span class="pre">add_1_and_double</span></code> (<code class="docutils literal notranslate"><span class="pre">input_number</span></code>, <code class="docutils literal notranslate"><span class="pre">plus_1</span></code>, and <code class="docutils literal notranslate"><span class="pre">doubled</span></code>) are gone – when a function ends, none of the variables defined within the function live on. All that’s left is that the function’s memory lives on through its return value, which is now stored in <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
-</section>
-<section id="function-arguments">
-<h2>Function Arguments<a class="headerlink" href="#function-arguments" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="function-arguments">
+<h2>Function Arguments<a class="headerlink" href="#function-arguments" title="Permalink to this headline">¶</a></h2>
 <p>In the example above, our function accepted a single argument, but of course we’ve seen functions can accept more than one argument! To accept more than one argument, just recommended the function signature in the first line:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -598,14 +481,14 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output text_html">'3'</div></div>
 </div>
-</section>
-<section id="a-note-about-scope">
-<h2>A Note About Scope<a class="headerlink" href="#a-note-about-scope" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="a-note-about-scope">
+<h2>A Note About Scope<a class="headerlink" href="#a-note-about-scope" title="Permalink to this headline">¶</a></h2>
 <p>There’s a concept in programming called “scope”, which refers to what variables are visible at a given moment of execution. If you write a function to only need to work with (a) the arguments given to the function, and (b) the variables that you define within the function, you don’t need to worry about scope. And indeed, there’s a whole philosophy of programming – called <em>functional programming</em> – that says that’s the only way you should write a function.</p>
 <p>In general, I would recommend sticking to this approach. However, I would not be doing my duty as an instructor if I did not mention that functions can see variables that exist outside of themselves. For example, in our <code class="docutils literal notranslate"><span class="pre">add_1_and_double()</span></code> example above, if we’d added the line <code class="docutils literal notranslate"><span class="pre">doubled</span> <span class="pre">&lt;-</span> <span class="pre">doubled</span> <span class="pre">+</span> <span class="pre">x</span></code> right above our return statement, the function would have been able to “see” that there was a variable <code class="docutils literal notranslate"><span class="pre">x</span></code> in the world outside the function, and that it had been assigned the value <code class="docutils literal notranslate"><span class="pre">5</span></code> and increment <code class="docutils literal notranslate"><span class="pre">doubled</span></code> by 5. But… That’s a very dangerous method of programming, because if you write a function that way, the behavior of the function now depends on the values assigned to variables outside the function. So <code class="docutils literal notranslate"><span class="pre">add_1_and_double(5)</span></code> would return one thing if you had earlier defined <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;-</span> <span class="pre">2</span></code> and something different if you defined <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;-</span> <span class="pre">7</span></code>. So… don’t do it? I just want to warn you that code written like that will run, but it’s something you won’t want to use unless you really know what you’re doing.</p>
-</section>
-<section id="exercises-for-now">
-<h2>Exercises for Now<a class="headerlink" href="#exercises-for-now" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="exercises-for-now">
+<h2>Exercises for Now<a class="headerlink" href="#exercises-for-now" title="Permalink to this headline">¶</a></h2>
 <p>If you want to try out some functions, try the following, or you can just skip ahead to the next reading detailed below.</p>
 <ol class="simple">
 <li><p>Write a function called second_largest that finds the second largest value in a vector of numeric values. That is, the input should be a numeric vector and the output should be the second largest value in the vector. You can assume that the input vector has at least two values. Test your function on the following two vectors:</p></li>
@@ -621,12 +504,12 @@ title="Print to PDF"
 <span class="n">v4</span> <span class="o">&lt;-</span> <span class="nf">as.factor</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="next-steps">
-<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
 <p>We have an example of <a class="reference internal" href="function_example.html"><span class="doc std std-doc">using functions for a real task!</span></a>.</p>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -650,34 +533,28 @@ title="Print to PDF"
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Josh Clinton and Nick Eubank<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+      By Josh Clinton and Nick Eubank<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
 
 
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

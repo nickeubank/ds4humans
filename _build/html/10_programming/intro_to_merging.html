@@ -4,13 +4,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Intro to Merging &#8212; Data Science for Humans</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -20,16 +18,20 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -37,13 +39,12 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -59,21 +60,7 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -82,17 +69,11 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
-      
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Data Science for Humans</h1>
@@ -103,15 +84,14 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../landing_page.html">
-                    Welcome to Data Science for Humans
-                </a>
-            </li>
-        </ul>
-        <p aria-level="2" class="caption" role="heading">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../landing_page.html">
+   Welcome to Data Science for Humans
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Introduction
  </span>
@@ -202,20 +182,20 @@ const thebe_selector_output = ".output, .cell_output"
    Interpretable Models
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00_introduction/01_JoshTest.html">
+   Test
+  </a>
+ </li>
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
-    </div>
-    <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -223,191 +203,94 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="header-article row sticky-top noprint">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/nickeubank/ds4humans/master?urlpath=tree/docs/10_programming/intro_to_merging.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/nickeubank/ds4humans"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F10_programming/intro_to_merging.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/10_programming/intro_to_merging.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/10_programming/intro_to_merging.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/nickeubank/ds4humans"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F10_programming/intro_to_merging.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
     </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/nickeubank/ds4humans/master?urlpath=tree/docs/10_programming/intro_to_merging.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#a-merging-example">
    A Merging Example
@@ -442,11 +325,12 @@ title="Print to PDF"
  </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Intro to Merging</h1>
@@ -497,19 +381,18 @@ title="Print to PDF"
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="intro-to-merging">
-<h1>Intro to Merging<a class="headerlink" href="#intro-to-merging" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="intro-to-merging">
+<h1>Intro to Merging<a class="headerlink" href="#intro-to-merging" title="Permalink to this headline">¶</a></h1>
 <p>This tutorial explains how to combine different datasets through merging. Merging is basically a way of combining the <em>columns</em> from one dataset with those of another.</p>
 <p>To illustrate the kind of situation where you may end up wanting to merge data, suppose that you are interested in how economic development affects democracy across countries, but all you have are two separate datasets, each with data on one of these two outcomes – say, economic data from the World Bank and political data from the Polity Project. In order to study how these things relate to one another, we need to combine these two data sets.</p>
 <p>(If you don’t care about democracy, just imagine we’re talking about something you care about, like urban pollution levels instead of democracy scores! The logic is the same.)</p>
 <p>In a previous reading, I argued that subsiding data is probably the most important skill you will learn as a data scientist. Being able to subset data carefully makes it possible to study how all sorts of outcomes vary across different groups.</p>
 <p>Merging, I would argue, is the second most important skill for generating insights in data science. It is hard to overstate the value that comes from bringing together two disparate sources of information and studying how they relate to one another. This may surprise you coming from someone who teaches data science – most people would assume a data scientist believes value comes from fancy models – but in my experience, most insights come from documenting simple empirical regularities about the world that nobody has noticed before. We often use more sophisticated statistical modeling in order to evaluate the strength of relationships, and to help us understand what is driving those empirical regularities, but all of that work is secondary to just being able to measure basic features of the world. And merging is key to that process.</p>
-<section id="a-merging-example">
-<h2>A Merging Example<a class="headerlink" href="#a-merging-example" title="Permalink to this headline">#</a></h2>
+<div class="section" id="a-merging-example">
+<h2>A Merging Example<a class="headerlink" href="#a-merging-example" title="Permalink to this headline">¶</a></h2>
 <p>To illustrate merging, let’s suppose that we want to do the analysis of the relationship between political outcomes and economic development we described above. Below we create to toy data sets, one with democracy scores (analogous to those you might get from a group like the <a class="reference external" href="http://www.systemicpeace.org/polityproject.html">Polity Project</a>), and one with economic information (like the type of information you might get from the <a class="reference external" href="https://datatopics.worldbank.org/world-development-indicators/">World Developing Indicators</a>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -579,13 +462,24 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>Error in library(statar): there is no package called ‘statar’
-Traceback:
-
-1. library(statar)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Joining, by = &quot;country&quot;
 </pre></div>
 </div>
-</div>
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 5 × 3</caption>
+<thead>
+	<tr><th scope=col>country</th><th scope=col>democracy_score</th><th scope=col>gdp_pc</th></tr>
+	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>USA    </td><td>19</td><td>20000</td></tr>
+	<tr><td>Albania</td><td>16</td><td>10000</td></tr>
+	<tr><td>Turkey </td><td>16</td><td> 9000</td></tr>
+	<tr><td>China  </td><td> 5</td><td>12000</td></tr>
+	<tr><td>Sudan  </td><td>10</td><td>  500</td></tr>
+</tbody>
+</table>
+</div></div>
 </div>
 <p>This is called a 1-to-1 merge because each row in the first dataset matches up to exactly one row in the second dataset – i.e. each country appears only once in the first dataset, and matches up to a single row in the second dataset (the row with the same country identifier).</p>
 <p>Your common identifier may be spread across multiple columns. Consider the following example:</p>
@@ -609,13 +503,13 @@ Traceback:
 	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>USA  </td><td>1994</td><td> 8</td></tr>
-	<tr><td>China</td><td>1994</td><td> 7</td></tr>
-	<tr><td>Sudan</td><td>1994</td><td>19</td></tr>
-	<tr><td>India</td><td>1994</td><td>15</td></tr>
-	<tr><td>USA  </td><td>1995</td><td>16</td></tr>
-	<tr><td>China</td><td>1995</td><td> 8</td></tr>
-	<tr><td>Sudan</td><td>1995</td><td> 6</td></tr>
+	<tr><td>USA  </td><td>1994</td><td>14</td></tr>
+	<tr><td>China</td><td>1994</td><td>13</td></tr>
+	<tr><td>Sudan</td><td>1994</td><td> 0</td></tr>
+	<tr><td>India</td><td>1994</td><td> 9</td></tr>
+	<tr><td>USA  </td><td>1995</td><td>15</td></tr>
+	<tr><td>China</td><td>1995</td><td>20</td></tr>
+	<tr><td>Sudan</td><td>1995</td><td>14</td></tr>
 	<tr><td>India</td><td>1995</td><td>15</td></tr>
 </tbody>
 </table>
@@ -640,15 +534,15 @@ Traceback:
 	<tr><th scope=col>&lt;int&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>1994</td><td>USA  </td><td>10368</td></tr>
-	<tr><td>1995</td><td>USA  </td><td> 9604</td></tr>
-	<tr><td>1996</td><td>USA  </td><td>14462</td></tr>
-	<tr><td>1994</td><td>China</td><td> 5764</td></tr>
-	<tr><td>1995</td><td>China</td><td>16988</td></tr>
-	<tr><td>1996</td><td>China</td><td> 1835</td></tr>
-	<tr><td>1994</td><td>Sudan</td><td> 8100</td></tr>
-	<tr><td>1995</td><td>Sudan</td><td>17933</td></tr>
-	<tr><td>1996</td><td>Sudan</td><td>16246</td></tr>
+	<tr><td>1994</td><td>USA  </td><td>11048</td></tr>
+	<tr><td>1995</td><td>USA  </td><td>12286</td></tr>
+	<tr><td>1996</td><td>USA  </td><td> 1833</td></tr>
+	<tr><td>1994</td><td>China</td><td>16713</td></tr>
+	<tr><td>1995</td><td>China</td><td> 7931</td></tr>
+	<tr><td>1996</td><td>China</td><td>17065</td></tr>
+	<tr><td>1994</td><td>Sudan</td><td>12802</td></tr>
+	<tr><td>1995</td><td>Sudan</td><td>13996</td></tr>
+	<tr><td>1996</td><td>Sudan</td><td>12812</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -672,18 +566,18 @@ Traceback:
 	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>USA  </td><td>1994</td><td> 8</td><td>10368</td></tr>
-	<tr><td>China</td><td>1994</td><td> 7</td><td> 5764</td></tr>
-	<tr><td>Sudan</td><td>1994</td><td>19</td><td> 8100</td></tr>
-	<tr><td>USA  </td><td>1995</td><td>16</td><td> 9604</td></tr>
-	<tr><td>China</td><td>1995</td><td> 8</td><td>16988</td></tr>
-	<tr><td>Sudan</td><td>1995</td><td> 6</td><td>17933</td></tr>
+	<tr><td>USA  </td><td>1994</td><td>14</td><td>11048</td></tr>
+	<tr><td>China</td><td>1994</td><td>13</td><td>16713</td></tr>
+	<tr><td>Sudan</td><td>1994</td><td> 0</td><td>12802</td></tr>
+	<tr><td>USA  </td><td>1995</td><td>15</td><td>12286</td></tr>
+	<tr><td>China</td><td>1995</td><td>20</td><td> 7931</td></tr>
+	<tr><td>Sudan</td><td>1995</td><td>14</td><td>13996</td></tr>
 </tbody>
 </table>
 </div></div>
 </div>
-<section id="what-rows-do-you-keep">
-<h3>What Rows Do You Keep?<a class="headerlink" href="#what-rows-do-you-keep" title="Permalink to this headline">#</a></h3>
+<div class="section" id="what-rows-do-you-keep">
+<h3>What Rows Do You Keep?<a class="headerlink" href="#what-rows-do-you-keep" title="Permalink to this headline">¶</a></h3>
 <p>As you may have noticed in the example above, our <code class="docutils literal notranslate"><span class="pre">demo</span></code> dataset had more countries than our <code class="docutils literal notranslate"><span class="pre">econ</span></code> dataset (it included India, while <code class="docutils literal notranslate"><span class="pre">econ</span></code> did not), and <code class="docutils literal notranslate"><span class="pre">econ</span></code> included more years than <code class="docutils literal notranslate"><span class="pre">demo</span></code> (namely: 1996). And when we merged the two datasets, only the country-year pairs that were common to both data sets were kept.</p>
 <p>This is what’s referred to is an <em>inner join</em>. In an inner join, only rows whose identifiers are present in both datasets are kept in the final dataset. But inner is just one of four types of merges:</p>
 <ul class="simple">
@@ -714,17 +608,17 @@ Traceback:
 	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>USA  </td><td>1994</td><td> 8</td><td>10368</td></tr>
-	<tr><td>China</td><td>1994</td><td> 7</td><td> 5764</td></tr>
-	<tr><td>Sudan</td><td>1994</td><td>19</td><td> 8100</td></tr>
-	<tr><td>India</td><td>1994</td><td>15</td><td>   NA</td></tr>
-	<tr><td>USA  </td><td>1995</td><td>16</td><td> 9604</td></tr>
-	<tr><td>China</td><td>1995</td><td> 8</td><td>16988</td></tr>
-	<tr><td>Sudan</td><td>1995</td><td> 6</td><td>17933</td></tr>
+	<tr><td>USA  </td><td>1994</td><td>14</td><td>11048</td></tr>
+	<tr><td>China</td><td>1994</td><td>13</td><td>16713</td></tr>
+	<tr><td>Sudan</td><td>1994</td><td> 0</td><td>12802</td></tr>
+	<tr><td>India</td><td>1994</td><td> 9</td><td>   NA</td></tr>
+	<tr><td>USA  </td><td>1995</td><td>15</td><td>12286</td></tr>
+	<tr><td>China</td><td>1995</td><td>20</td><td> 7931</td></tr>
+	<tr><td>Sudan</td><td>1995</td><td>14</td><td>13996</td></tr>
 	<tr><td>India</td><td>1995</td><td>15</td><td>   NA</td></tr>
-	<tr><td>USA  </td><td>1996</td><td>NA</td><td>14462</td></tr>
-	<tr><td>China</td><td>1996</td><td>NA</td><td> 1835</td></tr>
-	<tr><td>Sudan</td><td>1996</td><td>NA</td><td>16246</td></tr>
+	<tr><td>USA  </td><td>1996</td><td>NA</td><td> 1833</td></tr>
+	<tr><td>China</td><td>1996</td><td>NA</td><td>17065</td></tr>
+	<tr><td>Sudan</td><td>1996</td><td>NA</td><td>12812</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -748,23 +642,23 @@ Traceback:
 	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>USA  </td><td>1994</td><td> 8</td><td>10368</td></tr>
-	<tr><td>China</td><td>1994</td><td> 7</td><td> 5764</td></tr>
-	<tr><td>Sudan</td><td>1994</td><td>19</td><td> 8100</td></tr>
-	<tr><td>India</td><td>1994</td><td>15</td><td>   NA</td></tr>
-	<tr><td>USA  </td><td>1995</td><td>16</td><td> 9604</td></tr>
-	<tr><td>China</td><td>1995</td><td> 8</td><td>16988</td></tr>
-	<tr><td>Sudan</td><td>1995</td><td> 6</td><td>17933</td></tr>
+	<tr><td>USA  </td><td>1994</td><td>14</td><td>11048</td></tr>
+	<tr><td>China</td><td>1994</td><td>13</td><td>16713</td></tr>
+	<tr><td>Sudan</td><td>1994</td><td> 0</td><td>12802</td></tr>
+	<tr><td>India</td><td>1994</td><td> 9</td><td>   NA</td></tr>
+	<tr><td>USA  </td><td>1995</td><td>15</td><td>12286</td></tr>
+	<tr><td>China</td><td>1995</td><td>20</td><td> 7931</td></tr>
+	<tr><td>Sudan</td><td>1995</td><td>14</td><td>13996</td></tr>
 	<tr><td>India</td><td>1995</td><td>15</td><td>   NA</td></tr>
 </tbody>
 </table>
 </div></div>
 </div>
 <p>As you can see, when you keep unmatched rows, R places <code class="docutils literal notranslate"><span class="pre">NA</span></code> values in entries that didn’t match, and so don’t have data for certain columns. We’ll talk about <code class="docutils literal notranslate"><span class="pre">NA</span></code>s in our <a class="reference internal" href="missing_data.html"><span class="doc std std-doc">missing data</span></a> reading.</p>
-</section>
-</section>
-<section id="to-many-many-to-1-merging">
-<h2>1-to-Many / Many-to-1 Merging<a class="headerlink" href="#to-many-many-to-1-merging" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+<div class="section" id="to-many-many-to-1-merging">
+<h2>1-to-Many / Many-to-1 Merging<a class="headerlink" href="#to-many-many-to-1-merging" title="Permalink to this headline">¶</a></h2>
 <p>In our previous examples, the identifier we used clearly told R how to match each row of one dataset to exactly one row of the other dataset. We call this a 1-to-1 merge.</p>
 <p>Sometimes, though, each row from one dataset may match up to <em>multiple</em> rows of the other. In these situations, we do a 1-to-many merge. Say, for example, we have the following two data frames:</p>
 <div class="cell docutils container">
@@ -785,15 +679,15 @@ Traceback:
 	<tr><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>USA  </td><td>1994</td><td> 0</td></tr>
-	<tr><td>China</td><td>1994</td><td> 8</td></tr>
-	<tr><td>Sudan</td><td>1994</td><td>13</td></tr>
-	<tr><td>USA  </td><td>1995</td><td>17</td></tr>
-	<tr><td>China</td><td>1995</td><td> 6</td></tr>
-	<tr><td>Sudan</td><td>1995</td><td>14</td></tr>
-	<tr><td>USA  </td><td>1996</td><td>19</td></tr>
-	<tr><td>China</td><td>1996</td><td> 1</td></tr>
-	<tr><td>Sudan</td><td>1996</td><td> 2</td></tr>
+	<tr><td>USA  </td><td>1994</td><td> 9</td></tr>
+	<tr><td>China</td><td>1994</td><td>19</td></tr>
+	<tr><td>Sudan</td><td>1994</td><td>12</td></tr>
+	<tr><td>USA  </td><td>1995</td><td>11</td></tr>
+	<tr><td>China</td><td>1995</td><td> 3</td></tr>
+	<tr><td>Sudan</td><td>1995</td><td> 6</td></tr>
+	<tr><td>USA  </td><td>1996</td><td>18</td></tr>
+	<tr><td>China</td><td>1996</td><td>17</td></tr>
+	<tr><td>Sudan</td><td>1996</td><td>14</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -842,26 +736,26 @@ Traceback:
 	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>USA  </td><td>1994</td><td> 0</td><td>America</td></tr>
-	<tr><td>China</td><td>1994</td><td> 8</td><td>Asia   </td></tr>
-	<tr><td>Sudan</td><td>1994</td><td>13</td><td>Africa </td></tr>
-	<tr><td>USA  </td><td>1995</td><td>17</td><td>America</td></tr>
-	<tr><td>China</td><td>1995</td><td> 6</td><td>Asia   </td></tr>
-	<tr><td>Sudan</td><td>1995</td><td>14</td><td>Africa </td></tr>
-	<tr><td>USA  </td><td>1996</td><td>19</td><td>America</td></tr>
-	<tr><td>China</td><td>1996</td><td> 1</td><td>Asia   </td></tr>
-	<tr><td>Sudan</td><td>1996</td><td> 2</td><td>Africa </td></tr>
+	<tr><td>USA  </td><td>1994</td><td> 9</td><td>America</td></tr>
+	<tr><td>China</td><td>1994</td><td>19</td><td>Asia   </td></tr>
+	<tr><td>Sudan</td><td>1994</td><td>12</td><td>Africa </td></tr>
+	<tr><td>USA  </td><td>1995</td><td>11</td><td>America</td></tr>
+	<tr><td>China</td><td>1995</td><td> 3</td><td>Asia   </td></tr>
+	<tr><td>Sudan</td><td>1995</td><td> 6</td><td>Africa </td></tr>
+	<tr><td>USA  </td><td>1996</td><td>18</td><td>America</td></tr>
+	<tr><td>China</td><td>1996</td><td>17</td><td>Asia   </td></tr>
+	<tr><td>Sudan</td><td>1996</td><td>14</td><td>Africa </td></tr>
 </tbody>
 </table>
 </div></div>
 </div>
-</section>
-<section id="many-to-many-merges">
-<h2>Many-to-Many Merges<a class="headerlink" href="#many-to-many-merges" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="many-to-many-merges">
+<h2>Many-to-Many Merges<a class="headerlink" href="#many-to-many-merges" title="Permalink to this headline">¶</a></h2>
 <p>There is such thing as a many-to-many merge, but it is incredibly rare you would ever want to do it. It results in the new dataset having all possible combinations of matching rows, which (if done incorrectly) can lead to a combinatorial explosion. So… I’d say don’t worry about it? :)</p>
-</section>
-<section id="recap">
-<h2>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="recap">
+<h2>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Merging is a method of bringing information from different datasets together.</p></li>
 <li><p>Merging requires specifying the column(s) whose values tell R which rows to match up.</p></li>
@@ -874,12 +768,12 @@ Traceback:
 </ul>
 </li>
 </ul>
-</section>
-<section id="next-up">
-<h2>Next Up<a class="headerlink" href="#next-up" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="next-up">
+<h2>Next Up<a class="headerlink" href="#next-up" title="Permalink to this headline">¶</a></h2>
 <p>Let’s read more about the problems that can occur in merging, and <a class="reference internal" href="defensive_merging.html"><span class="doc std std-doc">how to address them!</span></a></p>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -903,34 +797,28 @@ Traceback:
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Josh Clinton and Nick Eubank<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+      By Josh Clinton and Nick Eubank<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
 
 
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>
