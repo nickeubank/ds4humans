@@ -36,3 +36,7 @@ In recent years, however, there has been a growing appreciation of how can be ga
 ## Great Story. Why Should I Care?
 
 So why are we telling you this story? In short, because it's important for you to understand that *most* people you will encounter in the world doing data science were trained in one of these academic silos. That means that depending on who you are working with and how they were trained, they may find your future colleagues using terms you've never heard before, or being confused by some of the concepts you bring up, and it's important for you to understand that that isn't necessarily because *you* don't understand something; it may be because either they're just using different terms for a concept you know, or it may be because you, trained with a more unified perspective, may be aware of concepts that even your more senior colleagues (or rather, especially your more senior colleagues!) were never exposed to.
+
+## The Data Analysis / Software Engineering Distinction
+
+**Need to add discussion about this distinction**
