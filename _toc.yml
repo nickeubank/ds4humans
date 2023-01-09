@@ -4,9 +4,6 @@
 format: jb-book
 root: landing_page
 parts:
-  - caption: Preface
-    chapters:
-    - file: 00_preface/00_preface
   - caption: Introduction
     chapters:
     - file: 10_introduction/10_our_approach
