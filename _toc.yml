@@ -4,24 +4,25 @@
 format: jb-book
 root: landing_page
 parts:
+  - caption: Preface
+    chapters:
+    - file: 00_preface/00_preface
   - caption: Introduction
     chapters:
-    - file: 00_introduction/00_overview
-    - file: 00_introduction/10_data_science_in_historical_context
-    - file: 00_introduction/20_our_approach
+    - file: 10_introduction/10_our_approach
+    - file: 10_introduction/20_data_science_in_historical_context
   - caption: Types of Questions
     chapters:
-    - file: 20_questions/00_from_problems_to_questions
-    - file: 20_questions/10_exploratory_questions
-    - file: 20_questions/20_passive_prediction_questions
-    - file: 20_questions/30_causal_questions
+    - file: 30_questions/00_from_problems_to_questions
+    - file: 30_questions/10_exploratory_questions
+    - file: 30_questions/20_passive_prediction_questions
+    - file: 30_questions/30_causal_questions
   - caption: Data Science in Practice
     chapters:
-    - file: 30_in_practice/00_backwards_design
-    - file: 30_in_practice/10_ethics
-    - file: 30_in_practice/20_from_data_to_decisions
-    - file: 30_in_practice/25_writing_to_stakeholders
+    - file: 40_in_practice/00_backwards_design
+    - file: 40_in_practice/10_ethics
+    - file: 40_in_practice/20_from_data_to_decisions
+    - file: 40_in_practice/25_writing_to_stakeholders
   - caption: Advanced Topics
     chapters:
     - file: 40_advanced_topics/30_interpretability
-    - file: 00_introduction/01_JoshTest
