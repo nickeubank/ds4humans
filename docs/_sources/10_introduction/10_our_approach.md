@@ -60,7 +60,7 @@ We can see this by plotting the data:
 
 Clearly, the relationship between these different assets and natural gas prices are *not* all the same! Buying the asset in the top left would likely do a good job of smoothing out the state's budget, but in nearly all years, the asset in the bottom right would be useless for smoothing the state's budget since in most years the asset's payoff doesn't change at all!
 
-[^anscombesquartet]Anscombe's quartet. (2022, October 21). In Wikipedia. <https://en.wikipedia.org/wiki/Anscombe%27s_quartet>
+[^anscombesquartet]: Anscombe's quartet. (2022, October 21). In Wikipedia. <https://en.wikipedia.org/wiki/Anscombe%27s_quartet>
 
 This is obviously a simple example, and one where a simple plot is sufficient to allow us to see the problem. But this problem is inherent to answering *any* exploratory question—whether we're calculating simple statistics or using sophisticated unsupervised machine learning techniques; when we summarize data, it is our job as data scientists to ensure that our summaries are representing the *relevant* patterns in the data in a faithful and meaningful manner. And because what is relevant depends on the problem we are trying to solve, it's something we as data scientists have to evaluate, not something an algorithm can do for us.
 
@@ -74,7 +74,7 @@ The "passive" in passive prediction emphasizes that these are questions about pr
 
 Not all passive prediction questions are about events in the future; some passive prediction questions are about predicting how a third party *would* behave or interpret something if given the chance. For example, suppose we wanted to use data science to analyze mammograms.[^mammograms] One way to think about what we are doing is that we are trying to answer the predictive question: "if a radiologist looked at this scan, would they think the patient had cancer?" Or if we wanted to use data science to review job applicants resumés to determine who a company should hire, we could think of what we're doing as answering the question "if a hiring manager looked at this resumé, would they want to interview this candidate?"
 
-[^mammograms] Mammograms is an x-ray of breast tissue used for the detection of breast cancer.
+[^mammograms]: Mammograms is an x-ray of breast tissue used for the detection of breast cancer.
 
 This may seem a slightly odd way to think about these types of problems, but as we'll discuss later, this way of framing data science problems is very powerful. In fact, it is usually a more accurate description of what many machine learning models are actually doing. That's because many data science problems are solved using a practice called *supervised machine learning* in which a statistical model is "trained" using data that a human has already analyzed. Our mammogram analyzing algorithm, for example, could be trained by providing it with examples of mammograms that human radiologists have already reviewed and labelled as having cancer or not having cancer. This data would then be fed to a supervised machine learning algorithm and used to develop a statistical model for differentiating mammograms with and without cancer.
 
