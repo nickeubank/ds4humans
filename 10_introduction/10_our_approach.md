@@ -54,9 +54,11 @@ They've given you data on four potential assets, and so you run a linear regress
 
 Well... no. Because if we dig a little deeper, we see that these summary statistics are not telling us all the meaningful information in the data; our summary statistics are technically *correct*, but they aren't faithfully representing everything that matters given the problem we want to solve.
 
-We can see this by plotting the data (**nb: these plots are embarrassingly unlabeled, and this example needs some refinement! I'm working on it. :)**):[^anscombesquartet]: Anscombe's quartet. (2022, October 21). In Wikipedia. <https://en.wikipedia.org/wiki/Anscombe%27s_quartet>
+We can see this by plotting the data[^anscombesquartet] (**nb: these plots are embarrassingly unlabeled, and this example needs some refinement! I'm working on it. :)**):
 
-![plot of all four regression fits with scatter points](images/anscombes_quartet.png)[^anscombesquartet]
+[^anscombesquartet]: Anscombe's quartet. (2022, October 21). In Wikipedia. <https://en.wikipedia.org/wiki/Anscombe%27s_quartet>
+
+![plot of all four regression fits with scatter points](images/anscombes_quartet.png)
 
 Clearly, the relationship between these different assets and natural gas prices are *not* all the same! Buying the asset in the top left would likely do a good job of smoothing out the state's budget, but in nearly all years, the asset in the bottom right would be useless for smoothing the state's budget since in most years the asset's payoff doesn't change at all!
 
