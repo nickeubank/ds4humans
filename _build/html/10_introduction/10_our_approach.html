@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="What is Data Science: An Historical Perspective" href="20_data_science_in_historical_context.html" />
-    <link rel="prev" title="Introduction to Data Science for Humans" href="../00_preface/00_preface.html" />
+    <link rel="prev" title="Welcome to Data Science for Humans" href="../landing_page.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -114,18 +114,6 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Preface
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../00_preface/00_preface.html">
-   Introduction to Data Science for Humans
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Introduction
  </span>
@@ -474,11 +462,19 @@ title="Print to PDF"
 <p>The term <em>Exploratory Data Analysis</em> (EDA) is often used in statistics courses to describe the process of poking around in a new data set that you have been given before you fit a more complicated statistical model. While many of the tools that you may use to do that type of poking around are the same tools that you would use to answer more sophisticated Descriptive Questions, when we talk about answering Descriptive Questions in this book, we are generally talking about a much more involved process—one that often requires locating or bringing together new data sources—then this type of “data checking.”</p>
 </div>
 <p>Fundamentally, answering exploratory questions is about identifying salient patterns in your data that help you understand the <em>overall distribution</em> of features in your data. At times this can be accomplished with simple tools, like scatter plots, histograms, and calculating summary statistics like means and medians. Other times, however, it may require more sophisticated methods, like unsupervised machine learning algorithms that can, say, identify specific “customer-types” in a large dataset of customer behavior.</p>
-<p>Regardless of the specific methods being employed, however, answering exploratory questions always boils down to the same challenge: to take large datasets that aren’t comprehensible to people in their raw form, and to identify <strong>meaningful</strong> patterns in the data that can be summarized in a manner that humans can actually wrap their heads around. And why is this hard? Because by definition, answering exploratory questions requires trying to find ways to make the incomprehensible comprehensible by identifying <em>meaningful</em> patterns. And while we have many tools for calculating specific types of data summaries—means, medians, clustering algorithms, principle component analyses, etc.—none of these can evaluate whether the summaries they generate are <em>meaningful</em> to the question you are seeking to answer. And it is therefore up to you, the data scientist, to decide what summaries of the data provide a faithful and meaningful representation of the underlying data.</p>
-<!-- need examples here -->
+<p>Regardless of the specific methods being employed, however, answering exploratory questions always boils down to the same challenge: to take large datasets that aren’t comprehensible to people in their raw form, and to identify <strong>meaningful</strong> patterns in the data that can be summarized in a manner that humans can actually wrap their heads around. And why is this hard? Because by definition, answering exploratory questions requires trying to find ways to make the incomprehensible comprehensible by identifying <em>meaningful</em> patterns. And while we have many tools for calculating specific types of data summaries—means, medians, clustering algorithms, principal component analyses, etc.—none of these can evaluate whether the summaries they generate are <em>faithful and meaningful</em> to the question you are seeking to answer. And it is therefore up to you, the data scientist, to decide what summaries of the data provide a faithful and meaningful representation of the underlying data.</p>
+<p>What do we mean by “faithful and meaningful” summaries? To illustrate, suppose that you have been hired by the US state of Florida to help with a financial problem they’re having. They buy a lot of electricity that’s generated with natural gas, but as a result their electricity costs keep bouncing up and down with natural gas prices. As this makes it hard for them to do financial planning, they’ve asked you to find a financial asset the city can buy that will smooth out these fluctuations. More specifically, they want an asset that will pay out more when natural gas prices are high (so they can use the money to offset their increased electricity costs), and less when natural gas is low.</p>
+<!-- This example is awful and the plot doesn't have labels. Need better! -->
+<p>They’ve given you data on four potential assets, and so you run a linear regression looking at the relationship between the value of these assets and natural gas prices. You analyze the data by looking at the correlation between the asset’s payout and natural gas prices, and by fitting a linear regression with natural gas prices and asset payouts. You find that all four assets have essentially identical relationships with natural gas prices—a correlation of about 0.8, and a regression coefficient of about 0.5, suggesting that when natural gas prices rise by a dollar, asset payouts will increase by 0.50 dollars. Perfect, right? All four assets would work equally well, and all four could help limit budget fluctuations for Florida!</p>
+<p>Well… no. Because if we dig a little deeper, we see that these summary statistics are not telling us all the meaningful information in the data; our summary statistics are technically <em>correct</em>, but they aren’t faithfully representing everything that matters given the problem we want to solve.</p>
+<p>We can see this by plotting the data:</p>
+<p><img alt="plot of all four regression fits with scatter points" src="../_images/anscombes_quartet.png" />[^anscombesquartet]</p>
+<p>Clearly, the relationship between these different assets and natural gas prices are <em>not</em> all the same! Buying the asset in the top left would likely do a good job of smoothing out the state’s budget, but in nearly all years, the asset in the bottom right would be useless for smoothing the state’s budget since in most years the asset’s payoff doesn’t change at all!</p>
+<p>[^anscombesquartet]Anscombe’s quartet. (2022, October 21). In Wikipedia. <a class="reference external" href="https://en.wikipedia.org/wiki/Anscombe%27s_quartet">https://en.wikipedia.org/wiki/Anscombe%27s_quartet</a></p>
+<p>This is obviously a simple example, and one where a simple plot is sufficient to allow us to see the problem. But this problem is inherent to answering <em>any</em> exploratory question—whether we’re calculating simple statistics or using sophisticated unsupervised machine learning techniques; when we summarize data, it is our job as data scientists to ensure that our summaries are representing the <em>relevant</em> patterns in the data in a faithful and meaningful manner. And because what is relevant depends on the problem we are trying to solve, it’s something we as data scientists have to evaluate, not something an algorithm can do for us.</p>
 <section id="passive-prediction-questions">
 <h3>Passive Prediction Questions<a class="headerlink" href="#passive-prediction-questions" title="Permalink to this headline">#</a></h3>
-<p>Answering explortaory questions serves the purpose of helping the data scientist prioritize their efforts, but once they have zeroed in on a specific problem they want to address and a facet of the problem they wish to prioritize, many data science projects take the form of answering “passive prediction” questions.</p>
+<p>Answering exploratory questions helps the data scientist prioritize their efforts, but once they have zeroed in on a specific problem they want to address and a facet of the problem they wish to prioritize, many data science projects take the form of answering “passive prediction” questions.</p>
 <p>Where exploratory questions are questions about the overall distribution of features in a dataset, passive predictive questions are questions about <em>individual observations</em>, and often take the form of questions like “given this new customer’s behavior when they arrive on my website, are they likely to spend a lot with my business?,” or “given the symptoms of this patient and their test results, how likely are they to develop complications after surgery?” In other words, we’re hoping to <em>predict</em> something about individuals we can’t immediately observe.</p>
 <p>The “passive” in passive prediction emphasizes that these are questions about predicting what is likely to happen if we don’t change our own behavior. As we will discuss below, understanding the effect of changes we deliberately introduce in the world—for example, by changing a government policy, or re-designing our website—requires a different set of tools.</p>
 <p>Not all passive prediction questions are about events in the future; some passive prediction questions are about predicting how a third party <em>would</em> classify data if given the chance. For example, suppose we wanted to use data science to look at mammograms and tell us which scans showed cancer—one way to think about this is that we want to answer the question “if a radiologist looked at this scan, would they think the patient had cancer?” Or if we wanted to use data science to review job applicants resumés to determine who a company should hire, we could think of what we’re doing as answering the question “if a hiring manager looked at this resumé, would they want to interview this candidate?”</p>
@@ -525,11 +521,11 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../00_preface/00_preface.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../landing_page.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Introduction to Data Science for Humans</p>
+            <p class="prev-next-title">Welcome to Data Science for Humans</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="20_data_science_in_historical_context.html" title="next page">
