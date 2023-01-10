@@ -375,18 +375,16 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#exploratory-questions">
    Exploratory Questions
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#passive-prediction-questions">
-     Passive Prediction Questions
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#causal-questions">
-     Causal Questions
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#passive-prediction-questions">
+   Passive Prediction Questions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#causal-questions">
+   Causal Questions
+  </a>
  </li>
 </ul>
 
@@ -411,18 +409,16 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#exploratory-questions">
    Exploratory Questions
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#passive-prediction-questions">
-     Passive Prediction Questions
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#causal-questions">
-     Causal Questions
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#passive-prediction-questions">
+   Passive Prediction Questions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#causal-questions">
+   Causal Questions
+  </a>
  </li>
 </ul>
 
@@ -467,22 +463,23 @@ title="Print to PDF"
 <!-- This example is awful and the plot doesn't have labels. Need better! -->
 <p>They’ve given you data on four potential assets, and so you run a linear regression looking at the relationship between the value of these assets and natural gas prices. You analyze the data by looking at the correlation between the asset’s payout and natural gas prices, and by fitting a linear regression with natural gas prices and asset payouts. You find that all four assets have essentially identical relationships with natural gas prices—a correlation of about 0.8, and a regression coefficient of about 0.5, suggesting that when natural gas prices rise by a dollar, asset payouts will increase by 0.50 dollars. Perfect, right? All four assets would work equally well, and all four could help limit budget fluctuations for Florida!</p>
 <p>Well… no. Because if we dig a little deeper, we see that these summary statistics are not telling us all the meaningful information in the data; our summary statistics are technically <em>correct</em>, but they aren’t faithfully representing everything that matters given the problem we want to solve.</p>
-<p>We can see this by plotting the data (<strong>nb: these plots are embarrassingly unlabeled, and this example needs some refinement! I’m working on it. :)</strong>):</p>
-<p><img alt="plot of all four regression fits with scatter points" src="../_images/anscombes_quartet.png" /><a class="footnote-reference brackets" href="#anscombesquartet" id="id2">2</a></p>
+<p>We can see this by plotting the data (<strong>nb: these plots are embarrassingly unlabeled, and this example needs some refinement! I’m working on it. :)</strong>):[^anscombesquartet]: Anscombe’s quartet. (2022, October 21). In Wikipedia. <a class="reference external" href="https://en.wikipedia.org/wiki/Anscombe%27s_quartet">https://en.wikipedia.org/wiki/Anscombe%27s_quartet</a></p>
+<p><img alt="plot of all four regression fits with scatter points" src="../_images/anscombes_quartet.png" />[^anscombesquartet]</p>
 <p>Clearly, the relationship between these different assets and natural gas prices are <em>not</em> all the same! Buying the asset in the top left would likely do a good job of smoothing out the state’s budget, but in nearly all years, the asset in the bottom right would be useless for smoothing the state’s budget since in most years the asset’s payoff doesn’t change at all!</p>
 <p>This is obviously a simple example, and one where a simple plot is sufficient to allow us to see the problem. But this problem is inherent to answering <em>any</em> exploratory question—whether we’re calculating simple statistics or using sophisticated unsupervised machine learning techniques; when we summarize data, it is our job as data scientists to ensure that our summaries are representing the <em>relevant</em> patterns in the data in a faithful and meaningful manner. And because what is relevant depends on the problem we are trying to solve, it’s something we as data scientists have to evaluate, not something an algorithm can do for us.</p>
+</section>
 <section id="passive-prediction-questions">
-<h3>Passive Prediction Questions<a class="headerlink" href="#passive-prediction-questions" title="Permalink to this headline">#</a></h3>
+<h2>Passive Prediction Questions<a class="headerlink" href="#passive-prediction-questions" title="Permalink to this headline">#</a></h2>
 <p>Answering exploratory questions helps the data scientist prioritize their efforts, but once they have zeroed in on a specific problem they want to address and a facet of the problem they wish to prioritize, many data science projects take the form of answering “passive prediction” questions.</p>
 <p>Where exploratory questions are questions about the overall distribution of features in the world, passive predictive questions are usually questions about <em>individual entities</em>, and take the form of questions like “given this new customer’s behavior on my website, are they likely to spend a lot over the next year?,” or “given the symptoms of this patient and their test results, how likely are they to develop complications after surgery?” In other words, these are questions whose answers are <em>predictions</em> about something we can’t immediately observe.</p>
 <p>The “passive” in passive prediction emphasizes that these are questions about predicting what is likely to happen <em>if we don’t intervene in the world.</em> As we will discuss below, understanding the effect of changes we deliberately introduce in the world—for example, by changing a government policy, or re-designing our website—requires a different set of tools.</p>
-<p>Not all passive prediction questions are about events in the future; some passive prediction questions are about predicting how a third party <em>would</em> behave or interpret something if given the chance. For example, suppose we wanted to use data science to analyze mammograms.<a class="footnote-reference brackets" href="#mammograms" id="id3">3</a> One way to think about what we are doing is that we are trying to answer the predictive question: “if a radiologist looked at this scan, would they think the patient had cancer?” Or if we wanted to use data science to review job applicants resumés to determine who a company should hire, we could think of what we’re doing as answering the question “if a hiring manager looked at this resumé, would they want to interview this candidate?”</p>
+<p>Not all passive prediction questions are about events in the future; some passive prediction questions are about predicting how a third party <em>would</em> behave or interpret something if given the chance. For example, suppose we wanted to use data science to analyze mammograms.<a class="footnote-reference brackets" href="#mammograms" id="id2">2</a> One way to think about what we are doing is that we are trying to answer the predictive question: “if a radiologist looked at this scan, would they think the patient had cancer?” Or if we wanted to use data science to review job applicants resumés to determine who a company should hire, we could think of what we’re doing as answering the question “if a hiring manager looked at this resumé, would they want to interview this candidate?”</p>
 <p>This may seem a slightly odd way to think about these types of problems, but as we’ll discuss later, this way of framing data science problems is very powerful. In fact, it is usually a more accurate description of what many machine learning models are actually doing. That’s because many data science problems are solved using a practice called <em>supervised machine learning</em> in which a statistical model is “trained” using data that a human has already analyzed. Our mammogram analyzing algorithm, for example, could be trained by providing it with examples of mammograms that human radiologists have already reviewed and labelled as having cancer or not having cancer. This data would then be fed to a supervised machine learning algorithm and used to develop a statistical model for differentiating mammograms with and without cancer.</p>
 <p>But a critical feature of this supervised machine learning approach is that the model is being taught to emulate the behavior of the humans that analyzed the training data. If successful, we would end up with an algorithm that looks like it is “detecting cancer,” but what it is really trying to do is answer the question “if a radiologist looked at the scan, would they diagnose the patient with cancer.” This distinction is subtle, but it is important, because it helps us to understand that any algorithm that we create through this type of process will inherent all of the biases and limitations of the radiologists who created the data used to train the algorithm. If, for example, our radiologists were less likely to see cancer in denser breast tissue, that bias will also be inherited by the algorithm.</p>
 <p>This problem of supervised machine learning algorithms inheriting the biases of whoever labelled its training data is particularly pernicious when algorithms are used in domains subject to human bias, like hiring. If an algorithm is trained to review job applicants’ resumés by showing it the resumés of past hires and manager ratings of those current employees, then any tendency of a company’s managers to rate men better than women will result in the algorithm preferring the resumés of men over those of women. And no, sadly you can’t just try to hide applicant gender from the algorithm—by design we develop our algorithms to look for subtle signals for anything that helps them emulate the behavior of whomever labelled their training data, so our algorithms would likely still pick up on hidden signals, like whether the applicant attended an all-women’s college, or participated in a sport like field hockey.</p>
 </section>
 <section id="causal-questions">
-<h3>Causal Questions<a class="headerlink" href="#causal-questions" title="Permalink to this headline">#</a></h3>
+<h2>Causal Questions<a class="headerlink" href="#causal-questions" title="Permalink to this headline">#</a></h2>
 <p>The final type of question regularly faced by data scientists is perhaps the hardest to answer: causal questions.</p>
 <p>Learning to answer the previous two classes of questions can take a data scientist a long way in life—learning to answer descriptive questions will ensure you prioritize your efforts when wrestling with new problems, and the value of passive-prediction to automate a huge number of analysis tasks is self-evident. But often in life we want to go beyond passively characterizing the world around us. We want to intervene; we want to <em>act</em> on the world. But before we attempt to manipulate anything about the world around us—by launching an advertising campaign, or a new government program, or changing the design of our website—we often want to know the <em>effect</em> our actions will have. And that is the domain of causal questions.</p>
 <p>Causal questions, therefore, take the form of “what is the effect of X on Y?”, or more usefully “if I do X, how will Y change?” These are hard to answer, of course, because we are fundamentally interested in <em>comparing</em> the value of some outcome Y in two states of the world: the world where we do X, and the world where we don’t do X. But as we only get to live in one universe, it turns out that we can never perfectly know what value of some outcome Y would be in both a world where we do X and one where we don’t do X. If we’re a website we can do X with some users, and not do X with others and compare how their behavior changes, or we can measure Y before we do X and compare it to Y after we do X, but as we will see none of these strategies are perfect. In the example of doing X to only some users, it’s always possible that the users who experienced X might have just been from those who didn’t encounter X for reasons unrelated to our intervention; and while we can measure Y before and after doing X, maybe Y was going to change over time anyway, regardless of us doing X!</p>
@@ -492,14 +489,10 @@ title="Print to PDF"
 <dt class="label" id="facebook"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p><a class="reference external" href="https://www.wsj.com/articles/facebook-knows-it-encourages-division-top-executives-nixed-solutions-11590507499">Recent reporting by the Wall Street Journal</a> has shown that Facebook’s own research has confirmed what many outside experts have long argued: the way its recommendation engines prioritize content that results in “user engagement” (clicks, shares, comments) ends up promoting partisan, polarizing, sensationalist, or extreme content. In addition, their own research has also shown that group recommendations are contributing to extremism. According to one internal presentation, “64% of all extremist group joins are due to our recommendation tools” like <em>Groups You Should Join</em> and other discovery tools.</p>
 </dd>
-<dt class="label" id="anscombesquartet"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
-<dd><p>Anscombe’s quartet. (2022, October 21). In Wikipedia. <a class="reference external" href="https://en.wikipedia.org/wiki/Anscombe%27s_quartet">https://en.wikipedia.org/wiki/Anscombe%27s_quartet</a></p>
-</dd>
-<dt class="label" id="mammograms"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dt class="label" id="mammograms"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
 <dd><p>Mammograms is an x-ray of breast tissue used for the detection of breast cancer.</p>
 </dd>
 </dl>
-</section>
 </section>
 </section>
 

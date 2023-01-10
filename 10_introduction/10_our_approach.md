@@ -54,17 +54,15 @@ They've given you data on four potential assets, and so you run a linear regress
 
 Well... no. Because if we dig a little deeper, we see that these summary statistics are not telling us all the meaningful information in the data; our summary statistics are technically *correct*, but they aren't faithfully representing everything that matters given the problem we want to solve.
 
-We can see this by plotting the data (**nb: these plots are embarrassingly unlabeled, and this example needs some refinement! I'm working on it. :)**):
+We can see this by plotting the data (**nb: these plots are embarrassingly unlabeled, and this example needs some refinement! I'm working on it. :)**):[^anscombesquartet]: Anscombe's quartet. (2022, October 21). In Wikipedia. <https://en.wikipedia.org/wiki/Anscombe%27s_quartet>
 
 ![plot of all four regression fits with scatter points](images/anscombes_quartet.png)[^anscombesquartet]
 
 Clearly, the relationship between these different assets and natural gas prices are *not* all the same! Buying the asset in the top left would likely do a good job of smoothing out the state's budget, but in nearly all years, the asset in the bottom right would be useless for smoothing the state's budget since in most years the asset's payoff doesn't change at all!
 
-[^anscombesquartet]: Anscombe's quartet. (2022, October 21). In Wikipedia. <https://en.wikipedia.org/wiki/Anscombe%27s_quartet>
-
 This is obviously a simple example, and one where a simple plot is sufficient to allow us to see the problem. But this problem is inherent to answering *any* exploratory question—whether we're calculating simple statistics or using sophisticated unsupervised machine learning techniques; when we summarize data, it is our job as data scientists to ensure that our summaries are representing the *relevant* patterns in the data in a faithful and meaningful manner. And because what is relevant depends on the problem we are trying to solve, it's something we as data scientists have to evaluate, not something an algorithm can do for us.
 
-### Passive Prediction Questions
+## Passive Prediction Questions
 
 Answering exploratory questions helps the data scientist prioritize their efforts, but once they have zeroed in on a specific problem they want to address and a facet of the problem they wish to prioritize, many data science projects take the form of answering "passive prediction" questions.
 
@@ -82,7 +80,7 @@ But a critical feature of this supervised machine learning approach is that the 
 
 This problem of supervised machine learning algorithms inheriting the biases of whoever labelled its training data is particularly pernicious when algorithms are used in domains subject to human bias, like hiring. If an algorithm is trained to review job applicants' resumés by showing it the resumés of past hires and manager ratings of those current employees, then any tendency of a company's managers to rate men better than women will result in the algorithm preferring the resumés of men over those of women. And no, sadly you can't just try to hide applicant gender from the algorithm—by design we develop our algorithms to look for subtle signals for anything that helps them emulate the behavior of whomever labelled their training data, so our algorithms would likely still pick up on hidden signals, like whether the applicant attended an all-women's college, or participated in a sport like field hockey.
 
-### Causal Questions
+## Causal Questions
 
 The final type of question regularly faced by data scientists is perhaps the hardest to answer: causal questions.
 
