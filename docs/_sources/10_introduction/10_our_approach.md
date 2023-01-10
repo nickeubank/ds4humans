@@ -54,7 +54,7 @@ They've given you data on four potential assets, and so you run a linear regress
 
 Well... no. Because if we dig a little deeper, we see that these summary statistics are not telling us all the meaningful information in the data; our summary statistics are technically *correct*, but they aren't faithfully representing everything that matters given the problem we want to solve.
 
-We can see this by plotting the data:
+We can see this by plotting the data (**nb: these plots are embarrassingly unlabeled, and this example needs some refinement! I'm working on it. :)**):
 
 ![plot of all four regression fits with scatter points](images/anscombes_quartet.png)[^anscombesquartet]
 
