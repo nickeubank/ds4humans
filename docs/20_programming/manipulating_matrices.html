@@ -1,0 +1,1198 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Manipulating Matrices &#8212; Data Science for Humans</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Data Science for Humans</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../landing_page.html">
+                    Welcome to Data Science for Humans
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Preface
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00_preface/00_preface.html">
+   Introduction to Data Science for Humans
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../10_introduction/10_our_approach.html">
+   Solving Problems with Data Science
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../10_introduction/20_data_science_in_historical_context.html">
+   What
+   <em>
+    is
+   </em>
+   Data Science: An Historical Perspective
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Types of Questions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_questions/00_from_problems_to_questions.html">
+   From Problems to Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_questions/10_exploratory_questions.html">
+   Exploratory Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_questions/20_passive_prediction_questions.html">
+   Classification Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_questions/30_causal_questions.html">
+   Causal Questions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data Science in Practice
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../40_in_practice/00_backwards_design.html">
+   Backwards Design
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../40_in_practice/20_from_data_to_decisions.html">
+   Making Decisions Using Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../40_in_practice/25_writing_to_stakeholders.html">
+   Writing Data Science Report for Non-Technical Audiences
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Advanced Topics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../40_advanced_topics/30_interpretability.html">
+   Interpretable Models
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/nickeubank/ds4humans/master?urlpath=tree/docs/20_programming/manipulating_matrices.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/nickeubank/ds4humans"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F20_programming/manipulating_matrices.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/20_programming/manipulating_matrices.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subsetting-by-index">
+   Subsetting by Index
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subsetting-with-logicals">
+   Subsetting with Logicals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subsetting-by-names">
+   Subsetting by Names
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subsetting-by-row-and-column-simultaneously">
+   Subsetting by Row and Column Simultaneously
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-subsets-to-modify-data">
+   Using Subsets to Modify Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#arrays">
+   Arrays
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#other-uses-for-arrays">
+     Other Uses for Arrays
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recap">
+   Recap
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Manipulating Matrices</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subsetting-by-index">
+   Subsetting by Index
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subsetting-with-logicals">
+   Subsetting with Logicals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subsetting-by-names">
+   Subsetting by Names
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subsetting-by-row-and-column-simultaneously">
+   Subsetting by Row and Column Simultaneously
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-subsets-to-modify-data">
+   Using Subsets to Modify Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#arrays">
+   Arrays
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#other-uses-for-arrays">
+     Other Uses for Arrays
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recap">
+   Recap
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="manipulating-matrices">
+<h1>Manipulating Matrices<a class="headerlink" href="#manipulating-matrices" title="Permalink to this headline">#</a></h1>
+<p>The great thing about matrices is that since they are just generalizations of vectors from one dimension to two, subsetting matrices works <em>almost</em> the same way it works with vectors. Basically, instead of subsetting by passing an index or a logical array into a set of square brackets (e.g. <code class="docutils literal notranslate"><span class="pre">[1]</span></code>), we just put a comma in those square brackets and specify a location with <em>two</em> indices / logical arrays (e.g. <code class="docutils literal notranslate"><span class="pre">[1,1]</span></code>).</p>
+<section id="subsetting-by-index">
+<h2>Subsetting by Index<a class="headerlink" href="#subsetting-by-index" title="Permalink to this headline">#</a></h2>
+<p>Suppose we have the following matrix:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">our_matrix</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">12</span><span class="p">,</span> <span class="n">nrow</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">4</span><span class="p">)</span>
+<span class="n">our_matrix</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 3 × 4 of type int</caption>
+<tbody>
+	<tr><td>1</td><td>4</td><td>7</td><td>10</td></tr>
+	<tr><td>2</td><td>5</td><td>8</td><td>11</td></tr>
+	<tr><td>3</td><td>6</td><td>9</td><td>12</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>To subset, we just pass a location along the x-axis (rows) and a location along the y-axis (columns). For example, if we wanted the entry from the second row and third column, we’d type:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">our_matrix</span><span class="p">[</span><span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">8</div></div>
+</div>
+<p>The one new thing is that if you want ALL entries along a specific dimension, you still put in a comma, but you leave the entry blank for the dimension on which you want all observations. So if I wanted to second row, I’d just type:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">our_matrix</span><span class="p">[</span><span class="m">2</span><span class="p">,</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>2</li><li>5</li><li>8</li><li>11</li></ol>
+</div></div>
+</div>
+<p>Or if I wanted the third column, I’d type:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">our_matrix</span><span class="p">[,</span> <span class="m">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>7</li><li>8</li><li>9</li></ol>
+</div></div>
+</div>
+<p>Note that if you pull out a subset of your matrix that is one dimensional, it just becomes a vector!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">class</span><span class="p">(</span><span class="n">our_matrix</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>'matrix'</li><li>'array'</li></ol>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">class</span><span class="p">(</span><span class="n">our_matrix</span><span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">'integer'</div></div>
+</div>
+<p>Finally, just like with vectors, we can subset with vectors if we want:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">our_matrix</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="o">:</span><span class="m">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 2 × 2 of type int</caption>
+<tbody>
+	<tr><td>7</td><td>10</td></tr>
+	<tr><td>8</td><td>11</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="subsetting-with-logicals">
+<h2>Subsetting with Logicals<a class="headerlink" href="#subsetting-with-logicals" title="Permalink to this headline">#</a></h2>
+<p>Subsetting with logical vectors also generalizes from vectors to matrices in the same way. To illustrate, let’s go back to our toy matrix of survey respondenses:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">income</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">22000</span><span class="p">,</span> <span class="m">75000</span><span class="p">,</span> <span class="m">19000</span><span class="p">)</span>
+<span class="n">age</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">20</span><span class="p">,</span> <span class="m">35</span><span class="p">,</span> <span class="m">55</span><span class="p">)</span>
+<span class="n">education</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">12</span><span class="p">,</span> <span class="m">16</span><span class="p">,</span> <span class="m">11</span><span class="p">)</span>
+
+<span class="n">survey</span> <span class="o">&lt;-</span> <span class="nf">cbind</span><span class="p">(</span><span class="n">income</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">education</span><span class="p">)</span>
+<span class="n">survey</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 3 × 3 of type dbl</caption>
+<thead>
+	<tr><th scope=col>income</th><th scope=col>age</th><th scope=col>education</th></tr>
+</thead>
+<tbody>
+	<tr><td>22000</td><td>20</td><td>12</td></tr>
+	<tr><td>75000</td><td>35</td><td>16</td></tr>
+	<tr><td>19000</td><td>55</td><td>11</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>If we wanted to select all the rows where income was less than the US median income (about 65,000), we would first extract the income column, then create a logical column that’s <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> if income is below 65,000, then put that in the first position of our square brackets:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">income</span> <span class="o">&lt;-</span> <span class="n">survey</span><span class="p">[,</span> <span class="m">1</span><span class="p">]</span>
+<span class="n">income</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>22000</li><li>75000</li><li>19000</li></ol>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">below_median</span> <span class="o">=</span> <span class="n">income</span> <span class="o">&lt;</span> <span class="m">65000</span>
+<span class="n">below_median</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>TRUE</li><li>FALSE</li><li>TRUE</li></ol>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">survey</span><span class="p">[</span><span class="n">below_median</span><span class="p">,</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 2 × 3 of type dbl</caption>
+<thead>
+	<tr><th scope=col>income</th><th scope=col>age</th><th scope=col>education</th></tr>
+</thead>
+<tbody>
+	<tr><td>22000</td><td>20</td><td>12</td></tr>
+	<tr><td>19000</td><td>55</td><td>11</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>Or, of course, we could do that all in one line instead of breaking out the steps:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">survey</span><span class="p">[</span><span class="n">survey</span><span class="p">[,</span> <span class="m">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="m">65000</span><span class="p">,</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 2 × 3 of type dbl</caption>
+<thead>
+	<tr><th scope=col>income</th><th scope=col>age</th><th scope=col>education</th></tr>
+</thead>
+<tbody>
+	<tr><td>22000</td><td>20</td><td>12</td></tr>
+	<tr><td>19000</td><td>55</td><td>11</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>Or, since R used the names of vectors we passed to <code class="docutils literal notranslate"><span class="pre">cbind()</span></code> as column names, we could also subset our columns by name, which makes our code a lot easier to understand:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">survey</span><span class="p">[</span><span class="n">survey</span><span class="p">[,</span> <span class="s">&quot;income&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="m">65000</span><span class="p">,</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 2 × 3 of type dbl</caption>
+<thead>
+	<tr><th scope=col>income</th><th scope=col>age</th><th scope=col>education</th></tr>
+</thead>
+<tbody>
+	<tr><td>22000</td><td>20</td><td>12</td></tr>
+	<tr><td>19000</td><td>55</td><td>11</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="subsetting-by-names">
+<h2>Subsetting by Names<a class="headerlink" href="#subsetting-by-names" title="Permalink to this headline">#</a></h2>
+<p>As we just saw, while not all matrices have names, if you they do you can subset using them. For example, our <code class="docutils literal notranslate"><span class="pre">survey</span></code> matrix has column names, but no row names, so we can only subset columns by name:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">survey</span><span class="p">[,</span> <span class="s">&quot;education&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>12</li><li>16</li><li>11</li></ol>
+</div></div>
+</div>
+<p>Names are accessible through the <code class="docutils literal notranslate"><span class="pre">colnames()</span></code> and <code class="docutils literal notranslate"><span class="pre">rownames()</span></code> functions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">colnames</span><span class="p">(</span><span class="n">survey</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>'income'</li><li>'age'</li><li>'education'</li></ol>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">rownames</span><span class="p">(</span><span class="n">survey</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NULL
+</pre></div>
+</div>
+</div>
+</div>
+<p>Oddly, R also allows you to assign to these functions to change the names on a matrix. For example, to add row names we could do:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">rownames</span><span class="p">(</span><span class="n">survey</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;row1&quot;</span><span class="p">,</span> <span class="s">&quot;row2&quot;</span><span class="p">,</span> <span class="s">&quot;row3&quot;</span><span class="p">)</span>
+<span class="n">survey</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 3 × 3 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>income</th><th scope=col>age</th><th scope=col>education</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>row1</th><td>22000</td><td>20</td><td>12</td></tr>
+	<tr><th scope=row>row2</th><td>75000</td><td>35</td><td>16</td></tr>
+	<tr><th scope=row>row3</th><td>19000</td><td>55</td><td>11</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>And we can delete them too!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">rownames</span><span class="p">(</span><span class="n">survey</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="kc">NULL</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="subsetting-by-row-and-column-simultaneously">
+<h2>Subsetting by Row and Column Simultaneously<a class="headerlink" href="#subsetting-by-row-and-column-simultaneously" title="Permalink to this headline">#</a></h2>
+<p>Often, we don’t just want to subset rows or columns, but both at once. For example, suppose I wanted the education levels of everyone with incomes below the US median. I could do this in two steps by subsetting rows and then subsetting columns:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">below_median</span> <span class="o">&lt;-</span> <span class="n">survey</span><span class="p">[</span><span class="n">survey</span><span class="p">[,</span> <span class="s">&quot;income&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="m">65000</span><span class="p">,</span> <span class="p">]</span>
+<span class="n">below_median</span><span class="p">[,</span> <span class="s">&quot;education&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>12</li><li>11</li></ol>
+</div></div>
+</div>
+<p>Or I can do it all in one command!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">survey</span><span class="p">[</span><span class="n">survey</span><span class="p">[,</span><span class="s">&quot;income&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="m">65000</span><span class="p">,</span> <span class="s">&quot;education&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>12</li><li>11</li></ol>
+</div></div>
+</div>
+<p>So what is the average education of people earning less than the median income in the US in our toy data?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">mean</span><span class="p">(</span><span class="n">survey</span><span class="p">[</span><span class="n">survey</span><span class="p">[,</span><span class="s">&quot;income&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="m">65000</span><span class="p">,</span> <span class="s">&quot;education&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">11.5</div></div>
+</div>
+<p>OK – I know we’ve just covered a lot, but hopefully that example makes clear how quickly we can start doing really, really powerful analyses and answering substantive questions <em>just by subsetting our data carefully.</em></p>
+</section>
+<section id="using-subsets-to-modify-data">
+<h2>Using Subsets to Modify Data<a class="headerlink" href="#using-subsets-to-modify-data" title="Permalink to this headline">#</a></h2>
+<p>Sometimes we want to modify a <em>part</em> of a matrix. For example, suppose we were working with our survey data, and we want to multiple all the income values by <code class="docutils literal notranslate"><span class="pre">1.02</span></code> to adjust for inflation that has occurred since the survey. Obviously, if we just multiplied the matrix by <code class="docutils literal notranslate"><span class="pre">1.02</span></code>, we’d also modify things like education and age:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">survey</span> <span class="o">*</span> <span class="m">1.02</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 3 × 3 of type dbl</caption>
+<thead>
+	<tr><th scope=col>income</th><th scope=col>age</th><th scope=col>education</th></tr>
+</thead>
+<tbody>
+	<tr><td>22440</td><td>20.4</td><td>12.24</td></tr>
+	<tr><td>76500</td><td>35.7</td><td>16.32</td></tr>
+	<tr><td>19380</td><td>56.1</td><td>11.22</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>What we can do instead is extract the column with income, modify it, then replace the old income column with our updated column:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">income_column</span> <span class="o">&lt;-</span> <span class="n">survey</span><span class="p">[,</span> <span class="s">&quot;income&quot;</span><span class="p">]</span> <span class="c1"># Extract income</span>
+<span class="n">adjusted_income</span> <span class="o">&lt;-</span> <span class="n">income_column</span> <span class="o">*</span> <span class="m">1.02</span> <span class="c1"># Adjust income</span>
+<span class="n">survey</span><span class="p">[,</span> <span class="s">&quot;income&quot;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">adjusted_income</span> <span class="c1"># Replace income with new values!</span>
+<span class="n">survey</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 3 × 3 of type dbl</caption>
+<thead>
+	<tr><th scope=col>income</th><th scope=col>age</th><th scope=col>education</th></tr>
+</thead>
+<tbody>
+	<tr><td>22440</td><td>20</td><td>12</td></tr>
+	<tr><td>76500</td><td>35</td><td>16</td></tr>
+	<tr><td>19380</td><td>55</td><td>11</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>Or, if we wanted, we could actually do all this in one step:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Re-make survey so it hasn&#39;t been adjusted for inflation</span>
+<span class="n">income</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">22000</span><span class="p">,</span> <span class="m">75000</span><span class="p">,</span> <span class="m">19000</span><span class="p">)</span>
+<span class="n">age</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">20</span><span class="p">,</span> <span class="m">35</span><span class="p">,</span> <span class="m">55</span><span class="p">)</span>
+<span class="n">education</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">12</span><span class="p">,</span> <span class="m">16</span><span class="p">,</span> <span class="m">11</span><span class="p">)</span>
+<span class="n">survey</span> <span class="o">&lt;-</span> <span class="nf">cbind</span><span class="p">(</span><span class="n">income</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">education</span><span class="p">)</span>
+<span class="n">survey</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 3 × 3 of type dbl</caption>
+<thead>
+	<tr><th scope=col>income</th><th scope=col>age</th><th scope=col>education</th></tr>
+</thead>
+<tbody>
+	<tr><td>22000</td><td>20</td><td>12</td></tr>
+	<tr><td>75000</td><td>35</td><td>16</td></tr>
+	<tr><td>19000</td><td>55</td><td>11</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now adjust income in one step!</span>
+<span class="n">survey</span><span class="p">[,</span> <span class="s">&quot;income&quot;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">survey</span><span class="p">[,</span> <span class="s">&quot;income&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="m">1.02</span>
+<span class="n">survey</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 3 × 3 of type dbl</caption>
+<thead>
+	<tr><th scope=col>income</th><th scope=col>age</th><th scope=col>education</th></tr>
+</thead>
+<tbody>
+	<tr><td>22440</td><td>20</td><td>12</td></tr>
+	<tr><td>76500</td><td>35</td><td>16</td></tr>
+	<tr><td>19380</td><td>55</td><td>11</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>And this is <em>especially</em> powerful if we subset on BOTH rows and columns. Suppose, for example, we wanted to see what people’s incomes would look like if anyone who didn’t finish high school (<code class="docutils literal notranslate"><span class="pre">education</span> <span class="pre">&lt;</span> <span class="pre">12</span></code>) got a tax credit of 10,000 dollars?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">survey</span><span class="p">[</span><span class="n">survey</span><span class="p">[,</span> <span class="s">&quot;education&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="m">12</span><span class="p">,</span> <span class="s">&quot;income&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">survey</span><span class="p">[</span><span class="n">survey</span><span class="p">[,</span> <span class="s">&quot;education&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="m">12</span><span class="p">,</span> <span class="s">&quot;income&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="m">10000</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">survey</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 3 × 3 of type dbl</caption>
+<thead>
+	<tr><th scope=col>income</th><th scope=col>age</th><th scope=col>education</th></tr>
+</thead>
+<tbody>
+	<tr><td>22440</td><td>20</td><td>12</td></tr>
+	<tr><td>76500</td><td>35</td><td>16</td></tr>
+	<tr><td>29380</td><td>55</td><td>11</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>And that’s it! Now you’re a matrix pro.</p>
+</section>
+<section id="arrays">
+<h2>Arrays<a class="headerlink" href="#arrays" title="Permalink to this headline">#</a></h2>
+<p>As we saw above, generalizing the way we subset vectors to subsetting matrices was quite easy – we just subset our matrices by doing what we did with vectors, but with two terms in in our square brackets separated by a comma (e.g. <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">1]</span></code> instead of just <code class="docutils literal notranslate"><span class="pre">[1]</span></code>).</p>
+<p>But guess what? Just as it was easy to generalize from one dimension to two, it turns out that we can also generalize from two dimensions to N dimensions the same way! In fact, rather than thinking of vectors and matrices as to different thing, we can think of them as special cases (the case of N=1 and N=2) of a more general data structure: <strong>Arrays</strong>.</p>
+<p>Arrays are collections of data of the same type with a regular structure organized into N dimensions. When N=1, an array is the equivalent of a vector:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">array</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">9</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li></ol>
+</div></div>
+</div>
+<p>And when N=2, an array is just a matrix:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">array</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">6</span><span class="p">,</span> <span class="n">dim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 2 × 3 of type int</caption>
+<tbody>
+	<tr><td>1</td><td>3</td><td>5</td></tr>
+	<tr><td>2</td><td>4</td><td>6</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>But when N &gt; 2, things start to get a little harder to visualize, but also a lot more powerful.</p>
+<p><em>But WHY</em>, I hear you asking, <em>would I ever want more than two dimensions?!</em></p>
+<p>Well, let’s start with use-cases for N=3. Suppose that you wanted to build a climate model. One thing that you would have to do is come up with a way to store the temperature at different points within a 3D space! And you could do that with a three-dimensional array where the first two dimensions are used to store the x and y coordinates of a point on the ground, the third could represent an elevation above that point, and the value in that entry would be the temperature.</p>
+<p>For example, let’s create a 3 x 3 x 10 array filled with random temperatures generated with <code class="docutils literal notranslate"><span class="pre">rnorm()</span></code>, where we’re imagining the first dimension to be, say, number of kilometers North of a reference point (say, the center of Duke’s campus), the second dimension is the number of kilometers East of the center of Duke’s campus, and the third dimension is kilometers elevation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make random temperatures.</span>
+<span class="c1"># In a real world application</span>
+<span class="c1"># you&#39;d have measured these or</span>
+<span class="c1"># started with seed values based on</span>
+<span class="c1"># measured values.</span>
+
+ <span class="c1"># using a reasonable farenheit mean and sd</span>
+<span class="n">rand_temps</span> <span class="o">&lt;-</span> <span class="nf">rnorm</span><span class="p">(</span><span class="m">3</span> <span class="o">*</span> <span class="m">3</span> <span class="o">*</span> <span class="m">10</span><span class="p">,</span> <span class="n">mean</span> <span class="o">=</span> <span class="m">70</span><span class="p">,</span> <span class="n">sd</span> <span class="o">=</span> <span class="m">10</span><span class="p">)</span>
+<span class="n">temperatures</span> <span class="o">&lt;-</span> <span class="nf">array</span><span class="p">(</span><span class="n">rand_temps</span><span class="p">,</span> <span class="n">dim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now because <code class="docutils literal notranslate"><span class="pre">temperatures</span></code> has three dimensions, it’s hard to print out, but it’s easy to extract values. Suppose wanted to know the temperature 1 km North of Duke, 2km East, and at an elevation of 10km:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">temperatures</span><span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">61.6717684368286</div></div>
+</div>
+<p>Ta-Da! I could also get the temperature at all elevations at the point 1km North and 2km East:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">temperatures</span><span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>64.8471250705439</li><li>52.4315213291161</li><li>80.9659633373728</li><li>70.1587106359719</li><li>71.1545144879144</li><li>78.9284052456004</li><li>62.0827708144908</li><li>64.749513217405</li><li>63.2404511215728</li><li>61.6717684368286</li></ol>
+</div></div>
+</div>
+<p>Or the temperature at 5km elevation across all ground locations:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">temperatures</span><span class="p">[,</span> <span class="p">,</span> <span class="m">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 3 × 3 of type dbl</caption>
+<tbody>
+	<tr><td>72.11711</td><td>71.15451</td><td>74.85837</td></tr>
+	<tr><td>81.95096</td><td>69.44309</td><td>77.93776</td></tr>
+	<tr><td>71.73361</td><td>80.53827</td><td>59.91024</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>As you can see, this is a <em>really</em> powerful idea, and honestly arrays are probably the most fundamental data structure in data science.</p>
+<section id="other-uses-for-arrays">
+<h3>Other Uses for Arrays<a class="headerlink" href="#other-uses-for-arrays" title="Permalink to this headline">#</a></h3>
+<p>Not into climate modeling? OK, here are some other uses of arrays with more than 2 dimensions:</p>
+<ul class="simple">
+<li><p><strong>Repeated measurements over time:</strong> Just as a single survey is easily represented as a matrix, so too can repeated surveys be easily represented by making time a third dimension. This makes it easy to pull out a single wave of the survey, or to pick out all the responses for a given person over time.</p></li>
+<li><p><strong>Brain Scans:</strong> fMRI scan the entire volume of the brain, and that volumetric data is most naturally stored in the three-dimensional array, just like the temperature data above. Obviously not all social scientists will end up working with brain scans, but there’s certainly a lot of cutting-edge work in this area!</p></li>
+<li><p><strong>3D measurements that evolve over time:</strong> just as we can model survey data that evolves over time in three dimensions, we can also model three-dimensional volumetric data that evolves over time (e.g. not just a slice of a climate model, but its evoluation) in a four-dimensional array!</p></li>
+<li><p><strong>Satellite Data:</strong> Satellite image data usually comes in the form of sets of 2-dimensional images, where each image includes information about light intensity at a given wavelength. When these images are stacked to, say, generate a color image, or identify wavelength combinations common to certain types of pollution, flood waters, or specific crops, you get a three-dimensional array.</p></li>
+</ul>
+<p>So yeah, high dimensional arrays are a SUPER powerful data structure, and one you shouldn’t shy away.</p>
+</section>
+</section>
+<section id="recap">
+<h2>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Subsetting matrices is just like subsetting vectors, except with two entries between the square brackets: <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">,</span> <span class="pre">]</span></code>.</p></li>
+<li><p>The first entry in the square brackets relates to rows, the second to columns.</p></li>
+<li><p>Like vectors, you can subset by index, by logical vector, or by name.</p></li>
+<li><p>You can mix how you subset, and use a logical for rows and a name for columns.</p></li>
+<li><p>If you subset a row, or subset a column you get back a vector.</p></li>
+<li><p>Subsetting on both rows and column allows you to edit matrices in very powerful ways.</p></li>
+<li><p>Vectors and matrices are actually just special cases of “arrays” where N=1 and N=2. Arrays can have as many dimensions as you want, and are very powerful abstractions.</p></li>
+</ul>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<p>Now that we’ve familiarized ourselves with matrices and matrix manipulation, <a class="reference internal" href="exercises/exercise_matrices.html"><span class="doc std std-doc">it’s time to do some exercises!</span></a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./20_programming"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Josh Clinton and Nick Eubank<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,567 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Solving Problems with Data Science &#8212; Data Science for Humans</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="What is Data Science: An Historical Perspective" href="20_data_science_in_historical_context.html" />
+    <link rel="prev" title="Introduction to Data Science for Humans" href="../00_preface/00_preface.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Data Science for Humans</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../landing_page.html">
+                    Welcome to Data Science for Humans
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Preface
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00_preface/00_preface.html">
+   Introduction to Data Science for Humans
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Solving Problems with Data Science
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20_data_science_in_historical_context.html">
+   What
+   <em>
+    is
+   </em>
+   Data Science: An Historical Perspective
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Types of Questions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_questions/00_from_problems_to_questions.html">
+   From Problems to Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_questions/10_exploratory_questions.html">
+   Exploratory Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_questions/20_passive_prediction_questions.html">
+   Classification Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_questions/30_causal_questions.html">
+   Causal Questions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data Science in Practice
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../40_in_practice/00_backwards_design.html">
+   Backwards Design
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../40_in_practice/20_from_data_to_decisions.html">
+   Making Decisions Using Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../40_in_practice/25_writing_to_stakeholders.html">
+   Writing Data Science Report for Non-Technical Audiences
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Advanced Topics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../40_advanced_topics/30_interpretability.html">
+   Interpretable Models
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/nickeubank/ds4humans"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F10_introduction/10_our_approach.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/10_introduction/10_our_approach.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exploratory-questions">
+   Exploratory Questions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#passive-prediction-questions">
+     Passive Prediction Questions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#causal-questions">
+     Causal Questions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Solving Problems with Data Science</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exploratory-questions">
+   Exploratory Questions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#passive-prediction-questions">
+     Passive Prediction Questions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#causal-questions">
+     Causal Questions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="solving-problems-with-data-science">
+<h1>Solving Problems with Data Science<a class="headerlink" href="#solving-problems-with-data-science" title="Permalink to this headline">#</a></h1>
+<p>The beginning of a textbook by <a class="reference external" href="https://www.joshclinton.com/">Josh Clinton</a> and <a class="reference external" href="https://www.nickeubank.com">Nick Eubank</a>.</p>
+<p>Few fields have shown as much promise to address the world’s problems as data science. Today, data science is being used to develop climate models to improve our understanding of global climate change and mitigate its effects. It is being used in medicine to speed drug discovery, improve the quality of our x-rays and MRIs, and to ensure that patients receive appropriate medical care. Data science is used in courtrooms to fight for fair elections and electoral maps, and by data journalists to document and communicate to readers the injustices prevalent in our criminal justice system and issues in policing. Autonomous drones are delivering blood and medical supplies to rural health clinics from Rwanda to <a class="reference external" href="https://www.theverge.com/2020/5/27/21270351/zipline-drones-novant-health-medical-center-hospital-supplies-ppe/">North Carolina</a>. Driver aid features and autonomous cars continue to make progress in reducing the over 30,000 traffic deaths and millions of injuries that occur in the US alone every year. And nearly no facet of business has gone untouched by the recent revolution in data analytics, from song and movie recommendation engines on Netflix, Spotify, and the Apple App Store to the use of personalized, targeted advertisements used to ensure businesses can make the most of their advertising revenue, and the supply chain and logistics systems that have completely changed how and where goods are produced around the world</p>
+<p>At the same time, however, recent years have also made clear that today’s global challenges will not be met by simply “throwing data science at the problem” and hoping things will work out. Even in business, where many assume that Artificial Intelligence is a sure ticket to profits, a major recent study found <a class="reference external" href="https://www.wired.com/story/companies-rushing-use-ai-few-see-payoff/">only 11% of businesses that had piloted or employed Artificial Intelligence had reaped a sizeable return on their AI investments.</a> In recent years we’ve also seen near endless examples of data science tools reinforcing racial and gender inequities in our social, like algorithms <a class="reference external" href="https://www.reuters.com/article/us-amazon-com-jobs-automation-insight/amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK08G">discriminating against female job candidates at Amazon</a>, prioritizing White patients over Black patients <a class="reference external" href="https://www.wired.com/story/how-algorithm-blocked-kidney-transplants-black-patients/">for kidney transplants</a> and <a class="reference external" href="https://www.washingtonpost.com/health/2019/10/24/racial-bias-medical-algorithm-favors-white-patients-over-sicker-black-patients/">preventative care</a>, and being more likely to <a class="reference external" href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">incorrectly identify Black defendants than White defendants as being a “danger to society” when providing risk assessments to judges deciding on pre-trial release, bail and sentencing</a>. And even companies like Facebook’s own research have shown its algorithms drive political polarization and division among users, and push users into extremist groups.<a class="footnote-reference brackets" href="#facebook" id="id1">1</a></p>
+<p>How, then, should a burgeoning data scientist approach this field full of such promise but also so many pitfalls? In this book, we will present a framework for approaching and solving problems with data science in a way that is both <em>effective</em> and <em>responsible</em>.</p>
+<p>Our approach is to begin by carefully specifying the problem one needs to solve. While this may seem trivial, properly articulating the core problem one seeks to address can be remarkably difficult. Moreover, because everything you will do after this step is premised on having correctly specified your objective, it is <em>the</em> greatest determinant of the success of your project. As Charles Kettering, Head of Research at General Motors from 1920 to 1947 once said, “A problem well stated is a problem half solved.”</p>
+<p>Once we have successfully articulated our <em>problem</em>, we must then figure out how to solve it. And as data scientists, we are somewhat restricted in the types of solutions to which we have access; data science cannot just raise funds for a project, for example, or invent a new technology. Rather, as we will explore in detail in this book, all data science models and algorithms can be fundamentally understood as instruments for <strong>answering questions</strong> about the world using quantitative methods.</p>
+<aside class="sidebar">
+<p class="sidebar-title">Answering Questions</p>
+<p>All data science models and algorithms can be fundamentally understood as instruments for <strong>answering questions</strong> about the world using quantitative methods.</p>
+</aside>
+<p>In light of that fact, our challenge turns from the more amorphous task of just “figuring out how to solve the problem” to the more concrete “figure out what question, if answered, would make it easier to solve this problem.”</p>
+<!-- To illustrate, [need some examples here. Examples hurt my head. Sticking to framework for now while I have momentum.] -->
+<p>Once we’ve articulated a question, we then turn to choosing the best tool to generate an answer. And it is only at this stage of our project—not at the beginning!—that we start thinking about different statistical methods, algorithms, or models.</p>
+<p>But even at this stage, our job as data scientists is not to just grab the trendiest tool for a given type of question. Rather, we must recognize and evaluate the strengths and weaknesses of different tools available to us <em>in the context of the specific problem we are seeking to address</em>.</p>
+<p>While this may seem an impossible task given the sheer multiplicity of data science methods available today, we can divide the data science questions we seek to answer into three groups: descriptive/exploratory questions, passive predictive questions, and causal questions. Each of these can play a different but important role in solving problems, and any effort to answer a question of each type will raise similar issues that need to be considered. Thus, by recognizing the <em>class</em> of question we are seeking to answer, we can significantly narrow both the set of data science tools that are appropriate to consider, and provide a short list of common considerations to think through.</p>
+<p>In particular, in this book we will divide the types of questions we may want to answer into three categories: exploratory questions, passive-predictive questions, and causal questions.</p>
+<section id="exploratory-questions">
+<h2>Exploratory Questions<a class="headerlink" href="#exploratory-questions" title="Permalink to this headline">#</a></h2>
+<p>Once you have settled on a problem you wish to address, the next step is often to use data science to better understand the contours of the problem in order to better prioritize and strategize your efforts. To do this, as data scientists we often begin by asking <em>exploratory questions</em> to help us understand the problem space.</p>
+<p>Suppose, for example, you are interested in developing machine learning algorithms they could be used to improve the energy efficiency of buildings. Before you run off and try to start training a neural network, the first thing you might want to do is figure out what <em>type</em> of buildings are actually using the most energy so you can think about where you can have the most impact—is more CO2 being generated by air conditioning office buildings in hot climates, or heating office buildings in cold climates? And if you’re hoping to run a business, you might also want to know “in what parts of the country is electricity most expensive?” since you’re more likely to find customers in places where energy costs are high.</p>
+<p>Generating answers to questions like this may not seem as trendy as using expensive GPUs to train deep learning models, but it is the type of exploratory data analysis that will help ensure that your subsequent efforts are well-directed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The term <em>Exploratory Data Analysis</em> (EDA) is often used in statistics courses to describe the process of poking around in a new data set that you have been given before you fit a more complicated statistical model. While many of the tools that you may use to do that type of poking around are the same tools that you would use to answer more sophisticated Descriptive Questions, when we talk about answering Descriptive Questions in this book, we are generally talking about a much more involved process—one that often requires locating or bringing together new data sources—then this type of “data checking.”</p>
+</div>
+<p>Fundamentally, answering exploratory questions is about identifying salient patterns in your data that help you understand the <em>overall distribution</em> of features in your data. At times this can be accomplished with simple tools, like scatter plots, histograms, and calculating summary statistics like means and medians. Other times, however, it may require more sophisticated methods, like unsupervised machine learning algorithms that can, say, identify specific “customer-types” in a large dataset of customer behavior.</p>
+<p>Regardless of the specific methods being employed, however, answering exploratory questions always boils down to the same challenge: to take large datasets that aren’t comprehensible to people in their raw form, and to identify <strong>meaningful</strong> patterns in the data that can be summarized in a manner that humans can actually wrap their heads around. And why is this hard? Because by definition, answering exploratory questions requires trying to find ways to make the incomprehensible comprehensible by identifying <em>meaningful</em> patterns. And while we have many tools for calculating specific types of data summaries—means, medians, clustering algorithms, principle component analyses, etc.—none of these can evaluate whether the summaries they generate are <em>meaningful</em> to the question you are seeking to answer. And it is therefore up to you, the data scientist, to decide what summaries of the data provide a faithful and meaningful representation of the underlying data.</p>
+<!-- need examples here -->
+<section id="passive-prediction-questions">
+<h3>Passive Prediction Questions<a class="headerlink" href="#passive-prediction-questions" title="Permalink to this headline">#</a></h3>
+<p>Answering explortaory questions serves the purpose of helping the data scientist prioritize their efforts, but once they have zeroed in on a specific problem they want to address and a facet of the problem they wish to prioritize, many data science projects take the form of answering “passive prediction” questions.</p>
+<p>Where exploratory questions are questions about the overall distribution of features in a dataset, passive predictive questions are questions about <em>individual observations</em>, and often take the form of questions like “given this new customer’s behavior when they arrive on my website, are they likely to spend a lot with my business?,” or “given the symptoms of this patient and their test results, how likely are they to develop complications after surgery?” In other words, we’re hoping to <em>predict</em> something about individuals we can’t immediately observe.</p>
+<p>The “passive” in passive prediction emphasizes that these are questions about predicting what is likely to happen if we don’t change our own behavior. As we will discuss below, understanding the effect of changes we deliberately introduce in the world—for example, by changing a government policy, or re-designing our website—requires a different set of tools.</p>
+<p>Not all passive prediction questions are about events in the future; some passive prediction questions are about predicting how a third party <em>would</em> classify data if given the chance. For example, suppose we wanted to use data science to look at mammograms and tell us which scans showed cancer—one way to think about this is that we want to answer the question “if a radiologist looked at this scan, would they think the patient had cancer?” Or if we wanted to use data science to review job applicants resumés to determine who a company should hire, we could think of what we’re doing as answering the question “if a hiring manager looked at this resumé, would they want to interview this candidate?”</p>
+<p>This may seem a slightly odd way to think about these types of problems, but as we’ll discuss later, this way of framing data science problems it can be very powerful, in large part because it is a more accurate description of what many data science models are actually doing. That’s because many data science problems are solved using a practice called <em>supervised machine learning</em> in which a statistical model is “trained” using data that a human has already analyzed. The statistical model is then designed to try to emulate the behavior of the humans that analyzed the training data when it sees new data. So, for example, we might train an algorithm to detect cancer in mammograms by first asking a radiologist to look at dozens of mammograms and then write down whether they think the mammogram show evidence of cancer. We could then give this pre-analyzed (“labeled”) training data to an algorithm that will then try to emulate the behavior of the radiologist. If successful, we would end up with an algorithm that looks like it is “detecting cancer,” but what it is really trying to do is answer the question “if a radiologist looked at the scan, would they diagnose the patient with cancer.” This distinction is subtle, but it is important, because it helps us to understand that any algorithm that we create through this type of process will inherent all of the biases and limitations of the radiologists who created the data used to train the algorithm.</p>
+</section>
+<section id="causal-questions">
+<h3>Causal Questions<a class="headerlink" href="#causal-questions" title="Permalink to this headline">#</a></h3>
+<p>The final type of question regularly faced by data scientists is perhaps the hardest to answer: causal questions.</p>
+<p>Learning to answer the previous two classes of questions can take a data scientist a long way in life—learning to answer descriptive questions will ensure you prioritize your efforts when wrestling with new problems, and the value of passive-prediction to automate a huge number of analysis tasks is self-evident. But often in life we want to go beyond <em>characterizing</em> the world around us; we want to <em>act</em> to change the world. But before we <em>manipulate</em> the world around us—by launching an advertising campaign, or a new government program—we often want to get some sense of the likely <em>effect</em> our actions will <em>cause</em>. And that is the domain of causal questions.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="facebook"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p><a class="reference external" href="https://www.wsj.com/articles/facebook-knows-it-encourages-division-top-executives-nixed-solutions-11590507499">Recent reporting by the Wall Street Journal</a> has shown that Facebook’s own research has confirmed what many outside experts have long argued: the way its recommendation engines prioritize content that results in “user engagement” (clicks, shares, comments) ends up promoting partisan, polarizing, sensationalist, or extreme content. In addition, their own research has also shown that group recommendations are contributing to extremism. According to one internal presentation, “64% of all extremist group joins are due to our recommendation tools” like <em>Groups You Should Join</em> and other discovery tools.</p>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./10_introduction"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../00_preface/00_preface.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Introduction to Data Science for Humans</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="20_data_science_in_historical_context.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">What <em>is</em> Data Science: An Historical Perspective</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Josh Clinton and Nick Eubank<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
