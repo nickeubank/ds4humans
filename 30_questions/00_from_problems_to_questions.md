@@ -4,9 +4,52 @@
 
 Charles Kettering, Head of Research at General Motors
 
-> Deep Thought is a computer that was created by a pan-dimensional, hyper-intelligent species of beings (whose three-dimensional protrusions into our universe are ordinary white mice) to come up with the Answer to The Ultimate Question of Life, the Universe, and Everything. Deep Thought is the size of a small city. When, after seven and a half million years of calculation, the answer finally turns out to be 42, Deep Thought admonishes Loonquawl and Phouchg (the receivers of the Ultimate Answer) that "[she] checked it very thoroughly, and that quite definitely is the answer. I think the problem, to be quite honest with you is that you've never actually known what the question was."
+> Many many millions of years ago a race of hyperintelligent pandimensional beings (whose physical manifestation in their own pandimensional universe is not dissimilar to our own) got so fed up with the constant bickering about the meaning of life which used to interrupt their favorite pastime of Brockian Ultra Cricket (a curious game which involved suddenly hitting people for no readily apparent reason and then running away) that they decided to sit down and solve their problems once and for all.
+> And to this end they built themselves a stupendous super computer which was so amazingly intelligent that even before its data banks had been connected up it had started from I think therefore I am and got as far as deducing the existence of rice pudding and income tax before anyone managed to turn it off. [...]
+> "O Deep Thought computer," he said, "the task we have designed you to perform is this. We want you to tell us..." he paused, "the Answer!"
+> "The Answer?" said Deep Thought. "The Answer to what?"
+> "Life!" urged Fook.
+> "The Universe!" said Lunkwill.
+> "Everything!" they said in chorus.
+> Deep Thought paused for a moment's reflection. "Tricky," he said finally.
+> "But can you do it?"
+> Again, a significant pause.
+> "Yes," said Deep Thought, "I can do it."
+> "There is an answer?" said Fook with breathless excitement. "A simple answer?" added Lunkwill.
+> "Yes," said Deep Thought. "Life, the Universe, and Everything. There is an answer. But," he added, "I'll have to think about it." [...]
+> Fook glanced impatiently at his watch. "How long?" he said.
+> "Seven and half million years," said Deep Thought.
 
-Douglas Adams, Hitchhikers Guide to the Galaxy
+[Seven and a half million years later]
+
+> "Never again," cried the cheerleader, "never again will we wake up in the morning and think Who am I? What is my purpose in life? Does it really, cosmically speaking, matter if I don't get up and go to work? For today we will finally learn once and for all the plain and simple answer to all these nagging little problems of Life, the Universe and Everything!" [...]
+> There was a moment's expectant pause while panels slowly came to life on the front of the console. Lights flashed on and off experimentally and settled down into a businesslike pattern. A soft low hum came from the communication channel. "Good morning," said Deep Thought [a computer that was created by a pan-dimensional, hyper-intelligent species of beings] at last.
+> "Er ...good morning, O Deep Thought," said Loonquawl nervously, "do you have ... er, that is ..."
+> "An answer for you?" interrupted Deep Thought majestically. "Yes. I have."
+> The two men shivered with expectancy. Their waiting had not been in vain.
+> "There really is one?" breathed Phouchg.
+> "There really is one," confirmed Deep Thought.
+> "To Everything? To the great Question of Life, the Universe and Everything?"
+> "Yes."
+> Both of the men had been trained for this moment, their lives had been a preparation for it, they had been selected at birth as those who would witness the answer, but even so they found themselves gasping and squirming like excited children.
+> "And you're ready to give it to us?" urged Loonquawl.
+> "I am."
+> "Now?"
+> "Now," said Deep Thought.
+> They both licked their dry lips.
+> "Though I don't think," added Deep Thought, "that you're going to like it." [...]
+> "All right," said the computer, and settled into silence again.
+> The two men fidgeted.
+> The tension was unbearable.
+> "Forty-two," said Deep Thought, with infinite majesty and calm.
+> "Forty-two!" yelled Loonquawl. "Is that all you've got to show for seven and a half million years' work?"
+> "I checked it very thoroughly," said the computer, "and that quite definitely is the answer. I think the problem, to be quite honest with you, is that you've never actually known what the question is."
+> "But it was the Great Question! The Ultimate Question of Life, the Universe and Everything," howled Loonquawl.
+> "Yes," said Deep Thought with the air of one who suffers fools gladly, "but what actually is it?"
+> A slow stupefied silence crept over the men as they stared at the computer and then at each other.
+> "Well, you know, it's just Everything ... everything ..." offered Phouchg weakly. "Exactly!" said Deep Thought. "So once you do know what the question actually is, you'll know what the answer means."
+
+Douglas Adams, **Hitchhikers Guide to the Galaxy**
 
 As a data scientist, it will probably be the case that the people you work with will not come to you with well-formed research questions they want investigated. Instead, it is much more likely they will come to you with a problem they are facing, and in some cases a poorly formed idea of how they think you can solve their problem using data science (a solution that will almost certain invoke the magic of "machine learning").
 
@@ -18,8 +61,8 @@ notes to us:
 
 - Hitchhikers Guide to the Galaxy: what is the question that gives the answer you find?
 - Need to be question driven!!
-- “Answers” are easy.  Good questions are hard!
-- “Gender” gap (or “Racial” gap)?
+- "Answers" are easy.  Good questions are hard!
+- "Gender" gap (or "Racial" gap)?
 - What are we measuring? Why? How?  What does it mean?  What is the data?
 - Demographics are not causal!
 - The hardest issues are often not statistical or programming, they are critical thinking!! 
