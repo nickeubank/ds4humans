@@ -5,19 +5,33 @@
 Charles Kettering, Head of Research at General Motors
 
 > Many many millions of years ago a race of hyperintelligent pandimensional beings (whose physical manifestation in their own pandimensional universe is not dissimilar to our own) got so fed up with the constant bickering about the meaning of life which used to interrupt their favorite pastime of Brockian Ultra Cricket (a curious game which involved suddenly hitting people for no readily apparent reason and then running away) that they decided to sit down and solve their problems once and for all.
+>
 > And to this end they built themselves a stupendous super computer which was so amazingly intelligent that even before its data banks had been connected up it had started from I think therefore I am and got as far as deducing the existence of rice pudding and income tax before anyone managed to turn it off. [...]
+>
 > "O Deep Thought computer," he said, "the task we have designed you to perform is this. We want you to tell us..." he paused, "the Answer!"
+>
 > "The Answer?" said Deep Thought. "The Answer to what?"
+>
 > "Life!" urged Fook.
+>
 > "The Universe!" said Lunkwill.
+>
 > "Everything!" they said in chorus.
+>
 > Deep Thought paused for a moment's reflection. "Tricky," he said finally.
+>
 > "But can you do it?"
+>
 > Again, a significant pause.
+>
 > "Yes," said Deep Thought, "I can do it."
+>
 > "There is an answer?" said Fook with breathless excitement. "A simple answer?" added Lunkwill.
+>
 > "Yes," said Deep Thought. "Life, the Universe, and Everything. There is an answer. But," he added, "I'll have to think about it." [...]
+>
 > Fook glanced impatiently at his watch. "How long?" he said.
+>
 > "Seven and half million years," said Deep Thought.
 
 [Seven and a half million years later]
