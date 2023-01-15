@@ -2,14 +2,17 @@
 
 > A Problem Well Stated is a Problem Half Solved
 
-Charles Kettering
-Head of Research at General Motors
-1920 to 1947
+Charles Kettering, Head of Research at General Motors
 
 > Deep Thought is a computer that was created by a pan-dimensional, hyper-intelligent species of beings (whose three-dimensional protrusions into our universe are ordinary white mice) to come up with the Answer to The Ultimate Question of Life, the Universe, and Everything. Deep Thought is the size of a small city. When, after seven and a half million years of calculation, the answer finally turns out to be 42, Deep Thought admonishes Loonquawl and Phouchg (the receivers of the Ultimate Answer) that "[she] checked it very thoroughly, and that quite definitely is the answer. I think the problem, to be quite honest with you is that you've never actually known what the question was."
 
-Hitchhikers Guide to the Galaxy
-[wikipedia paraphrase—need to find full quote]
+Douglas Adams, Hitchhikers Guide to the Galaxy
+
+As a data scientist, it will probably be the case that the people you work with will not come to you with well-formed research questions they want investigated. Instead, it is much more likely they will come to you with a problem they are facing, and in some cases a poorly formed idea of how they think you can solve their problem using data science (a solution that will almost certain invoke the magic of "machine learning").
+
+If you take nothing else away from this portion of the class, let it be this: your ability to properly identify, understand, and articulate the problem you wish to solve will be **the** biggest determinant of your success as a data scientist.
+
+<!-- 
 
 notes to us:
 
@@ -19,9 +22,9 @@ notes to us:
 - “Gender” gap (or “Racial” gap)?
 - What are we measuring? Why? How?  What does it mean?  What is the data?
 - Demographics are not causal!
-- The hardest issues are often not statistical or programming, they are critical thinking!!
+- The hardest issues are often not statistical or programming, they are critical thinking!! 
 
-As a data scientist, it will probably be the case that the people you work with will not come to you with well-formed research questions they want investigated. Instead, it is much more likely they will come to you with a problem they are facing, and in some cases a poorly formed idea of how they think you can solve their problem using data science (a solution that will almost certain invoke the magic of "machine learning").
+  -->
 
 When this happens, it is your job to do two things:
 
