@@ -10,7 +10,7 @@ parts:
     - file: 10_introduction/20_data_science_in_historical_context
   - caption: Types of Questions
     chapters:
-    - file: 30_questions/00_from_problems_to_questions
+    - file: 30_questions/00_solving_the_right_problem
     - file: 30_questions/10_exploratory_questions
     - file: 30_questions/20_passive_prediction_questions
     - file: 30_questions/30_causal_questions

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>From Problems to Questions &#8212; Data Science for Humans</title>
+    <title>Solving the Right Problem &#8212; Data Science for Humans</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -142,7 +142,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   From Problems to Questions
+   Solving the Right Problem
   </a>
  </li>
  <li class="toctree-l1">
@@ -284,7 +284,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F30_questions/00_from_problems_to_questions.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F30_questions/00_solving_the_right_problem.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -312,7 +312,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/30_questions/00_from_problems_to_questions.md"
+        <a href="../_sources/30_questions/00_solving_the_right_problem.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -372,41 +372,46 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-1-properly-specifying-your-problem">
-   Step 1: Properly Specifying Your Problem
+  <a class="reference internal nav-link" href="#little-papa-dominos-has-a-problem">
+   Little Papa Dominos Has A Problem
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#little-papa-dominos-has-a-problem">
-     Little Papa Dominos Has A Problem
+    <a class="reference internal nav-link" href="#solving-the-wrong-problem">
+     Solving The Wrong Problem
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#solving-the-wrong-problem">
-       Solving The Wrong Problem
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#causal-inference-in-advertising">
-       Causal Inference in Advertising
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#causal-inference-in-advertising">
+     Causal Inference in Advertising
+    </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-s-the-real-problem-need">
-   What’s The
+  <a class="reference internal nav-link" href="#solving-the-real-problem">
+   Solving The
    <em>
     Real
    </em>
-   Problem / Need
+   Problem
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-questions-do-i-need-to-ask">
-     What Questions Do I Need To Ask?
+    <a class="reference internal nav-link" href="#step-1-start-a-conversation">
+     Step 1: Start a Conversation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#beware-technical-suggestions">
+       Beware Technical Suggestions
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-2-propose-a-question-to-answer">
+     Step 2: Propose A Question To Answer
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -414,11 +419,16 @@ title="Print to PDF"
      Make Your Questions Specific and Actionable
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-3-iterate">
+     Step 3: Iterate
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#positive-versus-normative-questions">
-   Positive versus Normative Questions
+  <a class="reference internal nav-link" href="#descriptive-versus-proscriptive-questions">
+   Descriptive versus Proscriptive Questions
   </a>
  </li>
 </ul>
@@ -430,7 +440,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>From Problems to Questions</h1>
+                <h1>Solving the Right Problem</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -441,41 +451,46 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-1-properly-specifying-your-problem">
-   Step 1: Properly Specifying Your Problem
+  <a class="reference internal nav-link" href="#little-papa-dominos-has-a-problem">
+   Little Papa Dominos Has A Problem
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#little-papa-dominos-has-a-problem">
-     Little Papa Dominos Has A Problem
+    <a class="reference internal nav-link" href="#solving-the-wrong-problem">
+     Solving The Wrong Problem
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#solving-the-wrong-problem">
-       Solving The Wrong Problem
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#causal-inference-in-advertising">
-       Causal Inference in Advertising
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#causal-inference-in-advertising">
+     Causal Inference in Advertising
+    </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-s-the-real-problem-need">
-   What’s The
+  <a class="reference internal nav-link" href="#solving-the-real-problem">
+   Solving The
    <em>
     Real
    </em>
-   Problem / Need
+   Problem
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-questions-do-i-need-to-ask">
-     What Questions Do I Need To Ask?
+    <a class="reference internal nav-link" href="#step-1-start-a-conversation">
+     Step 1: Start a Conversation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#beware-technical-suggestions">
+       Beware Technical Suggestions
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-2-propose-a-question-to-answer">
+     Step 2: Propose A Question To Answer
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -483,11 +498,16 @@ title="Print to PDF"
      Make Your Questions Specific and Actionable
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-3-iterate">
+     Step 3: Iterate
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#positive-versus-normative-questions">
-   Positive versus Normative Questions
+  <a class="reference internal nav-link" href="#descriptive-versus-proscriptive-questions">
+   Descriptive versus Proscriptive Questions
   </a>
  </li>
 </ul>
@@ -500,12 +520,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="from-problems-to-questions">
-<h1>From Problems to Questions<a class="headerlink" href="#from-problems-to-questions" title="Permalink to this headline">#</a></h1>
-<blockquote>
-<div><p>A Problem Well Stated is a Problem Half Solved</p>
-</div></blockquote>
-<p>Charles Kettering, Head of Research at General Motors</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="solving-the-right-problem">
+<h1>Solving the Right Problem<a class="headerlink" href="#solving-the-right-problem" title="Permalink to this headline">#</a></h1>
 <blockquote>
 <div><p>Many many millions of years ago a race of hyperintelligent pandimensional beings (whose physical manifestation in their own pandimensional universe is not dissimilar to our own) got so fed up with the constant bickering about the meaning of life which used to interrupt their favorite pastime of Brockian Ultra Cricket (a curious game which involved suddenly hitting people for no readily apparent reason and then running away) that they decided to sit down and solve their problems once and for all.</p>
 <p>And to this end they built themselves a stupendous super computer which was so amazingly intelligent that even before its data banks had been connected up it had started from I think therefore I am and got as far as deducing the existence of rice pudding and income tax before anyone managed to turn it off.
@@ -559,59 +575,79 @@ It was the size of a small city.</p>
 <p>“Exactly!” said Deep Thought. “So once you do know what the question actually is, you’ll know what the answer means.”</p>
 </div></blockquote>
 <p>Douglas Adams, <strong>Hitchhikers Guide to the Galaxy</strong></p>
-<section id="step-1-properly-specifying-your-problem">
-<h2>Step 1: Properly Specifying Your Problem<a class="headerlink" href="#step-1-properly-specifying-your-problem" title="Permalink to this headline">#</a></h2>
-<p>As a young data scientist, you will often be in the position of having to use your data science skills to help someone else. In this book, we will refer to any third party you are helping as your “stakeholder.” This may be your manager, your CEO, or someone at another company you are advising.<a class="footnote-reference brackets" href="#workingforyourself" id="id1">1</a> And it will nearly always be the case that your job as a data scientist will be to solve a problem for your stakeholder.</p>
-<p>While this may seem obvious, there’s a catch: your stakeholder will rarely come to you with well-formed research questions they want to be investigated. Sadly, it is much more likely they will come to you with a vague conception of a problem they are facing and a poorly formed idea of how they think you can solve their problem using data science (a solution that will almost certainly invoke the magic of “machine learning” and “AI”).</p>
-<p>When this happens, it is <em>your job</em> to work with your stakeholder to identify the problem your stakeholder actually needs addressed.</p>
-<p>“Wait, what?” you may say. “Isn’t it the job of my stakeholder to figure out what they need?” Yes, but… no.</p>
-<p>At the end of the day, always remember that you will be evaluated not on the complexity of your algorithms, not on your model’s R-squared, AIC, or AUC scores, and not on whether your data visualizations are aesthetically pleasing; in the long run, your stakeholder will always end up evaluating you on the basis of whether you have made their life better. And the only way you can make the stakeholder’s life better is to successfully identify and solve a problem for them. And the first step in that process is to identify the stakeholder’s <em>real</em> problem!</p>
+<p>We do data science to solve problems. And yet all too often data science projects fail not because their model accuracy was low or because of insufficient data, but rather because the problem the team solved wasn’t actually the problem that needed solving!</p>
+<p>Why is this such a common issue? In part, it’s because properly specifying a problem is <em>immensely</em> difficult. To specify a problem properly requires <em>understanding</em> the issue, and often we call issues “problems” precisely because we don’t really understand them. There’s a reason that Charles Kettering, Head of Research at General Motors famously said “A problem well stated is a problem half solved.”</p>
+<p>But there’s also a second reason more unique to data science, and especially to the work of <em>young</em> data scientists: excessive deference to stakeholders.</p>
+<p>As a young data scientist, you will often be in the position of having to use your data science skills to help someone else. In this book, we will refer to any third party you are helping as your “stakeholder.” This may be your manager, your CEO, or someone at another company you are advising.<a class="footnote-reference brackets" href="#workingforyourself" id="id1">1</a> And it will nearly always be the case that your job as a data scientist will be to solve a problem that has been brought to you by your stakeholder.</p>
+<p>That in and of itself is fine—division of labor makes the modern economy work! The problem arises when data scientists assume that the problem statement their stakeholder has brought them is properly specified and that their job is to take that problem statement as given and run with it. Because your job as a data scientist isn’t to mindlessly solve the problem brought to you by your stakeholder—a <em>central</em> part of your job is to work <em>with</em> your stakeholder to identify the <em>real</em> problem they want solved and to ensure that the work you <em>plan</em> to do will bring real value.</p>
+<p>Because all too often, young data scientists—like the Deep Thought computer in <em>Hitchhikers Guide to the Galaxy</em>—spend weeks dutifully grinding away to solve a misspecified problem, only to deliver a result to their stakeholder that turns out to not actually be as helpful as expected.</p>
+<p>At this point, you may be thinking “well, isn’t it <em>their</em> problem that they asked me to do the wrong thing?” And… yes, in some sense it is. But it’s also yours. And that’s because when you leave the classroom, you will won’t be evaluated on the complexity of your model or the aesthetics of your visualizations—you’ll be evaluated on whether you’ve made your stakeholder’s life better. And even if it was the stakeholder who originally misspecified their need, if you fail to correct that error and deliver a product that doesn’t help your stakeholder, then that’s what will be remembered.</p>
+<aside class="sidebar">
+<p>when you leave the classroom, you will won’t be evaluated on the complexity of your model or the aesthetics of your visualizations—you’ll be evaluated on whether you’ve made your stakeholder’s life better. And even if it was the stakeholder who originally mis-specified their need, if you fail to correct that error and deliver a product that doesn’t help your stakeholder, then that’s what will be remembered.</p>
+</aside>
 <section id="little-papa-dominos-has-a-problem">
-<h3>Little Papa Dominos Has A Problem<a class="headerlink" href="#little-papa-dominos-has-a-problem" title="Permalink to this headline">#</a></h3>
-<p>To illustrate the importance of properly specifying your problem, let’s begin with an illustrative example. The details of this example are fictitious, but the underlying logic of this example is not; indeed, the insight illustrated by this example is central to one of the biggest innovations in online advertising to occur in the past several decades.</p>
-<p>You have been hired by the advertising division of a fictitious national pizza chain—let’s call it Little Papa Dominos. Little Papa Dominos spends a <em>lot</em> of money on online advertising, but they worry the money isn’t being used as effectively as it could be—they were spending more than most of their competitors on online advertising, and yet their online sales were lagging. After consulting industry groups and online advertising experts, they’ve discovered that their ads’ click-through rate (CTR—the percentage of ads that are shown to users that are actually clicked) is well below the average for food delivery services, suggesting that their ads aren’t very effective.</p>
-<p>To address the problem, they’ve hired you—a newly minted Data Scientist—to improve the CTR on their ads. They give you a large budget, access to all the cloud computing resources you need, and a small staff.</p>
-<p>Well, you reason, maybe the problem is that our ads aren’t being shown to the right people. After all, it seems unlikely that any ad for pizza—no matter how appealing—is likely to draw a click if it’s shown to a 60-year-old at 7 am. So you set out to answer the question “What factors predict the likelihood that a user will click on one of our ads?” a classic passive-predictive question. You and your team use your budget to run your ads in front of a huge range of different types of users on different sites and at different times. Then you use that data (and those glorious cloud computing resources) to train a machine learning model that predicts whether someone will click on one of your ads as a function of user demographics and when and where the ad was shown.</p>
-<p>Using this data, you find that Little Papa Dominos has not been doing a very good job of targeting likely ad-clickers, so you suggest they shift their ad spend to focus on the types of users your model predicts are likely to click on Little Papa Dominos ads. And sure enough, within a few weeks of this change, the data shows your CTR has increased not just 2-fold, but 10-fold! Not only that, but the share of people who click on ads who end up actually buying a pizza has even increased. Everyone congratulates you, and you move on to the next project feeling very happy.</p>
-<p>A few months later, though, you are called into a meeting with the Little Papa Dominos advertising team and the company’s Chief Financial Officer. They’ve been looking over the numbers, and despite the huge rise in CTR, they’ve found that their online sales business is doing <em>worse</em> than it was before your change to their system. CTR rates are still up, but somehow it isn’t generating more profits.</p>
+<h2>Little Papa Dominos Has A Problem<a class="headerlink" href="#little-papa-dominos-has-a-problem" title="Permalink to this headline">#</a></h2>
+<p>Our discussion up to this point has been a little abstract, so to illustrate what we mean by “mis-specifying a problem”, let’s work through an example. The details of this example are fictitious, but the underlying logic of this example is not; indeed, the insight illustrated by this example is central to one of the biggest pivots in how people think about online advertising.</p>
+<p>You have been hired by the advertising division of a fictitious national pizza chain—let’s call it Little Papa Dominos. Little Papa Dominos spends a <em>lot</em> of money on online advertising, but they worry the money isn’t being used as effectively as it could be—they spend more than most of their competitors, and yet their online sales are lagging. After consulting industry groups and online advertising experts, they discover that their ads’ click-through rate (CTR, the percentage of ads that are shown to users that are actually clicked) is well below the average for food delivery services, suggesting that their ads aren’t very effective.</p>
+<p>To address the problem, they’ve hired you—a newly minted Data Scientist—to improve the CTR of their ads. They give you a large budget, access to all the cloud computing resources you need, and a small staff.</p>
+<p>“Well,” you reason, “maybe the problem is that our ads aren’t being shown to the right people. After all, it seems unlikely that any ad for pizza—no matter how appealing—is likely to draw a click if it’s shown to a 60-year-old at 7 am.” So you set out to answer the question: “What factors predict the likelihood that a user will click on one of our ads?” a classic passive-predictive question.</p>
+<p>You and your team use your budget to run your ads in front of different types of users on different sites and at different times. You then use that data (and those glorious cloud computing resources) to train a machine learning model that predicts whether someone will click on one of your ads as a function of user demographics and ad placement.</p>
+<p>Based on this analysis, you conclude that Little Papa Dominos has not been doing a very good job of targeting likely ad-clickers. You suggest they shift their ad spend to focus on the types of users your model predicts are likely to click on Little Papa Dominos ads.</p>
+<p>And sure enough, almost immediately the data shows your CTR has increased 5-fold! Not only that, but the share of people who click on ads who end up actually buying a pizza has even increased. Everyone congratulates you, and you move on to the next project feeling very smug.</p>
+<p>A few months later, though, you are called into a meeting with the Little Papa Dominos advertising team and the company’s Chief Financial Officer. They’ve been looking over the numbers, and despite the huge rise in CTR, their online sales business is doing <em>worse</em> than it was before your change to their system. CTR rates are still up, but somehow it isn’t generating more profits.</p>
 <p>Can you figure out what went wrong?</p>
-<p>OK, this is the place in most books where the authors as you that question, and you look up at the ceiling for a minute, shrug, and then read on. But I’m really, really serious about this: close your computer, stand up, set a 5-minute timer on your phone, and go for a walk and see if you can figure out what’s going on. This is <em>precisely</em> the kind of problem you will soon face as a professional data scientist, so why not practice trying to think through the problem here where you can check your work?</p>
+<p>OK, this is the place in most books where the authors ask you that question, and you look up at the ceiling for a minute, shrug, and then read on.</p>
+<p>But I’m really, really serious about this: close your laptop, stand up, set a 5-minute timer on your phone, and go for a walk. Ponder this example and see if you can figure out what’s going on. This is <em>precisely</em> the kind of problem you will soon face as a professional data scientist, so why not practice trying to think through the problem here where you can check your work?</p>
 <section id="solving-the-wrong-problem">
-<h4>Solving The Wrong Problem<a class="headerlink" href="#solving-the-wrong-problem" title="Permalink to this headline">#</a></h4>
-<p>The reason that increasing clicks hadn’t made Little Papa Dominos richer is that Little Papa Dominos’ problem wasn’t that their ads had a low CTR; it was that they weren’t selling a lot of pizzas online. And to solve the problem of “not selling a lot of pizzas online”, the question that needed to be answered was <em>not</em> “who is most likely to click on an ad,” it was “who is most likely to decide to buy a pizza (who wasn’t already going to buy a pizza) if I show them an ad?”</p>
-<p>The difference is subtle, but crucially important: showing an ad to someone and having them click it doesn’t mean the ad made Little Papa Dominos any money; in fact, having someone click an ad and <em>buy a pizza</em> doesn’t even mean the ad made Little Papa Dominos money. Little Papa Dominos only makes money if someone <em>who wasn’t already planning to buy a pizza decides to buy a pizza because of an ad.</em> Or, expressed the way we normally frame causal statements: an ad only makes Little Papa Dominos money if the ad <em>causes</em> someone to buy a pizza.</p>
-<p>Why are these so different? Because the best way to get someone to click an ad for your company is to show it to someone who was probably going to buy your product anyway, but that’s someone who was probably going to end up making that purchase anyway. In the case of Little Papa Dominos, for example, you can probably get the best CTR by showing ads to college students at 10 pm who were googling the name of your company—but how many of those sales were going to happen anyway?</p>
+<h3>Solving The Wrong Problem<a class="headerlink" href="#solving-the-wrong-problem" title="Permalink to this headline">#</a></h3>
+<p>The reason increasing clicks wasn’t making Little Papa Dominos richer is that Little Papa Dominos’ problem wasn’t that their ads had a low CTR; their <em>real</em> problem was that not many people were buying pizzas online.</p>
+<p>And because Little Papa Domino’s problem wasn’t a low CTR, the question that needed to be answered was <em>not</em> “who is most likely to click on an ad.” The question that needed to be answered was “what users are most likely to decide to buy a pizza (who wasn’t already going to buy a pizza) if I show them an ad?”</p>
+<p>The difference is subtle, but crucially important: showing an ad to someone and having them click it doesn’t mean the ad made Little Papa Dominos any money; in fact, having someone click an ad and <em>buy a pizza</em> doesn’t even mean the ad made Little Papa Dominos money. Little Papa Dominos only makes money if someone <em>who wasn’t already planning to buy a pizza</em> decides to buy a pizza because of an ad.</p>
+<p>Or, expressed the way we normally frame causal statements: an ad only makes Little Papa Dominos money if the ad <em>causes</em> someone to buy a pizza.</p>
+<p>Why are these so different? Because the best way to get someone to click an ad for your company is to show it to someone who was probably going to buy your product anyway. In the case of Little Papa Dominos, for example, you can probably get the best CTR by showing ads to college students at 10 pm who were searching the name of your company. But does that make you any money? No, because most of those people were going to end up on your site anyway!</p>
 </section>
 <section id="causal-inference-in-advertising">
-<h4>Causal Inference in Advertising<a class="headerlink" href="#causal-inference-in-advertising" title="Permalink to this headline">#</a></h4>
-<p>As noted at the beginning of this example, while Little Papa Dominos is not a real company, this principle—that in online advertising, our goal is not to show our ads to the people who are most likely to click on the ad, but rather to the people on whose behavior the ad is most likely to have an effect—has had a huge impact on how online advertising works, and how people evaluate the success of ad campaigns. Indeed, this also helps to explain why companies like Meta and Google are so eager to track user behavior across apps and websites; by “following” users into the apps of other companies, Meta can directly measure whether a person who saw an ad is more likely to buy something than a similar user someone who didn’t see an ad, and based on that data both refine who sees those ads in the future and to charge more to advertisers.</p>
+<h3>Causal Inference in Advertising<a class="headerlink" href="#causal-inference-in-advertising" title="Permalink to this headline">#</a></h3>
+<p>As noted at the beginning of this example, while Little Papa Dominos is not a real company, this realization—that in online advertising, our goal is not to show ads to the people most likely to click on the ad, but rather the people whose behavior is most likely to be changed by the ad—has had a huge impact on how online advertising works, and how people evaluate the success of ad campaigns.</p>
+<p>Indeed, this is also why companies like Meta and Google are so eager to track user behavior across apps and websites. When Meta and Google are able to “follow” users after they’ve clicked an ad, they can evaluate ad performance based not on clicks but on customer behavior. And when paired with their ability to show ads to some users and not to others and compare the customer behavior of both groups (something we’ll talk about more soon), Meta and Google cause estimate the true effect of ads on sales, allowing them to charge more for their ad spots <em>and</em> use the data to improve ad targeting.</p>
 </section>
 </section>
-</section>
-<section id="what-s-the-real-problem-need">
-<h2>What’s The <em>Real</em> Problem / Need<a class="headerlink" href="#what-s-the-real-problem-need" title="Permalink to this headline">#</a></h2>
-<p>You might think that the one thing that the stakeholder knows best is the nature of their problem. But in reality, stakeholders will very often mis-identify or mis-represent their true problem/need.</p>
+<section id="solving-the-real-problem">
+<h2>Solving The <em>Real</em> Problem<a class="headerlink" href="#solving-the-real-problem" title="Permalink to this headline">#</a></h2>
+<p>So how to we avoid solving the wrong problem? There are (sorry) no hard and fast rules for how to avoid this kind of problem, but here’s a simple road map:</p>
+<ul class="simple">
+<li><p>Start a conversation about the problem.</p></li>
+<li><p>Propose a question to answer.</p></li>
+<li><p>Iterate.</p></li>
+</ul>
+<section id="step-1-start-a-conversation">
+<h3>Step 1: Start a Conversation<a class="headerlink" href="#step-1-start-a-conversation" title="Permalink to this headline">#</a></h3>
+<p>Begin by having a discussion about the <em>goals</em> of your project. As noted above, the first step to avoiding mis-specified problems is to just <em>recognize</em> that helping to properly specify the problem is part of your job. Remember: you’ve been hired precisely because of your expertise in solving problems with data, so <em>speak up.</em> Suggest different ways of stating the problem. Ask about different “deliverables” you could provide and ask why they might or might not solve the stakeholders problem (even if a suggestion gets shot down, the <em>reason</em> the problem is shot down will teach you something).</p>
 <p>For example, suppose you are approached by a real estate group interested in developments in the United Kingdom. They tell you:</p>
 <blockquote>
 <div><p>We do a lot of work building large residential buildings. One problem we often have is that after we start digging the foundations of our buildings, we discover that we’re actually on top of ancient ruins of some sort that the stupid government wants to preserve for stupid posterity. Then we have to spend piles of money to have archeologists come to dig out these old bones with toothbrushes, all of which also puts us behind schedule. So what we want you to do is design a machine learning algorithm that we can use to detect archeological sites from the ground penetrating radar scans we do after we’ve cleared out a job site, so we can avoid digging foundations in the spots on our plots where archeological sites might be located.</p>
 </div></blockquote>
 <p>So what does this stakeholder want you to do? At first glance, it might seem like the answer is “develop a machine learning algorithm for detecting archeological sites in ground penetrating radar scans”.</p>
-<p>But here’s the thing: most people ask data scientists for help because they don’t know much about data science. As a result, they specific thing they ask for may not actually be the best approach available given the state of data science.</p>
+<p>But it seems like it’d be <em>much</em> more helpful and cost-effective if you could make a guess about whether there are archeological sites at a location <em>before</em> the company buys the land and clears away the existing buildings!</p>
+<p>So what would I propose to a stakeholder like this? I would say: “If I could tell you the likelihood that an archeological site is under a plot of land you’re thinking about buying, would that be more helpful to you?”</p>
+<p>Now to be clear, you may not always be right in your assessment. They may come back and say “No, sorry—there’s this other consideration we didn’t explain initially” (like “we’ve already bought all this land. We’re committed.”). But before diving in, you always want to be sure <em>you’re solving the right problem.</em> And you should never <strong>assume</strong> that the problem to be addressed has been properly specified.</p>
+<section id="beware-technical-suggestions">
+<h4>Beware Technical Suggestions<a class="headerlink" href="#beware-technical-suggestions" title="Permalink to this headline">#</a></h4>
+<p>It’s remarkable how often stakeholders will come to you with a vague conception of a problem they are facing and an over-formed idea of how they think you can solve their problem using data science (a solution that will almost certainly invoke the magic of “machine learning” or “AI”).</p>
+<p>But remember: most people ask data scientists for help because they don’t know much about data science, or worse they <em>think</em> they know a lot about data science, but don’t. Again, different rules apply if you’re at Google or Apple, but in most contexts, it’s a good idea to treat implementation details provided by the client as a red herring. Focus on the stakeholder’s actual <em>needs</em>, and only think about implementation once you feel you understand the problem well.</p>
 <aside class="sidebar">
 <p class="sidebar-title">Have Confidence in Your Own Expertise</p>
 <p>Most people ask data scientists for help because they don’t know much about data science. As a result, the specific thing they ask for may not actually be the best approach available given the state of data science.</p>
 </aside>
-<p>In this case, for example, I would argue that the <em>real</em> need of this company is to know where archeological sites are likely to be located, full stop. Finding a way to identify archeological remains in ground radar scans might help them, but there are two problems with that approach. First, it’s not clear it’s feasible. Training a supervised machine learning algorithm requires labeled training data, which in this case would mean ground penetrating radar scans of identified-but-not-yet-excavated-ruins. And it’s not at all clear such data could be obtained.</p>
-<p>But second, and more importantly, it seems like it’d be <em>much</em> more helpful and cost-effective if you could make a guess about whether there are archeological sites at a location <em>before</em> the company buys the land and clears away the existing buildings!</p>
-<p>So what would I propose to a stakeholder like this? I would say: “If I could tell you the likelihood that an archeological site is under a plot of land *you’re thinking about buying, would that be more helpful to you?”</p>
-<p>Now to be clear, you may not always be right in your assessment. They may come back and say “No, sorry—there’s this other consideration we didn’t explain initially” (like “we’ve already bought all this land. We’re committed.”). But before diving in, you always want to be sure <em>you’re solving the right problem.</em> And you should never <strong>assume</strong> that the problem to be addressed has been properly specified.</p>
-<section id="what-questions-do-i-need-to-ask">
-<h3>What Questions Do I Need To Ask?<a class="headerlink" href="#what-questions-do-i-need-to-ask" title="Permalink to this headline">#</a></h3>
-<p>Data science tools aren’t designed to solve problems; they answer questions. And so to have any hope of successfully solving the problem presented by your stakeholder, you must first determine what questions, if answered, would help solve the problem at hand.</p>
-<p>In the example of the real estate development company above, for example, a question which, if answered, would make it essentially solve the stakeholder’s problem would be:</p>
-<p><em>Can I predict the presence of archeological ruins using publicly available data, such as data topology, hydrology, soil types, and geography?</em></p>
-<p>Unlike using machine learning to process ground penetrating radar scans, the training data required to build a supervised machine learning algorithm to answer this question – information on the locations of previously located archeological ruins – is likely public, and there are <em>lots</em> of public sources of data on landscape features and soil types. You would have to deal with the fact that people will only have figured out if archeological ruins are present in places where development has taken place in the past (so you’d want to build your training data using only the locations of large real estate developments that <em>would</em> find ruins if ruins were present), but this is emminently doable.</p>
-<p>Again, I am not saying this is the <em>best</em> strategy – there may be considerations we don’t know about yet – but this approach is certainly something I would bring back to the real estate company before doing any actual data work.</p>
+<p>In the example above, for example, I would argue that the <em>real</em> need of the real estate company is to know where archeological sites are likely to be located, full stop. Finding a way to identify archeological remains in ground radar scans <em>might</em> help them, but is it (a) feasible and (b) the best choice?</p>
+<p>Training a supervised machine learning algorithm requires labeled training data, which in this case would mean ground penetrating radar scans of identified-but-not-yet-excavated-ruins. And it’s not at all clear such data could be obtained.</p>
+<p>Moreover, there’s presumably LOTS of public data on where archeological sites have been found in the past, and there’s a good chance a basic GIS analysis of already-found sites could tell you a lot (and for a lot less money!).</p>
+</section>
+</section>
+<section id="step-2-propose-a-question-to-answer">
+<h3>Step 2: Propose A Question To Answer<a class="headerlink" href="#step-2-propose-a-question-to-answer" title="Permalink to this headline">#</a></h3>
+<p>Once you think you understand your stakeholder’s need, the next step is propose a question you plan to answer to your stakeholder. In our prior example, I might ask the real estate agent: “if I could answer the question: for any given real estate plot, what’s the probability the site contains archeological ruins? would that solve your problem?”</p>
+<p>This strategy is critical because data science tools aren’t designed to solve problems; they answer questions. And so to have any hope of successfully solving the problem presented by your stakeholder, you must first determine what questions, if answered, would help solve the problem at hand. And when you propose a question you plan to answer, it helps make clear to the stakeholder what you’ll be delivering, and helps them evaluate whether your plan of action makes sense.</p>
 </section>
 <section id="make-your-questions-specific-and-actionable">
 <h3>Make Your Questions Specific and Actionable<a class="headerlink" href="#make-your-questions-specific-and-actionable" title="Permalink to this headline">#</a></h3>
@@ -619,16 +655,27 @@ It was the size of a small city.</p>
 <p>Vague questions would be “is urbanization impacting efforts to reduce infant mortality?”, or “does urbanization affect infant mortality?” Note that when you read these, they don’t seem to obviously imply a way forward.</p>
 <p>Perhaps the best way to figure out if your question is answerable is to write down what an answer to your question would look like. Seriously – try it. Can you write down, on a piece of paper, the graph, regression table, or machine learning diagnostic statistics (complete with labels on your axes, names for variables, etc.) that would constitute an answer to your question? If not, it’s probably too vague!</p>
 </section>
+<section id="step-3-iterate">
+<h3>Step 3: Iterate<a class="headerlink" href="#step-3-iterate" title="Permalink to this headline">#</a></h3>
+<p>And here’s the last but perhaps most important step: <strong>iterate.</strong> Bring your work back to your stakeholder as often as possible. Many stakeholders find the idea of data science mysterious and abstract, and will struggle to understand what is and is not feasible. By bringing them intermediate results, the whole process will start to become more concrete for the stakeholder, and it will help them provide you with better feedback.</p>
 </section>
-<section id="positive-versus-normative-questions">
-<h2>Positive versus Normative Questions<a class="headerlink" href="#positive-versus-normative-questions" title="Permalink to this headline">#</a></h2>
-<p>Before we dive into each of these types of questions, it is worth pausing to emphasize that this is a taxonomy of questions about how the world <em>is</em>, not about how world <em>should be</em>. That’s because while data science is an amazing tool for telling us about the state of the world, it <em>cannot</em>, on its own, answer <em>should</em> questions. That is because answering <em>should</em> questions requires evaluating the desirability of different possible outcomes, and that can only be done using on the basis of a system of values. Data science may tell us the <em>consequences</em> of different courses of action, but it cannot tell us whether those consequences make a given course of action worthwhile.</p>
+</section>
+<section id="descriptive-versus-proscriptive-questions">
+<h2>Descriptive versus Proscriptive Questions<a class="headerlink" href="#descriptive-versus-proscriptive-questions" title="Permalink to this headline">#</a></h2>
+<p>A last but important note on questions.</p>
+<p>In our previous reading, we introduced three classes of questions: Exploratory, Passive-Predictive, and Casual. But that was actually a slight simplification.</p>
+<p>There are actually two broad kinds of questions: descriptive questions and proscriptive questions. Exploratory, Passive-Predictive, and Casual questions are all examples of descriptive questions—questions that aim to describe something about objective reality (e.g., What is the current tax rate for people earning over $250,000? How old do you have to be to get married in North Carolina?).<a class="footnote-reference brackets" href="#objectivereality" id="id2">2</a></p>
+<p>But some questions aren’t about the objective reality of the world, but rather about how the world <em>should</em> be (e.g., Should the current tax rate for people earning over $250,000 be higher? How old should you have to be to get married in North Carolina?. These questions are often called <em>proscriptive questions</em> (or in some fields, <em>normative questions</em>).</p>
+<p>The reason we’ve chosen to focus on descriptive questions rather than proscriptive question is that while data science is an amazing tool for telling us about the state of the world, it <em>cannot</em>, on its own, answer <em>should</em> questions. That is because answering <em>should</em> questions requires evaluating the <em>desirability</em> of different possible outcomes, and that can only be done using on the basis of a system of values. Data science may tell us the <em>consequences</em> of different courses of action, but it cannot tell us whether those consequences make a given course of action worthwhile.</p>
 <p>To illustrate, suppose you are interested in reducing opioid overdoses. Your rigorous data science analysis may tell you that increasing the regulation of opioid prescriptions will reduce overdoses by some amount X and reduce access to opioids for those with chronic pain by some amount Y. But does that mean you should enact the policy? Well, that depends on how much <em>value</em> you place on patients with chronic pain having access to opioids, and how much <em>value</em> you place on preventing overdoses. And the answers to those questions simply can’t come from your data.</p>
 <p>In this course, we will refer to questions about how the world <em>is</em> as “positive questions”, and questions about how the world <em>should be</em> as normative questions. But be aware these terms aren’t universal. Some people use the term “descriptive” instead of positive, and “proscriptive” instead of normative. Since we are using the term “descriptive” for a different purpose in this class, I will use normative and positive throughout this course to avoid confusion.</p>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="workingforyourself"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>If you’re lucky enough to be in the position where you <em>aren’t</em> directly answerable to someone else, either because you work for yourself or because you’re in a field that gives you substantial autonomy like academia, just think of your “stakeholder” as yourself.</p>
+<dd><p>If you’re lucky enough to <em>not</em> be directly answerable to someone else, either because you work for yourself or because you’re in a field that gives you substantial autonomy like academia, just think of your “stakeholder” as yourself.</p>
+</dd>
+<dt class="label" id="objectivereality"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Yes, we are positing an objective reality, which admittedly is an idea which has it’s own complications. However, if you are familiar with the epistemological issues around the idea of an “objective reality” I suspect you are already familiar with the distinction being drawn in this section.</p>
 </dd>
 </dl>
 </section>
