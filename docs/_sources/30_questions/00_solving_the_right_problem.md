@@ -1,49 +1,12 @@
 # Solving the Right Problem
 
-> Many many millions of years ago a race of hyperintelligent pandimensional beings (whose physical manifestation in their own pandimensional universe is not dissimilar to our own) got so fed up with the constant bickering about the meaning of life which used to interrupt their favorite pastime of Brockian Ultra Cricket (a curious game which involved suddenly hitting people for no readily apparent reason and then running away) that they decided to sit down and solve their problems once and for all.
->
-> And to this end they built themselves a stupendous super computer which was so amazingly intelligent that even before its data banks had been connected up it had started from I think therefore I am and got as far as deducing the existence of rice pudding and income tax before anyone managed to turn it off.
-> It was the size of a small city.
->
-> [...]
->
-> "O Deep Thought computer," he said, "the task we have designed you to perform is this. We want you to tell us..." he paused, "the Answer!"
->
-> "The Answer?" said Deep Thought. "The Answer to what?"
->
-> "Life!" urged Fook.
->
-> "The Universe!" said Lunkwill.
->
-> "Everything!" they said in chorus.
->
-> Deep Thought paused for a moment's reflection. "Tricky," he said finally.
->
-> "But can you do it?"
->
-> Again, a significant pause.
->
-> "Yes," said Deep Thought, "I can do it."
->
-> "There is an answer?" said Fook with breathless excitement. "A simple answer?" added Lunkwill.
->
-> "Yes," said Deep Thought. "Life, the Universe, and Everything. There is an answer. But," he added, "I'll have to think about it."
->
-> [...]
->
-> Fook glanced impatiently at his watch. "How long?" he said.
->
-> "Seven and half million years," said Deep Thought.
+In Douglas Adams' comedic sci-fi classic *Hitch-Hikers Guide to the Galaxy*, a race of hyperintelligent pandimensional beings set out to build the a massive supercomputer the size of a city to solve the mysteries of the cosmos once and for all. When they turned on the computer, named Deep Thought, they announced that "the task we have designed you to perform is this. We want you to tell us... the Answer!" "The Answer?" said Deep Thought. "The Answer to what?" "Life!" urged one designer. "The Universe!" said another. "Everything!" they said in chorus.
 
-[Seven and a half million years later]
+Deep Thought paused, then answered, "Life, the Universe, and Everything. There is an answer. But," Deep Thought added, "I'll have to think about it."
 
-> "Never again," cried the cheerleader, "never again will we wake up in the morning and think Who am I? What is my purpose in life? Does it really, cosmically speaking, matter if I don't get up and go to work? For today we will finally learn once and for all the plain and simple answer to all these nagging little problems of Life, the Universe and Everything!"
->
-> [...]
->
-> There was a moment's expectant pause while panels slowly came to life on the front of the console. Lights flashed on and off experimentally and settled down into a businesslike pattern. A soft low hum came from the communication channel. "Good morning," said Deep Thought at last.
->
-> "Er ...good morning, O Deep Thought," said Loonquawl nervously, "do you have ... er, that is ..."
+Seven and a half million years later, when Deep Thought had *finally* finished its calculations, the descendants of those designers assembled to learn the result of their ancestors' work.
+
+> "Er ...good morning, O Deep Thought," said [one descendant] nervously, "do you have ... er, that is ..."
 >
 > "An answer for you?" interrupted Deep Thought majestically. "Yes. I have."
 >
@@ -55,27 +18,13 @@
 >
 > "To Everything? To the great Question of Life, the Universe and Everything?"
 >
-> "Yes."
->
-> Both of the men had been trained for this moment, their lives had been a preparation for it, they had been selected at birth as those who would witness the answer, but even so they found themselves gasping and squirming like excited children.
->
-> "And you're ready to give it to us?" urged Loonquawl.
->
-> "I am."
->
-> "Now?"
->
-> "Now," said Deep Thought.
->
-> They both licked their dry lips.
->
-> "Though I don't think," added Deep Thought, "that you're going to like it."
+> "Yes. [...] Though I don't think," added Deep Thought, "that you're going to like it."
 >
 > [...]
 >
 > "All right," said the computer, and settled into silence again.
 >
-> The two men fidgeted.
+> The two [descendants] fidgeted.
 >
 > The tension was unbearable.
 >
@@ -94,8 +43,6 @@
 > "Well, you know, it's just Everything ... everything ..." offered Phouchg weakly.
 >
 > "Exactly!" said Deep Thought. "So once you do know what the question actually is, you'll know what the answer means."
-
-Douglas Adams, **Hitchhikers Guide to the Galaxy**
 
 We do data science to solve problems. And yet all too often data science projects fail not because their model accuracy was low or because of insufficient data, but rather because the problem the team solved wasn't actually the problem that needed solving!
 
@@ -216,21 +163,3 @@ Perhaps the best way to figure out if your question is answerable is to write do
 ### Step 3: Iterate
 
 And here's the last but perhaps most important step: **iterate.** Bring your work back to your stakeholder as often as possible. Many stakeholders find the idea of data science mysterious and abstract, and will struggle to understand what is and is not feasible. By bringing them intermediate results, the whole process will start to become more concrete for the stakeholder, and it will help them provide you with better feedback.
-
-## Descriptive versus Proscriptive Questions
-
-A last but important note on questions.
-
-In our previous reading, we introduced three classes of questions: Exploratory, Passive-Predictive, and Casual. But that was actually a slight simplification.
-
-There are actually two broad kinds of questions: descriptive questions and proscriptive questions. Exploratory, Passive-Predictive, and Casual questions are all examples of descriptive questions—questions that aim to describe something about objective reality (e.g., What is the current tax rate for people earning over $250,000? How old do you have to be to get married in North Carolina?).[^objectivereality]
-
-But some questions aren't about the objective reality of the world, but rather about how the world *should* be (e.g., Should the current tax rate for people earning over $250,000 be higher? How old should you have to be to get married in North Carolina?. These questions are often called *proscriptive questions* (or in some fields, *normative questions*).
-
-[^objectivereality]: Yes, we are positing an objective reality, which admittedly is an idea which has it's own complications. However, if you are familiar with the epistemological issues around the idea of an "objective reality" I suspect you are already familiar with the distinction being drawn in this section.
-
-The reason we've chosen to focus on descriptive questions rather than proscriptive question is that while data science is an amazing tool for telling us about the state of the world, it *cannot*, on its own, answer *should* questions. That is because answering *should* questions requires evaluating the *desirability* of different possible outcomes, and that can only be done using on the basis of a system of values. Data science may tell us the *consequences* of different courses of action, but it cannot tell us whether those consequences make a given course of action worthwhile.
-
-To illustrate, suppose you are interested in reducing opioid overdoses. Your rigorous data science analysis may tell you that increasing the regulation of opioid prescriptions will reduce overdoses by some amount X and reduce access to opioids for those with chronic pain by some amount Y. But does that mean you should enact the policy? Well, that depends on how much *value* you place on patients with chronic pain having access to opioids, and how much *value* you place on preventing overdoses. And the answers to those questions simply can't come from your data.
-
-In this course, we will refer to questions about how the world *is* as "positive questions", and questions about how the world *should be* as normative questions. But be aware these terms aren't universal. Some people use the term "descriptive" instead of positive, and "proscriptive" instead of normative. Since we are using the term "descriptive" for a different purpose in this class, I will use normative and positive throughout this course to avoid confusion.
