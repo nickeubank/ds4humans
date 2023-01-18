@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="From Problems to Questions" href="../30_questions/00_from_problems_to_questions.html" />
+    <link rel="next" title="Solving the Right Problem" href="../30_questions/00_solving_the_right_problem.html" />
     <link rel="prev" title="Solving Problems with Data Science" href="10_our_approach.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
@@ -115,18 +115,6 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Preface
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../00_preface/00_preface.html">
-   Introduction to Data Science for Humans
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   Introduction
  </span>
 </p>
@@ -153,8 +141,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../30_questions/00_from_problems_to_questions.html">
-   From Problems to Questions
+  <a class="reference internal" href="../30_questions/00_solving_the_right_problem.html">
+   Solving the Right Problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_questions/05_descriptive_v_proscriptive.html">
+   Descriptive versus Proscriptive Questions
   </a>
  </li>
  <li class="toctree-l1">
@@ -384,13 +377,13 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#great-story-why-should-i-care">
-   Great Story. Why Should I Care?
+  <a class="reference internal nav-link" href="#the-data-analyst-software-engineering-distinction">
+   The Data Analyst / Software Engineering Distinction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-data-analysis-software-engineering-distinction">
-   The Data Analysis / Software Engineering Distinction
+  <a class="reference internal nav-link" href="#great-story-why-should-i-care">
+   Great Story. Why Should I Care?
   </a>
  </li>
 </ul>
@@ -413,13 +406,13 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#great-story-why-should-i-care">
-   Great Story. Why Should I Care?
+  <a class="reference internal nav-link" href="#the-data-analyst-software-engineering-distinction">
+   The Data Analyst / Software Engineering Distinction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-data-analysis-software-engineering-distinction">
-   The Data Analysis / Software Engineering Distinction
+  <a class="reference internal nav-link" href="#great-story-why-should-i-care">
+   Great Story. Why Should I Care?
   </a>
  </li>
 </ul>
@@ -437,7 +430,7 @@ title="Print to PDF"
 <p>Given how often the term “data science” gets thrown around, you would be excused for thinking that the meaning of the term was clearly understood. The reality, however, is that if you were to ask ten people working in the field you will almost certainly get ten different descriptions of what it is and what they do.</p>
 <p>Part of that is deliberate obfuscation—data science is <em>so</em> trendy that everyone wants to claim that what they’re doing is data science in order to woo venture capitalists or to win research grants. But it’s also the result of the fact that data science is not really a mature discipline in the way that computer science or sociology are mature disciplines. Rather, it’s best to think of data science as an ongoing project to bring together a range of disparate innovations in computational and statistically methodology under one roof.</p>
 <p>Why is such a project necessary? The exponential increase in data availability and computational power over the past thirty years has resulted in a commensurate explosion in methods for analyzing that data. But the development of many of these methods has occurred in one of the most fragmented institutions in the world—academia—resulting in duplication of efforts, differences in language and vocabulary, and a failure to fully appreciate possible synergies between the perspectives of different disciplines.</p>
-<p>The idea that academia is deeply fragmented often surprises students, and understandably so. Universities <em>love</em> to pay lip service to the importance of interdisciplinarity and are quick to highlight successful interdisciplinary collaborations. But successful interdisciplinary collaborations are so notable precisely because they are the exception, not the rule. The reality, is that academic research is starkly divided into disciplinary silos (e.g., computer science, statistics, political science, economics, engineering). This isn’t because researchers aren’t <em>interested</em> in interdisciplinary collaborations, but rather that their professional imperatives push them to focus their attention on the priorities and language of their own departments and disciplines.<a class="footnote-reference brackets" href="#academic-incentives" id="id1">1</a></p>
+<p>The idea that academia is deeply fragmented often surprises students, and understandably so. Universities <em>love</em> to pay lip service to the importance of interdisciplinarity and are quick to highlight successful interdisciplinary collaborations. But successful interdisciplinary collaborations are so notable precisely because they are the exception, not the rule. The reality is that academic research is starkly divided into disciplinary silos (e.g., computer science, statistics, political science, economics, and engineering). This isn’t because researchers aren’t <em>interested</em> in interdisciplinary collaborations, but rather that their professional imperatives push them to focus their attention on the priorities and language of their own departments and disciplines.<a class="footnote-reference brackets" href="#academic-incentives" id="id1">1</a></p>
 <p>Thus, while the past several decades have seen an unprecedented emergence of new methods across all of academia, the lack of intellectual cross-pollination across academic silos has resulted in disciplines failing to take full advantage of discoveries from other disciplines. Over time, each discipline has developed a perspective on computational methods that emphasizes its own intellectual priorities.</p>
 <p>To illustrate, suppose we were interested in using patient data to reduce heart attacks. A computer scientist looking at this problem might use their discipline’s methods to <em>predict</em> which patients are most likely to experience a heart attack in the future using current patient data; a social scientist might focus on trying to understand the <em>effect</em> of giving patients a new drug on heart attack risk; and a statistician might focus on understanding <em>how confident</em> we should be in the conclusions reached by the computer scientist and social scientist.</p>
 <p>This fragmentation has also resulted in a fragmentation of <em>language</em> around data science methodologies. Disciplines often come up with different terminology for the same phenomena, adding another layer of difficulty to efforts to work across departmental silos.</p>
@@ -453,14 +446,17 @@ Exceeding stiff and strong,
 Though each was partly in the right,
 And all were in the wrong!</p>
 </div></blockquote>
-<p>In recent years, however, there has been a growing appreciation of how can be gained from pulling together the insights that have been developed in different fields, despite the challenges of language and professional imperatives to such collaborations. And, at least amongst those who are serious about the development of data science as a discipline and not just a buzz world for raising money, is the promise of data science: to unify the different perspectives and methods for analyzing data. Or, to put it more succinctly: to finally see the whole elephant.</p>
+<p>In recent years, however, there has been a growing appreciation of what can be gained from pulling together the insights that have been developed in different fields, despite the challenges of language and professional imperatives to such collaborations. And, at least amongst those who are serious about the development of data science as a discipline and not just a buzz world for raising money, is the promise of data science: to unify the different perspectives and methods for analyzing data. Or, to put it more succinctly: to finally see the whole elephant.</p>
+<section id="the-data-analyst-software-engineering-distinction">
+<h2>The Data Analyst / Software Engineering Distinction<a class="headerlink" href="#the-data-analyst-software-engineering-distinction" title="Permalink to this headline">#</a></h2>
+<p>In addition to these differences in the theoretical approaches people have taken to data science, there is another dimension on which the world of data science is fragmented: in how people wish to <em>deploy</em> the tools of data science.</p>
+<p>One model of data science is what we will call the “data analyst” approach. Data scientists doing this type of work often collect data to answer specific questions—what is the effect of expanded government health insurance subsidies on mortality? what type of customer should we target with our new advertising campaign?. As a result, when they write code, they write it to be run against a specific set of data to answer a specific question.</p>
+<p>The other model is what we will call the “software engineering” approach. Data scientists doing this type of work write software they plan to <em>deploy</em> to thousands or millions of users. This is the type of work that gets embedded in the apps on your phone, or that generates your movie recommendations at Netflix. As a result, when these data scientists write code, they are writing more sophisticated and generalizable programs.</p>
+<p>To be clear, most data scientists do at least a bit of both types of work—data analysts may often write small programs or packages to aid in types of analysis they do a lot, and software engineers have to prototype and test new programs before they write a version that can be deployed broadly. But most people will eventually choose to specialize in one direction or another, and when you see data science resources in the world—especially ones about programming for data science—bear in mind that depending on <em>your</em> proclivities towards on approach or another, not all resources will be well suited to your interests.</p>
+</section>
 <section id="great-story-why-should-i-care">
 <h2>Great Story. Why Should I Care?<a class="headerlink" href="#great-story-why-should-i-care" title="Permalink to this headline">#</a></h2>
-<p>So why are we telling you this story? In short, because it’s important for you to understand that <em>most</em> people you will encounter in the world doing data science were trained in one of these academic silos. That means that depending on who you are working with and how they were trained, they may find your future colleagues using terms you’ve never heard before, or being confused by some of the concepts you bring up, and it’s important for you to understand that that isn’t necessarily because <em>you</em> don’t understand something; it may be because either they’re just using different terms for a concept you know, or it may be because you, trained with a more unified perspective, may be aware of concepts that even your more senior colleagues (or rather, especially your more senior colleagues!) were never exposed to.</p>
-</section>
-<section id="the-data-analysis-software-engineering-distinction">
-<h2>The Data Analysis / Software Engineering Distinction<a class="headerlink" href="#the-data-analysis-software-engineering-distinction" title="Permalink to this headline">#</a></h2>
-<p><strong>Need to add discussion about this distinction</strong></p>
+<p>So why are we telling you this story? In short, it’s important for you to understand that <em>most</em> people you will encounter in the world doing data science were trained in one of these academic silos. That means that depending on who you are working with and how they were trained, they may find your future colleagues using terms you’ve never heard before, or being confused by some of the concepts you bring up, and it’s important for you to understand that that isn’t necessarily because <em>you</em> don’t understand something; it may be because either they’re just using different terms for a concept you know, or it may be because you, trained with a more unified perspective, may be aware of concepts that even your more senior colleagues (or rather, especially your more senior colleagues!) were never exposed to.</p>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="academic-incentives"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
@@ -504,10 +500,10 @@ And all were in the wrong!</p>
             <p class="prev-next-title">Solving Problems with Data Science</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../30_questions/00_from_problems_to_questions.html" title="next page">
+    <a class='right-next' id="next-link" href="../30_questions/00_solving_the_right_problem.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">From Problems to Questions</p>
+        <p class="prev-next-title">Solving the Right Problem</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

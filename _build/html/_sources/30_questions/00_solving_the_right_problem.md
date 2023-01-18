@@ -1,18 +1,18 @@
 # Solving the Right Problem
 
-In Douglas Adams' comedic sci-fi classic *Hitch-Hikers Guide to the Galaxy*, a race of hyperintelligent pandimensional beings set out to build the a massive supercomputer the size of a city to solve the mysteries of the cosmos once and for all. When they turned on the computer, named Deep Thought, they announced that "the task we have designed you to perform is this. We want you to tell us... the Answer!" "The Answer?" said Deep Thought. "The Answer to what?" "Life!" urged one designer. "The Universe!" said another. "Everything!" they said in chorus.
+In Douglas Adams' comedic sci-fi classic *Hitchhiker's Guide to the Galaxy*, a race of hyperintelligent pandimensional beings set out to build a massive supercomputer the size of a city to solve the mysteries of the cosmos once and for all. When they turned on the computer, named Deep Thought, they announced that "the task we have designed you to perform is this. We want you to tell us... the Answer!" "The Answer?" said Deep Thought. "The Answer to what?" "Life!" urged one designer. "The Universe!" said another. "Everything!" they said in chorus.
 
 Deep Thought paused, then answered, "Life, the Universe, and Everything. There is an answer. But," Deep Thought added, "I'll have to think about it."
 
 Seven and a half million years later, when Deep Thought had *finally* finished its calculations, the descendants of those designers assembled to learn the result of their ancestors' work.
 
-> "Er ...good morning, O Deep Thought," said [one descendant] nervously, "do you have ... er, that is ..."
+> "Er ...good morning, O Deep Thought," said Loonquawl [one descendants] nervously, "do you have ... er, that is ..."
 >
 > "An answer for you?" interrupted Deep Thought majestically. "Yes. I have."
 >
-> The two men shivered with expectancy. Their waiting had not been in vain.
+> The two [descendants] shivered with expectancy. Their waiting had not been in vain.
 >
-> "There really is one?" breathed Phouchg.
+> "There really is one?" breathed Phouchg [the other descendant].
 >
 > "There really is one," confirmed Deep Thought.
 >
@@ -24,7 +24,7 @@ Seven and a half million years later, when Deep Thought had *finally* finished i
 >
 > "All right," said the computer, and settled into silence again.
 >
-> The two [descendants] fidgeted.
+> The two fidgeted.
 >
 > The tension was unbearable.
 >

@@ -1,6 +1,6 @@
 # Descriptive versus Proscriptive Questions
 
-In our previous readings, we introduced three classes of questions: Exploratory, Passive-Predictive, and Casual. But that was actually a slight simplification.
+In our previous readings, we introduced three classes of questions: Exploratory, Passive-Predictive, and Casual. But that was actually a slight simplification... (sorry).
 
 Above this three-fold distinction in question types, there's actually a higher-level way to classify questions: Descriptive questions and Proscriptive questions. *Descriptive questions* are questions that aim to describe something about *objective reality*, such as "what is the current tax rate for people earning over 250,000 dollars?" or "in what US states is marijuana legal?".[^objectivereality] Exploratory, Passive-Predictive, and Casual questions are all examples of descriptive questions. *Proscriptive questions*, by contrast, are questions about how the world *should* be, like "should the current tax rate for people earning over 250,000 dollars be higher?" or "should marijuana be legal?.
 
@@ -14,4 +14,4 @@ The reason we've chosen to focus on descriptive questions rather than proscripti
 
 To illustrate, suppose you are interested in reducing opioid overdoses. Your rigorous data science analysis may tell you that increasing the regulation of opioid prescriptions will reduce overdoses by some amount X and reduce access to opioids for those with chronic pain by some amount Y. But does that mean you should enact the policy? Well, that depends on how much *value* you place on patients with chronic pain having access to opioids, and how much *value* you place on preventing overdoses. And the answers to those questions simply can't come from your data.
 
-In this course, we will refer to questions about how the world *is* as "descriptive questions", and questions about how the world *should be* as proscriptive questions. But be aware these terms aren't universal. Some people use the term "positive" instead of descriptive, and "normative" instead of  proscriptive.
+In this course, we will refer to questions about how the world *is* as "descriptive questions", and questions about how the world *should be* as proscriptive questions. But be aware these terms aren't universal. Some people (e.g. social scientists) prefer the terms "positive" instead of descriptive and "normative" instead of proscriptive. But the meaning is the same.
