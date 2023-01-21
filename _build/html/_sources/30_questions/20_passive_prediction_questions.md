@@ -1,3 +1,31 @@
-# Classification Questions
+# Passive-Prediction Questions
 
-Rather than characterizing dataset as a whole, attempt to make guesses about individual observations. 
+When most people think about data science—and "machine learning" in particular—what they think of is the ability of computers to answer Passive-Prediction Question: "which patients are likely to experience complications from surgery if we don't do anything?", "which people applying for life insurance are likely to be healthy enough we should issue them a policy?", or "which job applicants would make good employees (and thus, which job applicants should we interview)?" And indeed, the ability of data scientists to answer Passive-Prediction Questions is one of our most useful skills.
+
+However, answering this type of question is also one of the easiest ways to get in trouble as a data scientist. That's because just as you can always calculate a summary statistic or get a result from an unsupervised machine learning model when trying to answer an Exploratory Question, you can always get predicted values from a statistical model. But with Passive-Prediction Questions—*unlike* with Exploratory Questions—you can't fully check the validity of your answer to a Passive-Prediction Question with data you currently have, because *by definition* the reason you are trying to answer a Passive-Prediction Question is that you want to predict something that you don't currently know!
+
+## Flavors of Passive-Prediction Questions
+
+There are, broadly, two flavors of Passive-Prediction Questions: predicting something that has yet to occur ("which patients going in for surgery are likely, in the future, to experience complications?"), and predicting something that *could* occur but actually won't ("if a radiologist had looked at this mammogram, would they conclude the patient has cancer?").
+
+The first category of passive prediction—predicting something that has yet to occur—is the most intuitive, and is the type of passive prediction that accords best with the normal meaning of the term "predict." But the second favor of passive prediction—in which we try and predict what someone *would* do—is an important vein of passive prediction, because it is the flavor that underlies efforts at automation. Spam detection, image classification, autocomplete, and self-driving cars—these are all examples of situations where we train a model by showing it examples of how a person would do something so that when encountering new data, the model can predict and emulate the behavior of the entity that labeled the data on which our model was trained.
+
+## Differentiating Between Exploratory and Passive-Prediction Questions
+
+If you have not felt a little confused about the distinction between Exploratory and Passive-Prediction Questions previously, there's a good chance you find yourself struggling a little right now, and for understandable reasons. In many cases, one can easily imagine how the same analysis might constitute an answer to *either* an Exploratory or Passive-Prediction Question. For example, a logistic regression in which one attempts to model which patients are likely to experience complications from surgery could clearly be an answer to a passive-prediction questions, but it could also answer Exploratory Questions like "what hospitals have the highest surgery complication rates?" or "what type of surgeries have the highest complication rates?"
+
+The confusion comes from the fact that the distinction between these types of questions isn't related to the statistical machinery you might use to answer the question, but rather what you are trying to accomplish, and thus how you would evaluate the success of a given statistical or machine learning model.
+
+With Passive-Prediction Questions, our interest is in the values that get spit out of a model for each entity in the data. When answering a Passive-Prediction Question, the *only* thing we care about is the quality of those predictions, and so we evaluate the success of a model that aims to answer a Passive-Prediction Question by the quality of those predictions (using metrics like AIC, AUC, R-Squared, Accuracy, Precision, Recall, etc.). Thus, if we were to use a logistical regression to answer a Passive-Prediction Question, we wouldn't actually care about what factors are being used to make our predictions—provided they improve the predictions—or their standard errors. Our interest is only on the quality of our predicted values, and a good model is one that explains a lot of the variation in our outcome.
+
+With Exploratory Questions, our interest is in improving our understanding of the problem space, not in making precise predictions for each entity in our data. Thus, in the example of our logistic regression, our interest is primarily in the factors that are on the right-hand side of our logistic regression—since the way those explain outcomes helps us understand our problem better—rather than the exact accuracy of our predictions. A good model, in other words, doesn't actually have to explain a large share of variation at the level of individual entities, but it does have to help us understand our problem space. For example, a model that looked at the relationship between individuals' salaries and their age, education, and where they live might tell us a *lot* about the importance of a college degree to earnings (which we could see by the large and statistically significant coefficient on having a college degree), even if it only explains a small amount of overall variation in salaries (e.g., the R-Squared might only be 0.2).
+
+This distinction also has important implications when working with more opaque supervised machine learning techniques, like deep learning, random forests, or SVMs. These techniques are often referred to as "black boxes" because exactly how different impute factors relate to the predictions that the model makes is impossible to understand (in other words, it's like the input data is going into a dark box we can't see into, and then predictions are magically popping out the other side). These models can be very useful for answering Passive-Prediction Questions, as they can accomodate very unusual, non-linear relationships between input factors and predicted values, but because these relationships are opaque to us, the data scientist, they don't really help us understand the problem space.
+
+## When Are Our Predictions Valid?
+
+External validity!
+
+### Manipulations
+
+External validity can refer to "outside the range of parameters in the training data", but it can also refer to situations where the processes shaping outcomes in the world may have changed!

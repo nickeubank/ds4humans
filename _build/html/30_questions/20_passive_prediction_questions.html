@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Classification Questions &#8212; Data Science for Humans</title>
+    <title>Passive-Prediction Questions &#8212; Data Science for Humans</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -115,18 +115,6 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Preface
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../00_preface/00_preface.html">
-   Introduction to Data Science for Humans
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   Introduction
  </span>
 </p>
@@ -153,8 +141,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="00_from_problems_to_questions.html">
-   From Problems to Questions
+  <a class="reference internal" href="00_solving_the_right_problem.html">
+   Solving the Right Problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_descriptive_v_proscriptive.html">
+   Descriptive versus Proscriptive Questions
   </a>
  </li>
  <li class="toctree-l1">
@@ -164,7 +157,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Classification Questions
+   Passive-Prediction Questions
   </a>
  </li>
  <li class="toctree-l1">
@@ -361,23 +354,94 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#flavors-of-passive-prediction-questions">
+   Flavors of Passive-Prediction Questions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#differentiating-between-exploratory-and-passive-prediction-questions">
+   Differentiating Between Exploratory and Passive-Prediction Questions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#when-are-our-predictions-valid">
+   When Are Our Predictions Valid?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#manipulations">
+     Manipulations
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Classification Questions</h1>
+                <h1>Passive-Prediction Questions</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#flavors-of-passive-prediction-questions">
+   Flavors of Passive-Prediction Questions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#differentiating-between-exploratory-and-passive-prediction-questions">
+   Differentiating Between Exploratory and Passive-Prediction Questions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#when-are-our-predictions-valid">
+   When Are Our Predictions Valid?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#manipulations">
+     Manipulations
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -385,9 +449,31 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="classification-questions">
-<h1>Classification Questions<a class="headerlink" href="#classification-questions" title="Permalink to this headline">#</a></h1>
-<p>Rather than characterizing dataset as a whole, attempt to make guesses about individual observations.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="passive-prediction-questions">
+<h1>Passive-Prediction Questions<a class="headerlink" href="#passive-prediction-questions" title="Permalink to this headline">#</a></h1>
+<p>When most people think about data science—and “machine learning” in particular—what they think of is the ability of computers to answer Passive-Prediction Question: “which patients are likely to experience complications from surgery if we don’t do anything?”, “which people applying for life insurance are likely to be healthy enough we should issue them a policy?”, or “which job applicants would make good employees (and thus, which job applicants should we interview)?” And indeed, the ability of data scientists to answer Passive-Prediction Questions is one of our most useful skills.</p>
+<p>However, answering this type of question is also one of the easiest ways to get in trouble as a data scientist. That’s because just as you can always calculate a summary statistic or get a result from an unsupervised machine learning model when trying to answer an Exploratory Question, you can always get predicted values from a statistical model. But with Passive-Prediction Questions—<em>unlike</em> with Exploratory Questions—you can’t fully check the validity of your answer to a Passive-Prediction Question with data you currently have, because <em>by definition</em> the reason you are trying to answer a Passive-Prediction Question is that you want to predict something that you don’t currently know!</p>
+<section id="flavors-of-passive-prediction-questions">
+<h2>Flavors of Passive-Prediction Questions<a class="headerlink" href="#flavors-of-passive-prediction-questions" title="Permalink to this headline">#</a></h2>
+<p>There are, broadly, two flavors of Passive-Prediction Questions: predicting something that has yet to occur (“which patients going in for surgery are likely, in the future, to experience complications?”), and predicting something that <em>could</em> occur but actually won’t (“if a radiologist had looked at this mammogram, would they conclude the patient has cancer?”).</p>
+<p>The first category of passive prediction—predicting something that has yet to occur—is the most intuitive, and is the type of passive prediction that accords best with the normal meaning of the term “predict.” But the second favor of passive prediction—in which we try and predict what someone <em>would</em> do—is an important vein of passive prediction, because it is the flavor that underlies efforts at automation. Spam detection, image classification, autocomplete, and self-driving cars—these are all examples of situations where we train a model by showing it examples of how a person would do something so that when encountering new data, the model can predict and emulate the behavior of the entity that labeled the data on which our model was trained.</p>
+</section>
+<section id="differentiating-between-exploratory-and-passive-prediction-questions">
+<h2>Differentiating Between Exploratory and Passive-Prediction Questions<a class="headerlink" href="#differentiating-between-exploratory-and-passive-prediction-questions" title="Permalink to this headline">#</a></h2>
+<p>If you have not felt a little confused about the distinction between Exploratory and Passive-Prediction Questions previously, there’s a good chance you find yourself struggling a little right now, and for understandable reasons. In many cases, one can easily imagine how the same analysis might constitute an answer to <em>either</em> an Exploratory or Passive-Prediction Question. For example, a logistic regression in which one attempts to model which patients are likely to experience complications from surgery could clearly be an answer to a passive-prediction questions, but it could also answer Exploratory Questions like “what hospitals have the highest surgery complication rates?” or “what type of surgeries have the highest complication rates?”</p>
+<p>The confusion comes from the fact that the distinction between these types of questions isn’t related to the statistical machinery you might use to answer the question, but rather what you are trying to accomplish, and thus how you would evaluate the success of a given statistical or machine learning model.</p>
+<p>With Passive-Prediction Questions, our interest is in the values that get spit out of a model for each entity in the data. When answering a Passive-Prediction Question, the <em>only</em> thing we care about is the quality of those predictions, and so we evaluate the success of a model that aims to answer a Passive-Prediction Question by the quality of those predictions (using metrics like AIC, AUC, R-Squared, Accuracy, Precision, Recall, etc.). Thus, if we were to use a logistical regression to answer a Passive-Prediction Question, we wouldn’t actually care about what factors are being used to make our predictions—provided they improve the predictions—or their standard errors. Our interest is only on the quality of our predicted values, and a good model is one that explains a lot of the variation in our outcome.</p>
+<p>With Exploratory Questions, our interest is in improving our understanding of the problem space, not in making precise predictions for each entity in our data. Thus, in the example of our logistic regression, our interest is primarily in the factors that are on the right-hand side of our logistic regression—since the way those explain outcomes helps us understand our problem better—rather than the exact accuracy of our predictions. A good model, in other words, doesn’t actually have to explain a large share of variation at the level of individual entities, but it does have to help us understand our problem space. For example, a model that looked at the relationship between individuals’ salaries and their age, education, and where they live might tell us a <em>lot</em> about the importance of a college degree to earnings (which we could see by the large and statistically significant coefficient on having a college degree), even if it only explains a small amount of overall variation in salaries (e.g., the R-Squared might only be 0.2).</p>
+<p>This distinction also has important implications when working with more opaque supervised machine learning techniques, like deep learning, random forests, or SVMs. These techniques are often referred to as “black boxes” because exactly how different impute factors relate to the predictions that the model makes is impossible to understand (in other words, it’s like the input data is going into a dark box we can’t see into, and then predictions are magically popping out the other side). These models can be very useful for answering Passive-Prediction Questions, as they can accomodate very unusual, non-linear relationships between input factors and predicted values, but because these relationships are opaque to us, the data scientist, they don’t really help us understand the problem space.</p>
+</section>
+<section id="when-are-our-predictions-valid">
+<h2>When Are Our Predictions Valid?<a class="headerlink" href="#when-are-our-predictions-valid" title="Permalink to this headline">#</a></h2>
+<p>External validity!</p>
+<section id="manipulations">
+<h3>Manipulations<a class="headerlink" href="#manipulations" title="Permalink to this headline">#</a></h3>
+<p>External validity can refer to “outside the range of parameters in the training data”, but it can also refer to situations where the processes shaping outcomes in the world may have changed!</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
