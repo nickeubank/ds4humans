@@ -50,6 +50,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -113,18 +114,6 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Preface
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../00_preface/00_preface.html">
-   Introduction to Data Science for Humans
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   Introduction
  </span>
 </p>
@@ -151,8 +140,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../30_questions/00_from_problems_to_questions.html">
-   From Problems to Questions
+  <a class="reference internal" href="../30_questions/00_solving_the_right_problem.html">
+   Solving the Right Problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_questions/05_descriptive_v_proscriptive.html">
+   Descriptive versus Proscriptive Questions
   </a>
  </li>
  <li class="toctree-l1">
@@ -162,7 +156,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../30_questions/20_passive_prediction_questions.html">
-   Classification Questions
+   Passive-Prediction Questions
   </a>
  </li>
  <li class="toctree-l1">
@@ -520,7 +514,7 @@ title="Print to PDF"
 <p>In fact… OK, it’s time to come clean: you’ve been working with vectors this whole time! Vectors are <em>so</em> fundamental to R that <strong>all data in R is stored as vectors.</strong> Even something simple like the number 7, in R, is actually stored as a numeric vector of length 1:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="m">7</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">7</span>
 <span class="nf">length</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -536,7 +530,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Numeric vectors </span>
-<span class="n">a_numeric_vector</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">20</span><span class="p">,</span> <span class="m">25</span><span class="p">,</span> <span class="m">60</span><span class="p">,</span> <span class="m">55</span><span class="p">)</span>
+<span class="n">a_numeric_vector</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">20</span><span class="p">,</span><span class="w"> </span><span class="m">25</span><span class="p">,</span><span class="w"> </span><span class="m">60</span><span class="p">,</span><span class="w"> </span><span class="m">55</span><span class="p">)</span>
 <span class="n">a_numeric_vector</span>
 </pre></div>
 </div>
@@ -553,7 +547,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Character vectors</span>
-<span class="n">a_character_vector</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Red&quot;</span><span class="p">,</span> <span class="s">&quot;Green&quot;</span><span class="p">,</span> <span class="s">&quot;Purple&quot;</span><span class="p">)</span>
+<span class="n">a_character_vector</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Red&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Green&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Purple&quot;</span><span class="p">)</span>
 <span class="n">a_character_vector</span>
 </pre></div>
 </div>
@@ -570,7 +564,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Logical vectors</span>
-<span class="n">a_logical_vector</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">,</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="kc">TRUE</span><span class="p">)</span> 
+<span class="n">a_logical_vector</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w"> </span>
 </pre></div>
 </div>
 </div>
@@ -578,9 +572,9 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">c()</span></code> doesn’t just work with values you write by hand, though – you can also use <code class="docutils literal notranslate"><span class="pre">c()</span></code> with variables to combine longer vectors:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">4</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">)</span>
-<span class="n">c</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+<span class="n">b</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">6</span><span class="p">)</span>
+<span class="n">c</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
 <span class="n">c</span>
 </pre></div>
 </div>
@@ -613,7 +607,7 @@ title="Print to PDF"
 <p>And if you want a more unusual sequence, you can use <code class="docutils literal notranslate"><span class="pre">seq()</span></code>, which takes a starting point, and ending point, and a step size to create any sequence you may want. Here’s all the even numbers from 2 to 20:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">seq</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">20</span><span class="p">,</span> <span class="m">2</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">seq</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">20</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -633,7 +627,7 @@ title="Print to PDF"
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a vector with the value 42</span>
 <span class="c1"># repeated 10 times.</span>
 
-<span class="nf">rep</span><span class="p">(</span><span class="m">42</span><span class="p">,</span> <span class="m">10</span><span class="p">)</span>
+<span class="nf">rep</span><span class="p">(</span><span class="m">42</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -654,7 +648,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here&#39;s what we&#39;ll start with</span>
-<span class="n">numbers</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span>
+<span class="n">numbers</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10</span>
 <span class="n">numbers</span>
 </pre></div>
 </div>
@@ -672,7 +666,7 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># You can modify all values in a vector </span>
 <span class="c1"># by doing math with a vector of length 1</span>
-<span class="n">numbers</span> <span class="o">/</span> <span class="m">10</span>
+<span class="n">numbers</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">10</span>
 </pre></div>
 </div>
 </div>
@@ -687,7 +681,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">+</span> <span class="m">10</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">10</span>
 </pre></div>
 </div>
 </div>
@@ -704,7 +698,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Modify a vector using a function</span>
-<span class="nf">sqrt</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="c1">#square root</span>
+<span class="nf">sqrt</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="c1">#square root</span>
 </pre></div>
 </div>
 </div>
@@ -719,7 +713,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">exp</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="c1">#exponentiate</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">exp</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="c1">#exponentiate</span>
 </pre></div>
 </div>
 </div>
@@ -749,8 +743,8 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Two vectors with the same number of elements </span>
-<span class="n">numbers2</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
-<span class="n">numbers3</span> <span class="o">&lt;-</span> <span class="n">numbers2</span> <span class="o">+</span> <span class="n">numbers</span>
+<span class="n">numbers2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
+<span class="n">numbers3</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">numbers2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">numbers</span>
 <span class="n">numbers3</span>
 </pre></div>
 </div>
@@ -789,17 +783,17 @@ person is, what the median or mean height is, what the standard deviation is.</p
 </div>
 </div>
 <p>Or we can use any one of a handful of other helper functions!</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">class</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="c1">#check the class</span>
-<span class="nf">length</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="c1">#number of elements </span>
-<span class="nf">max</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="c1">#maximum value</span>
-<span class="nf">min</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="c1">#minimum value</span>
-<span class="nf">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="c1">#sum of all values in the vector</span>
-<span class="nf">mean</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="c1">#mean</span>
-<span class="nf">median</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="c1">#median</span>
-<span class="nf">var</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="c1">#variance</span>
-<span class="nf">sd</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="c1">#standard deviation</span>
-<span class="nf">quantile</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="c1">#percentiles in intervals of .25 </span>
-<span class="nf">quantile</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">probs</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0.1</span><span class="p">))</span> <span class="c1">#percentiles in invervals of 0.1</span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">class</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="c1">#check the class</span>
+<span class="nf">length</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="c1">#number of elements </span>
+<span class="nf">max</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="c1">#maximum value</span>
+<span class="nf">min</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="c1">#minimum value</span>
+<span class="nf">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="c1">#sum of all values in the vector</span>
+<span class="nf">mean</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="c1">#mean</span>
+<span class="nf">median</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="c1">#median</span>
+<span class="nf">var</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="c1">#variance</span>
+<span class="nf">sd</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="c1">#standard deviation</span>
+<span class="nf">quantile</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="c1">#percentiles in intervals of .25 </span>
+<span class="nf">quantile</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span><span class="w"> </span><span class="n">probs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">0.1</span><span class="p">))</span><span class="w"> </span><span class="c1">#percentiles in invervals of 0.1</span>
 </pre></div>
 </div>
 <p><strong>Don’t</strong> worry about memorizing these or anything – basically, you just need to have a sense of the kinds of things you can do with functions, and if you ever need one can can’t remember the name of the function, you can google it to get the specific function name.</p>
@@ -810,7 +804,7 @@ person is, what the median or mean height is, what the standard deviation is.</p
 <p>As noted above, vectors can only contain one type of data, but if you try and use <code class="docutils literal notranslate"><span class="pre">c()</span></code> to combine vectors of different types, R will try and be clever and <em>find</em> a way to combine that by doing something called “Type Promotion”, which is a way of converting all the data you give it to the same type. For example, if I tried to create a vector by combining a character vector and a numeric vector, R would convert the numeric vector to a character vector so all the data could fit in a numeric vector:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Nick&quot;</span><span class="p">,</span> <span class="m">42</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Nick&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">42</span><span class="p">)</span>
 <span class="n">a</span>
 </pre></div>
 </div>
@@ -832,7 +826,7 @@ person is, what the median or mean height is, what the standard deviation is.</p
 <p>For example, if you combine <code class="docutils literal notranslate"><span class="pre">logical</span></code> and <code class="docutils literal notranslate"><span class="pre">numeric</span></code> vectors, R will convert all of the data into <code class="docutils literal notranslate"><span class="pre">numeric</span></code> (remember from our previous lesson that R thanks of <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> as being like <code class="docutils literal notranslate"><span class="pre">1</span></code>, and <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> as being like <code class="docutils literal notranslate"><span class="pre">0</span></code>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="kc">TRUE</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -848,7 +842,7 @@ person is, what the median or mean height is, what the standard deviation is.</p
 <p>But it <strong>doesn’t</strong> convert that data into a <code class="docutils literal notranslate"><span class="pre">character</span></code> vector (even though it could!) because it’s trying to make the smallest movements up that hierarchy that it can. But if we try to combine <code class="docutils literal notranslate"><span class="pre">logical</span></code>, <code class="docutils literal notranslate"><span class="pre">numeric</span></code>, <em>and</em> <code class="docutils literal notranslate"><span class="pre">character</span></code> vectors, R would be forced to convert everything into a <code class="docutils literal notranslate"><span class="pre">character</span></code> vector:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">c</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">,</span> <span class="m">42</span><span class="p">,</span> <span class="s">&quot;Julio&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">c</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="m">42</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Julio&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -915,7 +909,7 @@ person is, what the median or mean height is, what the standard deviation is.</p
   
     By Josh Clinton and Nick Eubank<br/>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2023.<br/>
 </p>
         </footer>
     </div>

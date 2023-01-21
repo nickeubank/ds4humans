@@ -50,6 +50,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -113,18 +114,6 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Preface
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../00_preface/00_preface.html">
-   Introduction to Data Science for Humans
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   Introduction
  </span>
 </p>
@@ -151,8 +140,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../30_questions/00_from_problems_to_questions.html">
-   From Problems to Questions
+  <a class="reference internal" href="../30_questions/00_solving_the_right_problem.html">
+   Solving the Right Problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_questions/05_descriptive_v_proscriptive.html">
+   Descriptive versus Proscriptive Questions
   </a>
  </li>
  <li class="toctree-l1">
@@ -162,7 +156,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../30_questions/20_passive_prediction_questions.html">
-   Classification Questions
+   Passive-Prediction Questions
   </a>
  </li>
  <li class="toctree-l1">
@@ -617,11 +611,11 @@ title="Print to PDF"
 <h2>Chaining<a class="headerlink" href="#chaining" title="Permalink to this headline">#</a></h2>
 <p>The last feature of dplyr to be aware of is <em>chaining</em>. Chaining is a way of combining commands to make code more concise. Basically, you use the command <code class="docutils literal notranslate"><span class="pre">%&gt;%</span></code> to tell R to take the result of one function and make it the first argument in the next.</p>
 <p>In dplyr, if we wanted to change <code class="docutils literal notranslate"><span class="pre">country</span></code> into all lower case text, we could do:</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">mutate</span><span class="p">(</span><span class="n">countries</span><span class="p">,</span> <span class="n">country</span> <span class="o">=</span> <span class="nf">tolower</span><span class="p">(</span><span class="n">country</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">mutate</span><span class="p">(</span><span class="n">countries</span><span class="p">,</span><span class="w"> </span><span class="n">country</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">tolower</span><span class="p">(</span><span class="n">country</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>But alternatively, we could use chaining to do:</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span> <span class="o">%&gt;%</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">country</span> <span class="o">=</span> <span class="nf">tolower</span><span class="p">(</span><span class="n">country</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">mutate</span><span class="p">(</span><span class="n">country</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">tolower</span><span class="p">(</span><span class="n">country</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>Where <code class="docutils literal notranslate"><span class="pre">countries</span></code> is understood to be the first argument for <code class="docutils literal notranslate"><span class="pre">mutate</span></code>.</p>
@@ -631,11 +625,11 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
-<span class="n">country</span> <span class="o">&lt;-</span> <span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;USA&quot;</span><span class="p">,</span> <span class="s">&quot;China&quot;</span><span class="p">,</span> <span class="s">&quot;Sudan&quot;</span><span class="p">),</span> <span class="m">3</span><span class="p">)</span>
-<span class="n">year</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1994</span><span class="p">,</span> <span class="m">1994</span><span class="p">,</span> <span class="m">1994</span><span class="p">,</span> <span class="m">1995</span><span class="p">,</span> <span class="m">1995</span><span class="p">,</span> <span class="m">1995</span><span class="p">,</span> <span class="m">1996</span><span class="p">,</span> <span class="m">1996</span><span class="p">,</span> <span class="m">1996</span><span class="p">)</span>
-<span class="n">gdp_pc</span> <span class="o">&lt;-</span> <span class="nf">round</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">9</span><span class="p">,</span> <span class="m">1000</span><span class="p">,</span> <span class="m">20000</span><span class="p">))</span>
+<span class="n">country</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;USA&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;China&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Sudan&quot;</span><span class="p">),</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+<span class="n">year</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1994</span><span class="p">,</span><span class="w"> </span><span class="m">1994</span><span class="p">,</span><span class="w"> </span><span class="m">1994</span><span class="p">,</span><span class="w"> </span><span class="m">1995</span><span class="p">,</span><span class="w"> </span><span class="m">1995</span><span class="p">,</span><span class="w"> </span><span class="m">1995</span><span class="p">,</span><span class="w"> </span><span class="m">1996</span><span class="p">,</span><span class="w"> </span><span class="m">1996</span><span class="p">,</span><span class="w"> </span><span class="m">1996</span><span class="p">)</span>
+<span class="n">gdp_pc</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">round</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">9</span><span class="p">,</span><span class="w"> </span><span class="m">1000</span><span class="p">,</span><span class="w"> </span><span class="m">20000</span><span class="p">))</span>
 
-<span class="n">countries</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">gdp_pc</span><span class="p">)</span>
+<span class="n">countries</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">country</span><span class="p">,</span><span class="w"> </span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">gdp_pc</span><span class="p">)</span>
 <span class="n">countries</span>
 </pre></div>
 </div>
@@ -651,10 +645,10 @@ Traceback:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">countries_new</span> <span class="o">&lt;-</span> <span class="nf">filter</span><span class="p">(</span><span class="n">countries</span><span class="p">,</span> <span class="n">year</span> <span class="o">!=</span> <span class="m">1994</span><span class="p">)</span> <span class="c1">#drop year 1994</span>
-<span class="n">countries_new</span> <span class="o">&lt;-</span> <span class="nf">arrange</span><span class="p">(</span><span class="n">countries_new</span><span class="p">,</span> <span class="n">country</span><span class="p">)</span> <span class="c1">#sort by country names</span>
-<span class="n">countries_new</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">countries_new</span><span class="p">,</span> <span class="n">country</span> <span class="o">=</span> <span class="nf">tolower</span><span class="p">(</span><span class="n">country</span><span class="p">),</span> <span class="c1">#convert name to lower-case</span>
-                        <span class="n">gdppc_1k</span> <span class="o">=</span> <span class="n">gdp_pc</span> <span class="o">/</span> <span class="m">1000</span><span class="p">)</span> <span class="c1">#create GDP pc in 1000s</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">countries_new</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="n">countries</span><span class="p">,</span><span class="w"> </span><span class="n">year</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="m">1994</span><span class="p">)</span><span class="w"> </span><span class="c1">#drop year 1994</span>
+<span class="n">countries_new</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">arrange</span><span class="p">(</span><span class="n">countries_new</span><span class="p">,</span><span class="w"> </span><span class="n">country</span><span class="p">)</span><span class="w"> </span><span class="c1">#sort by country names</span>
+<span class="n">countries_new</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mutate</span><span class="p">(</span><span class="n">countries_new</span><span class="p">,</span><span class="w"> </span><span class="n">country</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">tolower</span><span class="p">(</span><span class="n">country</span><span class="p">),</span><span class="w"> </span><span class="c1">#convert name to lower-case</span>
+<span class="w">                        </span><span class="n">gdppc_1k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gdp_pc</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">1000</span><span class="p">)</span><span class="w"> </span><span class="c1">#create GDP pc in 1000s</span>
 <span class="n">countries_new</span>
 </pre></div>
 </div>
@@ -680,10 +674,10 @@ Traceback:
 <p>And now here’s the same thing using chaining:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">countries_new</span> <span class="o">&lt;-</span> <span class="n">countries</span> <span class="o">%&gt;%</span>
-    <span class="nf">filter</span><span class="p">(</span><span class="n">year</span> <span class="o">!=</span> <span class="m">1994</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">arrange</span><span class="p">(</span><span class="n">country</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">mutate</span><span class="p">(</span><span class="n">country</span> <span class="o">=</span> <span class="nf">tolower</span><span class="p">(</span><span class="n">country</span><span class="p">),</span> <span class="n">gdppc_1k</span> <span class="o">=</span> <span class="n">gdp_pc</span> <span class="o">/</span> <span class="m">1000</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">countries_new</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">countries</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="n">year</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="m">1994</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">arrange</span><span class="p">(</span><span class="n">country</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">mutate</span><span class="p">(</span><span class="n">country</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">tolower</span><span class="p">(</span><span class="n">country</span><span class="p">),</span><span class="w"> </span><span class="n">gdppc_1k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gdp_pc</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">1000</span><span class="p">)</span>
 <span class="n">countries_new</span>
 </pre></div>
 </div>
@@ -716,19 +710,19 @@ Traceback:
 <h2>WARNING: Non-standard Evaluation in the Tidyverse<a class="headerlink" href="#warning-non-standard-evaluation-in-the-tidyverse" title="Permalink to this headline">#</a></h2>
 <p>One feature of the tidyverse syntax that may not immediately jump out at you but which is important to bear in mind is that when you type column names in tidyverse functions, you don’t have to put them in double-quotes:</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># To select the column named country:</span>
-<span class="nf">select</span><span class="p">(</span><span class="n">countries</span><span class="p">,</span> <span class="n">country</span><span class="p">)</span> 
+<span class="nf">select</span><span class="p">(</span><span class="n">countries</span><span class="p">,</span><span class="w"> </span><span class="n">country</span><span class="p">)</span><span class="w"> </span>
 </pre></div>
 </div>
 <p>Whereas that is something you have to do with array indexing:</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span><span class="p">[,</span> <span class="s">&quot;country&quot;</span><span class="p">]</span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span><span class="p">[,</span><span class="w"> </span><span class="s">&quot;country&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>That’s because dplyr and other tidyverse functions make use of something called “non-standard evaluation.”</p>
 <p>Normally in a programming language like R, text sitting on its own is interpreted as a variable, and the first thing the language does is replace the variable with the data assigned to that variable. For example, in the second line of the code below, R sees <code class="docutils literal notranslate"><span class="pre">a</span></code>, interprets it as a variable, and so replaces it with <code class="docutils literal notranslate"><span class="pre">7</span></code> when evaluating the expression.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="m">7</span>
-<span class="m">6</span> <span class="o">*</span> <span class="n">a</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">7</span>
+<span class="m">6</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span>
 </pre></div>
 </div>
 </div>
@@ -738,7 +732,7 @@ Traceback:
 <p>When you have text you want the computer to think of as <em>data</em> and not as a variable, you normally have to put it in quotes. e.g.:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="m">7</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">7</span>
 
 <span class="c1"># a without quotes interpreted as a variable:</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
@@ -821,7 +815,7 @@ Traceback:
   
     By Josh Clinton and Nick Eubank<br/>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2023.<br/>
 </p>
         </footer>
     </div>

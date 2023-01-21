@@ -52,6 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -115,18 +116,6 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Preface
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../00_preface/00_preface.html">
-   Introduction to Data Science for Humans
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   Introduction
  </span>
 </p>
@@ -153,8 +142,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../30_questions/00_from_problems_to_questions.html">
-   From Problems to Questions
+  <a class="reference internal" href="../30_questions/00_solving_the_right_problem.html">
+   Solving the Right Problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_questions/05_descriptive_v_proscriptive.html">
+   Descriptive versus Proscriptive Questions
   </a>
  </li>
  <li class="toctree-l1">
@@ -164,7 +158,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../30_questions/20_passive_prediction_questions.html">
-   Classification Questions
+   Passive-Prediction Questions
   </a>
  </li>
  <li class="toctree-l1">
@@ -552,22 +546,22 @@ title="Print to PDF"
 <p>In this case, our collection would be a vector with the names of all the students in the class. I won’t make you look at the full list, though, so here’s a little toy vector:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Yi&quot;</span><span class="p">,</span> <span class="s">&quot;Zoe&quot;</span><span class="p">,</span> <span class="s">&quot;Ishani&quot;</span><span class="p">,</span> <span class="s">&quot;Kelly&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">names</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Yi&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Zoe&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Ishani&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Kelly&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>Then we need to write out a for-loop, which looks like this:</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="n">names</span><span class="p">)</span> <span class="p">{</span>
-    <span class="p">[</span><span class="n">code</span> <span class="n">to</span> <span class="n">repeat</span> <span class="n">here</span><span class="p">]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">for</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">names</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">[</span><span class="n">code</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">repeat</span><span class="w"> </span><span class="n">here</span><span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>The way this loop works is that it iterates over the names in <code class="docutils literal notranslate"><span class="pre">names</span></code>, and each time it reaches a new name, it sets <code class="docutils literal notranslate"><span class="pre">i</span></code> to equal that name, then runs the code in the middle. For example, I could print all the names like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="n">names</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">names</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -588,10 +582,10 @@ title="Print to PDF"
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set `i` to first entry in `names`</span>
 <span class="c1"># When we put this inside the loop,</span>
 <span class="c1"># this will be done automatically by the loop</span>
-<span class="n">i</span> <span class="o">&lt;-</span> <span class="n">names</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>
+<span class="n">i</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">names</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>
 
 <span class="c1"># Now write the code you want to put in your loop.</span>
-<span class="n">message</span> <span class="o">&lt;-</span> <span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;Thank you &quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s">&quot; for a great class! &quot;</span><span class="p">)</span>
+<span class="n">message</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;Thank you &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="s">&quot; for a great class! &quot;</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -606,10 +600,10 @@ title="Print to PDF"
 <p>OK, so now that we’ve got working code to put in the middle, we can move it into our loop:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="n">names</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">message</span> <span class="o">&lt;-</span> <span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;Thank you &quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span>
-                      <span class="s">&quot; for a great class! &quot;</span><span class="p">)</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">names</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">message</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;Thank you &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span>
+<span class="w">                      </span><span class="s">&quot; for a great class! &quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
 <span class="p">}</span>
 
 <span class="nf">print</span><span class="p">(</span><span class="s">&quot;OK, bye now!&quot;</span><span class="p">)</span>
@@ -658,8 +652,8 @@ title="Print to PDF"
 <p>There are couple common patterns with for loops to be aware of. Above, we saw how we can loop over vector of predefined values, but another common idiom to be aware of is looping over a vector created with the <code class="docutils literal notranslate"><span class="pre">1:N</span></code> operator (or the <code class="docutils literal notranslate"><span class="pre">seq()</span></code>) operator. For example, if I have a for loop that I want to run 5 times, I could write:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -681,10 +675,10 @@ title="Print to PDF"
 <p>With <code class="docutils literal notranslate"><span class="pre">if</span></code>, you create a block of code that will only execute if a given condition is true. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="m">5</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">5</span>
 
-<span class="nf">if </span><span class="p">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="m">10</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nf">if </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -697,10 +691,10 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="m">5</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">5</span>
 
-<span class="nf">if </span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="m">10</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nf">if </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -709,12 +703,12 @@ title="Print to PDF"
 <p>If you <em>just</em> use <code class="docutils literal notranslate"><span class="pre">if</span></code>, then the code between the squiggly brackets you write will run if the condition is true, and otherwise the code will move on. But sometimes you want different code to run if the test is false. For that we use an <code class="docutils literal notranslate"><span class="pre">else</span></code> block, written:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="m">5</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">5</span>
 
-<span class="nf">if </span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="m">10</span><span class="p">){</span>
-    <span class="nf">print</span><span class="p">(</span><span class="s">&quot;a is greater than 10!&quot;</span><span class="p">)</span>
-<span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
-    <span class="nf">print</span><span class="p">(</span><span class="s">&quot;a is less than 10!&quot;</span><span class="p">)</span>
+<span class="nf">if </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">10</span><span class="p">){</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;a is greater than 10!&quot;</span><span class="p">)</span>
+<span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;a is less than 10!&quot;</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -727,12 +721,12 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="m">20</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">20</span>
 
-<span class="nf">if </span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="m">10</span><span class="p">){</span>
-    <span class="nf">print</span><span class="p">(</span><span class="s">&quot;a is greater than 10!&quot;</span><span class="p">)</span>
-<span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
-    <span class="nf">print</span><span class="p">(</span><span class="s">&quot;a is less than 10!&quot;</span><span class="p">)</span>
+<span class="nf">if </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">10</span><span class="p">){</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;a is greater than 10!&quot;</span><span class="p">)</span>
+<span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;a is less than 10!&quot;</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -746,21 +740,21 @@ title="Print to PDF"
 <p>How is this helpful in loops? Suppose you want to loop over a bunch of file names and do different things depending on whether the file name starts with <code class="docutils literal notranslate"><span class="pre">data</span></code>, or <code class="docutils literal notranslate"><span class="pre">code</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">files</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;data12.txt&quot;</span><span class="p">,</span> <span class="s">&quot;code38978.R&quot;</span><span class="p">,</span> <span class="s">&quot;data_2021_08_01.dta&quot;</span><span class="p">,</span>
-           <span class="s">&quot;data_123.csv&quot;</span><span class="p">,</span> <span class="s">&quot;code13.R&quot;</span><span class="p">)</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">f</span> <span class="n">in</span> <span class="n">files</span><span class="p">){</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">files</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;data12.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;code38978.R&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;data_2021_08_01.dta&quot;</span><span class="p">,</span>
+<span class="w">           </span><span class="s">&quot;data_123.csv&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;code13.R&quot;</span><span class="p">)</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">f</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">files</span><span class="p">){</span>
 
-    <span class="c1"># substr gets a portion of a character,</span>
-    <span class="c1"># starting at the second argument and</span>
-    <span class="c1"># ending at the third. So this will </span>
-    <span class="c1"># get either &quot;code&quot; or &quot;data&quot;</span>
-    <span class="n">prefix</span> <span class="o">&lt;-</span> <span class="nf">substr</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">4</span><span class="p">)</span>
+<span class="w">    </span><span class="c1"># substr gets a portion of a character,</span>
+<span class="w">    </span><span class="c1"># starting at the second argument and</span>
+<span class="w">    </span><span class="c1"># ending at the third. So this will </span>
+<span class="w">    </span><span class="c1"># get either &quot;code&quot; or &quot;data&quot;</span>
+<span class="w">    </span><span class="n">prefix</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">substr</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">)</span>
 
-    <span class="nf">if </span><span class="p">(</span><span class="n">prefix</span> <span class="o">==</span> <span class="s">&quot;data&quot;</span><span class="p">){</span>
-        <span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s">&quot; is data. So I&#39;d do a data thing here.&quot;</span><span class="p">))</span>
-    <span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
-        <span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s">&quot; is code. So I&#39;d do a code thinghere .&quot;</span><span class="p">))</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="nf">if </span><span class="p">(</span><span class="n">prefix</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;data&quot;</span><span class="p">){</span>
+<span class="w">        </span><span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="s">&quot; is data. So I&#39;d do a data thing here.&quot;</span><span class="p">))</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="s">&quot; is code. So I&#39;d do a code thinghere .&quot;</span><span class="p">))</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -782,21 +776,21 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Our sum:</span>
-<span class="n">sum</span> <span class="o">&lt;-</span> <span class="m">0</span>
+<span class="n">sum</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">0</span>
 
 <span class="c1"># Our index n</span>
-<span class="n">n</span> <span class="o">&lt;-</span> <span class="m">1</span>
+<span class="n">n</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span>
 
 <span class="c1"># How we measure change. Start with big number. </span>
-<span class="n">change</span> <span class="o">&lt;-</span> <span class="m">1</span>
+<span class="n">change</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span>
 
-<span class="nf">while </span><span class="p">(</span><span class="n">change</span> <span class="o">&gt;</span> <span class="m">0.00000001</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">old_sum</span> <span class="o">&lt;-</span> <span class="n">sum</span>
-    <span class="n">sum</span> <span class="o">&lt;-</span> <span class="n">sum</span> <span class="o">+</span> <span class="m">1</span> <span class="o">/</span> <span class="p">(</span><span class="m">2</span><span class="o">^</span><span class="n">n</span><span class="p">)</span>
-    <span class="n">change</span> <span class="o">&lt;-</span> <span class="nf">abs</span><span class="p">(</span><span class="n">sum</span> <span class="o">-</span> <span class="n">old_sum</span><span class="p">)</span>
-    <span class="n">n</span> <span class="o">&lt;-</span> <span class="n">n</span> <span class="o">+</span> <span class="m">1</span>
+<span class="nf">while </span><span class="p">(</span><span class="n">change</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0.00000001</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">old_sum</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">sum</span>
+<span class="w">    </span><span class="n">sum</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="m">2</span><span class="o">^</span><span class="n">n</span><span class="p">)</span>
+<span class="w">    </span><span class="n">change</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">abs</span><span class="p">(</span><span class="n">sum</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">old_sum</span><span class="p">)</span>
+<span class="w">    </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span>
 <span class="p">}</span>
-<span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;A sum of &quot;</span><span class="p">,</span> <span class="n">sum</span><span class="p">,</span> <span class="s">&quot; was reached after &quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="s">&quot; iterations&quot;</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;A sum of &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sum</span><span class="p">,</span><span class="w"> </span><span class="s">&quot; was reached after &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="s">&quot; iterations&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -816,7 +810,7 @@ title="Print to PDF"
 <p>To illustrate, suppose we have a dataframe with the columns <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">column_to_keep</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">),</span> <span class="n">column_to_keep</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">4</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">),</span><span class="w"> </span><span class="n">column_to_keep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">6</span><span class="p">))</span>
 <span class="n">df</span>
 </pre></div>
 </div>
@@ -839,7 +833,7 @@ title="Print to PDF"
 <p>Now, suppose we also created a variable called <code class="docutils literal notranslate"><span class="pre">column_to_keep</span></code> and assigned to it the character <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code>. So we now have a column named <code class="docutils literal notranslate"><span class="pre">column_to_keep</span></code>, and a variable named <code class="docutils literal notranslate"><span class="pre">column_to_keep</span></code> that has the value <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code> assigned to it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">column_to_keep</span> <span class="o">&lt;-</span> <span class="s">&quot;a&quot;</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">column_to_keep</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;a&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -851,7 +845,7 @@ title="Print to PDF"
 <span class="c1"># R substitutes the value assigned</span>
 <span class="c1"># to the variable before evaluating,</span>
 <span class="c1"># so this is the same as `df[, &quot;a&quot;]`:</span>
-<span class="n">df</span><span class="p">[,</span> <span class="n">column_to_keep</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[,</span><span class="w"> </span><span class="n">column_to_keep</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -868,7 +862,7 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># With quotes -&gt; read as a character -&gt;</span>
 <span class="c1"># get column &quot;column_to_keep&quot;</span>
-<span class="n">df</span><span class="p">[,</span> <span class="s">&quot;column_to_keep&quot;</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[,</span><span class="w"> </span><span class="s">&quot;column_to_keep&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -900,7 +894,7 @@ Traceback:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get column &quot;column_to_keep&quot;</span>
-<span class="nf">select</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">column_to_keep</span><span class="p">)</span>
+<span class="nf">select</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">column_to_keep</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -923,8 +917,8 @@ Traceback:
 <p>For example, if I wanted to loop over the columns of this dataset, with array indexing I could write:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">column_to_keep</span> <span class="n">in</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;column_to_keep&quot;</span><span class="p">))</span> <span class="p">{</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">[,</span> <span class="n">column_to_keep</span><span class="p">])</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">column_to_keep</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;column_to_keep&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">[,</span><span class="w"> </span><span class="n">column_to_keep</span><span class="p">])</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -939,8 +933,8 @@ Traceback:
 <p>But… how do I do that if I’m using <code class="docutils literal notranslate"><span class="pre">select</span></code>? If I do what I did here, I’d just get <code class="docutils literal notranslate"><span class="pre">column_to_keep</span></code> twice:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">column_to_keep</span> <span class="n">in</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;column_to_keep&quot;</span><span class="p">))</span> <span class="p">{</span>
-    <span class="nf">print</span><span class="p">(</span><span class="nf">select</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">column_to_keep</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">column_to_keep</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;column_to_keep&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="nf">select</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">column_to_keep</span><span class="p">))</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -961,8 +955,8 @@ Traceback:
 <p>To get around this, there are some hacks to make tidyverse work with loops. For example, we can wrap our text in <code class="docutils literal notranslate"><span class="pre">.data[[]]</span></code> if that text refers to a column name to ensure it’s interpreted as a variable and not a literal value. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">column_to_keep</span> <span class="n">in</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;column_to_keep&quot;</span><span class="p">))</span> <span class="p">{</span>
-    <span class="nf">print</span><span class="p">(</span><span class="nf">select</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">.data</span><span class="p">[[</span><span class="n">column_to_keep</span><span class="p">]]))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">column_to_keep</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;column_to_keep&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="nf">select</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">.data</span><span class="p">[[</span><span class="n">column_to_keep</span><span class="p">]]))</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -981,19 +975,19 @@ Traceback:
 </div>
 </div>
 <p>Of course, that trick doesn’t solve all problems from looping over things in the tidyverse… For example, if wanted to do this with <code class="docutils literal notranslate"><span class="pre">mutate</span></code> I couldn’t use <code class="docutils literal notranslate"><span class="pre">.data[[c]]</span></code> for the name of the new column:</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">column_to_keep</span> <span class="n">in</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;column_to_keep&quot;</span><span class="p">))</span> <span class="p">{</span>
-    <span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">.data</span><span class="p">[[</span><span class="n">column_to_keep</span><span class="p">]]</span> <span class="o">=</span> <span class="n">.data</span><span class="p">[[</span><span class="n">column_to_keep</span><span class="p">]]</span><span class="o">/</span> <span class="m">1000</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">column_to_keep</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;column_to_keep&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mutate</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">.data</span><span class="p">[[</span><span class="n">column_to_keep</span><span class="p">]]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">.data</span><span class="p">[[</span><span class="n">column_to_keep</span><span class="p">]]</span><span class="o">/</span><span class="w"> </span><span class="m">1000</span>
 <span class="p">}</span>
 
-<span class="o">&gt;</span> <span class="n">ERROR</span><span class="o">:</span> <span class="n">Error</span> <span class="n">in</span> <span class="nf">parse</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">srcfile</span> <span class="o">=</span> <span class="n">src</span><span class="p">)</span><span class="o">:</span> <span class="o">&lt;</span><span class="n">text</span><span class="o">&gt;:</span><span class="m">2</span><span class="o">:</span><span class="m">46</span><span class="o">:</span> <span class="n">unexpected</span> <span class="s">&#39;=&#39;</span>
-<span class="o">&gt;</span> <span class="m">1</span><span class="o">:</span> <span class="nf">for </span><span class="p">(</span><span class="n">column_to_keep</span> <span class="n">in</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;column_to_keep&quot;</span><span class="p">))</span> <span class="p">{</span>
-<span class="o">&gt;</span> <span class="m">2</span><span class="o">:</span>     <span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">.data</span><span class="p">[[</span><span class="n">column_to_keep</span><span class="p">]]</span> <span class="o">=</span>
-<span class="o">&gt;</span>                                                 <span class="o">^</span>
-<span class="o">&gt;</span> <span class="n">Error</span> <span class="n">in</span> <span class="nf">parse</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">srcfile</span> <span class="o">=</span> <span class="n">src</span><span class="p">)</span><span class="o">:</span> <span class="o">&lt;</span><span class="n">text</span><span class="o">&gt;:</span><span class="m">2</span><span class="o">:</span><span class="m">46</span><span class="o">:</span> <span class="n">unexpected</span> <span class="s">&#39;=&#39;</span>
-<span class="o">&gt;</span> <span class="m">1</span><span class="o">:</span> <span class="nf">for </span><span class="p">(</span><span class="n">column_to_keep</span> <span class="n">in</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;column_to_keep&quot;</span><span class="p">))</span> <span class="p">{</span>
-<span class="o">&gt;</span> <span class="m">2</span><span class="o">:</span>     <span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">.data</span><span class="p">[[</span><span class="n">column_to_keep</span><span class="p">]]</span> <span class="o">=</span>
-<span class="o">&gt;</span>                                                 <span class="o">^</span>
-<span class="o">&gt;</span> <span class="n">Traceback</span><span class="o">:</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">ERROR</span><span class="o">:</span><span class="w"> </span><span class="n">Error</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nf">parse</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">srcfile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">src</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">text</span><span class="o">&gt;:</span><span class="m">2</span><span class="o">:</span><span class="m">46</span><span class="o">:</span><span class="w"> </span><span class="n">unexpected</span><span class="w"> </span><span class="s">&#39;=&#39;</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="w"> </span><span class="nf">for </span><span class="p">(</span><span class="n">column_to_keep</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;column_to_keep&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="m">2</span><span class="o">:</span><span class="w">     </span><span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mutate</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">.data</span><span class="p">[[</span><span class="n">column_to_keep</span><span class="p">]]</span><span class="w"> </span><span class="o">=</span>
+<span class="o">&gt;</span><span class="w">                                                 </span><span class="o">^</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">Error</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nf">parse</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">srcfile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">src</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">text</span><span class="o">&gt;:</span><span class="m">2</span><span class="o">:</span><span class="m">46</span><span class="o">:</span><span class="w"> </span><span class="n">unexpected</span><span class="w"> </span><span class="s">&#39;=&#39;</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="w"> </span><span class="nf">for </span><span class="p">(</span><span class="n">column_to_keep</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;column_to_keep&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="m">2</span><span class="o">:</span><span class="w">     </span><span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mutate</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">.data</span><span class="p">[[</span><span class="n">column_to_keep</span><span class="p">]]</span><span class="w"> </span><span class="o">=</span>
+<span class="o">&gt;</span><span class="w">                                                 </span><span class="o">^</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">Traceback</span><span class="o">:</span>
 </pre></div>
 </div>
 <p>And this is one of the reasons that it’s good not to become <em>over-reliant</em> on tidyverse libraries – for basic scripting they can be very convenient, but it’s important to be comfortable with traditional tools like array indexing when things break down.</p>
@@ -1009,22 +1003,22 @@ Traceback:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Two random variables:</span>
-<span class="n">v1</span> <span class="o">&lt;-</span> <span class="nf">rnorm</span><span class="p">(</span><span class="m">10000000</span><span class="p">)</span>
-<span class="n">v2</span> <span class="o">&lt;-</span> <span class="nf">rnorm</span><span class="p">(</span><span class="m">10000000</span><span class="p">)</span>
+<span class="n">v1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="m">10000000</span><span class="p">)</span>
+<span class="n">v2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="m">10000000</span><span class="p">)</span>
 
 <span class="c1"># add up with vector math:</span>
 
 <span class="c1"># Record the current time</span>
-<span class="n">start</span> <span class="o">&lt;-</span> <span class="nf">proc.time</span><span class="p">()</span>
+<span class="n">start</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">proc.time</span><span class="p">()</span>
 
 <span class="c1"># Multiply entries in two vectors</span>
-<span class="n">v1</span> <span class="o">&lt;-</span> <span class="n">v1</span> <span class="o">/</span> <span class="n">v2</span> <span class="o">+</span> <span class="m">20</span>
+<span class="n">v1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">v1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">v2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">20</span>
 
 <span class="c1"># Record current time</span>
-<span class="n">stop</span> <span class="o">&lt;-</span> <span class="nf">proc.time</span><span class="p">()</span>
+<span class="n">stop</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">proc.time</span><span class="p">()</span>
 
 <span class="c1"># Measure how much time elapsed</span>
-<span class="n">run_time_vector_addition</span> <span class="o">&lt;-</span> <span class="n">stop</span> <span class="o">-</span> <span class="n">start</span>
+<span class="n">run_time_vector_addition</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">stop</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span>
 <span class="n">run_time_vector_addition</span>
 </pre></div>
 </div>
@@ -1036,18 +1030,18 @@ Traceback:
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now add them up in a loop.</span>
 
 <span class="c1"># Record the current time</span>
-<span class="n">start</span> <span class="o">&lt;-</span> <span class="nf">proc.time</span><span class="p">()</span>
+<span class="n">start</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">proc.time</span><span class="p">()</span>
 
 <span class="c1"># Multiplying entries in a loop</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">10000000</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">v1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">v1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">v2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="m">20</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10000000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">v1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">v1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">v2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">20</span>
 <span class="p">}</span>
 
 <span class="c1"># Record current time</span>
-<span class="n">stop</span> <span class="o">&lt;-</span> <span class="nf">proc.time</span><span class="p">()</span>
+<span class="n">stop</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">proc.time</span><span class="p">()</span>
 
 <span class="c1"># Measure how much time elapsed</span>
-<span class="n">run_time_loop_addition</span> <span class="o">&lt;-</span> <span class="n">stop</span> <span class="o">-</span> <span class="n">start</span>
+<span class="n">run_time_loop_addition</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">stop</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span>
 <span class="n">run_time_loop_addition</span>
 </pre></div>
 </div>
@@ -1063,7 +1057,7 @@ Traceback:
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Looped took about this many time longer:</span>
 
-<span class="nf">round</span><span class="p">(</span><span class="n">run_time_loop_addition</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">run_time_vector_addition</span><span class="p">[</span><span class="m">1</span><span class="p">],</span> <span class="m">2</span><span class="p">)</span>
+<span class="nf">round</span><span class="p">(</span><span class="n">run_time_loop_addition</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">run_time_vector_addition</span><span class="p">[</span><span class="m">1</span><span class="p">],</span><span class="w"> </span><span class="m">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1086,7 +1080,7 @@ vector called <code class="docutils literal notranslate"><span class="pre">vec2<
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># Draw vector of length 3144 with random vectors</span>
 <span class="c1"># containing values uniformally distributed between</span>
 <span class="c1"># 0 and 1. </span>
-<span class="n">pop</span> <span class="o">&lt;-</span> <span class="nf">runif</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="m">3144</span><span class="p">,</span> <span class="n">min</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">max</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
+<span class="n">pop</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">runif</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3144</span><span class="p">,</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>(Don’t worry about the fact that we really should be weighing counties by their population size to estimate overall
@@ -1135,7 +1129,7 @@ support.)</p>
   
     By Josh Clinton and Nick Eubank<br/>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2023.<br/>
 </p>
         </footer>
     </div>

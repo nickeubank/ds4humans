@@ -52,6 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -115,18 +116,6 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Preface
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../00_preface/00_preface.html">
-   Introduction to Data Science for Humans
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   Introduction
  </span>
 </p>
@@ -153,8 +142,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../30_questions/00_from_problems_to_questions.html">
-   From Problems to Questions
+  <a class="reference internal" href="../30_questions/00_solving_the_right_problem.html">
+   Solving the Right Problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_questions/05_descriptive_v_proscriptive.html">
+   Descriptive versus Proscriptive Questions
   </a>
  </li>
  <li class="toctree-l1">
@@ -164,7 +158,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../30_questions/20_passive_prediction_questions.html">
-   Classification Questions
+   Passive-Prediction Questions
   </a>
  </li>
  <li class="toctree-l1">
@@ -564,12 +558,12 @@ title="Print to PDF"
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate impact of taxes on income</span>
 
 <span class="c1"># Start with current income and policies</span>
-<span class="n">pre_tax_income</span> <span class="o">&lt;-</span> <span class="m">20000</span>
-<span class="n">tax_rate</span> <span class="o">&lt;-</span> <span class="m">0.23</span>
-<span class="n">tax_rebate</span> <span class="o">&lt;-</span> <span class="m">1500</span>
+<span class="n">pre_tax_income</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">20000</span>
+<span class="n">tax_rate</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">0.23</span>
+<span class="n">tax_rebate</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1500</span>
 
 <span class="c1"># Calculate final after-tax income</span>
-<span class="n">after_tax_income</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="n">pre_tax_income</span> <span class="o">*</span> <span class="p">(</span><span class="m">1</span> <span class="o">-</span> <span class="n">tax_rate</span><span class="p">))</span> <span class="o">+</span> <span class="n">tax_rebate</span>
+<span class="n">after_tax_income</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="p">(</span><span class="n">pre_tax_income</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="m">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">tax_rate</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tax_rebate</span>
 </pre></div>
 </div>
 </div>
@@ -613,11 +607,11 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">assertthat</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">&lt;-</span> <span class="m">7</span>
-<span class="n">y</span> <span class="o">&lt;-</span> <span class="m">5</span>
+<span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">7</span>
+<span class="n">y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">5</span>
 
 <span class="c1"># Make sure that x is greater than y</span>
-<span class="nf">assert_that</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">)</span>
+<span class="nf">assert_that</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -631,51 +625,51 @@ Traceback:
 </div>
 </div>
 <p>If the assertion is TRUE, the code continuous along happily. If it is <em>not</em> true, however, you get something like:</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">assert_that</span><span class="p">(</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">assert_that</span><span class="p">(</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">y</span><span class="p">)</span>
 
-<span class="o">&gt;</span> <span class="n">ERROR</span><span class="o">:</span> <span class="n">Error</span><span class="o">:</span> <span class="n">x</span> <span class="n">not</span> <span class="n">less</span> <span class="n">than</span> <span class="n">y</span>
-<span class="o">&gt;</span> <span class="n">Error</span><span class="o">:</span> <span class="n">x</span> <span class="n">not</span> <span class="n">less</span> <span class="n">than</span> <span class="n">y</span>
-<span class="o">&gt;</span> <span class="n">Traceback</span><span class="o">:</span>
-<span class="o">&gt;</span> 
-<span class="o">&gt;</span> <span class="m">1</span><span class="n">.</span> <span class="nf">assert_that</span><span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">)</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">ERROR</span><span class="o">:</span><span class="w"> </span><span class="n">Error</span><span class="o">:</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">less</span><span class="w"> </span><span class="n">than</span><span class="w"> </span><span class="n">y</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">Error</span><span class="o">:</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">less</span><span class="w"> </span><span class="n">than</span><span class="w"> </span><span class="n">y</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">Traceback</span><span class="o">:</span>
+<span class="o">&gt;</span><span class="w"> </span>
+<span class="o">&gt;</span><span class="w"> </span><span class="m">1</span><span class="n">.</span><span class="w"> </span><span class="nf">assert_that</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">assert_that</span></code> can also be used to test properties of vectors, though doing so requires one additional step.</p>
 <p>Since logical tests applied to vectors return vectors, we have to specify how to evaluate that whole vector using <code class="docutils literal notranslate"><span class="pre">any()</span></code> (returns <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> if any entries in the vector are <code class="docutils literal notranslate"><span class="pre">TRUE</span></code>) or <code class="docutils literal notranslate"><span class="pre">all()</span></code> (only returns <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> if <em>all</em> the entries are <code class="docutils literal notranslate"><span class="pre">TRUE</span></code>). For example, if I don’t use these helpers, I get:</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">4</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+<span class="n">y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
 
-<span class="nf">assert_that</span><span class="p">(</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">)</span>
+<span class="nf">assert_that</span><span class="p">(</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">y</span><span class="p">)</span>
 
-<span class="o">&gt;</span> <span class="n">ERROR</span><span class="o">:</span> <span class="n">Error</span><span class="o">:</span> <span class="n">assert_that</span><span class="o">:</span> <span class="n">length</span> <span class="n">of</span> <span class="n">assertion</span> <span class="n">is</span> <span class="n">not</span> <span class="m">1</span>
-<span class="o">&gt;</span> <span class="n">Error</span><span class="o">:</span> <span class="n">assert_that</span><span class="o">:</span> <span class="n">length</span> <span class="n">of</span> <span class="n">assertion</span> <span class="n">is</span> <span class="n">not</span> <span class="m">1</span>
-<span class="o">&gt;</span> <span class="n">Traceback</span><span class="o">:</span>
-<span class="o">&gt;</span> 
-<span class="o">&gt;</span> <span class="m">1</span><span class="n">.</span> <span class="nf">assert_that</span><span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">)</span>
-<span class="o">&gt;</span> <span class="m">2</span><span class="n">.</span> <span class="nf">see_if</span><span class="p">(</span><span class="kc">...</span><span class="p">,</span> <span class="n">env</span> <span class="o">=</span> <span class="n">env</span><span class="p">,</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">msg</span><span class="p">)</span>
-<span class="o">&gt;</span> <span class="m">3</span><span class="n">.</span> <span class="nf">check_result</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
-<span class="o">&gt;</span> <span class="m">4</span><span class="n">.</span> <span class="nf">stop</span><span class="p">(</span><span class="s">&quot;assert_that: length of assertion is not 1&quot;</span><span class="p">,</span> <span class="n">call.</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">ERROR</span><span class="o">:</span><span class="w"> </span><span class="n">Error</span><span class="o">:</span><span class="w"> </span><span class="n">assert_that</span><span class="o">:</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">assertion</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="m">1</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">Error</span><span class="o">:</span><span class="w"> </span><span class="n">assert_that</span><span class="o">:</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">assertion</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="m">1</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">Traceback</span><span class="o">:</span>
+<span class="o">&gt;</span><span class="w"> </span>
+<span class="o">&gt;</span><span class="w"> </span><span class="m">1</span><span class="n">.</span><span class="w"> </span><span class="nf">assert_that</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">y</span><span class="p">)</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="m">2</span><span class="n">.</span><span class="w"> </span><span class="nf">see_if</span><span class="p">(</span><span class="kc">...</span><span class="p">,</span><span class="w"> </span><span class="n">env</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">msg</span><span class="p">)</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="m">3</span><span class="n">.</span><span class="w"> </span><span class="nf">check_result</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="m">4</span><span class="n">.</span><span class="w"> </span><span class="nf">stop</span><span class="p">(</span><span class="s">&quot;assert_that: length of assertion is not 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">call.</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>So instead if I want to know if ALL entries of <code class="docutils literal notranslate"><span class="pre">x</span></code> are less than their matching entries in <code class="docutils literal notranslate"><span class="pre">y</span></code>, I can run:</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">4</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+<span class="n">y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
 
-<span class="nf">assert_that</span><span class="p">(</span><span class="nf">all</span><span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">))</span>
+<span class="nf">assert_that</span><span class="p">(</span><span class="nf">all</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">y</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>And I’ll be told:</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">ERROR</span><span class="o">:</span> <span class="n">Error</span><span class="o">:</span> <span class="n">Elements</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span> <span class="n">of</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span> <span class="n">are</span> <span class="n">not</span> <span class="n">true</span>
-<span class="o">&gt;</span> <span class="n">Error</span><span class="o">:</span> <span class="n">Elements</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span> <span class="n">of</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span> <span class="n">are</span> <span class="n">not</span> <span class="n">true</span>
-<span class="o">&gt;</span> <span class="n">Traceback</span><span class="o">:</span>
-<span class="o">&gt;</span> 
-<span class="o">&gt;</span> <span class="m">1</span><span class="n">.</span> <span class="nf">assert_that</span><span class="p">(</span><span class="nf">all</span><span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w"> </span><span class="n">ERROR</span><span class="o">:</span><span class="w"> </span><span class="n">Error</span><span class="o">:</span><span class="w"> </span><span class="n">Elements</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">true</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">Error</span><span class="o">:</span><span class="w"> </span><span class="n">Elements</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">true</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">Traceback</span><span class="o">:</span>
+<span class="o">&gt;</span><span class="w"> </span>
+<span class="o">&gt;</span><span class="w"> </span><span class="m">1</span><span class="n">.</span><span class="w"> </span><span class="nf">assert_that</span><span class="p">(</span><span class="nf">all</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">y</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>My contrast, if I only wanted to be sure that SOME of the entries of <code class="docutils literal notranslate"><span class="pre">x</span></code> were less than <code class="docutils literal notranslate"><span class="pre">y</span></code>, I could do:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">assert_that</span><span class="p">(</span><span class="nf">any</span><span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">assert_that</span><span class="p">(</span><span class="nf">any</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">y</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -693,9 +687,9 @@ Traceback:
 <p>One really important thing to know about: if you run an R file using the source command, an error will stop R in its tracks. But if you’re highlighting a block of code and sending it to R by typing “Command-Return”  (with the standard R GUI text-editor or in RStudio) or clicking the Run button in RStudio, R will throw an error then keep going!</p>
 <p>There is a weird work around available, but if you don’t want to use it, you need to either (a) watch your output, or (b) make sure to run your code using the source(file.R)command or by clicking the Source button in RStudio instead of the Run button.</p>
 <p>To see, try the following code:</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="s">&#39;test&#39;</span>
-<span class="nf">assert_that</span><span class="p">(</span> <span class="nf">is.numeric</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span> <span class="s">&#39;hello world&#39;</span> <span class="p">)</span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&#39;test&#39;</span>
+<span class="nf">assert_that</span><span class="p">(</span><span class="w"> </span><span class="nf">is.numeric</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="w"> </span><span class="s">&#39;hello world&#39;</span><span class="w"> </span><span class="p">)</span>
 </pre></div>
 </div>
 <p>If you run this interactively, you’ll see a red error message, but the print statement will still run. If you save this file and execute it with the source command / Source button, the print statement will never be run.</p>
@@ -717,11 +711,11 @@ Traceback:
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># We&#39;ll use `countries` again:</span>
 
-<span class="n">country</span> <span class="o">&lt;-</span> <span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;USA&quot;</span><span class="p">,</span> <span class="s">&quot;China&quot;</span><span class="p">,</span> <span class="s">&quot;Sudan&quot;</span><span class="p">),</span> <span class="m">3</span><span class="p">)</span>
-<span class="n">year</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1994</span><span class="p">,</span> <span class="m">1994</span><span class="p">,</span> <span class="m">1994</span><span class="p">,</span> <span class="m">1995</span><span class="p">,</span> <span class="m">1995</span><span class="p">,</span> <span class="m">1995</span><span class="p">,</span> <span class="m">1996</span><span class="p">,</span> <span class="m">1996</span><span class="p">,</span> <span class="m">1996</span><span class="p">)</span>
-<span class="n">gdp_pc</span> <span class="o">&lt;-</span> <span class="nf">round</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">9</span><span class="p">,</span> <span class="m">1000</span><span class="p">,</span> <span class="m">20000</span><span class="p">))</span>
+<span class="n">country</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;USA&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;China&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Sudan&quot;</span><span class="p">),</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+<span class="n">year</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1994</span><span class="p">,</span><span class="w"> </span><span class="m">1994</span><span class="p">,</span><span class="w"> </span><span class="m">1994</span><span class="p">,</span><span class="w"> </span><span class="m">1995</span><span class="p">,</span><span class="w"> </span><span class="m">1995</span><span class="p">,</span><span class="w"> </span><span class="m">1995</span><span class="p">,</span><span class="w"> </span><span class="m">1996</span><span class="p">,</span><span class="w"> </span><span class="m">1996</span><span class="p">,</span><span class="w"> </span><span class="m">1996</span><span class="p">)</span>
+<span class="n">gdp_pc</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">round</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">9</span><span class="p">,</span><span class="w"> </span><span class="m">1000</span><span class="p">,</span><span class="w"> </span><span class="m">20000</span><span class="p">))</span>
 
-<span class="n">countries</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">gdp_pc</span><span class="p">)</span>
+<span class="n">countries</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">country</span><span class="p">,</span><span class="w"> </span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">gdp_pc</span><span class="p">)</span>
 <span class="n">countries</span>
 </pre></div>
 </div>
@@ -749,7 +743,7 @@ Traceback:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">assert_that</span><span class="p">(</span><span class="nf">nrow</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span> <span class="o">==</span> <span class="m">9</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">assert_that</span><span class="p">(</span><span class="nf">nrow</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">9</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -760,7 +754,7 @@ Traceback:
 <p>Make sure values of GDP Per Capita have a reasonable value. Note this is a “reasonableness” test, not an absolute test. It’s possible this would fail and the data is ok, but this way if there’s a problem your attention will be flagged so you can check.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">assert_that</span><span class="p">(</span><span class="nf">all</span><span class="p">((</span><span class="m">1000</span> <span class="o">&lt;</span> <span class="n">countries</span><span class="o">$</span><span class="n">gdp_pc</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">countries</span><span class="o">$</span><span class="n">gdp_pc</span> <span class="o">&lt;</span> <span class="m">100000</span><span class="p">)))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">assert_that</span><span class="p">(</span><span class="nf">all</span><span class="p">((</span><span class="m">1000</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">countries</span><span class="o">$</span><span class="n">gdp_pc</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">countries</span><span class="o">$</span><span class="n">gdp_pc</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">100000</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
@@ -775,14 +769,14 @@ Traceback:
 <p>Information should only be expressed once in a file. For example, say you want to drop observations from a dataset if a person’s income has ever dropped below 20,000. You <em>could</em> do this like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">income_2019</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">10000</span><span class="p">,</span> <span class="m">20000</span><span class="p">,</span> <span class="m">30000</span><span class="p">,</span> <span class="m">40000</span><span class="p">,</span> <span class="m">50000</span><span class="p">),</span>
-                   <span class="n">income_2018</span><span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">50000</span><span class="p">,</span> <span class="m">40000</span><span class="p">,</span> <span class="m">30000</span><span class="p">,</span> <span class="m">20000</span><span class="p">,</span> <span class="m">10000</span><span class="p">),</span>
-                   <span class="n">income_2017</span><span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">50000</span><span class="p">,</span> <span class="m">20000</span><span class="p">,</span> <span class="m">30000</span><span class="p">,</span> <span class="m">40000</span><span class="p">,</span> <span class="m">50000</span><span class="p">))</span>
-                   
-<span class="n">df</span> <span class="o">&lt;-</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[,</span> <span class="s">&quot;income_2019&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="m">20000</span><span class="p">)</span> <span class="o">|</span>
-        <span class="p">(</span><span class="n">df</span><span class="p">[,</span> <span class="s">&quot;income_2018&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="m">20000</span><span class="p">)</span> <span class="o">|</span>
-        <span class="p">(</span><span class="n">df</span><span class="p">[,</span> <span class="s">&quot;income_2017&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="m">20000</span><span class="p">),]</span>
-                   
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">income_2019</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">10000</span><span class="p">,</span><span class="w"> </span><span class="m">20000</span><span class="p">,</span><span class="w"> </span><span class="m">30000</span><span class="p">,</span><span class="w"> </span><span class="m">40000</span><span class="p">,</span><span class="w"> </span><span class="m">50000</span><span class="p">),</span>
+<span class="w">                   </span><span class="n">income_2018</span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">50000</span><span class="p">,</span><span class="w"> </span><span class="m">40000</span><span class="p">,</span><span class="w"> </span><span class="m">30000</span><span class="p">,</span><span class="w"> </span><span class="m">20000</span><span class="p">,</span><span class="w"> </span><span class="m">10000</span><span class="p">),</span>
+<span class="w">                   </span><span class="n">income_2017</span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">50000</span><span class="p">,</span><span class="w"> </span><span class="m">20000</span><span class="p">,</span><span class="w"> </span><span class="m">30000</span><span class="p">,</span><span class="w"> </span><span class="m">40000</span><span class="p">,</span><span class="w"> </span><span class="m">50000</span><span class="p">))</span>
+<span class="w">                   </span>
+<span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[,</span><span class="w"> </span><span class="s">&quot;income_2019&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">20000</span><span class="p">)</span><span class="w"> </span><span class="o">|</span>
+<span class="w">        </span><span class="p">(</span><span class="n">df</span><span class="p">[,</span><span class="w"> </span><span class="s">&quot;income_2018&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">20000</span><span class="p">)</span><span class="w"> </span><span class="o">|</span>
+<span class="w">        </span><span class="p">(</span><span class="n">df</span><span class="p">[,</span><span class="w"> </span><span class="s">&quot;income_2017&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">20000</span><span class="p">),]</span>
+<span class="w">                   </span>
 <span class="n">df</span>
 </pre></div>
 </div>
@@ -804,15 +798,15 @@ Traceback:
 <p>And indeed, this would work. But suppose you decided to change that cutoff from 20,000 to 30,000. The way this is written, you’ve opened yourself up to the possibility that in trying to change these cutoffs, you may change two of these but forget the third (something especially likely if the uses of the cutoff aren’t all in exactly the same place in your code). A better way of expressing this that avoids this possibility is:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">income_2019</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">10000</span><span class="p">,</span> <span class="m">20000</span><span class="p">,</span> <span class="m">30000</span><span class="p">,</span> <span class="m">40000</span><span class="p">,</span> <span class="m">50000</span><span class="p">),</span>
-                 <span class="n">income_2018</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">50000</span><span class="p">,</span> <span class="m">40000</span><span class="p">,</span> <span class="m">30000</span><span class="p">,</span> <span class="m">20000</span><span class="p">,</span> <span class="m">10000</span><span class="p">),</span>
-                 <span class="n">income_2017</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">50000</span><span class="p">,</span> <span class="m">20000</span><span class="p">,</span> <span class="m">30000</span><span class="p">,</span> <span class="m">40000</span><span class="p">,</span> <span class="m">50000</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">income_2019</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">10000</span><span class="p">,</span><span class="w"> </span><span class="m">20000</span><span class="p">,</span><span class="w"> </span><span class="m">30000</span><span class="p">,</span><span class="w"> </span><span class="m">40000</span><span class="p">,</span><span class="w"> </span><span class="m">50000</span><span class="p">),</span>
+<span class="w">                 </span><span class="n">income_2018</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">50000</span><span class="p">,</span><span class="w"> </span><span class="m">40000</span><span class="p">,</span><span class="w"> </span><span class="m">30000</span><span class="p">,</span><span class="w"> </span><span class="m">20000</span><span class="p">,</span><span class="w"> </span><span class="m">10000</span><span class="p">),</span>
+<span class="w">                 </span><span class="n">income_2017</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">50000</span><span class="p">,</span><span class="w"> </span><span class="m">20000</span><span class="p">,</span><span class="w"> </span><span class="m">30000</span><span class="p">,</span><span class="w"> </span><span class="m">40000</span><span class="p">,</span><span class="w"> </span><span class="m">50000</span><span class="p">))</span>
 
-<span class="n">income_threshold</span> <span class="o">&lt;-</span> <span class="m">20000</span>
+<span class="n">income_threshold</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">20000</span>
 
-<span class="n">df</span> <span class="o">&lt;-</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[,</span> <span class="s">&quot;income_2019&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">income_threshold</span><span class="p">)</span> <span class="o">|</span>
-        <span class="p">(</span><span class="n">df</span><span class="p">[,</span> <span class="s">&quot;income_2018&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">income_threshold</span><span class="p">)</span> <span class="o">|</span>
-        <span class="p">(</span><span class="n">df</span><span class="p">[,</span> <span class="s">&quot;income_2017&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">income_threshold</span><span class="p">),</span> <span class="p">]</span>
+<span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[,</span><span class="w"> </span><span class="s">&quot;income_2019&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">income_threshold</span><span class="p">)</span><span class="w"> </span><span class="o">|</span>
+<span class="w">        </span><span class="p">(</span><span class="n">df</span><span class="p">[,</span><span class="w"> </span><span class="s">&quot;income_2018&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">income_threshold</span><span class="p">)</span><span class="w"> </span><span class="o">|</span>
+<span class="w">        </span><span class="p">(</span><span class="n">df</span><span class="p">[,</span><span class="w"> </span><span class="s">&quot;income_2017&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">income_threshold</span><span class="p">),</span><span class="w"> </span><span class="p">]</span>
 <span class="n">df</span>
 </pre></div>
 </div>
@@ -881,7 +875,7 @@ Traceback:
   
     By Josh Clinton and Nick Eubank<br/>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2023.<br/>
 </p>
         </footer>
     </div>

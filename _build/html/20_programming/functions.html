@@ -50,6 +50,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -113,18 +114,6 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Preface
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../00_preface/00_preface.html">
-   Introduction to Data Science for Humans
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   Introduction
  </span>
 </p>
@@ -151,8 +140,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../30_questions/00_from_problems_to_questions.html">
-   From Problems to Questions
+  <a class="reference internal" href="../30_questions/00_solving_the_right_problem.html">
+   Solving the Right Problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_questions/05_descriptive_v_proscriptive.html">
+   Descriptive versus Proscriptive Questions
   </a>
  </li>
  <li class="toctree-l1">
@@ -162,7 +156,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../30_questions/20_passive_prediction_questions.html">
-   Classification Questions
+   Passive-Prediction Questions
   </a>
  </li>
  <li class="toctree-l1">
@@ -512,10 +506,10 @@ title="Print to PDF"
 <p>We would write this function as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">add_1_and_double</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">input_number</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">plus_1</span> <span class="o">&lt;-</span> <span class="n">input_number</span> <span class="o">+</span> <span class="m">1</span>
-    <span class="n">doubled</span> <span class="o">&lt;-</span> <span class="n">plus_1</span> <span class="o">*</span> <span class="m">2</span>
-    <span class="nf">return</span><span class="p">(</span><span class="n">doubled</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">add_1_and_double</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">input_number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">plus_1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">input_number</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span>
+<span class="w">    </span><span class="n">doubled</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">plus_1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">2</span>
+<span class="w">    </span><span class="nf">return</span><span class="p">(</span><span class="n">doubled</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -523,8 +517,8 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="m">5</span>
-<span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">add_1_and_double</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">5</span>
+<span class="n">y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">add_1_and_double</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">y</span>
 </pre></div>
 </div>
@@ -560,11 +554,11 @@ title="Print to PDF"
 <p>In the example above, our function accepted a single argument, but of course we’ve seen functions can accept more than one argument! To accept more than one argument, just recommended the function signature in the first line:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">add_two_numbers</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">number1</span><span class="p">,</span> <span class="n">number2</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">sum</span> <span class="o">&lt;-</span> <span class="n">number1</span> <span class="o">+</span> <span class="n">number2</span>
-    <span class="nf">return</span><span class="p">(</span><span class="n">sum</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">add_two_numbers</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">number1</span><span class="p">,</span><span class="w"> </span><span class="n">number2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">sum</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">number1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">number2</span>
+<span class="w">    </span><span class="nf">return</span><span class="p">(</span><span class="n">sum</span><span class="p">)</span>
 <span class="p">}</span>
-<span class="nf">add_two_numbers</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">)</span>
+<span class="nf">add_two_numbers</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -574,17 +568,17 @@ title="Print to PDF"
 <p>You can also set default values for arguments by writing <code class="docutils literal notranslate"><span class="pre">my_argument=&quot;default</span> <span class="pre">value&quot;</span></code> in the function signature. If an argument has a default value, it becomes an optional keyword argument that users <em>may</em> specify, but don’t have to:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">add_two_numbers</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">number1</span><span class="p">,</span> <span class="n">number2</span><span class="p">,</span> <span class="n">return_as_character</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">sum</span> <span class="o">&lt;-</span> <span class="n">number1</span> <span class="o">+</span> <span class="n">number2</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">add_two_numbers</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">number1</span><span class="p">,</span><span class="w"> </span><span class="n">number2</span><span class="p">,</span><span class="w"> </span><span class="n">return_as_character</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">sum</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">number1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">number2</span>
 
-    <span class="c1"># If return_as_character is TRUE, then sum will be returned as a character</span>
-    <span class="nf">if </span><span class="p">(</span><span class="n">return_as_character</span> <span class="o">==</span> <span class="kc">TRUE</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">sum</span> <span class="o">&lt;-</span> <span class="nf">as.character</span><span class="p">(</span><span class="n">sum</span><span class="p">)</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="c1"># If return_as_character is TRUE, then sum will be returned as a character</span>
+<span class="w">    </span><span class="nf">if </span><span class="p">(</span><span class="n">return_as_character</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">sum</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.character</span><span class="p">(</span><span class="n">sum</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
 
-    <span class="nf">return</span><span class="p">(</span><span class="n">sum</span><span class="p">)</span>
+<span class="w">    </span><span class="nf">return</span><span class="p">(</span><span class="n">sum</span><span class="p">)</span>
 <span class="p">}</span>
-<span class="nf">add_two_numbers</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">)</span>
+<span class="nf">add_two_numbers</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -593,7 +587,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">add_two_numbers</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="n">return_as_character</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">add_two_numbers</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">return_as_character</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -612,15 +606,15 @@ title="Print to PDF"
 <ol class="simple">
 <li><p>Write a function called second_largest that finds the second largest value in a vector of numeric values. That is, the input should be a numeric vector and the output should be the second largest value in the vector. You can assume that the input vector has at least two values. Test your function on the following two vectors:</p></li>
 </ol>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">v1</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span>
-<span class="n">v2</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">15</span><span class="p">,</span> <span class="m">1000</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">8</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">v1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10</span>
+<span class="n">v2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">15</span><span class="p">,</span><span class="w"> </span><span class="m">1000</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Modify the <code class="docutils literal notranslate"><span class="pre">second_largest</span></code> function so that it accounts for two special cases: (1) when the user inputs a numeric vector with only one value, the function should return the message “Invalid input: at least two values required”; (2) when the user inputs a vector that is not numeric, the function should return the message “Invalid input: only numeric vectors accepted”. Test your new function on the following vectors:</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">v1</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span>
-<span class="n">v2</span> <span class="o">&lt;-</span> <span class="m">2</span>
-<span class="n">v3</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;banana&quot;</span><span class="p">,</span> <span class="s">&quot;apple&quot;</span><span class="p">,</span> <span class="s">&quot;orange&quot;</span><span class="p">)</span>
-<span class="n">v4</span> <span class="o">&lt;-</span> <span class="nf">as.factor</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">v1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10</span>
+<span class="n">v2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">2</span>
+<span class="n">v3</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;banana&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;apple&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;orange&quot;</span><span class="p">)</span>
+<span class="n">v4</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.factor</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -666,7 +660,7 @@ title="Print to PDF"
   
     By Josh Clinton and Nick Eubank<br/>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2023.<br/>
 </p>
         </footer>
     </div>

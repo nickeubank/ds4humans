@@ -50,6 +50,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -113,18 +114,6 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Preface
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../00_preface/00_preface.html">
-   Introduction to Data Science for Humans
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   Introduction
  </span>
 </p>
@@ -151,8 +140,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../30_questions/00_from_problems_to_questions.html">
-   From Problems to Questions
+  <a class="reference internal" href="../30_questions/00_solving_the_right_problem.html">
+   Solving the Right Problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_questions/05_descriptive_v_proscriptive.html">
+   Descriptive versus Proscriptive Questions
   </a>
  </li>
  <li class="toctree-l1">
@@ -162,7 +156,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../30_questions/20_passive_prediction_questions.html">
-   Classification Questions
+   Passive-Prediction Questions
   </a>
  </li>
  <li class="toctree-l1">
@@ -547,7 +541,7 @@ title="Print to PDF"
 <p>As you’ve probably already realized, vectors don’t just contain a jumble of data – they also have a concept of “order”. When I create a vector with <code class="docutils literal notranslate"><span class="pre">c(42,</span> <span class="pre">47,</span> <span class="pre">-1)</span></code>, I have in mind that 42 is the first entry, 47 is the second, and -1 is the third. And we can use that concept of order to subset vectors by passing the index (order number) of an entry we want to our vector in square brackets. For example, consider the following vector:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">42</span><span class="p">,</span> <span class="m">47</span><span class="p">,</span> <span class="m">-1</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">42</span><span class="p">,</span><span class="w"> </span><span class="m">47</span><span class="p">,</span><span class="w"> </span><span class="m">-1</span><span class="p">)</span>
 <span class="n">a</span>
 </pre></div>
 </div>
@@ -574,7 +568,7 @@ title="Print to PDF"
 <p>And of course, if I wanted to assign that second entry to a new variable, I could!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">new</span> <span class="o">&lt;-</span> <span class="n">a</span><span class="p">[</span><span class="m">2</span><span class="p">]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">new</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="m">2</span><span class="p">]</span>
 <span class="n">new</span>
 </pre></div>
 </div>
@@ -583,8 +577,8 @@ title="Print to PDF"
 <div class="output text_html">47</div></div>
 </div>
 <p>But what, exactly, is happening when I subset? Let’s return to the idea that a variable is just a box holding some data, and walk-through the following block of code:</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">42</span><span class="p">,</span> <span class="m">47</span><span class="p">,</span> <span class="m">-1</span><span class="p">)</span>
-<span class="n">new</span> <span class="o">&lt;-</span> <span class="n">a</span><span class="p">[</span><span class="m">2</span><span class="p">]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">42</span><span class="p">,</span><span class="w"> </span><span class="m">47</span><span class="p">,</span><span class="w"> </span><span class="m">-1</span><span class="p">)</span>
+<span class="n">new</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="m">2</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>In the first line of code, we create a new vector with three entries and assign it to the variable <code class="docutils literal notranslate"><span class="pre">a</span></code>. Just as in our previous reading, we can think of the variable <code class="docutils literal notranslate"><span class="pre">a</span></code> as a box that is holding this new vector.</p>
@@ -600,7 +594,7 @@ title="Print to PDF"
 <p>What we just did is an example of subsetting by index, where we just specify the location (index) of the data we want:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">42</span><span class="p">,</span> <span class="m">47</span><span class="p">,</span> <span class="m">-1</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">42</span><span class="p">,</span><span class="w"> </span><span class="m">47</span><span class="p">,</span><span class="w"> </span><span class="m">-1</span><span class="p">)</span>
 <span class="n">a</span><span class="p">[</span><span class="m">2</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -611,7 +605,7 @@ title="Print to PDF"
 <p>But of course, because everything in R is a vector, if I can pass a single index, then I can pass any other numeric vector of indices, either directly:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">3</span><span class="p">)]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
@@ -627,7 +621,7 @@ title="Print to PDF"
 <p>Or as a variable:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">subset</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">subset</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
 <span class="n">a</span><span class="p">[</span><span class="n">subset</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -644,7 +638,7 @@ title="Print to PDF"
 <p>Also, you don’t have to subset entries in order! If you pass indices out of order, you’ll get a vector with a new order!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">1</span><span class="p">)]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
@@ -665,8 +659,8 @@ title="Print to PDF"
 <p>Suppose we have a character vector with only two elements (“apple” and “banana”). Subsetting it to “apple” could be done by passing a logical vector as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fruits</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;apple&quot;</span><span class="p">,</span> <span class="s">&quot;banana&quot;</span><span class="p">)</span>
-<span class="n">fruits</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">,</span> <span class="kc">FALSE</span><span class="p">)]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fruits</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;apple&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;banana&quot;</span><span class="p">)</span>
+<span class="n">fruits</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
@@ -677,9 +671,9 @@ title="Print to PDF"
 <p>Visualized with the same tools we used before, we can draw out what’s happening in this block of code:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">42</span><span class="p">,</span> <span class="m">47</span><span class="p">,</span> <span class="m">-1</span><span class="p">)</span>
-<span class="n">my_subset</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">,</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="kc">TRUE</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">&lt;-</span> <span class="n">a</span><span class="p">[</span><span class="n">my_subset</span><span class="p">]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">42</span><span class="p">,</span><span class="w"> </span><span class="m">47</span><span class="p">,</span><span class="w"> </span><span class="m">-1</span><span class="p">)</span>
+<span class="n">my_subset</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">b</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">my_subset</span><span class="p">]</span>
 <span class="n">b</span>
 </pre></div>
 </div>
@@ -714,7 +708,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a vector with 30 fruits </span>
-<span class="n">fruits</span> <span class="o">&lt;-</span> <span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;orange&quot;</span><span class="p">,</span> <span class="s">&quot;apple&quot;</span><span class="p">,</span> <span class="s">&quot;banana&quot;</span><span class="p">),</span> <span class="m">10</span><span class="p">)</span>
+<span class="n">fruits</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;orange&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;apple&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;banana&quot;</span><span class="p">),</span><span class="w"> </span><span class="m">10</span><span class="p">)</span>
 <span class="n">fruits</span>
 </pre></div>
 </div>
@@ -732,9 +726,9 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a logical vector for dropping bananas</span>
 
-<span class="n">orange_or_apple</span> <span class="o">&lt;-</span> <span class="n">fruits</span> <span class="o">==</span> <span class="s">&quot;orange&quot;</span> <span class="o">|</span> <span class="n">fruits</span> <span class="o">==</span> <span class="s">&quot;apple&quot;</span> <span class="c1"># TRUE if orange OR apple</span>
-<span class="n">not_banana</span> <span class="o">&lt;-</span> <span class="n">fruits</span> <span class="o">!=</span> <span class="s">&quot;banana&quot;</span>                            <span class="c1"># TRUE if not equal</span>
-<span class="n">not_banana2</span> <span class="o">&lt;-</span> <span class="o">!</span><span class="p">(</span><span class="n">fruits</span> <span class="o">==</span> <span class="s">&quot;banana&quot;</span><span class="p">)</span>                        <span class="c1"># Also TRUE if not equal</span>
+<span class="n">orange_or_apple</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">fruits</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;orange&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">fruits</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;apple&quot;</span><span class="w"> </span><span class="c1"># TRUE if orange OR apple</span>
+<span class="n">not_banana</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">fruits</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;banana&quot;</span><span class="w">                            </span><span class="c1"># TRUE if not equal</span>
+<span class="n">not_banana2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="o">!</span><span class="p">(</span><span class="n">fruits</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;banana&quot;</span><span class="p">)</span><span class="w">                        </span><span class="c1"># Also TRUE if not equal</span>
 
 <span class="c1"># Carry out the subset</span>
 <span class="n">fruits</span><span class="p">[</span><span class="n">orange_or_apple</span><span class="p">]</span>
@@ -785,7 +779,7 @@ we want to subset. We do so using a logical vector (<code class="docutils litera
 <p>In addition, we can also use the <code class="docutils literal notranslate"><span class="pre">%in%</span></code> operator as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">orange_or_apple2</span> <span class="o">&lt;-</span> <span class="n">fruits</span> <span class="o">%in%</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;orange&quot;</span><span class="p">,</span> <span class="s">&quot;apple&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">orange_or_apple2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">fruits</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;orange&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;apple&quot;</span><span class="p">)</span>
 <span class="n">fruits</span><span class="p">[</span><span class="n">orange_or_apple2</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -809,7 +803,7 @@ extremely useful as an alternative for repeated “or” (<code class="docutils 
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a numeric vector</span>
-<span class="n">numbers</span> <span class="o">&lt;-</span> <span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">100</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="m">10</span><span class="p">)</span>
+<span class="n">numbers</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">)</span>
 <span class="n">numbers</span>
 </pre></div>
 </div>
@@ -826,7 +820,7 @@ extremely useful as an alternative for repeated “or” (<code class="docutils 
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Illustrate three different filters</span>
-<span class="n">numbers</span><span class="p">[</span><span class="n">numbers</span> <span class="o">&lt;=</span> <span class="m">50</span> <span class="o">&amp;</span> <span class="n">numbers</span> <span class="o">!=</span> <span class="m">30</span><span class="p">]</span>
+<span class="n">numbers</span><span class="p">[</span><span class="n">numbers</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="m">50</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">numbers</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="m">30</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -841,7 +835,7 @@ extremely useful as an alternative for repeated “or” (<code class="docutils 
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span><span class="p">[</span><span class="n">numbers</span> <span class="o">==</span> <span class="m">0</span> <span class="o">|</span> <span class="n">numbers</span> <span class="o">==</span> <span class="m">100</span><span class="p">]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span><span class="p">[</span><span class="n">numbers</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">numbers</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">100</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -856,7 +850,7 @@ extremely useful as an alternative for repeated “or” (<code class="docutils 
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span><span class="p">[</span><span class="n">numbers</span> <span class="o">&gt;</span> <span class="m">100</span><span class="p">]</span> <span class="c1">#returns an empty vector</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span><span class="p">[</span><span class="n">numbers</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">100</span><span class="p">]</span><span class="w"> </span><span class="c1">#returns an empty vector</span>
 </pre></div>
 </div>
 </div>
@@ -901,7 +895,7 @@ extremely useful as an alternative for repeated “or” (<code class="docutils 
 <p>I can now represent this as a vector by putting attendance in the vector, and then labeling entries by the day of the week:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">attendance</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">132</span><span class="p">,</span> <span class="m">94</span><span class="p">,</span> <span class="m">112</span><span class="p">,</span> <span class="m">84</span><span class="p">,</span> <span class="m">254</span><span class="p">,</span> <span class="m">322</span><span class="p">,</span> <span class="m">472</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">attendance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">132</span><span class="p">,</span><span class="w"> </span><span class="m">94</span><span class="p">,</span><span class="w"> </span><span class="m">112</span><span class="p">,</span><span class="w"> </span><span class="m">84</span><span class="p">,</span><span class="w"> </span><span class="m">254</span><span class="p">,</span><span class="w"> </span><span class="m">322</span><span class="p">,</span><span class="w"> </span><span class="m">472</span><span class="p">)</span>
 <span class="n">attendance</span>
 </pre></div>
 </div>
@@ -917,7 +911,7 @@ extremely useful as an alternative for repeated “or” (<code class="docutils 
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">names</span><span class="p">(</span><span class="n">attendance</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Monday&quot;</span><span class="p">,</span> <span class="s">&quot;Tuesday&quot;</span><span class="p">,</span> <span class="s">&quot;Wednesday&quot;</span><span class="p">,</span> <span class="s">&quot;Thursday&quot;</span><span class="p">,</span> <span class="s">&quot;Friday&quot;</span><span class="p">,</span> <span class="s">&quot;Saturday&quot;</span><span class="p">,</span> <span class="s">&quot;Sunday&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">names</span><span class="p">(</span><span class="n">attendance</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Monday&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Tuesday&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Wednesday&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Thursday&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Friday&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Saturday&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Sunday&quot;</span><span class="p">)</span>
 <span class="n">attendance</span>
 </pre></div>
 </div>
@@ -934,7 +928,7 @@ extremely useful as an alternative for repeated “or” (<code class="docutils 
 <p>Now if I wanted to just get attendance from the weekend I could subset with a vector of names:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">attendance</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Saturday&quot;</span><span class="p">,</span> <span class="s">&quot;Sunday&quot;</span><span class="p">)]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">attendance</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Saturday&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Sunday&quot;</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
@@ -954,12 +948,12 @@ extremely useful as an alternative for repeated “or” (<code class="docutils 
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Recreate vector with age values</span>
-<span class="n">age</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">50</span><span class="p">,</span> <span class="m">55</span><span class="p">,</span> <span class="m">80</span><span class="p">)</span>
+<span class="n">age</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">50</span><span class="p">,</span><span class="w"> </span><span class="m">55</span><span class="p">,</span><span class="w"> </span><span class="m">80</span><span class="p">)</span>
 
 <span class="c1"># Three ways of changing grandpa&#39;s age</span>
 <span class="c1"># Note: you&#39;d only need to use one of these</span>
-<span class="n">age</span><span class="p">[</span><span class="n">age</span> <span class="o">==</span> <span class="m">80</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="m">82</span> <span class="c1"># using a logical statement</span>
-<span class="n">age</span><span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="m">45</span>         <span class="c1"># using indexing</span>
+<span class="n">age</span><span class="p">[</span><span class="n">age</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">80</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">82</span><span class="w"> </span><span class="c1"># using a logical statement</span>
+<span class="n">age</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">45</span><span class="w">         </span><span class="c1"># using indexing</span>
 <span class="n">age</span>
 </pre></div>
 </div>
@@ -977,8 +971,8 @@ extremely useful as an alternative for repeated “or” (<code class="docutils 
 of elements.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fruits</span> <span class="o">&lt;-</span> <span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;orange&quot;</span><span class="p">,</span> <span class="s">&quot;apple&quot;</span><span class="p">,</span> <span class="s">&quot;bamama&quot;</span><span class="p">),</span> <span class="m">5</span><span class="p">)</span> 
-<span class="n">fruits</span> <span class="c1">#bamamas anyone? </span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fruits</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;orange&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;apple&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;bamama&quot;</span><span class="p">),</span><span class="w"> </span><span class="m">5</span><span class="p">)</span><span class="w"> </span>
+<span class="n">fruits</span><span class="w"> </span><span class="c1">#bamamas anyone? </span>
 </pre></div>
 </div>
 </div>
@@ -994,7 +988,7 @@ of elements.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s fix the misspelled element</span>
-<span class="n">fruits</span><span class="p">[</span><span class="n">fruits</span> <span class="o">==</span> <span class="s">&quot;bamama&quot;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&quot;banana&quot;</span>
+<span class="n">fruits</span><span class="p">[</span><span class="n">fruits</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;bamama&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;banana&quot;</span>
 <span class="n">fruits</span>
 </pre></div>
 </div>
@@ -1063,7 +1057,7 @@ of elements.</p>
   
     By Josh Clinton and Nick Eubank<br/>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2023.<br/>
 </p>
         </footer>
     </div>

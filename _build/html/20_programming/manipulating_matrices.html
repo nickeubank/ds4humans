@@ -50,6 +50,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -113,18 +114,6 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Preface
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../00_preface/00_preface.html">
-   Introduction to Data Science for Humans
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   Introduction
  </span>
 </p>
@@ -151,8 +140,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../30_questions/00_from_problems_to_questions.html">
-   From Problems to Questions
+  <a class="reference internal" href="../30_questions/00_solving_the_right_problem.html">
+   Solving the Right Problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_questions/05_descriptive_v_proscriptive.html">
+   Descriptive versus Proscriptive Questions
   </a>
  </li>
  <li class="toctree-l1">
@@ -162,7 +156,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../30_questions/20_passive_prediction_questions.html">
-   Classification Questions
+   Passive-Prediction Questions
   </a>
  </li>
  <li class="toctree-l1">
@@ -541,7 +535,7 @@ title="Print to PDF"
 <p>Suppose we have the following matrix:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">our_matrix</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">12</span><span class="p">,</span> <span class="n">nrow</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">4</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">our_matrix</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">matrix</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">12</span><span class="p">,</span><span class="w"> </span><span class="n">nrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="n">ncol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4</span><span class="p">)</span>
 <span class="n">our_matrix</span>
 </pre></div>
 </div>
@@ -560,7 +554,7 @@ title="Print to PDF"
 <p>To subset, we just pass a location along the x-axis (rows) and a location along the y-axis (columns). For example, if we wanted the entry from the second row and third column, we’d type:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">our_matrix</span><span class="p">[</span><span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">our_matrix</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -570,7 +564,7 @@ title="Print to PDF"
 <p>The one new thing is that if you want ALL entries along a specific dimension, you still put in a comma, but you leave the entry blank for the dimension on which you want all observations. So if I wanted to second row, I’d just type:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">our_matrix</span><span class="p">[</span><span class="m">2</span><span class="p">,</span> <span class="p">]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">our_matrix</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -586,7 +580,7 @@ title="Print to PDF"
 <p>Or if I wanted the third column, I’d type:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">our_matrix</span><span class="p">[,</span> <span class="m">3</span><span class="p">]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">our_matrix</span><span class="p">[,</span><span class="w"> </span><span class="m">3</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -617,7 +611,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">class</span><span class="p">(</span><span class="n">our_matrix</span><span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="p">])</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">class</span><span class="p">(</span><span class="n">our_matrix</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -627,7 +621,7 @@ title="Print to PDF"
 <p>Finally, just like with vectors, we can subset with vectors if we want:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">our_matrix</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="o">:</span><span class="m">4</span><span class="p">]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">our_matrix</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="o">:</span><span class="m">4</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -647,11 +641,11 @@ title="Print to PDF"
 <p>Subsetting with logical vectors also generalizes from vectors to matrices in the same way. To illustrate, let’s go back to our toy matrix of survey respondenses:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">income</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">22000</span><span class="p">,</span> <span class="m">75000</span><span class="p">,</span> <span class="m">19000</span><span class="p">)</span>
-<span class="n">age</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">20</span><span class="p">,</span> <span class="m">35</span><span class="p">,</span> <span class="m">55</span><span class="p">)</span>
-<span class="n">education</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">12</span><span class="p">,</span> <span class="m">16</span><span class="p">,</span> <span class="m">11</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">income</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">22000</span><span class="p">,</span><span class="w"> </span><span class="m">75000</span><span class="p">,</span><span class="w"> </span><span class="m">19000</span><span class="p">)</span>
+<span class="n">age</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">20</span><span class="p">,</span><span class="w"> </span><span class="m">35</span><span class="p">,</span><span class="w"> </span><span class="m">55</span><span class="p">)</span>
+<span class="n">education</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">12</span><span class="p">,</span><span class="w"> </span><span class="m">16</span><span class="p">,</span><span class="w"> </span><span class="m">11</span><span class="p">)</span>
 
-<span class="n">survey</span> <span class="o">&lt;-</span> <span class="nf">cbind</span><span class="p">(</span><span class="n">income</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">education</span><span class="p">)</span>
+<span class="n">survey</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cbind</span><span class="p">(</span><span class="n">income</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">education</span><span class="p">)</span>
 <span class="n">survey</span>
 </pre></div>
 </div>
@@ -673,7 +667,7 @@ title="Print to PDF"
 <p>If we wanted to select all the rows where income was less than the US median income (about 65,000), we would first extract the income column, then create a logical column that’s <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> if income is below 65,000, then put that in the first position of our square brackets:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">income</span> <span class="o">&lt;-</span> <span class="n">survey</span><span class="p">[,</span> <span class="m">1</span><span class="p">]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">income</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">survey</span><span class="p">[,</span><span class="w"> </span><span class="m">1</span><span class="p">]</span>
 <span class="n">income</span>
 </pre></div>
 </div>
@@ -689,7 +683,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">below_median</span> <span class="o">=</span> <span class="n">income</span> <span class="o">&lt;</span> <span class="m">65000</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">below_median</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">income</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">65000</span>
 <span class="n">below_median</span>
 </pre></div>
 </div>
@@ -705,7 +699,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">survey</span><span class="p">[</span><span class="n">below_median</span><span class="p">,</span> <span class="p">]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">survey</span><span class="p">[</span><span class="n">below_median</span><span class="p">,</span><span class="w"> </span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -725,7 +719,7 @@ title="Print to PDF"
 <p>Or, of course, we could do that all in one line instead of breaking out the steps:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">survey</span><span class="p">[</span><span class="n">survey</span><span class="p">[,</span> <span class="m">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="m">65000</span><span class="p">,</span> <span class="p">]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">survey</span><span class="p">[</span><span class="n">survey</span><span class="p">[,</span><span class="w"> </span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">65000</span><span class="p">,</span><span class="w"> </span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -745,7 +739,7 @@ title="Print to PDF"
 <p>Or, since R used the names of vectors we passed to <code class="docutils literal notranslate"><span class="pre">cbind()</span></code> as column names, we could also subset our columns by name, which makes our code a lot easier to understand:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">survey</span><span class="p">[</span><span class="n">survey</span><span class="p">[,</span> <span class="s">&quot;income&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="m">65000</span><span class="p">,</span> <span class="p">]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">survey</span><span class="p">[</span><span class="n">survey</span><span class="p">[,</span><span class="w"> </span><span class="s">&quot;income&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">65000</span><span class="p">,</span><span class="w"> </span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -768,7 +762,7 @@ title="Print to PDF"
 <p>As we just saw, while not all matrices have names, if you they do you can subset using them. For example, our <code class="docutils literal notranslate"><span class="pre">survey</span></code> matrix has column names, but no row names, so we can only subset columns by name:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">survey</span><span class="p">[,</span> <span class="s">&quot;education&quot;</span><span class="p">]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">survey</span><span class="p">[,</span><span class="w"> </span><span class="s">&quot;education&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -812,7 +806,7 @@ title="Print to PDF"
 <p>Oddly, R also allows you to assign to these functions to change the names on a matrix. For example, to add row names we could do:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">rownames</span><span class="p">(</span><span class="n">survey</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;row1&quot;</span><span class="p">,</span> <span class="s">&quot;row2&quot;</span><span class="p">,</span> <span class="s">&quot;row3&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">rownames</span><span class="p">(</span><span class="n">survey</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;row1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;row2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;row3&quot;</span><span class="p">)</span>
 <span class="n">survey</span>
 </pre></div>
 </div>
@@ -834,7 +828,7 @@ title="Print to PDF"
 <p>And we can delete them too!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">rownames</span><span class="p">(</span><span class="n">survey</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="kc">NULL</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">rownames</span><span class="p">(</span><span class="n">survey</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kc">NULL</span>
 </pre></div>
 </div>
 </div>
@@ -845,8 +839,8 @@ title="Print to PDF"
 <p>Often, we don’t just want to subset rows or columns, but both at once. For example, suppose I wanted the education levels of everyone with incomes below the US median. I could do this in two steps by subsetting rows and then subsetting columns:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">below_median</span> <span class="o">&lt;-</span> <span class="n">survey</span><span class="p">[</span><span class="n">survey</span><span class="p">[,</span> <span class="s">&quot;income&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="m">65000</span><span class="p">,</span> <span class="p">]</span>
-<span class="n">below_median</span><span class="p">[,</span> <span class="s">&quot;education&quot;</span><span class="p">]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">below_median</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">survey</span><span class="p">[</span><span class="n">survey</span><span class="p">[,</span><span class="w"> </span><span class="s">&quot;income&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">65000</span><span class="p">,</span><span class="w"> </span><span class="p">]</span>
+<span class="n">below_median</span><span class="p">[,</span><span class="w"> </span><span class="s">&quot;education&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -862,7 +856,7 @@ title="Print to PDF"
 <p>Or I can do it all in one command!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">survey</span><span class="p">[</span><span class="n">survey</span><span class="p">[,</span><span class="s">&quot;income&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="m">65000</span><span class="p">,</span> <span class="s">&quot;education&quot;</span><span class="p">]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">survey</span><span class="p">[</span><span class="n">survey</span><span class="p">[,</span><span class="s">&quot;income&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">65000</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;education&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -878,7 +872,7 @@ title="Print to PDF"
 <p>So what is the average education of people earning less than the median income in the US in our toy data?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">mean</span><span class="p">(</span><span class="n">survey</span><span class="p">[</span><span class="n">survey</span><span class="p">[,</span><span class="s">&quot;income&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="m">65000</span><span class="p">,</span> <span class="s">&quot;education&quot;</span><span class="p">])</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">mean</span><span class="p">(</span><span class="n">survey</span><span class="p">[</span><span class="n">survey</span><span class="p">[,</span><span class="s">&quot;income&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">65000</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;education&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -892,7 +886,7 @@ title="Print to PDF"
 <p>Sometimes we want to modify a <em>part</em> of a matrix. For example, suppose we were working with our survey data, and we want to multiple all the income values by <code class="docutils literal notranslate"><span class="pre">1.02</span></code> to adjust for inflation that has occurred since the survey. Obviously, if we just multiplied the matrix by <code class="docutils literal notranslate"><span class="pre">1.02</span></code>, we’d also modify things like education and age:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">survey</span> <span class="o">*</span> <span class="m">1.02</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">survey</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">1.02</span>
 </pre></div>
 </div>
 </div>
@@ -913,9 +907,9 @@ title="Print to PDF"
 <p>What we can do instead is extract the column with income, modify it, then replace the old income column with our updated column:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">income_column</span> <span class="o">&lt;-</span> <span class="n">survey</span><span class="p">[,</span> <span class="s">&quot;income&quot;</span><span class="p">]</span> <span class="c1"># Extract income</span>
-<span class="n">adjusted_income</span> <span class="o">&lt;-</span> <span class="n">income_column</span> <span class="o">*</span> <span class="m">1.02</span> <span class="c1"># Adjust income</span>
-<span class="n">survey</span><span class="p">[,</span> <span class="s">&quot;income&quot;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">adjusted_income</span> <span class="c1"># Replace income with new values!</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">income_column</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">survey</span><span class="p">[,</span><span class="w"> </span><span class="s">&quot;income&quot;</span><span class="p">]</span><span class="w"> </span><span class="c1"># Extract income</span>
+<span class="n">adjusted_income</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">income_column</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">1.02</span><span class="w"> </span><span class="c1"># Adjust income</span>
+<span class="n">survey</span><span class="p">[,</span><span class="w"> </span><span class="s">&quot;income&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">adjusted_income</span><span class="w"> </span><span class="c1"># Replace income with new values!</span>
 <span class="n">survey</span>
 </pre></div>
 </div>
@@ -938,10 +932,10 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Re-make survey so it hasn&#39;t been adjusted for inflation</span>
-<span class="n">income</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">22000</span><span class="p">,</span> <span class="m">75000</span><span class="p">,</span> <span class="m">19000</span><span class="p">)</span>
-<span class="n">age</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">20</span><span class="p">,</span> <span class="m">35</span><span class="p">,</span> <span class="m">55</span><span class="p">)</span>
-<span class="n">education</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">12</span><span class="p">,</span> <span class="m">16</span><span class="p">,</span> <span class="m">11</span><span class="p">)</span>
-<span class="n">survey</span> <span class="o">&lt;-</span> <span class="nf">cbind</span><span class="p">(</span><span class="n">income</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">education</span><span class="p">)</span>
+<span class="n">income</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">22000</span><span class="p">,</span><span class="w"> </span><span class="m">75000</span><span class="p">,</span><span class="w"> </span><span class="m">19000</span><span class="p">)</span>
+<span class="n">age</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">20</span><span class="p">,</span><span class="w"> </span><span class="m">35</span><span class="p">,</span><span class="w"> </span><span class="m">55</span><span class="p">)</span>
+<span class="n">education</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">12</span><span class="p">,</span><span class="w"> </span><span class="m">16</span><span class="p">,</span><span class="w"> </span><span class="m">11</span><span class="p">)</span>
+<span class="n">survey</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cbind</span><span class="p">(</span><span class="n">income</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">education</span><span class="p">)</span>
 <span class="n">survey</span>
 </pre></div>
 </div>
@@ -963,7 +957,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now adjust income in one step!</span>
-<span class="n">survey</span><span class="p">[,</span> <span class="s">&quot;income&quot;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">survey</span><span class="p">[,</span> <span class="s">&quot;income&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="m">1.02</span>
+<span class="n">survey</span><span class="p">[,</span><span class="w"> </span><span class="s">&quot;income&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">survey</span><span class="p">[,</span><span class="w"> </span><span class="s">&quot;income&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">1.02</span>
 <span class="n">survey</span>
 </pre></div>
 </div>
@@ -985,7 +979,7 @@ title="Print to PDF"
 <p>And this is <em>especially</em> powerful if we subset on BOTH rows and columns. Suppose, for example, we wanted to see what people’s incomes would look like if anyone who didn’t finish high school (<code class="docutils literal notranslate"><span class="pre">education</span> <span class="pre">&lt;</span> <span class="pre">12</span></code>) got a tax credit of 10,000 dollars?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">survey</span><span class="p">[</span><span class="n">survey</span><span class="p">[,</span> <span class="s">&quot;education&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="m">12</span><span class="p">,</span> <span class="s">&quot;income&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">survey</span><span class="p">[</span><span class="n">survey</span><span class="p">[,</span> <span class="s">&quot;education&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="m">12</span><span class="p">,</span> <span class="s">&quot;income&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="m">10000</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">survey</span><span class="p">[</span><span class="n">survey</span><span class="p">[,</span><span class="w"> </span><span class="s">&quot;education&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">12</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;income&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">survey</span><span class="p">[</span><span class="n">survey</span><span class="p">[,</span><span class="w"> </span><span class="s">&quot;education&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">12</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;income&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">10000</span>
 </pre></div>
 </div>
 </div>
@@ -1035,7 +1029,7 @@ title="Print to PDF"
 <p>And when N=2, an array is just a matrix:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">array</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">6</span><span class="p">,</span> <span class="n">dim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">array</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="n">dim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1061,9 +1055,9 @@ title="Print to PDF"
 <span class="c1"># started with seed values based on</span>
 <span class="c1"># measured values.</span>
 
- <span class="c1"># using a reasonable farenheit mean and sd</span>
-<span class="n">rand_temps</span> <span class="o">&lt;-</span> <span class="nf">rnorm</span><span class="p">(</span><span class="m">3</span> <span class="o">*</span> <span class="m">3</span> <span class="o">*</span> <span class="m">10</span><span class="p">,</span> <span class="n">mean</span> <span class="o">=</span> <span class="m">70</span><span class="p">,</span> <span class="n">sd</span> <span class="o">=</span> <span class="m">10</span><span class="p">)</span>
-<span class="n">temperatures</span> <span class="o">&lt;-</span> <span class="nf">array</span><span class="p">(</span><span class="n">rand_temps</span><span class="p">,</span> <span class="n">dim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">10</span><span class="p">))</span>
+<span class="w"> </span><span class="c1"># using a reasonable farenheit mean and sd</span>
+<span class="n">rand_temps</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="m">3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">70</span><span class="p">,</span><span class="w"> </span><span class="n">sd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">)</span>
+<span class="n">temperatures</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">array</span><span class="p">(</span><span class="n">rand_temps</span><span class="p">,</span><span class="w"> </span><span class="n">dim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1071,7 +1065,7 @@ title="Print to PDF"
 <p>Now because <code class="docutils literal notranslate"><span class="pre">temperatures</span></code> has three dimensions, it’s hard to print out, but it’s easy to extract values. Suppose wanted to know the temperature 1 km North of Duke, 2km East, and at an elevation of 10km:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">temperatures</span><span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">10</span><span class="p">]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">temperatures</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1081,7 +1075,7 @@ title="Print to PDF"
 <p>Ta-Da! I could also get the temperature at all elevations at the point 1km North and 2km East:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">temperatures</span><span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="p">]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">temperatures</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1097,7 +1091,7 @@ title="Print to PDF"
 <p>Or the temperature at 5km elevation across all ground locations:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">temperatures</span><span class="p">[,</span> <span class="p">,</span> <span class="m">5</span><span class="p">]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">temperatures</span><span class="p">[,</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1179,7 +1173,7 @@ title="Print to PDF"
   
     By Josh Clinton and Nick Eubank<br/>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2023.<br/>
 </p>
         </footer>
     </div>

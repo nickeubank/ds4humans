@@ -50,6 +50,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -113,18 +114,6 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Preface
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../00_preface/00_preface.html">
-   Introduction to Data Science for Humans
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   Introduction
  </span>
 </p>
@@ -151,8 +140,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../30_questions/00_from_problems_to_questions.html">
-   From Problems to Questions
+  <a class="reference internal" href="../30_questions/00_solving_the_right_problem.html">
+   Solving the Right Problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_questions/05_descriptive_v_proscriptive.html">
+   Descriptive versus Proscriptive Questions
   </a>
  </li>
  <li class="toctree-l1">
@@ -162,7 +156,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../30_questions/20_passive_prediction_questions.html">
-   Classification Questions
+   Passive-Prediction Questions
   </a>
  </li>
  <li class="toctree-l1">
@@ -576,11 +570,11 @@ title="Print to PDF"
 <p>To begin, let’s start by recreating the dataframe we had in our last exercise as an example to work with:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">country</span> <span class="o">&lt;-</span> <span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;USA&quot;</span><span class="p">,</span> <span class="s">&quot;China&quot;</span><span class="p">,</span> <span class="s">&quot;Sudan&quot;</span><span class="p">),</span> <span class="m">3</span><span class="p">)</span>
-<span class="n">year</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1994</span><span class="p">,</span> <span class="m">1994</span><span class="p">,</span> <span class="m">1994</span><span class="p">,</span> <span class="m">1995</span><span class="p">,</span> <span class="m">1995</span><span class="p">,</span> <span class="m">1995</span><span class="p">,</span> <span class="m">1996</span><span class="p">,</span> <span class="m">1996</span><span class="p">,</span> <span class="m">1996</span><span class="p">)</span>
-<span class="n">gdp_pc</span> <span class="o">&lt;-</span> <span class="nf">round</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">9</span><span class="p">,</span> <span class="m">1000</span><span class="p">,</span> <span class="m">20000</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">country</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;USA&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;China&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Sudan&quot;</span><span class="p">),</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+<span class="n">year</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1994</span><span class="p">,</span><span class="w"> </span><span class="m">1994</span><span class="p">,</span><span class="w"> </span><span class="m">1994</span><span class="p">,</span><span class="w"> </span><span class="m">1995</span><span class="p">,</span><span class="w"> </span><span class="m">1995</span><span class="p">,</span><span class="w"> </span><span class="m">1995</span><span class="p">,</span><span class="w"> </span><span class="m">1996</span><span class="p">,</span><span class="w"> </span><span class="m">1996</span><span class="p">,</span><span class="w"> </span><span class="m">1996</span><span class="p">)</span>
+<span class="n">gdp_pc</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">round</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">9</span><span class="p">,</span><span class="w"> </span><span class="m">1000</span><span class="p">,</span><span class="w"> </span><span class="m">20000</span><span class="p">))</span>
 
-<span class="n">countries</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">gdp_pc</span><span class="p">)</span>
+<span class="n">countries</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">country</span><span class="p">,</span><span class="w"> </span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">gdp_pc</span><span class="p">)</span>
 <span class="n">countries</span>
 </pre></div>
 </div>
@@ -612,7 +606,7 @@ title="Print to PDF"
 <p>For example, if we want to get the GDP of China in 1994 from our dataframe, we can subset our dataframe using square brackets and logical / name vectors, just like named matrices:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span><span class="p">[</span><span class="n">countries</span><span class="p">[,</span> <span class="s">&quot;gdp_pc&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="m">10000</span><span class="p">,</span> <span class="s">&quot;year&quot;</span><span class="p">]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span><span class="p">[</span><span class="n">countries</span><span class="p">[,</span><span class="w"> </span><span class="s">&quot;gdp_pc&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">10000</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;year&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -636,7 +630,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># What we&#39;re used to from matrices</span>
-<span class="n">countries</span><span class="p">[,</span> <span class="s">&quot;gdp_pc&quot;</span><span class="p">]</span>
+<span class="n">countries</span><span class="p">[,</span><span class="w"> </span><span class="s">&quot;gdp_pc&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -701,7 +695,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># re-create with original gdp_pc </span>
-<span class="n">countries</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">gdp_pc</span><span class="p">)</span>
+<span class="n">countries</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">country</span><span class="p">,</span><span class="w"> </span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">gdp_pc</span><span class="p">)</span>
 <span class="n">countries</span>
 </pre></div>
 </div>
@@ -729,7 +723,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span><span class="p">[,</span> <span class="s">&quot;gdp_pc&quot;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">countries</span><span class="p">[,</span><span class="s">&quot;gdp_pc&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="m">1.02</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span><span class="p">[,</span><span class="w"> </span><span class="s">&quot;gdp_pc&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">countries</span><span class="p">[,</span><span class="s">&quot;gdp_pc&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">1.02</span>
 </pre></div>
 </div>
 </div>
@@ -737,7 +731,7 @@ title="Print to PDF"
 <p>Or</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span><span class="o">$</span><span class="n">gdp_pc</span> <span class="o">&lt;-</span> <span class="n">countries</span><span class="o">$</span><span class="n">gdp_pc</span> <span class="o">*</span> <span class="m">1.02</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span><span class="o">$</span><span class="n">gdp_pc</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">countries</span><span class="o">$</span><span class="n">gdp_pc</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">1.02</span>
 </pre></div>
 </div>
 </div>
@@ -749,7 +743,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># re-create with original gdp_pc </span>
-<span class="n">countries</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">gdp_pc</span><span class="p">)</span>
+<span class="n">countries</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">country</span><span class="p">,</span><span class="w"> </span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">gdp_pc</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -757,7 +751,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add new column</span>
-<span class="n">countries</span><span class="o">$</span><span class="n">adjusted_gdp_pc</span> <span class="o">&lt;-</span> <span class="n">countries</span><span class="o">$</span><span class="n">gdp_pc</span> <span class="o">*</span> <span class="m">1.02</span>
+<span class="n">countries</span><span class="o">$</span><span class="n">adjusted_gdp_pc</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">countries</span><span class="o">$</span><span class="n">gdp_pc</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">1.02</span>
 <span class="n">countries</span>
 </pre></div>
 </div>
@@ -831,7 +825,7 @@ title="Print to PDF"
 <p>Dropping columns can be done in a couple ways. The easiest is to just list the columns one wishes to keep:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span><span class="p">[,</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;gdp_pc&quot;</span><span class="p">,</span> <span class="s">&quot;year&quot;</span><span class="p">)]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span><span class="p">[,</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;gdp_pc&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;year&quot;</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
@@ -860,7 +854,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Drop columns gdp_pc and year</span>
-<span class="n">countries</span><span class="p">[,</span> <span class="o">!</span><span class="p">(</span><span class="nf">names</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span> <span class="o">%in%</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;gdp_pc&quot;</span><span class="p">,</span> <span class="s">&quot;year&quot;</span><span class="p">))]</span>
+<span class="n">countries</span><span class="p">[,</span><span class="w"> </span><span class="o">!</span><span class="p">(</span><span class="nf">names</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;gdp_pc&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;year&quot;</span><span class="p">))]</span>
 </pre></div>
 </div>
 </div>
@@ -905,7 +899,7 @@ title="Print to PDF"
 <p>Then <code class="docutils literal notranslate"><span class="pre">names(countries)</span> <span class="pre">%in%</span> <span class="pre">c(&quot;gdp_pc&quot;,</span> <span class="pre">&quot;year&quot;)</span></code> returns a logical vector the length of the column names of <code class="docutils literal notranslate"><span class="pre">countries</span></code> that’s <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> if the name is in the list, and <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> otherwise:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">names</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span> <span class="o">%in%</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;gdp_pc&quot;</span><span class="p">,</span> <span class="s">&quot;year&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">names</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;gdp_pc&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;year&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -923,7 +917,7 @@ title="Print to PDF"
 <p>Finally, if you’re dropping a single columns, you can also assign the value of <code class="docutils literal notranslate"><span class="pre">NULL</span></code> to the column:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span><span class="o">$</span><span class="n">gdp_pc</span> <span class="o">&lt;-</span> <span class="kc">NULL</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span><span class="o">$</span><span class="n">gdp_pc</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kc">NULL</span>
 <span class="n">countries</span>
 </pre></div>
 </div>
@@ -960,7 +954,7 @@ title="Print to PDF"
 <p>Subsetting with logicals is exactly the same with dataframes as it was with matrices, except that we can access column names with the <code class="docutils literal notranslate"><span class="pre">$</span></code> notation:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span><span class="p">[</span><span class="n">countries</span><span class="o">$</span><span class="n">year</span> <span class="o">==</span> <span class="m">1995</span> <span class="o">&amp;</span> <span class="n">countries</span><span class="o">$</span><span class="n">country</span> <span class="o">==</span> <span class="s">&quot;USA&quot;</span><span class="p">,</span> <span class="p">]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span><span class="p">[</span><span class="n">countries</span><span class="o">$</span><span class="n">year</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1995</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">countries</span><span class="o">$</span><span class="n">country</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;USA&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1029,7 +1023,7 @@ title="Print to PDF"
 <p>We can also sort by multiple columns:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span><span class="p">[</span><span class="nf">order</span><span class="p">(</span><span class="n">countries</span><span class="o">$</span><span class="n">year</span><span class="p">,</span> <span class="n">countries</span><span class="o">$</span><span class="n">country</span><span class="p">),]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span><span class="p">[</span><span class="nf">order</span><span class="p">(</span><span class="n">countries</span><span class="o">$</span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">countries</span><span class="o">$</span><span class="n">country</span><span class="p">),]</span>
 </pre></div>
 </div>
 </div>
@@ -1057,7 +1051,7 @@ title="Print to PDF"
 <p>And we can use <code class="docutils literal notranslate"><span class="pre">-</span></code> to sort any variable in descending order rather than ascending order:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span><span class="p">[</span><span class="nf">order</span><span class="p">(</span><span class="o">-</span><span class="n">countries</span><span class="o">$</span><span class="n">adjusted_gdp_pc</span><span class="p">),</span> <span class="p">]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">countries</span><span class="p">[</span><span class="nf">order</span><span class="p">(</span><span class="o">-</span><span class="n">countries</span><span class="o">$</span><span class="n">adjusted_gdp_pc</span><span class="p">),</span><span class="w"> </span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1175,7 +1169,7 @@ title="Print to PDF"
   
     By Josh Clinton and Nick Eubank<br/>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2023.<br/>
 </p>
         </footer>
     </div>
