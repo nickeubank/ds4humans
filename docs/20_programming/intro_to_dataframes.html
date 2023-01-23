@@ -50,6 +50,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -113,18 +114,6 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Preface
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../00_preface/00_preface.html">
-   Introduction to Data Science for Humans
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   Introduction
  </span>
 </p>
@@ -151,8 +140,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../30_questions/00_from_problems_to_questions.html">
-   From Problems to Questions
+  <a class="reference internal" href="../30_questions/00_solving_the_right_problem.html">
+   Solving the Right Problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_questions/05_descriptive_v_proscriptive.html">
+   Descriptive versus Proscriptive Questions
   </a>
  </li>
  <li class="toctree-l1">
@@ -162,7 +156,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../30_questions/20_passive_prediction_questions.html">
-   Classification Questions
+   Passive-Prediction Questions
   </a>
  </li>
  <li class="toctree-l1">
@@ -516,12 +510,12 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create three vectors </span>
-<span class="n">name</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;al&quot;</span><span class="p">,</span> <span class="s">&quot;bea&quot;</span><span class="p">,</span> <span class="s">&quot;carol&quot;</span><span class="p">)</span>
-<span class="n">age</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">6</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="m">4</span><span class="p">)</span>
-<span class="n">hair</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;brown&quot;</span><span class="p">,</span> <span class="s">&quot;green&quot;</span><span class="p">,</span> <span class="s">&quot;blond&quot;</span><span class="p">)</span>
+<span class="n">name</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;al&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;bea&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;carol&quot;</span><span class="p">)</span>
+<span class="n">age</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="m">7</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">)</span>
+<span class="n">hair</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;brown&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;green&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;blond&quot;</span><span class="p">)</span>
 
 <span class="c1"># Create data frame </span>
-<span class="n">children</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">hair</span><span class="p">)</span>
+<span class="n">children</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">hair</span><span class="p">)</span>
 <span class="n">children</span>
 </pre></div>
 </div>
@@ -545,10 +539,10 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create data frame </span>
-<span class="n">children</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;al&quot;</span><span class="p">,</span> <span class="s">&quot;bea&quot;</span><span class="p">,</span> <span class="s">&quot;carol&quot;</span><span class="p">),</span>
-    <span class="n">age</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">6</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span>
-    <span class="n">hair</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;brown&quot;</span><span class="p">,</span> <span class="s">&quot;green&quot;</span><span class="p">,</span> <span class="s">&quot;blond&quot;</span><span class="p">)</span>
+<span class="n">children</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;al&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;bea&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;carol&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="m">7</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">),</span>
+<span class="w">    </span><span class="n">hair</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;brown&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;green&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;blond&quot;</span><span class="p">)</span>
 <span class="p">)</span>
 <span class="n">children</span>
 </pre></div>
@@ -572,7 +566,7 @@ title="Print to PDF"
 <p>Note that unlike matrices and vectors – which <em>can</em> have names – dataframe columns <strong>always</strong> have names, and you’ll usually see columns accessed by name for reasons we’ll discuss below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">children</span><span class="p">[,</span> <span class="s">&quot;hair&quot;</span><span class="p">]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">children</span><span class="p">[,</span><span class="w"> </span><span class="s">&quot;hair&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -588,7 +582,7 @@ title="Print to PDF"
 <p>And as we discussed before, the columns of a dataframe are just our old friends, the vector!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">class</span><span class="p">(</span><span class="n">children</span><span class="p">[,</span> <span class="s">&quot;hair&quot;</span><span class="p">])</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">class</span><span class="p">(</span><span class="n">children</span><span class="p">[,</span><span class="w"> </span><span class="s">&quot;hair&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -601,11 +595,11 @@ title="Print to PDF"
 <p>To better understand the proper structure of datasets, let’s create a second data frame that has a more realistic data structure:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">country</span> <span class="o">&lt;-</span> <span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;USA&quot;</span><span class="p">,</span> <span class="s">&quot;China&quot;</span><span class="p">,</span> <span class="s">&quot;Sudan&quot;</span><span class="p">),</span> <span class="m">3</span><span class="p">)</span>
-<span class="n">year</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1994</span><span class="p">,</span> <span class="m">1994</span><span class="p">,</span> <span class="m">1994</span><span class="p">,</span> <span class="m">1995</span><span class="p">,</span> <span class="m">1995</span><span class="p">,</span> <span class="m">1995</span><span class="p">,</span> <span class="m">1996</span><span class="p">,</span> <span class="m">1996</span><span class="p">,</span> <span class="m">1996</span><span class="p">)</span>
-<span class="n">gdp_pc</span> <span class="o">&lt;-</span> <span class="nf">round</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">9</span><span class="p">,</span> <span class="m">1000</span><span class="p">,</span> <span class="m">20000</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">country</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;USA&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;China&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Sudan&quot;</span><span class="p">),</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+<span class="n">year</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1994</span><span class="p">,</span><span class="w"> </span><span class="m">1994</span><span class="p">,</span><span class="w"> </span><span class="m">1994</span><span class="p">,</span><span class="w"> </span><span class="m">1995</span><span class="p">,</span><span class="w"> </span><span class="m">1995</span><span class="p">,</span><span class="w"> </span><span class="m">1995</span><span class="p">,</span><span class="w"> </span><span class="m">1996</span><span class="p">,</span><span class="w"> </span><span class="m">1996</span><span class="p">,</span><span class="w"> </span><span class="m">1996</span><span class="p">)</span>
+<span class="n">gdp_pc</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">round</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">9</span><span class="p">,</span><span class="w"> </span><span class="m">1000</span><span class="p">,</span><span class="w"> </span><span class="m">20000</span><span class="p">))</span>
 
-<span class="n">countries</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">gdp_pc</span><span class="p">)</span>
+<span class="n">countries</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">country</span><span class="p">,</span><span class="w"> </span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">gdp_pc</span><span class="p">)</span>
 <span class="n">countries</span>
 </pre></div>
 </div>
@@ -618,15 +612,15 @@ title="Print to PDF"
 	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>USA  </td><td>1994</td><td>11072</td></tr>
-	<tr><td>China</td><td>1994</td><td> 5363</td></tr>
-	<tr><td>Sudan</td><td>1994</td><td> 4734</td></tr>
-	<tr><td>USA  </td><td>1995</td><td> 3141</td></tr>
-	<tr><td>China</td><td>1995</td><td> 7154</td></tr>
-	<tr><td>Sudan</td><td>1995</td><td> 1398</td></tr>
-	<tr><td>USA  </td><td>1996</td><td> 3318</td></tr>
-	<tr><td>China</td><td>1996</td><td> 7157</td></tr>
-	<tr><td>Sudan</td><td>1996</td><td>14549</td></tr>
+	<tr><td>USA  </td><td>1994</td><td>12582</td></tr>
+	<tr><td>China</td><td>1994</td><td> 4262</td></tr>
+	<tr><td>Sudan</td><td>1994</td><td> 6370</td></tr>
+	<tr><td>USA  </td><td>1995</td><td> 9158</td></tr>
+	<tr><td>China</td><td>1995</td><td> 5814</td></tr>
+	<tr><td>Sudan</td><td>1995</td><td>19749</td></tr>
+	<tr><td>USA  </td><td>1996</td><td> 5458</td></tr>
+	<tr><td>China</td><td>1996</td><td> 9361</td></tr>
+	<tr><td>Sudan</td><td>1996</td><td>12046</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -670,12 +664,12 @@ title="Print to PDF"
 	<tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><th scope=row>1</th><td>USA  </td><td>1994</td><td>11072</td></tr>
-	<tr><th scope=row>2</th><td>China</td><td>1994</td><td> 5363</td></tr>
-	<tr><th scope=row>3</th><td>Sudan</td><td>1994</td><td> 4734</td></tr>
-	<tr><th scope=row>4</th><td>USA  </td><td>1995</td><td> 3141</td></tr>
-	<tr><th scope=row>5</th><td>China</td><td>1995</td><td> 7154</td></tr>
-	<tr><th scope=row>6</th><td>Sudan</td><td>1995</td><td> 1398</td></tr>
+	<tr><th scope=row>1</th><td>USA  </td><td>1994</td><td>12582</td></tr>
+	<tr><th scope=row>2</th><td>China</td><td>1994</td><td> 4262</td></tr>
+	<tr><th scope=row>3</th><td>Sudan</td><td>1994</td><td> 6370</td></tr>
+	<tr><th scope=row>4</th><td>USA  </td><td>1995</td><td> 9158</td></tr>
+	<tr><th scope=row>5</th><td>China</td><td>1995</td><td> 5814</td></tr>
+	<tr><th scope=row>6</th><td>Sudan</td><td>1995</td><td>19749</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -694,12 +688,12 @@ title="Print to PDF"
 	<tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><th scope=row>4</th><td>USA  </td><td>1995</td><td> 3141</td></tr>
-	<tr><th scope=row>5</th><td>China</td><td>1995</td><td> 7154</td></tr>
-	<tr><th scope=row>6</th><td>Sudan</td><td>1995</td><td> 1398</td></tr>
-	<tr><th scope=row>7</th><td>USA  </td><td>1996</td><td> 3318</td></tr>
-	<tr><th scope=row>8</th><td>China</td><td>1996</td><td> 7157</td></tr>
-	<tr><th scope=row>9</th><td>Sudan</td><td>1996</td><td>14549</td></tr>
+	<tr><th scope=row>4</th><td>USA  </td><td>1995</td><td> 9158</td></tr>
+	<tr><th scope=row>5</th><td>China</td><td>1995</td><td> 5814</td></tr>
+	<tr><th scope=row>6</th><td>Sudan</td><td>1995</td><td>19749</td></tr>
+	<tr><th scope=row>7</th><td>USA  </td><td>1996</td><td> 5458</td></tr>
+	<tr><th scope=row>8</th><td>China</td><td>1996</td><td> 9361</td></tr>
+	<tr><th scope=row>9</th><td>Sudan</td><td>1996</td><td>12046</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -714,12 +708,12 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   country               year          gdp_pc     
- Length:9           Min.   :1994   Min.   : 1398  
- Class :character   1st Qu.:1994   1st Qu.: 3318  
- Mode  :character   Median :1995   Median : 5363  
-                    Mean   :1995   Mean   : 6432  
-                    3rd Qu.:1996   3rd Qu.: 7157  
-                    Max.   :1996   Max.   :14549  
+ Length:9           Min.   :1994   Min.   : 4262  
+ Class :character   1st Qu.:1994   1st Qu.: 5814  
+ Mode  :character   Median :1995   Median : 9158  
+                    Mean   :1995   Mean   : 9422  
+                    3rd Qu.:1996   3rd Qu.:12046  
+                    Max.   :1996   Max.   :19749  
 </pre></div>
 </div>
 </div>
@@ -795,18 +789,18 @@ title="Print to PDF"
 <p><strong>Note:</strong> The ability to load some formats requires third party packages.</p>
 <p>The ability to load some data formats requires installing third party packages. You can install a third party package onto your computer using the command <code class="docutils literal notranslate"><span class="pre">install.packages()</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">install.packages(&quot;foreign&quot;)</span></code>), after which you load it into any R session where you want to use the package with the <code class="docutils literal notranslate"><span class="pre">library()</span></code> command (e.g. <code class="docutils literal notranslate"><span class="pre">library(foreign)</span></code>). Note the use of quotes around the package name in <code class="docutils literal notranslate"><span class="pre">install.packages()</span></code>, but not <code class="docutils literal notranslate"><span class="pre">library()</span></code>. Not sure why…</p>
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Available by default</span>
-<span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;file.csv&quot;</span><span class="p">)</span>           <span class="c1"># Comma separated values</span>
-<span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;file.txt&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&quot;\t&quot;</span><span class="p">)</span> <span class="c1"># tab separated values</span>
+<span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;file.csv&quot;</span><span class="p">)</span><span class="w">           </span><span class="c1"># Comma separated values</span>
+<span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;file.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="o">=</span><span class="s">&quot;\t&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1"># tab separated values</span>
 
 <span class="c1"># Using the `foreign` library</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">foreign</span><span class="p">)</span> <span class="c1">#load foreign</span>
-<span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">read.dta</span><span class="p">(</span><span class="s">&quot;file.dta&quot;</span><span class="p">)</span>   <span class="c1"># Stata data</span>
-<span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">read.spss</span><span class="p">(</span><span class="s">&quot;file.spss&quot;</span><span class="p">)</span> <span class="c1"># SPSS data</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">foreign</span><span class="p">)</span><span class="w"> </span><span class="c1">#load foreign</span>
+<span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.dta</span><span class="p">(</span><span class="s">&quot;file.dta&quot;</span><span class="p">)</span><span class="w">   </span><span class="c1"># Stata data</span>
+<span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.spss</span><span class="p">(</span><span class="s">&quot;file.spss&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1"># SPSS data</span>
 
 <span class="c1"># Using the `readxl` library</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">readxl</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">read_excel</span><span class="p">(</span><span class="s">&quot;file.xls&quot;</span><span class="p">)</span>  <span class="c1"># Excel xls spreadsheet</span>
-<span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">read_excel</span><span class="p">(</span><span class="s">&quot;file.xlsx&quot;</span><span class="p">)</span> <span class="c1"># Excel xlsx spreadsheet</span>
+<span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read_excel</span><span class="p">(</span><span class="s">&quot;file.xls&quot;</span><span class="p">)</span><span class="w">  </span><span class="c1"># Excel xls spreadsheet</span>
+<span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read_excel</span><span class="p">(</span><span class="s">&quot;file.xlsx&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1"># Excel xlsx spreadsheet</span>
 </pre></div>
 </div>
 <p>For the exercises we’ll be doing next, we’ll work with the <code class="docutils literal notranslate"><span class="pre">world-small.csv</span></code> dataset, which you can download <a class="reference external" href="https://github.com/nickeubank/computational_methods_boot_camp/blob/main/source/data/world-small.csv">here</a> by clicking the <code class="docutils literal notranslate"><span class="pre">raw</span></code> button, then right-clicking, selecting “Save As…”, and saving the file as <code class="docutils literal notranslate"><span class="pre">world-small.csv</span></code>.).</p>
@@ -847,7 +841,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s look at the first few rows</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">world</span><span class="p">)</span> 
+<span class="nf">head</span><span class="p">(</span><span class="n">world</span><span class="p">)</span><span class="w"> </span>
 </pre></div>
 </div>
 </div>
@@ -872,7 +866,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># And get a sense of the variables in the data</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">world</span><span class="p">)</span> 
+<span class="nf">summary</span><span class="p">(</span><span class="n">world</span><span class="p">)</span><span class="w"> </span>
 </pre></div>
 </div>
 </div>
@@ -932,7 +926,7 @@ title="Print to PDF"
   
     By Josh Clinton and Nick Eubank<br/>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2023.<br/>
 </p>
         </footer>
     </div>

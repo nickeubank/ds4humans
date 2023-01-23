@@ -50,6 +50,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -113,18 +114,6 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Preface
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../00_preface/00_preface.html">
-   Introduction to Data Science for Humans
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   Introduction
  </span>
 </p>
@@ -151,8 +140,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../30_questions/00_from_problems_to_questions.html">
-   From Problems to Questions
+  <a class="reference internal" href="../30_questions/00_solving_the_right_problem.html">
+   Solving the Right Problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_questions/05_descriptive_v_proscriptive.html">
+   Descriptive versus Proscriptive Questions
   </a>
  </li>
  <li class="toctree-l1">
@@ -162,7 +156,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../30_questions/20_passive_prediction_questions.html">
-   Classification Questions
+   Passive-Prediction Questions
   </a>
  </li>
  <li class="toctree-l1">
@@ -553,7 +547,7 @@ title="Print to PDF"
 <p>To illustrate, let’s play around a little. Note that we can always check the type of data by passing our data, or the variable to which the data has been assigned, to the <code class="docutils literal notranslate"><span class="pre">class()</span></code> function, which then returns the type of the input. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="kc">pi</span> <span class="o">&lt;-</span> <span class="m">3.1416</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="kc">pi</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">3.1416</span>
 <span class="nf">class</span><span class="p">(</span><span class="kc">pi</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -563,7 +557,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">mystery_novel</span> <span class="o">&lt;-</span> <span class="s">&quot;T&#39;was a dark and stormy night&quot;</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">mystery_novel</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;T&#39;was a dark and stormy night&quot;</span>
 <span class="nf">class</span><span class="p">(</span><span class="n">mystery_novel</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -573,7 +567,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">my_logical</span> <span class="o">&lt;-</span> <span class="m">7</span> <span class="o">&lt;</span> <span class="m">3</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">my_logical</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">3</span>
 <span class="nf">class</span><span class="p">(</span><span class="n">my_logical</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -585,7 +579,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Evaluating the variable pi</span>
-<span class="kc">pi</span> <span class="o">&lt;-</span> <span class="m">3.1416</span>
+<span class="kc">pi</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">3.1416</span>
 <span class="nf">class</span><span class="p">(</span><span class="kc">pi</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -611,9 +605,9 @@ title="Print to PDF"
 <p>For example, if I put <code class="docutils literal notranslate"><span class="pre">+</span></code> between two numeric variables, R will do the obvious thing and add them up:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="m">10</span>
-<span class="n">b</span> <span class="o">&lt;-</span> <span class="m">2</span>
-<span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">10</span>
+<span class="n">b</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">2</span>
+<span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span>
 </pre></div>
 </div>
 </div>
@@ -621,25 +615,25 @@ title="Print to PDF"
 <div class="output text_html">12</div></div>
 </div>
 <p>But if I try and put a <code class="docutils literal notranslate"><span class="pre">+</span></code> between two character variables, R will stop and say “WAIT A MINUTE! I don’t know how to add two characters!”</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="s">&quot;Lyra&quot;</span>
-<span class="n">b</span> <span class="o">&lt;-</span> <span class="s">&quot;Belacqua&quot;</span>
-<span class="n">a</span> <span class="o">+</span> <span class="n">b</span> 
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;Lyra&quot;</span>
+<span class="n">b</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;Belacqua&quot;</span>
+<span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="w"> </span>
 
-<span class="o">&gt;</span> <span class="n">Error</span> <span class="n">in</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">:</span> <span class="n">non</span><span class="o">-</span><span class="n">numeric</span> <span class="n">argument</span> <span class="n">to</span> <span class="n">binary</span> <span class="n">operator</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">Error</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">non</span><span class="o">-</span><span class="n">numeric</span><span class="w"> </span><span class="n">argument</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">binary</span><span class="w"> </span><span class="n">operator</span>
 </pre></div>
 </div>
 <p>Note that one place that this behavior can be confusing is when R has stored numbers as characters – something that happens a lot when you are importing a file. That’s because, as I said before, computers are <em>really</em> inflexible. For example, suppose you had the following code:</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="s">&quot;5&quot;</span>
-<span class="n">b</span> <span class="o">&lt;-</span> <span class="s">&quot;4&quot;</span>
-<span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;5&quot;</span>
+<span class="n">b</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;4&quot;</span>
+<span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span>
 </pre></div>
 </div>
 <p>Now, if I asked you what that should print out, I’m sure you’d say “9”, because you’re smart and can recognize what I <em>want</em>. But R can’t do that – it sees you trying to add two character variables and says “nope, sorry! Can’t do that.”</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="s">&quot;5&quot;</span>
-<span class="n">b</span> <span class="o">&lt;-</span> <span class="s">&quot;4&quot;</span>
-<span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;5&quot;</span>
+<span class="n">b</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;4&quot;</span>
+<span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span>
 
-<span class="o">&gt;</span> <span class="n">Error</span> <span class="n">in</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">:</span> <span class="n">non</span><span class="o">-</span><span class="n">numeric</span> <span class="n">argument</span> <span class="n">to</span> <span class="n">binary</span> <span class="n">operator</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">Error</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">non</span><span class="o">-</span><span class="n">numeric</span><span class="w"> </span><span class="n">argument</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">binary</span><span class="w"> </span><span class="n">operator</span>
 </pre></div>
 </div>
 <p>Which brings us to…</p>
@@ -650,11 +644,11 @@ title="Print to PDF"
 <p>So let’s do our example above again using <code class="docutils literal notranslate"><span class="pre">as.numeric()</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="s">&quot;5&quot;</span>
-<span class="n">b</span> <span class="o">&lt;-</span> <span class="s">&quot;4&quot;</span>
-<span class="n">a</span> <span class="o">&lt;-</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">&lt;-</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;5&quot;</span>
+<span class="n">b</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;4&quot;</span>
+<span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.numeric</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">b</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.numeric</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span>
 </pre></div>
 </div>
 </div>
@@ -666,8 +660,8 @@ title="Print to PDF"
 <p>But if I were to try and convert a character like <code class="docutils literal notranslate"><span class="pre">&quot;Ford</span> <span class="pre">Prefect&quot;</span></code> to a numeric, it would give me a weird warning telling me it couldn’t do it:</p>
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">as.numeric</span><span class="p">(</span><span class="s">&quot;Ford Prefect&quot;</span><span class="p">)</span>
 
-<span class="o">&gt;</span> <span class="n">Warning</span> <span class="n">message</span> <span class="n">in</span> <span class="nf">eval</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">envir</span><span class="p">,</span> <span class="n">enclos</span><span class="p">)</span><span class="o">:</span>
-<span class="o">&gt;</span> <span class="s">&quot;NAs introduced by coercion&quot;</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">Warning</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nf">eval</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span><span class="w"> </span><span class="n">envir</span><span class="p">,</span><span class="w"> </span><span class="n">enclos</span><span class="p">)</span><span class="o">:</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;NAs introduced by coercion&quot;</span>
 <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span>
 </pre></div>
 </div>
@@ -680,7 +674,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simple math tests, like inequalities</span>
-<span class="m">7</span> <span class="o">&gt;</span> <span class="m">5</span>
+<span class="m">7</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">5</span>
 </pre></div>
 </div>
 </div>
@@ -689,7 +683,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">-1</span> <span class="o">&gt;=</span> <span class="m">10</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">-1</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">10</span>
 </pre></div>
 </div>
 </div>
@@ -699,8 +693,8 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Or tests of our data:</span>
-<span class="n">age</span> <span class="o">&lt;-</span> <span class="m">17</span>   <span class="c1"># Some fake data</span>
-<span class="n">age</span> <span class="o">&gt;</span> <span class="m">18</span>
+<span class="n">age</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">17</span><span class="w">   </span><span class="c1"># Some fake data</span>
+<span class="n">age</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">18</span>
 </pre></div>
 </div>
 </div>
@@ -711,9 +705,9 @@ title="Print to PDF"
 <p>So to evaluate whether two things are equal, we use a double-equal sign (<code class="docutils literal notranslate"><span class="pre">==</span></code>). For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="m">5</span>
-<span class="n">b</span> <span class="o">&lt;-</span> <span class="m">5</span>
-<span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">5</span>
+<span class="n">b</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">5</span>
+<span class="n">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">b</span>
 </pre></div>
 </div>
 </div>
@@ -722,8 +716,8 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">&lt;-</span> <span class="m">7</span>
-<span class="n">a</span> <span class="o">==</span> <span class="n">c</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">7</span>
+<span class="n">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">c</span>
 </pre></div>
 </div>
 </div>
@@ -733,7 +727,7 @@ title="Print to PDF"
 <p>And we can also use the <code class="docutils literal notranslate"><span class="pre">!=</span></code> to test if two things are <em>not</em> equal:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">5</span> <span class="o">!=</span> <span class="m">5</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">5</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="m">5</span>
 </pre></div>
 </div>
 </div>
@@ -742,7 +736,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">!=</span> <span class="n">c</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">c</span>
 </pre></div>
 </div>
 </div>
@@ -829,7 +823,7 @@ title="Print to PDF"
   
     By Josh Clinton and Nick Eubank<br/>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2023.<br/>
 </p>
         </footer>
     </div>

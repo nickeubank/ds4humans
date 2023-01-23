@@ -50,6 +50,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -113,18 +114,6 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Preface
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../00_preface/00_preface.html">
-   Introduction to Data Science for Humans
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   Introduction
  </span>
 </p>
@@ -151,8 +140,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../30_questions/00_from_problems_to_questions.html">
-   From Problems to Questions
+  <a class="reference internal" href="../30_questions/00_solving_the_right_problem.html">
+   Solving the Right Problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_questions/05_descriptive_v_proscriptive.html">
+   Descriptive versus Proscriptive Questions
   </a>
  </li>
  <li class="toctree-l1">
@@ -162,7 +156,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../30_questions/20_passive_prediction_questions.html">
-   Classification Questions
+   Passive-Prediction Questions
   </a>
  </li>
  <li class="toctree-l1">
@@ -522,11 +516,11 @@ identifies each row); <code class="docutils literal notranslate"><span class="pr
 student’s school); and <code class="docutils literal notranslate"><span class="pre">sat_score</span></code> (the student’s SAT score).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span>
-    <span class="n">student</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;al&quot;</span><span class="p">,</span> <span class="s">&quot;bo&quot;</span><span class="p">,</span> <span class="s">&quot;cindy&quot;</span><span class="p">,</span> <span class="s">&quot;dan&quot;</span><span class="p">,</span> <span class="s">&quot;ella&quot;</span><span class="p">,</span> <span class="s">&quot;frank&quot;</span><span class="p">,</span> <span class="s">&quot;gina&quot;</span><span class="p">,</span> <span class="s">&quot;henry&quot;</span><span class="p">),</span> 
-    <span class="n">school</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="s">&quot;stanford&quot;</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span> <span class="nf">rep</span><span class="p">(</span><span class="s">&quot;berkley&quot;</span><span class="p">,</span> <span class="m">4</span><span class="p">)),</span>
-    <span class="n">sat_score</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">750</span><span class="p">,</span> <span class="m">730</span><span class="p">,</span> <span class="m">690</span><span class="p">,</span> <span class="m">800</span><span class="p">,</span> <span class="m">780</span><span class="p">,</span> <span class="m">720</span><span class="p">,</span> <span class="m">730</span><span class="p">,</span> <span class="m">700</span><span class="p">)</span>
-    <span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span>
+<span class="w">    </span><span class="n">student</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;al&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;bo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;cindy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;dan&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ella&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;frank&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;gina&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;henry&quot;</span><span class="p">),</span><span class="w"> </span>
+<span class="w">    </span><span class="n">school</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="s">&quot;stanford&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">),</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="s">&quot;berkley&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">)),</span>
+<span class="w">    </span><span class="n">sat_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">750</span><span class="p">,</span><span class="w"> </span><span class="m">730</span><span class="p">,</span><span class="w"> </span><span class="m">690</span><span class="p">,</span><span class="w"> </span><span class="m">800</span><span class="p">,</span><span class="w"> </span><span class="m">780</span><span class="p">,</span><span class="w"> </span><span class="m">720</span><span class="p">,</span><span class="w"> </span><span class="m">730</span><span class="p">,</span><span class="w"> </span><span class="m">700</span><span class="p">)</span>
+<span class="w">    </span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -536,9 +530,9 @@ a higher SAT score? Based on my (in reality-not-so-random) random
 assignment of scores, it appears to be Stanford:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">%&gt;%</span>
-    <span class="nf">group_by</span><span class="p">(</span><span class="n">school</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">summarize</span><span class="p">(</span><span class="nf">mean</span><span class="p">(</span><span class="n">sat_score</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">school</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">summarize</span><span class="p">(</span><span class="nf">mean</span><span class="p">(</span><span class="n">sat_score</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -562,9 +556,9 @@ this case, we’re finding the mean SAT score in each cluster.</p>
 <p>It’s often useful to assign a name to the collapsed variable:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">%&gt;%</span>
-    <span class="nf">group_by</span><span class="p">(</span><span class="n">school</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">summarize</span><span class="p">(</span><span class="n">mean_sat</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">sat_score</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">school</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">summarize</span><span class="p">(</span><span class="n">mean_sat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">sat_score</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -587,9 +581,9 @@ data frame to R’s memory. Here’s how to do this, creating a new
 object called <code class="docutils literal notranslate"><span class="pre">grades_clps</span></code> with the collapsed data:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">grades_clps</span> <span class="o">&lt;-</span> <span class="n">grades</span> <span class="o">%&gt;%</span>
-    <span class="nf">group_by</span><span class="p">(</span><span class="n">school</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">summarize</span><span class="p">(</span><span class="n">mean_sat</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">sat_score</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">grades_clps</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">grades</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">school</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">summarize</span><span class="p">(</span><span class="n">mean_sat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">sat_score</span><span class="p">))</span>
 <span class="n">grades_clps</span>
 </pre></div>
 </div>
@@ -616,12 +610,12 @@ variable. Collapsing can also be done using several grouping
 variables. Let’s modify the <code class="docutils literal notranslate"><span class="pre">grades</span></code> data frame to illustrate:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span>
-    <span class="n">student</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;al&quot;</span><span class="p">,</span> <span class="s">&quot;bo&quot;</span><span class="p">,</span> <span class="s">&quot;cindy&quot;</span><span class="p">,</span> <span class="s">&quot;dan&quot;</span><span class="p">,</span> <span class="s">&quot;ella&quot;</span><span class="p">,</span> <span class="s">&quot;frank&quot;</span><span class="p">,</span> <span class="s">&quot;gina&quot;</span><span class="p">,</span> <span class="s">&quot;henry&quot;</span><span class="p">),</span> 
-    <span class="n">school</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="s">&quot;stanford&quot;</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span> <span class="nf">rep</span><span class="p">(</span><span class="s">&quot;berkley&quot;</span><span class="p">,</span> <span class="m">4</span><span class="p">)),</span>
-    <span class="n">classof</span> <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">2017</span><span class="p">,</span> <span class="m">2017</span><span class="p">,</span> <span class="m">2018</span><span class="p">,</span> <span class="m">2018</span><span class="p">),</span> <span class="m">2</span><span class="p">),</span> 
-    <span class="n">sat_score</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">750</span><span class="p">,</span> <span class="m">730</span><span class="p">,</span> <span class="m">690</span><span class="p">,</span> <span class="m">800</span><span class="p">,</span> <span class="m">780</span><span class="p">,</span> <span class="m">720</span><span class="p">,</span> <span class="m">730</span><span class="p">,</span> <span class="m">700</span><span class="p">)</span>
-    <span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span>
+<span class="w">    </span><span class="n">student</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;al&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;bo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;cindy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;dan&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ella&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;frank&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;gina&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;henry&quot;</span><span class="p">),</span><span class="w"> </span>
+<span class="w">    </span><span class="n">school</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="s">&quot;stanford&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">),</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="s">&quot;berkley&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">)),</span>
+<span class="w">    </span><span class="n">classof</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">2017</span><span class="p">,</span><span class="w"> </span><span class="m">2017</span><span class="p">,</span><span class="w"> </span><span class="m">2018</span><span class="p">,</span><span class="w"> </span><span class="m">2018</span><span class="p">),</span><span class="w"> </span><span class="m">2</span><span class="p">),</span><span class="w"> </span>
+<span class="w">    </span><span class="n">sat_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">750</span><span class="p">,</span><span class="w"> </span><span class="m">730</span><span class="p">,</span><span class="w"> </span><span class="m">690</span><span class="p">,</span><span class="w"> </span><span class="m">800</span><span class="p">,</span><span class="w"> </span><span class="m">780</span><span class="p">,</span><span class="w"> </span><span class="m">720</span><span class="p">,</span><span class="w"> </span><span class="m">730</span><span class="p">,</span><span class="w"> </span><span class="m">700</span><span class="p">)</span>
+<span class="w">    </span><span class="p">)</span>
 <span class="n">grades</span>
 </pre></div>
 </div>
@@ -652,9 +646,9 @@ the expected graduation year for each student.</p>
 specify the variables to collapse by inside <code class="docutils literal notranslate"><span class="pre">group_by()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">%&gt;%</span>
-    <span class="nf">group_by</span><span class="p">(</span><span class="n">school</span><span class="p">,</span> <span class="n">classof</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">summarize</span><span class="p">(</span><span class="n">mean_sat</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">sat_score</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">school</span><span class="p">,</span><span class="w"> </span><span class="n">classof</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">summarize</span><span class="p">(</span><span class="n">mean_sat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">sat_score</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -689,10 +683,10 @@ which I’m filtering the <code class="docutils literal notranslate"><span class
 collapsing:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">%&gt;%</span>
-    <span class="nf">filter</span><span class="p">(</span><span class="n">classof</span> <span class="o">==</span> <span class="m">2017</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">group_by</span><span class="p">(</span><span class="n">school</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">summarize</span><span class="p">(</span><span class="n">mean_sat</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">sat_score</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">filter</span><span class="p">(</span><span class="n">classof</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">2017</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">school</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">summarize</span><span class="p">(</span><span class="n">mean_sat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">sat_score</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -715,10 +709,10 @@ the mean SAT scores to be between 0 and 100, assuming 800 is the maximum
 possible score):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">%&gt;%</span>
-    <span class="nf">group_by</span><span class="p">(</span><span class="n">school</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">summarize</span><span class="p">(</span><span class="n">mean_sat</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">sat_score</span><span class="p">))</span> <span class="o">%&gt;%</span>
-    <span class="nf">mutate</span><span class="p">(</span><span class="n">mean_sat_strd</span> <span class="o">=</span> <span class="p">(</span><span class="n">mean_sat</span> <span class="o">/</span> <span class="m">800</span><span class="p">)</span> <span class="o">*</span> <span class="m">100</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">school</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">summarize</span><span class="p">(</span><span class="n">mean_sat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">sat_score</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">mutate</span><span class="p">(</span><span class="n">mean_sat_strd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">mean_sat</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">800</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">100</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -745,13 +739,13 @@ R’s built-in functions or write your own function. Here are examples that
 make use of other common functions:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">%&gt;%</span>
-    <span class="nf">group_by</span><span class="p">(</span><span class="n">school</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">summarize</span><span class="p">(</span><span class="n">median_sat</span> <span class="o">=</span> <span class="nf">median</span><span class="p">(</span><span class="n">sat_score</span><span class="p">),</span>
-              <span class="n">sd_sat</span> <span class="o">=</span> <span class="nf">sd</span><span class="p">(</span><span class="n">sat_score</span><span class="p">),</span> 
-              <span class="n">min_sat</span> <span class="o">=</span> <span class="nf">min</span><span class="p">(</span><span class="n">sat_score</span><span class="p">),</span>
-              <span class="n">max_sat</span> <span class="o">=</span> <span class="nf">max</span><span class="p">(</span><span class="n">sat_score</span><span class="p">),</span>
-              <span class="n">dif_maxmin</span> <span class="o">=</span> <span class="n">max_sat</span> <span class="o">-</span> <span class="n">min_sat</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">school</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">summarize</span><span class="p">(</span><span class="n">median_sat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">median</span><span class="p">(</span><span class="n">sat_score</span><span class="p">),</span>
+<span class="w">              </span><span class="n">sd_sat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">sd</span><span class="p">(</span><span class="n">sat_score</span><span class="p">),</span><span class="w"> </span>
+<span class="w">              </span><span class="n">min_sat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">min</span><span class="p">(</span><span class="n">sat_score</span><span class="p">),</span>
+<span class="w">              </span><span class="n">max_sat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="n">sat_score</span><span class="p">),</span>
+<span class="w">              </span><span class="n">dif_maxmin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max_sat</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">min_sat</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -772,11 +766,11 @@ make use of other common functions:</p>
 <p>Here’s an example of using your own function:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">maxmindif</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="nf">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="nf">min</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">maxmindif</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nf">min</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-<span class="n">grades</span> <span class="o">%&gt;%</span>
-    <span class="nf">group_by</span><span class="p">(</span><span class="n">school</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">summarize</span><span class="p">(</span><span class="n">dif_maxmin</span> <span class="o">=</span> <span class="nf">maxmindif</span><span class="p">(</span><span class="n">sat_score</span><span class="p">))</span>
+<span class="n">grades</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">school</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">summarize</span><span class="p">(</span><span class="n">dif_maxmin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">maxmindif</span><span class="p">(</span><span class="n">sat_score</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -799,9 +793,9 @@ within <code class="docutils literal notranslate"><span class="pre">summarize()<
 provides the number of observations in each cluster:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">%&gt;%</span>
-    <span class="nf">group_by</span><span class="p">(</span><span class="n">school</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">summarize</span><span class="p">(</span><span class="n">no_obs</span> <span class="o">=</span> <span class="nf">n</span><span class="p">())</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">group_by</span><span class="p">(</span><span class="n">school</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">summarize</span><span class="p">(</span><span class="n">no_obs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">n</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -872,7 +866,7 @@ is a “democracy” or not. For the purpose of this exercise, a country is a
   
     By Josh Clinton and Nick Eubank<br/>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2023.<br/>
 </p>
         </footer>
     </div>

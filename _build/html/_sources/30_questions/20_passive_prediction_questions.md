@@ -13,10 +13,10 @@ There are two flavors of Passive-Prediction Questions:
 
 The first category of passive prediction—predicting something that has yet to occur—is the most intuitive, and is the type of passive prediction that accords best with the normal meaning of the term "predict." But the second favor of passive prediction—in which we try and predict what someone *would* do—is also very important, as it underlies efforts at automation. Spam detection, image classification, autocomplete, and self-driving cars are all examples of situations where we train a model by showing it examples of how a person *would* do something, so the model can predict what a person would do when faced with new data and emulate that behavior itself.
 
-Just as there are two flavors of passive-prediction, so too are there two primary use cases for answering Passive-Prediction Questions:
+And just as there are two flavors of passive-prediction, so too are there two corresponding use cases for answering Passive-Prediction Questions:
 
 - Identifying individual entities for follow-up, and
-- Automating data classification to make hard-to-work-with data (images, text) simpler
+- Automating data classification to make hard-to-work-with data (images, medical scans, text) simpler
 
 ## Differentiating Between Exploratory and Passive-Prediction Questions
 
@@ -36,8 +36,20 @@ This distinction also has important implications when working with more opaque s
 
 ## When Are Our Predictions Valid?
 
-External validity!
+Because passive-prediction is fundamentally about making predictions about things that are not-yet-seen, making predictions is one of the more precarious things a data scientist can do. But that doesn't mean that we are helpless when it comes to determining how confident we should be in our predictions, and when and where we think our predictions will be reliable. In particular, as data scientists we have a great many tools for evaluating how well our model fits the data we *already have* (a concept known as *internal validity*), and ways of thinking critically about the contexts in which using a given model to make predictions is appropriate.
 
-### Manipulations
+### Internal Validity
+
+Of all the places where data science is fragmented, none is more evident than in how data scientists evaluate how effectively we think a model is faithfully representing the variation in the dataset.
+
+The first data science perspective on evaluating the internal validity of a model comes from the field of statistics. Statisticians have approached evaluating model fit with, unsurprisingly, methods based on making assumptions about the statistical distributions underlying their data and deriving principled metrics from statistical principles and the concept of random sampling. That's the origin of metrics like Akaike Information Criterion (AIC), Bayesian Information Criterion (BIC), bootstrapping, etc., as well as the emphasis on the validity of the standard errors assigned to factors on the right-hand side of the regression.
+
+When designing machine learning methods, computer scientists... I'm editorializing a little here, but I think it's safe to say that initially they either didn't *know about* a lot of statistics, or they thought that they could do it better than statisticians. So the way they approached dealing with evaluation of how well their model was fitting their data was to split their data into two parts: a training dataset (usually about 80\% of the data) and a test dataset (the other 20\%). They then fit their model with the training data and evaluate the model based on how well the model is able to predict the (known) outcomes in the test dataset.
+
+Of course, over time these two fields have largely converged in adopting one another's methods, and some—like cross-validation—live comfortably in the middle. But if you're ever wondering why, when you get to a machine learning class, it seems like everything you learned in stats has been abandoned (or end up in a stats class and have the opposite experience), it's largely an artifact of parallel development of methods of model evaluation in computer science and statistics departments.
+
+### External Validity
+
+## Manipulation and External Validity
 
 External validity can refer to "outside the range of parameters in the training data", but it can also refer to situations where the processes shaping outcomes in the world may have changed!

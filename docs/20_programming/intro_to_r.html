@@ -50,6 +50,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -113,18 +114,6 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Preface
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../00_preface/00_preface.html">
-   Introduction to Data Science for Humans
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   Introduction
  </span>
 </p>
@@ -151,8 +140,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../30_questions/00_from_problems_to_questions.html">
-   From Problems to Questions
+  <a class="reference internal" href="../30_questions/00_solving_the_right_problem.html">
+   Solving the Right Problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_questions/05_descriptive_v_proscriptive.html">
+   Descriptive versus Proscriptive Questions
   </a>
  </li>
  <li class="toctree-l1">
@@ -162,7 +156,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../30_questions/20_passive_prediction_questions.html">
-   Classification Questions
+   Passive-Prediction Questions
   </a>
  </li>
  <li class="toctree-l1">
@@ -617,7 +611,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is a comment. In the next line, I&#39;ll add 2 and 3.</span>
-<span class="m">2</span> <span class="o">+</span> <span class="m">3</span>
+<span class="m">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">3</span>
 </pre></div>
 </div>
 </div>
@@ -637,7 +631,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Addition</span>
-<span class="m">2</span> <span class="o">+</span> <span class="m">2</span>
+<span class="m">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">2</span>
 </pre></div>
 </div>
 </div>
@@ -647,7 +641,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Multiplication</span>
-<span class="m">2</span> <span class="o">*</span> <span class="m">3</span>
+<span class="m">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">3</span>
 </pre></div>
 </div>
 </div>
@@ -657,7 +651,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Division</span>
-<span class="m">4</span> <span class="o">/</span> <span class="m">2</span>
+<span class="m">4</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">2</span>
 </pre></div>
 </div>
 </div>
@@ -667,7 +661,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># And even exponentiation (e.g. 2 raised to the third power)</span>
-<span class="m">2</span> <span class="o">^</span> <span class="m">3</span>
+<span class="m">2</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="m">3</span>
 </pre></div>
 </div>
 </div>
@@ -677,7 +671,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># R can also do logical comparisons</span>
-<span class="m">5</span> <span class="o">&lt;</span> <span class="m">7</span>
+<span class="m">5</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">7</span>
 </pre></div>
 </div>
 </div>
@@ -686,7 +680,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">3</span> <span class="o">&gt;=</span> <span class="m">5</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">3</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">5</span>
 </pre></div>
 </div>
 </div>
@@ -702,7 +696,7 @@ title="Print to PDF"
 <p>For example, if we wanted to assign the value of <code class="docutils literal notranslate"><span class="pre">6</span></code> to the variable <code class="docutils literal notranslate"><span class="pre">a</span></code>, we’d type:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="m">6</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">6</span>
 </pre></div>
 </div>
 </div>
@@ -720,7 +714,7 @@ title="Print to PDF"
 <p>And if we tried to do math with <code class="docutils literal notranslate"><span class="pre">a</span></code>, R would treat that variable <code class="docutils literal notranslate"><span class="pre">a</span></code> as though it were <code class="docutils literal notranslate"><span class="pre">6</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">*</span> <span class="m">2</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">2</span>
 </pre></div>
 </div>
 </div>
@@ -731,10 +725,10 @@ title="Print to PDF"
 <h3>A Variable is a Box<a class="headerlink" href="#a-variable-is-a-box" title="Permalink to this headline">#</a></h3>
 <p>So what is a variable? <strong>A variable is a box that stores a value.</strong> And assigning a value to a variable is how we put a value in the box.</p>
 <p>To illustrate, let’s step through a few lines of code and illustrate what’s going using this idea of a variable as a box. In particular, let’s walk through the following code to see what’s happening on each line:</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="m">6</span>
-<span class="n">b</span> <span class="o">&lt;-</span> <span class="m">7</span>
-<span class="n">c</span> <span class="o">&lt;-</span> <span class="n">b</span> <span class="o">*</span> <span class="n">a</span>
-<span class="n">a</span> <span class="o">&lt;-</span> <span class="m">2</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">6</span>
+<span class="n">b</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">7</span>
+<span class="n">c</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span>
+<span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">2</span>
 </pre></div>
 </div>
 <p>Here, in the first line, we’re assigning the value of <code class="docutils literal notranslate"><span class="pre">6</span></code> to <code class="docutils literal notranslate"><span class="pre">a</span></code>, so as we see R is putting a <code class="docutils literal notranslate"><span class="pre">6</span></code> in the box labelled <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
@@ -770,7 +764,7 @@ title="Print to PDF"
 <p>The first is what we were doing at the top of this tutorial – if you run a line of code and don’t assignment to a variable, then R will evaluate the expression and print out the result. This is true whether the expression is just the name of a variable (e.g. if you run <code class="docutils literal notranslate"><span class="pre">a</span></code>, R just prints the value that’s been assigned to <code class="docutils literal notranslate"><span class="pre">a</span></code>), or something more complicated (<code class="docutils literal notranslate"><span class="pre">(a</span> <span class="pre">*</span> <span class="pre">123)</span> <span class="pre">/</span> <span class="pre">42</span></code>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">&lt;-</span> <span class="m">42</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">z</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">42</span>
 <span class="n">z</span>
 </pre></div>
 </div>
@@ -798,8 +792,8 @@ title="Print to PDF"
 <p>Given that, can you predict what the value of <code class="docutils literal notranslate"><span class="pre">a</span></code> will be after the following code is run?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="m">4</span>
-<span class="n">a</span> <span class="o">&lt;-</span> <span class="n">a</span> <span class="o">+</span> <span class="m">1</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">4</span>
+<span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span>
 </pre></div>
 </div>
 </div>
@@ -808,7 +802,7 @@ title="Print to PDF"
 <p>When the expression on the right-hand side is more complex, R will evaluate it using the same order of operations you learned in high school math (parenthesis, exponents, multiplication and division, addition and subtraction, or <a class="reference external" href="https://www.mathsisfun.com/operation-order-pemdas.html">PEMDAS</a>). So R will parse the following code:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">5</span> <span class="o">+</span> <span class="m">2</span> <span class="o">*</span> <span class="p">(</span><span class="m">20</span> <span class="o">-</span> <span class="m">2</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="m">20</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -816,17 +810,17 @@ title="Print to PDF"
 <div class="output text_html">41</div></div>
 </div>
 <p>By evaluating things in parentheses, then any multiplication/division operations, and then any addition, subtraction operations:</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span>  <span class="m">5</span> <span class="o">+</span> <span class="m">2</span> <span class="o">*</span> <span class="p">(</span><span class="m">20</span> <span class="o">-</span> <span class="m">2</span><span class="p">)</span>
-<span class="o">=</span> <span class="m">5</span> <span class="o">+</span> <span class="m">2</span> <span class="o">*</span> <span class="m">18</span> <span class="c1"># Parenthesis evaluated</span>
-<span class="o">=</span> <span class="m">5</span> <span class="o">+</span> <span class="m">36</span>     <span class="c1"># Multiplication evaluated</span>
-<span class="o">=</span> <span class="m">41</span>         <span class="c1"># Addition evaluated. </span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="m">5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="m">20</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">2</span><span class="p">)</span>
+<span class="o">=</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="c1"># Parenthesis evaluated</span>
+<span class="o">=</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">36</span><span class="w">     </span><span class="c1"># Multiplication evaluated</span>
+<span class="o">=</span><span class="w"> </span><span class="m">41</span><span class="w">         </span><span class="c1"># Addition evaluated. </span>
 </pre></div>
 </div>
 <p><strong>NOT</strong> left-to-right:</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span>  <span class="m">5</span> <span class="o">+</span> <span class="m">2</span> <span class="o">*</span> <span class="p">(</span><span class="m">20</span> <span class="o">-</span> <span class="m">2</span><span class="p">)</span>
-<span class="o">=</span> <span class="m">7</span> <span class="o">*</span> <span class="p">(</span><span class="m">20</span> <span class="o">-</span> <span class="m">2</span><span class="p">)</span>
-<span class="o">=</span> <span class="m">7</span> <span class="o">*</span> <span class="m">18</span>
-<span class="o">=</span> <span class="m">126</span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="m">5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="m">20</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">2</span><span class="p">)</span>
+<span class="o">=</span><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="m">20</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">2</span><span class="p">)</span>
+<span class="o">=</span><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">18</span>
+<span class="o">=</span><span class="w"> </span><span class="m">126</span>
 </pre></div>
 </div>
 </section>
@@ -849,7 +843,7 @@ title="Print to PDF"
 <p>The function <code class="docutils literal notranslate"><span class="pre">choose()</span></code> takes 2 arguments: the first is the total number of items (52 cards, in our example), and the second is the number of items you want to draw (say, 5 cards). So to answer our question, we’d type:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">choose</span><span class="p">(</span><span class="m">52</span><span class="p">,</span> <span class="m">5</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">choose</span><span class="p">(</span><span class="m">52</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -869,7 +863,7 @@ title="Print to PDF"
 <p>But it accepts a keyword argument called <code class="docutils literal notranslate"><span class="pre">digits</span></code> that allows you to change its behavior. For example, if I wanted pi rounded to 2 decimal places, I could type:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">round</span><span class="p">(</span><span class="m">3.141592653589793</span><span class="p">,</span> <span class="n">digits</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">round</span><span class="p">(</span><span class="m">3.141592653589793</span><span class="p">,</span><span class="w"> </span><span class="n">digits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -907,8 +901,8 @@ Arguments:
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s get the value of 7!</span>
 <span class="c1"># (e.g. 7 x 6 x 5 x 4 x 3 x 2 x 1, also known as 7 factorial)</span>
 
-<span class="n">a</span> <span class="o">&lt;-</span> <span class="m">7</span>
-<span class="n">a_factorial</span> <span class="o">&lt;-</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">7</span>
+<span class="n">a_factorial</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">factorial</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -926,16 +920,16 @@ Arguments:
 <section id="evaluating-nested-functions">
 <h3>Evaluating Nested Functions<a class="headerlink" href="#evaluating-nested-functions" title="Permalink to this headline">#</a></h3>
 <p>Functions can also be nested, in which case R just evaluates them from the inside out. For example, can you figure out what this code would return (<code class="docutils literal notranslate"><span class="pre">abs</span></code> returns the absolute value of the input)?</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="m">-9</span>
-<span class="n">b</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">-9</span>
+<span class="n">b</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sqrt</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>?</p>
 <p>Let’s run it and find out:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="m">-9</span>
-<span class="n">b</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">-9</span>
+<span class="n">b</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sqrt</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
 <span class="n">b</span>
 </pre></div>
 </div>
@@ -1015,7 +1009,7 @@ Arguments:
   
     By Josh Clinton and Nick Eubank<br/>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2023.<br/>
 </p>
         </footer>
     </div>

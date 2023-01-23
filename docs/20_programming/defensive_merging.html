@@ -50,6 +50,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -113,18 +114,6 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Preface
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../00_preface/00_preface.html">
-   Introduction to Data Science for Humans
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   Introduction
  </span>
 </p>
@@ -151,8 +140,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../30_questions/00_from_problems_to_questions.html">
-   From Problems to Questions
+  <a class="reference internal" href="../30_questions/00_solving_the_right_problem.html">
+   Solving the Right Problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_questions/05_descriptive_v_proscriptive.html">
+   Descriptive versus Proscriptive Questions
   </a>
  </li>
  <li class="toctree-l1">
@@ -162,7 +156,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../30_questions/20_passive_prediction_questions.html">
-   Classification Questions
+   Passive-Prediction Questions
   </a>
  </li>
  <li class="toctree-l1">
@@ -494,10 +488,10 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate toy dataset 1:</span>
-<span class="n">demo</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span>
-    <span class="n">country</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;USA&quot;</span><span class="p">,</span> <span class="s">&quot;Albania&quot;</span><span class="p">,</span> <span class="s">&quot;Turkey&quot;</span><span class="p">,</span> <span class="s">&quot;China&quot;</span><span class="p">,</span> <span class="s">&quot;Sudan&quot;</span><span class="p">),</span>
-    <span class="n">democracy_score</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">19</span><span class="p">,</span> <span class="m">16</span><span class="p">,</span> <span class="m">16</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">10</span><span class="p">)</span>
-    <span class="p">)</span>
+<span class="n">demo</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span>
+<span class="w">    </span><span class="n">country</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;USA&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Albania&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Turkey&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;China&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Sudan&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="n">democracy_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">19</span><span class="p">,</span><span class="w"> </span><span class="m">16</span><span class="p">,</span><span class="w"> </span><span class="m">16</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">)</span>
+<span class="w">    </span><span class="p">)</span>
 <span class="n">demo</span>
 </pre></div>
 </div>
@@ -522,10 +516,10 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate toy dataset 2:</span>
-<span class="n">econ</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span>
-    <span class="nf">expand.grid</span><span class="p">(</span><span class="n">year</span> <span class="o">=</span> <span class="m">1994</span><span class="o">:</span><span class="m">1996</span><span class="p">,</span> <span class="n">country</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;United States&quot;</span><span class="p">,</span> <span class="s">&quot;China&quot;</span><span class="p">,</span> <span class="s">&quot;Sudan&quot;</span><span class="p">)),</span>
-    <span class="n">gdp_pc</span> <span class="o">=</span> <span class="nf">round</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">9</span><span class="p">,</span> <span class="m">1000</span><span class="p">,</span> <span class="m">20000</span><span class="p">),</span> <span class="m">0</span><span class="p">)</span>
-    <span class="p">)</span>
+<span class="n">econ</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span>
+<span class="w">    </span><span class="nf">expand.grid</span><span class="p">(</span><span class="n">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1994</span><span class="o">:</span><span class="m">1996</span><span class="p">,</span><span class="w"> </span><span class="n">country</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;United States&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;China&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Sudan&quot;</span><span class="p">)),</span>
+<span class="w">    </span><span class="n">gdp_pc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">round</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">9</span><span class="p">,</span><span class="w"> </span><span class="m">1000</span><span class="p">,</span><span class="w"> </span><span class="m">20000</span><span class="p">),</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">)</span>
 <span class="n">econ</span>
 </pre></div>
 </div>
@@ -538,15 +532,15 @@ title="Print to PDF"
 	<tr><th scope=col>&lt;int&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>1994</td><td>United States</td><td>10217</td></tr>
-	<tr><td>1995</td><td>United States</td><td>12205</td></tr>
-	<tr><td>1996</td><td>United States</td><td> 8860</td></tr>
-	<tr><td>1994</td><td>China        </td><td>10907</td></tr>
-	<tr><td>1995</td><td>China        </td><td> 3503</td></tr>
-	<tr><td>1996</td><td>China        </td><td> 6580</td></tr>
-	<tr><td>1994</td><td>Sudan        </td><td>15138</td></tr>
-	<tr><td>1995</td><td>Sudan        </td><td> 4363</td></tr>
-	<tr><td>1996</td><td>Sudan        </td><td>19226</td></tr>
+	<tr><td>1994</td><td>United States</td><td> 9970</td></tr>
+	<tr><td>1995</td><td>United States</td><td>15472</td></tr>
+	<tr><td>1996</td><td>United States</td><td> 4468</td></tr>
+	<tr><td>1994</td><td>China        </td><td>11178</td></tr>
+	<tr><td>1995</td><td>China        </td><td> 5397</td></tr>
+	<tr><td>1996</td><td>China        </td><td> 9036</td></tr>
+	<tr><td>1994</td><td>Sudan        </td><td> 7165</td></tr>
+	<tr><td>1995</td><td>Sudan        </td><td>11115</td></tr>
+	<tr><td>1996</td><td>Sudan        </td><td>17134</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -554,7 +548,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">statar</span><span class="p">)</span>
-<span class="nf">join</span><span class="p">(</span><span class="n">econ</span><span class="p">,</span> <span class="n">demo</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;country&quot;</span><span class="p">,</span> <span class="s">&quot;year&quot;</span><span class="p">),</span> <span class="n">kind</span> <span class="o">=</span> <span class="s">&quot;inner&quot;</span><span class="p">)</span>
+<span class="nf">join</span><span class="p">(</span><span class="n">econ</span><span class="p">,</span><span class="w"> </span><span class="n">demo</span><span class="p">,</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;country&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;year&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;inner&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -572,11 +566,11 @@ Traceback:
 <p>Similarly, because it doesn’t seem like regions would change over time, you assume that your <code class="docutils literal notranslate"><span class="pre">region</span></code> dataset has one observation per country, but in actuality at some point in the past the United Nations changed region designations, and so the dataset includes one entry per country-year:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">region</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span>
-    <span class="n">country</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;USA&quot;</span><span class="p">,</span> <span class="s">&quot;China&quot;</span><span class="p">,</span> <span class="s">&quot;Sudan&quot;</span><span class="p">),</span>
-    <span class="n">region</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;America&quot;</span><span class="p">,</span> <span class="s">&quot;Asia&quot;</span><span class="p">,</span> <span class="s">&quot;Africa&quot;</span><span class="p">),</span>
-    <span class="n">year</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1994</span><span class="p">,</span> <span class="m">1994</span><span class="p">,</span> <span class="m">1994</span><span class="p">,</span> <span class="m">1995</span><span class="p">,</span> <span class="m">1995</span><span class="p">,</span> <span class="m">1995</span><span class="p">,</span> <span class="m">1996</span><span class="p">,</span> <span class="m">1996</span><span class="p">,</span> <span class="m">1996</span><span class="p">)</span>
-    <span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">region</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span>
+<span class="w">    </span><span class="n">country</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;USA&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;China&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Sudan&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="n">region</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;America&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Asia&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Africa&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="n">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1994</span><span class="p">,</span><span class="w"> </span><span class="m">1994</span><span class="p">,</span><span class="w"> </span><span class="m">1994</span><span class="p">,</span><span class="w"> </span><span class="m">1995</span><span class="p">,</span><span class="w"> </span><span class="m">1995</span><span class="p">,</span><span class="w"> </span><span class="m">1995</span><span class="p">,</span><span class="w"> </span><span class="m">1996</span><span class="p">,</span><span class="w"> </span><span class="m">1996</span><span class="p">,</span><span class="w"> </span><span class="m">1996</span><span class="p">)</span>
+<span class="w">    </span><span class="p">)</span>
 <span class="n">region</span>
 </pre></div>
 </div>
@@ -605,7 +599,7 @@ Traceback:
 <p>Now if you merged this dataset with <code class="docutils literal notranslate"><span class="pre">demo</span></code> on <code class="docutils literal notranslate"><span class="pre">&quot;country&quot;</span></code> like we did above, this is what would happen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">join</span><span class="p">(</span><span class="n">demo</span><span class="p">,</span> <span class="n">region</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="s">&quot;country&quot;</span><span class="p">,</span> <span class="n">kind</span> <span class="o">=</span> <span class="s">&quot;inner&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">join</span><span class="p">(</span><span class="n">demo</span><span class="p">,</span><span class="w"> </span><span class="n">region</span><span class="p">,</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;country&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;inner&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -645,16 +639,16 @@ Traceback:
 <section id="checking-merge-type">
 <h3>Checking Merge Type<a class="headerlink" href="#checking-merge-type" title="Permalink to this headline">#</a></h3>
 <p>To illustrate, let’s try our region merge again with statar. We <em>think</em> we’re doing a many-to-1 merge (we expect several country-year pairs in <code class="docutils literal notranslate"><span class="pre">demo</span></code> to each match to one row in <code class="docutils literal notranslate"><span class="pre">region</span></code>), so we use the argument <code class="docutils literal notranslate"><span class="pre">check</span> <span class="pre">=</span> <span class="pre">m~1</span></code>:</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">join</span><span class="p">(</span><span class="n">demo</span><span class="p">,</span> <span class="n">region</span><span class="p">,</span> <span class="n">kind</span> <span class="o">=</span> <span class="s">&quot;inner&quot;</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="s">&quot;country&quot;</span><span class="p">,</span> <span class="n">check</span> <span class="o">=</span> <span class="n">m</span><span class="o">~</span><span class="m">1</span><span class="p">)</span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">join</span><span class="p">(</span><span class="n">demo</span><span class="p">,</span><span class="w"> </span><span class="n">region</span><span class="p">,</span><span class="w"> </span><span class="n">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;inner&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;country&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">check</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m</span><span class="o">~</span><span class="m">1</span><span class="p">)</span>
 
-<span class="o">&gt;</span> <span class="n">ERROR</span><span class="o">:</span> <span class="n">Error</span><span class="o">:</span> <span class="nf">Variable</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">country</span> <span class="n">don</span><span class="s">&#39;t uniquely identify observations in y</span>
-<span class="s">&gt; Error: Variable(s) country don&#39;</span><span class="n">t</span> <span class="n">uniquely</span> <span class="n">identify</span> <span class="n">observations</span> <span class="n">in</span> <span class="n">y</span>
-<span class="o">&gt;</span> <span class="n">Traceback</span><span class="o">:</span>
-<span class="o">&gt;</span> 
-<span class="o">&gt;</span> <span class="m">1</span><span class="n">.</span> <span class="nf">join</span><span class="p">(</span><span class="n">demo</span><span class="p">,</span> <span class="n">region</span><span class="p">,</span> <span class="n">kind</span> <span class="o">=</span> <span class="s">&quot;inner&quot;</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="s">&quot;country&quot;</span><span class="p">,</span> <span class="n">check</span> <span class="o">=</span> <span class="n">m</span> <span class="o">~</span> 
-<span class="o">&gt;</span> <span class="n">.</span>     <span class="m">1</span><span class="p">)</span>
-<span class="o">&gt;</span> <span class="m">2</span><span class="n">.</span> <span class="nf">stop</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;Variable(s) &quot;</span><span class="p">,</span> <span class="nf">paste</span><span class="p">(</span><span class="n">vars</span><span class="p">,</span> <span class="n">collapse</span> <span class="o">=</span> <span class="s">&quot; &quot;</span><span class="p">),</span> <span class="s">&quot; don&#39;t uniquely identify observations in y&quot;</span><span class="p">),</span> 
-<span class="o">&gt;</span> <span class="n">.</span>     <span class="n">call.</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">ERROR</span><span class="o">:</span><span class="w"> </span><span class="n">Error</span><span class="o">:</span><span class="w"> </span><span class="nf">Variable</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="n">country</span><span class="w"> </span><span class="n">don</span><span class="s">&#39;t uniquely identify observations in y</span>
+<span class="s">&gt; Error: Variable(s) country don&#39;</span><span class="n">t</span><span class="w"> </span><span class="n">uniquely</span><span class="w"> </span><span class="n">identify</span><span class="w"> </span><span class="n">observations</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">y</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">Traceback</span><span class="o">:</span>
+<span class="o">&gt;</span><span class="w"> </span>
+<span class="o">&gt;</span><span class="w"> </span><span class="m">1</span><span class="n">.</span><span class="w"> </span><span class="nf">join</span><span class="p">(</span><span class="n">demo</span><span class="p">,</span><span class="w"> </span><span class="n">region</span><span class="p">,</span><span class="w"> </span><span class="n">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;inner&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;country&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">check</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">~</span><span class="w"> </span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">.</span><span class="w">     </span><span class="m">1</span><span class="p">)</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="m">2</span><span class="n">.</span><span class="w"> </span><span class="nf">stop</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;Variable(s) &quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="n">vars</span><span class="p">,</span><span class="w"> </span><span class="n">collapse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">),</span><span class="w"> </span><span class="s">&quot; don&#39;t uniquely identify observations in y&quot;</span><span class="p">),</span><span class="w"> </span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">.</span><span class="w">     </span><span class="n">call.</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Ta-da! It points out that <code class="docutils literal notranslate"><span class="pre">country</span></code> doesn’t uniquely identify rows in our <code class="docutils literal notranslate"><span class="pre">region</span></code> dataset! Now we know we have a problem, and we won’t make a dataset full of duplicate entries.</p>
@@ -670,15 +664,15 @@ Traceback:
 <span class="c1"># to our data with diagnostic info. </span>
 
 <span class="c1"># Update demo to have year again. </span>
-<span class="n">demo</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span>
-    <span class="nf">expand.grid</span><span class="p">(</span><span class="n">country</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;USA&quot;</span><span class="p">,</span> <span class="s">&quot;China&quot;</span><span class="p">,</span> <span class="s">&quot;Sudan&quot;</span><span class="p">),</span> <span class="n">year</span> <span class="o">=</span> <span class="m">1994</span><span class="o">:</span><span class="m">1996</span><span class="p">),</span>
-    <span class="n">democracy_score</span> <span class="o">=</span> <span class="nf">round</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">9</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">20</span><span class="p">),</span> <span class="m">0</span><span class="p">)</span>
-    <span class="p">)</span>
+<span class="n">demo</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span>
+<span class="w">    </span><span class="nf">expand.grid</span><span class="p">(</span><span class="n">country</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;USA&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;China&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Sudan&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1994</span><span class="o">:</span><span class="m">1996</span><span class="p">),</span>
+<span class="w">    </span><span class="n">democracy_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">round</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">9</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">20</span><span class="p">),</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">)</span>
 <span class="n">demo</span>
 
-<span class="n">merged_data</span> <span class="o">&lt;-</span> <span class="nf">join</span><span class="p">(</span><span class="n">econ</span><span class="p">,</span> <span class="n">demo</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;country&quot;</span><span class="p">,</span> <span class="s">&quot;year&quot;</span><span class="p">),</span>
-                    <span class="n">kind</span> <span class="o">=</span> <span class="s">&quot;full&quot;</span><span class="p">,</span> <span class="n">gen</span> <span class="o">=</span> <span class="s">&quot;merge_check&quot;</span><span class="p">,</span>
-                    <span class="n">check</span> <span class="o">=</span> <span class="m">1</span><span class="o">~</span><span class="m">1</span><span class="p">)</span>
+<span class="n">merged_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">join</span><span class="p">(</span><span class="n">econ</span><span class="p">,</span><span class="w"> </span><span class="n">demo</span><span class="p">,</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;country&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;year&quot;</span><span class="p">),</span>
+<span class="w">                    </span><span class="n">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;full&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">gen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;merge_check&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">check</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">~</span><span class="m">1</span><span class="p">)</span>
 <span class="n">merged_data</span>
 </pre></div>
 </div>
@@ -756,19 +750,19 @@ Traceback:
 </div>
 </div>
 </div>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">assert_that</span><span class="p">(</span><span class="nf">all</span><span class="p">(</span><span class="n">merged_data</span><span class="o">$</span><span class="n">merge_check</span> <span class="o">==</span> <span class="m">3</span><span class="p">))</span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">assert_that</span><span class="p">(</span><span class="nf">all</span><span class="p">(</span><span class="n">merged_data</span><span class="o">$</span><span class="n">merge_check</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">3</span><span class="p">))</span>
 
-<span class="o">&gt;</span> <span class="n">ERROR</span><span class="o">:</span> <span class="n">Error</span><span class="o">:</span> <span class="n">Elements</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">11</span><span class="p">,</span> <span class="m">12</span> <span class="n">of</span> <span class="n">merged_data</span><span class="o">$</span><span class="n">merge_check</span> <span class="o">==</span> <span class="m">3</span> <span class="n">are</span> <span class="n">not</span> <span class="n">true</span>
-<span class="o">&gt;</span> <span class="n">Error</span><span class="o">:</span> <span class="n">Elements</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">11</span><span class="p">,</span> <span class="m">12</span> <span class="n">of</span> <span class="n">merged_data</span><span class="o">$</span><span class="n">merge_check</span> <span class="o">==</span> <span class="m">3</span> <span class="n">are</span> <span class="n">not</span> <span class="n">true</span>
-<span class="o">&gt;</span> <span class="n">Traceback</span><span class="o">:</span>
-<span class="o">&gt;</span> 
-<span class="o">&gt;</span> <span class="m">1</span><span class="n">.</span> <span class="nf">assert_that</span><span class="p">(</span><span class="nf">all</span><span class="p">(</span><span class="n">merged_data</span><span class="o">$</span><span class="n">merge_check</span> <span class="o">==</span> <span class="m">3</span><span class="p">))</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">ERROR</span><span class="o">:</span><span class="w"> </span><span class="n">Error</span><span class="o">:</span><span class="w"> </span><span class="n">Elements</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">11</span><span class="p">,</span><span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">merged_data</span><span class="o">$</span><span class="n">merge_check</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">true</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">Error</span><span class="o">:</span><span class="w"> </span><span class="n">Elements</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">11</span><span class="p">,</span><span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">merged_data</span><span class="o">$</span><span class="n">merge_check</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">true</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">Traceback</span><span class="o">:</span>
+<span class="o">&gt;</span><span class="w"> </span>
+<span class="o">&gt;</span><span class="w"> </span><span class="m">1</span><span class="n">.</span><span class="w"> </span><span class="nf">assert_that</span><span class="p">(</span><span class="nf">all</span><span class="p">(</span><span class="n">merged_data</span><span class="o">$</span><span class="n">merge_check</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">3</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>And now we know something went wrong. What went wrong? Let’s look at the rows that didn’t merge!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">merged_data</span><span class="p">[</span><span class="n">merged_data</span><span class="o">$</span><span class="n">merge_check</span> <span class="o">!=</span> <span class="m">3</span><span class="p">,</span> <span class="p">]</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">merged_data</span><span class="p">[</span><span class="n">merged_data</span><span class="o">$</span><span class="n">merge_check</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -802,21 +796,21 @@ Traceback:
 <p>Merge the three data frames defined below. Your final data frame should have 9 rows and 5 columns. Hint: merge only two data frames at a time.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Mary&quot;</span><span class="p">,</span> <span class="s">&quot;Thor&quot;</span><span class="p">,</span> <span class="s">&quot;Sven&quot;</span><span class="p">,</span> <span class="s">&quot;Jane&quot;</span><span class="p">,</span> <span class="s">&quot;Ake&quot;</span><span class="p">,</span> <span class="s">&quot;Stephan&quot;</span><span class="p">,</span>
-             <span class="s">&quot;Bjorn&quot;</span><span class="p">,</span> <span class="s">&quot;Oden&quot;</span><span class="p">,</span> <span class="s">&quot;Dennis&quot;</span><span class="p">),</span>
-    <span class="n">treatment_gr</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">),</span> <span class="n">each</span> <span class="o">=</span> <span class="m">3</span><span class="p">)),</span>
-    <span class="n">weight_p1</span> <span class="o">=</span> <span class="nf">round</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">9</span><span class="p">,</span> <span class="m">100</span><span class="p">,</span> <span class="m">200</span><span class="p">),</span> <span class="m">0</span><span class="p">)</span>
-    <span class="p">)</span>
-<span class="n">df2</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Sven&quot;</span><span class="p">,</span> <span class="s">&quot;Jane&quot;</span><span class="p">,</span> <span class="s">&quot;Ake&quot;</span><span class="p">,</span> <span class="s">&quot;Mary&quot;</span><span class="p">,</span> <span class="s">&quot;Thor&quot;</span><span class="p">,</span> <span class="s">&quot;Stephan&quot;</span><span class="p">,</span>
-             <span class="s">&quot;Oden&quot;</span><span class="p">,</span> <span class="s">&quot;Bjorn&quot;</span><span class="p">),</span>
-    <span class="n">weight_p2</span> <span class="o">=</span> <span class="nf">round</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">8</span><span class="p">,</span> <span class="m">100</span><span class="p">,</span> <span class="m">200</span><span class="p">),</span> <span class="m">0</span><span class="p">)</span>
-    <span class="p">)</span>
-<span class="n">df3</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span>
-    <span class="n">treatment_gr</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">),</span>
-    <span class="n">type</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;dog-lovers&quot;</span><span class="p">,</span> <span class="s">&quot;cat-lovers&quot;</span><span class="p">,</span> <span class="s">&quot;all-lovers&quot;</span><span class="p">)</span>
-    <span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Mary&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Thor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Sven&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Jane&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Ake&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Stephan&quot;</span><span class="p">,</span>
+<span class="w">             </span><span class="s">&quot;Bjorn&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Oden&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Dennis&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="n">treatment_gr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">),</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">)),</span>
+<span class="w">    </span><span class="n">weight_p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">round</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">9</span><span class="p">,</span><span class="w"> </span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="m">200</span><span class="p">),</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="n">df2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Sven&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Jane&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Ake&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Mary&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Thor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Stephan&quot;</span><span class="p">,</span>
+<span class="w">             </span><span class="s">&quot;Oden&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Bjorn&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="n">weight_p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">round</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">8</span><span class="p">,</span><span class="w"> </span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="m">200</span><span class="p">),</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="n">df3</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span>
+<span class="w">    </span><span class="n">treatment_gr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">),</span>
+<span class="w">    </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;dog-lovers&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;cat-lovers&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;all-lovers&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -860,7 +854,7 @@ Traceback:
   
     By Josh Clinton and Nick Eubank<br/>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2023.<br/>
 </p>
         </footer>
     </div>

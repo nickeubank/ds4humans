@@ -50,6 +50,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -113,18 +114,6 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Preface
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../00_preface/00_preface.html">
-   Introduction to Data Science for Humans
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   Introduction
  </span>
 </p>
@@ -151,8 +140,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../../30_questions/00_from_problems_to_questions.html">
-   From Problems to Questions
+  <a class="reference internal" href="../../../30_questions/00_solving_the_right_problem.html">
+   Solving the Right Problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../30_questions/05_descriptive_v_proscriptive.html">
+   Descriptive versus Proscriptive Questions
   </a>
  </li>
  <li class="toctree-l1">
@@ -162,7 +156,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../../30_questions/20_passive_prediction_questions.html">
-   Classification Questions
+   Passive-Prediction Questions
   </a>
  </li>
  <li class="toctree-l1">
@@ -417,7 +411,7 @@ title="Print to PDF"
 <p>Create a vector that represents the age of at least four different family members or friends. You can name it whatever you want.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">ages</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">35</span><span class="p">,</span> <span class="m">34</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">6</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">ages</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">35</span><span class="p">,</span><span class="w"> </span><span class="m">34</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">6</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -454,7 +448,7 @@ your code should work even if the elements in your vector, or their order, chang
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">max</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span> <span class="o">-</span> <span class="nf">min</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">max</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nf">min</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -467,7 +461,7 @@ work even in the case that your vector changes.)</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">length</span><span class="p">(</span><span class="n">ages</span><span class="p">[</span><span class="n">ages</span> <span class="o">&gt;</span> <span class="m">25</span><span class="p">])</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">length</span><span class="p">(</span><span class="n">ages</span><span class="p">[</span><span class="n">ages</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">25</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -480,7 +474,7 @@ else you know.</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">ages</span><span class="p">[</span><span class="n">ages</span> <span class="o">==</span> <span class="nf">max</span><span class="p">(</span><span class="n">ages</span><span class="p">)]</span> <span class="o">=</span> <span class="m">73</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">ages</span><span class="p">[</span><span class="n">ages</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="n">ages</span><span class="p">)]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">73</span>
 </pre></div>
 </div>
 </div>
@@ -506,7 +500,7 @@ will be in 10 years.</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">future_ages</span> <span class="o">=</span> <span class="n">ages</span> <span class="o">+</span> <span class="m">10</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">future_ages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ages</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">10</span>
 </pre></div>
 </div>
 </div>
@@ -517,7 +511,7 @@ will turn 100 years old.</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">years_to_100</span> <span class="o">&lt;-</span> <span class="m">100</span> <span class="o">-</span> <span class="n">ages</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">years_to_100</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">ages</span>
 </pre></div>
 </div>
 </div>
@@ -527,7 +521,7 @@ will turn 100 years old.</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sampled_ages</span> <span class="o">&lt;-</span> <span class="nf">sample</span><span class="p">(</span><span class="n">ages</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sampled_ages</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">ages</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
 <span class="n">sampled_ages</span>
 </pre></div>
 </div>
@@ -538,7 +532,7 @@ will turn 100 years old.</p></li>
 .list-inline>li {display: inline-block}
 .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
 </style>
-<ol class=list-inline><li>3</li><li>6</li><li>34</li></ol>
+<ol class=list-inline><li>6</li><li>73</li><li>3</li></ol>
 </div></div>
 </div>
 <ol class="simple">
@@ -551,7 +545,7 @@ will turn 100 years old.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">14.3333333333333</div></div>
+<div class="output text_html">27.3333333333333</div></div>
 </div>
 </section>
 
@@ -591,7 +585,7 @@ will turn 100 years old.</p></li>
   
     By Josh Clinton and Nick Eubank<br/>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2023.<br/>
 </p>
         </footer>
     </div>

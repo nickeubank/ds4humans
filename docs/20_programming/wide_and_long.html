@@ -50,6 +50,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -113,18 +114,6 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Preface
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../00_preface/00_preface.html">
-   Introduction to Data Science for Humans
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   Introduction
  </span>
 </p>
@@ -151,8 +140,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../30_questions/00_from_problems_to_questions.html">
-   From Problems to Questions
+  <a class="reference internal" href="../30_questions/00_solving_the_right_problem.html">
+   Solving the Right Problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_questions/05_descriptive_v_proscriptive.html">
+   Descriptive versus Proscriptive Questions
   </a>
  </li>
  <li class="toctree-l1">
@@ -162,7 +156,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../30_questions/20_passive_prediction_questions.html">
-   Classification Questions
+   Passive-Prediction Questions
   </a>
  </li>
  <li class="toctree-l1">
@@ -492,19 +486,19 @@ represents average temperature in Celsius):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create long dataset</span>
-<span class="n">country_long</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span>
-    <span class="nf">expand.grid</span><span class="p">(</span><span class="n">country</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Sweden&quot;</span><span class="p">,</span> <span class="s">&quot;Denmark&quot;</span><span class="p">,</span> <span class="s">&quot;Norway&quot;</span><span class="p">),</span> <span class="n">year</span> <span class="o">=</span> <span class="m">1994</span><span class="o">:</span><span class="m">1996</span><span class="p">),</span>
-    <span class="n">avgtemp</span> <span class="o">=</span> <span class="nf">round</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">9</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">12</span><span class="p">),</span> <span class="m">0</span><span class="p">)</span>
-    <span class="p">)</span>
+<span class="n">country_long</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span>
+<span class="w">    </span><span class="nf">expand.grid</span><span class="p">(</span><span class="n">country</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Sweden&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Denmark&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Norway&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1994</span><span class="o">:</span><span class="m">1996</span><span class="p">),</span>
+<span class="w">    </span><span class="n">avgtemp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">round</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">9</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">12</span><span class="p">),</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">)</span>
 <span class="n">country_long</span>
 
 <span class="c1"># Create wide dataset</span>
-<span class="n">country_wide</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span>
-    <span class="n">country</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Sweden&quot;</span><span class="p">,</span> <span class="s">&quot;Denmark&quot;</span><span class="p">,</span> <span class="s">&quot;Norway&quot;</span><span class="p">),</span>
-    <span class="n">avgtemp.1994</span> <span class="o">=</span> <span class="n">country_long</span><span class="o">$</span><span class="n">avgtemp</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">],</span>
-    <span class="n">avgtemp.1995</span> <span class="o">=</span> <span class="n">country_long</span><span class="o">$</span><span class="n">avgtemp</span><span class="p">[</span><span class="m">4</span><span class="o">:</span><span class="m">6</span><span class="p">],</span>
-    <span class="n">avgtemp.1996</span> <span class="o">=</span> <span class="n">country_long</span><span class="o">$</span><span class="n">avgtemp</span><span class="p">[</span><span class="m">7</span><span class="o">:</span><span class="m">9</span><span class="p">])</span>
-<span class="n">country_wide</span> 
+<span class="n">country_wide</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span>
+<span class="w">    </span><span class="n">country</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Sweden&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Denmark&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Norway&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="n">avgtemp.1994</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">country_long</span><span class="o">$</span><span class="n">avgtemp</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">],</span>
+<span class="w">    </span><span class="n">avgtemp.1995</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">country_long</span><span class="o">$</span><span class="n">avgtemp</span><span class="p">[</span><span class="m">4</span><span class="o">:</span><span class="m">6</span><span class="p">],</span>
+<span class="w">    </span><span class="n">avgtemp.1996</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">country_long</span><span class="o">$</span><span class="n">avgtemp</span><span class="p">[</span><span class="m">7</span><span class="o">:</span><span class="m">9</span><span class="p">])</span>
+<span class="n">country_wide</span><span class="w"> </span>
 </pre></div>
 </div>
 </div>
@@ -517,14 +511,14 @@ represents average temperature in Celsius):</p>
 </thead>
 <tbody>
 	<tr><td>Sweden </td><td>1994</td><td> 8</td></tr>
-	<tr><td>Denmark</td><td>1994</td><td> 5</td></tr>
-	<tr><td>Norway </td><td>1994</td><td> 8</td></tr>
-	<tr><td>Sweden </td><td>1995</td><td> 9</td></tr>
-	<tr><td>Denmark</td><td>1995</td><td> 8</td></tr>
-	<tr><td>Norway </td><td>1995</td><td> 7</td></tr>
-	<tr><td>Sweden </td><td>1996</td><td> 4</td></tr>
-	<tr><td>Denmark</td><td>1996</td><td> 8</td></tr>
-	<tr><td>Norway </td><td>1996</td><td>10</td></tr>
+	<tr><td>Denmark</td><td>1994</td><td>11</td></tr>
+	<tr><td>Norway </td><td>1994</td><td> 5</td></tr>
+	<tr><td>Sweden </td><td>1995</td><td>10</td></tr>
+	<tr><td>Denmark</td><td>1995</td><td>11</td></tr>
+	<tr><td>Norway </td><td>1995</td><td> 5</td></tr>
+	<tr><td>Sweden </td><td>1996</td><td> 9</td></tr>
+	<tr><td>Denmark</td><td>1996</td><td> 9</td></tr>
+	<tr><td>Norway </td><td>1996</td><td> 9</td></tr>
 </tbody>
 </table>
 </div><div class="output text_html"><table class="dataframe">
@@ -534,9 +528,9 @@ represents average temperature in Celsius):</p>
 	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>Sweden </td><td>8</td><td>9</td><td> 4</td></tr>
-	<tr><td>Denmark</td><td>5</td><td>8</td><td> 8</td></tr>
-	<tr><td>Norway </td><td>8</td><td>7</td><td>10</td></tr>
+	<tr><td>Sweden </td><td> 8</td><td>10</td><td>9</td></tr>
+	<tr><td>Denmark</td><td>11</td><td>11</td><td>9</td></tr>
+	<tr><td>Norway </td><td> 5</td><td> 5</td><td>9</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -588,8 +582,8 @@ rate is expressed as the number of under-five deaths per 1,000 live births.</p>
 <p>This dataset has 196 rows, one for each country, and 67 variables:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">dim</span><span class="p">(</span><span class="n">u5mr</span><span class="p">)</span> <span class="c1">#dimensions of the data frame</span>
-<span class="nf">names</span><span class="p">(</span><span class="n">u5mr</span><span class="p">)</span> <span class="c1">#the variable names</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">dim</span><span class="p">(</span><span class="n">u5mr</span><span class="p">)</span><span class="w"> </span><span class="c1">#dimensions of the data frame</span>
+<span class="nf">names</span><span class="p">(</span><span class="n">u5mr</span><span class="p">)</span><span class="w"> </span><span class="c1">#the variable names</span>
 </pre></div>
 </div>
 </div>
@@ -615,7 +609,7 @@ package.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">require</span><span class="p">(</span><span class="n">tidyr</span><span class="p">)</span>
-<span class="n">u5mr_long</span> <span class="o">&lt;-</span> <span class="n">u5mr</span> <span class="o">%&gt;%</span> <span class="nf">gather</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">u5mr</span><span class="p">,</span> <span class="n">U5MR.1950</span><span class="o">:</span><span class="n">U5MR.2015</span><span class="p">)</span>
+<span class="n">u5mr_long</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">u5mr</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">gather</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">u5mr</span><span class="p">,</span><span class="w"> </span><span class="n">U5MR.1950</span><span class="o">:</span><span class="n">U5MR.2015</span><span class="p">)</span>
 <span class="nf">tail</span><span class="p">(</span><span class="n">u5mr_long</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -647,9 +641,9 @@ to numeric.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">require</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
-<span class="n">u5mr_long</span> <span class="o">&lt;-</span> <span class="n">u5mr</span> <span class="o">%&gt;%</span>
-    <span class="nf">gather</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">u5mr</span><span class="p">,</span> <span class="n">U5MR.1950</span><span class="o">:</span><span class="n">U5MR.2015</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">mutate</span><span class="p">(</span><span class="n">year</span> <span class="o">=</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="nf">gsub</span><span class="p">(</span><span class="s">&quot;U5MR.&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">year</span><span class="p">)))</span>
+<span class="n">u5mr_long</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">u5mr</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">gather</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">u5mr</span><span class="p">,</span><span class="w"> </span><span class="n">U5MR.1950</span><span class="o">:</span><span class="n">U5MR.2015</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">mutate</span><span class="p">(</span><span class="n">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as.numeric</span><span class="p">(</span><span class="nf">gsub</span><span class="p">(</span><span class="s">&quot;U5MR.&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">year</span><span class="p">)))</span>
 <span class="nf">tail</span><span class="p">(</span><span class="n">u5mr_long</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -743,7 +737,7 @@ in years 1990, 1995, 2000, 2005, and 2015? (Hint: see the tutorial on <span clas
   
     By Josh Clinton and Nick Eubank<br/>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2023.<br/>
 </p>
         </footer>
     </div>
