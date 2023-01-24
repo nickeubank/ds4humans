@@ -66,6 +66,8 @@ To illustrate, consider the two models in the figure below ([source](https://ece
 
 ![example of two models that look similar over ranges with data but extrapolate very differently outside that range](images/extrapolation.gif)
 
-## Manipulation and External Validity
+<!-- ## Manipulation and External Validity
 
 Models may exhibit low external validity when applied in contexts that are obviously very different from the data on which it was trained: in a different country, in a different industry, in a different climate, or during a different time of year. But they can sometimes also fail to perform well in situations where everything *looks* similar, but the processes generating the data have changed.
+
+Suppose, for example, we wanted to go back to our example of wanting to reduce complications from surgery. So we build a model that allows us to predict, for each patient going into surgery, the likelihood they will eventually experience complications. -->
