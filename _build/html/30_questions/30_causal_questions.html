@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Backwards Design" href="../40_in_practice/00_backwards_design.html" />
+    <link rel="next" title="How We Answer Causal Questions" href="40_causal_workflow.html" />
     <link rel="prev" title="Passive-Prediction Questions" href="20_passive_prediction_questions.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
@@ -164,6 +164,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Causal Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="40_causal_workflow.html">
+   How We Answer Causal Questions
   </a>
  </li>
 </ul>
@@ -355,12 +360,36 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-we-mean-by-cause">
+   What We Mean By “Cause”
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -372,6 +401,19 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-we-mean-by-cause">
+   What We Mean By “Cause”
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -381,10 +423,34 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="causal-questions">
 <h1>Causal Questions<a class="headerlink" href="#causal-questions" title="Permalink to this headline">#</a></h1>
-<p>Everything we’ve done up till now is about <em>passive</em> characterization of the world. But what if you actually want to DO something?</p>
-<ul class="simple">
-<li><p>The field of <em>causal inference</em>—the practice of trying to empirically measure causal relationships—has its origins in philosophy and social science. And much of that is concerned primarily with doing causal inference for the sake of <em>understanding</em> phenomena in the world. For many data scientists, however, the field of causal inference is not of interest primarily because it always us to seek understanding in its own right, but rather because we wish to better predict the consequences of <em>actions</em> we wish to take in the world.</p></li>
-</ul>
+<p>In our previous readings, we learned how answering different types of questions can help us better understand the world around us. By answering Exploratory Questions, we can better understand the contours of our problem — where our problem is most acute, whether there are groups who have figured out how to get around the problem on their own, etc. — and by doing so help us prioritize our subsequent efforts. And by answering Passive Predictive Questions, we can help identify individual entities — patients, customers, products, etc. — to whom we may wish to pay extra attention or recommend certain products or services, or we can automate tasks by predicting how a person or more complicated process <em>would</em> have classified an entity.</p>
+<p>In both cases, however, answering these questions only helps us better understand the world <em>around</em> us. But to the extent to which, as data scientists, we want to <em>solve</em> problems, we are rarely interested in just knowing about the world around us — we want to <em>act</em> on the world, and wouldn’t be great if data science could provide us with a set of tools designed to help us predict the <em>consequences</em> of our actions?</p>
+<p>Enter <em>Causal Questions</em>. Causal Questions ask what <em>effect</em> we can expect from <em>intervening</em> — that is, actively <em>manipulating</em> — the world around us in some way. For example, if we pay to show an ad to a specific customer, what will the <em>effect</em> of that choice be the likelihood they buy something on our website? Or if we chose to give a new drug to a patient, what will the <em>effect</em> of that choice be on their disease?</p>
+<p>Because of their potential to help us understand the future consequences of our actions, it should come as no surprise that the ability to answer Causal Questions is of <em>profound</em> interest to everyone from companies to doctors and policymakers. At the same time, however, it should <em>also</em> come as no surprise that answering Causal Questions is an inherently challenging undertaking.</p>
+<section id="what-we-mean-by-cause">
+<h2>What We Mean By “Cause”<a class="headerlink" href="#what-we-mean-by-cause" title="Permalink to this headline">#</a></h2>
+<p>To understand why answering Causal Questions is hard, we must actually take a step back and answer the question: “what do we mean when we say some action X <em>causes</em> an outcome Y?”</p>
+<p>Seriously, what do we mean when we say “X causes Y?” Try and come up with a definition!</p>
+<p>While this question may <em>seem</em> simple, it turns out that this question has been the subject of serious academic debate for hundreds of years by people as prominent as David Hume. Indeed, even today there is still debate over how best to answer this question.</p>
+<p>In this course, we will make use of the <em>Counterfactual Model of Causality</em> (sometimes called the Neyman-Rubin causal model). In plain English, it posits that for “doing X to cause Y”, it must be the case that if we do X, then Y will occur, and if we did not do X, then Y would not occur. This is by far the most used definition of causality today, and yet remarkably, it only emerged in the 20th Century and was only really fleshed out in the 1970s. Yeah… that recently.</p>
+<p>At first blush, this definition may seem simple. But its simplicity belies a profoundly difficult practical problem. See, this definition relies on <em>comparing</em> the value of our outcome Y in two states of the world: the world where we do X, and the world where we don’t do X. But as we only get to live in one universe, we can never perfectly know what the value of our outcome Y would be in <em>both</em> a world where we do X and one where we don’t do X for a given entity at a given moment in time. As such, we can <strong>never</strong> directly measure the causal effect of X on Y for a given entity (say, a given patient or customer) at a given moment in time — a problem known as the <strong>Fundamental Problem of Causal Inference</strong> (causal inference being what people call the practice of answering Causal Questions).</p>
+<p>To illustrate, suppose we were interested in the effect of taking a new drug (our X) on cancer survival (our Y)  for a given patient (a woman named Shikha who arrived at the hospital on June 18th 2022). We can give her the drug and evaluate whether she is still alive a year later, but that alone can’t tell us whether the new drug <em>caused</em> her survival according to our counterfactual model of causality — after all, if she survives maybe she would have survived even without the drug! To actually know the effect of the drug on Shikha <em>by direct measurement,</em> we would have to be able to measure her survival both in the world where we gave her the drug <em>and</em> the world where we did not and compare outcomes.</p>
+<p>Since we can never see both states of the world — the world where we undertake the action whose effect we want to understand and the world where we don’t — almost everything we do when trying to answer Causal Questions amounts to trying to find something we <em>can</em> measure that we think is a <em>good approximation</em> of the state of the world we can’t actually see.</p>
+<p>A quick note on vocabulary: by convention, we refer to the action whose effect we want to understand as a “treatment,” and the state of the world where an entity receives the treatment as the “treated condition.” Similarly, we refer to the state of the world where an entity does <em>not</em> receive the treatment as the “control condition.” We use this language even when we aren’t talking about medical experiments or even experiments at all. We also refer to the state of the world we cannot observe as the “counterfactual” of the world we can observe — so the world where Shikha does not get the cancer drug is the <em>counterfactual condition</em> to the world where Shikha does get the drug.</p>
+<p>It’s at this point most people start throwing out “but what about…“‘s, and that’s good! You should be — that’s exactly the kind of thinking you have to do when trying to answer Causal Questions. For example, “what about if we measured the size of Shikha’s tumor before she took the drug and compared it to the size of her tumor after? If the tumor got smaller as soon as she started the drug, then surely the drug caused the tumor to shrink!”</p>
+<p>Maybe! Implicitly, what you have done is asserted that you think that the size of Shikha’s tumor before we administered the drug is a good approximation for what the size of Shikha’s tumor <em>would have been</em> had we not given her the drug.</p>
+<p>But this type of comparison will always fall short of the platonic ideal given by our definition of causality. Yes, Shikha’s tumor <em>may</em> have stayed the same size if we had not given her the drug (in which case the size of the tumor before she took the drug would be a good approximation), but it is also possible that regardless of whether we’d given her the drug, her cancer would have shrunk on its own.<a class="footnote-reference brackets" href="#natural-history" id="id1">1</a></p>
+<p>According to the Counterfactual Model of Causality, we could only ever <em>know</em> if taking the drug caused a decrease in tumor size if we could both administer the drug and observe the tumor <em>and also observe a parallel world in which the same person at the same moment in time was not given the drug for comparison</em>. And since we can never see this parallel world — the <em>counterfactual</em> to the world we observe — the best we can do is come up with different, imperfect tricks for <em>approximating</em> what might have happened in this parallel world, like comparing the tumor size before and after we administer the drug, imperfect though that may be.</p>
+<p>So does that mean we’re doomed? Yes and no. Yes, it <em>does</em> mean that we’re doomed to never be able to take the exact measurements that make it possible to directly answer a Causal Question. But no, that doesn’t mean we can’t do anything — in the coming weeks, we will learn about different strategies for approximating counterfactual conditions, and in each case we will learn about what <em>assumptions</em> must be true for our strategy to provide a valid answer to our Causal Question. By making the assumptions that underlie each empirical strategy explicit, we will then be able to evaluate the plausibility of these assumptions.</p>
+<p>In the example of Shikha, for example, we know that our comparison of tumor size before taking the drug to tumor size after taking the drug is only valid if her tumor <em>would not have gotten smaller without the drug</em>. This is something we can’t measure directly, but we can look to other patients with similar tumors, or the history of her tumor size to evaluate how often we see tumors get smaller at the rate observed after she took the drug. If it’s very rare for these types of tumors to ever get smaller, than we can have more confidence that a decrease in tumor size was the result of the drug.</p>
+<p>For many data scientists, this will feel <em>profoundly</em> dissatisfying. May people come to data science because of the promise that it will provide direct answers to questions using statistics. But because of the Fundamental Problem of Causal Inference, this will never be possible when answering Causal Questions. Rather, your task will be like that of a detective trying to solve a crime — your task is to try and determine what <em>probably</em> happened at a crime scene by gathering clues, and to decide based on the amount of evidence you’ve been able to find how confident you are you know what happened. But try as you might, you will never actually get to be present at the time of the crime, so you will never be able to actually be sure if you are right or not.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="natural-history"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>The fact that diseases naturally change over time on their own is known as a disease’s “natural history.”</p>
+</dd>
+</dl>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -421,10 +487,10 @@ title="Print to PDF"
             <p class="prev-next-title">Passive-Prediction Questions</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../40_in_practice/00_backwards_design.html" title="next page">
+    <a class='right-next' id="next-link" href="40_causal_workflow.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Backwards Design</p>
+        <p class="prev-next-title">How We Answer Causal Questions</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Causal Questions &#8212; Data Science for Humans</title>
+    <title>How We Answer Causal Questions &#8212; Data Science for Humans</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="How We Answer Causal Questions" href="40_causal_workflow.html" />
-    <link rel="prev" title="Passive-Prediction Questions" href="20_passive_prediction_questions.html" />
+    <link rel="next" title="Backwards Design" href="../40_in_practice/00_backwards_design.html" />
+    <link rel="prev" title="Causal Questions" href="30_causal_questions.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -161,13 +161,13 @@ const thebe_selector_output = ".output, .cell_output"
    Passive-Prediction Questions
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="30_causal_questions.html">
    Causal Questions
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="40_causal_workflow.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    How We Answer Causal Questions
   </a>
  </li>
@@ -295,7 +295,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F30_questions/30_causal_questions.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F30_questions/40_causal_workflow.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -323,7 +323,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/30_questions/30_causal_questions.md"
+        <a href="../_sources/30_questions/40_causal_workflow.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -382,10 +382,39 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-we-mean-by-cause">
-   What We Mean By “Cause”
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   How We Answer Causal Questions
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identify-relevant-previous-studies">
+     Identify Relevant Previous Studies
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evaluate-previous-studies">
+     Evaluate Previous Studies
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plan-a-new-study">
+     Plan A New Study
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-passive-prediction-is-not-enough">
+   Why Passive-Prediction Is Not Enough
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#back-to-blood-pressure">
+     Back to Blood Pressure
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -396,7 +425,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Causal Questions</h1>
+                <h1>How We Answer Causal Questions</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -406,10 +435,39 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-we-mean-by-cause">
-   What We Mean By “Cause”
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   How We Answer Causal Questions
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identify-relevant-previous-studies">
+     Identify Relevant Previous Studies
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evaluate-previous-studies">
+     Evaluate Previous Studies
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plan-a-new-study">
+     Plan A New Study
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-passive-prediction-is-not-enough">
+   Why Passive-Prediction Is Not Enough
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#back-to-blood-pressure">
+     Back to Blood Pressure
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -421,35 +479,47 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="causal-questions">
-<h1>Causal Questions<a class="headerlink" href="#causal-questions" title="Permalink to this headline">#</a></h1>
-<p>In our previous readings, we learned how answering different types of questions can help us better understand the world around us. By answering Exploratory Questions, we can better understand the contours of our problem — where our problem is most acute, whether there are groups who have figured out how to get around the problem on their own, etc. — and by doing so help us prioritize our subsequent efforts. And by answering Passive Predictive Questions, we can help identify individual entities — patients, customers, products, etc. — to whom we may wish to pay extra attention or recommend certain products or services, or we can automate tasks by predicting how a person or more complicated process <em>would</em> have classified an entity.</p>
-<p>In both cases, however, answering these questions only helps us better understand the world <em>around</em> us. But to the extent to which, as data scientists, we want to <em>solve</em> problems, we are rarely interested in just knowing about the world around us — we want to <em>act</em> on the world, and wouldn’t be great if data science could provide us with a set of tools designed to help us predict the <em>consequences</em> of our actions?</p>
-<p>Enter <em>Causal Questions</em>. Causal Questions ask what <em>effect</em> we can expect from <em>intervening</em> — that is, actively <em>manipulating</em> — the world around us in some way. For example, if we pay to show an ad to a specific customer, what will the <em>effect</em> of that choice be the likelihood they buy something on our website? Or if we chose to give a new drug to a patient, what will the <em>effect</em> of that choice be on their disease?</p>
-<p>Because of their potential to help us understand the future consequences of our actions, it should come as no surprise that the ability to answer Causal Questions is of <em>profound</em> interest to everyone from companies to doctors and policymakers. At the same time, however, it should <em>also</em> come as no surprise that answering Causal Questions is an inherently challenging undertaking.</p>
-<section id="what-we-mean-by-cause">
-<h2>What We Mean By “Cause”<a class="headerlink" href="#what-we-mean-by-cause" title="Permalink to this headline">#</a></h2>
-<p>To understand why answering Causal Questions is hard, we must actually take a step back and answer the question: “what do we mean when we say some action X <em>causes</em> an outcome Y?”</p>
-<p>Seriously, what do we mean when we say “X causes Y?” Try and come up with a definition!</p>
-<p>While this question may <em>seem</em> simple, it turns out that this question has been the subject of serious academic debate for hundreds of years by people as prominent as David Hume. Indeed, even today there is still debate over how best to answer this question.</p>
-<p>In this course, we will make use of the <em>Counterfactual Model of Causality</em> (sometimes called the Neyman-Rubin causal model). In plain English, it posits that for “doing X to cause Y”, it must be the case that if we do X, then Y will occur, and if we did not do X, then Y would not occur. This is by far the most used definition of causality today, and yet remarkably, it only emerged in the 20th Century and was only really fleshed out in the 1970s. Yeah… that recently.</p>
-<p>At first blush, this definition may seem simple. But its simplicity belies a profoundly difficult practical problem. See, this definition relies on <em>comparing</em> the value of our outcome Y in two states of the world: the world where we do X, and the world where we don’t do X. But as we only get to live in one universe, we can never perfectly know what the value of our outcome Y would be in <em>both</em> a world where we do X and one where we don’t do X for a given entity at a given moment in time. As such, we can <strong>never</strong> directly measure the causal effect of X on Y for a given entity (say, a given patient or customer) at a given moment in time — a problem known as the <strong>Fundamental Problem of Causal Inference</strong> (causal inference being what people call the practice of answering Causal Questions).</p>
-<p>To illustrate, suppose we were interested in the effect of taking a new drug (our X) on cancer survival (our Y)  for a given patient (a woman named Shikha who arrived at the hospital on June 18th 2022). We can give her the drug and evaluate whether she is still alive a year later, but that alone can’t tell us whether the new drug <em>caused</em> her survival according to our counterfactual model of causality — after all, if she survives maybe she would have survived even without the drug! To actually know the effect of the drug on Shikha <em>by direct measurement,</em> we would have to be able to measure her survival both in the world where we gave her the drug <em>and</em> the world where we did not and compare outcomes.</p>
-<p>Since we can never see both states of the world — the world where we undertake the action whose effect we want to understand and the world where we don’t — almost everything we do when trying to answer Causal Questions amounts to trying to find something we <em>can</em> measure that we think is a <em>good approximation</em> of the state of the world we can’t actually see.</p>
-<p>A quick note on vocabulary: by convention, we refer to the action whose effect we want to understand as a “treatment,” and the state of the world where an entity receives the treatment as the “treated condition.” Similarly, we refer to the state of the world where an entity does <em>not</em> receive the treatment as the “control condition.” We use this language even when we aren’t talking about medical experiments or even experiments at all. We also refer to the state of the world we cannot observe as the “counterfactual” of the world we can observe — so the world where Shikha does not get the cancer drug is the <em>counterfactual condition</em> to the world where Shikha does get the drug.</p>
-<p>It’s at this point most people start throwing out “but what about…“‘s, and that’s good! You should be — that’s exactly the kind of thinking you have to do when trying to answer Causal Questions. For example, “what about if we measured the size of Shikha’s tumor before she took the drug and compared it to the size of her tumor after? If the tumor got smaller as soon as she started the drug, then surely the drug caused the tumor to shrink!”</p>
-<p>Maybe! Implicitly, what you have done is asserted that you think that the size of Shikha’s tumor before we administered the drug is a good approximation for what the size of Shikha’s tumor <em>would have been</em> had we not given her the drug.</p>
-<p>But this type of comparison will always fall short of the platonic ideal given by our definition of causality. Yes, Shikha’s tumor <em>may</em> have stayed the same size if we had not given her the drug (in which case the size of the tumor before she took the drug would be a good approximation), but it is also possible that regardless of whether we’d given her the drug, her cancer would have shrunk on its own.<a class="footnote-reference brackets" href="#natural-history" id="id1">1</a></p>
-<p>According to the Counterfactual Model of Causality, we could only ever <em>know</em> if taking the drug caused a decrease in tumor size if we could both administer the drug and observe the tumor <em>and also observe a parallel world in which the same person at the same moment in time was not given the drug for comparison</em>. And since we can never see this parallel world — the <em>counterfactual</em> to the world we observe — the best we can do is come up with different, imperfect tricks for <em>approximating</em> what might have happened in this parallel world, like comparing the tumor size before and after we administer the drug, imperfect though that may be.</p>
-<p>So does that mean we’re doomed? Yes and no. Yes, it <em>does</em> mean that we’re doomed to never be able to take the exact measurements that make it possible to directly answer a Causal Question. But no, that doesn’t mean we can’t do anything — in the coming weeks, we will learn about different strategies for approximating counterfactual conditions, and in each case we will learn about what <em>assumptions</em> must be true for our strategy to provide a valid answer to our Causal Question. By making the assumptions that underlie each empirical strategy explicit, we will then be able to evaluate the plausibility of these assumptions.</p>
-<p>In the example of Shikha, for example, we know that our comparison of tumor size before taking the drug to tumor size after taking the drug is only valid if her tumor <em>would not have gotten smaller without the drug</em>. This is something we can’t measure directly, but we can look to other patients with similar tumors, or the history of her tumor size to evaluate how often we see tumors get smaller at the rate observed after she took the drug. If it’s very rare for these types of tumors to ever get smaller, than we can have more confidence that a decrease in tumor size was the result of the drug.</p>
-<p>For many data scientists, this will feel <em>profoundly</em> dissatisfying. May people come to data science because of the promise that it will provide direct answers to questions using statistics. But because of the Fundamental Problem of Causal Inference, this will never be possible when answering Causal Questions. Rather, your task will be like that of a detective trying to solve a crime — your task is to try and determine what <em>probably</em> happened at a crime scene by gathering clues, and to decide based on the amount of evidence you’ve been able to find how confident you are you know what happened. But try as you might, you will never actually get to be present at the time of the crime, so you will never be able to actually be sure if you are right or not.</p>
-<hr class="footnotes docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="natural-history"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>The fact that diseases naturally change over time on their own is known as a disease’s “natural history.”</p>
-</dd>
-</dl>
+  <section id="how-we-answer-causal-questions">
+<h1>How We Answer Causal Questions<a class="headerlink" href="#how-we-answer-causal-questions" title="Permalink to this headline">#</a></h1>
+<p>Before we dive into the technical details of answering Causal Questions, it’s worth starting with a high-level overview of how data scientists approach answering Causal Questions.</p>
+<p>Nearly all Causal Questions are motivated by a stakeholder’s desire to know the consequences of a certain action. Again, this action could take almost any form, from changing the prices of a product to changing the design of a website or rolling out a new government health insurance system. <em>Usually</em>, this action will not have been pulled out of a hat — rather, one generally poses a Causal Question because one has some reason for thinking a given course of action may be a good one. For example, someone interested in reducing surgical complications may have discovered that patients with high blood pressure are more likely to experience complications from surgery (they observed a <em>correlation</em> between these two outcomes), so now they want to know if giving patients who experience high blood pressure medication to bring down their blood pressure before surgery would reduce complications. Or perhaps your online retailer stakeholder has noticed that one of your competitors has stopped showing customer reviews in the search results, so they suspect it must be improving sales for your competitor and want to know if it would work for your site too.</p>
+<section id="identify-relevant-previous-studies">
+<h2>Identify Relevant Previous Studies<a class="headerlink" href="#identify-relevant-previous-studies" title="Permalink to this headline">#</a></h2>
+<p>Once a Causal Question has been posed, the next step is <strong>to identify any research that has already been done</strong> that may help answer your causal question. It’s hard to overstate how often this step is overlooked by data scientists, but it’s <em>such</em> a no-brainer once you think of it! There’s no reason to spend days or weeks trying to design a study to answer a question if someone else has already put the time and money into doing it for you!</p>
+<p>If your stakeholder is somebody who works in public policy or medicine, then the first place to look for previous studies is in academic medical or policy journals. But don’t assume that if you aren’t working on a medical or public policy question that you won’t be able to find an answer to your question in academic or pseudo-academic publications — lots of data scientists present research done at private companies at ``industry’’ conferences like the <a class="reference external" href="https://ide.mit.edu/events/2022-conference-on-digital-experimentation-mit-codemit/">MIT Conference on Digital Experimentation (CODE&#64;MIT)</a> or the <a class="reference external" href="https://netmob.org/">NetMob Cellphone MetaData Analysis Conference</a>!</p>
+<p>And if you are at a company, ask around! Someone at your own company may have looked into a similar question before, and talking to them could save you a lot of effort.</p>
+</section>
+<section id="evaluate-previous-studies">
+<h2>Evaluate Previous Studies<a class="headerlink" href="#evaluate-previous-studies" title="Permalink to this headline">#</a></h2>
+<p>If you do find studies, then for each study you will have to ask yourself two questions:</p>
+<ul class="simple">
+<li><p><strong>Did the study authors do a good job of answering the Causal Question? <em>in the context they were studying</em></strong>?</p></li>
+<li><p><strong>Do I believe that the <em>context</em> in which the study was conducted is similar enough to my own context that their conclusions are relevant to me?</strong></p></li>
+</ul>
+<p>This first question is about the <em>internal validity</em> of the study, and we’ll talk at length about how to evaluate that in the context of causal inference in the coming weeks. The second question is about the <em>external validity</em> (i.e., the generalizability) of the study to your context. There are lots of extremely well-conducted studies in the world that may be seeking to answer the same question as you, but if, for example, they investigated the effect of a new drug in <em>young</em> patients, and your hospital only treats very old patients, you may not be comfortable assuming their results are good predictors for what might happen in your hospital. Again, we’ll talk more about how to make these kinds of evaluations, but for the moment, I just want to ensure you have a good high-level overview of the <em>workflow</em> of someone trying to answer Causal Questions.</p>
+</section>
+<section id="plan-a-new-study">
+<h2>Plan A New Study<a class="headerlink" href="#plan-a-new-study" title="Permalink to this headline">#</a></h2>
+<p>If you were unable to find any studies that answer your Causal Question satisfactorily (either on their own or in combination), then it may be time to do a study of your own!</p>
+<p>The goal when designing a study to answer a Causal Question is usually to (a) try the intervention whose effect you want to understand <em>on small scale and in a controlled manner</em> in a randomized experiment, or (b) find data from a time/place where some entities were subjected to the intervention you want to understand and others were not.</p>
+<p>The first of these is called a randomized experiment — or an A/B test, a Randomized Control Trial (RCT), or a clinical trial, depending on whether you’re hanging out with data scientists, social scientists, or doctors. The second of these is called an “observational study,” because you aren’t in control of the situation that gave rise to the data, you’re just an observer trying to learn from something that’s already happened.</p>
+<p><strong>Both of these kinds of studies can generate valid answers to Causal Questions!</strong> It is sometimes said that only experiments can give you “true” answers, but as we’ll discuss at length, that is not the case.</p>
+</section>
+</section>
+<section id="why-passive-prediction-is-not-enough">
+<h1>Why Passive-Prediction Is Not Enough<a class="headerlink" href="#why-passive-prediction-is-not-enough" title="Permalink to this headline">#</a></h1>
+<p>The saying “correlation does not imply causation” is bandied about around so regularly that for many of us, it begins to lose any meaning. Indeed, it is almost a cliché for data science students to end any presentation of statistical analyses with “but of course, correlation does not imply causation, so we don’t really know,” as though invocation of the phrase absolves them of responsibility for preceding interpretation of correlations as suggesting a causal relationship.</p>
+<p>But for all its popularity, the saying “correlation does not imply causation” is frustrating because it’s not <em>useful</em>, and that’s because what people mean when they say “correlation does not imply causation” is actually “correlation does not <em>necessarily</em> imply causation,” and that more accurate presentation makes clear a useful corollary: “correlation does not <em>necessarily</em> imply causation, but in certain situations, correlation <em>does</em> imply causation!”.</p>
+<p>So let’s pause for a moment to try and understand <em>why</em> correlation does not necessarily imply causation so that we can better understand what must be true for a correlation to actually imply causation!</p>
+<p>Let’s return to our example of a hospital trying to identify what patients are most likely to experience complications after surgery. They have lots of historical data on patients before and after surgery, and they can feed this into a simple logistic regression to find out pre-surgery patient characteristics predict complications. They do so, and find that the model performs extremely well — it identifies nearly all the patients who end up having complications, and the false positive rate is still relatively low. They deploy the model throughout the hospital, and nurses begin to followup more aggressively with patients flagged as being likely to have complications. For the purpose of <em>identifying individual patients for additional attention</em>, this effort to answer the Passive-Predictive Question “which patients are most likely to experience post-surgical complications” has been a huge success.</p>
+<p>BUT: now suppose a doctor looks this logistical regression and finds that one of the strongest predictors of complications is whether the patient has high blood pressure prior to surgery. This association is clearly helping to identify patients who are likely to have complications, but does it imply that high blood pressure is <em>causing</em> patients to experience complications?</p>
+<section id="back-to-blood-pressure">
+<h2>Back to Blood Pressure<a class="headerlink" href="#back-to-blood-pressure" title="Permalink to this headline">#</a></h2>
+<p>OK, so now we know what is meant when we asked whether “high blood pressure causes surgical complications” — it means that if the patients who have high blood pressure didn’t have high blood pressure, then they would be less likely to have surgical complications!</p>
+<p>So we give all the patients with high blood pressure medication to reduce their blood pressure and wait.</p>
+<ul class="simple">
+<li><p>Check engine light / warning light analogy — good for identifying cars with problems, but you won’t get anywhere by just turning off those lights.</p></li>
+</ul>
 </section>
 </section>
 
@@ -480,17 +550,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="20_passive_prediction_questions.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="30_causal_questions.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Passive-Prediction Questions</p>
+            <p class="prev-next-title">Causal Questions</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="40_causal_workflow.html" title="next page">
+    <a class='right-next' id="next-link" href="../40_in_practice/00_backwards_design.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">How We Answer Causal Questions</p>
+        <p class="prev-next-title">Backwards Design</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

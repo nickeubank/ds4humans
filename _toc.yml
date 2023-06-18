@@ -15,6 +15,7 @@ parts:
     - file: 30_questions/10_exploratory_questions
     - file: 30_questions/20_passive_prediction_questions
     - file: 30_questions/30_causal_questions
+    - file: 30_questions/40_causal_workflow
   - caption: Data Science in Practice
     chapters:
     - file: 40_in_practice/00_backwards_design

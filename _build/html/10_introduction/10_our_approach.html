@@ -166,6 +166,11 @@ const thebe_selector_output = ".output, .cell_output"
    Causal Questions
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../30_questions/40_causal_workflow.html">
+   How We Answer Causal Questions
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -486,7 +491,7 @@ title="Print to PDF"
 <section id="causal-questions">
 <h2>Causal Questions<a class="headerlink" href="#causal-questions" title="Permalink to this headline">#</a></h2>
 <p>The final type of question regularly faced by data scientists is perhaps the hardest to answer: causal questions.</p>
-<p>Learning to answer the previous two classes of questions can take a data scientist a long way in life—learning to answer descriptive questions will ensure you prioritize your efforts when wrestling with new problems, and the value of passive-prediction to automate a huge number of analysis tasks is self-evident. But often in life we want to go beyond passively characterizing the world around us. We want to intervene; we want to <em>act</em> on the world. But before we attempt to manipulate anything about the world around us—by launching an advertising campaign, a new government program, or changing the design of our website—we often want to know the <em>effect</em> our actions will have. And that is the domain of causal questions.</p>
+<p>Learning to answer the previous two classes of questions can take a data scientist a long way in life—learning to answer descriptive questions will ensure you prioritize your efforts when wrestling with new problems, and the value of passive-prediction to automate a huge number of analysis tasks is self-evident. But often in life, we want to go beyond passively characterizing the world around us. We want to intervene; we want to <em>act</em> on the world. But before we attempt to manipulate anything about the world around us—by launching an advertising campaign, a new government program, or changing the design of our website—we often want to know the <em>effect</em> our actions will have. And that is the domain of causal questions.</p>
 <p>Causal questions, therefore, take the form of “what is the effect of an action X on an outcome Y?”—or more usefully, “if I do X, how will Y change?”. And nearly anything can take the place of X and Y in this formulation: X could be something small, like changing the design of a website, or something big, like giving a patient a new drug or changing a government regulation. Y, similarly, could be anything from “how long users stay on my website” or “how likely are users to buy something at my store” to “what is the probability that the patient survives”.</p>
 <p>Causal questions are hard to answer because we are fundamentally interested in <em>comparing</em> what the value of our outcome Y would be in two states of the world: the world where we do X, and the world where we don’t do X. But as we only get to live in one universe, we can never perfectly know what the value of our outcome Y would be in <em>both</em> a world where we do X and one where we don’t do X—a problem known as the <strong>Fundamental Problem of Causal Inference</strong> (causal inference is just what people call the study of how to answer causal questions).</p>
 <p>Instead, to answer causal questions we have to find situations that <em>approximate</em> one of these two states of the world. For example, if we were running a website we could change how the website looks for some users, then compare those users’ behavior to the behavior of a different group of users who still see the old version of the site. In doing so, we’re using the second group of users as a stand-in for what we think the first users would be doing if they still encountered the old site.</p>
