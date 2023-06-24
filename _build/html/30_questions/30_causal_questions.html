@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="How We Answer Causal Questions" href="40_causal_workflow.html" />
+    <link rel="next" title="The Purpose of Causal Questions" href="40_causal_workflow.html" />
     <link rel="prev" title="Passive-Prediction Questions" href="20_passive_prediction_questions.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
@@ -168,7 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="40_causal_workflow.html">
-   How We Answer Causal Questions
+   The Purpose of Causal Questions
   </a>
  </li>
 </ul>
@@ -386,6 +386,18 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#what-we-mean-by-cause">
    What We Mean By “Cause”
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#so-where-does-that-leave-us">
+     So where does that leave us?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-steps">
+   Next Steps
+  </a>
  </li>
 </ul>
 
@@ -410,6 +422,18 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#what-we-mean-by-cause">
    What We Mean By “Cause”
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#so-where-does-that-leave-us">
+     So where does that leave us?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-steps">
+   Next Steps
+  </a>
  </li>
 </ul>
 
@@ -424,15 +448,20 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="causal-questions">
 <h1>Causal Questions<a class="headerlink" href="#causal-questions" title="Permalink to this headline">#</a></h1>
 <p>In our previous readings, we learned how answering different types of questions can help us better understand the world around us. By answering Exploratory Questions, we can better understand the contours of our problem — where our problem is most acute, whether there are groups who have figured out how to get around the problem on their own, etc. — and by doing so help us prioritize our subsequent efforts. And by answering Passive Predictive Questions, we can help identify individual entities — patients, customers, products, etc. — to whom we may wish to pay extra attention or recommend certain products or services, or we can automate tasks by predicting how a person or more complicated process <em>would</em> have classified an entity.</p>
-<p>In both cases, however, answering these questions only helps us better understand the world <em>around</em> us. But to the extent to which, as data scientists, we want to <em>solve</em> problems, we are rarely interested in just knowing about the world around us — we want to <em>act</em> on the world, and wouldn’t be great if data science could provide us with a set of tools designed to help us predict the <em>consequences</em> of our actions?</p>
+<p>In both cases, however, answering these questions only helps us better understand the world <em>around</em> us. But to the extent to which, as data scientists, we want to intervene to directly address problems, we are rarely interested in just knowing about the world around us — we want to <em>act</em> on the world, and wouldn’t be great if data science could provide us with a set of tools designed to help us predict the <em>consequences</em> of our actions?</p>
 <p>Enter <em>Causal Questions</em>. Causal Questions ask what <em>effect</em> we can expect from <em>intervening</em> — that is, actively <em>manipulating</em> — the world around us in some way. For example, if we pay to show an ad to a specific customer, what will the <em>effect</em> of that choice be the likelihood they buy something on our website? Or if we chose to give a new drug to a patient, what will the <em>effect</em> of that choice be on their disease?</p>
-<p>Because of their potential to help us understand the future consequences of our actions, it should come as no surprise that the ability to answer Causal Questions is of <em>profound</em> interest to everyone from companies to doctors and policymakers. At the same time, however, it should <em>also</em> come as no surprise that answering Causal Questions is an inherently challenging undertaking.</p>
+<p>Because of their potential to help us understand the future consequences of our actions, it should come as no surprise that the ability to answer Causal Questions is of <em>profound</em> interest to everyone from companies to doctors and policymakers. At the same time, however, it may also come as no surprise that answering Causal Questions is an inherently challenging undertaking.</p>
+<p>In this reading, we will discuss in detail what it means to answer a Causal Question — and why answering Causal Questions is inescapably difficult. Then in our next reading, we will turn to the role that Causal Questions play in the life of a practicing data scientist, and why expertise in <em>causal inference</em> (the discipline of answering Causal Questions) is one of the most valuable skills a data scientist can develop.</p>
 <section id="what-we-mean-by-cause">
 <h2>What We Mean By “Cause”<a class="headerlink" href="#what-we-mean-by-cause" title="Permalink to this headline">#</a></h2>
-<p>To understand why answering Causal Questions is hard, we must actually take a step back and answer the question: “what do we mean when we say some action X <em>causes</em> an outcome Y?”</p>
+<p>To understand what it means to answer a Causal Question, and why answering Causal Questions is intrinsically hard, we must start by taking a step back to answer the question: “what do we mean when we say some action X <em>causes</em> a change in some outcome Y?”</p>
 <p>Seriously, what do we mean when we say “X causes Y?” Try and come up with a definition!</p>
-<p>While this question may <em>seem</em> simple, it turns out that this question has been the subject of serious academic debate for hundreds of years by people as prominent as David Hume. Indeed, even today there is still debate over how best to answer this question.</p>
+<p>While this question may <em>seem</em> simple, it turns out that this question has been the subject of serious academic debate for hundreds of years by philosophers no less famous than David Hume. Indeed, even today there is still debate over how best to answer this question.</p>
 <p>In this course, we will make use of the <em>Counterfactual Model of Causality</em> (sometimes called the Neyman-Rubin causal model). In plain English, it posits that for “doing X to cause Y”, it must be the case that if we do X, then Y will occur, and if we did not do X, then Y would not occur. This is by far the most used definition of causality today, and yet remarkably, it only emerged in the 20th Century and was only really fleshed out in the 1970s. Yeah… that recently.</p>
+<aside class="sidebar">
+<p class="sidebar-title">Counterfactual Model of Causality</p>
+<p>For “doing X to cause Y”, it must be the case that if we do X, then Y will occur, and if we did not do X, then Y would not occur.</p>
+</aside>
 <p>At first blush, this definition may seem simple. But its simplicity belies a profoundly difficult practical problem. See, this definition relies on <em>comparing</em> the value of our outcome Y in two states of the world: the world where we do X, and the world where we don’t do X. But as we only get to live in one universe, we can never perfectly know what the value of our outcome Y would be in <em>both</em> a world where we do X and one where we don’t do X for a given entity at a given moment in time. As such, we can <strong>never</strong> directly measure the causal effect of X on Y for a given entity (say, a given patient or customer) at a given moment in time — a problem known as the <strong>Fundamental Problem of Causal Inference</strong> (causal inference being what people call the practice of answering Causal Questions).</p>
 <p>To illustrate, suppose we were interested in the effect of taking a new drug (our X) on cancer survival (our Y)  for a given patient (a woman named Shikha who arrived at the hospital on June 18th 2022). We can give her the drug and evaluate whether she is still alive a year later, but that alone can’t tell us whether the new drug <em>caused</em> her survival according to our counterfactual model of causality — after all, if she survives maybe she would have survived even without the drug! To actually know the effect of the drug on Shikha <em>by direct measurement,</em> we would have to be able to measure her survival both in the world where we gave her the drug <em>and</em> the world where we did not and compare outcomes.</p>
 <p>Since we can never see both states of the world — the world where we undertake the action whose effect we want to understand and the world where we don’t — almost everything we do when trying to answer Causal Questions amounts to trying to find something we <em>can</em> measure that we think is a <em>good approximation</em> of the state of the world we can’t actually see.</p>
@@ -443,7 +472,19 @@ title="Print to PDF"
 <p>According to the Counterfactual Model of Causality, we could only ever <em>know</em> if taking the drug caused a decrease in tumor size if we could both administer the drug and observe the tumor <em>and also observe a parallel world in which the same person at the same moment in time was not given the drug for comparison</em>. And since we can never see this parallel world — the <em>counterfactual</em> to the world we observe — the best we can do is come up with different, imperfect tricks for <em>approximating</em> what might have happened in this parallel world, like comparing the tumor size before and after we administer the drug, imperfect though that may be.</p>
 <p>So does that mean we’re doomed? Yes and no. Yes, it <em>does</em> mean that we’re doomed to never be able to take the exact measurements that make it possible to directly answer a Causal Question. But no, that doesn’t mean we can’t do anything — in the coming weeks, we will learn about different strategies for approximating counterfactual conditions, and in each case we will learn about what <em>assumptions</em> must be true for our strategy to provide a valid answer to our Causal Question. By making the assumptions that underlie each empirical strategy explicit, we will then be able to evaluate the plausibility of these assumptions.</p>
 <p>In the example of Shikha, for example, we know that our comparison of tumor size before taking the drug to tumor size after taking the drug is only valid if her tumor <em>would not have gotten smaller without the drug</em>. This is something we can’t measure directly, but we can look to other patients with similar tumors, or the history of her tumor size to evaluate how often we see tumors get smaller at the rate observed after she took the drug. If it’s very rare for these types of tumors to ever get smaller, than we can have more confidence that a decrease in tumor size was the result of the drug.</p>
-<p>For many data scientists, this will feel <em>profoundly</em> dissatisfying. May people come to data science because of the promise that it will provide direct answers to questions using statistics. But because of the Fundamental Problem of Causal Inference, this will never be possible when answering Causal Questions. Rather, your task will be like that of a detective trying to solve a crime — your task is to try and determine what <em>probably</em> happened at a crime scene by gathering clues, and to decide based on the amount of evidence you’ve been able to find how confident you are you know what happened. But try as you might, you will never actually get to be present at the time of the crime, so you will never be able to actually be sure if you are right or not.</p>
+<p>We are also sometimes in a position to be more proactive than our effort to answer Causal Questions. Rather than trying to make inferences from the world around us using what is termed “observational data” (data that was generated through a process we did not directly control, a process we only “observe”), we can sometimes generate our own data through randomized experiments.</p>
+<p>Randomized experiments — perhaps the most familiar tool for answering Causal Questions — are also just another way of approximating the unobservable counterfactual condition. In a randomized experiment — also known as “randomized experiments,” “Randomized Control Trials (RCTs)”, or “A/B Tests” depending on who you’re hanging out with — participants are assigned to either receive the treatment (the treatment group) or not (the control group) based on the flip of a coin, a roll of a die, or more commonly a random number generator on a computer. Provided we have enough participants, the Law of Large Numbers then promises that, <em>on average</em>, the people assigned to the control group will (probably) be “just like” the people assigned to the treatment group in every possible way (save being treated). Subject to a few other assumptions we’ll discuss in great detail later, that means that the outcomes of the control group — being just like the treatment group <em>on average</em> — will be a good approximation of what <em>would</em> have happened to the treatment group in world where they did not receive the treatment.</p>
+<p>Randomized experiments are not a silver bullet, however. The validity of experimental comparisons still rests on a number of assumptions, many of which cannot be directly tested. For example, we can never be entirely sure that when we randomly assigned people to control and treatment groups, the process was truly random, or that we ended up with people who were similar in both groups (the law of large numbers only promises that getting similar groups becomes <em>more likely</em> as the size of the groups increases, not that it will happen with certainty!). Moreover, conducting a randomized experiment requires working in a context where the researcher can control everything, and that can sometimes generate results that may not generalize to the big messy world where you actually want to act.</p>
+<section id="so-where-does-that-leave-us">
+<h3>So where does that leave us?<a class="headerlink" href="#so-where-does-that-leave-us" title="Permalink to this headline">#</a></h3>
+<p>For many data scientists, this will feel <em>profoundly</em> dissatisfying. Many people come to data science because of the promise that it will provide direct answers to questions about the world using statistics. But because of the Fundamental Problem of Causal Inference, this will never be possible when answering Causal Questions. Rather, the job of a data scientist answering Causal Questions is a lot like the job of a detective trying to solve a crime — your task is to determine what <em>probably</em> happened at a crime scene. You can gather clues, collect forensic evidence, and interview suspects, all in an effort to come up with the <em>most likely</em> explanation for a crime. But no matter how hard you try, you can’t go back in time to witness the crime itself, so you will never be able to be entirely sure if you are right or not.</p>
+<p>But just as we investigate and prosecute crimes despite our inability to ever be 100% certain an arrested suspect is guilty, so too must businesses and governments make decisions using the best available evidence, even when that evidence is imperfect. But it is our job, as data scientists, to help provide our stakeholders with the best available evidence, and also to help them understand the strength of the evidence we are able to provide.</p>
+</section>
+</section>
+<section id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">#</a></h2>
+<p>In this reading, we learned — in an intuitive sense — why answering Causal Questions is inherently hard. But this explanation, while accurate, is a little informal to be rigorous. In the readings that follow, we will be introduced to the <em>Potential Outcomes Framework</em> — the formal statistical framework that underlies the Neyman-Rubin Counterfactual Model of Causality. This framework will help us reason more systematically about how and when methods like randomized experiments, linear regression, matching, and differences-in-differences can help us answer Causal Questions.</p>
+<p>But first, in the interest of not losing perspective on the forest for the trees, a discussion of <em>how</em> Causal Questions are used in practice.</p>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="natural-history"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
@@ -490,7 +531,7 @@ title="Print to PDF"
     <a class='right-next' id="next-link" href="40_causal_workflow.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">How We Answer Causal Questions</p>
+        <p class="prev-next-title">The Purpose of Causal Questions</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

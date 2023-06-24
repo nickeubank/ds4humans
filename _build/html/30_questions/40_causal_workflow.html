@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>How We Answer Causal Questions &#8212; Data Science for Humans</title>
+    <title>The Purpose of Causal Questions &#8212; Data Science for Humans</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -168,7 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   How We Answer Causal Questions
+   The Purpose of Causal Questions
   </a>
  </li>
 </ul>
@@ -382,36 +382,29 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   How We Answer Causal Questions
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-two-fold-challenge-of-causal-questions">
+   The Two-Fold Challenge of Causal Questions
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-causal-question-work-flow">
+   The Causal Question Work Flow
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#identify-relevant-previous-studies">
      Identify Relevant Previous Studies
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#evaluate-previous-studies">
      Evaluate Previous Studies
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#plan-a-new-study">
      Plan A New Study
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-passive-prediction-is-not-enough">
-   Why Passive-Prediction Is Not Enough
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#back-to-blood-pressure">
-     Back to Blood Pressure
     </a>
    </li>
   </ul>
@@ -425,7 +418,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>How We Answer Causal Questions</h1>
+                <h1>The Purpose of Causal Questions</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -435,36 +428,29 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   How We Answer Causal Questions
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-two-fold-challenge-of-causal-questions">
+   The Two-Fold Challenge of Causal Questions
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-causal-question-work-flow">
+   The Causal Question Work Flow
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#identify-relevant-previous-studies">
      Identify Relevant Previous Studies
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#evaluate-previous-studies">
      Evaluate Previous Studies
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#plan-a-new-study">
      Plan A New Study
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-passive-prediction-is-not-enough">
-   Why Passive-Prediction Is Not Enough
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#back-to-blood-pressure">
-     Back to Blood Pressure
     </a>
    </li>
   </ul>
@@ -479,47 +465,54 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="how-we-answer-causal-questions">
-<h1>How We Answer Causal Questions<a class="headerlink" href="#how-we-answer-causal-questions" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-purpose-of-causal-questions">
+<h1>The Purpose of Causal Questions<a class="headerlink" href="#the-purpose-of-causal-questions" title="Permalink to this headline">#</a></h1>
+<p>In our last reading, we learned about why answering Causal Questions is so difficult. That is a topic we will return to shortly, as understanding precisely <em>why</em> answering Causal Questions is hard is part and parcel to being able to <em>answer</em> Causal Questions effectively. But before we dive into that topic, it is worth pausing to reflect on why answering Causal Questions is such a valuable skill.</p>
+<p>Causal Questions arise most often when stakeholders want to <em>do</em> something — buy a Superbowl ad, change how the recommendation engine in their app works, authorize a new prescription drug — but are unsure about whether the action will actually be beneficial. In these situations, stakeholders will often turn to data scientists in the hopes that they can “de-risk” the stakeholder’s decision by providing guidance on the likely effect of their actions.</p>
+<section id="the-two-fold-challenge-of-causal-questions">
+<h2>The Two-Fold Challenge of Causal Questions<a class="headerlink" href="#the-two-fold-challenge-of-causal-questions" title="Permalink to this headline">#</a></h2>
+<p>The challenge in answering this type of Causal Question is that stakeholders want to know the likely consequences of an action <em>before they actually undertake the action.</em> This may seem obvious, but it bears reflection — not only is answering Causal Questions hard because we never get to measure outcomes in a world where our treatment occurs and the parallel world where it does not (the Fundamental Problem of Causal Inference), but <em>also</em> because stakeholders want to know about the likely consequences of an action they aren’t ready to undertake!</p>
+<p>As a result, the job of a data scientist who wants to answer a Causal Question is <em>not only</em> to measure the effect of a treatment (a hard job to begin with!), <em>but also</em> to do so in a setting that is enough like the context in which the stakeholder wants to act that any measured effect will <em>generalize</em> to the stakeholder’s context. We call these two objectives of a study <em>internal validity</em> (how well the analysis answers the Causal Question <em>in the setting the study is conducted</em>) and <em>external validity</em> (how well we think the results of a study will generalize to the context the stakeholder cares about).</p>
+<p>To illustrate, suppose you work for a medical device company in Boston that wants the US Food and Drug Administration (FDA) to authorize a new cochlear implant your company has developed (a partially surgically implanted device for helping those with certain types of hearing loss regain hearing). Before authorizing the device, the FDA wants to be sure that it’s safe and effective — in other words, it wants to know what the <em>effect</em> of authorizing the device for patients throughout the United States would be on patient health.</p>
+<p>Your job, therefore, is to conduct a study that (a) convincingly measures the effect of the device on patients (has high internal validity), <em>and</em> (b) does so in a way that convinces the FDA that the findings from <em>your study</em> are likely to be the same as what would be seen if the device were being used across the United States (has external validity to the context the FDAs cares about).</p>
+<p>In medical trials, internal validity is usually ensured by conducted a randomized experiment — referred to as a Randomized Control Trial (RCT) in medical circles — according to a set of FDA requirements. We’ll discuss what features must be present for us to have confidence in the results of a randomized experiment soon, but they are things like making sure that the people in the control group look like the people in the treatment group in terms of things we can measure (age, gender, etc.) to help us feel confident that when people were randomly assigned to control and treatment groups, we didn’t end up in a really unlikely situation where, purely by chance, only men ended up in control group and only women ended up in treatment group.</p>
+<p>External validity, by contrast, comes from things like <em>who</em> is enrolled in the trial. The average age of children getting cochlear implants is between 2 and 3, so if your study only included children between 12 and 18 months of age, the FDA may worry that the results of the study would not <em>generalize</em> to the US population as a whole.</p>
+<p>In the context of a clinical trial, this issue of external validity may seem easy to address — just get a sample of people who “look like” the US population (when applying for US FDA approval)! Historically, however, <a class="reference external" href="https://www.theguardian.com/lifeandstyle/2015/apr/30/fda-clinical-trials-gender-gap-epa-nih-institute-of-medicine-cardiovascular-disease">women</a><a class="footnote-reference brackets" href="#women-enrollment" id="id1">1</a> and <a class="reference external" href="https://www.thelancet.com/journals/lanam/article/PIIS2667-193X(22)00069-2/fulltext">minorities</a> have been underrepresented in clinical trial participants.<a class="footnote-reference brackets" href="#minority-enrollment" id="id2">2</a> Moreover, the people designing clinical trials often limit enrollment to participants who, aside from the specific condition being treated, are healthy to avoid complications. This reduction in complications may increase the <em>internal</em> validity, but as many patients face more than one health challenge, it may reduce external validity.</p>
+<p>Outside of drug or medical device trials, however, external validity can much harder to establish. For example, the functionality of many internet services and apps depends on network effects — testing out a new social feature on Instagram by making it available to only a handful of users in a randomized trial (an A/B test, in the language of tech companies) may not give you a meaningful sense of how the feature would be used if it was visible to all users. And the way that bank customers use a new budgeting app in the context of a two-week study may not be indicative of how they would use it over the long run when the feature is no longer new.</p>
+</section>
+<section id="the-causal-question-work-flow">
+<h2>The Causal Question Work Flow<a class="headerlink" href="#the-causal-question-work-flow" title="Permalink to this headline">#</a></h2>
 <p>Before we dive into the technical details of answering Causal Questions, it’s worth starting with a high-level overview of how data scientists approach answering Causal Questions.</p>
-<p>Nearly all Causal Questions are motivated by a stakeholder’s desire to know the consequences of a certain action. Again, this action could take almost any form, from changing the prices of a product to changing the design of a website or rolling out a new government health insurance system. <em>Usually</em>, this action will not have been pulled out of a hat — rather, one generally poses a Causal Question because one has some reason for thinking a given course of action may be a good one. For example, someone interested in reducing surgical complications may have discovered that patients with high blood pressure are more likely to experience complications from surgery (they observed a <em>correlation</em> between these two outcomes), so now they want to know if giving patients who experience high blood pressure medication to bring down their blood pressure before surgery would reduce complications. Or perhaps your online retailer stakeholder has noticed that one of your competitors has stopped showing customer reviews in the search results, so they suspect it must be improving sales for your competitor and want to know if it would work for your site too.</p>
 <section id="identify-relevant-previous-studies">
-<h2>Identify Relevant Previous Studies<a class="headerlink" href="#identify-relevant-previous-studies" title="Permalink to this headline">#</a></h2>
+<h3>Identify Relevant Previous Studies<a class="headerlink" href="#identify-relevant-previous-studies" title="Permalink to this headline">#</a></h3>
 <p>Once a Causal Question has been posed, the next step is <strong>to identify any research that has already been done</strong> that may help answer your causal question. It’s hard to overstate how often this step is overlooked by data scientists, but it’s <em>such</em> a no-brainer once you think of it! There’s no reason to spend days or weeks trying to design a study to answer a question if someone else has already put the time and money into doing it for you!</p>
 <p>If your stakeholder is somebody who works in public policy or medicine, then the first place to look for previous studies is in academic medical or policy journals. But don’t assume that if you aren’t working on a medical or public policy question that you won’t be able to find an answer to your question in academic or pseudo-academic publications — lots of data scientists present research done at private companies at ``industry’’ conferences like the <a class="reference external" href="https://ide.mit.edu/events/2022-conference-on-digital-experimentation-mit-codemit/">MIT Conference on Digital Experimentation (CODE&#64;MIT)</a> or the <a class="reference external" href="https://netmob.org/">NetMob Cellphone MetaData Analysis Conference</a>!</p>
 <p>And if you are at a company, ask around! Someone at your own company may have looked into a similar question before, and talking to them could save you a lot of effort.</p>
 </section>
 <section id="evaluate-previous-studies">
-<h2>Evaluate Previous Studies<a class="headerlink" href="#evaluate-previous-studies" title="Permalink to this headline">#</a></h2>
+<h3>Evaluate Previous Studies<a class="headerlink" href="#evaluate-previous-studies" title="Permalink to this headline">#</a></h3>
 <p>If you do find studies, then for each study you will have to ask yourself two questions:</p>
 <ul class="simple">
 <li><p><strong>Did the study authors do a good job of answering the Causal Question? <em>in the context they were studying</em></strong>?</p></li>
 <li><p><strong>Do I believe that the <em>context</em> in which the study was conducted is similar enough to my own context that their conclusions are relevant to me?</strong></p></li>
 </ul>
-<p>This first question is about the <em>internal validity</em> of the study, and we’ll talk at length about how to evaluate that in the context of causal inference in the coming weeks. The second question is about the <em>external validity</em> (i.e., the generalizability) of the study to your context. There are lots of extremely well-conducted studies in the world that may be seeking to answer the same question as you, but if, for example, they investigated the effect of a new drug in <em>young</em> patients, and your hospital only treats very old patients, you may not be comfortable assuming their results are good predictors for what might happen in your hospital. Again, we’ll talk more about how to make these kinds of evaluations, but for the moment, I just want to ensure you have a good high-level overview of the <em>workflow</em> of someone trying to answer Causal Questions.</p>
+<p>This first question is about the <em>internal validity</em> of the study, and we’ll talk at length about how to evaluate that in the context of causal inference in the coming weeks. The second question is about the <em>external validity</em> (i.e., the generalizability) of the study to your context. There are lots of extremely well-conducted studies in the world that may be seeking to answer the same question as you, but if, for example, they investigated the effect of a new drug in <em>young</em> patients, and your hospital only treats very old patients, you may not be comfortable assuming their results are good predictors for what might happen in your hospital.</p>
 </section>
 <section id="plan-a-new-study">
-<h2>Plan A New Study<a class="headerlink" href="#plan-a-new-study" title="Permalink to this headline">#</a></h2>
+<h3>Plan A New Study<a class="headerlink" href="#plan-a-new-study" title="Permalink to this headline">#</a></h3>
 <p>If you were unable to find any studies that answer your Causal Question satisfactorily (either on their own or in combination), then it may be time to do a study of your own!</p>
-<p>The goal when designing a study to answer a Causal Question is usually to (a) try the intervention whose effect you want to understand <em>on small scale and in a controlled manner</em> in a randomized experiment, or (b) find data from a time/place where some entities were subjected to the intervention you want to understand and others were not.</p>
-<p>The first of these is called a randomized experiment — or an A/B test, a Randomized Control Trial (RCT), or a clinical trial, depending on whether you’re hanging out with data scientists, social scientists, or doctors. The second of these is called an “observational study,” because you aren’t in control of the situation that gave rise to the data, you’re just an observer trying to learn from something that’s already happened.</p>
-<p><strong>Both of these kinds of studies can generate valid answers to Causal Questions!</strong> It is sometimes said that only experiments can give you “true” answers, but as we’ll discuss at length, that is not the case.</p>
+<p>The goal when designing a study to answer a Causal Question is usually to (a) try the intervention whose effect you want to understand <em>on small scale and in a controlled manner</em> in a randomized experiment, or (b) find data from a time/place where entities were subjected to the intervention you want to understand and others were not. The second of these is called an “observational study” because you aren’t in control of the situation that gave rise to the data, you’re just an observer trying to learn from something that’s already happened.</p>
+<p><strong>Both of these kinds of studies can generate valid answers to Causal Questions!</strong> It is sometimes said that only experiments can give you “true” answers, but as we’ll discuss at length, that is not the case. This is especially true because the type of controls and supervision required to run an effective randomized experiment often result in an artificiality that can undermine the external validity of studies, and as we’ve discussed before, to be useful a study must have <em>both</em> good internal <em>and</em> external validity.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="women-enrollment"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>In 1977, the FDA actually banned enrollment of women of “childbearing potential” from Phase 1 and Phase 2 clinical trials in the <a class="reference external" href="https://www.womenshealth.gov/30-achievements/04#:~:text=In%201977%2C%20the%20FDA%20issued,thalidomide)%20causing%20serious%20birth%20defects.">interest of avoiding birth defects</a>.</p>
+</dd>
+<dt class="label" id="minority-enrollment"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>This seems likely to be due, in part, to hesitancy to enroll in clinical trials by individuals aware of past abuses of minority patients, as in the <a class="reference external" href="https://www.cdc.gov/tuskegee/index.html">Tuskegee Syphilis Study</a>.</p>
+</dd>
+</dl>
 </section>
-</section>
-<section id="why-passive-prediction-is-not-enough">
-<h1>Why Passive-Prediction Is Not Enough<a class="headerlink" href="#why-passive-prediction-is-not-enough" title="Permalink to this headline">#</a></h1>
-<p>The saying “correlation does not imply causation” is bandied about around so regularly that for many of us, it begins to lose any meaning. Indeed, it is almost a cliché for data science students to end any presentation of statistical analyses with “but of course, correlation does not imply causation, so we don’t really know,” as though invocation of the phrase absolves them of responsibility for preceding interpretation of correlations as suggesting a causal relationship.</p>
-<p>But for all its popularity, the saying “correlation does not imply causation” is frustrating because it’s not <em>useful</em>, and that’s because what people mean when they say “correlation does not imply causation” is actually “correlation does not <em>necessarily</em> imply causation,” and that more accurate presentation makes clear a useful corollary: “correlation does not <em>necessarily</em> imply causation, but in certain situations, correlation <em>does</em> imply causation!”.</p>
-<p>So let’s pause for a moment to try and understand <em>why</em> correlation does not necessarily imply causation so that we can better understand what must be true for a correlation to actually imply causation!</p>
-<p>Let’s return to our example of a hospital trying to identify what patients are most likely to experience complications after surgery. They have lots of historical data on patients before and after surgery, and they can feed this into a simple logistic regression to find out pre-surgery patient characteristics predict complications. They do so, and find that the model performs extremely well — it identifies nearly all the patients who end up having complications, and the false positive rate is still relatively low. They deploy the model throughout the hospital, and nurses begin to followup more aggressively with patients flagged as being likely to have complications. For the purpose of <em>identifying individual patients for additional attention</em>, this effort to answer the Passive-Predictive Question “which patients are most likely to experience post-surgical complications” has been a huge success.</p>
-<p>BUT: now suppose a doctor looks this logistical regression and finds that one of the strongest predictors of complications is whether the patient has high blood pressure prior to surgery. This association is clearly helping to identify patients who are likely to have complications, but does it imply that high blood pressure is <em>causing</em> patients to experience complications?</p>
-<section id="back-to-blood-pressure">
-<h2>Back to Blood Pressure<a class="headerlink" href="#back-to-blood-pressure" title="Permalink to this headline">#</a></h2>
-<p>OK, so now we know what is meant when we asked whether “high blood pressure causes surgical complications” — it means that if the patients who have high blood pressure didn’t have high blood pressure, then they would be less likely to have surgical complications!</p>
-<p>So we give all the patients with high blood pressure medication to reduce their blood pressure and wait.</p>
-<ul class="simple">
-<li><p>Check engine light / warning light analogy — good for identifying cars with problems, but you won’t get anywhere by just turning off those lights.</p></li>
-</ul>
 </section>
 </section>
 

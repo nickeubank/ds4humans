@@ -36,29 +36,82 @@ for i in range(1, 5):
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mValueError[0m                                Traceback (most recent call last)
-Cell [0;32mIn[1], line 16[0m
+[0;31mNoMatchingVersions[0m                        Traceback (most recent call last)
+Cell [0;32mIn[1], line 15[0m
+[1;32m     11[0m fit [38;5;241m=[39m c[38;5;241m.[39mtransform_regression(
+[1;32m     12[0m     [38;5;124mf[39m[38;5;124m"[39m[38;5;124my_[39m[38;5;132;01m{[39;00mi[38;5;132;01m}[39;00m[38;5;124m"[39m, [38;5;124mf[39m[38;5;124m"[39m[38;5;124mx_[39m[38;5;132;01m{[39;00mi[38;5;132;01m}[39;00m[38;5;124m"[39m
+[1;32m     13[0m )[38;5;241m.[39mmark_line()
 [1;32m     14[0m o [38;5;241m=[39m fit [38;5;241m+[39m c
-[1;32m     15[0m o[38;5;241m.[39mshow()
-[0;32m---> 16[0m [43maltair_saver[49m[38;5;241;43m.[39;49m[43msave[49m[43m([49m[43mo[49m[43m,[49m[43m [49m[38;5;124;43mf[39;49m[38;5;124;43m"[39;49m[38;5;124;43m../images/anscombes_[39;49m[38;5;132;43;01m{[39;49;00m[43mi[49m[38;5;132;43;01m}[39;49;00m[38;5;124;43m.png[39;49m[38;5;124;43m"[39;49m[43m)[49m
+[0;32m---> 15[0m [43mo[49m[38;5;241;43m.[39;49m[43mshow[49m[43m([49m[43m)[49m
+[1;32m     16[0m altair_saver[38;5;241m.[39msave(o, [38;5;124mf[39m[38;5;124m"[39m[38;5;124m../images/anscombes_[39m[38;5;132;01m{[39;00mi[38;5;132;01m}[39;00m[38;5;124m.png[39m[38;5;124m"[39m)
 
-File [0;32m~/opt/miniconda3/lib/python3.10/site-packages/altair_saver/_core.py:62[0m, in [0;36msave[0;34m(chart, fp, fmt, mode, method, **kwargs)[0m
-[1;32m     41[0m [38;5;250m[39m[38;5;124;03m"""Save an Altair, Vega, or Vega-Lite chart[39;00m
-[1;32m     42[0m 
-[1;32m     43[0m [38;5;124;03mParameters[39;00m
+File [0;32m~/opt/miniconda3/lib/python3.10/site-packages/altair/vegalite/v5/api.py:2273[0m, in [0;36mTopLevelMixin.show[0;34m(self, embed_opt, open_browser)[0m
+[1;32m   2268[0m [38;5;28;01mexcept[39;00m [38;5;167;01mImportError[39;00m [38;5;28;01mas[39;00m err:
+[1;32m   2269[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
+[1;32m   2270[0m         [38;5;124m"[39m[38;5;124m'[39m[38;5;124mshow[39m[38;5;124m'[39m[38;5;124m method requires the altair_viewer package. [39m[38;5;124m"[39m
+[1;32m   2271[0m         [38;5;124m"[39m[38;5;124mSee http://github.com/altair-viz/altair_viewer[39m[38;5;124m"[39m
+[1;32m   2272[0m     ) [38;5;28;01mfrom[39;00m [38;5;21;01merr[39;00m
+[0;32m-> 2273[0m [43maltair_viewer[49m[38;5;241;43m.[39;49m[43mshow[49m[43m([49m[38;5;28;43mself[39;49m[43m,[49m[43m [49m[43membed_opt[49m[38;5;241;43m=[39;49m[43membed_opt[49m[43m,[49m[43m [49m[43mopen_browser[49m[38;5;241;43m=[39;49m[43mopen_browser[49m[43m)[49m
+
+File [0;32m~/opt/miniconda3/lib/python3.10/site-packages/altair_viewer/_viewer.py:355[0m, in [0;36mChartViewer.show[0;34m(self, chart, embed_opt, open_browser)[0m
+[1;32m    328[0m [38;5;28;01mdef[39;00m [38;5;21mshow[39m(
+[1;32m    329[0m     [38;5;28mself[39m,
+[1;32m    330[0m     chart: Union[[38;5;28mdict[39m, alt[38;5;241m.[39mTopLevelMixin],
+[1;32m    331[0m     embed_opt: Optional[[38;5;28mdict[39m] [38;5;241m=[39m [38;5;28;01mNone[39;00m,
+[1;32m    332[0m     open_browser: Optional[[38;5;28mbool[39m] [38;5;241m=[39m [38;5;28;01mNone[39;00m,
+[1;32m    333[0m ) [38;5;241m-[39m[38;5;241m>[39m [38;5;28;01mNone[39;00m:
+[1;32m    334[0m [38;5;250m    [39m[38;5;124;03m"""Show chart and prompt to pause execution.[39;00m
+[1;32m    335[0m 
+[1;32m    336[0m [38;5;124;03m    Use this to show a chart within a stand-alone script, to prevent the Python process[39;00m
 [0;32m   (...)[0m
-[1;32m     59[0m [38;5;124;03m    Additional keyword arguments are passed to Saver initialization.[39;00m
-[1;32m     60[0m [38;5;124;03m"""[39;00m
-[1;32m     61[0m [38;5;28;01mif[39;00m method [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
-[0;32m---> 62[0m     Saver [38;5;241m=[39m [43m_get_saver_for_format[49m[43m([49m[43mfmt[49m[38;5;241;43m=[39;49m[43mfmt[49m[43m,[49m[43m [49m[43mfp[49m[38;5;241;43m=[39;49m[43mfp[49m[43m)[49m
-[1;32m     63[0m [38;5;28;01melif[39;00m [38;5;28misinstance[39m(method, [38;5;28mtype[39m):
-[1;32m     64[0m     Saver [38;5;241m=[39m method
+[1;32m    353[0m [38;5;124;03m    render : Jupyter renderer for chart.[39;00m
+[1;32m    354[0m [38;5;124;03m    """[39;00m
+[0;32m--> 355[0m     msg [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mdisplay[49m[43m([49m[43mchart[49m[43m,[49m[43m [49m[43membed_opt[49m[38;5;241;43m=[39;49m[43membed_opt[49m[43m,[49m[43m [49m[43mopen_browser[49m[38;5;241;43m=[39;49m[43mopen_browser[49m[43m)[49m
+[1;32m    356[0m     [38;5;28mprint[39m(msg)
+[1;32m    357[0m     [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39m_provider [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
 
-File [0;32m~/opt/miniconda3/lib/python3.10/site-packages/altair_saver/_core.py:30[0m, in [0;36m_get_saver_for_format[0;34m(fmt, fp)[0m
-[1;32m     28[0m     [38;5;28;01mif[39;00m fmt [38;5;129;01min[39;00m s[38;5;241m.[39mvalid_formats [38;5;129;01mand[39;00m s[38;5;241m.[39menabled():
-[1;32m     29[0m         [38;5;28;01mreturn[39;00m s
-[0;32m---> 30[0m [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mUnsupported format: [39m[38;5;132;01m{[39;00mfmt[38;5;132;01m!r}[39;00m[38;5;124m"[39m)
+File [0;32m~/opt/miniconda3/lib/python3.10/site-packages/altair_viewer/_viewer.py:266[0m, in [0;36mChartViewer.display[0;34m(self, chart, inline, embed_opt, open_browser)[0m
+[1;32m    264[0m     chart [38;5;241m=[39m chart[38;5;241m.[39mto_dict()
+[1;32m    265[0m [38;5;28;01massert[39;00m [38;5;28misinstance[39m(chart, [38;5;28mdict[39m)
+[0;32m--> 266[0m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_initialize[49m[43m([49m[43m)[49m
+[1;32m    267[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39m_stream [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[1;32m    268[0m     [38;5;28;01mraise[39;00m [38;5;167;01mRuntimeError[39;00m([38;5;124m"[39m[38;5;124mInternal: _stream is not defined.[39m[38;5;124m"[39m)
 
-[0;31mValueError[0m: Unsupported format: 'png'
-ValueError: Unsupported format: 'png'
+File [0;32m~/opt/miniconda3/lib/python3.10/site-packages/altair_viewer/_viewer.py:183[0m, in [0;36mChartViewer._initialize[0;34m(self)[0m
+[1;32m    180[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39m_use_bundled_js:
+[1;32m    181[0m     [38;5;28;01mfor[39;00m package [38;5;129;01min[39;00m [[38;5;124m"[39m[38;5;124mvega[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mvega-lite[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mvega-embed[39m[38;5;124m"[39m]:
+[1;32m    182[0m         [38;5;28mself[39m[38;5;241m.[39m_resources[package] [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_provider[38;5;241m.[39mcreate(
+[0;32m--> 183[0m             content[38;5;241m=[39m[43mget_bundled_script[49m[43m([49m
+[1;32m    184[0m [43m                [49m[43mpackage[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_versions[49m[38;5;241;43m.[39;49m[43mget[49m[43m([49m[43mpackage[49m[43m)[49m
+[1;32m    185[0m [43m            [49m[43m)[49m,
+[1;32m    186[0m             route[38;5;241m=[39m[38;5;124mf[39m[38;5;124m"[39m[38;5;124mscripts/[39m[38;5;132;01m{[39;00mpackage[38;5;132;01m}[39;00m[38;5;124m.js[39m[38;5;124m"[39m,
+[1;32m    187[0m         )
+[1;32m    189[0m favicon [38;5;241m=[39m pkgutil[38;5;241m.[39mget_data([38;5;124m"[39m[38;5;124maltair_viewer[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mstatic/favicon.ico[39m[38;5;124m"[39m)
+[1;32m    190[0m [38;5;28;01mif[39;00m favicon [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+
+File [0;32m~/opt/miniconda3/lib/python3.10/site-packages/altair_viewer/_scripts.py:40[0m, in [0;36mget_bundled_script[0;34m(package, version)[0m
+[1;32m     36[0m [38;5;28;01mif[39;00m package [38;5;129;01mnot[39;00m [38;5;129;01min[39;00m listing:
+[1;32m     37[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
+[1;32m     38[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124mpackage [39m[38;5;132;01m{[39;00mpackage[38;5;132;01m!r}[39;00m[38;5;124m not recognized. Available: [39m[38;5;132;01m{[39;00m[38;5;28mlist[39m(listing)[38;5;132;01m}[39;00m[38;5;124m"[39m
+[1;32m     39[0m     )
+[0;32m---> 40[0m version_str [38;5;241m=[39m [43mfind_version[49m[43m([49m[43mversion[49m[43m,[49m[43m [49m[43mlisting[49m[43m[[49m[43mpackage[49m[43m][49m[43m)[49m
+[1;32m     41[0m path [38;5;241m=[39m [38;5;124mf[39m[38;5;124m"[39m[38;5;124mscripts/[39m[38;5;132;01m{[39;00mpackage[38;5;132;01m}[39;00m[38;5;124m-[39m[38;5;132;01m{[39;00mversion_str[38;5;132;01m}[39;00m[38;5;124m.js[39m[38;5;124m"[39m
+[1;32m     42[0m content [38;5;241m=[39m pkgutil[38;5;241m.[39mget_data([38;5;124m"[39m[38;5;124maltair_viewer[39m[38;5;124m"[39m, path)
+
+File [0;32m~/opt/miniconda3/lib/python3.10/site-packages/altair_viewer/_utils.py:212[0m, in [0;36mfind_version[0;34m(version, candidates, strict_micro)[0m
+[1;32m    210[0m matches [38;5;241m=[39m [c [38;5;28;01mfor[39;00m c [38;5;129;01min[39;00m cand [38;5;28;01mif[39;00m v[38;5;241m.[39mmatches(c)]
+[1;32m    211[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m matches:
+[0;32m--> 212[0m     [38;5;28;01mraise[39;00m NoMatchingVersions(
+[1;32m    213[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124mNo matches for version=[39m[38;5;132;01m{[39;00mversion[38;5;132;01m!r}[39;00m[38;5;124m among [39m[38;5;132;01m{[39;00mcandidates[38;5;132;01m}[39;00m[38;5;124m.[39m[38;5;130;01m\n[39;00m[38;5;124m"[39m
+[1;32m    214[0m         [38;5;124m"[39m[38;5;124mOften this can be fixed by updating altair_viewer:[39m[38;5;130;01m\n[39;00m[38;5;124m"[39m
+[1;32m    215[0m         [38;5;124m"[39m[38;5;124m    pip install -U altair_viewer[39m[38;5;124m"[39m
+[1;32m    216[0m     )
+[1;32m    217[0m [38;5;28;01mreturn[39;00m [38;5;28mstr[39m(matches[[38;5;241m-[39m[38;5;241m1[39m])
+
+[0;31mNoMatchingVersions[0m: No matches for version='5.8.0' among ['4.0.2', '4.8.1', '4.17.0'].
+Often this can be fixed by updating altair_viewer:
+    pip install -U altair_viewer
+NoMatchingVersions: No matches for version='5.8.0' among ['4.0.2', '4.8.1', '4.17.0'].
+Often this can be fixed by updating altair_viewer:
+    pip install -U altair_viewer
 
