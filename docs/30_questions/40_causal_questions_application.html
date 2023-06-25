@@ -1,0 +1,660 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Causal Questions in Practice &#8212; Data Science for Humans</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.jpg"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Backwards Design" href="../40_in_practice/00_backwards_design.html" />
+    <link rel="prev" title="Causal Questions: The Theory" href="30_causal_questions_theory.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Data Science for Humans</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../landing_page.html">
+                    Welcome to Data Science for Humans
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../10_introduction/10_our_approach.html">
+   Solving Problems with Data Science
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../10_introduction/20_data_science_in_historical_context.html">
+   What
+   <em>
+    is
+   </em>
+   Data Science: An Historical Perspective
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Types of Questions
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00_solving_the_right_problem.html">
+   Solving the Right Problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_descriptive_v_proscriptive.html">
+   Descriptive versus Proscriptive Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10_exploratory_questions.html">
+   Exploratory Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20_passive_prediction_questions.html">
+   Passive-Prediction Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="30_causal_questions_theory.html">
+   Causal Questions: The Theory
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Causal Questions in Practice
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data Science in Practice
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../40_in_practice/00_backwards_design.html">
+   Backwards Design
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../40_in_practice/20_from_data_to_decisions.html">
+   Making Decisions Using Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../40_in_practice/25_writing_to_stakeholders.html">
+   Writing Data Science Report for Non-Technical Audiences
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Advanced Topics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../40_advanced_topics/30_interpretability.html">
+   Interpretable Models
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/nickeubank/ds4humans"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F30_questions/40_causal_questions_application.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/30_questions/40_causal_questions_application.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#when-do-causal-questions-come-up">
+   When Do Causal Questions Come Up?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#where-causal-questions-come-from-an-example">
+     Where Causal Questions Come From: An Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-two-fold-challenge-of-causal-questions">
+   The Two-Fold Challenge of Causal Questions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#internal-and-external-validity-an-example">
+     Internal and External Validity: An Example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#external-validity-to-what">
+     External Validity To
+     <em>
+      What
+     </em>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-causal-question-work-flow">
+   The Causal Question Work Flow
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identify-relevant-previous-studies">
+     Identify Relevant Previous Studies
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evaluate-previous-studies">
+     Evaluate Previous Studies
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plan-a-new-study">
+     Plan A New Study
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Causal Questions in Practice</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#when-do-causal-questions-come-up">
+   When Do Causal Questions Come Up?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#where-causal-questions-come-from-an-example">
+     Where Causal Questions Come From: An Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-two-fold-challenge-of-causal-questions">
+   The Two-Fold Challenge of Causal Questions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#internal-and-external-validity-an-example">
+     Internal and External Validity: An Example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#external-validity-to-what">
+     External Validity To
+     <em>
+      What
+     </em>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-causal-question-work-flow">
+   The Causal Question Work Flow
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identify-relevant-previous-studies">
+     Identify Relevant Previous Studies
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evaluate-previous-studies">
+     Evaluate Previous Studies
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plan-a-new-study">
+     Plan A New Study
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="causal-questions-in-practice">
+<h1>Causal Questions in Practice<a class="headerlink" href="#causal-questions-in-practice" title="Permalink to this headline">#</a></h1>
+<p>In our last reading, we learned a little about what it means to measure a causal effect, and why it is inherently difficult. That is a topic we will return to shortly, as understanding why measuring causal effects is hard is key to being able to measure them effectively. But first, take a moment to discuss how Causal Questions come up and are addressed in practice to help contextualize the more technical readings that will follow.</p>
+<section id="when-do-causal-questions-come-up">
+<h2>When Do Causal Questions Come Up?<a class="headerlink" href="#when-do-causal-questions-come-up" title="Permalink to this headline">#</a></h2>
+<p>Causal Questions arise when stakeholders want to <em>do</em> something — buy a Superbowl ad, change how the recommendation engine in their app works, authorize a new prescription drug — but they fear the action they are considering may be costly and not actually work. In these situations, stakeholders will often turn to a data scientist in the hope that the scientist can “de-risk” the stakeholder’s decision by providing guidance on the likely effect of the action <em>before</em> the action is undertaken at full scale.</p>
+<p><em>Usually</em>, the action the stakeholder is considering will not have been pulled out of a hat. Rather, a stakeholder will generally pose a Causal Question because they have some reason to suspect a given course of action may be beneficial. Indeed, Causal Questions often emanate from patterns discovered when answering Exploratory or Passive Predictive Questions.</p>
+<section id="where-causal-questions-come-from-an-example">
+<h3>Where Causal Questions Come From: An Example<a class="headerlink" href="#where-causal-questions-come-from-an-example" title="Permalink to this headline">#</a></h3>
+<p>For example, suppose the Chief of Surgery at a major hospital is interested in reducing surgical complications. They begin by asking “What factors predict surgical complications?” (a Passive Predictive Question) and develop a predictive model that allows the hospital to identify patients who are likely to have issues so that caretakers can provide additional support to these patients during recovery.</p>
+<p>In the course of developing this model, the Chief discovers that one of the strongest predictors of surgical complications is patient blood pressure — patients with high blood pressure are substantially more likely to experience complications than those with normal blood pressure.</p>
+<p>This leads the Chief to wonder about whether they could reduce surgical complications if they treated patients with high blood pressure with pressure-reducing medications prior to surgery. In other words, the Chief Surgeon wants to know “What effect treating patients with high blood pressure would have on surgical complication rates?”</p>
+<p>But rather than just starting to give all patients with high blood pressure new drugs (and delay their surgeries while the drugs take effect), the Chief wants <em>you</em> to provide a more rigorous answer to their question. After all, high blood pressure may be <em>causing</em> the complications (and thus the medicine may help), but it could also be that high blood pressure isn’t the <em>cause</em> of the complications, but rather the <em>symptom</em> of a third factor that causes both high blood pressure <em>and</em> complications that makes people with high blood pressure different from those with low blood pressure — like leading an overly stressful life. The Chief doesn’t need to know whether high blood pressure is the <em>cause</em> of complications or just a “warning light” that identifies people at risk to use that information for directing additional support to those patients during recovery; but it <em>does</em> matter for determining whether it makes sense to delay surgeries to teach patient high blood pressure!</p>
+<p>This is, of course, just one example, and it’s not hard to imagine others. Perhaps your online retailer stakeholder has noticed that one of your competitors has stopped showing customer reviews in the search results, for example, so they suspect it must be improving sales for your competitor and want to know if it would work for your site too! But the point is that Causal Questions generally don’t appear out of the blue, but rather because someone has noticed a pattern in the world and wants to act on it. Thus, many Causal Questions may actually take the form of hypotheses or hunches that your stakeholder wants investigated.</p>
+</section>
+</section>
+<section id="the-two-fold-challenge-of-causal-questions">
+<h2>The Two-Fold Challenge of Causal Questions<a class="headerlink" href="#the-two-fold-challenge-of-causal-questions" title="Permalink to this headline">#</a></h2>
+<p>In our last reading, we discussed how answering Causal Questions is difficult in part because measuring the effect of any action on any outcome is a definitionally difficult endeavor. But answering Causal Questions is also difficult for a more practical — less epistemological — reason: risk aversion!</p>
+<p>As we noted above, stakeholders generally turn to data scientists because they want to know the likely consequences of an action <em>before they actually undertake the action at full scale.</em> This may seem obvious, but it bears repeating — not only is answering Causal Questions hard because we never get to measure outcomes in both a universe where our treatment occurs and also a universe where it does not (the Fundamental Problem of Causal Inference), but <em>also</em> because stakeholders want to know about the likely consequences of an action they aren’t ready to actually undertake!</p>
+<p>As a result, the job of a data scientist who wants to answer a Causal Question is to design a study that not only measures the effect of a treatment, but also does so in a setting that is enough like the context in which the stakeholder wants to act that any measured effect will generalize to the stakeholder’s context.</p>
+<p>We call these two objectives of a study <em>internal validity</em> (how well the study answers the Causal Question <em>in the setting the study is conducted</em>) and <em>external validity</em> (how well the results of the study generalize to the context the stakeholder cares about). And to provide value to a stakeholder, a data scientist’s analysis must have both.</p>
+<section id="internal-and-external-validity-an-example">
+<h3>Internal and External Validity: An Example<a class="headerlink" href="#internal-and-external-validity-an-example" title="Permalink to this headline">#</a></h3>
+<p>To illustrate, suppose you work for a medical device company in Boston that wants the US Food and Drug Administration (FDA) to authorize a new cochlear implant your company has developed (a partially surgically implanted device for helping those with certain types of hearing loss regain hearing). Before authorizing the device, the FDA wants to be sure that it’s safe and effective — in other words, it wants to know what the <em>effect</em> of authorizing the device for patients throughout the United States would be on patient health.</p>
+<p>Your job, therefore, is to conduct a study that (a) convincingly measures the effect of the device on patients (has high internal validity), <em>and</em> (b) does so in a way that convinces the FDA that the findings from <em>your study</em> are likely to be the same as what would be seen if the device were being used across the United States (has external validity to the context the FDAs cares about).</p>
+<p>In medical trials, internal validity is usually ensured by conducted a randomized experiment — referred to as a Randomized Control Trial (RCT) in medical circles — according to a set of FDA requirements. We’ll discuss what features must be present for us to have confidence in the results of a randomized experiment soon, but they are things like making sure that the people in the control group look like the people in the treatment group in terms of things we can measure (age, gender, etc.) to help us feel confident that when people were randomly assigned to control and treatment groups, we didn’t end up in a really unlikely situation where, purely by chance, only men ended up in control group and only women ended up in treatment group.</p>
+<p>External validity, by contrast, comes from things like <em>who</em> is enrolled in the trial. The average age of children getting cochlear implants is between 2 and 3, so if your study only included children between 12 and 18 months of age, the FDA may worry that the results of the study would not <em>generalize</em> to the US population as a whole.</p>
+<p>In the context of a clinical trial, this issue of external validity may seem easy to address — just get a sample of people who “look like” the US population (when applying for US FDA approval)! Historically, however, <a class="reference external" href="https://www.theguardian.com/lifeandstyle/2015/apr/30/fda-clinical-trials-gender-gap-epa-nih-institute-of-medicine-cardiovascular-disease">women</a><a class="footnote-reference brackets" href="#women-enrollment" id="id1">1</a> and <a class="reference external" href="https://www.thelancet.com/journals/lanam/article/PIIS2667-193X(22)00069-2/fulltext">minorities</a> have been underrepresented in clinical trial participants.<a class="footnote-reference brackets" href="#minority-enrollment" id="id2">2</a> Moreover, the people designing clinical trials often limit enrollment to participants who, aside from the specific condition being treated, are healthy to avoid complications. This reduction in complications may increase the <em>internal</em> validity, but as many patients face more than one health challenge, it may reduce external validity.</p>
+<p>Outside of drug or medical device trials, however, external validity can much harder to establish. For example, the functionality of many internet services and apps depends on network effects — testing out a new social feature on Instagram by making it available to only a handful of users in a randomized trial (an A/B test, in the language of tech companies) may not give you a meaningful sense of how the feature would be used if it was visible to all users. And the way that bank customers use a new budgeting app in the context of a two-week study may not be indicative of how they would use it over the long run when the feature is no longer new.</p>
+</section>
+<section id="external-validity-to-what">
+<h3>External Validity To <em>What</em><a class="headerlink" href="#external-validity-to-what" title="Permalink to this headline">#</a></h3>
+<p>Throughout this text, we will refer to whatever course of action the stakeholder is actually considering pursuing as the “stakeholder’s context.” As a result, when discussing the external validity of a study, we will implicitly be referring to its external validity <em>to the stakeholder’s context.</em> But it is worth emphasizing that while the internal validity of a study is a single things — you have some level of confidence that the study measured the effect they set out to measure — external validity is <em>relative</em>. A study conducted in a hospital in Denver, Colorado may have good external validity from the perspective of a doctor in a Pheonix, Arizona hospital, but that same study may not have very good external validity from the perspective of a doctor at a hospital in Pune, India. So always remember that external validity is not an absolute property of an analysis, but a property that is <em>relative</em> to the context to which one wishes to generalize the results.</p>
+</section>
+</section>
+<section id="the-causal-question-work-flow">
+<h2>The Causal Question Work Flow<a class="headerlink" href="#the-causal-question-work-flow" title="Permalink to this headline">#</a></h2>
+<p>Before we dive into the technical details of answering Causal Questions, it’s worth starting with a high-level overview of how data scientists approach answering Causal Questions.</p>
+<section id="identify-relevant-previous-studies">
+<h3>Identify Relevant Previous Studies<a class="headerlink" href="#identify-relevant-previous-studies" title="Permalink to this headline">#</a></h3>
+<p>Once a Causal Question has been posed, the next step is <strong>to identify any research that has already been done</strong> that may help answer your causal question. It’s hard to overstate how often this step is overlooked by data scientists, but it’s <em>such</em> a no-brainer once you think of it! There’s no reason to spend days or weeks trying to design a study to answer a question if someone else has already put the time and money into doing it for you!</p>
+<p>If your stakeholder is somebody who works in public policy or medicine, then the first place to look for previous studies is in academic medical or policy journals. But don’t assume that if you aren’t working on a medical or public policy question that you won’t be able to find an answer to your question in academic or pseudo-academic publications — lots of data scientists present research done at private companies at ``industry’’ conferences like the <a class="reference external" href="https://ide.mit.edu/events/2022-conference-on-digital-experimentation-mit-codemit/">MIT Conference on Digital Experimentation (CODE&#64;MIT)</a> or the <a class="reference external" href="https://netmob.org/">NetMob Cellphone MetaData Analysis Conference</a>!</p>
+<p>And if you are at a company, ask around! Someone at your own company may have looked into a similar question before, and talking to them could save you a lot of effort.</p>
+</section>
+<section id="evaluate-previous-studies">
+<h3>Evaluate Previous Studies<a class="headerlink" href="#evaluate-previous-studies" title="Permalink to this headline">#</a></h3>
+<p>If you do find studies, then for each study you will have to ask yourself two questions:</p>
+<ul class="simple">
+<li><p><strong>Did the study authors do a good job of answering the Causal Question? <em>in the context they were studying</em></strong>?</p></li>
+<li><p><strong>Do I believe that the <em>context</em> in which the study was conducted is similar enough to my own context that their conclusions are relevant to me?</strong></p></li>
+</ul>
+<p>This first question is about the <em>internal validity</em> of the study, and we’ll talk at length about how to evaluate that in the context of causal inference in the coming weeks. The second question is about the <em>external validity</em> (i.e., the generalizability) of the study to your context. There are lots of extremely well-conducted studies in the world that may be seeking to answer the same question as you, but if, for example, they investigated the effect of a new drug in <em>young</em> patients, and your hospital only treats very old patients, you may not be comfortable assuming their results are good predictors for what might happen in your hospital.</p>
+</section>
+<section id="plan-a-new-study">
+<h3>Plan A New Study<a class="headerlink" href="#plan-a-new-study" title="Permalink to this headline">#</a></h3>
+<p>If you were unable to find any studies that answer your Causal Question satisfactorily (either on their own or in combination), then it may be time to do a study of your own!</p>
+<p>The goal when designing a study to answer a Causal Question is usually to (a) try the intervention whose effect you want to understand <em>on small scale and in a controlled manner</em> in a randomized experiment, or (b) find data from a time/place where entities were subjected to the intervention you want to understand and others were not. The second of these is called an “observational study” because you aren’t in control of the situation that gave rise to the data, you’re just an observer trying to learn from something that’s already happened.</p>
+<p><strong>Both of these kinds of studies can generate valid answers to Causal Questions!</strong> It is sometimes said that only experiments can give you “true” answers, but as we’ll discuss at length, that is not the case. This is especially true because the type of controls and supervision required to run an effective randomized experiment often result in an artificiality that can undermine the external validity of studies, and as we’ve discussed before, to be useful a study must have <em>both</em> good internal <em>and</em> external validity.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="women-enrollment"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>In 1977, the FDA actually banned enrollment of women of “childbearing potential” from Phase 1 and Phase 2 clinical trials in the <a class="reference external" href="https://www.womenshealth.gov/30-achievements/04#:~:text=In%201977%2C%20the%20FDA%20issued,thalidomide)%20causing%20serious%20birth%20defects.">interest of avoiding birth defects</a>.</p>
+</dd>
+<dt class="label" id="minority-enrollment"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>This seems likely to be due, in part, to hesitancy to enroll in clinical trials by individuals aware of past abuses of minority patients, as in the <a class="reference external" href="https://www.cdc.gov/tuskegee/index.html">Tuskegee Syphilis Study</a>.</p>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./30_questions"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="30_causal_questions_theory.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Causal Questions: The Theory</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../40_in_practice/00_backwards_design.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Backwards Design</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Josh Clinton and Nick Eubank<br/>
+  
+      &copy; Copyright 2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

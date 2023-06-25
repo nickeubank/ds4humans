@@ -160,13 +160,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../30_questions/30_causal_questions.html">
-   Causal Questions
+  <a class="reference internal" href="../30_questions/30_causal_questions_theory.html">
+   Causal Questions: The Theory
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../30_questions/40_causal_workflow.html">
-   The Purpose of Causal Questions
+  <a class="reference internal" href="../30_questions/40_causal_questions_application.html">
+   Causal Questions in Practice
   </a>
  </li>
 </ul>
@@ -592,15 +592,15 @@ title="Print to PDF"
 	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>USA  </td><td>1994</td><td> 4489</td></tr>
-	<tr><td>China</td><td>1994</td><td> 1097</td></tr>
-	<tr><td>Sudan</td><td>1994</td><td>18507</td></tr>
-	<tr><td>USA  </td><td>1995</td><td> 8928</td></tr>
-	<tr><td>China</td><td>1995</td><td>17076</td></tr>
-	<tr><td>Sudan</td><td>1995</td><td>15468</td></tr>
-	<tr><td>USA  </td><td>1996</td><td> 8156</td></tr>
-	<tr><td>China</td><td>1996</td><td>18543</td></tr>
-	<tr><td>Sudan</td><td>1996</td><td>12230</td></tr>
+	<tr><td>USA  </td><td>1994</td><td> 9916</td></tr>
+	<tr><td>China</td><td>1994</td><td> 8986</td></tr>
+	<tr><td>Sudan</td><td>1994</td><td>16764</td></tr>
+	<tr><td>USA  </td><td>1995</td><td>16855</td></tr>
+	<tr><td>China</td><td>1995</td><td>12582</td></tr>
+	<tr><td>Sudan</td><td>1995</td><td>13576</td></tr>
+	<tr><td>USA  </td><td>1996</td><td>13202</td></tr>
+	<tr><td>China</td><td>1996</td><td>16466</td></tr>
+	<tr><td>Sudan</td><td>1996</td><td> 3541</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -621,7 +621,7 @@ title="Print to PDF"
 .list-inline>li {display: inline-block}
 .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
 </style>
-<ol class=list-inline><li>1994</li><li>1994</li><li>1995</li><li>1996</li></ol>
+<ol class=list-inline><li>1994</li><li>1994</li><li>1996</li></ol>
 </div></div>
 </div>
 <p>So remember that: if you could do it with a matrix, you can do it with a dataframe!</p>
@@ -645,7 +645,7 @@ title="Print to PDF"
 .list-inline>li {display: inline-block}
 .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
 </style>
-<ol class=list-inline><li>4489</li><li>1097</li><li>18507</li><li>8928</li><li>17076</li><li>15468</li><li>8156</li><li>18543</li><li>12230</li></ol>
+<ol class=list-inline><li>9916</li><li>8986</li><li>16764</li><li>16855</li><li>12582</li><li>13576</li><li>13202</li><li>16466</li><li>3541</li></ol>
 </div></div>
 </div>
 <div class="cell docutils container">
@@ -661,7 +661,7 @@ title="Print to PDF"
 .list-inline>li {display: inline-block}
 .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
 </style>
-<ol class=list-inline><li>4489</li><li>1097</li><li>18507</li><li>8928</li><li>17076</li><li>15468</li><li>8156</li><li>18543</li><li>12230</li></ol>
+<ol class=list-inline><li>9916</li><li>8986</li><li>16764</li><li>16855</li><li>12582</li><li>13576</li><li>13202</li><li>16466</li><li>3541</li></ol>
 </div></div>
 </div>
 <p>These are exactly equivalent for single columns! But note that you can’t always use this trick – for example, it doesn’t work for trying to get several columns from a dataframe. Most of the time, though, it’s a very convenient shorthand for single-column manipulations.</p>
@@ -681,15 +681,15 @@ title="Print to PDF"
 	<tr><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td> 4489</td></tr>
-	<tr><td> 1097</td></tr>
-	<tr><td>18507</td></tr>
-	<tr><td> 8928</td></tr>
-	<tr><td>17076</td></tr>
-	<tr><td>15468</td></tr>
-	<tr><td> 8156</td></tr>
-	<tr><td>18543</td></tr>
-	<tr><td>12230</td></tr>
+	<tr><td> 9916</td></tr>
+	<tr><td> 8986</td></tr>
+	<tr><td>16764</td></tr>
+	<tr><td>16855</td></tr>
+	<tr><td>12582</td></tr>
+	<tr><td>13576</td></tr>
+	<tr><td>13202</td></tr>
+	<tr><td>16466</td></tr>
+	<tr><td> 3541</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -713,15 +713,15 @@ title="Print to PDF"
 	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>USA  </td><td>1994</td><td> 4489</td></tr>
-	<tr><td>China</td><td>1994</td><td> 1097</td></tr>
-	<tr><td>Sudan</td><td>1994</td><td>18507</td></tr>
-	<tr><td>USA  </td><td>1995</td><td> 8928</td></tr>
-	<tr><td>China</td><td>1995</td><td>17076</td></tr>
-	<tr><td>Sudan</td><td>1995</td><td>15468</td></tr>
-	<tr><td>USA  </td><td>1996</td><td> 8156</td></tr>
-	<tr><td>China</td><td>1996</td><td>18543</td></tr>
-	<tr><td>Sudan</td><td>1996</td><td>12230</td></tr>
+	<tr><td>USA  </td><td>1994</td><td> 9916</td></tr>
+	<tr><td>China</td><td>1994</td><td> 8986</td></tr>
+	<tr><td>Sudan</td><td>1994</td><td>16764</td></tr>
+	<tr><td>USA  </td><td>1995</td><td>16855</td></tr>
+	<tr><td>China</td><td>1995</td><td>12582</td></tr>
+	<tr><td>Sudan</td><td>1995</td><td>13576</td></tr>
+	<tr><td>USA  </td><td>1996</td><td>13202</td></tr>
+	<tr><td>China</td><td>1996</td><td>16466</td></tr>
+	<tr><td>Sudan</td><td>1996</td><td> 3541</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -769,15 +769,15 @@ title="Print to PDF"
 	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>USA  </td><td>1994</td><td> 4489</td><td> 4578.78</td></tr>
-	<tr><td>China</td><td>1994</td><td> 1097</td><td> 1118.94</td></tr>
-	<tr><td>Sudan</td><td>1994</td><td>18507</td><td>18877.14</td></tr>
-	<tr><td>USA  </td><td>1995</td><td> 8928</td><td> 9106.56</td></tr>
-	<tr><td>China</td><td>1995</td><td>17076</td><td>17417.52</td></tr>
-	<tr><td>Sudan</td><td>1995</td><td>15468</td><td>15777.36</td></tr>
-	<tr><td>USA  </td><td>1996</td><td> 8156</td><td> 8319.12</td></tr>
-	<tr><td>China</td><td>1996</td><td>18543</td><td>18913.86</td></tr>
-	<tr><td>Sudan</td><td>1996</td><td>12230</td><td>12474.60</td></tr>
+	<tr><td>USA  </td><td>1994</td><td> 9916</td><td>10114.32</td></tr>
+	<tr><td>China</td><td>1994</td><td> 8986</td><td> 9165.72</td></tr>
+	<tr><td>Sudan</td><td>1994</td><td>16764</td><td>17099.28</td></tr>
+	<tr><td>USA  </td><td>1995</td><td>16855</td><td>17192.10</td></tr>
+	<tr><td>China</td><td>1995</td><td>12582</td><td>12833.64</td></tr>
+	<tr><td>Sudan</td><td>1995</td><td>13576</td><td>13847.52</td></tr>
+	<tr><td>USA  </td><td>1996</td><td>13202</td><td>13466.04</td></tr>
+	<tr><td>China</td><td>1996</td><td>16466</td><td>16795.32</td></tr>
+	<tr><td>Sudan</td><td>1996</td><td> 3541</td><td> 3611.82</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -793,7 +793,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">11610.4444444444</div></div>
+<div class="output text_html">12432</div></div>
 </div>
 <p>But two summary functions are worth noting here: <code class="docutils literal notranslate"><span class="pre">table()</span></code>, to get the number of observations that have a given value in a vector, and the combination <code class="docutils literal notranslate"><span class="pre">prop.table(table())</span></code>, to get the share of observations with a given value in a vector:</p>
 <div class="cell docutils container">
@@ -842,15 +842,15 @@ title="Print to PDF"
 	<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td> 4489</td><td>1994</td></tr>
-	<tr><td> 1097</td><td>1994</td></tr>
-	<tr><td>18507</td><td>1994</td></tr>
-	<tr><td> 8928</td><td>1995</td></tr>
-	<tr><td>17076</td><td>1995</td></tr>
-	<tr><td>15468</td><td>1995</td></tr>
-	<tr><td> 8156</td><td>1996</td></tr>
-	<tr><td>18543</td><td>1996</td></tr>
-	<tr><td>12230</td><td>1996</td></tr>
+	<tr><td> 9916</td><td>1994</td></tr>
+	<tr><td> 8986</td><td>1994</td></tr>
+	<tr><td>16764</td><td>1994</td></tr>
+	<tr><td>16855</td><td>1995</td></tr>
+	<tr><td>12582</td><td>1995</td></tr>
+	<tr><td>13576</td><td>1995</td></tr>
+	<tr><td>13202</td><td>1996</td></tr>
+	<tr><td>16466</td><td>1996</td></tr>
+	<tr><td> 3541</td><td>1996</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -871,15 +871,15 @@ title="Print to PDF"
 	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>USA  </td><td> 4578.78</td></tr>
-	<tr><td>China</td><td> 1118.94</td></tr>
-	<tr><td>Sudan</td><td>18877.14</td></tr>
-	<tr><td>USA  </td><td> 9106.56</td></tr>
-	<tr><td>China</td><td>17417.52</td></tr>
-	<tr><td>Sudan</td><td>15777.36</td></tr>
-	<tr><td>USA  </td><td> 8319.12</td></tr>
-	<tr><td>China</td><td>18913.86</td></tr>
-	<tr><td>Sudan</td><td>12474.60</td></tr>
+	<tr><td>USA  </td><td>10114.32</td></tr>
+	<tr><td>China</td><td> 9165.72</td></tr>
+	<tr><td>Sudan</td><td>17099.28</td></tr>
+	<tr><td>USA  </td><td>17192.10</td></tr>
+	<tr><td>China</td><td>12833.64</td></tr>
+	<tr><td>Sudan</td><td>13847.52</td></tr>
+	<tr><td>USA  </td><td>13466.04</td></tr>
+	<tr><td>China</td><td>16795.32</td></tr>
+	<tr><td>Sudan</td><td> 3611.82</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -935,15 +935,15 @@ title="Print to PDF"
 	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>USA  </td><td>1994</td><td> 4578.78</td></tr>
-	<tr><td>China</td><td>1994</td><td> 1118.94</td></tr>
-	<tr><td>Sudan</td><td>1994</td><td>18877.14</td></tr>
-	<tr><td>USA  </td><td>1995</td><td> 9106.56</td></tr>
-	<tr><td>China</td><td>1995</td><td>17417.52</td></tr>
-	<tr><td>Sudan</td><td>1995</td><td>15777.36</td></tr>
-	<tr><td>USA  </td><td>1996</td><td> 8319.12</td></tr>
-	<tr><td>China</td><td>1996</td><td>18913.86</td></tr>
-	<tr><td>Sudan</td><td>1996</td><td>12474.60</td></tr>
+	<tr><td>USA  </td><td>1994</td><td>10114.32</td></tr>
+	<tr><td>China</td><td>1994</td><td> 9165.72</td></tr>
+	<tr><td>Sudan</td><td>1994</td><td>17099.28</td></tr>
+	<tr><td>USA  </td><td>1995</td><td>17192.10</td></tr>
+	<tr><td>China</td><td>1995</td><td>12833.64</td></tr>
+	<tr><td>Sudan</td><td>1995</td><td>13847.52</td></tr>
+	<tr><td>USA  </td><td>1996</td><td>13466.04</td></tr>
+	<tr><td>China</td><td>1996</td><td>16795.32</td></tr>
+	<tr><td>Sudan</td><td>1996</td><td> 3611.82</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -971,7 +971,7 @@ title="Print to PDF"
 	<tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><th scope=row>4</th><td>USA</td><td>1995</td><td>9106.56</td></tr>
+	<tr><th scope=row>4</th><td>USA</td><td>1995</td><td>17192.1</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -995,15 +995,15 @@ title="Print to PDF"
 	<tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><th scope=row>2</th><td>China</td><td>1994</td><td> 1118.94</td></tr>
-	<tr><th scope=row>1</th><td>USA  </td><td>1994</td><td> 4578.78</td></tr>
-	<tr><th scope=row>7</th><td>USA  </td><td>1996</td><td> 8319.12</td></tr>
-	<tr><th scope=row>4</th><td>USA  </td><td>1995</td><td> 9106.56</td></tr>
-	<tr><th scope=row>9</th><td>Sudan</td><td>1996</td><td>12474.60</td></tr>
-	<tr><th scope=row>6</th><td>Sudan</td><td>1995</td><td>15777.36</td></tr>
-	<tr><th scope=row>5</th><td>China</td><td>1995</td><td>17417.52</td></tr>
-	<tr><th scope=row>3</th><td>Sudan</td><td>1994</td><td>18877.14</td></tr>
-	<tr><th scope=row>8</th><td>China</td><td>1996</td><td>18913.86</td></tr>
+	<tr><th scope=row>9</th><td>Sudan</td><td>1996</td><td> 3611.82</td></tr>
+	<tr><th scope=row>2</th><td>China</td><td>1994</td><td> 9165.72</td></tr>
+	<tr><th scope=row>1</th><td>USA  </td><td>1994</td><td>10114.32</td></tr>
+	<tr><th scope=row>5</th><td>China</td><td>1995</td><td>12833.64</td></tr>
+	<tr><th scope=row>7</th><td>USA  </td><td>1996</td><td>13466.04</td></tr>
+	<tr><th scope=row>6</th><td>Sudan</td><td>1995</td><td>13847.52</td></tr>
+	<tr><th scope=row>8</th><td>China</td><td>1996</td><td>16795.32</td></tr>
+	<tr><th scope=row>3</th><td>Sudan</td><td>1994</td><td>17099.28</td></tr>
+	<tr><th scope=row>4</th><td>USA  </td><td>1995</td><td>17192.10</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -1021,7 +1021,7 @@ title="Print to PDF"
 .list-inline>li {display: inline-block}
 .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
 </style>
-<ol class=list-inline><li>2</li><li>1</li><li>7</li><li>4</li><li>9</li><li>6</li><li>5</li><li>3</li><li>8</li></ol>
+<ol class=list-inline><li>9</li><li>2</li><li>1</li><li>5</li><li>7</li><li>6</li><li>8</li><li>3</li><li>4</li></ol>
 </div></div>
 </div>
 <p>And then, because it’s a vector of indices being passed in the first position of our square brackets, we get all the rows of <code class="docutils literal notranslate"><span class="pre">countries</span></code> “subset” by index (though obviously it’s not really a subset, since all row indices appear in the vector – just a re-ordering)!</p>
@@ -1040,15 +1040,15 @@ title="Print to PDF"
 	<tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><th scope=row>2</th><td>China</td><td>1994</td><td> 1118.94</td></tr>
-	<tr><th scope=row>3</th><td>Sudan</td><td>1994</td><td>18877.14</td></tr>
-	<tr><th scope=row>1</th><td>USA  </td><td>1994</td><td> 4578.78</td></tr>
-	<tr><th scope=row>5</th><td>China</td><td>1995</td><td>17417.52</td></tr>
-	<tr><th scope=row>6</th><td>Sudan</td><td>1995</td><td>15777.36</td></tr>
-	<tr><th scope=row>4</th><td>USA  </td><td>1995</td><td> 9106.56</td></tr>
-	<tr><th scope=row>8</th><td>China</td><td>1996</td><td>18913.86</td></tr>
-	<tr><th scope=row>9</th><td>Sudan</td><td>1996</td><td>12474.60</td></tr>
-	<tr><th scope=row>7</th><td>USA  </td><td>1996</td><td> 8319.12</td></tr>
+	<tr><th scope=row>2</th><td>China</td><td>1994</td><td> 9165.72</td></tr>
+	<tr><th scope=row>3</th><td>Sudan</td><td>1994</td><td>17099.28</td></tr>
+	<tr><th scope=row>1</th><td>USA  </td><td>1994</td><td>10114.32</td></tr>
+	<tr><th scope=row>5</th><td>China</td><td>1995</td><td>12833.64</td></tr>
+	<tr><th scope=row>6</th><td>Sudan</td><td>1995</td><td>13847.52</td></tr>
+	<tr><th scope=row>4</th><td>USA  </td><td>1995</td><td>17192.10</td></tr>
+	<tr><th scope=row>8</th><td>China</td><td>1996</td><td>16795.32</td></tr>
+	<tr><th scope=row>9</th><td>Sudan</td><td>1996</td><td> 3611.82</td></tr>
+	<tr><th scope=row>7</th><td>USA  </td><td>1996</td><td>13466.04</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -1068,15 +1068,15 @@ title="Print to PDF"
 	<tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><th scope=row>8</th><td>China</td><td>1996</td><td>18913.86</td></tr>
-	<tr><th scope=row>3</th><td>Sudan</td><td>1994</td><td>18877.14</td></tr>
-	<tr><th scope=row>5</th><td>China</td><td>1995</td><td>17417.52</td></tr>
-	<tr><th scope=row>6</th><td>Sudan</td><td>1995</td><td>15777.36</td></tr>
-	<tr><th scope=row>9</th><td>Sudan</td><td>1996</td><td>12474.60</td></tr>
-	<tr><th scope=row>4</th><td>USA  </td><td>1995</td><td> 9106.56</td></tr>
-	<tr><th scope=row>7</th><td>USA  </td><td>1996</td><td> 8319.12</td></tr>
-	<tr><th scope=row>1</th><td>USA  </td><td>1994</td><td> 4578.78</td></tr>
-	<tr><th scope=row>2</th><td>China</td><td>1994</td><td> 1118.94</td></tr>
+	<tr><th scope=row>4</th><td>USA  </td><td>1995</td><td>17192.10</td></tr>
+	<tr><th scope=row>3</th><td>Sudan</td><td>1994</td><td>17099.28</td></tr>
+	<tr><th scope=row>8</th><td>China</td><td>1996</td><td>16795.32</td></tr>
+	<tr><th scope=row>6</th><td>Sudan</td><td>1995</td><td>13847.52</td></tr>
+	<tr><th scope=row>7</th><td>USA  </td><td>1996</td><td>13466.04</td></tr>
+	<tr><th scope=row>5</th><td>China</td><td>1995</td><td>12833.64</td></tr>
+	<tr><th scope=row>1</th><td>USA  </td><td>1994</td><td>10114.32</td></tr>
+	<tr><th scope=row>2</th><td>China</td><td>1994</td><td> 9165.72</td></tr>
+	<tr><th scope=row>9</th><td>Sudan</td><td>1996</td><td> 3611.82</td></tr>
 </tbody>
 </table>
 </div></div>
