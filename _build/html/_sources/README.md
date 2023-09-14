@@ -17,8 +17,8 @@ For copy-paste ease: `jupyter-book build --all .; cp -R _build/html/* docs; git 
 
 ## Syntax
 
-Jupyter books basically use Markdown + some extra features for things like note boxes, or danger boxes, etc. 
+Jupyter books basically use Markdown + some extra features for things like note boxes, or danger boxes, etc.
 [Cheatsheet here](https://jupyterbook.org/en/stable/reference/cheatsheet.html)
 
-Here's footnotes: https://jupyterbook.org/en/stable/content/content-blocks.html#footnotes
-Notes and warnings: https://jupyterbook.org/en/stable/content/content-blocks.html#notes-warnings-and-other-admonitions
+Here's footnotes: <https://jupyterbook.org/en/stable/content/content-blocks.html#footnotes>
+Notes and warnings: <https://jupyterbook.org/en/stable/content/content-blocks.html#notes-warnings-and-other-admonitions>

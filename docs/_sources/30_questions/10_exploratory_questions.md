@@ -8,6 +8,23 @@ Of the three classes of questions we detail in this book, answering Exploratory 
 
 In this reading, we will discuss Exploratory Questions from two perspectives. First, we will discuss how to *use* Exploratory Questions effectively in practice, and second, we will discuss how to *answer* Exploratory Questions accurately.
 
+```{note}
+To illustrate the importance of answering exploratory questions in order to prioritize ones efforts, one need look no further than that most basic of data science tasks: writing performant (i.e., fast) code. 
+
+Data science is full of computationally intensive tasks that, if approached incorrectly, can leave a data scientist staring at their computer for hours, days, or even weeks (if they allow it). As a result, most data scientists will go through a phase in their development when they start constantly worrying about how to make every line of code they write as fast as possible. They bend over backwards to write unnatural, unreadable code in order to ensure that they aren't wasting a single CPU clock cycle.
+
+The problem with this is that humans have *incredibly* bad intuition about what tasks take a computer a long time. It turns out that even in programs that take huge amounts of time to run, it is often the case that *most* of the programs runtime is taken up by a single function or loop. As a result, programmers who fixate on ensuring every line of code they write is optimized for speed end up not only wasting their *own* time, but they also end up writing code that is less natural, harder to maintain, and more likely to contain errors for effectively no benefit.
+
+Indeed, no less a figure than [Donald Knuth](https://en.wikipedia.org/wiki/Donald_Knuth), one of the greatest programmers in history and author of the famous [*The Art of Computer Programming*](https://en.wikipedia.org/wiki/The_Art_of_Computer_Programming), famously wrote of this practice of "premature optimization" (trying to optimize each line of code before you know that the line of code is actually causing a performance problem):
+
+> The real problem is that programmers have spent far too much time worrying about efficiency in the wrong places and at the wrong times; **premature optimization is the root of all evil (or at least most of it) in programming.** [emphasis added]
+
+So what is a programmer interested in performance to do? First, write code in as natural a way as possible. Then, *if* the result is code that is slower than they would like, ask the exploratory question: "What lines of code are contributing most to this program taking so long to run?" And only then, once the programmer has identifed the problematic parts of their code, optimize it for performance. [^profilers] 
+
+```
+
+[^profilers]: Tools for evaluating how much each line of code contributes to a program's run time are called "profilers," and there are *lots* of them for precisely this purpose!
+
 ## Using Exploratory Questions Effectively
 
 Exploratory Questions are questions about the *distribution of features* in the world, and answers to Exploratory Questions should make you feel like you understand the landscape you are working in better.
