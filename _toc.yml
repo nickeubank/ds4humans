@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: landing_page
+root: 10_introduction/10_our_approach
 parts:
   - caption: Introduction
     chapters:

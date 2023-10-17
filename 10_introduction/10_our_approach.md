@@ -1,6 +1,6 @@
-# Solving Problems with Data Science
+# Solving Problems with Data
 
-The beginning of a textbook by [Josh Clinton](https://www.joshclinton.com/) and [Nick Eubank](https://www.nickeubank.com).
+*The beginning of a textbook by [Nick Eubank](https://www.nickeubank.com).*
 
 Few fields have shown as much promise to address the world's problems as data science. Today, data science is being used to develop climate models to improve our understanding of global climate change and mitigate its effects. It is being used in medicine to speed drug discovery, improve the quality of x-rays and MRIs, and to ensure that patients receive appropriate medical care. Data science is used in courtrooms to fight for fair elections and electoral maps, and by data journalists to document and communicate to readers the injustices prevalent in our criminal justice system and issues in policing. Data science also enables new technologies that have huge potential to improve our lives. Autonomous drones are delivering blood and medical supplies to rural health clinics from Rwanda to [North Carolina](https://www.theverge.com/2020/5/27/21270351/zipline-drones-novant-health-medical-center-hospital-supplies-ppe/), and driver-aid features continue to make progress in reducing the over 30,000 traffic deaths and millions of injuries that occur in the US alone every year. And nearly no facet of business has gone untouched by the recent revolution in data analytics, from song and movie recommendation engines on Netflix, Spotify, and Apple's App Store to the use of personalized, targeted advertisements used to ensure businesses can make the most of their advertising revenue.
 
@@ -8,11 +8,29 @@ At the same time, however, recent years have also made clear that today's global
 
 [^facebook]: [Recent reporting by the Wall Street Journal](https://www.wsj.com/articles/facebook-knows-it-encourages-division-top-executives-nixed-solutions-11590507499) has shown that Facebook's own research has confirmed what many outside experts have long argued: the way its recommendation engines prioritize content that results in "user engagement" (clicks, shares, comments) ends up promoting partisan, polarizing, sensationalist, or extreme content. In addition, their own research has also shown that group recommendations are contributing to extremism. According to one internal presentation, "64% of all extremist group joins are due to our recommendation tools" like *Groups You Should Join* and other discovery tools.
 
-How, then, should a burgeoning data scientist approach this field full of such promise but also so many pitfalls? In this book, we will present a framework for approaching and solving problems with data science in a way that is both *effective* and *responsible*.
+How, then, should a burgeoning data scientist approach this field full of such promise but also so many pitfalls? And why have so many data science endeavors failed to deliver on their promise?
 
-Our approach is to begin by carefully specifying the problem one needs to solve. While this may seem trivial, properly articulating the core problem one seeks to address can be remarkably difficult. Moreover, because everything you will do after this step is premised on having correctly specified your objective, it is *the* greatest determinant of the success of your project. As Charles Kettering, Head of Research at General Motors from 1920 to 1947 once said, "A problem well stated is a problem half solved."
+My view is that the answer lies — at least in significant part — in a failure to provide students with a systematic approach to bringing the techniques learned in statistical modeling and machine learning courses to bear on real world problems. Data science curricula usually begin with coding, statistics, and model evaluation techniques. All too often, however, that's where they stop. But while hardest part of data science *classes* is often fitting a model well or getting a good AUC score; the hardest part of being an effective *professional* data scientist is ensuring that the models being fit and the results being interpreted actually solve the problem that motivated you (or your stakeholder) in the first place.
 
-Once we have successfully articulated our *problem*, we must then figure out how to solve it. And as data scientists, we are somewhat restricted in the types of solutions to which we have access; data science cannot just raise funds for a project, for example, or invent new technology. Rather, as we will explore in detail in this book, all data science models and algorithms can be fundamentally understood as instruments for **answering questions** about the world using quantitative methods.
+Of course, the reason that this is the hardest part of data science is that every problem is different, and somebody is only likely to bring you — a talented data scientist — a problem if it is difficult to solve. But after many years as a professional data scientist — consulting on economic development programs for the World Bank and on voting rights cases across the country — and teaching and mentoring data science Master's students, I have developed a framework that I believe helps to bridge the gap of between neatly curated classroom exercises and the messiness of the real world.
+
+## The Framework: An Overview
+
+The framework begins with carefully specifying the problem one needs to solve. While this may seem trivial, properly articulating the core problem one seeks to address can be remarkably difficult. Moreover, because everything you will do *after* articulating your problem is premised on having correctly specified your objective, it is *the* greatest determinant of the success of your project. The most sophisticated, efficiently executed, high precision, high recall model in the world isn't worth a lick of good if the results it generates don't solve the problem you or your stakeholder needed solved.
+
+Many times problems only *appear* difficult because of how they are presented. Re-articulating and reframing problems is often the key to solving them effectively. As Charles Kettering, Head of Research at General Motors from 1920 to 1947 once said, "A problem well stated is a problem half solved."
+
+What does it mean to "clearly articulate the problem"? That is something we will discuss in detail in the coming chapters, as well as strategies for reframing problems, and how to use data science tools to improve our understanding of the problem landscape.
+
+```{note}
+Throughout this book, I will frequently use the term "stakeholder" to refer to the person whose problem that you, the data scientist, is seeking to address. I use this term because, as a young data scientist, you will often be in the position of having to use your data science skills to help someone else. Thus your stakeholder may be your manager, your CEO, or someone at another company you are advising.
+
+However, if you're lucky enough to *not* be directly answerable to someone else, either because you work for yourself or because you're in a field that gives you substantial autonomy like academia, you can simply think of your "stakeholder" as yourself.
+
+If you're interested in developing a consumer-facing product (e.g., you're an independing developer whose thinking of creating a new data-science-based web app), you may also find it useful to think of your customer of the stakeholder, since very few products are successful if they don't solve a problem customers face. 
+```
+
+Once we have successfully articulated our *problem*, we must then figure out how to solve it. And as data scientists, we are somewhat restricted in the types of solutions to which we have access; nobody hires a data scientist to raise funds for cancer research, for example, or invent a new semiconductor manufacturing technique. Rather, as we will explore in detail in this book, all data science models and algorithms can be fundamentally understood as instruments for **answering questions** about the world using quantitative methods.
 
 ```{sidebar} Answering Questions
 All data science models and algorithms can be fundamentally understood as instruments for **answering questions** about the world using quantitative methods.
