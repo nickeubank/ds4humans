@@ -1,3 +1,3 @@
-# Welcome to Data Science for Humans
+# Solving Problems with Data
 
-migrated
+*The beginning of a textbook by [Nick Eubank](https://www.nickeubank.com).*

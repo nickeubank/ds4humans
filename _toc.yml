@@ -6,22 +6,21 @@ root: 10_introduction/10_our_approach
 parts:
   - caption: Introduction
     chapters:
-    - file: 10_introduction/10_our_approach
-    - file: 10_introduction/20_data_science_in_historical_context
+      - file: 10_introduction/20_data_science_in_historical_context
   - caption: Types of Questions
     chapters:
-    - file: 30_questions/00_solving_the_right_problem
-    - file: 30_questions/05_descriptive_v_proscriptive
-    - file: 30_questions/10_exploratory_questions
-    - file: 30_questions/20_passive_prediction_questions
-    - file: 30_questions/30_causal_questions_theory
-    - file: 30_questions/40_causal_questions_application
+      - file: 30_questions/00_solving_the_right_problem
+      - file: 30_questions/05_descriptive_v_proscriptive
+      - file: 30_questions/10_exploratory_questions
+      - file: 30_questions/20_passive_prediction_questions
+      - file: 30_questions/30_causal_questions_theory
+      - file: 30_questions/40_causal_questions_application
   - caption: Data Science in Practice
     chapters:
-    - file: 40_in_practice/00_backwards_design
-    - file: 40_in_practice/10_ethics
-    - file: 40_in_practice/20_from_data_to_decisions
-    - file: 40_in_practice/25_writing_to_stakeholders
+      - file: 40_in_practice/00_backwards_design
+      - file: 40_in_practice/10_ethics
+      - file: 40_in_practice/20_from_data_to_decisions
+      - file: 40_in_practice/25_writing_to_stakeholders
   - caption: Advanced Topics
     chapters:
-    - file: 40_advanced_topics/30_interpretability
+      - file: 40_advanced_topics/30_interpretability

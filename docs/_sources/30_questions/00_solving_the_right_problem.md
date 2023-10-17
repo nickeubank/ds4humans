@@ -108,6 +108,10 @@ Indeed, this is also why companies like Meta and Google are so eager to track us
 
 ## Solving The *Real* Problem
 
+rephrase as...
+
+## Abstract the problem
+
 So how to we avoid solving the wrong problem? There are (sorry) no hard and fast rules for how to avoid this kind of problem, but here's a simple road map:
 
 - Start a conversation about the problem.
