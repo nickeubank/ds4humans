@@ -1,8 +1,20 @@
-# Solving the Right Problem
+# Stakeholder Management & Solving the Right Problem
 
-In Douglas Adams' comedic sci-fi classic *Hitchhiker's Guide to the Galaxy*, a race of hyperintelligent pandimensional beings set out to build a massive supercomputer the size of a city to solve the mysteries of the cosmos once and for all. When they turned on the computer, named Deep Thought, they announced that "the task we have designed you to perform is this. We want you to tell us... the Answer!" "The Answer?" said Deep Thought. "The Answer to what?" "Life!" urged one designer. "The Universe!" said another. "Everything!" they said in chorus.
+In Douglas Adams' comedic sci-fi classic *Hitchhiker's Guide to the Galaxy*, a race of hyperintelligent pandimensional beings set out to build a massive supercomputer the size of a city to solve the mysteries of the cosmos once and for all. When they turned on the computer, named Deep Thought, they announced that:
 
-Deep Thought paused, then answered, "Life, the Universe, and Everything. There is an answer. But," Deep Thought added, "I'll have to think about it."
+> "The task we have designed you to perform is this. We want you to tell us... the Answer!"
+>
+> "The Answer?" said Deep Thought.
+>
+> "The Answer to what?"
+>
+> "Life!" urged one designer.
+>
+> "The Universe!" said another.
+>
+> "Everything!" they said in chorus.
+>
+> Deep Thought paused, then answered, "Life, the Universe, and Everything. There is an answer. But," Deep Thought added, "I'll have to think about it."
 
 Seven and a half million years later, when Deep Thought had *finally* finished its calculations, the descendants of those designers assembled to learn the result of their ancestors' work.
 
@@ -42,85 +54,62 @@ Seven and a half million years later, when Deep Thought had *finally* finished i
 >
 > "Well, you know, it's just Everything ... everything ..." offered Phouchg weakly.
 >
-> "Exactly!" said Deep Thought. "So once you do know what the question actually is, you'll know what the answer means."
+> "Exactly!" said Deep Thought. "So once you do know what the question actually is, you'll know what the answer means."[^quote]
 
-We do data science to solve problems. And yet all too often data science projects fail not because their model accuracy was low or because of insufficient data, but rather because the problem the team solved wasn't actually the problem that needed solving!
+[^quote]: Yes, I recognize that it is wildly indulgent to open a chapter with such a long epigraph. But it's my book, and if there's anything to be indulgent about its quotes from *Hitchhiker's Guide to the Galaxy*, damn it!
 
-Why is this such a common issue? In part, it's because properly specifying a problem is *immensely* difficult. To specify a problem properly requires *understanding* the issue, and often we call issues "problems" precisely because we don't really understand them. There's a reason that Charles Kettering, Head of Research at General Motors famously said "A problem well stated is a problem half solved."
+In addition to establishing the premise for one of the greatest comedic science fiction novels in human history,[^fivepart] I feel this passage perfectly exemplifies the three things that cause most data science projects to fail.
 
-But there's also a second reason more unique to data science, and especially to the work of *young* data scientists: excessive deference to stakeholders.
+[^fivepart]: Not least for being the only 5-book trilogy of which I am aware!
 
-As a young data scientist, you will often be in the position of having to use your data science skills to help someone else. In this book, we will refer to any third party you are helping as your "stakeholder." This may be your manager, your CEO, or someone at another company you are advising.[^workingforyourself] And it will nearly always be the case that your job as a data scientist will be to solve a problem that has been brought to you by your stakeholder.
+The first is that we are often so enamored with technology that we have absolute faith that if we just throw our problems at it, it will solve them for us. But it won’t. Without our thoughtful, critical guidance, it can’t. It never has, and it never will.
 
-[^workingforyourself]: If you're lucky enough to *not* be directly answerable to someone else, either because you work for yourself or because you're in a field that gives you substantial autonomy like academia, just think of your "stakeholder" as yourself.
+The second is that the *reason* this doesn't work is that if we don't actually figure out what it is we hope the technology will do for us, and make sure that what we're asking for will actually solve a real problem, technology couldn't care less. It will do what it has been asked to do — no more and no less. Garbage in, garbage out.
 
-That in and of itself is fine—division of labor makes the modern economy work! The problem arises when data scientists assume that the problem statement their stakeholder has brought them is properly specified and that their job is to take that problem statement as given and run with it. Because your job as a data scientist isn't to mindlessly solve the problem brought to you by your stakeholder—a *central* part of your job is to work *with* your stakeholder to identify the *real* problem they want solved and to ensure that the work you *plan* to do will bring real value.
-
-Because all too often, young data scientists—like the Deep Thought computer in *Hitchhikers Guide to the Galaxy*—spend weeks dutifully grinding away to solve a misspecified problem, only to deliver a result to their stakeholder that turns out to not actually be as helpful as expected.
-
-At this point, you may be thinking "well, isn't it *their* problem that they asked me to do the wrong thing?" And... yes, in some sense it is. But it's also yours. And that's because when you leave the classroom, you will won't be evaluated on the complexity of your model or the aesthetics of your visualizations—you'll be evaluated on whether you've made your stakeholder's life better. And even if it was the stakeholder who originally misspecified their need, if you fail to correct that error and deliver a product that doesn't help your stakeholder, then that's what will be remembered.
+But the third reason data science projects fail that is exemplified in this passage is the most subtle. In this passage, we can see that Deep Thought clearly recognizes the idiocy of the request it has been given by Loonqual and Phouchg, it doesn't do anything about it. And that, unfortunately, is the cardinal sin committed by most young data scientists — they fail to recognize that helping the stakeholder properly specify their problem in a way that that is amenable being solved with the tools of data science is a core part of the job.
 
 ```{sidebar}
-when you leave the classroom, you will won't be evaluated on the complexity of your model or the aesthetics of your visualizations—you'll be evaluated on whether you've made your stakeholder's life better. And even if it was the stakeholder who originally mis-specified their need, if you fail to correct that error and deliver a product that doesn't help your stakeholder, then that's what will be remembered.
+And that, unfortunately, is the cardinal sin committed by most young data scientists — they fail to recognize that helping the stakeholder properly specify their problem in a way that that is amenable being solved with the tools of data science is a core part of the job.
 ```
 
-## Little Papa Dominos Has A Problem
+At this point, you may be thinking "well, isn't that *their* problem? They're the ones who asked me to do the wrong thing?" And... yes, in some sense it is. But it's also yours. Once you leave the classroom, you will no longer be evaluated on the complexity of your model or the aesthetics of your visualizations—you'll be evaluated on whether you've made your stakeholder's life better. And even if it was the stakeholder who originally mis-specified their need, if you fail to correct that error and deliver a result that doesn't help your stakeholder, then that's all that will be remembered.
 
-Our discussion up to this point has been a little abstract, so to illustrate what we mean by "mis-specifying a problem", let's work through an example. The details of this example are fictitious, but the underlying logic of this example is not; indeed, the insight illustrated by this example is central to one of the biggest pivots in how people think about online advertising.
+So in this chapter we will discuss the concept of "stakeholder management:" specific ways you can work with your stakeholder to help refine and improve your mutual understanding of the problem you are seeking to solve before you—like the Deep Thought computer in *Hitchhikers Guide to the Galaxy*—spend weeks dutifully grinding away to solve a misspecified problem, only to deliver a result to their stakeholder that turns out to not actually be as helpful as expected.
 
-You have been hired by the advertising division of a fictitious national pizza chain—let's call it Little Papa Dominos. Little Papa Dominos spends a *lot* of money on online advertising, but they worry the money isn't being used as effectively as it could be—they spend more than most of their competitors, and yet their online sales are lagging. After consulting industry groups and online advertising experts, they discover that their ads' click-through rate (CTR, the percentage of ads that are shown to users that are actually clicked) is well below the average for food delivery services, suggesting that their ads aren't very effective.
+Not someone who has an obvious stakeholder with whom you can have this type of conversation? Well, stick with me — many of the suggested questions and conversational strategies detailed below are ones I've often used in conversation with myself in my own academic research, and I assure you they work almost as well when talking to the voices in your own head as with another person.
 
-To address the problem, they've hired you—a newly minted Data Scientist—to improve the CTR of their ads. They give you a large budget, access to all the cloud computing resources you need, and a small staff.
+## Stakeholder Management
 
-"Well," you reason, "maybe the problem is that our ads aren't being shown to the right people. After all, it seems unlikely that any ad for pizza—no matter how appealing—is likely to draw a click if it's shown to a 60-year-old at 7 am." So you set out to answer the question: "What factors predict the likelihood that a user will click on one of our ads?" a classic passive-predictive question.
+How then should you — the young data scientist — go about ensuring your efforts are well spent?
 
-You and your team use your budget to run your ads in front of different types of users on different sites and at different times. You then use that data (and those glorious cloud computing resources) to train a machine learning model that predicts whether someone will click on one of your ads as a function of user demographics and ad placement.
-
-Based on this analysis, you conclude that Little Papa Dominos has not been doing a very good job of targeting likely ad-clickers. You suggest they shift their ad spend to focus on the types of users your model predicts are likely to click on Little Papa Dominos ads.
-
-And sure enough, almost immediately the data shows your CTR has increased 5-fold! Not only that, but the share of people who click on ads who end up actually buying a pizza has even increased. Everyone congratulates you, and you move on to the next project feeling very smug.
-
-A few months later, though, you are called into a meeting with the Little Papa Dominos advertising team and the company's Chief Financial Officer. They've been looking over the numbers, and despite the huge rise in CTR, their online sales business is doing *worse* than it was before your change to their system. CTR rates are still up, but somehow it isn't generating more profits.
-
-Can you figure out what went wrong?
-
-OK, this is the place in most books where the authors ask you that question, and you look up at the ceiling for a minute, shrug, and then read on.
-
-But I'm really, really serious about this: close your laptop, stand up, set a 5-minute timer on your phone, and go for a walk. Ponder this example and see if you can figure out what's going on. This is *precisely* the kind of problem you will soon face as a professional data scientist, so why not practice trying to think through the problem here where you can check your work?
-
-### Solving The Wrong Problem
-
-The reason increasing clicks wasn't making Little Papa Dominos richer is that Little Papa Dominos' problem wasn't that their ads had a low CTR; their *real* problem was that not many people were buying pizzas online.
-
-And because Little Papa Domino's problem wasn't a low CTR, the question that needed to be answered was *not* "who is most likely to click on an ad." The question that needed to be answered was "what users are most likely to decide to buy a pizza (who wasn't already going to buy a pizza) if I show them an ad?"
-
-The difference is subtle, but crucially important: showing an ad to someone and having them click it doesn't mean the ad made Little Papa Dominos any money; in fact, having someone click an ad and *buy a pizza* doesn't even mean the ad made Little Papa Dominos money. Little Papa Dominos only makes money if someone *who wasn't already planning to buy a pizza* decides to buy a pizza because of an ad.
-
-Or, expressed the way we normally frame causal statements: an ad only makes Little Papa Dominos money if the ad *causes* someone to buy a pizza.
-
-Why are these so different? Because the best way to get someone to click an ad for your company is to show it to someone who was probably going to buy your product anyway. In the case of Little Papa Dominos, for example, you can probably get the best CTR by showing ads to college students at 10 pm who were searching the name of your company. But does that make you any money? No, because most of those people were going to end up on your site anyway!
-
-### Causal Inference in Advertising
-
-As noted at the beginning of this example, while Little Papa Dominos is not a real company, this realization—that in online advertising, our goal is not to show ads to the people most likely to click on the ad, but rather the people whose behavior is most likely to be changed by the ad—has had a huge impact on how online advertising works, and how people evaluate the success of ad campaigns.
-
-Indeed, this is also why companies like Meta and Google are so eager to track user behavior across apps and websites. When Meta and Google are able to "follow" users after they've clicked an ad, they can evaluate ad performance based not on clicks but on customer behavior. And when paired with their ability to show ads to some users and not to others and compare the customer behavior of both groups (something we'll talk about more soon), Meta and Google cause estimate the true effect of ads on sales, allowing them to charge more for their ad spots *and* use the data to improve ad targeting.
-
-## Solving The *Real* Problem
-
-rephrase as...
-
-## Abstract the problem
-
-So how to we avoid solving the wrong problem? There are (sorry) no hard and fast rules for how to avoid this kind of problem, but here's a simple road map:
+There are (sorry) no hard and fast rules for how to avoid this kind of problem, but here's a simple road map:
 
 - Start a conversation about the problem.
+- Reframe and abstract the problem.
 - Propose a question to answer.
 - Iterate.
 
-### Step 1: Start a Conversation
+### Step 1: Recognize Your Role
 
-Begin by having a discussion about the *goals* of your project. As noted above, the first step to avoiding mis-specified problems is to just *recognize* that helping to properly specify the problem is part of your job. Remember: you've been hired precisely because of your expertise in solving problems with data, so *speak up.* Suggest different ways of stating the problem. Ask about different "deliverables" you could provide and ask why they might or might not solve the stakeholders problem (even if a suggestion gets shot down, the *reason* the problem is shot down will teach you something).
+### Step 2: Abstract the Problem
+
+#### Beware Technical Suggestions
+
+### Step 3: Ask Questions (Especially Quantiative!)
+
+#### No Answer? Your First Exploratory Question
+
+### Step 4: Propose Questions You Might Answer
+
+#### Make Your Questions Specific and Actionable
+
+### Step 5: Iterate
+
+### Step 1: Recognize Your Role
+
+Begin by having a discussion about the stakeholder's goals. The first step to avoid solving a mis-specified problems is recognizing that helping your stakeholder properly specify the problem is part of your job.
+
+Remember: you've been hired precisely because of your expertise in solving problems with data, so *speak up.* Suggest different ways of stating the problem. Ask about different "deliverables" you could provide and ask why they might or might not solve the stakeholders problem (even if a suggestion gets shot down, the *reason* the problem is shot down will teach you something).
 
 For example, suppose you are approached by a real estate group interested in developments in the United Kingdom. They tell you:
 
@@ -167,3 +156,45 @@ Perhaps the best way to figure out if your question is answerable is to write do
 ### Step 3: Iterate
 
 And here's the last but perhaps most important step: **iterate.** Bring your work back to your stakeholder as often as possible. Many stakeholders find the idea of data science mysterious and abstract, and will struggle to understand what is and is not feasible. By bringing them intermediate results, the whole process will start to become more concrete for the stakeholder, and it will help them provide you with better feedback.
+
+## What Solving the Wrong Problem Looks Like
+
+Our discussion up to this point has been a little abstract, so to illustrate what we mean by "mis-specifying a problem", let's work through an example. The details of this example are fictitious, but the underlying logic of this example is not; indeed, the insight illustrated by this example is central to one of the biggest pivots in how people think about online advertising.
+
+You have been hired by the advertising division of a fictitious national pizza chain—let's call it Little Papa Dominos (LPD). LPD spends a *lot* on online advertising, but they their resources aren't being deployed as effectively as they could be. They spend more than most of their competitors, and yet their online sales are lagging.
+
+After consulting industry groups and online advertising experts, they discover that the rate at which people click their ads (their ads' *click-through rate*, or CTR) is well below the industry average.
+
+To address the problem, they've hired you—a newly minted Data Scientist—to improve the CTR of their ads. They give you a large budget, access to all the cloud computing resources you need, and even a small staff.
+
+"Well," you reason, "maybe the problem is that our ads aren't being shown to the right people. After all, it seems unlikely that any ad for pizza—no matter how appealing—is likely to draw a click if it's shown to a 75-year-old at 7 am." So you set out to build a statistical model to answer the question, "given a user's demographics and online behavior, how likely are they to click on one of LPDs ads?" If you can answer that, you figure, LPD can prioritize buying the ad spots for the types of users most likely to click on their ads.
+
+To develop that model, you use your budget to run your ads on different sites and at different times. You then use that data (and those glorious cloud computing resources) to train a machine learning model that predicts whether someone will click on one of your ad based on the user's demographics and ad placement. You try out a few different models, tune the model parameters, and eventually settle on a neural network model with extremely high precision *and* recall. Hooray!
+
+LPD uses the model to target users likely to click their ads, and almost immediately the CTR of their ads increase 5-fold! Not only that, but the share of people who click on ads that go on to buy a pizza has also increased. Everyone congratulates you, and you move on to the next project feeling very smug.
+
+A few months later, though, you are called into a meeting with the LPD advertising team and the company's Chief Financial Officer. They've been looking over the numbers, and despite the huge rise in CTR, they seem to be getting fewer online orders than before you arrived. CTR rates are up, but somehow it isn't generating greater profits.
+
+Can you figure out what went wrong?
+
+OK, this is the place in most books where the authors ask you that question, and you look up at the ceiling for a minute, shrug, and then read on.
+
+But I'm really, *really* serious about this: close your laptop, stand up, set a 5-minute timer on your phone, and go for a walk. Ponder this example. See if you can figure out what's going on. This is *precisely* the kind of problem you will soon face as a professional data scientist, so why not practice trying to think through the problem.
+
+### Solving The Wrong Problem
+
+So what happened?
+
+The reason an increased click rate wasn't making LPD richer is that LPD's problem was never the fact they had a low CTR; LPD's *real* problem was that they weren't getting a lot of orders online. And because Little Papa Domino's problem wasn't a low CTR, being able to answer the question "how likely is a given user to click on an ad" *didn't actually solve their real problem*.
+
+What question, if answered, would have helped solve their problem? "Given a user's demographics and online behavior, *how much more likely are they to buy a pizza* from LPD if we show them an ad?"
+
+The difference is subtle, but critically important: someone clicking an ad doesn't make Little Papa Dominos any money. In fact, someone clicking an ad *and ordering a pizza* doesn't necessarily make LPD any money. Why? Because they may be someone who would have bought a pizza from LPD anyway, whether you showed them an ad or not. In fact, the person who was already thinking of ordering a pizza from LPD is *precisely* the type of person your algorithm may have targeted, and who may have clicked the ad to save themselves a Google search!
+
+But the person LPD *wants* to show an ad to isn't the person who was already thinking of ordering a pizza from LPD, it's the person who was thinking of a pizza but wasn't sure who to order it from, or the person who wanted dinner but didn't know what to get. They may be less likely to click the ad than the person who was about to Google "Little Papa Dominos," but their precisely the type of user who is more likely to buy a pizza from LPD as a result of seeing an ad than they would have been otherwise.
+
+#### Counter-Factual Advertising
+
+Lest you think this example is contrived, it's not. In fact, the realization that the goal of ads isn't to maximize clicks but rather to induce the largest possible change in purchasing behavior is one of the most important ideas in online advertising. It has had a huge impact on how online advertising works, how people evaluate the success of ad campaigns.
+
+Indeed, this is why companies like Meta and Google are so eager to track user behavior across apps and websites. When Meta and Google are able to "follow" users after they've clicked an ad, they can evaluate ad performance based not on clicks but on customer behavior. And when paired with their ability to show ads to some users and not to others and track both groups as they move around the web, Meta and Google can see whether users who see the ads are more likely to make purchases than those that don't. This allows them to estimate the true effect of ads on sales, data they use to improve ad targeting *and* justify higher prices to advertisers.
