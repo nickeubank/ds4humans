@@ -78,24 +78,47 @@ So in this chapter we will discuss the concept of "stakeholder management:" spec
 
 Not someone who has an obvious stakeholder with whom you can have this type of conversation? Well, stick with me — many of the suggested questions and conversational strategies detailed below are ones I've often used in conversation with myself in my own academic research, and I assure you they work almost as well when talking to the voices in your own head as with another person.
 
-## Stakeholder Management
+## Problem Refinement & Stakeholder Management
 
 How then should you — the young data scientist — go about ensuring your efforts are well spent?
 
-There are (sorry) no hard and fast rules for how to avoid this kind of problem, but here's a simple road map:
+There are (sorry) no hard and fast rules for how to work with your stakeholder to better articulate the problem you are seeking to solve. If there were, there would probably be a lot fewer problems in the world, since refining and re-articulating problems is often a major part of what results in them being solved. As Charles Kettering, Head of Research at General Motors from 1920 to 1947 once said, "a problem well stated is a problem half solved." Nevertheless, here are some guiding principles to bear in mind. Read these, reflect on these, but most importantly, *review* these from time to time as you begin new data science engagements!
 
-- Start a conversation about the problem.
-- Reframe and abstract the problem.
-- Propose a question to answer.
-- Iterate.
+### Step 0: Recognize Your Role
 
-### Step 1: Recognize Your Role
+If you remember nothing else from this chapter, please remember this: helping your stakeholder better understand their own problem is a core part of the job.
 
-### Step 2: Abstract the Problem
+Because most stakeholders are both older and also domain experts in their field, young data scientists tend to err on the side of deference to their stakeholders. It is important to be respectful of your stakeholders experience and to use their domain expertise, but it is very important to also recognize that data science is about *pairing* domain expertise with computational methods and quantitative insights, and neither you nor your stakeholder are likely to have expertise in *both* the substantive domain in question *and* cutting edge quantitative methods. Indeed, if they did, they probably wouldn't be hiring you![^google] So don't hesitate to speak up! Ask questions, raise concerns, and while you should also do so with some humility, have confidence in your own expertise.
 
-#### Beware Technical Suggestions
+[^google]: Obviously there are exceptions to this — if you work for a mature tech company like Google or Facebook, you may very well end up working under a manager who knows sides of a problem significantly better than you. In my experience, however, is circumstance is the exception, not the rule.
 
-### Step 3: Ask Questions (Especially Quantiative!)
+### Step 1: Abstract the Problem
+
+If I could offer only one piece of advice on how to approach a sticky problem, it would be this: rephrase the problem in a more general manner that abstracts away from the specifics. It's difficult to overstate how often a "unique," sticky problem becomes very straightforward once you realize it's a special case of a more general type of problem, or once you realize that your stakeholder has (often unknowingly) introduced constraints to the problem that aren't actually constraints.
+
+Perhaps my favorite example of this comes from a talk given by [Vincent Warmerdam at PyData 2019.](https://youtu.be/kYMfE9u-lMo?t=1281&si=haO8mlmO5tB4OC9k)
+
+The World Food Program (WFP) is a global leader in food aid provision. As Vincent tells the story — which he reports having heard at an Operations Research Conference — the WFP was struggling with an extremely difficult data science problem: how best to get food from the places it was being grown/stored to the people who needed it most. Essentially, the WFP would receive reports of needs from communities facing food insecurity. One community might report a need for bread and bee, while another might request lentils and meat. The WFP would compile these requests, then set about trying to determine the most efficient way to meet these needs.
+
+This type of logistics problem is an example of a notoriously difficult problem (essentially a version of the Traveling Salesman Problem, which is NP-Complete, if that means anything to you) that companies like FedEx and UPS buy super computers to try and solve. But it was one that was made especially challenging to solve by all the different types of food the WFP was trying to provide communities.
+
+What the WFP realized was that they didn't actually need to provide bread to the village asking for bread. See, humans don't actually need *bread* to avoid starvation — they need a certain number of calories, a certain amount of protein, and a handful of other nutrients.[^nutrients] So when a village asks for bread, rice, or wheat, you can instead think of them asking for carbohydrates. And a village asking for beef or beans is actually asking for protein and iron. So by simply abstracting the task from "how best can we meet all these food requests" to "how best can we meet the nutritional needs indicated by these requests," the WFP was able to *dramatically* reduces the number of constraints being imposed on the logistical optimization problem WFP needed to solve, making its task *far* simpler.
+
+[^nutrients]: As I understand it, calcium, iron, vitamins A, B1, B2, C, and niacin.
+
+### Step 2: Beware Technical Suggestions
+
+A corollary to "Abstract the Problem" is to always be wary of overly specific technical suggestions from stakeholders. Often times, you will be approached by a stakeholder who, rather than laying out a problem, announces they would like you to do X using some data science tool Y. Occasionally the stakeholder doing this knows exactly what they're talking about, but more often than not, I find this is the result of a stakeholder who has just enough knowledge to be dangerous, but not enough to know how best to solve the problem.
+
+Most people ask data scientists for help because they don't know much about data science, or worse they *think* they know a lot about data science, but don't. Again, different rules apply if you're at Google or Apple, but in most contexts, it's a good idea to treat implementation details provided by the client as a red herring. Focus on the stakeholder's *needs*. Only get into implementation details once you feel you understand the problem well.
+
+```{sidebar}
+Focus on the stakeholder's *needs*. Only get into implementation details once you feel you understand the problem well.
+```
+
+### Step 3: Ask Questions (Especially Quantitative Ones!)
+
+How big is the problem? How much would you need the current situation have to change to call this a success?
 
 #### No Answer? Your First Exploratory Question
 
@@ -107,9 +130,9 @@ There are (sorry) no hard and fast rules for how to avoid this kind of problem, 
 
 ### Step 1: Recognize Your Role
 
-Begin by having a discussion about the stakeholder's goals. The first step to avoid solving a mis-specified problems is recognizing that helping your stakeholder properly specify the problem is part of your job.
-
 Remember: you've been hired precisely because of your expertise in solving problems with data, so *speak up.* Suggest different ways of stating the problem. Ask about different "deliverables" you could provide and ask why they might or might not solve the stakeholders problem (even if a suggestion gets shot down, the *reason* the problem is shot down will teach you something).
+
+Begin by having a discussion about the stakeholder's goals. The first step to avoid solving a mis-specified problems is recognizing that helping your stakeholder properly specify the problem is part of your job.
 
 For example, suppose you are approached by a real estate group interested in developments in the United Kingdom. They tell you:
 

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Why Passive-Prediction Is Not Enough &#8212; Solving Problems With Data</title>
+    <title>EDA: The Most Pernicious Term in Data Science &#8212; Solving Problems With Data</title>
   
   
   
@@ -60,10 +60,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '30_questions/50_why_not_just_passive_prediction';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '30_questions/07_eda';</script>
     <link rel="shortcut icon" href="../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Exploratory Questions" href="10_exploratory_questions.html" />
+    <link rel="prev" title="Descriptive versus Proscriptive Questions" href="05_descriptive_v_proscriptive.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -159,10 +161,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../10_introduction/20_data_science_in_historical_context.html">What <em>is</em> Data Science: An Historical Perspective</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Types of Questions</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="00_solving_the_right_problem.html">Stakeholder Management &amp; Solving the Right Problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_descriptive_v_proscriptive.html">Descriptive versus Proscriptive Questions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07_eda.html">The Scourge of "EDA"</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">The Scourge of "EDA"</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10_exploratory_questions.html">Exploratory Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="20_passive_prediction_questions.html">Passive-Prediction Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="30_causal_questions_theory.html">Causal Questions: The Theory</a></li>
@@ -248,7 +250,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F30_questions/50_why_not_just_passive_prediction.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F30_questions/07_eda.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -278,7 +280,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/30_questions/50_why_not_just_passive_prediction.md" target="_blank"
+      <li><a href="../_sources/30_questions/07_eda.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -347,9 +349,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -360,25 +360,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Why Passive-Prediction Is Not Enough</h1>
+    <h1>EDA: The Most Pernicious Term in Data Science</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Why Passive-Prediction Is Not Enough</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#back-to-blood-pressure">Back to Blood Pressure</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#what-makes-answering-a-causal-question-different-from-a-passive-predictive-question">What Makes Answering A Causal Question Different from a Passive Predictive Question?</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#acting-on-the-world">Acting on the World</a></li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -388,28 +374,23 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="why-passive-prediction-is-not-enough">
-<h1>Why Passive-Prediction Is Not Enough<a class="headerlink" href="#why-passive-prediction-is-not-enough" title="Permalink to this headline">#</a></h1>
-<p>The saying “correlation does not imply causation” is bandied about around so regularly that for many of us, it begins to lose any meaning. Indeed, it is almost a cliché for data science students to end any presentation of statistical analyses with “but of course, correlation does not imply causation, so we don’t really know,” as though invocation of the phrase absolves them of responsibility for preceding interpretation of correlations as suggesting a causal relationship.</p>
-<p>But for all its popularity, the saying “correlation does not imply causation” is frustrating because it’s not <em>useful</em>, and that’s because what people mean when they say “correlation does not imply causation” is actually “correlation does not <em>necessarily</em> imply causation,” and that more accurate presentation makes clear a useful corollary: “correlation does not <em>necessarily</em> imply causation, but in certain situations, correlation <em>does</em> imply causation!”.</p>
-<p>So let’s pause for a moment to try and understand <em>why</em> correlation does not necessarily imply causation so that we can better understand what must be true for a correlation to actually imply causation!</p>
-<p>Let’s return to our example of a hospital trying to identify what patients are most likely to experience complications after surgery. They have lots of historical data on patients before and after surgery, and they can feed this into a simple logistic regression to find out pre-surgery patient characteristics predict complications. They do so, and find that the model performs extremely well — it identifies nearly all the patients who end up having complications, and the false positive rate is still relatively low. They deploy the model throughout the hospital, and nurses begin to followup more aggressively with patients flagged as being likely to have complications. For the purpose of <em>identifying individual patients for additional attention</em>, this effort to answer the Passive-Predictive Question “which patients are most likely to experience post-surgical complications” has been a huge success.</p>
-<p>BUT: now suppose a doctor looks this logistical regression and finds that one of the strongest predictors of complications is whether the patient has high blood pressure prior to surgery. This association is clearly helping to identify patients who are likely to have complications, but does it imply that high blood pressure is <em>causing</em> patients to experience complications?</p>
-<section id="back-to-blood-pressure">
-<h2>Back to Blood Pressure<a class="headerlink" href="#back-to-blood-pressure" title="Permalink to this headline">#</a></h2>
-<p>OK, so now we know what is meant when we asked whether “high blood pressure causes surgical complications” — it means that if the patients who have high blood pressure didn’t have high blood pressure, then they would be less likely to have surgical complications!</p>
-<p>So we give all the patients with high blood pressure medication to reduce their blood pressure and wait.</p>
-<ul class="simple">
-<li><p>Check engine light / warning light analogy — good for identifying cars with problems, but you won’t get anywhere by just turning off those lights.</p></li>
-</ul>
-</section>
-</section>
-<section id="what-makes-answering-a-causal-question-different-from-a-passive-predictive-question">
-<h1>What Makes Answering A Causal Question Different from a Passive Predictive Question?<a class="headerlink" href="#what-makes-answering-a-causal-question-different-from-a-passive-predictive-question" title="Permalink to this headline">#</a></h1>
-</section>
-<section id="acting-on-the-world">
-<h1>Acting on the World<a class="headerlink" href="#acting-on-the-world" title="Permalink to this headline">#</a></h1>
-<p>Nearly all Causal Questions are motivated by a stakeholder’s desire to know the consequences of a certain action. Again, this action could take almost any form, from changing the prices of a product to changing the design of a website or rolling out a new government health insurance system. <em>Usually</em>, this action will not have been pulled out of a hat — rather, one generally poses a Causal Question because one has some reason for thinking a given course of action may be a good one. For example, someone interested in reducing surgical complications may have discovered that patients with high blood pressure are more likely to experience complications from surgery (they observed a <em>correlation</em> between these two outcomes), so now they want to know if giving patients who experience high blood pressure medication to bring down their blood pressure before surgery would reduce complications. Or perhaps your online retailer stakeholder has noticed that one of your competitors has stopped showing customer reviews in the search results, so they suspect it must be improving sales for your competitor and want to know if it would work for your site too.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="eda-the-most-pernicious-term-in-data-science">
+<h1>EDA: The Most Pernicious Term in Data Science<a class="headerlink" href="#eda-the-most-pernicious-term-in-data-science" title="Permalink to this headline">#</a></h1>
+<p>In our next reading, we will turn our attention to <em>Exploratory Questions.</em> First, however, it is important to have a candid discussion about what I feel is one of the most problematic concepts in data science education: <em>Exploratory Data Analysis</em> or <em>EDA</em>.</p>
+<p>The problem with the term Exploratory Data Analysis is that, if you asked most data scientists what it means, they probably couldn’t actually give you a straight answer. If you pressed them further, they would probably say something like “when you look at your data before you start fitting your models.”</p>
+<p>While the idea that data scientists should “get to know their data” before fitting a model is well-meaning (you <em>absolutely</em> should!), the ubiquitous but uncritical use of the term has given young data scientists the sense that the undirected poking at data is worthy of a capitalized three world title, complete with a universally recognized acronym.</p>
+<p>This is problematic because <em>any</em> activity that involves data but lacks a clear motivation is doomed to be unending and unproductive. Data science has emerged precisely because our datasets are far too complex for us to understand directly; indeed, I would argue that the job of a data scientist can be summed up, in part, as a person who identifies <strong>meaningful</strong> patterns in our data and makes them comprehensible.</p>
+<p>But therein lies the problem — without a clear motivation for <em>why</em> the data scientist is poking at their the data, what makes a pattern meaningful is undefined. And without a clear purpose from which a concept of meaningfulness can be derived, there is no end to the ways one can slice and dice the data with no way of knowing when to stop or what is useful.</p>
+<p>I would argue that what most people call Exploratory Data Analysis (EDA) can actually be decomposed into two activities.</p>
+<p>The first activity people call EDA is what I call “learning the structure of your data.” This consists of answering questions about your dataset like “what constitutes a single observation in this dataset?,” “what variables are included in this dataset?,” “how many observations are there?,” “how are variables coded?,” and “what population is represented in this data?” These are questions about <em>the specific dataset</em> you are working with, <em>not</em> the real world, and answers are likely to be found in the dataset documentation and through basic tools for data introspection.<a class="footnote-reference brackets" href="#pandas" id="id1">1</a></p>
+<p>The second activity people call EDA is… everything one does with the data before they fit a statistical or machine learning model. This is the second major reason that I feel the very concept of EDA has had a pernicious influence on data science — it implicitly devalues anything done with data that doesn’t entail a complicated model as “lesser” or “just a stop on the way towards the “real” analysis,” when nothing could be further from the truth.</p>
+<p>This type of data analysis — looking at summary statistics, calculating distributions of variables, computing tabulations and cross-tabulations of different things to improve one’s understand of the world — is categorically different from “learning the structure of your data,” because it is inquiry in the service of better understanding the world, not the structure of your dataset. But it is <em>not</em> categorically different analyzing data using statistical models, not just because in many cases generating cross-tabulations or calculating group averages are essentially equivalent to using a statistical method like linear regression, but also because they are both examples of the same enterprise: attempting to answer questions about the world using data in the service of solving problems.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="pandas"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>In <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, this would be things like <code class="docutils literal notranslate"><span class="pre">df.columns</span></code> to see what variables are in the data, <code class="docutils literal notranslate"><span class="pre">df.info()</span></code> to get a sense of how data is being represented and the number of rows, and simple tools for tabulating unique values like <code class="docutils literal notranslate"><span class="pre">df[&quot;first</span> <span class="pre">column&quot;].value_counts()</span></code>.</p>
+</dd>
+</dl>
 </section>
 
     <script type="text/x-thebe-config">
@@ -443,6 +424,24 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="05_descriptive_v_proscriptive.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Descriptive versus Proscriptive Questions</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="10_exploratory_questions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exploratory Questions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -452,26 +451,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Why Passive-Prediction Is Not Enough</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#back-to-blood-pressure">Back to Blood Pressure</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#what-makes-answering-a-causal-question-different-from-a-passive-predictive-question">What Makes Answering A Causal Question Different from a Passive Predictive Question?</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#acting-on-the-world">Acting on the World</a></li>
-</ul>
-
-  </nav></div>
-
-</div></div>
               
             
           </div>

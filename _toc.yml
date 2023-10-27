@@ -11,6 +11,8 @@ parts:
     chapters:
       - file: 30_questions/00_solving_the_right_problem
       - file: 30_questions/05_descriptive_v_proscriptive
+      - file: 30_questions/07_eda
+        title: The Scourge of "EDA"
       - file: 30_questions/10_exploratory_questions
       - file: 30_questions/20_passive_prediction_questions
       - file: 30_questions/30_causal_questions_theory
