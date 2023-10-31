@@ -349,7 +349,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -365,6 +367,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap">Recap</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -381,16 +391,27 @@ document.write(`
 <p>While the idea that data scientists should “get to know their data” before fitting a model is well-meaning (you <em>absolutely</em> should!), the ubiquitous but uncritical use of the term has given young data scientists the sense that the undirected poking at data is worthy of a capitalized three world title, complete with a universally recognized acronym.</p>
 <p>This is problematic because <em>any</em> activity that involves data but lacks a clear motivation is doomed to be unending and unproductive. Data science has emerged precisely because our datasets are far too complex for us to understand directly; indeed, I would argue that the job of a data scientist can be summed up, in part, as a person who identifies <strong>meaningful</strong> patterns in our data and makes them comprehensible.</p>
 <p>But therein lies the problem — without a clear motivation for <em>why</em> the data scientist is poking at their the data, what makes a pattern meaningful is undefined. And without a clear purpose from which a concept of meaningfulness can be derived, there is no end to the ways one can slice and dice the data with no way of knowing when to stop or what is useful.</p>
-<p>I would argue that what most people call Exploratory Data Analysis (EDA) can actually be decomposed into two activities.</p>
-<p>The first activity people call EDA is what I call “learning the structure of your data.” This consists of answering questions about your dataset like “what constitutes a single observation in this dataset?,” “what variables are included in this dataset?,” “how many observations are there?,” “how are variables coded?,” and “what population is represented in this data?” These are questions about <em>the specific dataset</em> you are working with, <em>not</em> the real world, and answers are likely to be found in the dataset documentation and through basic tools for data introspection.<a class="footnote-reference brackets" href="#pandas" id="id1">1</a></p>
-<p>The second activity people call EDA is… everything one does with the data before they fit a statistical or machine learning model. This is the second major reason that I feel the very concept of EDA has had a pernicious influence on data science — it implicitly devalues anything done with data that doesn’t entail a complicated model as “lesser” or “just a stop on the way towards the “real” analysis,” when nothing could be further from the truth.</p>
+<p>I would argue that what most people call Exploratory Data Analysis (EDA) can actually be decomposed into three activities.</p>
+<p>The first activity people call EDA is what I call “learning the structure of your <em>dataset</em>” (emphasis on learning about your <em>dataset</em>, not using your data to learn about the world). This consists of answering questions about your dataset like “what constitutes a single observation in this dataset?,” “what variables are included in this dataset?,” “how many observations are there?,” “how are variables coded?,” and “what population is represented in this data?” These are questions about <em>the specific dataset</em> you are working with, <em>not</em> the real world, and answers are likely to be found in the dataset documentation and through basic tools for data introspection.<a class="footnote-reference brackets" href="#pandas" id="id1">1</a></p>
+<p>The second activity that often falls under the label EDA is what I call “validating your dataset.” It’s a poor data scientist who takes the validity of their data on blind faith, so when faced with a new dataset, one should begin with a few “sanity checks” just to make sure things look reasonable. Does the number of observations seem reasonable given what you know about how the data was collected and who is supposed to be represented in the data? If there are date variables in the data, does their range match what should be in this data? And given the specifics of the data, does the range of variables make sense? For example, if you have data on registered voters 18 and over, you should probably check that the age variable has a minimum value of 18 and a maximum value of something sensible (e.g., not 225).</p>
+<p>The third and final activity people call EDA is… everything one does with the data before they fit a statistical or machine learning model. This is the second major reason that I feel the very concept of EDA has had a pernicious influence on data science — it implicitly devalues anything done with data that doesn’t entail a complicated model as “lesser” or “just a stop on the way towards the “real” analysis,” when nothing could be further from the truth.</p>
 <p>This type of data analysis — looking at summary statistics, calculating distributions of variables, computing tabulations and cross-tabulations of different things to improve one’s understand of the world — is categorically different from “learning the structure of your data,” because it is inquiry in the service of better understanding the world, not the structure of your dataset. But it is <em>not</em> categorically different analyzing data using statistical models, not just because in many cases generating cross-tabulations or calculating group averages are essentially equivalent to using a statistical method like linear regression, but also because they are both examples of the same enterprise: attempting to answer questions about the world using data in the service of solving problems. And just as one cannot properly fit or tune a model without a clear sense of the question one is seeking to answer and how that answer is meant to be used, neither can one meaningfully calculate meaningful cross-tabulations or plots without having a sense of purpose that makes clear what constitutes “meaning.”</p>
+<section id="recap">
+<h2>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">#</a></h2>
+<p>Despite its ubiquity, few data scientists could actually tell you what constitutes Exploratory Data Analysis (EDA). Moreover, some of what people might call EDA in practice — answering questions about the world without complex modelling — should not be called EDA, but rather… well, it’s that’s just data science.</p>
+<p>So in this book, we will acknowlege the important (but distinct!) goal of two purposeful activities often called EDA:</p>
+<ul class="simple">
+<li><p>Learning the structure of your dataset (what constitutes a unit of observation, what variables are in the dataset),</p></li>
+<li><p>Validating your dataset (does the data pass the sniff test? Does it exhibit the basic properties you would expect given what it claims to be?)</p></li>
+</ul>
+<p>But I will <em>not</em> use the term EDA itself, and when I differentiate between data science enterprises, I will do so by emphasizing differences in the <em>end goals</em> of those activities (answering Exploratory Questions, Passive-Prediction Questions, or Causal Questions), not the methods used to achieve those ends.</p>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="pandas"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>In <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, this would be things like <code class="docutils literal notranslate"><span class="pre">df.columns</span></code> to see what variables are in the data, <code class="docutils literal notranslate"><span class="pre">df.info()</span></code> to get a sense of how data is being represented and the number of rows, and simple tools for tabulating unique values like <code class="docutils literal notranslate"><span class="pre">df[&quot;first</span> <span class="pre">column&quot;].value_counts()</span></code>.</p>
 </dd>
 </dl>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -451,6 +472,20 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap">Recap</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

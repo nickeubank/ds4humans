@@ -374,10 +374,11 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-refinement-stakeholder-management">Problem Refinement &amp; Stakeholder Management</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-0-recognize-your-role">Step 0: Recognize Your Role</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-abstract-the-problem">Step 1: Abstract the Problem</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-beware-technical-suggestions">Step 2: Beware Technical Suggestions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-don-t-assume-your-stakeholder-knows-what-they-need">Step 1: Don’t Assume Your Stakeholder Knows What They Need</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-abstract-the-problem">Step 2: Abstract the Problem</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-ask-questions-especially-quantitative-ones">Step 3: Ask Questions (Especially Quantitative Ones!)</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#no-answer-your-first-exploratory-question">No Answer? Your First Exploratory Question</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-about-success">Questions About Success</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-about-the-problem">Questions About the Problem</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-propose-questions-you-might-answer">Step 4: Propose Questions You Might Answer</a><ul class="nav section-nav flex-column">
@@ -385,13 +386,6 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-iterate">Step 5: Iterate</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-recognize-your-role">Step 1: Recognize Your Role</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#beware-technical-suggestions">Beware Technical Suggestions</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-propose-a-question-to-answer">Step 2: Propose A Question To Answer</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Make Your Questions Specific and Actionable</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-iterate">Step 3: Iterate</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-solving-the-wrong-problem-looks-like">What Solving the Wrong Problem Looks Like</a><ul class="nav section-nav flex-column">
@@ -465,83 +459,71 @@ document.write(`
 <p>If you remember nothing else from this chapter, please remember this: helping your stakeholder better understand their own problem is a core part of the job.</p>
 <p>Because most stakeholders are both older and also domain experts in their field, young data scientists tend to err on the side of deference to their stakeholders. It is important to be respectful of your stakeholders experience and to use their domain expertise, but it is very important to also recognize that data science is about <em>pairing</em> domain expertise with computational methods and quantitative insights, and neither you nor your stakeholder are likely to have expertise in <em>both</em> the substantive domain in question <em>and</em> cutting edge quantitative methods. Indeed, if they did, they probably wouldn’t be hiring you!<a class="footnote-reference brackets" href="#google" id="id3">3</a> So don’t hesitate to speak up! Ask questions, raise concerns, and while you should also do so with some humility, have confidence in your own expertise.</p>
 </section>
-<section id="step-1-abstract-the-problem">
-<h3>Step 1: Abstract the Problem<a class="headerlink" href="#step-1-abstract-the-problem" title="Permalink to this headline">#</a></h3>
+<section id="step-1-don-t-assume-your-stakeholder-knows-what-they-need">
+<h3>Step 1: Don’t Assume Your Stakeholder Knows What They Need<a class="headerlink" href="#step-1-don-t-assume-your-stakeholder-knows-what-they-need" title="Permalink to this headline">#</a></h3>
+<p>A corollary to Step 0 is to not assume your stakeholder really understands what they need. So when I say “helping your stakeholder better understand their own problem is a core part of the job,” I don’t only mean that it’s part of your job *if the stakeholder admits to deep uncertainty about their problem.” Odds are your stakeholder will come to you with a strong statement of what they think they way, but you should take that as a starting point for discussion, not your mandate.</p>
+<p>This is particularly true if your stakeholder comes to you with really specific technical suggestions. Often times, you will be approached by a stakeholder who, rather than laying out a problem, announces they would like you to do X using some data science tool Y. Occasionally the stakeholder doing this knows exactly what they’re talking about, but more often than not, I find this is the result of a stakeholder who has just enough knowledge to be dangerous, but not enough to know how best to solve the problem.</p>
+<p>Most people ask data scientists for help because they don’t know much about data science, or worse they <em>think</em> they know a lot about data science, but don’t. Again, different rules apply if you’re at Google or Apple, but in most contexts, it’s a good idea to treat implementation details provided by the client as a red herring. Focus on the stakeholder’s <em>needs</em>. Only get into implementation details once you feel you understand the problem well.</p>
+<aside class="sidebar">
+<p>Focus on the stakeholder’s <em>needs</em>. Only get into implementation details once you feel you understand the problem well.</p>
+</aside>
+</section>
+<section id="step-2-abstract-the-problem">
+<h3>Step 2: Abstract the Problem<a class="headerlink" href="#step-2-abstract-the-problem" title="Permalink to this headline">#</a></h3>
+<p>So how do you help your stakeholder better understand <em>their</em> problem?</p>
 <p>If I could offer only one piece of advice on how to approach a sticky problem, it would be this: rephrase the problem in a more general manner that abstracts away from the specifics. It’s difficult to overstate how often a “unique,” sticky problem becomes very straightforward once you realize it’s a special case of a more general type of problem, or once you realize that your stakeholder has (often unknowingly) introduced constraints to the problem that aren’t actually constraints.</p>
 <p>Perhaps my favorite example of this comes from a talk given by <a class="reference external" href="https://youtu.be/kYMfE9u-lMo?t=1281&amp;si=haO8mlmO5tB4OC9k">Vincent Warmerdam at PyData 2019.</a></p>
 <p>The World Food Program (WFP) is a global leader in food aid provision. As Vincent tells the story — which he reports having heard at an Operations Research Conference — the WFP was struggling with an extremely difficult data science problem: how best to get food from the places it was being grown/stored to the people who needed it most. Essentially, the WFP would receive reports of needs from communities facing food insecurity. One community might report a need for bread and bee, while another might request lentils and meat. The WFP would compile these requests, then set about trying to determine the most efficient way to meet these needs.</p>
 <p>This type of logistics problem is an example of a notoriously difficult problem (essentially a version of the Traveling Salesman Problem, which is NP-Complete, if that means anything to you) that companies like FedEx and UPS buy super computers to try and solve. But it was one that was made especially challenging to solve by all the different types of food the WFP was trying to provide communities.</p>
 <p>What the WFP realized was that they didn’t actually need to provide bread to the village asking for bread. See, humans don’t actually need <em>bread</em> to avoid starvation — they need a certain number of calories, a certain amount of protein, and a handful of other nutrients.<a class="footnote-reference brackets" href="#nutrients" id="id4">4</a> So when a village asks for bread, rice, or wheat, you can instead think of them asking for carbohydrates. And a village asking for beef or beans is actually asking for protein and iron. So by simply abstracting the task from “how best can we meet all these food requests” to “how best can we meet the nutritional needs indicated by these requests,” the WFP was able to <em>dramatically</em> reduces the number of constraints being imposed on the logistical optimization problem WFP needed to solve, making its task <em>far</em> simpler.</p>
 </section>
-<section id="step-2-beware-technical-suggestions">
-<h3>Step 2: Beware Technical Suggestions<a class="headerlink" href="#step-2-beware-technical-suggestions" title="Permalink to this headline">#</a></h3>
-<p>A corollary to “Abstract the Problem” is to always be wary of overly specific technical suggestions from stakeholders. Often times, you will be approached by a stakeholder who, rather than laying out a problem, announces they would like you to do X using some data science tool Y. Occasionally the stakeholder doing this knows exactly what they’re talking about, but more often than not, I find this is the result of a stakeholder who has just enough knowledge to be dangerous, but not enough to know how best to solve the problem.</p>
-<p>Most people ask data scientists for help because they don’t know much about data science, or worse they <em>think</em> they know a lot about data science, but don’t. Again, different rules apply if you’re at Google or Apple, but in most contexts, it’s a good idea to treat implementation details provided by the client as a red herring. Focus on the stakeholder’s <em>needs</em>. Only get into implementation details once you feel you understand the problem well.</p>
-<aside class="sidebar">
-<p>Focus on the stakeholder’s <em>needs</em>. Only get into implementation details once you feel you understand the problem well.</p>
-</aside>
-</section>
 <section id="step-3-ask-questions-especially-quantitative-ones">
 <h3>Step 3: Ask Questions (Especially Quantitative Ones!)<a class="headerlink" href="#step-3-ask-questions-especially-quantitative-ones" title="Permalink to this headline">#</a></h3>
-<p>How big is the problem? How much would you need the current situation have to change to call this a success?</p>
-<section id="no-answer-your-first-exploratory-question">
-<h4>No Answer? Your First Exploratory Question<a class="headerlink" href="#no-answer-your-first-exploratory-question" title="Permalink to this headline">#</a></h4>
+<p>Be sure to ask a lot of questions of your stakeholder. In particular, I would suggest two types: questions about what success would look like, and questions about the problem itself.</p>
+<section id="questions-about-success">
+<h4>Questions About Success<a class="headerlink" href="#questions-about-success" title="Permalink to this headline">#</a></h4>
+<p>Getting a sense of where the goalposts are for your stakeholder will both help you know what to target and also help you better understand your stakeholders understanding of the problem. Make sure to ask questions like:</p>
+<ul class="simple">
+<li><p>How are you measuring the problem? What would you measure to help you know if you were successful in solving the problem?</p></li>
+<li><p>How big, in quantitative terms, is this problem?</p></li>
+<li><p>How much would you need the current situation have to change to call this a success?</p></li>
+</ul>
+</section>
+<section id="questions-about-the-problem">
+<h4>Questions About the Problem<a class="headerlink" href="#questions-about-the-problem" title="Permalink to this headline">#</a></h4>
+<p>The more you know about your clients needs the better, so ask anything that comes to mind. If the client can answer your question, it will help you better understand the situation; if the client can’t answer your question you may find that they are suddenly really interested in knowing the answer, and you immediately have some of your first Exploratory Questions to try to resolve.</p>
+<p>In the example of the company that wanted to improve recruitment of high quality employees in the introduction of this book, I suggested that some of the first exploratory questions you might want to investigate would be things like:</p>
+<ul class="simple">
+<li><p>How many job applications are you receiving when you post a job?</p></li>
+<li><p>What share of your current job applicants are of high quality?</p></li>
+<li><p>What share of employees you try to hire accept your offer?</p></li>
+<li><p>What share of employees you do hire turn out to be successful employees?</p></li>
+</ul>
+<p>These are all questions that I would ask my stakeholder in one of our first meetings.</p>
 </section>
 </section>
 <section id="step-4-propose-questions-you-might-answer">
 <h3>Step 4: Propose Questions You Might Answer<a class="headerlink" href="#step-4-propose-questions-you-might-answer" title="Permalink to this headline">#</a></h3>
+<p>As a data scientist, answering questions about the world is the instrument you have to solve problems. So once you think you have a sense of your stakeholder’s needs, turn around and propose a handful of questions and ask them if answering those questions would help solve their problem.</p>
+<p>This is important because many people have only a vague sense of what they are likely to get as a “deliverable” from the data scientist. They usually have a vague sense that they will get some type of magic machine (a “magic model” or “magic algorithm”) that will just make their problem go away. By concretely framing your deliverable as the answer to a question (or an model that would answer a specific question for each entity like a customer or patient that it encounters), you can get much more valuable feedback before you dive into a problem.</p>
 <section id="make-your-questions-specific-and-actionable">
 <h4>Make Your Questions Specific and Actionable<a class="headerlink" href="#make-your-questions-specific-and-actionable" title="Permalink to this headline">#</a></h4>
+<p>In developing your questions, it is important to make them specific and actionable. A specific and actionable question is one that makes it very clear what you need to do next. For example, suppose an international aid organization told you they were worried that urbanization in Africa, Asia and Latin America was impacting efforts to reduce infant mortality. Some examples of specific, actionable questions are: “Is infant mortality higher among recent migrants to urban centers, controlling for income?” or “are the causes of infant mortality among recent migrants to urban centers different from those living in rural area?” Reading those questions, you can probably immediately think of what data you’d need to collect, and what regressions you’d want to run to generate answers to those questions.</p>
+<p>Vague questions would be “is urbanization impacting efforts to reduce infant mortality?”, or “does urbanization affect infant mortality?” Note that when you read these, they don’t seem to obviously imply a way forward.</p>
+<p>Perhaps the best way to figure out if your question is answerable is to write down what an answer to your question would look like. Seriously – try it. Can you write down, on a piece of paper, the graph, regression table, or machine learning diagnostic statistics (complete with labels on your axes, names for variables, etc.) that would constitute an answer to your question? If not, it’s probably too vague.</p>
 </section>
 </section>
 <section id="step-5-iterate">
 <h3>Step 5: Iterate<a class="headerlink" href="#step-5-iterate" title="Permalink to this headline">#</a></h3>
-</section>
-<section id="step-1-recognize-your-role">
-<h3>Step 1: Recognize Your Role<a class="headerlink" href="#step-1-recognize-your-role" title="Permalink to this headline">#</a></h3>
-<p>Remember: you’ve been hired precisely because of your expertise in solving problems with data, so <em>speak up.</em> Suggest different ways of stating the problem. Ask about different “deliverables” you could provide and ask why they might or might not solve the stakeholders problem (even if a suggestion gets shot down, the <em>reason</em> the problem is shot down will teach you something).</p>
-<p>Begin by having a discussion about the stakeholder’s goals. The first step to avoid solving a mis-specified problems is recognizing that helping your stakeholder properly specify the problem is part of your job.</p>
-<p>For example, suppose you are approached by a real estate group interested in developments in the United Kingdom. They tell you:</p>
-<blockquote>
-<div><p>We do a lot of work building large residential buildings. One problem we often have is that after we start digging the foundations of our buildings, we discover that we’re actually on top of ancient ruins of some sort that the stupid government wants to preserve for stupid posterity. Then we have to spend piles of money to have archeologists come to dig out these old bones with toothbrushes, all of which also puts us behind schedule. So what we want you to do is design a machine learning algorithm that we can use to detect archeological sites from the ground penetrating radar scans we do after we’ve cleared out a job site, so we can avoid digging foundations in the spots on our plots where archeological sites might be located.</p>
-</div></blockquote>
-<p>So what does this stakeholder want you to do? At first glance, it might seem like the answer is “develop a machine learning algorithm for detecting archeological sites in ground penetrating radar scans”.</p>
-<p>But it seems like it’d be <em>much</em> more helpful and cost-effective if you could make a guess about whether there are archeological sites at a location <em>before</em> the company buys the land and clears away the existing buildings!</p>
-<p>So what would I propose to a stakeholder like this? I would say: “If I could tell you the likelihood that an archeological site is under a plot of land you’re thinking about buying, would that be more helpful to you?”</p>
-<p>Now to be clear, you may not always be right in your assessment. They may come back and say “No, sorry—there’s this other consideration we didn’t explain initially” (like “we’ve already bought all this land. We’re committed.”). But before diving in, you always want to be sure <em>you’re solving the right problem.</em> And you should never <strong>assume</strong> that the problem to be addressed has been properly specified.</p>
-<section id="beware-technical-suggestions">
-<h4>Beware Technical Suggestions<a class="headerlink" href="#beware-technical-suggestions" title="Permalink to this headline">#</a></h4>
-<p>It’s remarkable how often stakeholders will come to you with a vague conception of a problem they are facing and an over-formed idea of how they think you can solve their problem using data science (a solution that will almost certainly invoke the magic of “machine learning” or “AI”).</p>
-<p>But remember: most people ask data scientists for help because they don’t know much about data science, or worse they <em>think</em> they know a lot about data science, but don’t. Again, different rules apply if you’re at Google or Apple, but in most contexts, it’s a good idea to treat implementation details provided by the client as a red herring. Focus on the stakeholder’s actual <em>needs</em>, and only think about implementation once you feel you understand the problem well.</p>
-<aside class="sidebar">
-<p class="sidebar-title">Have Confidence in Your Own Expertise</p>
-<p>Most people ask data scientists for help because they don’t know much about data science. As a result, the specific thing they ask for may not actually be the best approach available given the state of data science.</p>
-</aside>
-<p>In the example above, for example, I would argue that the <em>real</em> need of the real estate company is to know where archeological sites are likely to be located, full stop. Finding a way to identify archeological remains in ground radar scans <em>might</em> help them, but is it (a) feasible and (b) the best choice?</p>
-<p>Training a supervised machine learning algorithm requires labeled training data, which in this case would mean ground penetrating radar scans of identified-but-not-yet-excavated-ruins. And it’s not at all clear such data could be obtained.</p>
-<p>Moreover, there’s presumably LOTS of public data on where archeological sites have been found in the past, and there’s a good chance a basic GIS analysis of already-found sites could tell you a lot (and for a lot less money!).</p>
-</section>
-</section>
-<section id="step-2-propose-a-question-to-answer">
-<h3>Step 2: Propose A Question To Answer<a class="headerlink" href="#step-2-propose-a-question-to-answer" title="Permalink to this headline">#</a></h3>
-<p>Once you think you understand your stakeholder’s need, the next step is propose a question you plan to answer to your stakeholder. In our prior example, I might ask the real estate agent: “if I could answer the question: for any given real estate plot, what’s the probability the site contains archeological ruins? would that solve your problem?”</p>
-<p>This strategy is critical because data science tools aren’t designed to solve problems; they answer questions. And so to have any hope of successfully solving the problem presented by your stakeholder, you must first determine what questions, if answered, would help solve the problem at hand. And when you propose a question you plan to answer, it helps make clear to the stakeholder what you’ll be delivering, and helps them evaluate whether your plan of action makes sense.</p>
-</section>
-<section id="id5">
-<h3>Make Your Questions Specific and Actionable<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
-<p>In developing your questions, it is important to make them specific and actionable. A specific and actionable question is one that makes it very clear what you need to do next. For example, suppose an international aid organization told you they were worried that urbanization in Africa, Asia and Latin America was impacting efforts to reduce infant mortality. Some examples of specific, actionable questions are: “Is infant mortality higher among recent migrants to urban centers, controlling for income?” or “are the causes of infant mortality among recent migrants to urban centers different from those living in rural area?” Reading those questions, you can probably immediately think of what data you’d need to collect, and what regressions you’d want to run to generate answers to those questions.</p>
-<p>Vague questions would be “is urbanization impacting efforts to reduce infant mortality?”, or “does urbanization affect infant mortality?” Note that when you read these, they don’t seem to obviously imply a way forward.</p>
-<p>Perhaps the best way to figure out if your question is answerable is to write down what an answer to your question would look like. Seriously – try it. Can you write down, on a piece of paper, the graph, regression table, or machine learning diagnostic statistics (complete with labels on your axes, names for variables, etc.) that would constitute an answer to your question? If not, it’s probably too vague!</p>
-</section>
-<section id="step-3-iterate">
-<h3>Step 3: Iterate<a class="headerlink" href="#step-3-iterate" title="Permalink to this headline">#</a></h3>
-<p>And here’s the last but perhaps most important step: <strong>iterate.</strong> Bring your work back to your stakeholder as often as possible. Many stakeholders find the idea of data science mysterious and abstract, and will struggle to understand what is and is not feasible. By bringing them intermediate results, the whole process will start to become more concrete for the stakeholder, and it will help them provide you with better feedback.</p>
+<p>And here’s the last but perhaps most important step: <strong>iterate.</strong> Bring your work back to your stakeholder as often as possible.</p>
+<p>Many stakeholders find the idea of data science mysterious and abstract, and will struggle to understand what is and is not feasible. By bringing them intermediate results, the whole process will start to become more concrete for the stakeholder, and it will help them provide you with better feedback.</p>
+<p>The way this book is organized suggests a natural flow from problem articulation to answering Exploratory Questions to prioritize efforts, to answering Passive-Prediction Questions to target individuals for extra attention or automate tasks, and finally to Causal Questions to better understand the effects of that extra attention/automation. In reality, however, a good data scientist is always coming back to the stakeholder, updating their plan, and jumping back in the sequence when new questions arise.</p>
 </section>
 </section>
 <section id="what-solving-the-wrong-problem-looks-like">
 <h2>What Solving the Wrong Problem Looks Like<a class="headerlink" href="#what-solving-the-wrong-problem-looks-like" title="Permalink to this headline">#</a></h2>
-<p>Our discussion up to this point has been a little abstract, so to illustrate what we mean by “mis-specifying a problem”, let’s work through an example. The details of this example are fictitious, but the underlying logic of this example is not; indeed, the insight illustrated by this example is central to one of the biggest pivots in how people think about online advertising.</p>
-<p>You have been hired by the advertising division of a fictitious national pizza chain—let’s call it Little Papa Dominos (LPD). LPD spends a <em>lot</em> on online advertising, but they their resources aren’t being deployed as effectively as they could be. They spend more than most of their competitors, and yet their online sales are lagging.</p>
+<p>Our discussion up to this point has been a little abstract, so to illustrate what it means to “mis-specifying a problem.” The details of this example are fictitious, but the underlying logic of this example is not; indeed, the insight illustrated by this example is central to one of the biggest pivots in how people think about online advertising.</p>
+<p>You have been hired by the advertising division of a fictitious national pizza chain—let’s call it Little Papa Dominos (LPD). LPD spends a <em>lot</em> on online advertising, but their resources aren’t being deployed as effectively as they could be. They spend more than most of their competitors, and yet their online sales are lagging.</p>
 <p>After consulting industry groups and online advertising experts, they discover that the rate at which people click their ads (their ads’ <em>click-through rate</em>, or CTR) is well below the industry average.</p>
 <p>To address the problem, they’ve hired you—a newly minted Data Scientist—to improve the CTR of their ads. They give you a large budget, access to all the cloud computing resources you need, and even a small staff.</p>
 <p>“Well,” you reason, “maybe the problem is that our ads aren’t being shown to the right people. After all, it seems unlikely that any ad for pizza—no matter how appealing—is likely to draw a click if it’s shown to a 75-year-old at 7 am.” So you set out to build a statistical model to answer the question, “given a user’s demographics and online behavior, how likely are they to click on one of LPDs ads?” If you can answer that, you figure, LPD can prioritize buying the ad spots for the types of users most likely to click on their ads.</p>
@@ -651,10 +633,11 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-refinement-stakeholder-management">Problem Refinement &amp; Stakeholder Management</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-0-recognize-your-role">Step 0: Recognize Your Role</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-abstract-the-problem">Step 1: Abstract the Problem</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-beware-technical-suggestions">Step 2: Beware Technical Suggestions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-don-t-assume-your-stakeholder-knows-what-they-need">Step 1: Don’t Assume Your Stakeholder Knows What They Need</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-abstract-the-problem">Step 2: Abstract the Problem</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-ask-questions-especially-quantitative-ones">Step 3: Ask Questions (Especially Quantitative Ones!)</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#no-answer-your-first-exploratory-question">No Answer? Your First Exploratory Question</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-about-success">Questions About Success</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-about-the-problem">Questions About the Problem</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-propose-questions-you-might-answer">Step 4: Propose Questions You Might Answer</a><ul class="nav section-nav flex-column">
@@ -662,13 +645,6 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-iterate">Step 5: Iterate</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-recognize-your-role">Step 1: Recognize Your Role</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#beware-technical-suggestions">Beware Technical Suggestions</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-propose-a-question-to-answer">Step 2: Propose A Question To Answer</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Make Your Questions Specific and Actionable</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-iterate">Step 3: Iterate</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-solving-the-wrong-problem-looks-like">What Solving the Wrong Problem Looks Like</a><ul class="nav section-nav flex-column">

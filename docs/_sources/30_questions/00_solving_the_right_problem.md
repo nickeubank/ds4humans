@@ -92,7 +92,21 @@ Because most stakeholders are both older and also domain experts in their field,
 
 [^google]: Obviously there are exceptions to this — if you work for a mature tech company like Google or Facebook, you may very well end up working under a manager who knows sides of a problem significantly better than you. In my experience, however, is circumstance is the exception, not the rule.
 
-### Step 1: Abstract the Problem
+### Step 1: Don't Assume Your Stakeholder Knows What They Need
+
+A corollary to Step 0 is to not assume your stakeholder really understands what they need. So when I say "helping your stakeholder better understand their own problem is a core part of the job," I don't only mean that it's part of your job *if the stakeholder admits to deep uncertainty about their problem." Odds are your stakeholder will come to you with a strong statement of what they think they way, but you should take that as a starting point for discussion, not your mandate.
+
+This is particularly true if your stakeholder comes to you with really specific technical suggestions. Often times, you will be approached by a stakeholder who, rather than laying out a problem, announces they would like you to do X using some data science tool Y. Occasionally the stakeholder doing this knows exactly what they're talking about, but more often than not, I find this is the result of a stakeholder who has just enough knowledge to be dangerous, but not enough to know how best to solve the problem.
+
+Most people ask data scientists for help because they don't know much about data science, or worse they *think* they know a lot about data science, but don't. Again, different rules apply if you're at Google or Apple, but in most contexts, it's a good idea to treat implementation details provided by the client as a red herring. Focus on the stakeholder's *needs*. Only get into implementation details once you feel you understand the problem well.
+
+```{sidebar}
+Focus on the stakeholder's *needs*. Only get into implementation details once you feel you understand the problem well.
+```
+
+### Step 2: Abstract the Problem
+
+So how do you help your stakeholder better understand *their* problem?
 
 If I could offer only one piece of advice on how to approach a sticky problem, it would be this: rephrase the problem in a more general manner that abstracts away from the specifics. It's difficult to overstate how often a "unique," sticky problem becomes very straightforward once you realize it's a special case of a more general type of problem, or once you realize that your stakeholder has (often unknowingly) introduced constraints to the problem that aren't actually constraints.
 
@@ -106,85 +120,58 @@ What the WFP realized was that they didn't actually need to provide bread to the
 
 [^nutrients]: As I understand it, calcium, iron, vitamins A, B1, B2, C, and niacin.
 
-### Step 2: Beware Technical Suggestions
-
-A corollary to "Abstract the Problem" is to always be wary of overly specific technical suggestions from stakeholders. Often times, you will be approached by a stakeholder who, rather than laying out a problem, announces they would like you to do X using some data science tool Y. Occasionally the stakeholder doing this knows exactly what they're talking about, but more often than not, I find this is the result of a stakeholder who has just enough knowledge to be dangerous, but not enough to know how best to solve the problem.
-
-Most people ask data scientists for help because they don't know much about data science, or worse they *think* they know a lot about data science, but don't. Again, different rules apply if you're at Google or Apple, but in most contexts, it's a good idea to treat implementation details provided by the client as a red herring. Focus on the stakeholder's *needs*. Only get into implementation details once you feel you understand the problem well.
-
-```{sidebar}
-Focus on the stakeholder's *needs*. Only get into implementation details once you feel you understand the problem well.
-```
-
 ### Step 3: Ask Questions (Especially Quantitative Ones!)
 
-How big is the problem? How much would you need the current situation have to change to call this a success?
+Be sure to ask a lot of questions of your stakeholder. In particular, I would suggest two types: questions about what success would look like, and questions about the problem itself.
 
-#### No Answer? Your First Exploratory Question
+#### Questions About Success
+
+Getting a sense of where the goalposts are for your stakeholder will both help you know what to target and also help you better understand your stakeholders understanding of the problem. Make sure to ask questions like:
+
+- How are you measuring the problem? What would you measure to help you know if you were successful in solving the problem?
+- How big, in quantitative terms, is this problem?
+- How much would you need the current situation have to change to call this a success?
+
+#### Questions About the Problem
+
+The more you know about your clients needs the better, so ask anything that comes to mind. If the client can answer your question, it will help you better understand the situation; if the client can't answer your question you may find that they are suddenly really interested in knowing the answer, and you immediately have some of your first Exploratory Questions to try to resolve.
+
+In the example of the company that wanted to improve recruitment of high quality employees in the introduction of this book, I suggested that some of the first exploratory questions you might want to investigate would be things like:
+
+- How many job applications are you receiving when you post a job?
+- What share of your current job applicants are of high quality?
+- What share of employees you try to hire accept your offer?
+- What share of employees you do hire turn out to be successful employees?
+
+These are all questions that I would ask my stakeholder in one of our first meetings.
 
 ### Step 4: Propose Questions You Might Answer
 
+As a data scientist, answering questions about the world is the instrument you have to solve problems. So once you think you have a sense of your stakeholder's needs, turn around and propose a handful of questions and ask them if answering those questions would help solve their problem.
+
+This is important because many people have only a vague sense of what they are likely to get as a "deliverable" from the data scientist. They usually have a vague sense that they will get some type of magic machine (a "magic model" or "magic algorithm") that will just make their problem go away. By concretely framing your deliverable as the answer to a question (or an model that would answer a specific question for each entity like a customer or patient that it encounters), you can get much more valuable feedback before you dive into a problem.
+
 #### Make Your Questions Specific and Actionable
-
-### Step 5: Iterate
-
-### Step 1: Recognize Your Role
-
-Remember: you've been hired precisely because of your expertise in solving problems with data, so *speak up.* Suggest different ways of stating the problem. Ask about different "deliverables" you could provide and ask why they might or might not solve the stakeholders problem (even if a suggestion gets shot down, the *reason* the problem is shot down will teach you something).
-
-Begin by having a discussion about the stakeholder's goals. The first step to avoid solving a mis-specified problems is recognizing that helping your stakeholder properly specify the problem is part of your job.
-
-For example, suppose you are approached by a real estate group interested in developments in the United Kingdom. They tell you:
-
-> We do a lot of work building large residential buildings. One problem we often have is that after we start digging the foundations of our buildings, we discover that we're actually on top of ancient ruins of some sort that the stupid government wants to preserve for stupid posterity. Then we have to spend piles of money to have archeologists come to dig out these old bones with toothbrushes, all of which also puts us behind schedule. So what we want you to do is design a machine learning algorithm that we can use to detect archeological sites from the ground penetrating radar scans we do after we've cleared out a job site, so we can avoid digging foundations in the spots on our plots where archeological sites might be located.
-
-So what does this stakeholder want you to do? At first glance, it might seem like the answer is "develop a machine learning algorithm for detecting archeological sites in ground penetrating radar scans".
-
-But it seems like it'd be *much* more helpful and cost-effective if you could make a guess about whether there are archeological sites at a location *before* the company buys the land and clears away the existing buildings!
-
-So what would I propose to a stakeholder like this? I would say: "If I could tell you the likelihood that an archeological site is under a plot of land you're thinking about buying, would that be more helpful to you?"
-
-Now to be clear, you may not always be right in your assessment. They may come back and say "No, sorry—there's this other consideration we didn't explain initially" (like "we've already bought all this land. We're committed."). But before diving in, you always want to be sure *you're solving the right problem.* And you should never **assume** that the problem to be addressed has been properly specified.
-
-#### Beware Technical Suggestions
-
-It's remarkable how often stakeholders will come to you with a vague conception of a problem they are facing and an over-formed idea of how they think you can solve their problem using data science (a solution that will almost certainly invoke the magic of "machine learning" or "AI").
-
-But remember: most people ask data scientists for help because they don't know much about data science, or worse they *think* they know a lot about data science, but don't. Again, different rules apply if you're at Google or Apple, but in most contexts, it's a good idea to treat implementation details provided by the client as a red herring. Focus on the stakeholder's actual *needs*, and only think about implementation once you feel you understand the problem well.
-
-```{sidebar} Have Confidence in Your Own Expertise
-Most people ask data scientists for help because they don't know much about data science. As a result, the specific thing they ask for may not actually be the best approach available given the state of data science.
-```
-
-In the example above, for example, I would argue that the *real* need of the real estate company is to know where archeological sites are likely to be located, full stop. Finding a way to identify archeological remains in ground radar scans *might* help them, but is it (a) feasible and (b) the best choice?
-
-Training a supervised machine learning algorithm requires labeled training data, which in this case would mean ground penetrating radar scans of identified-but-not-yet-excavated-ruins. And it's not at all clear such data could be obtained.
-
-Moreover, there's presumably LOTS of public data on where archeological sites have been found in the past, and there's a good chance a basic GIS analysis of already-found sites could tell you a lot (and for a lot less money!).
-
-### Step 2: Propose A Question To Answer
-
-Once you think you understand your stakeholder's need, the next step is propose a question you plan to answer to your stakeholder. In our prior example, I might ask the real estate agent: "if I could answer the question: for any given real estate plot, what's the probability the site contains archeological ruins? would that solve your problem?"
-
-This strategy is critical because data science tools aren't designed to solve problems; they answer questions. And so to have any hope of successfully solving the problem presented by your stakeholder, you must first determine what questions, if answered, would help solve the problem at hand. And when you propose a question you plan to answer, it helps make clear to the stakeholder what you'll be delivering, and helps them evaluate whether your plan of action makes sense.
-
-### Make Your Questions Specific and Actionable
 
 In developing your questions, it is important to make them specific and actionable. A specific and actionable question is one that makes it very clear what you need to do next. For example, suppose an international aid organization told you they were worried that urbanization in Africa, Asia and Latin America was impacting efforts to reduce infant mortality. Some examples of specific, actionable questions are: "Is infant mortality higher among recent migrants to urban centers, controlling for income?" or "are the causes of infant mortality among recent migrants to urban centers different from those living in rural area?" Reading those questions, you can probably immediately think of what data you'd need to collect, and what regressions you'd want to run to generate answers to those questions.
 
 Vague questions would be "is urbanization impacting efforts to reduce infant mortality?", or "does urbanization affect infant mortality?" Note that when you read these, they don't seem to obviously imply a way forward.
 
-Perhaps the best way to figure out if your question is answerable is to write down what an answer to your question would look like. Seriously -- try it. Can you write down, on a piece of paper, the graph, regression table, or machine learning diagnostic statistics (complete with labels on your axes, names for variables, etc.) that would constitute an answer to your question? If not, it's probably too vague!
+Perhaps the best way to figure out if your question is answerable is to write down what an answer to your question would look like. Seriously -- try it. Can you write down, on a piece of paper, the graph, regression table, or machine learning diagnostic statistics (complete with labels on your axes, names for variables, etc.) that would constitute an answer to your question? If not, it's probably too vague.
 
-### Step 3: Iterate
+### Step 5: Iterate
 
-And here's the last but perhaps most important step: **iterate.** Bring your work back to your stakeholder as often as possible. Many stakeholders find the idea of data science mysterious and abstract, and will struggle to understand what is and is not feasible. By bringing them intermediate results, the whole process will start to become more concrete for the stakeholder, and it will help them provide you with better feedback.
+And here's the last but perhaps most important step: **iterate.** Bring your work back to your stakeholder as often as possible.
+
+Many stakeholders find the idea of data science mysterious and abstract, and will struggle to understand what is and is not feasible. By bringing them intermediate results, the whole process will start to become more concrete for the stakeholder, and it will help them provide you with better feedback.
+
+The way this book is organized suggests a natural flow from problem articulation to answering Exploratory Questions to prioritize efforts, to answering Passive-Prediction Questions to target individuals for extra attention or automate tasks, and finally to Causal Questions to better understand the effects of that extra attention/automation. In reality, however, a good data scientist is always coming back to the stakeholder, updating their plan, and jumping back in the sequence when new questions arise.
 
 ## What Solving the Wrong Problem Looks Like
 
-Our discussion up to this point has been a little abstract, so to illustrate what we mean by "mis-specifying a problem", let's work through an example. The details of this example are fictitious, but the underlying logic of this example is not; indeed, the insight illustrated by this example is central to one of the biggest pivots in how people think about online advertising.
+Our discussion up to this point has been a little abstract, so to illustrate what it means to "mis-specifying a problem." The details of this example are fictitious, but the underlying logic of this example is not; indeed, the insight illustrated by this example is central to one of the biggest pivots in how people think about online advertising.
 
-You have been hired by the advertising division of a fictitious national pizza chain—let's call it Little Papa Dominos (LPD). LPD spends a *lot* on online advertising, but they their resources aren't being deployed as effectively as they could be. They spend more than most of their competitors, and yet their online sales are lagging.
+You have been hired by the advertising division of a fictitious national pizza chain—let's call it Little Papa Dominos (LPD). LPD spends a *lot* on online advertising, but their resources aren't being deployed as effectively as they could be. They spend more than most of their competitors, and yet their online sales are lagging.
 
 After consulting industry groups and online advertising experts, they discover that the rate at which people click their ads (their ads' *click-through rate*, or CTR) is well below the industry average.
 
