@@ -14,6 +14,19 @@ My view is that the answer lies — at least in significant part — in a failur
 
 Of course, the reason that bridging this gap is the hardest part of data science is that every problem is different, and somebody is only likely to bring you — a talented data scientist — a problem if it is difficult to solve. But after many years as a professional data scientist — consulting on economic development programs for the World Bank and on voting rights cases across the country — and teaching and mentoring data science Master's students, I have developed a framework that I believe helps to bridge the gap of between neatly curated classroom exercises and the messiness of the real world.
 
+```{note} Is this book for me?
+
+You'd be forgiven, serious data scientist, for flipping through this book and finding yourself thinking "Hmmm... I don't see many equations in this book. Is this really for me, the serious data scientist?" But worry not.
+
+This book may not be the *most* helpful resource when it comes to preparing for technical interviews (though the detailed discussion of Causal Questions in later chapters likely would be). And your impression is correct — this book contains more case studies than proofs. But don't be fooled — this is not a "light and fuffy" book that waves vaguely in the direction of statistical concepts so you can discuss them at cocktail parties. 
+
+This book *takes as given* that you've already been introduced to statistical inference and machine learning, and you feel comfortable with the core concepts of implementing and evaluating stats and ML models (evaluating a model's AUC, cross-validation, hypothesis testing, train-test sample splits, etc.). Those concepts will be treated as "assumed knowledge."
+
+This book is about what comes *before* and *after* you faithfully fit a model to a dataset in a robust manner. By *before*, I mean that it covers how you decide what questions to answer, what data to collect, and what models to consider using. And by *after*, I mean we will discuss how one evaluates whether a result is likely to generalize, whether a model is safe to deploy, and where to go from there.
+
+It is, in other words, about everything you need to know *beyond* the purely technical. And while that may be the part of data science that doesn't *feel* as exciting, the ability to reason about problems and think critically about the appropriate use of data science tools is what will get you promoted after you ace that technical interview, and what will prevent you from being replaced by the next generation of Large Language Model or auto-ML tool.
+```
+
 ## The Framework: An Overview
 
 ### Specifying the Problem
