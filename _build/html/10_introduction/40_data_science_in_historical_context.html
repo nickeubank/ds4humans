@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Ethics in Data Science &#8212; Solving Problems With Data</title>
+    <title>What is Data Science: An Historical Perspective &#8212; Solving Problems With Data</title>
   
   
   
@@ -60,10 +60,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '40_in_practice/10_ethics_and_bias';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '10_introduction/40_data_science_in_historical_context';</script>
     <link rel="shortcut icon" href="../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Descriptive v. Proscriptive Questions" href="../30_questions/05_descriptive_v_proscriptive.html" />
+    <link rel="prev" title="Stakeholder Management &amp; Solving the Right Problem" href="30_solving_the_right_problem.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -129,7 +131,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="../10_introduction/10_our_approach.html">
+<a class="navbar-brand logo" href="10_our_approach.html">
   
   
   
@@ -149,14 +151,14 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../10_introduction/10_our_approach.html">
+                <a class="reference internal" href="10_our_approach.html">
                     Solving Problems with Data
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../10_introduction/30_solving_the_right_problem.html">Stakeholder Management &amp; Solving the Right Problem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../10_introduction/40_data_science_in_historical_context.html">What <em>is</em> Data Science: An Historical Perspective</a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="30_solving_the_right_problem.html">Stakeholder Management &amp; Solving the Right Problem</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">What <em>is</em> Data Science: An Historical Perspective</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Types of Questions</span></p>
 <ul class="nav bd-sidenav">
@@ -169,9 +171,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Science in Practice</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="00_backwards_design.html">Backwards Design</a></li>
-<li class="toctree-l1"><a class="reference internal" href="20_from_data_to_decisions.html">Making Decisions Using Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="25_writing_to_stakeholders.html">Writing Data Science Report for Non-Technical Audiences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../40_in_practice/00_backwards_design.html">Backwards Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../40_in_practice/20_from_data_to_decisions.html">Making Decisions Using Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../40_in_practice/25_writing_to_stakeholders.html">Writing Data Science Report for Non-Technical Audiences</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
 <ul class="nav bd-sidenav">
@@ -247,7 +249,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F40_in_practice/10_ethics_and_bias.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F10_introduction/40_data_science_in_historical_context.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -277,7 +279,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/40_in_practice/10_ethics_and_bias.md" target="_blank"
+      <li><a href="../_sources/10_introduction/40_data_science_in_historical_context.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -346,7 +348,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -357,11 +361,20 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Ethics in Data Science</h1>
+    <h1>What is Data Science: An Historical Perspective</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-data-analyst-software-engineering-distinction">The Data Analyst / Software Engineering Distinction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#great-story-why-should-i-care">Great Story. Why Should I Care?</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -371,45 +384,45 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="ethics-in-data-science">
-<h1>Ethics in Data Science<a class="headerlink" href="#ethics-in-data-science" title="Permalink to this headline">#</a></h1>
-<p>In recent years, for example, we’ve seen near endless examples of data science systems not just failing to solve societal inequities, but instead reinforcing them. A hiring algorithm at Amazon was recently scrapped after it was discovered that it systematically <a class="reference external" href="https://www.reuters.com/article/us-amazon-com-jobs-automation-insight/amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK08G">discriminated against female job candidates</a>. An algorithm for prioritizing kidney transplants was found to make it less likely that <a class="reference external" href="https://www.wired.com/story/how-algorithm-blocked-kidney-transplants-black-patients/">Black patients would receive kidney transplants than White patients</a>. Another medical algorithm recommended less preventative care for <a class="reference external" href="https://www.washingtonpost.com/health/2019/10/24/racial-bias-medical-algorithm-favors-white-patients-over-sicker-black-patients/">sick Black patients than White patients</a>. And a popular “risk assessment” algorithm used by judges around the country to make decisions about whether defendants should be released pending trial, held on bond, or held without bonds—as well as how convicted criminals should be sentenced—<a class="reference external" href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">was found to make more mistakes for Black defendants than White defendants, systematically reporting to judges that they were more likely to re-offend than they actually were according to subsequent analyses.</a></p>
-<p>Similarly, in the political sphere <a class="reference external" href="https://www.wsj.com/articles/facebook-knows-it-encourages-division-top-executives-nixed-solutions-11590507499">Facebook’s own research</a> has shown that its algorithms polarize users and drive division, a fact that internal documents show its own executives chose to largely ignore.<a class="footnote-reference brackets" href="#facebook-engagement" id="id1">1</a> Facebook’s internal research also found that “64% of all extremist group joins are due to our recommendation tools” like “Groups You Should Join” and the Discover tools.</p>
-<p>While much of these problems are the result of a lack of carelessness or a lack of critical thought on the part of the data scientists developing these algorithms, in other cases problems have arisen because of a lack of critical evaluation of data science tools by their <em>users</em>. In 2020, for example, it was discovered that company that provided doctors with (suspiciously free) software designed to provide “clinical decision support” (advice on tests that might be advisable or drugs that might be prescribed for patients based on their medical records) was taking kickbacks from an opioid producing pharmaceutical company to ensure opioids remained a suggested treatment for patients, despite the strong recommendation of groups like the American Medical Association to reduce opioid use in light of the opioid overdose epidemic the US.</p>
-<ul class="simple">
-<li><p>Motivation: piles of case studies. See list under “Prediction: ML Bias” (March 29 at the moment) here
-Two types of “unethical algorithms: biased performance and biased predictions.</p></li>
-<li><p>Biased Performance:</p>
-<ul>
-<li><p>Super ethically straightforward—works for one group (e.g., White people) but not another (e.g., Black people). “Works” can be defined in terms of whatever performance metrics we care about (accuracy, recall, etc.), but the point is that the error rate is different across groups (e.g., the zoom background blurring algorithm that can’t see Black faces, so just blurs their screens).</p></li>
-</ul>
-</li>
-<li><p>Biased Predictions:</p>
-<ul>
-<li><p>Now the much more complicated one: suppose that your model gives different predictions for people from different group (Black/White), but that’s because that’s what is in the data. Is that ok?</p></li>
-<li><p>If the data is biased: probably not! E.g. Amazon (I think this is what happened) tried to make algorithm that would look at a resume and predict how good an employee that person would be if hired. So it used resumes to train a dataset using managerial employee ratings as labels. But… managers were biased. That was the problem. So algorithm just learned to recapitulate the misogynistic rating of managers. Gotta make sure you know what question is being answered by your algorithm…</p></li>
-<li><p>If the data is NOT biased: depends! Suppose that a model to predict success of a kidney transplant designed to maximize the efficiency of kidney transplant allocations systematically scores black recipients as being less likely to still have their transplanted kidneys and be healthy after ten years… but it’s not an anomaly of the model, it’s a real fact in the world. Is it OK to down-rank Black recipients? (not a contrived example). In that context, providing black recipients with less access to kidneys seems deeply problematic, even if rating them higher will result in less “years of healthy kidneys” after transplant. Here it seems like racially disparate outcomes are unethical. But what if we want to allocate HIV preventative interventions? Black Americans have a much higher incidence of HIV than any other ethnic group in the US—a model that suggests targeting their communities with more interventions would seem appropriate, on a model that doesn’t recognize that HIV rates in the Black community are more than 2x the next closest group seems like it wouldn’t be very helpful.</p></li>
-<li><p>Chicago crime example: <a class="reference external" href="https://www.theverge.com/c/22444020/chicago-pd-predictive-policing-heat-list">https://www.theverge.com/c/22444020/chicago-pd-predictive-policing-heat-list</a></p></li>
-<li><p><a class="reference external" href="https://filtermag.org/chicago-crime-prediction/">https://filtermag.org/chicago-crime-prediction/</a></p></li>
-<li><p><a class="reference external" href="https://medium.com/analytics-vidhya/predicting-arrests-looking-into-chicagos-crime-through-machine-learning-78697cc930b9">https://medium.com/analytics-vidhya/predicting-arrests-looking-into-chicagos-crime-through-machine-learning-78697cc930b9</a></p></li>
-</ul>
-</li>
-<li><p>Opacity</p>
-<ul>
-<li><p>Can’t audit normatively</p></li>
-<li><p>Can’t audit for accuracy: <a class="reference external" href="https://www.nytimes.com/2017/06/13/opinion/how-computers-are-harming-criminal-justice.html">https://www.nytimes.com/2017/06/13/opinion/how-computers-are-harming-criminal-justice.html</a></p></li>
-</ul>
-</li>
-</ul>
-<p>But… it’s data? How do our values come into play!
-Like… checking performance of algorithms for different racial/ethnic groups.
-Or looking for racial/gender heterogeneity during descriptive analyses.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="what-is-data-science-an-historical-perspective">
+<h1>What <em>is</em> Data Science: An Historical Perspective<a class="headerlink" href="#what-is-data-science-an-historical-perspective" title="Permalink to this headline">#</a></h1>
+<p>Given how often the term “data science” gets thrown around, you would be excused for thinking that the meaning of the term was clearly understood. The reality, however, is that if you were to ask ten people working in the field you will almost certainly get ten different descriptions of what it is and what they do.</p>
+<p>Part of that is deliberate obfuscation—data science is <em>so</em> trendy that everyone wants to claim that what they’re doing is data science in order to woo venture capitalists or to win research grants. But it’s also the result of the fact that data science is not really a mature discipline in the way that computer science or sociology are mature disciplines. Rather, it’s best to think of data science as an ongoing project to bring together a range of disparate innovations in computational and statistically methodology under one roof.</p>
+<p>Why is such a project necessary? The exponential increase in data availability and computational power over the past thirty years has resulted in a commensurate explosion in methods for analyzing that data. But the development of many of these methods has occurred in one of the most fragmented institutions in the world—academia—resulting in duplication of efforts, differences in language and vocabulary, and a failure to fully appreciate possible synergies between the perspectives of different disciplines.</p>
+<p>The idea that academia is deeply fragmented often surprises students, and understandably so. Universities <em>love</em> to pay lip service to the importance of interdisciplinarity and are quick to highlight successful interdisciplinary collaborations. But successful interdisciplinary collaborations are so notable precisely because they are the exception, not the rule. The reality is that academic research is starkly divided into disciplinary silos (e.g., computer science, statistics, political science, economics, and engineering). This isn’t because researchers aren’t <em>interested</em> in interdisciplinary collaborations, but rather that their professional imperatives push them to focus their attention on the priorities and language of their own departments and disciplines.<a class="footnote-reference brackets" href="#academic-incentives" id="id1">1</a></p>
+<p>Thus, while the past several decades have seen an unprecedented emergence of new methods across all of academia, the lack of intellectual cross-pollination across academic silos has resulted in disciplines failing to take full advantage of discoveries from other disciplines. Over time, each discipline has developed a perspective on computational methods that emphasizes its own intellectual priorities.</p>
+<p>To illustrate, suppose we were interested in using patient data to reduce heart attacks. A computer scientist looking at this problem might use their discipline’s methods to <em>predict</em> which patients are most likely to experience a heart attack in the future using current patient data; a social scientist might focus on trying to understand the <em>effect</em> of giving patients a new drug on heart attack risk; and a statistician might focus on understanding <em>how confident</em> we should be in the conclusions reached by the computer scientist and social scientist.</p>
+<p>This fragmentation has also resulted in a fragmentation of <em>language</em> around data science methodologies. Disciplines often come up with different terminology for the same phenomena, adding another layer of difficulty to efforts to work across departmental silos.</p>
+<p>The result is a situation analogous to the Buddhist parable of the blind men and the elephant, wherein a group of blind people come upon an elephant, and upon laying hands on different parts of the elephant, they come to different conclusions about what lies before them. The person touching the tail declares “we have found a rope!”, while the person touching the leg declares “we have found a tree!”</p>
+<p><img alt="blindfolded scientists feeling an elephant" src="../_images/blindmenelephant.jpg" /></p>
+<p>(<em>Note</em>: Not sure of original source of this image. <a class="reference external" href="https://pursuitofresearch.org/2011/01/19/the-blind-men-and-the-elephant/">Found it here</a>, but need to figure out rights prior to anything about this becoming commercial! Lots of pics in public domain if needed, but not blindfolded scientists.)</p>
+<p>And yet, as the poet John Godfrey Saxe wrote in his poem <a class="reference external" href="https://en.wikipedia.org/wiki/Blind_men_and_an_elephant#John_Godfrey_Saxe"><em>The Blind Men and the Elephant</em></a> about this parable many centuries later:</p>
+<blockquote>
+<div><p>And so these men of Indostan,
+Disputed loud and long,
+Each in his own opinion
+Exceeding stiff and strong,
+Though each was partly in the right,
+And all were in the wrong!</p>
+</div></blockquote>
+<p>In recent years, however, there has been a growing appreciation of what can be gained from pulling together the insights that have been developed in different fields, despite the challenges of language and professional imperatives to such collaborations. And, at least amongst those who are serious about the development of data science as a discipline and not just a buzz world for raising money, is the promise of data science: to unify the different perspectives and methods for analyzing data. Or, to put it more succinctly: to finally see the whole elephant.</p>
+<section id="the-data-analyst-software-engineering-distinction">
+<h2>The Data Analyst / Software Engineering Distinction<a class="headerlink" href="#the-data-analyst-software-engineering-distinction" title="Permalink to this headline">#</a></h2>
+<p>In addition to these differences in the theoretical approaches people have taken to data science, there is another dimension on which the world of data science is fragmented: in how people wish to <em>deploy</em> the tools of data science.</p>
+<p>One model of data science is what we will call the “data analyst” approach. Data scientists doing this type of work often collect data to answer specific questions—what is the effect of expanded government health insurance subsidies on mortality? what type of customer should we target with our new advertising campaign?. As a result, when they write code, they write it to be run against a specific set of data to answer a specific question.</p>
+<p>The other model is what we will call the “software engineering” approach. Data scientists doing this type of work write software they plan to <em>deploy</em> to thousands or millions of users. This is the type of work that gets embedded in the apps on your phone, or that generates your movie recommendations at Netflix. As a result, when these data scientists write code, they are writing more sophisticated and generalizable programs.</p>
+<p>To be clear, most data scientists do at least a bit of both types of work—data analysts may often write small programs or packages to aid in types of analysis they do a lot, and software engineers have to prototype and test new programs before they write a version that can be deployed broadly. But most people will eventually choose to specialize in one direction or another, and when you see data science resources in the world—especially ones about programming for data science—bear in mind that depending on <em>your</em> proclivities towards on approach or another, not all resources will be well suited to your interests.</p>
+</section>
+<section id="great-story-why-should-i-care">
+<h2>Great Story. Why Should I Care?<a class="headerlink" href="#great-story-why-should-i-care" title="Permalink to this headline">#</a></h2>
+<p>So why are we telling you this story? In short, it’s important for you to understand that <em>most</em> people you will encounter in the world doing data science were trained in one of these academic silos. That means that depending on who you are working with and how they were trained, they may find your future colleagues using terms you’ve never heard before, or being confused by some of the concepts you bring up, and it’s important for you to understand that that isn’t necessarily because <em>you</em> don’t understand something; it may be because either they’re just using different terms for a concept you know, or it may be because you, trained with a more unified perspective, may be aware of concepts that even your more senior colleagues (or rather, especially your more senior colleagues!) were never exposed to.</p>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
-<dt class="label" id="facebook-engagement"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>This research found the key driver of polarization was Facebook’s decision to design recommendations algorithms that prioritized “user engagement” (clicks, shares, comments) which resulted in promoting partisan, polarizing, sensationalist, or extreme content.</p>
+<dt class="label" id="academic-incentives"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Nearly all university faculty are hired by established departments like statistics or economics, faculty submit their research to journals specific to their discipline, those journals in turn ask fellow members of the discipline to evaluate their work for publication, and promotions and tenure reviews are managed by the faculty in a faculty member’s own department.</p>
 </dd>
 </dl>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -425,7 +438,7 @@ Or looking for racial/gender heterogeneity during descriptive analyses.</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./40_in_practice"
+            path: "./10_introduction"
         },
         predefinedOutput: true
     }
@@ -443,6 +456,24 @@ Or looking for racial/gender heterogeneity during descriptive analyses.</p>
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="30_solving_the_right_problem.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Stakeholder Management &amp; Solving the Right Problem</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../30_questions/05_descriptive_v_proscriptive.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Descriptive v. Proscriptive Questions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -452,6 +483,21 @@ Or looking for racial/gender heterogeneity during descriptive analyses.</p>
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-data-analyst-software-engineering-distinction">The Data Analyst / Software Engineering Distinction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#great-story-why-should-i-care">Great Story. Why Should I Care?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

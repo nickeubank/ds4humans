@@ -211,4 +211,6 @@ Indeed, this is why companies like Meta and Google are so eager to track user be
 
 ## Next Up: Types of Questions
 
-Having established the importance of first articulating the problem one seeks to solve, we now turn to developing our understanding of the three types of questions introduced in first chapter of this book!
+Having established the importance of first articulating the problem one seeks to solve, we will shortly turn to developing our understanding of the three types of questions introduced in first chapter of this book.
+
+First, though, a quick digression into the understanding data science in historical context. This may feel like an odd topic to talk through in a technical data science text, but as we'll see understanding how we got to where we are today is key to successfully navigating modern data science.
