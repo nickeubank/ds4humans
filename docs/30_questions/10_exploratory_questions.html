@@ -158,14 +158,12 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
-<ul class="nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../10_introduction/20_data_science_in_historical_context.html">What <em>is</em> Data Science: An Historical Perspective</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Types of Questions</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="00_solving_the_right_problem.html">Stakeholder Management &amp; Solving the Right Problem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05_descriptive_v_proscriptive.html">Descriptive versus Proscriptive Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_descriptive_v_proscriptive.html">Descriptive v. Proscriptive Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_eda.html">The Scourge of "EDA"</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Exploratory Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="20_passive_prediction_questions.html">Passive-Prediction Questions</a></li>
@@ -415,7 +413,7 @@ What do we mean by "faithful and meaningful" summaries? To illustrate, suppose t
 <p><img alt="plot of all four regression fits with scatter points" src="30_questions/images/anscombes_quartet_naturalgas.png" /></p>
 <p>Clearly, the relationship between these different assets and natural gas prices are <em>not</em> all the same! Buying the asset in the top left would likely do a good job of smoothing out the state’s budget, but in nearly all years, the asset in the bottom right would be useless for smoothing the state’s budget since in most years the asset’s payoff doesn’t change at all!</p>
 <p>This is obviously a simple example and one where a simple plot is sufficient to allow us to see the problem. But this problem is inherent to answering <em>any</em> exploratory question—whether we’re calculating simple statistics or using sophisticated unsupervised machine learning techniques; when we summarize data, it is our job as data scientists to ensure that our summaries are representing the <em>relevant</em> patterns in the data in a faithful and meaningful manner. And because what is relevant depends on the problem we are trying to solve, it’s something we as data scientists have to evaluate, not something an algorithm can do for us. –&gt;</p>
-<p><a class="reference internal" href="00_solving_the_right_problem.html"><span class="doc std std-doc">As discussed in our previous reading</span></a>, often the hardest part of a data science project is properly articulating the problem we wish to solve. That’s because properly specifying a problem requires <em>understanding</em> the problem well enough to state it, and often we call issues “problems” precisely because we don’t really understand them!</p>
+<p><span class="xref myst">As discussed in our previous reading</span>, often the hardest part of a data science project is properly articulating the problem we wish to solve. That’s because properly specifying a problem requires <em>understanding</em> the problem well enough to state it, and often we call issues “problems” precisely because we don’t really understand them!</p>
 <p>Enter <em>Exploratory Questions</em>. Exploratory Questions are questions designed to elicit information about our problem space and aid us in prioritizing our efforts and refining our goals.</p>
 <p>Of the three classes of questions we detail in this book, answering Exploratory Questions often requires the least technical sophistication, and as a result Exploratory Questions often get the least respect. But because of their critical role in improving our understanding of our objectives, learning to ask and answer Exploratory Questions well will have a huge influence on how effective you will be as a data scientist.</p>
 <p>In this reading, we will discuss Exploratory Questions from two perspectives. First, we will discuss how to <em>use</em> Exploratory Questions effectively in practice, and second, we will discuss how to <em>answer</em> Exploratory Questions accurately.</p>
@@ -436,7 +434,7 @@ What do we mean by "faithful and meaningful" summaries? To illustrate, suppose t
 <section id="pulling-together-data">
 <h3>Pulling Together Data<a class="headerlink" href="#pulling-together-data" title="Permalink to this headline">#</a></h3>
 <p>To illustrate, suppose you’ve been hired by a new non-profit interested in helping reduce energy use in buildings in the United States. They know that fixed structures (factors, stores, houses, etc.) are responsible for a huge share of US energy consumption, and are interested in figuring out how to drive down that energy use by helping building owners improve the energy efficiency of their buildings (by providing information on things like government subsidies for efficiency improvements and the potential value of energy efficient windows, better heating and cooling, etc.).</p>
-<p>You <em>could</em> start out by trying to build a fancy supervised machine learning model that tried to predict the energy use of every building in the US based on infrared satellite data and weather information. Indeed, that may even be what you were asked to do! (See our discussion of how <a class="reference internal" href="00_solving_the_right_problem.html"><span class="doc std std-doc">stakeholders will often have somewhat wild ideas of what is feasible and what would help most.</span></a>).</p>
+<p>You <em>could</em> start out by trying to build a fancy supervised machine learning model that tried to predict the energy use of every building in the US based on infrared satellite data and weather information. Indeed, that may even be what you were asked to do! (See our discussion of how <span class="xref myst">stakeholders will often have somewhat wild ideas of what is feasible and what would help most.</span>).</p>
 <p>But given this is a new non-profit, it sounds like their real need is probably to figure out how to target their efforts to be most effective. So maybe we should step back and start by trying to answer a few Exploratory Questions that would help the organization decide where to focus its attention:</p>
 <ul class="simple">
 <li><p>What <em>type</em> of buildings (industrial, residential, commercial) consume the most power in the US?</p>

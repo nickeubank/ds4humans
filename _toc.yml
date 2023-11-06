@@ -4,12 +4,12 @@
 format: jb-book
 root: 10_introduction/10_our_approach
 parts:
-  - caption: Introduction
+  - caption:
     chapters:
       - file: 10_introduction/20_data_science_in_historical_context
+      - file: 10_introduction/00_solving_the_right_problem
   - caption: Types of Questions
     chapters:
-      - file: 30_questions/00_solving_the_right_problem
       - file: 30_questions/05_descriptive_v_proscriptive
       - file: 30_questions/07_eda
         title: The Scourge of "EDA"

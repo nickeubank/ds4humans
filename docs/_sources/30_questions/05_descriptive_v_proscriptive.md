@@ -1,6 +1,10 @@
-# Descriptive versus Proscriptive Questions
+# Descriptive v. Proscriptive Questions
 
-In our previous readings, we introduced three classes of questions: Exploratory, Passive-Predictive, and Casual. But that was actually a slight simplification... (sorry).
+In the first chapter, I introduced three classes of questions: Exploratory, Passive-Prediction, and Casual. Before diving into each of those classes of questions in detail, I must confess to having elided over a *small* but very important nuance to this taxonomy.
+
+While I do think nearly all data science questions fall into one of these three categories, all three are examples of *Descriptive Questions*.
+
+But that was actually a slight simplification... (sorry).
 
 Above this three-fold distinction in question types, there's actually a higher-level way to classify questions: Descriptive questions and Proscriptive questions. *Descriptive questions* are questions that aim to describe something about *objective reality*, such as "what is the current tax rate for people earning over 250,000 dollars?" or "in what US states is marijuana legal?".[^objectivereality] Exploratory, Passive-Predictive, and Casual questions are all examples of descriptive questions. *Proscriptive questions*, by contrast, are questions about how the world *should* be, like "should the current tax rate for people earning over 250,000 dollars be higher?" or "should marijuana be legal?.
 

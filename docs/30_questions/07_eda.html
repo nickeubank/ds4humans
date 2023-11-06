@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Exploratory Questions" href="10_exploratory_questions.html" />
-    <link rel="prev" title="Descriptive versus Proscriptive Questions" href="05_descriptive_v_proscriptive.html" />
+    <link rel="prev" title="Descriptive v. Proscriptive Questions" href="05_descriptive_v_proscriptive.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -156,14 +156,12 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
-<ul class="nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../10_introduction/20_data_science_in_historical_context.html">What <em>is</em> Data Science: An Historical Perspective</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Types of Questions</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="00_solving_the_right_problem.html">Stakeholder Management &amp; Solving the Right Problem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05_descriptive_v_proscriptive.html">Descriptive versus Proscriptive Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_descriptive_v_proscriptive.html">Descriptive v. Proscriptive Questions</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">The Scourge of "EDA"</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10_exploratory_questions.html">Exploratory Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="20_passive_prediction_questions.html">Passive-Prediction Questions</a></li>
@@ -395,11 +393,18 @@ document.write(`
 <p>The first activity people call EDA is what I call “learning the structure of your <em>dataset</em>” (emphasis on learning about your <em>dataset</em>, not using your data to learn about the world). This consists of answering questions about your dataset like “what constitutes a single observation in this dataset?,” “what variables are included in this dataset?,” “how many observations are there?,” “how are variables coded?,” and “what population is represented in this data?” These are questions about <em>the specific dataset</em> you are working with, <em>not</em> the real world, and answers are likely to be found in the dataset documentation and through basic tools for data introspection.<a class="footnote-reference brackets" href="#pandas" id="id1">1</a></p>
 <p>The second activity that often falls under the label EDA is what I call “validating your dataset.” It’s a poor data scientist who takes the validity of their data on blind faith, so when faced with a new dataset, one should begin with a few “sanity checks” just to make sure things look reasonable. Does the number of observations seem reasonable given what you know about how the data was collected and who is supposed to be represented in the data? If there are date variables in the data, does their range match what should be in this data? And given the specifics of the data, does the range of variables make sense? For example, if you have data on registered voters 18 and over, you should probably check that the age variable has a minimum value of 18 and a maximum value of something sensible (e.g., not 225).</p>
 <p>The third and final activity people call EDA is… everything one does with the data before they fit a statistical or machine learning model. This is the second major reason that I feel the very concept of EDA has had a pernicious influence on data science — it implicitly devalues anything done with data that doesn’t entail a complicated model as “lesser” or “just a stop on the way towards the “real” analysis,” when nothing could be further from the truth.</p>
-<p>This type of data analysis — looking at summary statistics, calculating distributions of variables, computing tabulations and cross-tabulations of different things to improve one’s understand of the world — is categorically different from “learning the structure of your data,” because it is inquiry in the service of better understanding the world, not the structure of your dataset. But it is <em>not</em> categorically different analyzing data using statistical models, not just because in many cases generating cross-tabulations or calculating group averages are essentially equivalent to using a statistical method like linear regression, but also because they are both examples of the same enterprise: attempting to answer questions about the world using data in the service of solving problems. And just as one cannot properly fit or tune a model without a clear sense of the question one is seeking to answer and how that answer is meant to be used, neither can one meaningfully calculate meaningful cross-tabulations or plots without having a sense of purpose that makes clear what constitutes “meaning.”</p>
+<p>This type of data analysis — looking at summary statistics, calculating distributions of variables, computing tabulations and cross-tabulations of different things to improve one’s understand of the world — is categorically different from “learning the structure of your data,” because it is inquiry in the service of better understanding the world, not the structure of your dataset. But it is <em>not</em> categorically different analyzing data using statistical models, not just because in many cases generating cross-tabulations or calculating group averages are essentially equivalent to using a statistical method like linear regression, but also because they are both examples of the same enterprise: attempting to answer questions about the world using data in the service of solving problems.</p>
+<p>And just as one cannot properly fit or tune a model without a clear sense of the question one is seeking to answer and how that answer is meant to be used, neither can one meaningfully calculate meaningful cross-tabulations or plots without having a sense of purpose to make clear what constitutes “meaningfulness.”</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>“But I do EDA all the time without a clear question!” I hear you cry. “Sometimes I just want to see what patterns there are in the data.” To you I say: you may not have realized you had questions in mind, but most of your data explorations have been <em>implicitly</em> motivated by a sense of questions you thought might relate to your stakeholder’s problem.</p>
+<p>Perhaps you were looking at a store’s retail sales data and decided to see how sales volumes varied by customer age or gender. That may not seem obviously question-motivated, but I put it to you that you had in mind that those are customer demographics to which the store could target advertising or product stocking decisions. And had someone suggested “why don’t you look at how sales volumes vary by customer birth month or whether their name starts with a letter in the first half of the alphabet,” you would have looked at them funny and said “why on Earth would I do that?”</p>
+<p>But the problem with approaching your data with <em>implicit</em> motivations is that (a) it’s hard to reflect on them or evaluate whether they rest on solid assumptions about the stakeholder problem, and (b) without an explicit goal, there’s no way to know when you’ve reached your destination, making it <em>really</em>  easy to get lost in the data.</p>
+</div>
 <section id="recap">
 <h2>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">#</a></h2>
 <p>Despite its ubiquity, few data scientists could actually tell you what constitutes Exploratory Data Analysis (EDA). Moreover, some of what people might call EDA in practice — answering questions about the world without complex modelling — should not be called EDA, but rather… well, it’s that’s just data science.</p>
-<p>So in this book, we will acknowlege the important (but distinct!) goal of two purposeful activities often called EDA:</p>
+<p>So in this book, we will acknowledge the important (but distinct!) goal of two purposeful activities often called EDA:</p>
 <ul class="simple">
 <li><p>Learning the structure of your dataset (what constitutes a unit of observation, what variables are in the dataset),</p></li>
 <li><p>Validating your dataset (does the data pass the sniff test? Does it exhibit the basic properties you would expect given what it claims to be?)</p></li>
@@ -451,7 +456,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Descriptive versus Proscriptive Questions</p>
+        <p class="prev-next-title">Descriptive v. Proscriptive Questions</p>
       </div>
     </a>
     <a class="right-next"

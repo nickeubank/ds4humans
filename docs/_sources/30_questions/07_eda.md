@@ -20,13 +20,23 @@ The second activity that often falls under the label EDA is what I call "validat
 
 The third and final activity people call EDA is... everything one does with the data before they fit a statistical or machine learning model. This is the second major reason that I feel the very concept of EDA has had a pernicious influence on data science — it implicitly devalues anything done with data that doesn't entail a complicated model as "lesser" or "just a stop on the way towards the "real" analysis," when nothing could be further from the truth.
 
-This type of data analysis — looking at summary statistics, calculating distributions of variables, computing tabulations and cross-tabulations of different things to improve one's understand of the world — is categorically different from "learning the structure of your data," because it is inquiry in the service of better understanding the world, not the structure of your dataset. But it is *not* categorically different analyzing data using statistical models, not just because in many cases generating cross-tabulations or calculating group averages are essentially equivalent to using a statistical method like linear regression, but also because they are both examples of the same enterprise: attempting to answer questions about the world using data in the service of solving problems. And just as one cannot properly fit or tune a model without a clear sense of the question one is seeking to answer and how that answer is meant to be used, neither can one meaningfully calculate meaningful cross-tabulations or plots without having a sense of purpose that makes clear what constitutes "meaning."
+This type of data analysis — looking at summary statistics, calculating distributions of variables, computing tabulations and cross-tabulations of different things to improve one's understand of the world — is categorically different from "learning the structure of your data," because it is inquiry in the service of better understanding the world, not the structure of your dataset. But it is *not* categorically different analyzing data using statistical models, not just because in many cases generating cross-tabulations or calculating group averages are essentially equivalent to using a statistical method like linear regression, but also because they are both examples of the same enterprise: attempting to answer questions about the world using data in the service of solving problems.
+
+And just as one cannot properly fit or tune a model without a clear sense of the question one is seeking to answer and how that answer is meant to be used, neither can one meaningfully calculate meaningful cross-tabulations or plots without having a sense of purpose to make clear what constitutes "meaningfulness."
+
+```{note}
+"But I do EDA all the time without a clear question!" I hear you cry. "Sometimes I just want to see what patterns there are in the data." To you I say: you may not have realized you had questions in mind, but most of your data explorations have been *implicitly* motivated by a sense of questions you thought might relate to your stakeholder's problem. 
+
+Perhaps you were looking at a store's retail sales data and decided to see how sales volumes varied by customer age or gender. That may not seem obviously question-motivated, but I put it to you that you had in mind that those are customer demographics to which the store could target advertising or product stocking decisions. And had someone suggested "why don't you look at how sales volumes vary by customer birth month or whether their name starts with a letter in the first half of the alphabet," you would have looked at them funny and said "why on Earth would I do that?"
+
+But the problem with approaching your data with *implicit* motivations is that (a) it's hard to reflect on them or evaluate whether they rest on solid assumptions about the stakeholder problem, and (b) without an explicit goal, there's no way to know when you've reached your destination, making it *really*  easy to get lost in the data.
+```
 
 ## Recap
 
 Despite its ubiquity, few data scientists could actually tell you what constitutes Exploratory Data Analysis (EDA). Moreover, some of what people might call EDA in practice — answering questions about the world without complex modelling — should not be called EDA, but rather... well, it's that's just data science.
 
-So in this book, we will acknowlege the important (but distinct!) goal of two purposeful activities often called EDA:
+So in this book, we will acknowledge the important (but distinct!) goal of two purposeful activities often called EDA:
 
 - Learning the structure of your dataset (what constitutes a unit of observation, what variables are in the dataset),
 - Validating your dataset (does the data pass the sniff test? Does it exhibit the basic properties you would expect given what it claims to be?)
