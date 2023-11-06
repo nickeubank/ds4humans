@@ -208,3 +208,7 @@ But the person LPD *wants* to show an ad to isn't the person who was already thi
 Lest you think this example is contrived, it's not. In fact, the realization that the goal of ads isn't to maximize clicks but rather to induce the largest possible change in purchasing behavior is one of the most important ideas in online advertising. It has had a huge impact on how online advertising works, how people evaluate the success of ad campaigns.
 
 Indeed, this is why companies like Meta and Google are so eager to track user behavior across apps and websites. When Meta and Google are able to "follow" users after they've clicked an ad, they can evaluate ad performance based not on clicks but on customer behavior. And when paired with their ability to show ads to some users and not to others and track both groups as they move around the web, Meta and Google can see whether users who see the ads are more likely to make purchases than those that don't. This allows them to estimate the true effect of ads on sales, data they use to improve ad targeting *and* justify higher prices to advertisers.
+
+## Next Up: Types of Questions
+
+Having established the importance of first articulating the problem one seeks to solve, we now turn to developing our understanding of the three types of questions introduced in first chapter of this book!
