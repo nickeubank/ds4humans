@@ -1,34 +1,12 @@
 # Exploratory Questions
 
-<!-- 
-
-Regardless of the specific methods being employed, however, answering exploratory questions always boils down to the same challenge: to take large datasets that aren't comprehensible to people in their raw form, and to identify **meaningful** patterns in the data that can be summarized in a manner that humans can actually wrap their heads around. And why is this hard? Because by definition, answering exploratory questions requires trying to find ways to make the incomprehensible comprehensible by identifying *meaningful* patterns. And while we have many tools for calculating specific types of data summaries—means, medians, clustering algorithms, principal component analyses, etc.—none of these can evaluate whether the summaries they generate are *faithful and meaningful* to the question you are seeking to answer. And it is therefore up to you, the data scientist, to decide what summaries of the data provide a faithful and meaningful representation of the underlying data.
-
-What do we mean by "faithful and meaningful" summaries? To illustrate, suppose that you have been hired by the US state of Florida to help with a financial problem they're having. They buy a lot of electricity that's generated with natural gas, but as a result, their electricity costs keep bouncing up and down with natural gas prices. As this makes it hard for them to do financial planning, they've asked you to find a financial asset the city can buy that will smooth out these fluctuations. More specifically, they want an asset that will pay out more when natural gas prices are high (so they can use the money to offset their increased electricity costs), and less when natural gas is low.
-
-<!-- This example is awful and the plot doesn't have labels. Need better! -->
-
-They've given you data on four potential assets, and so you run a linear regression looking at the relationship between the value of these assets and natural gas prices. You analyze the data by looking at the correlation between the asset's payout and natural gas prices, and by fitting a linear regression with natural gas prices and asset payouts. You find that all four assets have essentially identical relationships with natural gas prices—a correlation of about 0.8, and a regression coefficient of about 0.5, suggesting that when natural gas prices rise by a dollar, asset payouts will increase by 0.50 dollars. Perfect, right? All four assets would work equally well, and all four could help limit budget fluctuations for Florida!
-
-Well... no. Because if we dig a little deeper, we see that these summary statistics are not telling us all the meaningful information in the data; our summary statistics are technically *correct*, but they aren't faithfully representing everything that matters given the problem we want to solve.
-
-We can see this by plotting the data[^anscombesquartet]:
-
-[^anscombesquartet]: Anscombe's quartet. (2022, October 21). In Wikipedia. <https://en.wikipedia.org/wiki/Anscombe%27s_quartet>
-
-![plot of all four regression fits with scatter points](images/anscombes_quartet_naturalgas.png)
-
-Clearly, the relationship between these different assets and natural gas prices are *not* all the same! Buying the asset in the top left would likely do a good job of smoothing out the state's budget, but in nearly all years, the asset in the bottom right would be useless for smoothing the state's budget since in most years the asset's payoff doesn't change at all!
-
-This is obviously a simple example and one where a simple plot is sufficient to allow us to see the problem. But this problem is inherent to answering *any* exploratory question—whether we're calculating simple statistics or using sophisticated unsupervised machine learning techniques; when we summarize data, it is our job as data scientists to ensure that our summaries are representing the *relevant* patterns in the data in a faithful and meaningful manner. And because what is relevant depends on the problem we are trying to solve, it's something we as data scientists have to evaluate, not something an algorithm can do for us. -->
-
-[As discussed in our previous reading](./00_solving_the_right_problem), often the hardest part of a data science project is properly articulating the problem we wish to solve. That's because properly specifying a problem requires *understanding* the problem well enough to state it, and often we call issues "problems" precisely because we don't really understand them!
+The hardest part of a data science project is often properly articulating the problem we wish to solve. That's because properly specifying a problem requires *understanding* the problem well enough to state it, and often we call issues "problems" precisely because we don't really understand them!
 
 Enter *Exploratory Questions*. Exploratory Questions are questions designed to elicit information about our problem space and aid us in prioritizing our efforts and refining our goals.
 
-Of the three classes of questions we detail in this book, answering Exploratory Questions often requires the least technical sophistication, and as a result Exploratory Questions often get the least respect. But because of their critical role in improving our understanding of our objectives, learning to ask and answer Exploratory Questions well will have a huge influence on how effective you will be as a data scientist.
+Of the three classes of questions we detail in this book, answering Exploratory Questions often requires the least technical sophistication, and as a result Exploratory Questions often get the least respect. But because of their critical role in improving our understanding of our objectives, learning to ask and answer Exploratory Questions will have a huge influence on your effectiveness as a data scientist.
 
-In this reading, we will discuss Exploratory Questions from two perspectives. First, we will discuss how to *use* Exploratory Questions effectively in practice, and second, we will discuss how to *answer* Exploratory Questions accurately.
+In this reading, we will discuss Exploratory Questions from two perspectives. First, we will discuss how to *use* Exploratory Questions to guide your work, and second, we will discuss how to *answer* Exploratory Questions accurately.
 
 ```{note}
 To illustrate the importance of answering exploratory questions in order to prioritize ones efforts, one need look no further than that most basic of data science tasks: writing performant (i.e., fast) code. 
@@ -44,7 +22,6 @@ Indeed, no less a figure than [Donald Knuth](https://en.wikipedia.org/wiki/Donal
 So what is a programmer interested in performance to do? First, write code in as natural a way as possible. Then, *if* the result is code that is slower than they would like, ask the exploratory question: "What lines of code are contributing most to this program taking so long to run?" And only then, once the programmer has identifed the problematic parts of their code, optimize it for performance. [^profilers] 
 
 ```
-
 
 ## Using Exploratory Questions Effectively
 
@@ -147,3 +124,25 @@ To be clear, the problem is not *just* that these companies created discriminato
 (Yes, these are machine learning examples, not Exploratory Questions per se. Machine learning examples get a lot more press, so it's easier to demonstrate to these kinds of news stories. But while the principle that the questions we ask reflect our values is especially important in Exploratory analyses, it also has broad salience, as illustrated here.)
 
 So remember: when deciding what to look at and report in your analyses, remember that people will make decisions based on the patterns *you* have decided are important, so if you don't stop to ask a question about, say, gender or racial bias, odds are it won't be something considered by your stakeholders.
+
+<!-- 
+
+Regardless of the specific methods being employed, however, answering exploratory questions always boils down to the same challenge: to take large datasets that aren't comprehensible to people in their raw form, and to identify **meaningful** patterns in the data that can be summarized in a manner that humans can actually wrap their heads around. And why is this hard? Because by definition, answering exploratory questions requires trying to find ways to make the incomprehensible comprehensible by identifying *meaningful* patterns. And while we have many tools for calculating specific types of data summaries—means, medians, clustering algorithms, principal component analyses, etc.—none of these can evaluate whether the summaries they generate are *faithful and meaningful* to the question you are seeking to answer. And it is therefore up to you, the data scientist, to decide what summaries of the data provide a faithful and meaningful representation of the underlying data.
+
+What do we mean by "faithful and meaningful" summaries? To illustrate, suppose that you have been hired by the US state of Florida to help with a financial problem they're having. They buy a lot of electricity that's generated with natural gas, but as a result, their electricity costs keep bouncing up and down with natural gas prices. As this makes it hard for them to do financial planning, they've asked you to find a financial asset the city can buy that will smooth out these fluctuations. More specifically, they want an asset that will pay out more when natural gas prices are high (so they can use the money to offset their increased electricity costs), and less when natural gas is low.
+
+<!-- This example is awful and the plot doesn't have labels. Need better! -->
+
+They've given you data on four potential assets, and so you run a linear regression looking at the relationship between the value of these assets and natural gas prices. You analyze the data by looking at the correlation between the asset's payout and natural gas prices, and by fitting a linear regression with natural gas prices and asset payouts. You find that all four assets have essentially identical relationships with natural gas prices—a correlation of about 0.8, and a regression coefficient of about 0.5, suggesting that when natural gas prices rise by a dollar, asset payouts will increase by 0.50 dollars. Perfect, right? All four assets would work equally well, and all four could help limit budget fluctuations for Florida!
+
+Well... no. If we dig a little deeper, we see that these summary statistics are not telling us all the meaningful information in the data; our summary statistics are technically *correct*, but they aren't faithfully representing everything that matters given the problem we want to solve.
+
+We can see this by plotting the data[^anscombesquartet]:
+
+[^anscombesquartet]: Anscombe's quartet. (2022, October 21). [Image from Wikipedia Commons.](https://en.wikipedia.org/wiki/Anscombe%27s_quartet).
+
+![plot of all four regression fits with scatter points](images/anscombes_quartet_naturalgas.png)
+
+Clearly, the relationship between these different assets and natural gas prices are *not* all the same! Buying the asset in the top left would likely do a good job of smoothing out the state's budget, but in nearly all years, the asset in the bottom right would be useless for smoothing the state's budget since in most years the asset's payoff doesn't change at all!
+
+This is obviously a simple example and one where a simple plot is sufficient to allow us to see the problem. But this problem is inherent to answering *any* exploratory question—whether we're calculating simple statistics or using sophisticated unsupervised machine learning techniques; when we summarize data, it is our job as data scientists to ensure that our summaries are representing the *relevant* patterns in the data in a faithful and meaningful manner. And because what is relevant depends on the problem we are trying to solve, it's something we as data scientists have to evaluate, not something an algorithm can do for us. -->
