@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Exploratory Questions" href="10_exploratory_questions.html" />
+    <link rel="next" title="Using Exploratory Questions" href="10_using_exploratory_questions.html" />
     <link rel="prev" title="Descriptive v. Proscriptive Questions" href="05_descriptive_v_proscriptive.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -164,7 +164,9 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="05_descriptive_v_proscriptive.html">Descriptive v. Proscriptive Questions</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">The Scourge of "EDA"</a></li>
-<li class="toctree-l1"><a class="reference internal" href="10_exploratory_questions.html">Exploratory Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_using_exploratory_questions.html">Using Exploratory Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_answering_exploratory_questions.html">Answering Exploratory Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_exploratory_questions_internal_external.html">Internal versus External Validity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="20_passive_prediction_questions.html">Passive-Prediction Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="30_causal_questions_theory.html">Causal Questions: The Theory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="40_causal_questions_application.html">Causal Questions in Practice</a></li>
@@ -394,7 +396,7 @@ document.write(`
 <p>The first activity people call EDA is what I call “learning the structure of your <em>dataset</em>” (emphasis on learning about your <em>dataset</em>, not using your data to learn about the world). This consists of answering questions about your dataset like “what constitutes a single observation in this dataset?,” “what variables are included in this dataset?,” “how many observations are there?,” “how are variables coded?,” and “what population is represented in this data?” These are questions about <em>the specific dataset</em> you are working with, <em>not</em> the real world, and answers are likely to be found in the dataset documentation and through basic tools for data introspection.<a class="footnote-reference brackets" href="#pandas" id="id1">1</a></p>
 <p>The second activity that often falls under the label EDA is what I call “validating your dataset.” It’s a poor data scientist who takes the validity of their data on blind faith, so when faced with a new dataset, one should begin with a few “sanity checks” just to make sure things look reasonable. Does the number of observations seem reasonable given what you know about how the data was collected and who is supposed to be represented in the data? If there are date variables in the data, does their range match what should be in this data? And given the specifics of the data, does the range of variables make sense? For example, if you have data on registered voters 18 and over, you should probably check that the age variable has a minimum value of 18 and a maximum value of something sensible (e.g., not 225).</p>
 <p>The third and final activity people call EDA is… everything one does with the data before they fit a statistical or machine learning model. This is the second major reason that I feel the very concept of EDA has had a pernicious influence on data science — it implicitly devalues anything done with data that doesn’t entail a complicated model as “lesser” or “just a stop on the way towards the “real” analysis,” when nothing could be further from the truth.</p>
-<p>This type of data analysis — looking at summary statistics, calculating distributions of variables, computing tabulations and cross-tabulations of different things to improve one’s understand of the world — is categorically different from “learning the structure of your data,” because it is inquiry in the service of better understanding the world, not the structure of your dataset. But it is <em>not</em> categorically different analyzing data using statistical models, not just because in many cases generating cross-tabulations or calculating group averages are essentially equivalent to using a statistical method like linear regression, but also because they are both examples of the same enterprise: attempting to answer questions about the world using data in the service of solving problems.</p>
+<p>This type of data analysis — looking at summary statistics, calculating distributions of variables, computing tabulations and cross-tabulations of different things to improve one’s understanding of the world — is categorically different from “learning the structure of your data,” because it is inquiry in the service of better understanding the world, not the structure of your dataset. But it is <em>not</em> categorically different analyzing data using statistical models, not just because in many cases generating cross-tabulations or calculating group averages are essentially equivalent to using a statistical method like linear regression, but also because they are both examples of the same enterprise: attempting to answer questions about the world using data in the service of solving problems.</p>
 <p>And just as one cannot properly fit or tune a model without a clear sense of the question one is seeking to answer and how that answer is meant to be used, nor can one know what cross-tabulations to compute without having a sense of purpose to make clear what constitutes “meaningfulness.”</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -404,7 +406,7 @@ document.write(`
 </div>
 <section id="recap">
 <h2>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">#</a></h2>
-<p>Despite its ubiquity, few data scientists could actually tell you what constitutes Exploratory Data Analysis (EDA). Moreover, some of what people might call EDA in practice — answering questions about the world without complex modelling — should not be called EDA, but rather… well, it’s that’s just data science.</p>
+<p>Despite its ubiquity, few data scientists could actually tell you what constitutes Exploratory Data Analysis (EDA). Moreover, some of what people might call EDA in practice — answering questions about the world without complex modeling — should not be called EDA, but rather… well, that’s just data science.</p>
 <p>So in this book, we will acknowledge the important (but distinct!) goal of two purposeful activities often called EDA:</p>
 <ul class="simple">
 <li><p>Learning the structure of your dataset (what constitutes a unit of observation, what variables are in the dataset),</p></li>
@@ -461,11 +463,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="10_exploratory_questions.html"
+       href="10_using_exploratory_questions.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Exploratory Questions</p>
+        <p class="prev-next-title">Using Exploratory Questions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
