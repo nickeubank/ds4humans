@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -76,6 +78,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -129,9 +140,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
-<a class="navbar-brand logo" href="../10_introduction/10_our_approach.html">
+<a class="navbar-brand logo" href="../landing_page.html">
+  
   
   
   
@@ -141,8 +154,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.jpg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.jpg" class="logo__image only-light" alt="Solving Problems With Data - Home"/>
+    <script>document.write(`<img src="../_static/logo.jpg" class="logo__image only-dark" alt="Solving Problems With Data - Home"/>`);</script>
   
   
 </a></div>
@@ -151,12 +164,13 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../10_introduction/10_our_approach.html">
-                    Solving Problems with Data
+                <a class="reference internal" href="../landing_page.html">
+                    Welcome
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../10_introduction/10_our_approach.html">Solving Problems with Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../10_introduction/30_solving_the_right_problem.html">Stakeholder Management &amp; Solving the Right Problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../10_introduction/40_data_science_in_historical_context.html">What <em>is</em> Data Science: An Historical Perspective</a></li>
 </ul>
@@ -333,20 +347,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -390,7 +406,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="causal-questions-the-theory">
-<h1>Causal Questions: The Theory<a class="headerlink" href="#causal-questions-the-theory" title="Permalink to this headline">#</a></h1>
+<h1>Causal Questions: The Theory<a class="headerlink" href="#causal-questions-the-theory" title="Permalink to this heading">#</a></h1>
 <p>In our previous readings, we learned how answering different types of questions can help us better understand the world around us. By answering Exploratory Questions, we can better understand the contours of our problem — where our problem is most acute, whether there are groups who have figured out how to get around the problem on their own, etc. This, in turn, can help us prioritize our subsequent efforts. And by answering Passive Predictive Questions, we can help identify individual entities — patients, customers, products, etc. — to whom we may wish to pay extra attention or recommend certain products. And when answering Passive Predictive Questions, we can also automate tasks by predicting how a person or more complicated process <em>would</em> have classified an entity.</p>
 <p>In both cases, however, answering these questions only helps us better understand the world <em>around</em> us. But to the extent to which, as data scientists, we want to intervene to directly address problems, we are rarely interested in just knowing about the world around us — we want to <em>act</em> on the world, and wouldn’t be great if data science could provide us with a set of tools designed to help us predict the <em>consequences</em> of our actions?</p>
 <p>Enter <em>Causal Questions</em>. Causal Questions ask what <em>effect</em> we can expect from <em>acting</em> — that is, actively <em>manipulating</em> or <em>intervening</em> — in the world around us in some way. For example, if we pay to show an ad to a specific customer, what will the <em>effect</em> of that choice be the likelihood they buy something on our website? Or if we chose to give a new drug to a patient, what will the <em>effect</em> of that choice be on their disease?</p>
@@ -398,7 +414,7 @@ document.write(`
 <p>In this reading, we will discuss what it means to measure the effect of an action X (administering a new drug to a patient, showing an ad to a user) on an outcome Y (patient survival, or customer spending). This section will, at times, feel a little abstract and woo-woo, but please hang in there. Answering Causal Questions is as much about critical thinking as it is statistics, and the concepts introduced here will prove crucial to your ability to be effective in this space.</p>
 <p>Then in our next reading, we will term from the more abstract to the concrete and discuss where Causal Questions arise in practice, and the workflow one goes about answering them.</p>
 <section id="what-does-it-mean-for-x-to-cause-y">
-<h2>What Does It Mean for X to Cause Y?<a class="headerlink" href="#what-does-it-mean-for-x-to-cause-y" title="Permalink to this headline">#</a></h2>
+<h2>What Does It Mean for X to Cause Y?<a class="headerlink" href="#what-does-it-mean-for-x-to-cause-y" title="Permalink to this heading">#</a></h2>
 <p>To understand what it means to answer a Causal Question, and why answering Causal Questions is intrinsically hard, we must start by taking a step back to answer the question: “what do we mean when we say some action X <em>causes</em> a change in some outcome Y?”</p>
 <p>Seriously, what do we mean when we say “X causes Y?” Try and come up with a definition!</p>
 <p>While this question may <em>seem</em> simple, it turns out that this question has been the subject of serious academic debate for hundreds of years by philosophers no less famous than David Hume. Indeed, even today there is still debate over how best to answer this question.</p>
@@ -409,7 +425,7 @@ document.write(`
 </aside>
 </section>
 <section id="measuring-the-effect-of-x-on-y">
-<h2>Measuring the Effect of X on Y<a class="headerlink" href="#measuring-the-effect-of-x-on-y" title="Permalink to this headline">#</a></h2>
+<h2>Measuring the Effect of X on Y<a class="headerlink" href="#measuring-the-effect-of-x-on-y" title="Permalink to this heading">#</a></h2>
 <p>At first blush, this definition may seem simple. But its simplicity belies a profoundly difficult practical problem. See, this definition relies on <em>comparing</em> the value of our outcome Y in two states of the world: the world where we do X, and the world where we don’t do X. But as we only get to live in one universe, we can never perfectly know what the value of our outcome Y would be in <em>both</em> a world where we do X and one where we don’t do X for a given entity at a given moment in time. As such, we can <strong>never</strong> directly measure the causal effect of X on Y for a given entity (say, a given patient or customer) at a given moment in time — a problem known as the <strong>Fundamental Problem of Causal Inference</strong> (causal inference being what people call the practice of answering Causal Questions).</p>
 <p>To illustrate, suppose we were interested in the effect of taking a new drug (our X) on cancer survival (our Y)  for a given patient (a woman named Shikha who arrived at the hospital on June 18th 2022). We can give her the drug and evaluate whether she is still alive a year later, but that alone can’t tell us whether the new drug <em>caused</em> her survival according to our counterfactual model of causality — after all, if she survives maybe she would have survived even without the drug! To actually know the effect of the drug on Shikha <em>by direct measurement,</em> we would have to be able to measure her survival both in the world where we gave her the drug <em>and</em> the world where we did not and compare outcomes.</p>
 <p>Since we can never see both states of the world — the world where we undertake the action whose effect we want to understand and the world where we don’t — almost everything we do when trying to answer Causal Questions amounts to trying to find something we <em>can</em> measure that we think is a <em>good approximation</em> of the state of the world we can’t actually see.</p>
@@ -425,12 +441,12 @@ document.write(`
 <p>Randomized experiments are not a silver bullet, however. The validity of experimental comparisons still rests on a number of assumptions, many of which cannot be directly tested. For example, we can never be entirely sure that when we randomly assigned people to control and treatment groups, the process was truly random, or that we ended up with people who were similar in both groups (the law of large numbers only promises that getting similar groups becomes <em>more likely</em> as the size of the groups increases, not that it will happen with certainty!). Moreover, conducting a randomized experiment requires working in a context where the researcher can control everything, and that can sometimes generate results that may not generalize to the big messy world where you actually want to act.</p>
 </section>
 <section id="so-where-does-that-leave-us">
-<h2>So where does that leave us?<a class="headerlink" href="#so-where-does-that-leave-us" title="Permalink to this headline">#</a></h2>
+<h2>So where does that leave us?<a class="headerlink" href="#so-where-does-that-leave-us" title="Permalink to this heading">#</a></h2>
 <p>For many data scientists, this will feel <em>profoundly</em> dissatisfying. Many people come to data science because of the promise that it will provide direct answers to questions about the world using statistics. But because of the Fundamental Problem of Causal Inference, this will never be possible when answering Causal Questions. Rather, the job of a data scientist answering Causal Questions is a lot like the job of a detective trying to solve a crime — your task is to determine what <em>probably</em> happened at a crime scene. You can gather clues, collect forensic evidence, and interview suspects, all in an effort to come up with the <em>most likely</em> explanation for a crime. But no matter how hard you try, you can’t go back in time to witness the crime itself, so you will never be able to be entirely sure if you are right or not.</p>
 <p>But just as we investigate and prosecute crimes despite our inability to ever be 100% certain an arrested suspect is guilty, so too must businesses and governments make decisions using the best available evidence, even when that evidence is imperfect. But it is our job, as data scientists, to help provide our stakeholders with the best available evidence, and also to help them understand the strength of the evidence we are able to provide.</p>
 </section>
 <section id="why-passive-prediction-is-not-enough">
-<h2>Why Passive-Prediction Is Not Enough<a class="headerlink" href="#why-passive-prediction-is-not-enough" title="Permalink to this headline">#</a></h2>
+<h2>Why Passive-Prediction Is Not Enough<a class="headerlink" href="#why-passive-prediction-is-not-enough" title="Permalink to this heading">#</a></h2>
 <p>At this point, it is worth pausing to reflect on a question it may not have occurred to you to ask above — if answering Causal Questions is usually about <em>predicting</em> what would happen if we were to act on the world in a certain way, then how/why is it different from answering the kind of Passive-Prediction Questions we discussed previously?</p>
 <p>There are a number of different ways one can frame the answer to this question, but the one I like most for Data Scientists is that  when answering a Passive-Predictive Question, we can usually achieve our goals simply by identifying <em>correlations</em> that we think are likely to persist into the future. For example, suppose we run the maintenance department for a rental car company. The fact that a car whose <em>Check Engine</em> light is on is a car that is likely to break down if it isn’t taken to a mechanic is enough for us to identify cars in trouble! Obviously, the <em>Check Engine</em> light isn’t <em>causing</em> the cars to break down, but it doesn’t have to to be useful.</p>
 <p>But when seeking to answer Causal Questions, we wish to go beyond just identifying cars in trouble, and instead predict what might happen to cars if we <em>chose to act</em> in different ways. This requires going beyond simple Passive-Prediction because, in choosing to act, we are asking about how things might turn out in a world where we are behaving differently than we are currently — in other words, we are no longer being passive.</p>
@@ -442,7 +458,7 @@ document.write(`
 <p>Depending on what classes you may have taken in the past, you may have heard these differences referred to as “confounders” or “omitted variables” — those are just different words or ways of talking about the same idea! Confounders or omitted variables are just different words for features that are different between the “treated” and “untreated” observations being examined that the untreated observations are bad approximations of the counter-factual condition for the treated observations!</p>
 </section>
 <section id="next-steps">
-<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">#</a></h2>
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this heading">#</a></h2>
 <p>In this reading, we learned — in an intuitive sense — why answering Causal Questions is inherently hard. But this explanation, while accurate, is a little informal to be rigorous. In the readings that follow, we will be introduced to the <em>Potential Outcomes Framework</em> — the formal statistical framework that underlies the Neyman-Rubin Counterfactual Model of Causality. This framework will help us reason more systematically about how and when methods like randomized experiments, linear regression, matching, and differences-in-differences can help us answer Causal Questions.</p>
 <p>But first, in the interest of not losing perspective on the forest for the trees, a discussion of <em>how</em> Causal Questions are used in practice.</p>
 <hr class="footnotes docutils" />
@@ -479,11 +495,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="20_passive_prediction_questions.html"
@@ -503,10 +518,7 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -547,6 +559,7 @@ By Nick Eubank
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2023.
@@ -573,8 +586,8 @@ By Nick Eubank
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

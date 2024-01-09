@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -76,6 +78,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -129,9 +140,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
-<a class="navbar-brand logo" href="../10_introduction/10_our_approach.html">
+<a class="navbar-brand logo" href="../landing_page.html">
+  
   
   
   
@@ -141,8 +154,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.jpg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.jpg" class="logo__image only-light" alt="Solving Problems With Data - Home"/>
+    <script>document.write(`<img src="../_static/logo.jpg" class="logo__image only-dark" alt="Solving Problems With Data - Home"/>`);</script>
   
   
 </a></div>
@@ -151,12 +164,13 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../10_introduction/10_our_approach.html">
-                    Solving Problems with Data
+                <a class="reference internal" href="../landing_page.html">
+                    Welcome
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../10_introduction/10_our_approach.html">Solving Problems with Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../10_introduction/30_solving_the_right_problem.html">Stakeholder Management &amp; Solving the Right Problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../10_introduction/40_data_science_in_historical_context.html">What <em>is</em> Data Science: An Historical Perspective</a></li>
 </ul>
@@ -333,20 +347,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -391,10 +407,10 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="limitations-of-experiments-and-average-treatment-effects">
-<h1>Limitations of Experiments (and Average Treatment Effects)<a class="headerlink" href="#limitations-of-experiments-and-average-treatment-effects" title="Permalink to this headline">#</a></h1>
+<h1>Limitations of Experiments (and Average Treatment Effects)<a class="headerlink" href="#limitations-of-experiments-and-average-treatment-effects" title="Permalink to this heading">#</a></h1>
 <p>We’ve now discussed at length all the magical things we get from randomized experiments. But let’s take a moment to also discuss some of the limitations – both practical and conceptual – of experiments and the “average treatment effect” (ATE) framework.</p>
 <section id="who-s-average">
-<h2>Who’s Average?<a class="headerlink" href="#who-s-average" title="Permalink to this headline">#</a></h2>
+<h2>Who’s Average?<a class="headerlink" href="#who-s-average" title="Permalink to this heading">#</a></h2>
 <p>Of all the potential problems with ATE, perhaps the biggest is that <em>it’s just an average</em>.</p>
 <p>If everyone in our data has the same response to treatment (in the lingo, if we have “homogeneous treatment effects”), then this isn’t a problem – estimating the average treatment amounts to estimating every individual’s individual treatment effect.</p>
 <p>In the real world, however, there are almost always heterogeneous (varying) treatment effects across groups and individuals.</p>
@@ -410,10 +426,10 @@ document.write(`
 <p>(On a technical note: splitting your sample also reduces the sample size in each bucket, so it reduces your statistical power. That means it isn’t always feasible – usually you can only do it for proportionately large groups in your data (men and women), but not small groups (say, Latino households with two children making less than $30,000 a year.)</p>
 </section>
 <section id="the-fine-print-of-ate">
-<h2>The Fine Print of ATE<a class="headerlink" href="#the-fine-print-of-ate" title="Permalink to this headline">#</a></h2>
+<h2>The Fine Print of ATE<a class="headerlink" href="#the-fine-print-of-ate" title="Permalink to this heading">#</a></h2>
 <p>In addition to these conceptual issues, there are also a handful of technical issues to be aware of when calculating treatment effects.</p>
 <section id="sutva">
-<h3>SUTVA<a class="headerlink" href="#sutva" title="Permalink to this headline">#</a></h3>
+<h3>SUTVA<a class="headerlink" href="#sutva" title="Permalink to this heading">#</a></h3>
 <p>Implicit in our discussion of the potential outcomes framework and definition of ATE is the idea that when we assign one unit to treatment or control, it has no impact on the outcomes of other units.</p>
 <p>The reason we care about this is that we want our control group to have the same outcomes in a world without anyone being treated. But if the treatments we provide have indirect effects on our controls, this is violated, and we aren’t really comparing our treatment group to true controls.</p>
 <p>It is often the case that experiments easily satisfy SUTVA. For example, consider a medical trial where we give people in the treatment group a new cholesterol medicine, and give a control group the standard cholesterol medicine. The fact I’m giving people in the treatment group a new cholesterol medicine doesn’t have any effect on the cholesterol of people in the control group. In other words, there are no “spillovers” to my treatment assignment – the people in the control group really are living the same life they would if no trial were taking place.</p>
@@ -432,7 +448,7 @@ document.write(`
 <p>It’s also important to remember that SUTVA is not explicitly about people; it’s about units of analysis. That means if you can find <em>groups</em> that are fully isolated, you can treat each group as a unit of observation. For example, it is common in development economics to assign <em>rural villages as a whole</em> to either treatment or control, since we think that if we assigned some individuals within a village to treatment and some to control, those people would likely interact in ways that violate SUTVA. But since rural villages in developing countries are <em>relatively</em> isolated from one another, we think that the treatment assignment of each <em>village</em> should be independent of outcomes for other villages.</p>
 </section>
 <section id="endogenous-stopping">
-<h3>Endogenous stopping<a class="headerlink" href="#endogenous-stopping" title="Permalink to this headline">#</a></h3>
+<h3>Endogenous stopping<a class="headerlink" href="#endogenous-stopping" title="Permalink to this heading">#</a></h3>
 <p>There is often a temptation when running experiments to watch the data roll in as the experiment runs. In AB testing, you may watch because it’s easy; in medical studies, you may watch because the trial is expensive and you’d like to stop as soon as you can, or because you want to know if lots of patients start experiencing negative side effects.</p>
 <p>But it turns out that it is critically important to the legitimacy of experiments that you not stop an experiment early because the data looks good (or bad).</p>
 <p>Ending an experiment <em>because of the intermediate results</em> is what’s called “stopping endogenously”, and it will render your experiment statistically invalid. The math on this gets very complicated, but the basic idea is that the apparent results of your experiment will fluctuate over time, and the law of large numbers only guarantees that in the long run, your <span class="math notranslate nohighlight">\(\widehat{ATE}\)</span> will probably be equal to the true <span class="math notranslate nohighlight">\(ATE\)</span>. The results for short periods are likely to show your treatment is more amazing than it really is, or more terrible than it really is; probability only ensures those moments will be relatively rare. But if you choose to stop an experiment <em>because</em> you’ve hit on of those moments (that should be fleeting), you’ll end up with erroneous results.</p>
@@ -468,16 +484,12 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -519,6 +531,7 @@ By Nick Eubank
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2023.
@@ -545,8 +558,8 @@ By Nick Eubank
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

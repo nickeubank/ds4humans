@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -76,6 +78,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -129,9 +140,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
-<a class="navbar-brand logo" href="../10_introduction/10_our_approach.html">
+<a class="navbar-brand logo" href="../landing_page.html">
+  
   
   
   
@@ -141,8 +154,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.jpg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.jpg" class="logo__image only-light" alt="Solving Problems With Data - Home"/>
+    <script>document.write(`<img src="../_static/logo.jpg" class="logo__image only-dark" alt="Solving Problems With Data - Home"/>`);</script>
   
   
 </a></div>
@@ -151,12 +164,13 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../10_introduction/10_our_approach.html">
-                    Solving Problems with Data
+                <a class="reference internal" href="../landing_page.html">
+                    Welcome
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../10_introduction/10_our_approach.html">Solving Problems with Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../10_introduction/30_solving_the_right_problem.html">Stakeholder Management &amp; Solving the Right Problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../10_introduction/40_data_science_in_historical_context.html">What <em>is</em> Data Science: An Historical Perspective</a></li>
 </ul>
@@ -333,20 +347,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -394,15 +410,15 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="answering-exploratory-questions">
-<h1>Answering Exploratory Questions<a class="headerlink" href="#answering-exploratory-questions" title="Permalink to this headline">#</a></h1>
+<h1>Answering Exploratory Questions<a class="headerlink" href="#answering-exploratory-questions" title="Permalink to this heading">#</a></h1>
 <p>In the last reading, we discussed how Exploratory Questions are used by data scientists to help stakeholders better understand their problems and to prioritize subsequent investigations. In this reading, we turn to the questions of what <em>answering</em> Exploratory Questions effectively entails.</p>
 <section id="the-three-part-goal">
-<h2>The Three-Part Goal<a class="headerlink" href="#the-three-part-goal" title="Permalink to this headline">#</a></h2>
+<h2>The Three-Part Goal<a class="headerlink" href="#the-three-part-goal" title="Permalink to this heading">#</a></h2>
 <p>Whether one uses simple summary statistics (means and medians), plots, or more sophisticated algorithms from the domains of statistical inference and unsupervised machine learning, answering Exploratory Questions always boils down to the same challenge:</p>
 <p><strong>Creating (1) understandable summarizations (2) of meaningful patterns in the data, (3) and ensuring they are faithful representations of the data.</strong></p>
 <p>What is meant by these three components exactly? Let’s take each in turn.</p>
 <section id="understandable-summarizations">
-<h3>Understandable Summarizations<a class="headerlink" href="#understandable-summarizations" title="Permalink to this headline">#</a></h3>
+<h3>Understandable Summarizations<a class="headerlink" href="#understandable-summarizations" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p>Creating <strong>(1) understandable summarizations</strong> (2) of meaningful patterns in the data, (3) and ensuring they are faithful representations of the data.</p>
 </div></blockquote>
@@ -415,7 +431,7 @@ document.write(`
 <p>This, you may recognize, is precisely the question clustering algorithms (a kind of unsupervised machine learning algorithm) are designed to answer! So you apply your clustering algorithm to the patient data, and get back a partition of the patients into two distinct groups. This, in and of itself, it doesn’t constitute a particularly <em>understandable</em> summarization of your data, but it provides a starting point for trying to investigate <em>diagnostically and biologically relevant</em> differences exist between these populations. If one cluster included more patients reporting fatigue when doing any exercise, while another cluster reported they felt better when they exercised, but felt a high level of baseline fatigue that didn’t respond to sleep, that might suggest that the <em>data generating process</em> for these patients was actually driven by two different biological processes. <em>And</em> it gives you a great starting point to prioritize your subsequent investigations into what might explain these differences!</p>
 </section>
 <section id="meaningful-patterns">
-<h3>Meaningful Patterns<a class="headerlink" href="#meaningful-patterns" title="Permalink to this headline">#</a></h3>
+<h3>Meaningful Patterns<a class="headerlink" href="#meaningful-patterns" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p>Creating (1) understandable summarizations <strong>(2) of meaningful patterns in the data,</strong> (3) and ensuring they are faithful representations of the data.</p>
 </div></blockquote>
@@ -426,7 +442,7 @@ document.write(`
 <p>Now, that analysis may not be <em>wrong</em> — you have properly characterized a pattern in the data — but it isn’t a pattern that’s meaningful to your stakeholder, who has no ability to regulate the livestock industry. That pattern might be meaningful to someone else — like a government regulator — but in this context, with this stakeholder, it just isn’t helpful. The features of the data that are important, in other words, depending on what we may be able to do in response to what we learn. And there’s no summary statistic, information criterion, or divergence metric that can evaluation whether a pattern of this type is <em>meaningful</em>.</p>
 </section>
 <section id="faithful-representations">
-<h3>Faithful Representations<a class="headerlink" href="#faithful-representations" title="Permalink to this headline">#</a></h3>
+<h3>Faithful Representations<a class="headerlink" href="#faithful-representations" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p>Creating (1) understandable summarizations (2) of meaningful patterns in the data, <strong>(3) and ensuring they are faithful representations of the data.</strong></p>
 </div></blockquote>
@@ -443,7 +459,7 @@ document.write(`
 <p>But if you’re a <em>doctor</em> or a <em>patient</em>, it seems clear that this simple average effect — a reduction of 2-3 migraines a month — really does not provide a <em>faithful</em> summary of the underlying variation.</p>
 </section>
 <section id="but-i-thought-unsupervised-machine-learning-always-found-the-best">
-<h3>But… I Thought Unsupervised Machine Learning Always Found The “Best”<a class="headerlink" href="#but-i-thought-unsupervised-machine-learning-always-found-the-best" title="Permalink to this headline">#</a></h3>
+<h3>But… I Thought Unsupervised Machine Learning Always Found The “Best”<a class="headerlink" href="#but-i-thought-unsupervised-machine-learning-always-found-the-best" title="Permalink to this heading">#</a></h3>
 <p>“Fine,” I hear you say, “that makes sense for simple summary statistics. Those are computed by simple formulas. But what about unsupervised machine learning algorithms or generalized additive models? Those use numerical optimization to find the <em>best</em> answer!”</p>
 <p>Well… yes and no. As you may recall, in the first chapter of the book I posited that all data science algorithms are just fancy tools for answering questions, and even the most sophisticated unsupervised machine learning algorithms are no exception. While it is true that the machinery that underlies these algorithms is much more sophisticated than the formula we use for calculating a variable’s average, it is important to not attribute too much intelligence to these tools.</p>
 <p>Underlying any unsupervised machine learning algorithm is a simple formula the takes as input whatever parameters the algorithm gets to choose (be those factor loads in a PCA model, or the assignment of observations to clusters in a clustering algorithm) and returns as output a single number. Often this number is called “loss,” and the function is called a “loss function,” but occasionally different terminology will be used.</p>
@@ -453,14 +469,14 @@ document.write(`
 <p>It’s up to you, the data scientist, to evaluate whether the answers these algorithms provide to relatively myopic questions give a meaningful picture of the data.</p>
 </section>
 <section id="myopic-tools">
-<h3>Myopic Tools<a class="headerlink" href="#myopic-tools" title="Permalink to this headline">#</a></h3>
+<h3>Myopic Tools<a class="headerlink" href="#myopic-tools" title="Permalink to this heading">#</a></h3>
 <p>This last point is illustrative of a more general point: data science tools are incredibly powerful at finding answers to questions of the form “If my goal is to minimize X, how should I do it?” type questions — answers you may have never figured out in millions of years! — but their power lies in figuring out the best way to accomplish an articulated goal, <em>not</em> in figuring out what goal to pursue.</p>
 <p>This is true at both the macro level (doesn’t make sense to look for clusters in my data?) and also at the micro level (when assigning observations to clusters, how do I measure success?). Hidden inside nearly all algorithms you use are a handful of baked-in choices you may not even realize are being made for you. Take clustering, for example. In general, when clustering observations, one has two objectives: maximize the similarity of observations within each cluster, and maximize the <em>dis</em>similarity of observations in different clusters. But which you might not have thought about very much is that there’s an inherent tension between these two objectives — after all, the best way to maximize the similarity of observations within each cluster is to only assign observations to the same cluster if they are identical (a choice that creates lots and lots of very small clusters). And the best way to maximize <em>dis</em>similarity between clusters is to only put <em>really really</em> different observations in different clusters (resulting in a few really big clusters). So how is your clustering algorithm balancing these two considerations? Is the algorithms choice of how to balance them in any way a reflection of the balance that makes most sense in the context of your stakeholder’s problem? (I’ll give you a hint — the algorithm sure can’t answer that question, so you’d better be able to!)</p>
 <p>Discretion: it’s everywhere, and you’re exercising it, whether you realize it or not.</p>
 </section>
 </section>
 <section id="netflix-movie-clusters">
-<h2>Netflix Movie Clusters<a class="headerlink" href="#netflix-movie-clusters" title="Permalink to this headline">#</a></h2>
+<h2>Netflix Movie Clusters<a class="headerlink" href="#netflix-movie-clusters" title="Permalink to this heading">#</a></h2>
 <p><img alt="Netflix movie suggestion categories" src="../_images/netflix_clusters.jpeg" /></p>
 <p>Netflix doesn’t just need to figure out what movie you would enjoy watching most; it needs you too understand why the movie is something you were likely to Joy so you buy into it</p>
 <!-- This issue isn't limited to simple summary statistics, though. Unsupervised machine learning algorithms have the same problem—ask a clustering algorithm to divide a dataset into three clusters, and it will, even if the differences between the groups is *very* small. And ask a Principal Component Analysis algorithm to find a vector that minimizes the sum of squared distances between all points and the vector and it will, even if that vector isn't really measuring any kind of central tendency in the data.
@@ -574,11 +590,10 @@ But there's a challenge that's inherent to this type of process of simplificatio
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="10_using_exploratory_questions.html"
@@ -598,10 +613,7 @@ But there's a challenge that's inherent to this type of process of simplificatio
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -646,6 +658,7 @@ By Nick Eubank
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2023.
@@ -672,8 +685,8 @@ By Nick Eubank
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

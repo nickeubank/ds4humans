@@ -2,10 +2,11 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: 10_introduction/10_our_approach
+root: landing_page
 parts:
   - caption:
     chapters:
+      - file: 10_introduction/10_our_approach
       - file: 10_introduction/30_solving_the_right_problem
       - file: 10_introduction/40_data_science_in_historical_context
   - caption: Types of Questions

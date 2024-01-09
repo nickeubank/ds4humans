@@ -4,7 +4,7 @@ Traceback (most recent call last):
   File "/Users/nce8/opt/miniconda3/lib/python3.11/site-packages/nbclient/client.py", line 1305, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/nce8/opt/miniconda3/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 166, in wrapped
+  File "/Users/nce8/opt/miniconda3/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 172, in wrapped
     return loop.run_until_complete(inner)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/nce8/opt/miniconda3/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
@@ -47,13 +47,13 @@ Cell [0;32mIn[1], line 15[0m
 [0;32m---> 15[0m [43mo[49m[38;5;241;43m.[39;49m[43mshow[49m[43m([49m[43m)[49m
 [1;32m     16[0m altair_saver[38;5;241m.[39msave(o, [38;5;124mf[39m[38;5;124m"[39m[38;5;124m../images/anscombes_[39m[38;5;132;01m{[39;00mi[38;5;132;01m}[39;00m[38;5;124m.png[39m[38;5;124m"[39m)
 
-File [0;32m~/opt/miniconda3/lib/python3.11/site-packages/altair/vegalite/v5/api.py:2273[0m, in [0;36mTopLevelMixin.show[0;34m(self, embed_opt, open_browser)[0m
-[1;32m   2268[0m [38;5;28;01mexcept[39;00m [38;5;167;01mImportError[39;00m [38;5;28;01mas[39;00m err:
-[1;32m   2269[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
-[1;32m   2270[0m         [38;5;124m"[39m[38;5;124m'[39m[38;5;124mshow[39m[38;5;124m'[39m[38;5;124m method requires the altair_viewer package. [39m[38;5;124m"[39m
-[1;32m   2271[0m         [38;5;124m"[39m[38;5;124mSee http://github.com/altair-viz/altair_viewer[39m[38;5;124m"[39m
-[1;32m   2272[0m     ) [38;5;28;01mfrom[39;00m [38;5;21;01merr[39;00m
-[0;32m-> 2273[0m [43maltair_viewer[49m[38;5;241;43m.[39;49m[43mshow[49m[43m([49m[38;5;28;43mself[39;49m[43m,[49m[43m [49m[43membed_opt[49m[38;5;241;43m=[39;49m[43membed_opt[49m[43m,[49m[43m [49m[43mopen_browser[49m[38;5;241;43m=[39;49m[43mopen_browser[49m[43m)[49m
+File [0;32m~/opt/miniconda3/lib/python3.11/site-packages/altair/vegalite/v5/api.py:2691[0m, in [0;36mTopLevelMixin.show[0;34m(self, embed_opt, open_browser)[0m
+[1;32m   2686[0m [38;5;28;01mexcept[39;00m [38;5;167;01mImportError[39;00m [38;5;28;01mas[39;00m err:
+[1;32m   2687[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
+[1;32m   2688[0m         [38;5;124m"[39m[38;5;124m'[39m[38;5;124mshow[39m[38;5;124m'[39m[38;5;124m method requires the altair_viewer package. [39m[38;5;124m"[39m
+[1;32m   2689[0m         [38;5;124m"[39m[38;5;124mSee http://github.com/altair-viz/altair_viewer[39m[38;5;124m"[39m
+[1;32m   2690[0m     ) [38;5;28;01mfrom[39;00m [38;5;21;01merr[39;00m
+[0;32m-> 2691[0m [43maltair_viewer[49m[38;5;241;43m.[39;49m[43mshow[49m[43m([49m[38;5;28;43mself[39;49m[43m,[49m[43m [49m[43membed_opt[49m[38;5;241;43m=[39;49m[43membed_opt[49m[43m,[49m[43m [49m[43mopen_browser[49m[38;5;241;43m=[39;49m[43mopen_browser[49m[43m)[49m
 
 File [0;32m~/opt/miniconda3/lib/python3.11/site-packages/altair_viewer/_viewer.py:355[0m, in [0;36mChartViewer.show[0;34m(self, chart, embed_opt, open_browser)[0m
 [1;32m    328[0m [38;5;28;01mdef[39;00m [38;5;21mshow[39m(
@@ -110,7 +110,7 @@ File [0;32m~/opt/miniconda3/lib/python3.11/site-packages/altair_viewer/_utils.p
 [1;32m    216[0m     )
 [1;32m    217[0m [38;5;28;01mreturn[39;00m [38;5;28mstr[39m(matches[[38;5;241m-[39m[38;5;241m1[39m])
 
-[0;31mNoMatchingVersions[0m: No matches for version='5.8.0' among ['4.0.2', '4.8.1', '4.17.0'].
+[0;31mNoMatchingVersions[0m: No matches for version='5.16.3' among ['4.0.2', '4.8.1', '4.17.0'].
 Often this can be fixed by updating altair_viewer:
     pip install -U altair_viewer
 
