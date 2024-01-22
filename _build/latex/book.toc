@@ -1,0 +1,103 @@
+\selectlanguage *{english}
+\contentsline {part}{I\hspace {1em}Part}{3}{part.1}%
+\contentsline {chapter}{\numberline {1}Solving Problems with Data}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Introduction}{5}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Solving Problems with Data: An Overview}{6}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Specifying the Problem}{6}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Solving Problems Through Answering Questions}{7}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Types of Questions}{7}{subsection.1.2.3}%
+\contentsline {section}{\numberline {1.3}Question Types and Their Uses}{8}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Exploratory Questions}{8}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Passive Prediction Questions}{9}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Causal Questions}{11}{subsection.1.3.3}%
+\contentsline {section}{\numberline {1.4}Bringing It All Together}{12}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Reading Reflection Questions}{12}{section.1.5}%
+\contentsline {chapter}{\numberline {2}Stakeholder Management \& Solving the Right Problem}{13}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Problem Refinement \& Stakeholder Management}{15}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Step 0: Recognize Your Role}{15}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Step 1: Don’t Assume Your Stakeholder Knows What They Need}{15}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Step 2: Abstract the Problem}{16}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Step 3: Ask Questions (Especially Quantitative Ones!)}{16}{subsection.2.1.4}%
+\contentsline {subsubsection}{Questions About Success}{16}{subsubsection*.10}%
+\contentsline {subsubsection}{Questions About the Problem}{17}{subsubsection*.11}%
+\contentsline {subsection}{\numberline {2.1.5}Step 4: Propose Questions You Might Answer}{17}{subsection.2.1.5}%
+\contentsline {subsubsection}{Make Your Questions Specific and Actionable}{18}{subsubsection*.12}%
+\contentsline {subsection}{\numberline {2.1.6}Step 5: Iterate}{18}{subsection.2.1.6}%
+\contentsline {section}{\numberline {2.2}What Solving the Wrong Problem Looks Like}{18}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Solving The Wrong Problem}{19}{subsection.2.2.1}%
+\contentsline {subsubsection}{Counter\sphinxhyphen {}Factual Advertising}{20}{subsubsection*.13}%
+\contentsline {section}{\numberline {2.3}Next Up: Types of Questions}{20}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Reading Reflection Questions}{20}{section.2.4}%
+\contentsline {chapter}{\numberline {3}What \sphinxstyleemphasis {is} Data Science: An Historical Perspective}{21}{chapter.3}%
+\contentsline {section}{\numberline {3.1}The Organization of Academia, Data Science, and You}{21}{section.3.1}%
+\contentsline {section}{\numberline {3.2}The Data Analyst / Software Engineering Distinction}{23}{section.3.2}%
+\contentsline {part}{II\hspace {1em}Types of Questions}{25}{part.2}%
+\contentsline {chapter}{\numberline {4}Descriptive v. Proscriptive Questions}{27}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Opioid Reductions}{28}{section.4.1}%
+\contentsline {section}{\numberline {4.2}The Example of Carbon Emissions}{28}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Recap}{29}{section.4.3}%
+\contentsline {chapter}{\numberline {5}EDA: The Most Pernicious Term in Data Science}{31}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Recap}{32}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Using Exploratory Questions}{33}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Using Exploratory Questions to Prioritize Efforts}{33}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Code Optimization}{33}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Picking the Right Target}{34}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Collecting, Merging, and Creating New Data}{35}{subsection.6.1.3}%
+\contentsline {chapter}{\numberline {7}Answering Exploratory Questions}{37}{chapter.7}%
+\contentsline {section}{\numberline {7.1}The Three\sphinxhyphen {}Part Goal}{37}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Understandable Summarizations}{37}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Meaningful Patterns}{38}{subsection.7.1.2}%
+\contentsline {subsection}{\numberline {7.1.3}Faithful Representations}{39}{subsection.7.1.3}%
+\contentsline {subsection}{\numberline {7.1.4}But… I Thought Unsupervised Machine Learning Always Found The “Best”}{40}{subsection.7.1.4}%
+\contentsline {subsection}{\numberline {7.1.5}Myopic Tools}{41}{subsection.7.1.5}%
+\contentsline {chapter}{\numberline {8}Internal versus External Validity}{43}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Interval v. External Validity: An Example}{43}{section.8.1}%
+\contentsline {section}{\numberline {8.2}External Validity}{44}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}External Validity Considerations}{44}{subsection.8.2.1}%
+\contentsline {chapter}{\numberline {9}Passive\sphinxhyphen {}Prediction Questions}{47}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Flavors of Passive\sphinxhyphen {}Prediction Questions}{47}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Differentiating Between Exploratory and Passive\sphinxhyphen {}Prediction Questions}{48}{section.9.2}%
+\contentsline {section}{\numberline {9.3}When Are Our Predictions Valid?}{48}{section.9.3}%
+\contentsline {subsection}{\numberline {9.3.1}Internal Validity}{49}{subsection.9.3.1}%
+\contentsline {subsection}{\numberline {9.3.2}External Validity}{49}{subsection.9.3.2}%
+\contentsline {chapter}{\numberline {10}Causal Questions: The Theory}{51}{chapter.10}%
+\contentsline {section}{\numberline {10.1}What Does It Mean for X to Cause Y?}{51}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Measuring the Effect of X on Y}{52}{section.10.2}%
+\contentsline {section}{\numberline {10.3}So where does that leave us?}{53}{section.10.3}%
+\contentsline {section}{\numberline {10.4}Why Passive\sphinxhyphen {}Prediction Is Not Enough}{54}{section.10.4}%
+\contentsline {section}{\numberline {10.5}Next Steps}{55}{section.10.5}%
+\contentsline {chapter}{\numberline {11}Causal Questions in Practice}{57}{chapter.11}%
+\contentsline {section}{\numberline {11.1}When Do Causal Questions Come Up?}{57}{section.11.1}%
+\contentsline {subsection}{\numberline {11.1.1}Where Causal Questions Come From: An Example}{57}{subsection.11.1.1}%
+\contentsline {section}{\numberline {11.2}The Two\sphinxhyphen {}Fold Challenge of Causal Questions}{58}{section.11.2}%
+\contentsline {subsection}{\numberline {11.2.1}Internal and External Validity: An Example}{58}{subsection.11.2.1}%
+\contentsline {subsection}{\numberline {11.2.2}External Validity To \sphinxstyleemphasis {What}}{59}{subsection.11.2.2}%
+\contentsline {section}{\numberline {11.3}The Causal Question Work Flow}{59}{section.11.3}%
+\contentsline {subsection}{\numberline {11.3.1}Identify Relevant Previous Studies}{59}{subsection.11.3.1}%
+\contentsline {subsection}{\numberline {11.3.2}Evaluate Previous Studies}{60}{subsection.11.3.2}%
+\contentsline {subsection}{\numberline {11.3.3}Plan A New Study}{60}{subsection.11.3.3}%
+\contentsline {section}{\numberline {11.4}Wrapping Up and Next Steps}{61}{section.11.4}%
+\contentsline {part}{III\hspace {1em}Data Science in Practice}{63}{part.3}%
+\contentsline {chapter}{\numberline {12}Backwards Design}{65}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Overview}{65}{section.12.1}%
+\contentsline {section}{\numberline {12.2}1) Define Your Problem}{66}{section.12.2}%
+\contentsline {section}{\numberline {12.3}2) Define the Question You Wish to Answer}{66}{section.12.3}%
+\contentsline {subsection}{\numberline {12.3.1}Defining a Good Question}{66}{subsection.12.3.1}%
+\contentsline {subsection}{\numberline {12.3.2}Why is Having a Good Question Important?}{67}{subsection.12.3.2}%
+\contentsline {section}{\numberline {12.4}3) Write Down What An Answer Would Look Like}{67}{section.12.4}%
+\contentsline {subsection}{\numberline {12.4.1}Falsifiability}{67}{subsection.12.4.1}%
+\contentsline {section}{\numberline {12.5}4) What Data Do You Need?}{68}{section.12.5}%
+\contentsline {section}{\numberline {12.6}5) Where Can You Get That Data?}{68}{section.12.6}%
+\contentsline {section}{\numberline {12.7}Wrapping Up}{69}{section.12.7}%
+\contentsline {section}{\numberline {12.8}A Digression on Supervised Machine Learning}{69}{section.12.8}%
+\contentsline {chapter}{\numberline {13}Making Decisions Using Data}{71}{chapter.13}%
+\contentsline {chapter}{\numberline {14}Writing Data Science Report for Non\sphinxhyphen {}Technical Audiences}{73}{chapter.14}%
+\contentsline {section}{\numberline {14.1}Identify your audience}{73}{section.14.1}%
+\contentsline {section}{\numberline {14.2}Introduction / Executive Summary}{73}{section.14.2}%
+\contentsline {section}{\numberline {14.3}Background}{74}{section.14.3}%
+\contentsline {section}{\numberline {14.4}Your Design}{74}{section.14.4}%
+\contentsline {section}{\numberline {14.5}Your Results}{75}{section.14.5}%
+\contentsline {section}{\numberline {14.6}Conclusions}{75}{section.14.6}%
+\contentsline {section}{\numberline {14.7}Appendix}{75}{section.14.7}%
+\contentsline {part}{IV\hspace {1em}Advanced Topics}{77}{part.4}%
+\contentsline {chapter}{\numberline {15}Interpretable Models}{79}{chapter.15}%

@@ -7,6 +7,8 @@ logo: logo.jpg
 copyright: "2023"
 
 sphinx:
+  extra_extensions:
+    - sphinx_jupyterbook_latex
   config:
     language: en
 
@@ -26,9 +28,9 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/nickeubank/ds4humans  # Online location of your book
-  path_to_book: docs  # Optional path to your book, relative to the repository root
-  branch: master  # Which branch of the repository should be used when creating links (optional)
+  url: https://github.com/nickeubank/ds4humans # Online location of your book
+  path_to_book: docs # Optional path to your book, relative to the repository root
+  branch: master # Which branch of the repository should be used when creating links (optional)
   use_repository_button: true
 
 # Add GitHub buttons to your book

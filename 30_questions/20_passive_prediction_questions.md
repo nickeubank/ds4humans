@@ -64,7 +64,9 @@ There are a range of factors that can determine external validity, such as wheth
 
 To illustrate, consider the two models in the figure below ([source](https://ece.uwaterloo.ca/~dwharder/NumericalAnalysis/06LeastSquares/extrapolation/complete.html))—one a linear fit, and one a higher-order polynomial. Both model the data similarly *in the range for which data is available* but make very different predictions at values of `x` below 0 or above 2.
 
-![example of two models that look similar over ranges with data but extrapolate very differently outside that range](images/extrapolation.gif)
+FIX COMMENTED SECTIONS
+
+<!-- ![example of two models that look similar over ranges with data but extrapolate very differently outside that range](images/extrapolation.gif) -->
 
 <!-- ## Manipulation and External Validity
 
