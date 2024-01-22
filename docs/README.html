@@ -388,6 +388,11 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-book">Building Book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-to-latex">Building to LaTeX</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#html-to-pdf">HTML to PDF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#latex">LaTeX</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax">Syntax</a></li>
 </ul>
             </nav>
@@ -415,6 +420,19 @@ for Data Science for Humans.</p>
 <li><p>You can also open <code class="docutils literal notranslate"><span class="pre">_build/index.html</span></code> (just double click!) and it’ll open in your browser locally.</p></li>
 </ul>
 <p>For copy-paste ease: <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">--all</span> <span class="pre">.;</span> <span class="pre">cp</span> <span class="pre">-R</span> <span class="pre">_build/html/*</span> <span class="pre">docs;</span> <span class="pre">git</span> <span class="pre">add</span> <span class="pre">.;</span> <span class="pre">git</span> <span class="pre">commit;</span> <span class="pre">git</span> <span class="pre">push</span></code></p>
+</section>
+<section id="building-to-latex">
+<h2>Building to LaTeX<a class="headerlink" href="#building-to-latex" title="Permalink to this heading">#</a></h2>
+<p>(<a class="reference external" href="https://jupyterbook.org/en/stable/advanced/pdf.html">Docs</a>)</p>
+<section id="html-to-pdf">
+<h3>HTML to PDF<a class="headerlink" href="#html-to-pdf" title="Permalink to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">.</span> <span class="pre">--builder</span> <span class="pre">pdfhtml</span></code></p>
+</section>
+<section id="latex">
+<h3>LaTeX<a class="headerlink" href="#latex" title="Permalink to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">.</span> <span class="pre">--builder</span> <span class="pre">pdflatex</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">.</span> <span class="pre">--builder</span> <span class="pre">pdflatex</span> <span class="pre">--individualpages</span></code></p>
+</section>
 </section>
 <section id="syntax">
 <h2>Syntax<a class="headerlink" href="#syntax" title="Permalink to this heading">#</a></h2>
@@ -471,6 +489,11 @@ Notes and warnings: <a class="reference external" href="https://jupyterbook.org/
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-book">Building Book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-to-latex">Building to LaTeX</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#html-to-pdf">HTML to PDF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#latex">LaTeX</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax">Syntax</a></li>
 </ul>
   </nav></div>
