@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Why Passive-Prediction Is Not Enough &#8212; Solving Problems With Data</title>
+    <title>Descriptive v. Prescriptive Questions &#8212; Solving Problems With Data</title>
   
   
   
@@ -62,10 +62,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '30_questions/50_why_not_just_passive_prediction';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '30_questions/05_descriptive_v_prescriptive';</script>
     <link rel="shortcut icon" href="../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="EDA: The Most Pernicious Term in Data Science" href="07_eda.html" />
+    <link rel="prev" title="What is Data Science: An Historical Perspective" href="../10_introduction/40_data_science_in_historical_context.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,8 +175,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../10_introduction/40_data_science_in_historical_context.html">What <em>is</em> Data Science: An Historical Perspective</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Types of Questions</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="05_descriptive_v_prescriptive.html">Descriptive v. Prescriptive Questions</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Descriptive v. Prescriptive Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_eda.html">The Scourge of "EDA"</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10_using_exploratory_questions.html">Using Exploratory Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="15_answering_exploratory_questions.html">Answering Exploratory Questions</a></li>
@@ -263,7 +265,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F30_questions/50_why_not_just_passive_prediction.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F30_questions/05_descriptive_v_prescriptive.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -293,7 +295,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/30_questions/50_why_not_just_passive_prediction.md" target="_blank"
+      <li><a href="../_sources/30_questions/05_descriptive_v_prescriptive.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -377,7 +379,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Why Passive-Prediction Is Not Enough</h1>
+    <h1>Descriptive v. Prescriptive Questions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -387,14 +389,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Why Passive-Prediction Is Not Enough</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#back-to-blood-pressure">Back to Blood Pressure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opioid-reductions">Opioid Reductions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-example-of-carbon-emissions">The Example of Carbon Emissions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap">Recap</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#what-makes-answering-a-causal-question-different-from-a-passive-predictive-question">What Makes Answering A Causal Question Different from a Passive Predictive Question?</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#acting-on-the-world">Acting on the World</a></li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -405,28 +403,54 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="why-passive-prediction-is-not-enough">
-<h1>Why Passive-Prediction Is Not Enough<a class="headerlink" href="#why-passive-prediction-is-not-enough" title="Permalink to this heading">#</a></h1>
-<p>The saying “correlation does not imply causation” is bandied about around so regularly that for many of us, it begins to lose any meaning. Indeed, it is almost a cliché for data science students to end any presentation of statistical analyses with “but of course, correlation does not imply causation, so we don’t really know,” as though invocation of the phrase absolves them of responsibility for preceding interpretation of correlations as suggesting a causal relationship.</p>
-<p>But for all its popularity, the saying “correlation does not imply causation” is frustrating because it’s not <em>useful</em>, and that’s because what people mean when they say “correlation does not imply causation” is actually “correlation does not <em>necessarily</em> imply causation,” and that more accurate presentation makes clear a useful corollary: “correlation does not <em>necessarily</em> imply causation, but in certain situations, correlation <em>does</em> imply causation!”.</p>
-<p>So let’s pause for a moment to try and understand <em>why</em> correlation does not necessarily imply causation so that we can better understand what must be true for a correlation to actually imply causation!</p>
-<p>Let’s return to our example of a hospital trying to identify what patients are most likely to experience complications after surgery. They have lots of historical data on patients before and after surgery, and they can feed this into a simple logistic regression to find out pre-surgery patient characteristics predict complications. They do so, and find that the model performs extremely well — it identifies nearly all the patients who end up having complications, and the false positive rate is still relatively low. They deploy the model throughout the hospital, and nurses begin to followup more aggressively with patients flagged as being likely to have complications. For the purpose of <em>identifying individual patients for additional attention</em>, this effort to answer the Passive-Predictive Question “which patients are most likely to experience post-surgical complications” has been a huge success.</p>
-<p>BUT: now suppose a doctor looks this logistical regression and finds that one of the strongest predictors of complications is whether the patient has high blood pressure prior to surgery. This association is clearly helping to identify patients who are likely to have complications, but does it imply that high blood pressure is <em>causing</em> patients to experience complications?</p>
-<section id="back-to-blood-pressure">
-<h2>Back to Blood Pressure<a class="headerlink" href="#back-to-blood-pressure" title="Permalink to this heading">#</a></h2>
-<p>OK, so now we know what is meant when we asked whether “high blood pressure causes surgical complications” — it means that if the patients who have high blood pressure didn’t have high blood pressure, then they would be less likely to have surgical complications!</p>
-<p>So we give all the patients with high blood pressure medication to reduce their blood pressure and wait.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="descriptive-v-prescriptive-questions">
+<h1>Descriptive v. Prescriptive Questions<a class="headerlink" href="#descriptive-v-prescriptive-questions" title="Permalink to this heading">#</a></h1>
+<p>In the chapters that follow, we will discuss Exploratory, Passive-Prediction and Causal in detail. First, though, we must discuss another important concept: the distinction between descriptive and prescriptive questions.</p>
+<p><em>Descriptive Questions</em> are questions about the state of the world and include all the questions and examples we’ve covered so far in this book. “What kinds of users are clicking our ads?” and “Do high-income and low-income countries emit similar amounts of carbon dioxide?” are examples of Descriptive Questions. And because Descriptive Questions are questions about objective reality,<a class="footnote-reference brackets" href="#objectivereality" id="id1">1</a> they have right and wrong answers (at least in principle. It may be hard to evaluate whether a given attempt to calculate the answer is actually right or wrong).</p>
+<p>But Descriptive Questions are not the only type of question you will come across in your career.</p>
+<p><em>Prescriptive Questions</em> are questions about how the world <em>should be</em>, not how it actually is. “Should higher income and lower income countries be expected to meet the same carbon emission reduction standards?” or “Do high-income countries have a moral obligation to provide tuberculosis drugs to developing countries for free (or at cost)?” are both examples of Prescriptive Questions.</p>
+<p>Unlike Descriptive Questions, Prescriptive Questions don’t have correct answers. That’s because answers to Prescriptive Questions require evaluating the <em>desirability</em> of possible outcomes, which can only be done in the context of a moral/ethical system of values. And as there is no “correct” system of values (in the sense that there is no single universally accepted system of morality), there can be no right or wrong answers to Prescriptive Questions, even in principle.</p>
+<p><img alt="Question Taxonomy" src="../_images/question_tree.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The terms “Prescriptive” and “Descriptive” are commonly used for these concepts in the natural sciences, but different academic silos sometimes use different terms. Social scientists, for example, tend to prefer the terms “Positive” in place of Descriptive and “Normative” instead of Prescriptive. These are only difference in nomenclature, however, not substantive meaning.</p>
+</div>
+<p>The focus of this book is on Descriptive Questions. This is not because Prescriptive Questions are unimportant — indeed, one can easily make the argument that they are <em>more</em> important than Descriptive Questions. Moreover, as we will discuss in future chapters, they will arise frequently in your career as a data scientist. No, the reason that Descriptive Questions are the focus of this book is that those are the only questions data science tools can answer, and thus answering Descriptive Questions is the domain in which the data scientist has a clear comparative advantage.</p>
+<p>Now, to be clear, none of this is to mean that the answers you generate as a data scientist will not have a <em>bearing</em> on how people answer Prescriptive Questions. Data science would be a very dull field indeed if it could not speak to the ethical issues of our day. Data science is powerful precisely because it can inform how we answer Prescriptive Questions by helping us understand the relevant stakes. Data science tools can help decision-makers understand the likely <em>consequences of different courses of action</em>, information that can help people make <em>informed</em> decisions about what outcomes they feel are most desirable. To illustrate, let’s consider a few vignettes.</p>
+<section id="opioid-reductions">
+<h2>Opioid Reductions<a class="headerlink" href="#opioid-reductions" title="Permalink to this heading">#</a></h2>
+<p>Suppose you have been hired by a medical regulatory board concerned about the rise in opioid overdoses. They are debating whether they <em>should</em> (there’s that magic word!) make it harder for patients to get opioids. Fundamentally, however, they worry that while restrictions on opioids may reduce overdoses and addiction, they may also prevent some patients with very real pain conditions from getting the care they need.</p>
+<p>Why are they stuck? Well, there may be two causes:</p>
+<ol class="arabic simple">
+<li><p>They may be unsure of the relative moral weight to give preventing overdoses versus ensuring appropriate patient access to opioids, and/or</p></li>
+<li><p>they may also be unsure about <em>how much</em> opioid regulations that reduce overdoses by a certain amount would limit access for patients in need.</p></li>
+</ol>
+<p>The first of these questions is a pure Prescriptive Question — if you could prevent one overdose death at the expense of preventing 10 patients in pain from getting the opioids they need, would you accept that trade-off?</p>
+<p>But the second is actually a Descriptive Question that you — the data scientist — <em>can</em> answer! You could study policies that have been implemented in the past and come up with a rigorous estimate of how much opioid regulations that reduce overdoses also reduce access for patients in need. You could also evaluate different kinds of policies to figure out which is most efficient — maybe some policies (like not allowing any opioid prescriptions at all) are good at stopping overdose deaths but also <em>really</em> limit appropriate access, while other policies are similarly good at reducing overdoses but have a much smaller effect on limiting access.</p>
+</section>
+<section id="the-example-of-carbon-emissions">
+<h2>The Example of Carbon Emissions<a class="headerlink" href="#the-example-of-carbon-emissions" title="Permalink to this heading">#</a></h2>
+<p>A profoundly difficult Prescriptive Question in debates over carbon reduction is whether developing countries should be held to the same emission reduction targets as more developed countries. On the one hand, developing countries like China and India are the source of most current growth in carbon emissions, and so policies that do not apply to developing countries are unlikely to prevent many of the worst climate change outcomes. On the other hand, these countries produce radically less carbon <em>per capita</em> than Europe or the United States, and the industrial growth creating those emissions has been a major factor in lifting billions of people out of extreme poverty.</p>
+<p>Hard choices indeed! How does one weigh the improvements in the quality of life of those in extreme poverty against the possible consequences of even greater climate catastrophes?</p>
+<p>While that question, in part, is a Prescriptive Question that no regression can answer, data scientists <em>can</em> bring data to bear on this question indirectly by helping everyone understand the potential consequences of different carbon targets for developing countries, as well as the feasibility of different strategies for carbon reduction. A data scientist could, for example:</p>
 <ul class="simple">
-<li><p>Check engine light / warning light analogy — good for identifying cars with problems, but you won’t get anywhere by just turning off those lights.</p></li>
+<li><p>Evaluate the effectiveness of different messages politicians in the US and Europe could use to convince their constituents to support greater carbon reduction targets,</p></li>
+<li><p>Quantify the magnitude of the effect on global warming caused by different emissions targets for developing countries to help politicians in developing countries weigh the poverty-reducing benefits of carbon-intensive industrialization against the likely direct effect of flooding, droughts, or more severe storms on their own citizens, or</p></li>
+<li><p>Estimate the cost-effectiveness of developed countries sharing lower emissions industrial technologies with developing countries to ameliorate the tradeoff between poverty reduction and emissions.</p></li>
 </ul>
+<p>In each of these cases, the data scientist is only answering Descriptive Questions, but in doing so they are helping everyone better understand the consequences of their decisions, and in doing so (hopefully) help the world to make more informed decisions about the trade-offs they are making.</p>
 </section>
+<section id="recap">
+<h2>Recap<a class="headerlink" href="#recap" title="Permalink to this heading">#</a></h2>
+<p>Answering Descriptive Questions — questions about how the world is or would be in different scenarios — is the core competency of the data scientist. In the chapters that follow, we will explore in detail three different kinds of Descriptive Questions: Exploratory, Passive-Prediction, and Causal Questions.</p>
+<p>While these are the only types of questions that data science tools can answer directly, it is important for you, the data scientist, to also recognize when you encounter Prescriptive Questions — that is, questions about how the world <em>should</em> be, or what we <em>ought</em> to do. These questions can only be answered with respect to a system of values, and as such, do not have right or wrong answers, and cannot be answered by statistical means. Nevertheless, as a data scientist, you are well-prepared to help others (and yourself!) make more informed choices when they decide how to answer Prescriptive Questions for themselves.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="objectivereality"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>If you know enough epistemology to object to me asserting the existence of an “objective reality,” then I assume you can also understand the point I’m trying to get across in this chapter and will forgive me this philosophical slight.</p>
+</dd>
+</dl>
 </section>
-<section id="what-makes-answering-a-causal-question-different-from-a-passive-predictive-question">
-<h1>What Makes Answering A Causal Question Different from a Passive Predictive Question?<a class="headerlink" href="#what-makes-answering-a-causal-question-different-from-a-passive-predictive-question" title="Permalink to this heading">#</a></h1>
-</section>
-<section id="acting-on-the-world">
-<h1>Acting on the World<a class="headerlink" href="#acting-on-the-world" title="Permalink to this heading">#</a></h1>
-<p>Nearly all Causal Questions are motivated by a stakeholder’s desire to know the consequences of a certain action. Again, this action could take almost any form, from changing the prices of a product to changing the design of a website or rolling out a new government health insurance system. <em>Usually</em>, this action will not have been pulled out of a hat — rather, one generally poses a Causal Question because one has some reason for thinking a given course of action may be a good one. For example, someone interested in reducing surgical complications may have discovered that patients with high blood pressure are more likely to experience complications from surgery (they observed a <em>correlation</em> between these two outcomes), so now they want to know if giving patients who experience high blood pressure medication to bring down their blood pressure before surgery would reduce complications. Or perhaps your online retailer stakeholder has noticed that one of your competitors has stopped showing customer reviews in the search results, so they suspect it must be improving sales for your competitor and want to know if it would work for your site too.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -459,6 +483,24 @@ document.write(`
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../10_introduction/40_data_science_in_historical_context.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">What <em>is</em> Data Science: An Historical Perspective</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="07_eda.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">EDA: The Most Pernicious Term in Data Science</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -474,14 +516,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Why Passive-Prediction Is Not Enough</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#back-to-blood-pressure">Back to Blood Pressure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opioid-reductions">Opioid Reductions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-example-of-carbon-emissions">The Example of Carbon Emissions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap">Recap</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#what-makes-answering-a-causal-question-different-from-a-passive-predictive-question">What Makes Answering A Causal Question Different from a Passive Predictive Question?</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#acting-on-the-world">Acting on the World</a></li>
-</ul>
-
   </nav></div>
 
 </div></div>
