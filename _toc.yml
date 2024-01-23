@@ -11,7 +11,7 @@ parts:
       - file: 10_introduction/40_data_science_in_historical_context
   - caption: Types of Questions
     chapters:
-      - file: 30_questions/05_descriptive_v_proscriptive
+      - file: 30_questions/05_descriptive_v_prescriptive
       - file: 30_questions/07_eda
         title: The Scourge of "EDA"
       - file: 30_questions/10_using_exploratory_questions

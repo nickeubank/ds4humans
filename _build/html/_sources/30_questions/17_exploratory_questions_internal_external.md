@@ -59,6 +59,8 @@ Internal and External Validity are both key concepts for being an effective data
 ## Reading Reflection Questions
 
 - Why is the External Validity of a study only defined with respect to a given context?
+- A group of Duke doctors wishes to understand exercise behavior in patients who have recently experienced cardiac surgery. To measure exercise behavior, they surveyed their patients post-surgery about their exercise behavior. But one doctor on the team is concerned that people may mis-report their exercise (the patients know they're *supposed* to be exercising, so the doctor is concerned they will report they are exercising even if they are not). Is this an Internal or External Validity concern?
+- After these Duke doctors published their results, word of the study reached a doctor in rural Louisiana. Looking at the study, however, she found that the patients treated by the Duke doctors tended to be younger and healthier than the patients she sees. Is this an Internal or External Validity concern?
 
 <!-- ## External Validity
 
