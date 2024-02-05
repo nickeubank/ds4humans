@@ -17,7 +17,8 @@ parts:
       - file: 30_questions/10_using_exploratory_questions
       - file: 30_questions/15_answering_exploratory_questions
       - file: 30_questions/17_exploratory_questions_internal_external
-      - file: 30_questions/20_passive_prediction_questions
+      - file: 30_questions/20_using_passive_prediction_questions
+      - file: 30_questions/25_answering_passive_prediction
       - file: 30_questions/30_causal_questions_theory
       - file: 30_questions/40_causal_questions_application
   - caption: Data Science in Practice

@@ -58,3 +58,7 @@ Once you start articulating these questions, you can start to see that there is 
 And that, fundamentally, is what Exploratory Questions are about: understanding the patterns and distribution of features you care about in the world, and using that information to better understand the problem you want to solve.
 
 This also demonstrates one of the key ways that one answers Exploratory Questions: by collecting and merging datasets that had not previously been pulled together. Sometimes this data collection requires no more than finding people who already have the data you need, getting it, and finding a way to merge different data sources (e.g., data on power plant CO2 emissions and data on building energy use), while in other situations this will entail building new datasets yourself by doing things like using Natural Language Processing to make collections of documents (contracts, patient files, public records) analyzable systematically.
+
+#### But Where Do I Get Data?
+
+It's hard to overstate how much data is public these days, but to give you a sense, [here's a quick summary of a few terrific sources.](https://www.unifyingdatascience.org/html/public_data.html)
