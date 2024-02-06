@@ -398,6 +398,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differentiating-between-exploratory-and-passive-prediction-questions">Differentiating Between Exploratory and Passive Prediction Questions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-passive-in-passive-prediction">The “Passive” in Passive Prediction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-large-language-models-llms-fit-into-this">How do Large Language Models (LLMs) Fit Into This?</a></li>
 </ul>
             </nav>
         </div>
@@ -450,6 +451,18 @@ document.write(`
 <p>But if you want to know what would happen if you directly manipulated blood pressure, knowing that blood pressure and complications are correlated is not sufficient. After all, if living alone results in high blood pressure <em>and</em> difficulty recovering from surgery, then treating patient blood pressure may have no effect at all!</p>
 <p>When answering Passive Prediction Questions, we are searching for correlations we can leverage to make accurate predictions, not causal relationships we can directly manipulate to shape outcomes. Indeed, those who specialize in answering Passive Prediction Questions (like computer scientists who specialized in supervised machine learning) don’t really care that “correlation does not (necessarily) imply causation.”</p>
 <p><img alt="xkcd correlation comic" src="https://imgs.xkcd.com/comics/correlation.png" /></p>
+</section>
+<section id="how-do-large-language-models-llms-fit-into-this">
+<h2>How do Large Language Models (LLMs) Fit Into This?<a class="headerlink" href="#how-do-large-language-models-llms-fit-into-this" title="Permalink to this heading">#</a></h2>
+<p>Given their emergence as one of the most high profile examples of something people call “AI” these days, it’s worth directly addressing how LLMs like chatGPT, Llama, Bard, etc. fit into this framework.</p>
+<p>One of the most powerful ways to understand LLMs is to think of them as tools for answering “If I came across this text [whatever text is in the LLMs prompt, pre-prompts, or other inputs in the model’s context window] while wandering around the internet,<a class="footnote-reference brackets" href="#llm-training-data" id="id1">1</a> what word am I most likely to encounter next?” LLMs then ask this question over and over, adding the newly selected word to the context window one at a time and then feeding the updated “conversation” back into itself as input to help it predict the next word. Indeed, this repetitiveness is why the technology behind most LLMs is called a <em>recurrent</em> neural network — because it keeps adding a word to the “conversation” you are having (it’s “context window”), then feeding the updated conversation back into the model as an updated input.</p>
+<p>To be clear, this is a little reductionist. First, LLMs are able to <em>abstract</em> away from literal text to something like the meaning of words — they recognize that “pet” and “dog” have similar meanings in the sentences “I took my dog for a walk” and “I took my pet for a walk” — but even these abstractions are the result of looking for common patterns across existing text. And second, LLMs are also “finetuned” by having humans rate responses. But these nuances don’t change the fact that <em>fundamentally</em> LLMs are tools for recapitulating text and ideas that already exist in the world, with a strong bias towards what humans have <em>tended</em> to write most on the internet — a truth that both explains some of their power, but also helps to explain their fundamental limitations (e.g., their complete lack of fidelity to the truth, the fact they reflect societies’ gender and racial biases, etc.).</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="llm-training-data"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>A more accurate way to phrase this would be “If I came across this text <em>in my training data</em>…” For most LLMs, “my training data” is a corpus that consists of both text that is <em>not</em> on the internet — like every book every published — and fails to include many things that <em>are</em> on the internet but which are difficult to crawl in an automated way. You can learn more about the corpus of internet text used by many LLMs — the 9.5 petabyte <em>Common Crawl</em> dataset — <a class="reference external" href="https://foundation.mozilla.org/en/research/library/generative-ai-training-data/common-crawl/">here.</a> But it does seem very clear the <em>vast</em> majority of training data comes from the internet. LLMs makers are becoming increasingly caggy about what data they use for training — in part because they don’t wish to make copyright lawsuits against them <em>too</em> easy — but books made up only <a class="reference external" href="https://arxiv.org/abs/2302.13971">4.5% of the training data for Meta’s first version of LLaMa</a>.</p>
+</dd>
+</dl>
 </section>
 </section>
 
@@ -523,6 +536,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differentiating-between-exploratory-and-passive-prediction-questions">Differentiating Between Exploratory and Passive Prediction Questions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-passive-in-passive-prediction">The “Passive” in Passive Prediction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-large-language-models-llms-fit-into-this">How do Large Language Models (LLMs) Fit Into This?</a></li>
 </ul>
   </nav></div>
 
