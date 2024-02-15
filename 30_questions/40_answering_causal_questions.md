@@ -1,16 +1,8 @@
 # Causal Questions: The Theory
 
-In our previous readings, we learned how answering different types of questions can help us better understand the world around us. By answering Exploratory Questions, we can better understand the contours of our problem — where our problem is most acute, whether there are groups who have figured out how to get around the problem on their own, etc. This, in turn, can help us prioritize our subsequent efforts. By answering Passive Predictive Questions, we can help identify individual entities — patients, customers, products, etc. — to whom we may wish to pay extra attention or recommend certain products. By answering Passive Predictive Questions, we can also automate tasks by predicting how a person (or more complicated process) *would* have classified an entity.
+In this reading, we turn the surprisingly slippery question "What do we mean when we say X causes Y, and how do we measure the effect of an action $X$ (e.g., administering a new drug to a patient, or showing an ad to a user) on an outcome $Y$ (patient survival, customer spending, etc.)?"
 
-In both cases, however, answering these questions only helps us better understand the world *around* us. But to the extent to which, as data scientists, we want to intervene to directly address problems, we are rarely interested in just knowing about the world around us — we want to *act* on the world, and wouldn't be great if data science could provide us with a set of tools designed to help us predict the *consequences* of our actions?
-
-Enter *Causal Questions*. Causal Questions ask what *effect* we can expect from *acting* — that is, actively *manipulating* or *intervening* — in the world around us in some way. For example, if we pay to show an ad to a specific customer, what will the *effect* of that choice be the likelihood they buy something on our website? Or if we choose to give a new drug to a patient, what will the *effect* of that choice be on their disease?
-
-Because of their potential to help us understand the future consequences of our actions, it should come as no surprise that the ability to answer Causal Questions is of *profound* interest to everyone from companies to doctors and policymakers. At the same time, however, it may also come as no surprise that answering Causal Questions is an inherently challenging undertaking.
-
-In this reading, we will discuss what it means to measure the effect of an action $X$ (e.g., administering a new drug to a patient, or showing an ad to a user) on an outcome $Y$ (patient survival, customer spending, etc.). This section will, at times, feel a little abstract and woo-woo, but please hang in there. Answering Causal Questions is as much about critical thinking as it is about statistics, and the concepts introduced here will prove crucial to your ability to be effective in this space.
-
-Then in our next reading, we will turn from the more abstract to the concrete and discuss where Causal Questions arise in practice, and the workflow one goes about answering them.
+This section will, at times, feel a little abstract and woo-woo, but please hang in there. Answering Causal Questions is as much about critical thinking as it is about statistics, and the concepts introduced here will prove crucial to your ability to be effective in this space.
 
 ## What Does It Mean for X to Cause Y?
 

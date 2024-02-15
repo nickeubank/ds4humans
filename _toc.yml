@@ -19,8 +19,8 @@ parts:
       - file: 30_questions/17_exploratory_questions_internal_external
       - file: 30_questions/20_using_passive_prediction_questions
       - file: 30_questions/25_answering_passive_prediction
-      - file: 30_questions/30_causal_questions_theory
-      - file: 30_questions/40_causal_questions_application
+      - file: 30_questions/30_using_causal_questions
+      - file: 30_questions/40_answering_causal_questions
   - caption: Data Science in Practice
     chapters:
       - file: 40_in_practice/00_backwards_design
