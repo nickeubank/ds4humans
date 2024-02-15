@@ -14,3 +14,7 @@ There's just only so much signal in the data.
 (Cite study)
 
 ## No Magic, Not Undue Deference
+
+- Most models internal, where IP-black-box doesn't matter
+- Handoff and implementation easier
+- Ethical review.
