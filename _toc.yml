@@ -21,6 +21,9 @@ parts:
       - file: 30_questions/25_answering_passive_prediction
       - file: 30_questions/30_using_causal_questions
       - file: 30_questions/40_answering_causal_questions
+  - caption: Causal Inference
+    chapters:
+      - file: 35_causal/10_potential_outcomes
   - caption: Data Science in Practice
     chapters:
       - file: 40_in_practice/00_backwards_design

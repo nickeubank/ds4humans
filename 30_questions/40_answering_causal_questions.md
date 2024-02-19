@@ -1,4 +1,4 @@
-# Causal Questions: The Theory
+# Answering Causal Questions
 
 In this reading, we turn the surprisingly slippery question "What do we mean when we say X causes Y, and how do we measure the effect of an action $X$ (e.g., administering a new drug to a patient, or showing an ad to a user) on an outcome $Y$ (patient survival, customer spending, etc.)?"
 
