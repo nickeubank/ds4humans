@@ -141,13 +141,13 @@ So when does this equal $E(Y^1_i) - E(Y^0_i)$? Let's apply a few manipulations t
 First,  we use that classic math trick of adding and subtracting a carefully chosen term to an equation. This addition and subtraction offsets, so this is the same as adding 0 (and is thus allowed), but ends up being very helpful. In particular, we will add and subtract $E(Y_i^0|D_i = 1)$:
 
 $$
-\widehat{ATE }=  E(Y_i^{1}|D_i = 1) - E(Y_i^{0}|D_i = 0) + \underbrace{E(Y_i^{0}|D_i = 1 - E(Y_i^{0}|D_i = 1))}_\text{(Add up to zero)}
+\widehat{ATE }=  E(Y_i^1|D_i = 1) - E(Y_i^0|D_i = 0) + \underbrace{E(Y_i^0|D_i = 1) - E(Y_i^0|D_i = 1)}_\text{(Add up to zero)}
 $$
 
 We can then shuffle these terms around to isolate two distinct quantities of interest: The Average Treatment Effect on the Treated (ATT), and Baseline Differences:
 
 $$
-\widehat{ATE }&=  E(Y_i^{1}|D_i = 1) - E(Y_i^{0}|D_i = 0) + E(Y_i^{0}|D_i = 1) - E(Y_i^{0}|D_i = 1) \\
+\widehat{ATE }&=  E(Y_i^1|D_i = 1) - E(Y_i^0|D_i = 0) + E(Y_i^0|D_i = 1) - E(Y_i^0|D_i = 1) \\
 &= \underbrace{E(Y^1_i|D_i = 1) - E(Y_i^0|D_i = 1)}_\text{$ATT$} + \underbrace{E(Y^0_i|D_i = 1) - E(Y_i^0|D_i = 0)}_\text{Baseline Difference}
 $$
 
