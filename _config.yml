@@ -11,7 +11,7 @@ sphinx:
     - sphinx_jupyterbook_latex
   config:
     language: en
-    html_extra_path: ["robot_file"]
+    html_extra_path: ["static_root_files"]
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
