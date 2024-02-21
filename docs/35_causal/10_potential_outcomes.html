@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>The Potential Outcomes Framework &#8212; Solving Problems With Data</title>
   
@@ -29,46 +28,42 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '35_causal/10_potential_outcomes';</script>
-    <link rel="shortcut icon" href="../_static/logo.jpg"/>
+    <link rel="icon" href="../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Backwards Design" href="../40_in_practice/00_backwards_design.html" />
+    <link rel="next" title="Using and Interpreting Indicator (Dummy) Variables" href="30_interpreting_indicator_vars.html" />
     <link rel="prev" title="Answering Causal Questions" href="../30_questions/40_answering_causal_questions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -163,7 +158,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -193,6 +199,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Causal Inference</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">The Potential Outcomes Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="30_interpreting_indicator_vars.html">Indicator Variables</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Science in Practice</span></p>
 <ul class="nav bd-sidenav">
@@ -425,12 +432,12 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="the-potential-outcomes-framework">
-<h1>The Potential Outcomes Framework<a class="headerlink" href="#the-potential-outcomes-framework" title="Permalink to this heading">#</a></h1>
+<h1>The Potential Outcomes Framework<a class="headerlink" href="#the-potential-outcomes-framework" title="Link to this heading">#</a></h1>
 <p>We’ve all heard the saying “correlation does not imply causation.” And that’s true, as far as it goes. But the saying would be more accurate (albeit less catchy) if it were “correlation does not <em>necessarily</em> imply causation.” That’s because while it is true that correlation does not always imply causation, it does under certain circumstances.</p>
 <p>In this chapter, we will learn about the <em>Potential Outcomes Framework.</em> The Potential Outcomes Framework introduces mathematical notation to our discussion of parallel universes, and in doing so allows us to reason far more rigorously about causal effects.</p>
 <p>Crucially, the Potential Outcomes Framework will also allow us to be very precise about what it is we are measuring when we measure a correlation, what we need to measure in order to answer a Causal Question, and what must be true for those two quantities to be the same.</p>
 <section id="the-potential-outcomes-set-up">
-<h2>The Potential Outcomes Set Up<a class="headerlink" href="#the-potential-outcomes-set-up" title="Permalink to this heading">#</a></h2>
+<h2>The Potential Outcomes Set Up<a class="headerlink" href="#the-potential-outcomes-set-up" title="Link to this heading">#</a></h2>
 <p>The potential outcomes framework is built around the idea that we all have well-defined <em>potential</em> outcomes that would be observed if we were to be exposed to a treatment, and also potential outcomes that would be observed if we were not (i.e., we were exposed to a “control” condition). These potential outcomes are fixed and defined values within each of us. But, of course, the challenge is that we can only ever <em>observe</em> ourselves in one state of exposure.</p>
 <p>Let’s suppose that we are interested in the effect of some treatment <span class="math notranslate nohighlight">\(T\)</span> on an outcome <span class="math notranslate nohighlight">\(Y\)</span> for a population of individuals <span class="math notranslate nohighlight">\(i \in {1, 2, 3... N}\)</span>.</p>
 <p>For ease of exposition, we will begin by assuming that our treatment <span class="math notranslate nohighlight">\(T\)</span> is a <em>binary treatment</em>, meaning it can only take on two values: <span class="math notranslate nohighlight">\(T \in \{0, 1\}\)</span>. There’s nothing special about binary treatments, but they simplify notation, and so we often use them when discussing the potential outcomes framework, though everything we discuss here generalizes to continuous treatments.</p>
@@ -447,7 +454,7 @@ document.write(`
 \[Y^{T=0}_i \equiv Y^{0}_i\]</div>
 <p>We can think about these individual-level realizations of the random variable as the potential outcomes in different theoretical states of the world that we all carry within ourselves. We have a potential outcome for if the world is <span class="math notranslate nohighlight">\(T=1\)</span>, and we have a potential outcome for if the world is <span class="math notranslate nohighlight">\(T=0\)</span>. They both exist simultaneously in us, though we are only able to observe one.</p>
 <section id="the-observed-outcomes-set-up">
-<h3>The Observed Outcomes Set Up<a class="headerlink" href="#the-observed-outcomes-set-up" title="Permalink to this heading">#</a></h3>
+<h3>The Observed Outcomes Set Up<a class="headerlink" href="#the-observed-outcomes-set-up" title="Link to this heading">#</a></h3>
 <p>Now that we have defined the potential outcomes, let’s discuss the set up for <em>observed</em> outcomes. Where <span class="math notranslate nohighlight">\(T\)</span> was in effect the theoretical treatment condition that allowed us to define <em>potential</em> outcomes for a theoretically applied causal factor, we use <span class="math notranslate nohighlight">\(D\)</span> to refer to the <em>observed</em> receipt of either treatment or control.</p>
 <div class="math notranslate nohighlight">
 \[D \in \{0,1\}\]</div>
@@ -479,7 +486,7 @@ document.write(`
 </section>
 </section>
 <section id="defining-the-causal-effect">
-<h2>Defining The Causal Effect<a class="headerlink" href="#defining-the-causal-effect" title="Permalink to this heading">#</a></h2>
+<h2>Defining The Causal Effect<a class="headerlink" href="#defining-the-causal-effect" title="Link to this heading">#</a></h2>
 <p>Now that we have that notation out of the way, let’s apply it to the definition of causation we introduced in our previous readings. We previously said that the <em>effect</em> of some treatment <span class="math notranslate nohighlight">\(T\)</span> on <span class="math notranslate nohighlight">\(Y\)</span> for an individual <span class="math notranslate nohighlight">\(i\)</span> is the difference in <span class="math notranslate nohighlight">\(i\)</span>’s outcomes in a world where the individual receives the treatment and <span class="math notranslate nohighlight">\(i\)</span>’s outcomes in a world where they do not. In our new notation, we can call this quantity <span class="math notranslate nohighlight">\(\delta_i\)</span>, and write it as:</p>
 <div class="math notranslate nohighlight">
 \[\delta_i = Y^1_i - Y^0_i\]</div>
@@ -504,7 +511,7 @@ ATE &amp; = E(\delta_i) \\
 <p>Why do we care about the Averate Treatment Effect? While not perfect, it is our best guess for the average change in our outcome of interest we would observe if <em>everyone</em> in the population we are studying were subject to treatment. Thinking about authorizing a new prescription drug? You want to know the average effect it will have across all patients who take it. Thinking about launching a big advertising campaign? You want to know the average effect it will have on all the consumers who see it. <span class="math notranslate nohighlight">\(ATE\)</span>, in other words, is the quantity your stakeholder — who wants you to answer a Causal Question because they want you to predict the effect of some action they’re thinking of taking — wants to know.</p>
 </section>
 <section id="what-is-a-correlation">
-<h2>What Is a Correlation?<a class="headerlink" href="#what-is-a-correlation" title="Permalink to this heading">#</a></h2>
+<h2>What Is a Correlation?<a class="headerlink" href="#what-is-a-correlation" title="Link to this heading">#</a></h2>
 <p>Having established the quantity we <em>want</em> to measure — the Averate Treatment Effect for a population, <span class="math notranslate nohighlight">\(ATE = E(Y^1_i) - E(Y^0_i)\)</span> — let’s pause for a moment to come at things from the other side.</p>
 <p>We have established that <span class="math notranslate nohighlight">\(ATE\)</span> is what we <em>want</em> to measure. But the fact we will never be able to observe both <span class="math notranslate nohighlight">\(Y^0\)</span> and <span class="math notranslate nohighlight">\(Y^1\)</span> for our full populations — and thus we can never directly observe <span class="math notranslate nohighlight">\(E(Y^1_i) - E(Y^0_i)\)</span> — remains true. So let’s pause for a moment to ask: “What <em>can</em> we observe?”</p>
 <p>The first thing we can observe is outcome <span class="math notranslate nohighlight">\(Y^0_i\)</span> for all <span class="math notranslate nohighlight">\(i\)</span> that weren’t actually subject to treatment (i.e., for whom <span class="math notranslate nohighlight">\(D_i = 0\)</span>). Given that, we can estimate:</p>
@@ -525,7 +532,7 @@ ATE &amp; = E(\delta_i) \\
 </div>
 </section>
 <section id="correlation-and-causation">
-<h2>Correlation and Causation<a class="headerlink" href="#correlation-and-causation" title="Permalink to this heading">#</a></h2>
+<h2>Correlation and Causation<a class="headerlink" href="#correlation-and-causation" title="Link to this heading">#</a></h2>
 <p>Let’s begin by giving the empirical correlation between treatment and outcomes a name. As we’re <em>trying</em> to estimate the Average Treatment Effect (<span class="math notranslate nohighlight">\(ATE\)</span>), we will use the convention of adding a “hat” to a variable to indicate it is an empirically estimated quantity (rather than the “true”) quantity. Thus our correlation betweens:</p>
 <div class="math notranslate nohighlight">
 \[\widehat{ATE} = E(Y^1_i | D_i = 1) - E(Y^0_i | D_i = 0)\]</div>
@@ -542,7 +549,7 @@ ATE &amp; = E(\delta_i) \\
 &amp;= \underbrace{E(Y^1_i|D_i = 1) - E(Y_i^0|D_i = 1)}_\text{$ATT$} + \underbrace{E(Y^0_i|D_i = 1) - E(Y_i^0|D_i = 0)}_\text{Baseline Difference}
 \end{split}\]</div>
 <section id="baseline-differences">
-<h3>Baseline Differences<a class="headerlink" href="#baseline-differences" title="Permalink to this heading">#</a></h3>
+<h3>Baseline Differences<a class="headerlink" href="#baseline-differences" title="Link to this heading">#</a></h3>
 <p>Let’s actually start with the second of these quantities, <em>Baseline Differences</em>.  In substantive terms, Baseline Differences is just the difference in our outcome <span class="math notranslate nohighlight">\(Y\)</span> that would exist between our two groups (who <em>actually did</em> receive the treatment (<span class="math notranslate nohighlight">\(D_i = 1\)</span>) and the people who didn’t (<span class="math notranslate nohighlight">\(D_i = 0\)</span>)) <em>in a world where no one was treated</em>. That’s why we call these “baseline” differences — they are differences in outcomes that we would observe even in a world that the treatment we are interested didn’t exist.</p>
 <p>While I will use the term <em>Baseline Differences</em> for this quantity in this book, it also corresponds to the concept of “confounders” — factors that create a difference in outcomes between the treated group and the untreated group that are not caused by the treatment.</p>
 <p>Unsurprisingly, therefore, the first condition that must be met for our correlation to imply causation (for <span class="math notranslate nohighlight">\(\widehat{ATE}\)</span> to equal <span class="math notranslate nohighlight">\(ATE\)</span>) is for there to be no baseline differences:</p>
@@ -550,7 +557,7 @@ ATE &amp; = E(\delta_i) \\
 <p class="admonition-title">Note</p>
 <p><strong>No Baseline Differences:</strong></p>
 <div class="math notranslate nohighlight" id="equation-eqn-condition-1">
-<span class="eqno">(1)<a class="headerlink" href="#equation-eqn-condition-1" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(1)<a class="headerlink" href="#equation-eqn-condition-1" title="Link to this equation">#</a></span>\[
 0 = E(Y^0_i|D_i = 1) - E(Y_i^0|D_i = 0)
 \]</div>
 </div>
@@ -567,7 +574,7 @@ ATE &amp; = E(\delta_i) \\
 <p>So what, then, is ATT?</p>
 </section>
 <section id="average-treatment-effect-on-the-treated-att">
-<h3>Average Treatment Effect on the Treated (ATT)<a class="headerlink" href="#average-treatment-effect-on-the-treated-att" title="Permalink to this heading">#</a></h3>
+<h3>Average Treatment Effect on the Treated (ATT)<a class="headerlink" href="#average-treatment-effect-on-the-treated-att" title="Link to this heading">#</a></h3>
 <p>Perhaps the easiest way to understand <span class="math notranslate nohighlight">\(ATT\)</span> is to directly compare the formulas for <span class="math notranslate nohighlight">\(ATT\)</span> with <span class="math notranslate nohighlight">\(ATE\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -587,7 +594,7 @@ ATE =&amp; E(Y^1_i) - E(Y_i^0) \\
 <p class="admonition-title">Note</p>
 <p><strong>No Differential Treatment Effects:</strong></p>
 <div class="math notranslate nohighlight" id="equation-eqn-condition-2">
-<span class="eqno">(2)<a class="headerlink" href="#equation-eqn-condition-2" title="Permalink to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(2)<a class="headerlink" href="#equation-eqn-condition-2" title="Link to this equation">#</a></span>\[\begin{split}
 ATT &amp;= E(Y^1_i|D_i = 0) - E(Y_i^0|D_i = 0) \\
 E(Y^1_i|D_i = 1) - E(Y_i^0|D_i = 1) &amp;= E(Y^1_i|D_i = 0) - E(Y_i^0|D_i = 0)
 \end{split}\]</div>
@@ -601,14 +608,14 @@ E(Y^1_i|D_i = 1) - E(Y_i^0|D_i = 1) &amp;= E(Y^1_i|D_i = 0) - E(Y_i^0|D_i = 0)
 </section>
 </section>
 <section id="wrapping-it-up">
-<h2>Wrapping It Up<a class="headerlink" href="#wrapping-it-up" title="Permalink to this heading">#</a></h2>
+<h2>Wrapping It Up<a class="headerlink" href="#wrapping-it-up" title="Link to this heading">#</a></h2>
 <p>We started off this chapter by noting that correlation does not <em>necessarily</em> imply causation. But there are certain condition under which correlation <em>does</em> imply causation, and we now know what those conditions are.</p>
 <p>First, for our observed correlation between treatment and our outcome of interest to imply a causal effect, it must be the fact that there are no Baseline Differences. If there are Baseline Differences between the treated and untreated, then we just don’t have a way to know what portion of the difference between these groups is the effect of treatment and what differences were pre-existing.</p>
 <p>(Some of you may be saying “But wait! Can’t I use a regression to estimate what share of differences are down to observable differences?” Yes, and we’ll discuss that soon, but the key word is “observable” — regression can help address Baseline Differences <em>if</em> we can measure the factors that give rise to those differences.)</p>
 <p>If we don’t have Baseline Differences, then our correlation is at least a good estimate of the Average Treatment Effect on the Treated (<span class="math notranslate nohighlight">\(ATT\)</span>) — that is, the causal effect of our treatment <em>on the subpopulation that we observed experiencing to treatment</em>. And there will be times that the best we can do is get a good estimate of <span class="math notranslate nohighlight">\(ATT\)</span>.</p>
 <p>But if we really want to get a good estimate of the Average Treatment Effect for the <em>full</em> population we’re studying — something we want if we want to be able to estimate the effect of our treatment if we roll it out to everyone — then we also need it to be the case that the people we observe receiving the treatment (<span class="math notranslate nohighlight">\(D_i = 1\)</span>) respond to the treatment in the same way as those that don’t (<span class="math notranslate nohighlight">\(D_i = 0\)</span>).</p>
 <section id="testability-of-assumptions">
-<h3>Testability of Assumptions<a class="headerlink" href="#testability-of-assumptions" title="Permalink to this heading">#</a></h3>
+<h3>Testability of Assumptions<a class="headerlink" href="#testability-of-assumptions" title="Link to this heading">#</a></h3>
 <p>Any now the big catch: we need two conditions to be true to be sure we are getting a good estimate of a causal effect:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -661,11 +668,11 @@ E(Y^1_i|D_i = 1) - E(Y_i^0|D_i = 1) &amp;= E(Y^1_i|D_i = 1) - E(Y_i^0|D_i = 1)
       </div>
     </a>
     <a class="right-next"
-       href="../40_in_practice/00_backwards_design.html"
+       href="30_interpreting_indicator_vars.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Backwards Design</p>
+        <p class="prev-next-title">Using and Interpreting Indicator (Dummy) Variables</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

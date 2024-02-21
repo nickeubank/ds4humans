@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>EDA: The Most Pernicious Term in Data Science &#8212; Solving Problems With Data</title>
   
@@ -29,41 +28,37 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = '30_questions/07_eda';</script>
-    <link rel="shortcut icon" href="../_static/logo.jpg"/>
+    <link rel="icon" href="../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Using Exploratory Questions" href="10_using_exploratory_questions.html" />
@@ -161,7 +156,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -191,6 +197,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Causal Inference</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../35_causal/10_potential_outcomes.html">The Potential Outcomes Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../35_causal/30_interpreting_indicator_vars.html">Indicator Variables</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Science in Practice</span></p>
 <ul class="nav bd-sidenav">
@@ -409,14 +416,14 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="eda-the-most-pernicious-term-in-data-science">
-<h1>EDA: The Most Pernicious Term in Data Science<a class="headerlink" href="#eda-the-most-pernicious-term-in-data-science" title="Permalink to this heading">#</a></h1>
+<h1>EDA: The Most Pernicious Term in Data Science<a class="headerlink" href="#eda-the-most-pernicious-term-in-data-science" title="Link to this heading">#</a></h1>
 <p>In our next reading, we will turn our attention to <em>Exploratory Questions.</em> First, however, it is important to have a candid discussion about what I feel is one of the most problematic concepts in data science education: <em>Exploratory Data Analysis</em> or <em>EDA</em>.</p>
 <p>The problem with the term Exploratory Data Analysis is that, if you asked most data scientists what it means, they probably couldn’t actually give you a straight answer. If you pressed them further, they would probably say something like “when you look at your data before you start fitting your models.”</p>
 <p>While the idea that data scientists should “get to know their data” before fitting a model is well-meaning (you <em>absolutely</em> should!), the ubiquitous but uncritical use of the term has given young data scientists the sense that the undirected poking at data is worthy of a capitalized three world title, complete with a universally recognized acronym.</p>
 <p>This is problematic because <em>any</em> activity that involves data but lacks a clear motivation is doomed to be unending and unproductive. Data science has emerged precisely because our datasets are far too complex for us to understand directly; indeed, I would argue that the job of a data scientist can be summed up, in part, as a person who identifies <strong>meaningful</strong> patterns in our data and makes them comprehensible.</p>
 <p>But therein lies the problem — without a clear motivation for <em>why</em> the data scientist is poking at their data, what makes a pattern meaningful is undefined. And without a clear purpose from which a concept of meaningfulness can be derived, there is no end to the ways one can slice and dice the data with no way of knowing when to stop or what is useful.</p>
 <p>I would argue that what most people call Exploratory Data Analysis (EDA) can actually be decomposed into three activities.</p>
-<p>The first activity people call EDA is what I call “learning the structure of your <em>dataset</em>” (emphasis on learning about your <em>dataset</em>, not using your data to learn about the world). This consists of answering questions about your dataset like “what constitutes a single observation in this dataset?,” “what variables are included in this dataset?,” “how many observations are there?,” “how are variables coded?,” and “what population is represented in this data?” These are questions about <em>the specific dataset</em> you are working with, <em>not</em> the real world, and answers are likely to be found in the dataset documentation and through basic tools for data introspection.<a class="footnote-reference brackets" href="#pandas" id="id1">1</a></p>
+<p>The first activity people call EDA is what I call “learning the structure of your <em>dataset</em>” (emphasis on learning about your <em>dataset</em>, not using your data to learn about the world). This consists of answering questions about your dataset like “what constitutes a single observation in this dataset?,” “what variables are included in this dataset?,” “how many observations are there?,” “how are variables coded?,” and “what population is represented in this data?” These are questions about <em>the specific dataset</em> you are working with, <em>not</em> the real world, and answers are likely to be found in the dataset documentation and through basic tools for data introspection.<a class="footnote-reference brackets" href="#pandas" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
 <p>The second activity that often falls under the label EDA is what I call “validating your dataset.” It’s a poor data scientist who takes the validity of their data on blind faith, so when faced with a new dataset, one should begin with a few “sanity checks” just to make sure things look reasonable. Does the number of observations seem reasonable given what you know about how the data was collected and who is supposed to be represented in the data? If there are date variables in the data, does their range match what should be in this data? And given the specifics of the data, does the range of variables make sense? For example, if you have data on registered voters 18 and over, you should probably check that the age variable has a minimum value of 18 and a maximum value of something sensible (e.g., not 225).</p>
 <p>The third and final activity people call EDA is… everything one does with the data before they fit a statistical or machine learning model. This is the second major reason that I feel the very concept of EDA has had a pernicious influence on data science — it implicitly devalues anything done with data that doesn’t entail a complicated model as “lesser” or “just a stop on the way towards the “real” analysis,” when nothing could be further from the truth.</p>
 <p>This type of data analysis — looking at summary statistics, calculating distributions of variables, computing tabulations and cross-tabulations of different things to improve one’s understanding of the world — is categorically different from “learning the structure of your data,” because it is inquiry in the service of better understanding the world, not the structure of your dataset. But it is <em>not</em> categorically different analyzing data using statistical models, not just because in many cases generating cross-tabulations or calculating group averages are essentially equivalent to using a statistical method like linear regression, but also because they are both examples of the same enterprise: attempting to answer questions about the world using data in the service of solving problems.</p>
@@ -428,7 +435,7 @@ document.write(`
 <p>But the problem with approaching your data with <em>implicit</em> motivations is that (a) it’s hard to reflect on them or evaluate whether they rest on solid assumptions about the stakeholder problem, and (b) without an explicit goal, there’s no way to know when you’ve reached your destination, making it <em>really</em>  easy to get lost in the data.</p>
 </div>
 <section id="recap">
-<h2>Recap<a class="headerlink" href="#recap" title="Permalink to this heading">#</a></h2>
+<h2>Recap<a class="headerlink" href="#recap" title="Link to this heading">#</a></h2>
 <p>Despite its ubiquity, few data scientists could actually tell you what constitutes Exploratory Data Analysis (EDA). Moreover, some of what people might call EDA in practice — answering questions about the world without complex modeling — should not be called EDA, but rather… well, that’s just data science.</p>
 <p>So in this book, we will acknowledge the important (but distinct!) goal of two purposeful activities often called EDA:</p>
 <ul class="simple">
@@ -437,11 +444,12 @@ document.write(`
 </ul>
 <p>But I will <em>not</em> use the term EDA itself, and when I differentiate between data science enterprises, I will do so by emphasizing differences in the <em>end goals</em> of those activities (answering Exploratory Questions, Passive-Prediction Questions, or Causal Questions), not the methods used to achieve those ends.</p>
 <hr class="footnotes docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="pandas"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>In <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, this would be things like <code class="docutils literal notranslate"><span class="pre">df.columns</span></code> to see what variables are in the data, <code class="docutils literal notranslate"><span class="pre">df.info()</span></code> to get a sense of how data is being represented and the number of rows, and simple tools for tabulating unique values like <code class="docutils literal notranslate"><span class="pre">df[&quot;first</span> <span class="pre">column&quot;].value_counts()</span></code>.</p>
-</dd>
-</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="pandas" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>In <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, this would be things like <code class="docutils literal notranslate"><span class="pre">df.columns</span></code> to see what variables are in the data, <code class="docutils literal notranslate"><span class="pre">df.info()</span></code> to get a sense of how data is being represented and the number of rows, and simple tools for tabulating unique values like <code class="docutils literal notranslate"><span class="pre">df[&quot;first</span> <span class="pre">column&quot;].value_counts()</span></code>.</p>
+</aside>
+</aside>
 </section>
 </section>
 

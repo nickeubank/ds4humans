@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Answering Exploratory Questions &#8212; Solving Problems With Data</title>
   
@@ -29,41 +28,37 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = '30_questions/15_answering_exploratory_questions';</script>
-    <link rel="shortcut icon" href="../_static/logo.jpg"/>
+    <link rel="icon" href="../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Internal versus External Validity" href="17_exploratory_questions_internal_external.html" />
@@ -161,7 +156,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -191,6 +197,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Causal Inference</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../35_causal/10_potential_outcomes.html">The Potential Outcomes Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../35_causal/30_interpreting_indicator_vars.html">Indicator Variables</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Science in Practice</span></p>
 <ul class="nav bd-sidenav">
@@ -416,28 +423,28 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="answering-exploratory-questions">
-<h1>Answering Exploratory Questions<a class="headerlink" href="#answering-exploratory-questions" title="Permalink to this heading">#</a></h1>
+<h1>Answering Exploratory Questions<a class="headerlink" href="#answering-exploratory-questions" title="Link to this heading">#</a></h1>
 <p>In the last reading, we discussed how Exploratory Questions are used by data scientists to help stakeholders better understand their problems and to prioritize subsequent investigations. In this reading, we turn to the questions of what <em>answering</em> Exploratory Questions effectively entails.</p>
 <section id="the-three-part-goal">
-<h2>The Three-Part Goal<a class="headerlink" href="#the-three-part-goal" title="Permalink to this heading">#</a></h2>
+<h2>The Three-Part Goal<a class="headerlink" href="#the-three-part-goal" title="Link to this heading">#</a></h2>
 <p>Whether one uses simple summary statistics (means and medians), plots, or more sophisticated algorithms from the domains of statistical inference and unsupervised machine learning, answering Exploratory Questions always boils down to the same challenge:</p>
 <p><strong>Creating (1) understandable summarizations (2) of meaningful patterns in the data, (3) and ensuring they are faithful representations of the data.</strong></p>
 <p>What is meant by these three components exactly? Let’s take each in turn.</p>
 <section id="understandable-summarizations">
-<h3>Understandable Summarizations<a class="headerlink" href="#understandable-summarizations" title="Permalink to this heading">#</a></h3>
+<h3>Understandable Summarizations<a class="headerlink" href="#understandable-summarizations" title="Link to this heading">#</a></h3>
 <blockquote>
 <div><p>Creating <strong>(1) understandable summarizations</strong> (2) of meaningful patterns in the data, (3) and ensuring they are faithful representations of the data.</p>
 </div></blockquote>
 <p>Answering Exploratory Questions effectively is all about taking large datasets that, in their raw form, are effectively incomprehensible to humans and summarizing the patterns in that data in a way that can be understood. These summaries of patterns in the data may take many forms — summary statistics, regression coefficients, plots, etc. — but all, when done well, have a similar goal: to represent the salient aspects of data in a way that is accessible to the human mind.</p>
 <p>Professionals from different disciplines often use different terminology to describe this process of summarization. Some like to refer to it as “separating the signal (the thing that’s important) from the noise (all the other variation that doesn’t matter),” others talk about “dimensionality reduction” (basically linear algebra speak for summarization), while still others may talk about “modeling the underlying data generating process that gave rise to the observed data.” Regardless of the terminology one uses, however, these all boil down to the same thing: filtering and discarding the variation the data scientist deems to be irrelevant to make it easier to see and understand the variation deemed important.</p>
-<p>The importance of researcher discretion in deciding what variation to discard as noise and what variation to foreground as “important” is one of the defining challenges of answering Exploratory Questions. Other types of questions — like Passive Prediction Questions — often involve using more mathematically sophisticated modeling tools, and consequently are viewed as more challenging. In my experience, however, learning to understand the stakeholder’s problem context <em>and</em> the variation in a data set well enough to exercise this discretion effectively is actually one of the things young data scientists struggle with most. It requires both good domain knowledge to understand what is <em>meaningful</em> (as we will discuss below), and also for the data scientist to spend a lot of time exploring the data thoughtfully and from different perspectives. This is a hard skill to learn,<a class="footnote-reference brackets" href="#eda" id="id1">1</a> but with intentionality, patience, and practice, it is a talent that once learned will helps set you apart from the average pytorch-jockey.</p>
+<p>The importance of researcher discretion in deciding what variation to discard as noise and what variation to foreground as “important” is one of the defining challenges of answering Exploratory Questions. Other types of questions — like Passive Prediction Questions — often involve using more mathematically sophisticated modeling tools, and consequently are viewed as more challenging. In my experience, however, learning to understand the stakeholder’s problem context <em>and</em> the variation in a data set well enough to exercise this discretion effectively is actually one of the things young data scientists struggle with most. It requires both good domain knowledge to understand what is <em>meaningful</em> (as we will discuss below), and also for the data scientist to spend a lot of time exploring the data thoughtfully and from different perspectives. This is a hard skill to learn,<a class="footnote-reference brackets" href="#eda" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> but with intentionality, patience, and practice, it is a talent that once learned will helps set you apart from the average pytorch-jockey.</p>
 <p>Summarizations created to answer Exploratory Questions can differ radically in their ambition. At one end of the spectrum are simple summary statistics, like means, median, and standard deviations. These seek to provide a simple characterization of a single feature of a single variable. Slightly more ambitious are various forms of plots — like histograms (which are substantially richer than the aforementioned summary statistics) or scatter plots and heatmaps (which provide substantial granularity and communicate information about the relationship between different variables). The most ambitious efforts make use of multivariate regressions and unsupervised machine learning algorithms to model what they call the <em>Data Generating Process</em> (DGP) — the actual physical or social processes that gave rise to the data you observe, and which (hopefully) can be represented in a relatively parsimonious manner, much as the relatively simple laws of physics give rise to the orbits of the planets and the complexity of life.</p>
 <p>To illustrate what I mean by trying to deduce something about the data-generating process, suppose you are a medical researcher interested in a poorly understood disease like Chronic Fatigue Syndrome (CFS). It is generally agreed that CFS is more of a label for a constellation of symptoms than an understood physical ailment, and you have a hypothesis that the symptoms of CFS aren’t actually caused by a single biological dysfunction, but rather that multiple distinct biological dysfunctions give rise to similar symptoms that we have mistakenly grouped under this same umbrella term. In other words, you think that the data-generating process that gives rise to patients diagnosed with Chronic Fatigue Syndrome consists of two distinct diseases.</p>
 <p>You’re fortunate enough to have detailed patient data on people diagnosed with the condition, but it’s impossible for you to just look at these gigabytes of thousands of patient records and “see” any meaningful patterns. You need a way to filter out irrelevant data to identify the “signal” of these two conditions. To aid you in this question, you decide to ask “If you were to group patients into two groups so that the patients in each cluster looked as similar as possible, but patients in different clusters looked as <em>dissimilar</em> as possible, how would you group these patients?”</p>
 <p>This, you may recognize, is precisely the question clustering algorithms (a kind of unsupervised machine learning algorithm) are designed to answer! So you apply your clustering algorithm to the patient data and get back a partition of the patients into two distinct groups. This, in and of itself, doesn’t constitute a particularly <em>understandable</em> summarization of your data, but it provides a starting point for trying to investigate <em>diagnostically and biologically relevant</em> differences that exist between these populations. If one cluster included more patients reporting fatigue when doing any exercise, while another cluster reported they felt better when they exercised, but felt a high level of baseline fatigue that didn’t respond to sleep, that might suggest that the <em>data-generating process</em> for these patients was actually driven by two different biological processes. <em>And</em> it gives you a great starting point to prioritize your subsequent investigations into what might explain these differences!</p>
 </section>
 <section id="meaningful-patterns">
-<h3>Meaningful Patterns<a class="headerlink" href="#meaningful-patterns" title="Permalink to this heading">#</a></h3>
+<h3>Meaningful Patterns<a class="headerlink" href="#meaningful-patterns" title="Link to this heading">#</a></h3>
 <blockquote>
 <div><p>Creating (1) understandable summarizations <strong>(2) of meaningful patterns in the data,</strong> (3) and ensuring they are faithful representations of the data.</p>
 </div></blockquote>
@@ -448,7 +455,7 @@ document.write(`
 <p>Now, that analysis may not be <em>wrong</em> — you have properly characterized a pattern in the data — but it isn’t a pattern that’s meaningful to your stakeholder, who has no ability to regulate the livestock industry. That pattern might be meaningful to someone else — like a government regulator — but in this context, with this stakeholder, it just isn’t helpful. The features of the data that are important, in other words, depend on what we may be able to do in response to what we learn. And there’s no summary statistic, information criterion, or divergence metric that can evaluate whether a pattern of this type is <em>meaningful</em>.</p>
 </section>
 <section id="faithful-representations">
-<h3>Faithful Representations<a class="headerlink" href="#faithful-representations" title="Permalink to this heading">#</a></h3>
+<h3>Faithful Representations<a class="headerlink" href="#faithful-representations" title="Link to this heading">#</a></h3>
 <blockquote>
 <div><p>Creating (1) understandable summarizations (2) of meaningful patterns in the data, <strong>(3) and ensuring they are faithful representations of the data.</strong></p>
 </div></blockquote>
@@ -458,14 +465,14 @@ document.write(`
 <p>To illustrate the point, suppose I told you that in one university math course, the average grade was a B-. You might infer that students were doing pretty well! But now suppose I told you that in a different university math course, 20% of the students had gotten a 0 on the midterm and on the final—you would probably infer something was going seriously wrong in that class. And yet those two statistics could both be true of the same class—the only difference is what patterns in the data <em>I</em>, the data scientist, have decided are meaningful to communicate to you, the reader.</p>
 <p>The example of the math class in which the average grade was a B- and 20% of the students were failing also illustrates one of the great dangers of tools for data summarization: they are so eager to please, they will <em>always</em> provide you with an answer, whether that answer is meaningful or not. I think most readers would agree that learning that the average grade in the class was a B- actually misleads more than it informs (since for the class to have an average grade of 80% and a 20% fail rate, the grade distribution would need to be something like 20% 0’s and 80% 100’s). Indeed, it’s worth emphasizing that while hearing “the average grade is a B-” makes the reader think that most kids are doing ok-ish, the reality is that <em>no one</em> in the class is doing ok-ish! They’re either doing horribly or terrifically!</p>
 <p>Less that feel like a contrived example, consider the case of Aimovig, a drug authorized by the FDA in 2018 for treating chronic migraines that was heralded as a “game changer.”</p>
-<p>To get Aimovig authorized, the pharmaceutical companies developing (Amgen and Novartis) had to run a clinical trial in which a random sample of people with chronic migraines was given Aimovig (the treatment group) and a random sample was a placebo (the control group). Patients in the clinical trial self-reported how their migraine frequency changed when in the trial, and the effectiveness of Aimovig was then evaluated by comparing the decrease in self-reported migraines for those taking Aimovig (on average, a decrease of 6-7 migraines a month) to the decrease in self-reported migraines for those taking a placebo (on average, a decrease of 4 migraines a month).<a class="footnote-reference brackets" href="#placebo" id="id2">2</a> This difference of 2-3 migraines a month — called the “Average Treatment Effect” of the trial — was found to be positive and statistically significant, and so the drug was authorized. Indeed, if you see an ad for Aimovig, you’ll probably see the average effect of the drug reported in the same way:</p>
+<p>To get Aimovig authorized, the pharmaceutical companies developing (Amgen and Novartis) had to run a clinical trial in which a random sample of people with chronic migraines was given Aimovig (the treatment group) and a random sample was a placebo (the control group). Patients in the clinical trial self-reported how their migraine frequency changed when in the trial, and the effectiveness of Aimovig was then evaluated by comparing the decrease in self-reported migraines for those taking Aimovig (on average, a decrease of 6-7 migraines a month) to the decrease in self-reported migraines for those taking a placebo (on average, a decrease of 4 migraines a month).<a class="footnote-reference brackets" href="#placebo" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> This difference of 2-3 migraines a month — called the “Average Treatment Effect” of the trial — was found to be positive and statistically significant, and so the drug was authorized. Indeed, if you see an ad for Aimovig, you’ll probably see the average effect of the drug reported in the same way:</p>
 <p><img alt="migraine_average_effect" src="../_images/migraine_average_effect.png" /></p>
 <p>That’s great! Chronic migraines can be a crippling disability, so any improvement in treatment is exciting. But you would be excused for asking why people were getting <em>so</em> excited about what seems like a relatively small reduction in migraines.</p>
 <p>The answer, as it turns out, is that almost nobody experiences this “average effect.” Instead, <em>most</em> people who take Aimovig see little to no benefit, but <em>some</em> (depending on your criteria, something like 40%) see their migraine frequency fall by 50% or more. Amgen and Novartis don’t yet know how to identify who will benefit and who will not before they try the drug, and we don’t allow drug companies to “move the goalposts” after a clinical trial has already started by changing the way they plan to measure the effectiveness of a drug (for fear they will hunt through the data till they find a spurious correlation that makes it look like the drug works when it really doesn’t), so this average effect remains the only statistic that Amgen and Novartis are allowed to report in their advertising.</p>
 <p>But if you’re a <em>doctor</em> or a <em>patient</em>, it seems clear that this simple average effect — a reduction of 2-3 migraines a month — really does not provide a <em>faithful</em> summary of the underlying variation.</p>
 </section>
 <section id="but-i-thought-unsupervised-machine-learning-always-found-the-best">
-<h3>But… I Thought Unsupervised Machine Learning Always Found The “Best”<a class="headerlink" href="#but-i-thought-unsupervised-machine-learning-always-found-the-best" title="Permalink to this heading">#</a></h3>
+<h3>But… I Thought Unsupervised Machine Learning Always Found The “Best”<a class="headerlink" href="#but-i-thought-unsupervised-machine-learning-always-found-the-best" title="Link to this heading">#</a></h3>
 <p>“Fine,” I hear you say, “that makes sense for simple summary statistics. Those are computed by simple formulas. But what about unsupervised machine learning algorithms or generalized additive models? Those use numerical optimization to find the <em>best</em> answer!”</p>
 <p>Well… yes and no. As you may recall, in the first chapter of the book I posited that all data science algorithms are just fancy tools for answering questions, and even the most sophisticated unsupervised machine learning algorithms are no exception. While it is true that the machinery that underlies these algorithms is much more sophisticated than the formula we use for calculating a variable’s average, it is important to not attribute too much intelligence to these tools.</p>
 <p>Underlying any unsupervised machine learning algorithm is a simple formula that takes as input whatever parameters the algorithm gets to choose (be those factor loads in a PCA model, or the assignment of observations to clusters in a clustering algorithm) and returns as output a single number. Often this number is called “loss,” and the function is called a “loss function,” but occasionally different terminology will be used.</p>
@@ -475,7 +482,7 @@ document.write(`
 <p>It’s up to you, the data scientist, to evaluate whether the answers these algorithms provide to relatively myopic questions give a meaningful picture of the data.</p>
 </section>
 <section id="myopic-tools">
-<h3>Myopic Tools<a class="headerlink" href="#myopic-tools" title="Permalink to this heading">#</a></h3>
+<h3>Myopic Tools<a class="headerlink" href="#myopic-tools" title="Link to this heading">#</a></h3>
 <p>This last point is illustrative of a more general point: data science tools are incredibly powerful at finding answers to questions of the form “If my goal is to minimize X, how should I do it?” type questions — answers you may have never figured out in millions of years! — but their power lies in figuring out the best way to accomplish an articulated goal, <em>not</em> in figuring out what goal to pursue.</p>
 <p>This is true at both the macro level (doesn’t make sense to look for clusters in my data?) and also at the micro level (when assigning observations to clusters, how do I measure success?). Hidden inside nearly all algorithms you use are a handful of baked-in choices you may not even realize are being made for you. Take clustering, for example. In general, when clustering observations, one has two objectives: maximize the similarity of observations within each cluster and maximize the <em>dis</em>similarity of observations in different clusters. But what you might not have thought about very much is that there’s an inherent tension between these two objectives — after all, the best way to maximize the similarity of observations within each cluster is to only assign observations to the same cluster if they are identical (a choice that creates lots and lots of very small clusters). And the best way to maximize <em>dis</em>similarity between clusters is to only put <em>really really</em> different observations in different clusters (resulting in a few really big clusters). So how is your clustering algorithm balancing these two considerations? Is the algorithm’s choice of how to balance them in any way a reflection of the balance that makes the most sense in the context of your stakeholder’s problem? (I’ll give you a hint — the algorithm sure can’t answer that question, so you’d better be able to!)</p>
 <p>Discretion: it’s everywhere, and you’re exercising it, whether you realize it or not.</p>
@@ -560,14 +567,16 @@ But there's a challenge that's inherent to this type of process of simplificatio
 <!-- clustering algorithms / naming the clusters / Netflix-->
 <!-- infections by, say, removing fabric chairs that are hard to disinfect, the location of infections is likely important. If, by contrast, you were brought in by someone studying how the ways antibiotics were prescribed impacted infections, you would instead want to focus on the treatment histories of patients. And if you were hired by the hospital itself which just wanted to reduce infections by any means possible, you'd want to study both to know where future efforts might be best targeted. -->
 <hr class="footnotes docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="eda"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Although I am far from convinced that the discipline has tried particularly hard to teach it (<a class="reference internal" href="07_eda.html"><span class="doc std std-doc">see my screed against “EDA”</span></a>).</p>
-</dd>
-<dt class="label" id="placebo"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
-<dd><p>A placebo is a “fake” treatment given to patients in clinical trials. Despite not being biologically active — placebos are often simple saline or sugar pills — most patients on placebos see their condition improve when dealing with subjective conditions, like pain.</p>
-</dd>
-</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="eda" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Although I am far from convinced that the discipline has tried particularly hard to teach it (<a class="reference internal" href="#07_eda.ipynb"><span class="xref myst">see my screed against “EDA”</span></a>).</p>
+</aside>
+<aside class="footnote brackets" id="placebo" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>A placebo is a “fake” treatment given to patients in clinical trials. Despite not being biologically active — placebos are often simple saline or sugar pills — most patients on placebos see their condition improve when dealing with subjective conditions, like pain.</p>
+</aside>
+</aside>
 </section>
 </section>
 </section>

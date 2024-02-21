@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Internal versus External Validity &#8212; Solving Problems With Data</title>
   
@@ -29,41 +28,37 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = '30_questions/17_exploratory_questions_internal_external';</script>
-    <link rel="shortcut icon" href="../_static/logo.jpg"/>
+    <link rel="icon" href="../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Using Passive Prediction Questions" href="20_using_passive_prediction_questions.html" />
@@ -161,7 +156,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -191,6 +197,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Causal Inference</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../35_causal/10_potential_outcomes.html">The Potential Outcomes Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../35_causal/30_interpreting_indicator_vars.html">Indicator Variables</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Science in Practice</span></p>
 <ul class="nav bd-sidenav">
@@ -418,25 +425,25 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="internal-versus-external-validity">
-<h1>Internal versus External Validity<a class="headerlink" href="#internal-versus-external-validity" title="Permalink to this heading">#</a></h1>
+<h1>Internal versus External Validity<a class="headerlink" href="#internal-versus-external-validity" title="Link to this heading">#</a></h1>
 <p>It is at this point I have to come clean about having employed a… small indirection. At the top of this reading, I introduced the idea that answering Exploratory Questions boiled down to creating (1) understandable summarizations (2) of meaningful patterns, and (3) ensuring those summaries faithful represent the data. But that three-part objective is actually only one-half of answering an Exploratory Question. More specifically, those are the three components of ensuring high <em>internal validity</em> when answering an Exploratory Question. But to generate a truly useful answer to an Exploratory Question, your analysis must also have high <em>external validity</em>.</p>
 <p>Essentially, <em>internal validity</em> is a measure of how well you have analyzed <em>the data you have</em>, while <em>external validity</em> is how well you expect the answer you generated from that data to generalize to your stakeholder’s context. Internal and external validity arise when answering <em>any</em> data science question, and so these two concepts are ones that we will return to time and again in this book.</p>
 <p>While the idea of internal validity will feel familiar to anyone who has taken a statistics of machine learning course, external validity is often less discussed in the classroom. This is not because it is less <em>important</em> than internal validity. One reason for this is that it is harder to evaluate external validity using statistical methods, causing some instructors to think of it as “outside the scope” of a statistics course. But the second reason I suspect this occurs is more subtle: while a given analysis may be said to have good or bad internal validity, it cannot be said to have good or bad external validity. Rather, the external validity of a study must always be evaluated <em>with respect to a specific context to which one wishes to generalize the findings.</em></p>
 <p>This means that external validity is different from internal validity in an important way: when faced with the same facts about a study, everyone should <em>generally</em> agree on the internal validity of a study, but the external validity of a study really depends on how you want to use the results. A study of medical care provided to Duke undergraduates may have very <em>good</em> external validity with respect to undergraduate students at Emory, UNC, Vanderbilt, and other elite universities with associated research hospitals (that is, the conclusion of the study of Duke students is likely to also be valid for those other students). But that same study may have <em>poor</em> external validity with respect to lower income students attending community colleges that have less comprehensive student health insurance and no top-tier associated hospital system. And it would certainly have terrible external validity with respect to all Americans, never mind people living in other countries.</p>
 <section id="interval-v-external-validity-an-example">
-<h2>Interval v. External Validity: An Example<a class="headerlink" href="#interval-v-external-validity-an-example" title="Permalink to this heading">#</a></h2>
+<h2>Interval v. External Validity: An Example<a class="headerlink" href="#interval-v-external-validity-an-example" title="Link to this heading">#</a></h2>
 <p>To illustrate what is meant by these terms, suppose you’ve been hired by a car manufacturer. Through extensive market research, they have determined that if they can improve the safety of their cars, they could dramatically improve the image of their brand. They have turned to you, their in-house data scientist, to help them determine what safety enhancements they should focus on developing.</p>
-<p>To help them prioritize their efforts, you decide it would be useful to begin by better understanding the predominant causes of major accidents. After all, if 95% of accidents were caused by mechanical failures, bad weather, and drunk drivers, then even a perfect system for preventing drowsy driving accidents could only reduce accidents by 5% at best!<a class="footnote-reference brackets" href="#safety-v-customer-perceptions" id="id1">1</a></p>
+<p>To help them prioritize their efforts, you decide it would be useful to begin by better understanding the predominant causes of major accidents. After all, if 95% of accidents were caused by mechanical failures, bad weather, and drunk drivers, then even a perfect system for preventing drowsy driving accidents could only reduce accidents by 5% at best!<a class="footnote-reference brackets" href="#safety-v-customer-perceptions" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
 <p>The best source of accident investigations of which you are aware is the <a class="reference external" href="https://www.nhtsa.gov/data">US National Highway Traffic Safety Administration’s</a> National Center for Statistics and Analysis (NCSA). Using their <em>Crash Reporting Sampling System</em>, the NCSA collects and publishes data from “nationally representative sample of police-reported traffic crashes, which estimates the number of police-reported injury crashes and property-damage-only crashes in the United States,” as well as data on all fatal accidents collected through their <em>Fatality Analysis Reporting System</em>.</p>
 <p>The NCSA provides you with data on police-reported accidents from the Crash Reporting Sampling System and all fatal accidents from the Fatality Analysis Reporting System from the past 5 years (2018-2023). As you turn to using this data to analyze the causes of severe accidents for your stakeholder, what internal and external validity concerns might you have in the back of your mind?</p>
 <section id="internal-validity-concerns">
-<h3>Internal Validity Concerns<a class="headerlink" href="#internal-validity-concerns" title="Permalink to this heading">#</a></h3>
+<h3>Internal Validity Concerns<a class="headerlink" href="#internal-validity-concerns" title="Link to this heading">#</a></h3>
 <p>Internal validity concerns, in this context, relate to your ability to properly characterize the causes of severe accidents in this data. The first of these concerns are those discussed in our previous two readings — namely, whether the summarizations of accident causes you generate from this data are meaningful and faithful representations of the patterns in the data.</p>
 <p>But internal validity concerns also extend to things like concerns over the accuracy with which things are measured. For example, it’s reasonable to ask “How well do police accident reports capture the true causes of an accident?” Some factors — like whether a driver was intoxicated — are easy to verify after the fact in major accidents. Other factors, however, may have contributed to accidents — and be easier to address with driver assistance systems — but may have been too hard to verify for the police to put in their reports. For example, maybe weak headlights prevented the driver from seeing a change in the speed limit (causing the documented cause of the accident: speeding). Or perhaps one driver was unable to see an approaching vehicle on a cross street due to width of the A-piller (that piece of metal running vertically between the front windshield and front side window). Or “weather” may be invoked as a cause in an accident when what was really at play was that the driver had the wipers on too low of a setting (and automatic wipers would have adjusted more quickly, preventing the accident).</p>
 <p>All of these are question about whether our summarization of the <strong>data</strong> provides a proper characterization of <strong>the world</strong> for the period and group we think are covered.</p>
 </section>
 <section id="external-validity-concerns">
-<h3>External Validity Concerns<a class="headerlink" href="#external-validity-concerns" title="Permalink to this heading">#</a></h3>
+<h3>External Validity Concerns<a class="headerlink" href="#external-validity-concerns" title="Link to this heading">#</a></h3>
 <p>But worrying about whether we really understand the world covered by our data is only half the battle. After all, our stakeholders aren’t planning to go back in time 5 years and add a new driver safety system to their cars starting in 2018; they’re thinking of developing this safety system to use <em>in the future</em>. So what do we think is the <em>external validity</em> of findings from 2018-2023 to the next ten years?</p>
 <p>To answer this question, we need to consider how the next ten years might differ from the last five <em>in ways that are relevant to the phenomenon we care about</em> (here, the causes of car accidents).</p>
 <p>First, since time will have passed between when the crash data was collected and when the new feature rolls out, one might reasonably assume that trends in accident causes during the 2018-2023 period are likely to continue. In light of that, a thoughtful data scientist may wish to pay extra attention to whether there are clear <em>trends</em> in accident causes, and in what direction they are trending.</p>
@@ -446,18 +453,18 @@ document.write(`
 <p>Source: Taken from the US Department of Transportation NHTSA’s <a class="reference external" href="https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/813266"><em>Overview of Motor Vehicle Crashes in 2020</em></a></p>
 <p>Given that, a thoughtful data scientist may wish to be sure that any patterns identified in this five-year period are robust to exclusion of 2020-2022 before making any predictions about the likelihood these patterns would persist in later years.</p>
 <section id="other-contexts">
-<h4>Other Contexts<a class="headerlink" href="#other-contexts" title="Permalink to this heading">#</a></h4>
+<h4>Other Contexts<a class="headerlink" href="#other-contexts" title="Link to this heading">#</a></h4>
 <p>The preceding discussion assumed an interest in US accidents, but of course most car companies that sell cars in the US also sell cars in Asia and Europe. The issues raised above are examples of what I would contend are relatively <em>small</em> threats to the external validity of findings based on data from 2018-2023 with respect to near-future US accidents (at least provided the patterns aren’t driven by the pandemic period).</p>
 <p>But external validity to Asian or European markets would be a much bigger concern. Because traffic laws, speed limits, alcohol laws, and how roads are constructed and laid out are all very different in different regions of the world, it seems quite unlikely that patterns identified in US accident data would have much external validity to Asian or European auto markets.</p>
 </section>
 </section>
 </section>
 <section id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h2>
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
 <p>Internal and External Validity are both key concepts for being an effective data scientist, and they are concepts to which we will return regularly in this book. Moreover, they are goals that are sometimes in tension — the more control one has over a study context, the more likely one is to have good Internal Validity; but that control can often create an artificiality to limits External Validity. Thus Internal and External Validity should not necessarily be thought of as things to try and simultaneously maximize at all costs; rather, they are best thought of as distinct features of any analysis that should always be considered. I would also add that, of the two, I would argue that External Validity — while not more important in and of itself — is the more often overlooked.</p>
 </section>
 <section id="reading-reflection-questions">
-<h2>Reading Reflection Questions<a class="headerlink" href="#reading-reflection-questions" title="Permalink to this heading">#</a></h2>
+<h2>Reading Reflection Questions<a class="headerlink" href="#reading-reflection-questions" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Why is the External Validity of a study only defined with respect to a given context?</p></li>
 <li><p>A group of Duke doctors wishes to understand exercise behavior in patients who have recently experienced cardiac surgery. To measure exercise behavior, they surveyed their patients post-surgery about their exercise behavior. But one doctor on the team is concerned that people may mis-report their exercise (the patients know they’re <em>supposed</em> to be exercising, so the doctor is concerned they will report they are exercising even if they are not). Is this an Internal or External Validity concern?</p></li>
@@ -515,11 +522,12 @@ This is an example of what economists call a "general equilibrium" effect -- whe
 
 Relatedly: if you are a public policy person or an economic development person, I cannot recommend [this paper](https://www.nber.org/papers/w22595) by Angus Deaton and Nancy Cartwright enough for discussing the limitations of RCTs for learning about the effects of policy or nature of social processes. It's a long, very thoughtful paper, but it's really, *really* good. -->
 <hr class="footnotes docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="safety-v-customer-perceptions"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>It is worth noting that if the goal of the company is to improve brand image and sales — rather than improve safety as much as possible — then what matters is not what <em>actually</em> causes the most accidents, but rather what customer <em>perceive</em> causes the most accidents. But let us assume — for the sake of this exercise — that your employer’s interest in reducing accidents is sincere. If there is a divergence between customer perceptions and the reality of accident causes, that could be addressed with additional information embedded in any advertisements of the feature being developed.</p>
-</dd>
-</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="safety-v-customer-perceptions" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>It is worth noting that if the goal of the company is to improve brand image and sales — rather than improve safety as much as possible — then what matters is not what <em>actually</em> causes the most accidents, but rather what customer <em>perceive</em> causes the most accidents. But let us assume — for the sake of this exercise — that your employer’s interest in reducing accidents is sincere. If there is a divergence between customer perceptions and the reality of accident causes, that could be addressed with additional information embedded in any advertisements of the feature being developed.</p>
+</aside>
+</aside>
 </section>
 </section>
 

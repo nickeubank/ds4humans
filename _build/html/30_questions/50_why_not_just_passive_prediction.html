@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Why Passive-Prediction Is Not Enough &#8212; Solving Problems With Data</title>
   
@@ -29,41 +28,37 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = '30_questions/50_why_not_just_passive_prediction';</script>
-    <link rel="shortcut icon" href="../_static/logo.jpg"/>
+    <link rel="icon" href="../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -161,7 +156,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -191,6 +197,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Causal Inference</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../35_causal/10_potential_outcomes.html">The Potential Outcomes Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../35_causal/30_interpreting_indicator_vars.html">Indicator Variables</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Science in Practice</span></p>
 <ul class="nav bd-sidenav">
@@ -415,14 +422,14 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="why-passive-prediction-is-not-enough">
-<h1>Why Passive-Prediction Is Not Enough<a class="headerlink" href="#why-passive-prediction-is-not-enough" title="Permalink to this heading">#</a></h1>
+<h1>Why Passive-Prediction Is Not Enough<a class="headerlink" href="#why-passive-prediction-is-not-enough" title="Link to this heading">#</a></h1>
 <p>The saying “correlation does not imply causation” is bandied about around so regularly that for many of us, it begins to lose any meaning. Indeed, it is almost a cliché for data science students to end any presentation of statistical analyses with “but of course, correlation does not imply causation, so we don’t really know,” as though invocation of the phrase absolves them of responsibility for preceding interpretation of correlations as suggesting a causal relationship.</p>
 <p>But for all its popularity, the saying “correlation does not imply causation” is frustrating because it’s not <em>useful</em>, and that’s because what people mean when they say “correlation does not imply causation” is actually “correlation does not <em>necessarily</em> imply causation,” and that more accurate presentation makes clear a useful corollary: “correlation does not <em>necessarily</em> imply causation, but in certain situations, correlation <em>does</em> imply causation!”.</p>
 <p>So let’s pause for a moment to try and understand <em>why</em> correlation does not necessarily imply causation so that we can better understand what must be true for a correlation to actually imply causation!</p>
 <p>Let’s return to our example of a hospital trying to identify what patients are most likely to experience complications after surgery. They have lots of historical data on patients before and after surgery, and they can feed this into a simple logistic regression to find out pre-surgery patient characteristics predict complications. They do so, and find that the model performs extremely well — it identifies nearly all the patients who end up having complications, and the false positive rate is still relatively low. They deploy the model throughout the hospital, and nurses begin to followup more aggressively with patients flagged as being likely to have complications. For the purpose of <em>identifying individual patients for additional attention</em>, this effort to answer the Passive-Predictive Question “which patients are most likely to experience post-surgical complications” has been a huge success.</p>
 <p>BUT: now suppose a doctor looks this logistical regression and finds that one of the strongest predictors of complications is whether the patient has high blood pressure prior to surgery. This association is clearly helping to identify patients who are likely to have complications, but does it imply that high blood pressure is <em>causing</em> patients to experience complications?</p>
 <section id="back-to-blood-pressure">
-<h2>Back to Blood Pressure<a class="headerlink" href="#back-to-blood-pressure" title="Permalink to this heading">#</a></h2>
+<h2>Back to Blood Pressure<a class="headerlink" href="#back-to-blood-pressure" title="Link to this heading">#</a></h2>
 <p>OK, so now we know what is meant when we asked whether “high blood pressure causes surgical complications” — it means that if the patients who have high blood pressure didn’t have high blood pressure, then they would be less likely to have surgical complications!</p>
 <p>So we give all the patients with high blood pressure medication to reduce their blood pressure and wait.</p>
 <ul class="simple">
@@ -431,10 +438,10 @@ document.write(`
 </section>
 </section>
 <section id="what-makes-answering-a-causal-question-different-from-a-passive-predictive-question">
-<h1>What Makes Answering A Causal Question Different from a Passive Predictive Question?<a class="headerlink" href="#what-makes-answering-a-causal-question-different-from-a-passive-predictive-question" title="Permalink to this heading">#</a></h1>
+<h1>What Makes Answering A Causal Question Different from a Passive Predictive Question?<a class="headerlink" href="#what-makes-answering-a-causal-question-different-from-a-passive-predictive-question" title="Link to this heading">#</a></h1>
 </section>
 <section id="acting-on-the-world">
-<h1>Acting on the World<a class="headerlink" href="#acting-on-the-world" title="Permalink to this heading">#</a></h1>
+<h1>Acting on the World<a class="headerlink" href="#acting-on-the-world" title="Link to this heading">#</a></h1>
 <p>Nearly all Causal Questions are motivated by a stakeholder’s desire to know the consequences of a certain action. Again, this action could take almost any form, from changing the prices of a product to changing the design of a website or rolling out a new government health insurance system. <em>Usually</em>, this action will not have been pulled out of a hat — rather, one generally poses a Causal Question because one has some reason for thinking a given course of action may be a good one. For example, someone interested in reducing surgical complications may have discovered that patients with high blood pressure are more likely to experience complications from surgery (they observed a <em>correlation</em> between these two outcomes), so now they want to know if giving patients who experience high blood pressure medication to bring down their blood pressure before surgery would reduce complications. Or perhaps your online retailer stakeholder has noticed that one of your competitors has stopped showing customer reviews in the search results, so they suspect it must be improving sales for your competitor and want to know if it would work for your site too.</p>
 </section>
 

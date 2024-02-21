@@ -24,6 +24,8 @@ parts:
   - caption: Causal Inference
     chapters:
       - file: 35_causal/10_potential_outcomes
+      - file: 35_causal/30_interpreting_indicator_vars
+        title: Indicator Variables
   - caption: Data Science in Practice
     chapters:
       - file: 40_in_practice/00_backwards_design

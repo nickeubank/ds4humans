@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Answering Causal Questions &#8212; Solving Problems With Data</title>
   
@@ -29,43 +28,39 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '30_questions/40_answering_causal_questions';</script>
-    <link rel="shortcut icon" href="../_static/logo.jpg"/>
+    <link rel="icon" href="../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="The Potential Outcomes Framework" href="../35_causal/10_potential_outcomes.html" />
@@ -163,7 +158,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -193,6 +199,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Causal Inference</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../35_causal/10_potential_outcomes.html">The Potential Outcomes Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../35_causal/30_interpreting_indicator_vars.html">Indicator Variables</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Science in Practice</span></p>
 <ul class="nav bd-sidenav">
@@ -415,11 +422,11 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="answering-causal-questions">
-<h1>Answering Causal Questions<a class="headerlink" href="#answering-causal-questions" title="Permalink to this heading">#</a></h1>
+<h1>Answering Causal Questions<a class="headerlink" href="#answering-causal-questions" title="Link to this heading">#</a></h1>
 <p>In this reading, we turn the surprisingly slippery question “What do we mean when we say X causes Y, and how do we measure the effect of an action <span class="math notranslate nohighlight">\(X\)</span> (e.g., administering a new drug to a patient, or showing an ad to a user) on an outcome <span class="math notranslate nohighlight">\(Y\)</span> (patient survival, customer spending, etc.)?”</p>
 <p>This section will, at times, feel a little abstract and woo-woo, but please hang in there. Answering Causal Questions is as much about critical thinking as it is about statistics, and the concepts introduced here will prove crucial to your ability to be effective in this space.</p>
 <section id="what-does-it-mean-for-x-to-cause-y">
-<h2>What Does It Mean for X to Cause Y?<a class="headerlink" href="#what-does-it-mean-for-x-to-cause-y" title="Permalink to this heading">#</a></h2>
+<h2>What Does It Mean for X to Cause Y?<a class="headerlink" href="#what-does-it-mean-for-x-to-cause-y" title="Link to this heading">#</a></h2>
 <p>To understand what it means to answer a Causal Question, and why answering Causal Questions is intrinsically hard, we must start by taking a step back to answer the question: “what do we mean when we say some action X <em>causes</em> a change in some outcome Y?”</p>
 <p>Seriously, what do we mean when we say “X causes Y?” Try and come up with a definition!</p>
 <p>While this question may <em>seem</em> simple, it turns out that this question has been the subject of serious academic debate for hundreds of years by philosophers no less famous than David Hume. Indeed, even today there is still debate over how best to answer this question.</p>
@@ -430,14 +437,14 @@ document.write(`
 </aside>
 </section>
 <section id="measuring-the-effect-of-x-on-y">
-<h2>Measuring the Effect of X on Y<a class="headerlink" href="#measuring-the-effect-of-x-on-y" title="Permalink to this heading">#</a></h2>
+<h2>Measuring the Effect of X on Y<a class="headerlink" href="#measuring-the-effect-of-x-on-y" title="Link to this heading">#</a></h2>
 <p>At first blush, this definition may seem simple. But its simplicity belies a profoundly difficult practical problem. See, this definition relies on <em>comparing</em> the value of our outcome Y in two states of the world: the world where we do X, and the world where we don’t do X. But as we only get to live in one universe, we can never perfectly know what the value of our outcome Y would be in <em>both</em> a world where we do X and one where we don’t do X for a given entity at a given moment in time. As such, we can <strong>never</strong> directly measure the causal effect of X on Y for a given entity (say, a given patient or customer) at a given moment in time — a problem known as the <strong>Fundamental Problem of Causal Inference</strong> (<code class="docutils literal notranslate"><span class="pre">causal</span> <span class="pre">inference</span></code> being what people call the practice of answering Causal Questions).</p>
 <p>To illustrate, suppose we were interested in the effect of taking a new drug (our X) on cancer survival (our Y) for a given patient (a woman named Shikha who arrived at the hospital on June 18th 2022). We can give her the drug and evaluate whether she is still alive a year later, but that alone can’t tell us whether the new drug <em>caused</em> her survival according to our counterfactual model of causality — after all, if she survives maybe she would have survived even without the drug! To actually know the effect of the drug on Shikha <em>by direct measurement,</em> we would have to be able to measure her survival both in the world where we gave her the drug <em>and</em> the world where we did not and compare outcomes.</p>
 <p>Since we can never see both states of the world — the world where we undertake the action whose effect we want to understand and the world where we don’t — almost everything we do when trying to answer Causal Questions amounts to trying to find something we <em>can</em> measure that we think is a <em>good approximation</em> of the state of the world we can’t actually see.</p>
 <p>A quick note on vocabulary: by convention, we refer to the action whose effect we want to understand as a “treatment,” and the state of the world where an entity receives the treatment as the “treated condition.” Similarly, we refer to the state of the world where an entity does <em>not</em> receive the treatment as the “control condition.” We use this language even when we aren’t talking about medical experiments or even experiments at all. We also refer to the state of the world we cannot observe as the “counterfactual” of the world we can observe — so the world where Shikha does not get the cancer drug is the <em>counterfactual condition</em> to the world where Shikha does get the drug.</p>
 <p>It’s at this point most people start throwing out “but what about…“‘s, and that’s good! You should be — that’s exactly the kind of thinking you have to do when trying to answer Causal Questions. For example, “what about if we measured the size of Shikha’s tumor before she took the drug and compared it to the size of her tumor after? If the tumor got smaller as soon as she started the drug, then surely the drug caused the tumor to shrink!”</p>
 <p>Maybe! Implicitly, what you have done is asserted that you think that the size of Shikha’s tumor before we administered the drug is a good approximation for what you think the size of Shikha’s tumor <em>would have been</em> had we not given her the drug.</p>
-<p>But this type of comparison will always fall short of the Platonic ideal given by our definition of causality. Yes, Shikha’s tumor <em>may</em> have stayed the same size if we had not given her the drug (in which case the size of the tumor before she took the drug would be a good approximation), but it is also possible that regardless of whether we’d given her the drug, her cancer would have shrunk on its own.<a class="footnote-reference brackets" href="#natural-history" id="id1">1</a></p>
+<p>But this type of comparison will always fall short of the Platonic ideal given by our definition of causality. Yes, Shikha’s tumor <em>may</em> have stayed the same size if we had not given her the drug (in which case the size of the tumor before she took the drug would be a good approximation), but it is also possible that regardless of whether we’d given her the drug, her cancer would have shrunk on its own.<a class="footnote-reference brackets" href="#natural-history" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
 <p>According to the Counterfactual Model of Causality, we could only ever <em>know</em> if taking the drug caused a decrease in tumor size if we could both administer the drug and observe the tumor <em>and also observe a parallel world in which the same person at the same moment in time was not given the drug for comparison</em>. And since we can never see this parallel world — the <em>counterfactual</em> to the world we observe — the best we can do is come up with different, imperfect tricks for <em>approximating</em> what might have happened in this parallel world, like comparing the tumor size before and after we administer the drug, imperfect though that may be.</p>
 <p>So does that mean we’re doomed? Yes and no. Yes, it <em>does</em> mean that we’re doomed to never be able to take the exact measurements that make it possible to directly answer a Causal Question. But no, that doesn’t mean we can’t do anything — in the coming weeks, we will learn about different strategies for approximating counterfactual conditions, and in each case we will learn about what <em>assumptions</em> must be true for our strategy to provide a valid answer to our Causal Question. By making the assumptions that underlie each empirical strategy explicit, we will then be able to evaluate the plausibility of these assumptions.</p>
 <p>In the example of Shikha, for example, we know that our comparison of tumor size before taking the drug to tumor size after taking the drug is only valid if her tumor <em>would not have gotten smaller without the drug</em>. This is something we can’t measure directly, but we can look to other patients with similar tumors, or the history of her tumor size to evaluate how often we see tumors get smaller at the rate observed after she took the drug. If it’s very rare for these types of tumors to ever get smaller, than we can have more confidence that a decrease in tumor size was the result of the drug.</p>
@@ -446,12 +453,12 @@ document.write(`
 <p>Randomized experiments are not a silver bullet, however. The validity of experimental comparisons still rests on a number of assumptions, many of which cannot be directly tested. For example, we can never be entirely sure that when we randomly assigned people to control and treatment groups, the process was truly random, or that we ended up with people who were similar in both groups (the law of large numbers only promises that getting similar groups becomes <em>more likely</em> as the size of the groups increases, not that it will happen with certainty!). Moreover, conducting a randomized experiment requires working in a context where the researcher can control everything, and that can sometimes generate results that may not generalize to the big messy world where you actually want to act.</p>
 </section>
 <section id="so-where-does-that-leave-us">
-<h2>So where does that leave us?<a class="headerlink" href="#so-where-does-that-leave-us" title="Permalink to this heading">#</a></h2>
+<h2>So where does that leave us?<a class="headerlink" href="#so-where-does-that-leave-us" title="Link to this heading">#</a></h2>
 <p>For many data scientists, this will feel <em>profoundly</em> dissatisfying. Many people come to data science because of the promise that it will provide direct answers to questions about the world using statistics. But because of the Fundamental Problem of Causal Inference, this will never be possible when answering Causal Questions. Rather, the job of a data scientist answering Causal Questions is a lot like the job of a detective trying to solve a crime — your task is to determine what <em>probably</em> happened at a crime scene. You can gather clues, collect forensic evidence, and interview suspects, all in an effort to come up with the <em>most likely</em> explanation for a crime. But no matter how hard you try, you can’t go back in time to witness the crime itself, so you will never be able to be entirely sure if you are right or not.</p>
 <p>But just as we investigate and prosecute crimes despite our inability to ever be 100% certain an arrested suspect is guilty, so too must businesses and governments make decisions using the best available evidence, even when that evidence is imperfect. But it is our job, as data scientists, to help provide our stakeholders with the best available evidence, and also to help them understand the strength of the evidence we are able to provide.</p>
 </section>
 <section id="why-passive-prediction-is-not-enough">
-<h2>Why Passive-Prediction Is Not Enough<a class="headerlink" href="#why-passive-prediction-is-not-enough" title="Permalink to this heading">#</a></h2>
+<h2>Why Passive-Prediction Is Not Enough<a class="headerlink" href="#why-passive-prediction-is-not-enough" title="Link to this heading">#</a></h2>
 <p>At this point, it is worth pausing to reflect on a question it may not have occurred to you to ask above — if answering Causal Questions is usually about <em>predicting</em> what would happen if we were to act on the world in a certain way, then how/why is it different from answering the kind of Passive-Prediction Questions we discussed previously?</p>
 <p>There are a number of different ways one can frame the answer to this question, but the one I like most for Data Scientists is that  when answering a Passive-Predictive Question, we can usually achieve our goals simply by identifying <em>correlations</em> that we think are likely to persist into the future. For example, suppose we run the maintenance department for a rental car company. The fact that a car whose <em>Check Engine</em> light is on is a car that is likely to break down if it isn’t taken to a mechanic is enough for us to identify cars in trouble! Obviously, the <em>Check Engine</em> light isn’t <em>causing</em> the cars to break down, but it doesn’t have to to be useful.</p>
 <p>But when seeking to answer Causal Questions, we wish to go beyond just identifying cars in trouble, and instead predict what might happen to cars if we <em>chose to act</em> in different ways. This requires going beyond simple Passive-Prediction because, in choosing to act, we are asking about how things might turn out in a world where we are behaving differently than we are currently — in other words, we are no longer being passive.</p>
@@ -463,15 +470,16 @@ document.write(`
 <p>Depending on what classes you may have taken in the past, you may have heard these differences referred to as “confounders” or “omitted variables” — those are just different words or ways of talking about the same idea! Confounders or omitted variables are just different words for features that are different between the “treated” and “untreated” observations being examined that the untreated observations are bad approximations of the counter-factual condition for the treated observations!</p>
 </section>
 <section id="next-steps">
-<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this heading">#</a></h2>
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Link to this heading">#</a></h2>
 <p>In this reading, we learned — in an intuitive sense — why answering Causal Questions is inherently hard. But this explanation, while accurate, is a little informal to be rigorous. In the readings that follow, we will be introduced to the <em>Potential Outcomes Framework</em> — the formal statistical framework that underlies the Neyman-Rubin Counterfactual Model of Causality. This framework will help us reason more systematically about how and when methods like randomized experiments, linear regression, matching, and differences-in-differences can help us answer Causal Questions.</p>
 <p>But first, in the interest of not losing perspective on the forest for the trees, a discussion of <em>how</em> Causal Questions are used in practice.</p>
 <hr class="footnotes docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="natural-history"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>The fact that diseases naturally change over time on their own is known as a disease’s “natural history.”</p>
-</dd>
-</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="natural-history" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>The fact that diseases naturally change over time on their own is known as a disease’s “natural history.”</p>
+</aside>
+</aside>
 </section>
 </section>
 
