@@ -238,7 +238,7 @@ Any now the big catch: we need two conditions to be true to be sure we are getti
 
 $$
 0 & = E(Y^0_i|D_i = 1) - E(Y_i^0|D_i = 0)\\
-E(Y^1_i|D_i = 1) - E(Y_i^0|D_i = 1) &= E(Y^1_i|D_i = 1) - E(Y_i^0|D_i = 1)
+E(Y^1_i|D_i = 1) - E(Y_i^0|D_i = 1) &= E(Y^1_i|D_i = 0) - E(Y_i^0|D_i = 0)
 $$
 
 But neither of these are directly observable. In the case of No Baseline Differences, we can never directly observe $E(Y^0_i|D_i = 1)$. And in the case of No Differential Treatment Effects, neither $E(Y_i^0|D_i = 1)$ nor $E(Y_i^0|D_i = 1)$ are observable.
