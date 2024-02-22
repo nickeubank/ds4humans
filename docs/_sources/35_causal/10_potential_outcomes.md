@@ -100,11 +100,11 @@ $$
 
 The equation above is similar in look and interpretation to $\delta_i$ at the individual level further above. And the logic is exactly the same. We have simply moved from assessing the causal effect for an individual to assessing an *average* causal effect for a population, and thus taken the expected value of the individual-level causal effects for our entire population.
 
-Why do we care about the Averate Treatment Effect? While not perfect, it is our best guess for the average change in our outcome of interest we would observe if *everyone* in the population we are studying were subject to treatment. Thinking about authorizing a new prescription drug? You want to know the average effect it will have across all patients who take it. Thinking about launching a big advertising campaign? You want to know the average effect it will have on all the consumers who see it. $ATE$, in other words, is the quantity your stakeholder — who wants you to answer a Causal Question because they want you to predict the effect of some action they're thinking of taking — wants to know.
+Why do we care about the Average Treatment Effect? While not perfect, it is our best guess for the average change in our outcome of interest we would observe if *everyone* in the population we are studying were subject to treatment. Thinking about authorizing a new prescription drug? You want to know the average effect it will have across all patients who take it. Thinking about launching a big advertising campaign? You want to know the average effect it will have on all the consumers who see it. $ATE$, in other words, is the quantity your stakeholder — who wants you to answer a Causal Question because they want you to predict the effect of some action they're thinking of taking — wants to know.
 
 ## What Is a Correlation?
 
-Having established the quantity we *want* to measure — the Averate Treatment Effect for a population, $ATE = E(Y^1_i) - E(Y^0_i)$ — let's pause for a moment to come at things from the other side.
+Having established the quantity we *want* to measure — the Average Treatment Effect for a population, $ATE = E(Y^1_i) - E(Y^0_i)$ — let's pause for a moment to come at things from the other side.
 
 We have established that $ATE$ is what we *want* to measure. But the fact we will never be able to observe both $Y^0$ and $Y^1$ for our full populations — and thus we can never directly observe $E(Y^1_i) - E(Y^0_i)$ — remains true. So let's pause for a moment to ask: "What *can* we observe?"
 
