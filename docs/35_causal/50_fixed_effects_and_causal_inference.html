@@ -1,0 +1,541 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Fixed Effects and Causal Inference &#8212; Solving Problems With Data</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '35_causal/50_fixed_effects_and_causal_inference';</script>
+    <link rel="icon" href="../_static/logo.jpg"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Fixed Effects: Indicator Variables for Groups" href="60_fixed_effects.html" />
+    <link rel="prev" title="Beyond The Experiment" href="40_causal_inference_beyond_ab_testing.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../landing_page.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.jpg" class="logo__image only-light" alt="Solving Problems With Data - Home"/>
+    <script>document.write(`<img src="../_static/logo.jpg" class="logo__image only-dark" alt="Solving Problems With Data - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../landing_page.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../10_introduction/10_our_approach.html">Solving Problems with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10_introduction/30_solving_the_right_problem.html">Stakeholder Management &amp; Solving the Right Problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10_introduction/40_data_science_in_historical_context.html">What <em>is</em> Data Science: An Historical Perspective</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Types of Questions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/05_descriptive_v_prescriptive.html">Descriptive v. Prescriptive Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/07_eda.html">The Scourge of "EDA"</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/10_using_exploratory_questions.html">Using Exploratory Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/15_answering_exploratory_questions.html">Answering Exploratory Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/17_exploratory_questions_internal_external.html">Internal versus External Validity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/20_using_passive_prediction_questions.html">Using Passive Prediction Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/25_answering_passive_prediction.html">Answering Passive Prediction Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/30_using_causal_questions.html">Using Causal Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/40_answering_causal_questions.html">Answering Causal Questions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Causal Inference</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="10_potential_outcomes.html">The Potential Outcomes Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="30_interpreting_indicator_vars.html">Indicator Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="40_causal_inference_beyond_ab_testing.html">Causal Beyond Experiments</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Fixed Effects</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="60_fixed_effects.html">Implementing Fixed Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="70_fixed_effects_v_hierarchical.html">Fixed Effects v. Hierarchical Models</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Science in Practice</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../40_in_practice/00_backwards_design.html">Backwards Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../40_in_practice/20_from_data_to_decisions.html">Making Decisions Using Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../40_in_practice/25_writing_to_stakeholders.html">Writing Data Science Report for Non-Technical Audiences</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../40_advanced_topics/30_interpretability.html">Interpretable Models</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/nickeubank/ds4humans" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F35_causal/50_fixed_effects_and_causal_inference.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/35_causal/50_fixed_effects_and_causal_inference.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Fixed Effects and Causal Inference</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="fixed-effects-and-causal-inference">
+<h1>Fixed Effects and Causal Inference<a class="headerlink" href="#fixed-effects-and-causal-inference" title="Link to this heading">#</a></h1>
+<p>So, you’re working with panel data. You have either multiple observations per entity (usually data over time), or you have nested data (data on individuals, each of whom belongs to a larger group, like kids in a school). And you want to add fixed effects for the entities or groups. But what does that mean from the perspective of causal inference?</p>
+<p>The simple answer is that a fixed effect is a tool for controlling for a specific source of baseline differences (namely, baseline differences across entities). In that sense, fixed effects are no different from any other type of control variable we put in a regression.</p>
+<p>But there is an important difference: with most variables we put in a regression, those variables are only controlling for a specific thing, the thing they measure. If you add age, you’re controlling for age; add income, you’re controlling for income. But fixed effects are a little more powerful: they control for <em>any</em> stable source of baseline differences between entities!</p>
+<p>Uh, what?</p>
+<p>Suppose you have weekly sales data for all your stores over several years, and you’re interested in better understanding the effect of each store’s local unemployment rate on sales. For simplicity, we’ll assume that in any week, a given store is said to experience high unemployment (<span class="math notranslate nohighlight">\(D=1\)</span>) or low unemployment (<span class="math notranslate nohighlight">\(D=0\)</span>), though this extends to using thinking of unemployment as a continuous variable.</p>
+<p>If you just ran a regression of local unemployment rates on sales, you might find that sales are extremely sensitive to the local unemployment rate. But when you dig in, that’s because your New York City store in Times Square makes tons of sales, and NYC tends to always have low unemployment.</p>
+<p>In our usual causal framework, we’d say that our NYC store had important <em>baseline differences</em> in our outcome (sales per week) that happened to be correlated with treatment assignment (NY tends to have low unemployment), though we don’t think it’s because of NYC has low unemployment (we think it’s because the store is in Times Square!). As a result, <span class="math notranslate nohighlight">\(E(Y_0|D=0) \neq E(Y_0|D=1)\)</span>. We have a problem of baseline differences.</p>
+<p>But what if you add store fixed effects to the model? You can think of those fixed effects as <em>demeaning</em> all sales <em>for each store</em>. In other words, you’re removing <em>level</em> differences across scores from the relationship you’re trying to estimate. As a result, instead of estimating how differences in unemployment are correlated with sales, you’re instead estimating how <em>changes</em> in unemployment relate to <em>changes</em> in sales.</p>
+<p>That’s because after fixed effects effectively demean your dependent variable (for each store), the only variation in the data you’re left with are the deviations in your dependent variable above or below it’s mean value for a given store. We’re no longer estimating the relationship between unemployment and store sales, but rather how <em>changes</em> in unemployment are correlated with <em>changes</em> in sales.</p>
+<p>From a causal perspective, now that our focus is on how <em>changes</em> in unemployment affect <em>changes</em> in sales, any differences between stores that don’t vary over time – no matter what caused those differences – have been accounted for.</p>
+<p>Mathematically, we can think of this as a change in our <span class="math notranslate nohighlight">\(Y\)</span>: instead of <span class="math notranslate nohighlight">\(y_i\)</span> being absolute sales, it’s now deviations in sales above or below the average sales for a given store <span class="math notranslate nohighlight">\(i\)</span>. Thus baseline differences (<span class="math notranslate nohighlight">\(E(Y_0|D=0) = E(Y_0|D=1)\)</span>) has become a question about whether, in a world where unemployment is below the local average, sales for all groups tend to be the same amount above (or below) store average sales. And the fact that we have a store in Times Square is no longer an obvious threat to that condition!</p>
+<p>The limit to this magic is that we’re only controlling for <em>non-time varying</em> differences between stores. If store sales in NYC are always high because of their location, that’s something controlled for by the fixed effects. However, if in the middle of your data NYC experiences a hurricane, and so sales dip, that isn’t taken into account by your fixed effects (since it was “time varying”, affected the store for only a fixed period of time), so you’d want a separate control for those kinds of disruptions in your regression.</p>
+<p>One way you can see this is that if you try and stick a variable into your regression that is not time varying (it has the same value for each store throughout the data), you’ll find that you don’t get back a regression coefficient. That’s because anything non-time varying is actually co-linear (in terms of the underlying linear algebra) with the fixed effects, meaning you literally <em>can’t</em> estimate a coefficient. It’d be like trying to include the variable “age” twice in the same regression.</p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./35_causal"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="40_causal_inference_beyond_ab_testing.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Beyond The Experiment</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="60_fixed_effects.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Fixed Effects: Indicator Variables for Groups</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Nick Eubank
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

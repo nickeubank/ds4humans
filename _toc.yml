@@ -28,6 +28,13 @@ parts:
         title: Indicator Variables
       - file: 35_causal/40_causal_inference_beyond_ab_testing
         title: Causal Beyond Experiments
+      - file: 35_causal/50_fixed_effects_and_causal_inference
+        title: Fixed Effects
+        sections:
+          - file: 35_causal/60_fixed_effects
+            title: Implementing Fixed Effects
+          - file: 35_causal/70_fixed_effects_v_hierarchical
+            title: Fixed Effects v. Hierarchical Models
   - caption: Data Science in Practice
     chapters:
       - file: 40_in_practice/00_backwards_design
