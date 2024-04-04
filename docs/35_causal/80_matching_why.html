@@ -1,0 +1,633 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>What Is Matching? &#8212; Solving Problems With Data</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '35_causal/80_matching_why';</script>
+    <link rel="icon" href="../_static/logo.jpg"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How to Match" href="90_matching_how.html" />
+    <link rel="prev" title="Fixed Effects and Hierarchical Models" href="70_fixed_effects_v_hierarchical.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../landing_page.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.jpg" class="logo__image only-light" alt="Solving Problems With Data - Home"/>
+    <script>document.write(`<img src="../_static/logo.jpg" class="logo__image only-dark" alt="Solving Problems With Data - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../landing_page.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../10_introduction/10_our_approach.html">Solving Problems with Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10_introduction/30_solving_the_right_problem.html">Stakeholder Management &amp; Solving the Right Problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10_introduction/40_data_science_in_historical_context.html">What <em>is</em> Data Science: An Historical Perspective</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Types of Questions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/05_descriptive_v_prescriptive.html">Descriptive v. Prescriptive Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/07_eda.html">The Scourge of "EDA"</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/10_using_exploratory_questions.html">Using Exploratory Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/15_answering_exploratory_questions.html">Answering Exploratory Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/17_exploratory_questions_internal_external.html">Internal versus External Validity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/20_using_passive_prediction_questions.html">Using Passive Prediction Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/25_answering_passive_prediction.html">Answering Passive Prediction Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/30_using_causal_questions.html">Using Causal Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/40_answering_causal_questions.html">Answering Causal Questions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Causal Inference</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="10_potential_outcomes.html">The Potential Outcomes Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="30_interpreting_indicator_vars.html">Indicator Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="40_causal_inference_beyond_ab_testing.html">Causal Beyond Experiments</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="50_fixed_effects_and_causal_inference.html">Fixed Effects</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="60_fixed_effects.html">Implementing Fixed Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="70_fixed_effects_v_hierarchical.html">Fixed Effects v. Hierarchical Models</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Matching</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="90_matching_how.html">How to Match</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Science in Practice</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../40_in_practice/00_backwards_design.html">Backwards Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../40_in_practice/20_from_data_to_decisions.html">Making Decisions Using Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../40_in_practice/25_writing_to_stakeholders.html">Writing Data Science Report for Non-Technical Audiences</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../40_advanced_topics/30_interpretability.html">Interpretable Models</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/nickeubank/ds4humans" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F35_causal/80_matching_why.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/35_causal/80_matching_why.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>What Is Matching?</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-dependency">Model Dependency</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-dependency-causal-inference-and-imbalance">Model Dependency, Causal Inference, and Imbalance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matching-better-thought-of-as-pruning">Matching: Better thought of as pruning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-cost-of-matching">The Cost of Matching</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#causal-inference-assumptions">Causal Inference Assumptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-summary">In Summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="what-is-matching">
+<h1>What Is Matching?<a class="headerlink" href="#what-is-matching" title="Link to this heading">#</a></h1>
+<p>This week we’ll be exploring <em>matching</em>: an approach to analyzing observational data that is primarily designed to do the same types of analyses as regression, but with less sensitivity to the functional form assumptions implicit to regression.</p>
+<p>As we move forward, I’ll be drawing a lot (including most figures) from <a class="reference external" href="https://imai.fas.harvard.edu/research/preprocess.html">Ho, Imai, King and Stuart (2007)</a> and two of Gary King’s public lectures on youtube (<a class="reference external" href="https://www.youtube.com/watch?v=cbrV-mM9mFk">theory</a>, <a class="reference external" href="https://www.youtube.com/watch?v=tvMyjDi4dyg">implementation</a>). I’ve streamlined his argument and tried to adapt it for the concepual framworks, language, and level of technical depth we’re targeting in this class, but if you’re really into this topic, that source material may be extremely valuable to explore.</p>
+<section id="model-dependency">
+<h2>Model Dependency<a class="headerlink" href="#model-dependency" title="Link to this heading">#</a></h2>
+<p>To understand matching, it helps to start with the problem matching is designed to solved: model dependence.</p>
+<p>The term model dependence refers to a situation in which the results of an analysis are highly sensitive to apparently small decisions made by the researcher in how they specify a regression – for example, whether they include <span class="math notranslate nohighlight">\(X\)</span> in their regression, or <span class="math notranslate nohighlight">\(X + X^2\)</span>, or whether they use <span class="math notranslate nohighlight">\(X\)</span> or <span class="math notranslate nohighlight">\(log(X)\)</span> as an independent variable.</p>
+<p>“But wait!” you may say: we have all sorts of test statistics for evaluating what fits our data best, so shouldn’t we be able to just pick the specification with the best [insert test statistic of choice here]?</p>
+<p>Yes… most of the time. But where you get into trouble is when you want to use a model fit on data that covers a certain range of values to make predictions about outcomes outside that range. For example, consider the following example:</p>
+<p><img alt="basic_dependency.png" src="../_images/basic_dependency.png" /></p>
+<p>Here we have a model where <em>either</em> a quadratic functional form or a linear functional form fits our data extremely well. <em>Maybe</em> there’s a third decimal place distinction in some test statistic, but really, they’re the same <em>in the area we have our actual data</em>.</p>
+<p>But now suppose you’re asked to make predictions about outcomes at , say, <span class="math notranslate nohighlight">\(x=5\)</span>. Out there, the functional form you choose has a tremendous impact! So this is what’s called “model dependence”.</p>
+<p>Note that “model dependence” is a condition that depends on the application. If you fit this model to predict <span class="math notranslate nohighlight">\(Y\)</span> at <span class="math notranslate nohighlight">\(x=1.02315\)</span>, there’s probably very little model dependence here. But if you want to predict a value at <span class="math notranslate nohighlight">\(x=5\)</span>, there is. Something we’ll come back to.</p>
+</section>
+<section id="model-dependency-causal-inference-and-imbalance">
+<h2>Model Dependency, Causal Inference, and Imbalance<a class="headerlink" href="#model-dependency-causal-inference-and-imbalance" title="Link to this heading">#</a></h2>
+<p>OK, fine, but I <em>know</em> I’m never supposed to extrapolate that far from my data, so who cares?</p>
+<p>Well… funny story: turns out we do this in causal inference all the time. That’s because if our treatment group and our control groups look very different (something called “imbalanced”), then we are sometimes actually extrapolating a relationship we estimate <em>from the control group data</em> to estimate what the treatment group would look like in areas where have no actual data from the treatment group.</p>
+<p>OK, let’s illustrate that. Suppose we have the following observational data (i.e. this is data from the world, not a randomized experiment). It’s made up, but let’s assume it’s from a consumer survey, where Treatment is whether the customer came to the store with a coupon, and “Outcome” is spending. Read T’s are consumer we’ve been treated (got promotion), blue Cs are consumers who weren’t treated (controls).</p>
+<p><img alt="matching_king_1" src="../_images/matching_king_1.png" /></p>
+<p>As you can see, this data is badly <em>imbalanced</em>, meaning that the range of values of Education are very different for our control population and our treatment population. For the control group, Education ranges ranges all the way from 12-28 years, while our treated group only has observations between 16 and 24.</p>
+<p>Why does this matter? Suppose we now fit the following regression:</p>
+<div class="math notranslate nohighlight">
+\[Y = \alpha + \beta_1 treat + \beta_2 educ + \epsilon\]</div>
+<p>That fit would look something like this:</p>
+<p><img alt="matching_king_2" src="../_images/matching_king_2.png" /></p>
+<p>As you can see, Treatment is above Control, so we have a large positive treatment effect!</p>
+<p>OK, but that clearly seems weird. It’s not fitting those control observations, so instead let’s try this:</p>
+<div class="math notranslate nohighlight">
+\[Y = \alpha + \beta_1 treat + \beta_2 educ + \beta_3 educ^2 + \epsilon\]</div>
+<p>That looks like this:</p>
+<p><img alt="matching_king_3" src="../_images/matching_king_3.png" /></p>
+<p>Well, now the treatment effect is <em>negative</em>! Red below blue!</p>
+<p>So which is right? Well… the thing that should probably make us uncomfortable is that the way we drew that red parabola is that we estimated a relationship for our full data, but really we were just fitting our control data, then applying that fit to treatment. As you can see, no treatment observations are really contributing to us fitting a big inverted U, since all the T observations are in the middle of the distribution.</p>
+<p>Now, if you want to take a strong theoretical position and say “I’m really confident education plays the same role for people who brought in coupons as those who did not”, then you can stop here. But…</p>
+<p>The idea of matching is that maybe that should make us nervous, and that maybe there’s a way to avoid that</p>
+</section>
+<section id="matching-better-thought-of-as-pruning">
+<h2>Matching: Better thought of as pruning<a class="headerlink" href="#matching-better-thought-of-as-pruning" title="Link to this heading">#</a></h2>
+<p>When you hear the term “matching”, your first thought is probably that the focus of the method is finding pairs of observations that are similar, and… you’re not <em>wrong</em>. But a better way to think of matching is as a method for <em>pruning</em> observations that don’t have any close matches.</p>
+<p>In other words, at its core, matching is about pruning back your dataset until you’re left with control and treatment observations that look relatively similar. Any control observations that are completely unlike any treatment observation (in terms of our explanatory variables) you drop, and any treatment observations that are completely unlike any controls you drop.</p>
+<p>So if we ran matching here, we’d end up with the following dataset (dropped observations greyed out) (matching isn’t deterministic, there are choices, but a reasonably matching algorithm would likely do something like this):</p>
+<p><img alt="matching_king_4" src="../_images/matching_king_4.png" /></p>
+<p>As you can see, we’ve now dropped all the control observations that are completely unlike our treatment variables. And now the range of Education for control variables and treatment variables is about the same – we have a “balanced” dataset.</p>
+<p>And now it doesn’t matter if we do a simple linear fit or if we include a quadratic term – the results look exactly the same (i.e. no model dependence):</p>
+<p><img alt="matching_king_5" src="../_images/matching_king_5.png" /></p>
+<p>And if we limit our focus to these observations, we see that regardless of the functional form we put in our regression, we get no treatment effect.</p>
+</section>
+<section id="the-cost-of-matching">
+<h2>The Cost of Matching<a class="headerlink" href="#the-cost-of-matching" title="Link to this heading">#</a></h2>
+<p>So what do we lose when we do matching? The main answer is that the group of people for whom our treatment effect is being estimated is changing dramatically. We aren’t estimating an effect for the whole population we started with, we’re estimating the effect for this small group where T and C overlap, which may or may not be useful in later applications.</p>
+<p>In these kinds of studies, we often have far more control observations than treatment observations, and the control variables will often cover a much bigger range of values of your explanatory values (if not many people get treated, then it makes sense that the people who get treated may all look similar, and so may fall into a smaller range of, say, education than the general populous).</p>
+<p>In these situtations – where during matching you get to keep all your treated observations because they all have close controls, but you drop some controls, then what you’re estimating is the Average Treated on the Treated, which isn’t half bad (it’s often all we get with observational data).</p>
+<p>But if you have Treated observations that don’t look like <em>any</em> control observations and so you have to drop them, well now you’re estimating an effect on… the sample of people in the range of explanatory variables for which there are both treated and untreated observations? And who really knows what that is.</p>
+</section>
+<section id="causal-inference-assumptions">
+<h2>Causal Inference Assumptions<a class="headerlink" href="#causal-inference-assumptions" title="Link to this heading">#</a></h2>
+<p>Before closing our discussion of the high level pros and cons of matching, it’s worth emphasizing one important point: both matching and good old fashion linear regression rest on the same basic assumption when it comes to causal inference: there are no baseline differences between the treatment and control groups <em>after conditioning on observable variables</em>.</p>
+<p>Matching, in other words, is a way to address possible <em>modelling errors</em>, not to fundamentally change what assumptions we’re making about the differences between treatment and control groups in terms of potential outcomes.</p>
+</section>
+<section id="in-summary">
+<h2>In Summary<a class="headerlink" href="#in-summary" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Matching is really best thought of a way of <strong>pruning</strong> your data to a sample where C and T observations look similar (impoves balance)</p></li>
+<li><p>Where the original data has observations of C and T that <em>don’t</em> look similar (it’s imbalanced), matching helps reduce the sensitivity of results to the functional form assumptions you make in your regression.</p></li>
+<li><p>But by changing the data on which you’re making an estimate, you are also changing the actually population for which you’re estimating your effect, which may be important to understand.</p></li>
+<li><p>To use matching for causal inference, you have to make the same basic assumption you use for regular linear regression: controlling for observable differences is enough to eliminate baseline differences in terms of potential outcomes for our treated and untreated observations.</p></li>
+</ul>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./35_causal"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="70_fixed_effects_v_hierarchical.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Fixed Effects and Hierarchical Models</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="90_matching_how.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">How to Match</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-dependency">Model Dependency</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-dependency-causal-inference-and-imbalance">Model Dependency, Causal Inference, and Imbalance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matching-better-thought-of-as-pruning">Matching: Better thought of as pruning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-cost-of-matching">The Cost of Matching</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#causal-inference-assumptions">Causal Inference Assumptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-summary">In Summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Nick Eubank
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

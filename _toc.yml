@@ -35,6 +35,10 @@ parts:
             title: Implementing Fixed Effects
           - file: 35_causal/70_fixed_effects_v_hierarchical
             title: Fixed Effects v. Hierarchical Models
+      - file: 35_causal/80_matching_why
+        title: Matching
+        sections:
+          - file: 35_causal/90_matching_how
   - caption: Data Science in Practice
     chapters:
       - file: 40_in_practice/00_backwards_design

@@ -206,6 +206,10 @@
 <li class="toctree-l2"><a class="reference internal" href="70_fixed_effects_v_hierarchical.html">Fixed Effects v. Hierarchical Models</a></li>
 </ul>
 </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="80_matching_why.html">Matching</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="90_matching_how.html">How to Match</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Science in Practice</span></p>
 <ul class="nav bd-sidenav">
@@ -480,10 +484,10 @@ document.write(`
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th>  <td>   8393.</td>  
 </tr>
 <tr>
-  <th>Date:</th>             <td>Sun, 24 Mar 2024</td> <th>  Prob (F-statistic):</th>   <td>  0.00</td>   
+  <th>Date:</th>             <td>Thu, 04 Apr 2024</td> <th>  Prob (F-statistic):</th>   <td>  0.00</td>   
 </tr>
 <tr>
-  <th>Time:</th>                 <td>13:33:10</td>     <th>  Log-Likelihood:    </th> <td>-1.4365e+06</td>
+  <th>Time:</th>                 <td>15:11:30</td>     <th>  Log-Likelihood:    </th> <td>-1.4365e+06</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>122603</td>      <th>  AIC:               </th>  <td>2.873e+06</td> 
@@ -588,6 +592,16 @@ document.write(`
 <span class="c1"># just make it a categorical first with `pd.Categorical()`</span>
 <span class="n">group_codes</span> <span class="o">=</span> <span class="n">fe_groups</span><span class="o">.</span><span class="n">ind02</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">codes</span>
 <span class="n">group_codes</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2     222
+3     201
+4     220
+6     158
+17    141
+dtype: int16
 </pre></div>
 </div>
 </div>
@@ -1046,10 +1060,10 @@ Inputs contain missing values. Dropping rows with missing observations.
   <th>No. Observations:</th>      <td>122603</td>      <th>  R-squared (Within):</th>     <td>0.1414</td>   
 </tr>
 <tr>
-  <th>Date:</th>             <td>Thu, Mar 14 2024</td> <th>  R-squared (Overall):</th>    <td>0.1683</td>   
+  <th>Date:</th>             <td>Thu, Apr 04 2024</td> <th>  R-squared (Overall):</th>    <td>0.1683</td>   
 </tr>
 <tr>
-  <th>Time:</th>                 <td>12:47:30</td>     <th>  Log-likelihood     </th>    <td>-1.43e+06</td> 
+  <th>Time:</th>                 <td>15:11:33</td>     <th>  Log-likelihood     </th>    <td>-1.43e+06</td> 
 </tr>
 <tr>
   <th>Cov. Estimator:</th>       <td>Clustered</td>    <th>                     </th>        <td></td>      
@@ -1105,7 +1119,7 @@ Inputs contain missing values. Dropping rows with missing observations.
 <tr>
   <th>has_college_educ</th>  <td>2.665e+04</td>  <td>1323.8</td>   <td>20.130</td>  <td>0.0000</td>   <td>2.405e+04</td> <td>2.924e+04</td>
 </tr>
-</table><br/><br/>F-test for Poolability: 54.365<br/>P-value: 0.0000<br/>Distribution: F(258,122341)<br/><br/>Included effects: Entity<br/>id: 0x2882e1fd0</div></div>
+</table><br/><br/>F-test for Poolability: 54.365<br/>P-value: 0.0000<br/>Distribution: F(258,122341)<br/><br/>Included effects: Entity<br/>id: 0x28baa8690</div></div>
 </div>
 </section>
 </section>
