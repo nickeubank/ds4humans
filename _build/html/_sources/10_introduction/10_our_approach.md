@@ -1,6 +1,6 @@
 # Solving Problems with Data
 
-## Introduction
+## A Data Scientists Guide to Critical Thinking
 
 Few fields have shown as much promise to address the world's problems as data science. Today, data science is being used to develop climate models to improve our understanding of global climate change and mitigate its effects. It is being used in medicine to speed drug discovery, improve the quality of x-rays and MRIs, and to ensure that patients receive appropriate medical care. Data science is used in courtrooms to fight for fair elections and electoral maps, and by data journalists to document and communicate to readers the injustices prevalent in our criminal justice system and issues in policing. Data science also enables new technologies that have huge potential to improve our lives. Autonomous drones are delivering blood and medical supplies to rural health clinics from Rwanda to [North Carolina](https://www.theverge.com/2020/5/27/21270351/zipline-drones-novant-health-medical-center-hospital-supplies-ppe/), and driver-aid features continue to make progress in reducing the over 30,000 traffic deaths and millions of injuries that occur in the US alone every year. Nearly no facet of business has gone untouched by the recent revolution in data analytics, from song and movie recommendation engines on Netflix, Spotify, and Apple's App Store to the use of personalized, targeted advertisements used to ensure businesses can make the most of their advertising revenue.
 
