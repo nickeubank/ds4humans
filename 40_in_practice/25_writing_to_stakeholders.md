@@ -3,8 +3,8 @@
 In the spirit of what is to follow, I will begin with the most important idea in this reading:
 
 > The key to effective writing to stakeholders is to continually ask yourself — where ever you are in your document, whatever your thinking of writing, and whatever you're debating including — if my stakeholder stopped reading my report *right at this spot,* have I told them everything I want *them* to have learned.
->
-> ## Why Learning to Write to Stakeholders is Hard
+
+## Why Learning to Write to Stakeholders is Hard
 
 As students (especially data science students), the way most of us were taught to write reports is to:
 
