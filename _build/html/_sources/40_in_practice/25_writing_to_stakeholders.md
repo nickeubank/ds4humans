@@ -49,11 +49,19 @@ Obviously not. And now that you are primed to think about how writing can be org
 
 Journalism is the quintessential example of this style of writing. *No one* reads entire news articles, so they are always nearly organized with the most critical information up front, after which they double back to fill in additional details for anyone still reading. There are a number of different ways this can be accomplished — for example the [inverted pyramid](https://en.wikipedia.org/wiki/Inverted_pyramid_(journalism)) — start with "who? what? when? where? how?", then add important details, then add context — is one of the first article formats journalists are introduced to.
 
-But the structure I think you're likely to see most if you start looking for it is that in the first two or three paragraphs of a well-written news story, you will notice that there is a single paragraph that is designed to summarize everything that t`he journalist wants you to know about the story — the "[nut graph](https://en.wikipedia.org/wiki/Article_structure#Nut_Graph)".
+But the structure I think you're likely to see most if you start looking for it is that in the first two or three paragraphs of a well-written news story, you will notice that there is a single paragraph that is designed to summarize everything that the journalist wants you to know about the story — the "[nut graph](https://en.wikipedia.org/wiki/Article_structure#Nut_Graph)".
 
 Academic publications also usually follow this structure. They start with an abstract (essentially an Executive Summary of the Executive Summary), an "introduction" (which is, in effect, an Executive Summary), a literature review (to establish why what they're doing is novel and provide some broader context), a not too long discussion of their methodology, their results, and a short conclusion that ties the results back to the motivating question. All the sensitivity analyses, detailed discussion of the data, etc.? Those go into an "Online Only Appendix," a document that is often easily twice as long as the article itself.
 
 ## Other Points To Bear In Mind
+
+### Putting The Pieces Together
+
+In this course, we've spent a lot of time establishing *taxonomies* — ways of organizing and recognizing the many distinct things that we do as data scientists. The assignments we have done for this class have often been structured in a manner to emphasize these distinctions. But when writing to a stakeholder, you don't want to hold too rigidly to those distinctions. A good report to a stakeholder will not consist of stapling together all of the assignments we've done in this class one after the other. The goal of a good report is to construct a narrative that consistently and effectively communicates a key idea to the reader.
+
+Many of you will be familiar with the idea of the "five-paragraph essay." The five-paragraph essay is a structure that is often used to introduce students to essay writing — you start with an introductory paragraph, you write three paragraphs, each of which starts with a topic sentence and then includes evidence in support of that topic sentence, and then you write a conclusion paragraph. It is a useful framework for introducing students to essay writing, but it is also a framework that is best left behind as soon as it is understood.
+
+The emphasis the assignments we have done in this class puts on different types of questions is similar — the goal is to make sure you can recognize the different types of questions and the purposes to which we put them. But your stakeholder report should not include a section called *Exploratory Questions* — rather the answers you generated in answering your Exploratory Questions should be reflected in how you've refined your problem statement, and the results of some of those analyses will likely make an appearance as tools for motivating the focus of your final analysis.
 
 ### Data Cleaning
 
@@ -74,3 +82,7 @@ For example, this plot (which, yes, [is from a paper on which I am a co-author](
 There is a tendency for students to use their "Limitations" sections to, well... just try and cover their butts by throwing out anything they can think of about the paper that is imperfect. That's ok in the classroom, but it's not useful in the real world.
 
 The point of a Limitations section isn't to demonstrate your ability to identify any imperfections in the study; the point of a limitation section is to give your stakeholder a sense of how much confidence they should have in the results presented in the report *from your professional perspective.* Just because you had to make an assumption does not mean that the assumption constitutes a "limitation" of the study unless you have reason to think that the assumption is unlikely to be true (or is sufficiently untrue as to impact the results). Please only include things in your limitation section that you think really are substantive limitations!
+
+<!-- ## A Few Final Thoughts on Writing
+
+This is not a class on writing, but communication is a central part of data science, and writing is one of our best tools we have for effective communication.   -->
