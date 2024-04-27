@@ -63,6 +63,14 @@ Many of you will be familiar with the idea of the "five-paragraph essay." The fi
 
 The emphasis the assignments we have done in this class puts on different types of questions is similar — the goal is to make sure you can recognize the different types of questions and the purposes to which we put them. But your stakeholder report should not include a section called *Exploratory Questions* — rather the answers you generated in answering your Exploratory Questions should be reflected in how you've refined your problem statement, and the results of some of those analyses will likely make an appearance as tools for motivating the focus of your final analysis.
 
+### Justify Your Methods With Concrete Examples
+
+In discussing the methods you choose to use — such as a difference-in-difference design or matching — be sure to explain *why* you're using the method in concrete terms that are relevant to the context in question, and without using technical language your stakeholder may not understand.
+
+If you're doing a difference-in-difference design (and not just a pre-post comparison), give examples of specific events that would cause problems for a simple pre-post analysis but that aren't a problem for the difference-in-difference design you are using. Consider the opioid project from IDS 720. In that project, we estimated the effect of state-level changes in opioid prescription regulations in states like Florida and Texas on opioid shipments and overdoses. For that project, it was important to give an example — like the US federal government creating a national limit on the amount of opioids manufacturers were allowed to ship to individual clinics around the same time — that would cause incorrect inferences to be drawn from a simple pre-post comparison, but not from our design of choice (a difference-in-difference).
+
+If you don't include an example like this, it won't be clear to the stakeholder why you feel fancy techniques are necessary. And if you can't think of an example like this, then maybe you don't *need* the fancy technique at all!
+
 ### Data Cleaning
 
 As noted above, a discussion of data cleaning and data wrangling does not belong in the body of your report. The only exception to this rule is when you were forced to exercise substantial discretion in a way that may impact the internal or external validity of the analysis in a meaningful way (for example, selection of control states, or dropping certain time periods from the analysis you feel are too anomalous).

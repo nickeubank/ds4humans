@@ -420,6 +420,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-points-to-bear-in-mind">Other Points To Bear In Mind</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-the-pieces-together">Putting The Pieces Together</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#justify-your-methods-with-concrete-examples">Justify Your Methods With Concrete Examples</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">Data Cleaning</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figures">Figures</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations</a></li>
@@ -504,6 +505,12 @@ document.write(`
 <p>In this course, we’ve spent a lot of time establishing <em>taxonomies</em> — ways of organizing and recognizing the many distinct things that we do as data scientists. The assignments we have done for this class have often been structured in a manner to emphasize these distinctions. But when writing to a stakeholder, you don’t want to hold too rigidly to those distinctions. A good report to a stakeholder will not consist of stapling together all of the assignments we’ve done in this class one after the other. The goal of a good report is to construct a narrative that consistently and effectively communicates a key idea to the reader.</p>
 <p>Many of you will be familiar with the idea of the “five-paragraph essay.” The five-paragraph essay is a structure that is often used to introduce students to essay writing — you start with an introductory paragraph, you write three paragraphs, each of which starts with a topic sentence and then includes evidence in support of that topic sentence, and then you write a conclusion paragraph. It is a useful framework for introducing students to essay writing, but it is also a framework that is best left behind as soon as it is understood.</p>
 <p>The emphasis the assignments we have done in this class puts on different types of questions is similar — the goal is to make sure you can recognize the different types of questions and the purposes to which we put them. But your stakeholder report should not include a section called <em>Exploratory Questions</em> — rather the answers you generated in answering your Exploratory Questions should be reflected in how you’ve refined your problem statement, and the results of some of those analyses will likely make an appearance as tools for motivating the focus of your final analysis.</p>
+</section>
+<section id="justify-your-methods-with-concrete-examples">
+<h3>Justify Your Methods With Concrete Examples<a class="headerlink" href="#justify-your-methods-with-concrete-examples" title="Link to this heading">#</a></h3>
+<p>In discussing the methods you choose to use — such as a difference-in-difference design or matching — be sure to explain <em>why</em> you’re using the method in concrete terms that are relevant to the context in question, and without using technical language your stakeholder may not understand.</p>
+<p>If you’re doing a difference-in-difference design (and not just a pre-post comparison), give examples of specific events that would cause problems for a simple pre-post analysis but that aren’t a problem for the difference-in-difference design you are using. Consider the opioid project from IDS 720. In that project, we estimated the effect of state-level changes in opioid prescription regulations in states like Florida and Texas on opioid shipments and overdoses. For that project, it was important to give an example — like the US federal government creating a national limit on the amount of opioids manufacturers were allowed to ship to individual clinics around the same time — that would cause incorrect inferences to be drawn from a simple pre-post comparison, but not from our design of choice (a difference-in-difference).</p>
+<p>If you don’t include an example like this, it won’t be clear to the stakeholder why you feel fancy techniques are necessary. And if you can’t think of an example like this, then maybe you don’t <em>need</em> the fancy technique at all!</p>
 </section>
 <section id="data-cleaning">
 <h3>Data Cleaning<a class="headerlink" href="#data-cleaning" title="Link to this heading">#</a></h3>
@@ -598,6 +605,7 @@ This is not a class on writing, but communication is a central part of data scie
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-points-to-bear-in-mind">Other Points To Bear In Mind</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-the-pieces-together">Putting The Pieces Together</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#justify-your-methods-with-concrete-examples">Justify Your Methods With Concrete Examples</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">Data Cleaning</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figures">Figures</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations</a></li>
