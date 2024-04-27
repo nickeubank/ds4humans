@@ -75,7 +75,7 @@ If you don't include an example like this, it won't be clear to the stakeholder 
 
 As noted above, a discussion of data cleaning and data wrangling does not belong in the body of your report. The only exception to this rule is when you were forced to exercise substantial discretion in a way that may impact the internal or external validity of the analysis in a meaningful way (for example, selection of control states, or dropping certain time periods from the analysis you feel are too anomalous).
 
-Even in these situations, however, it is usually best to explain the *logic* behind the decisions you made but relegate additional discussion (statistics related to the choice) to an appendix.
+Even in these situations, however, it is usually best to explain the *logic* behind the decisions in the body of the report, as well as any findings you have about whether your results change if you apply different logic (like in choosing what entities belong in your control group). However, full discussion and any statistics related to the sensitivity of your results to your decisions belong in an appendix.
 
 Oh, and please *never* use verbatim variable names in reports — they're fine in appendices, but in the body of a report you should explain what you're measuring in substantive terms someone without the data documentation can understand.
 
