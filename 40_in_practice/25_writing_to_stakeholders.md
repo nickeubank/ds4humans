@@ -75,7 +75,9 @@ If you don't include an example like this, it won't be clear to the stakeholder 
 
 As noted above, a discussion of data cleaning and data wrangling does not belong in the body of your report. The only exception to this rule is when you were forced to exercise substantial discretion in a way that may impact the internal or external validity of the analysis in a meaningful way (for example, selection of control states, or dropping certain time periods from the analysis you feel are too anomalous).
 
-Even in these situations, however, it is usually best to explain the logic behind the decisions you made and relegate additional discussion to an appendix.
+Even in these situations, however, it is usually best to explain the *logic* behind the decisions you made but relegate additional discussion (statistics related to the choice) to an appendix.
+
+Oh, and please *never* use verbatim variable names in reports — they're fine in appendices, but in the body of a report you should explain what you're measuring in substantive terms someone without the data documentation can understand.
 
 ### Figures
 
@@ -94,3 +96,5 @@ The point of a Limitations section isn't to demonstrate your ability to identify
 <!-- ## A Few Final Thoughts on Writing
 
 This is not a class on writing, but communication is a central part of data science, and writing is one of our best tools we have for effective communication.   -->
+
+<!-- The earliest recorded use of the quote "If I Had More Time, I Would Have Written a Shorter Letter" comes from French mathematician and philosopher Blaise Pascal's work "Lettres Provinciales" in 1657.[1] Written in French the quote says, "Je n’ai fait celle-ci plus longue que parce que je n’ai pas eu le loisir de la faire plus courte." This translates to "I have made this longer than usual because I have not had time to make it shorter." -->
