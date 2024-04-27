@@ -421,7 +421,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-points-to-bear-in-mind">Other Points To Bear In Mind</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-the-pieces-together">Putting The Pieces Together</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#justify-your-methods-with-concrete-examples">Justify Your Methods With Concrete Examples</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">Data Cleaning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning-and-discretion">Data Cleaning and Discretion</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figures">Figures</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations</a></li>
 </ul>
@@ -512,10 +512,11 @@ document.write(`
 <p>If you’re doing a difference-in-difference design (and not just a pre-post comparison), give examples of specific events that would cause problems for a simple pre-post analysis but that aren’t a problem for the difference-in-difference design you are using. Consider the opioid project from IDS 720. In that project, we estimated the effect of state-level changes in opioid prescription regulations in states like Florida and Texas on opioid shipments and overdoses. For that project, it was important to give an example — like the US federal government creating a national limit on the amount of opioids manufacturers were allowed to ship to individual clinics around the same time — that would cause incorrect inferences to be drawn from a simple pre-post comparison, but not from our design of choice (a difference-in-difference).</p>
 <p>If you don’t include an example like this, it won’t be clear to the stakeholder why you feel fancy techniques are necessary. And if you can’t think of an example like this, then maybe you don’t <em>need</em> the fancy technique at all!</p>
 </section>
-<section id="data-cleaning">
-<h3>Data Cleaning<a class="headerlink" href="#data-cleaning" title="Link to this heading">#</a></h3>
+<section id="data-cleaning-and-discretion">
+<h3>Data Cleaning and Discretion<a class="headerlink" href="#data-cleaning-and-discretion" title="Link to this heading">#</a></h3>
 <p>As noted above, a discussion of data cleaning and data wrangling does not belong in the body of your report. The only exception to this rule is when you were forced to exercise substantial discretion in a way that may impact the internal or external validity of the analysis in a meaningful way (for example, selection of control states, or dropping certain time periods from the analysis you feel are too anomalous).</p>
-<p>Even in these situations, however, it is usually best to explain the <em>logic</em> behind the decisions in the body of the report, as well as any findings you have about whether your results change if you apply different logic (like in choosing what entities belong in your control group). However, full discussion and any statistics related to the sensitivity of your results to your decisions belong in an appendix.</p>
+<p>Even in these situations, however, it is usually best to explain the <em>logic</em> behind the decisions in the body of the report (like in choosing what entities belong in your control group). However, a full discussion of these kinds of choices belongs in an appendix.</p>
+<p>When you do exercise substantial discretion in an analysis (for example, deciding to include certain entities as controls while excluding others), <strong>it’s best practice to include some sensitivity analyses in your report</strong> by examining how your results do (or hopefully do not) change if you exercise discretion in slightly different ways. Ideally, you can just reference that “results are similar when [example of doing something a little differently]” in the body of the report and include the sensitivity analysis in an appendix.</p>
 <p>Oh, and please <em>never</em> use verbatim variable names in reports — they’re fine in appendices, but in the body of a report you should explain what you’re measuring in substantive terms someone without the data documentation can understand.</p>
 </section>
 <section id="figures">
@@ -608,7 +609,7 @@ This is not a class on writing, but communication is a central part of data scie
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-points-to-bear-in-mind">Other Points To Bear In Mind</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-the-pieces-together">Putting The Pieces Together</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#justify-your-methods-with-concrete-examples">Justify Your Methods With Concrete Examples</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">Data Cleaning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning-and-discretion">Data Cleaning and Discretion</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figures">Figures</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations</a></li>
 </ul>
