@@ -71,15 +71,19 @@ If you're doing a difference-in-difference design (and not just a pre-post compa
 
 If you don't include an example like this, it won't be clear to the stakeholder why you feel fancy techniques are necessary. And if you can't think of an example like this, then maybe you don't *need* the fancy technique at all!
 
-### Data Cleaning and Discretion
+### Data Cleaning
 
-As noted above, a discussion of data cleaning and data wrangling does not belong in the body of your report. The only exception to this rule is when you were forced to exercise substantial discretion in a way that may impact the internal or external validity of the analysis in a meaningful way (for example, selection of control states, or dropping certain time periods from the analysis you feel are too anomalous).
+As noted above, a discussion of data cleaning and data wrangling does not belong in the body of your report. Data cleaning is where you probably spent *most* of your actual time, so it's natural to want to demonstrate how much effort you put into a project by detailing all of the painstaking merging, string cleaning, harmonizing, etc. work you put into your project. All of that can go into an appendix, but including it in a report only makes it more likely that all of that effort will go to waste because reading about it will bore yodread stakeholder into setting down your report before you want them to
+
+Oh, and please *never* use verbatim variable names in reports — they're fine in appendices, but in the body of a report you should explain what you're measuring in substantive terms someone without the data documentation can understand.
+
+### Discretion
+
+The exception to the "don't talk about your data manipulations" rule is that when you were forced to exercise substantial discretion in a way that may impact the internal or external validity of the analysis in a meaningful way (for example, selection of control states, or dropping certain time periods from the analysis you feel are too anomalous).
 
 Even in these situations, however, it is usually best to explain the *logic* behind the decisions in the body of the report (like in choosing what entities belong in your control group). However, a full discussion of these kinds of choices belongs in an appendix.
 
 When you do exercise substantial discretion in an analysis (for example, deciding to include certain entities as controls while excluding others), **it's best practice to include some sensitivity analyses in your report** by examining how your results do (or hopefully do not) change if you exercise discretion in slightly different ways. Ideally, you can just reference that "results are similar when [example of doing something a little differently]" in the body of the report and include the sensitivity analysis in an appendix.
-
-Oh, and please *never* use verbatim variable names in reports — they're fine in appendices, but in the body of a report you should explain what you're measuring in substantive terms someone without the data documentation can understand.
 
 ### Figures
 
