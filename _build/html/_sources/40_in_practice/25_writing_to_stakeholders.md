@@ -73,7 +73,13 @@ If you don't include an example like this, it won't be clear to the stakeholder 
 
 ### Data Cleaning
 
-As noted above, a discussion of data cleaning and data wrangling does not belong in the body of your report. Data cleaning is where you probably spent *most* of your actual time, so it's natural to want to demonstrate how much effort you put into a project by detailing all of the painstaking merging, string cleaning, harmonizing, etc. work you put into your project. All of that can go into an appendix, but including it in a report only makes it more likely that all of that effort will go to waste because reading about it will bore yodread stakeholder into setting down your report before you want them to
+As noted above, a discussion of data cleaning and data wrangling does not belong in the body of your report. Data cleaning is where you probably spent *most* of your actual time, so it's natural to want to demonstrate how much effort you put into a project by detailing all of the painstaking merging, string cleaning, harmonizing, etc. work you put into your project. All of that can go into an appendix, but including it in a report only makes it more likely that all of that effort will go to waste because reading about it will bore your stakeholder into setting down your report before you want them to.
+
+There's a famous saying in writing [that appears to have first appeared in a 1913 Cambridge Lecture by Arthur Quiller-Couch](https://slate.com/culture/2013/10/kill-your-darlings-writing-advice-what-writer-really-said-to-murder-your-babies.html):
+
+> If you here require a practical rule of me, I will present you with this: 'Whenever you feel an impulse to perpetrate a piece of exceptionally fine writing, obey it — whole-heartedly — and delete it before sending your manuscript to press. **Murder your darlings.**
+
+Well, when it comes to data science, you don't have to murder those darling paragraphs about all the messy data you had to clean up, but you *should* shove them in an appendix.
 
 Oh, and please *never* use verbatim variable names in reports — they're fine in appendices, but in the body of a report you should explain what you're measuring in substantive terms someone without the data documentation can understand.
 
