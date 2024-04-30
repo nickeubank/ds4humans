@@ -77,7 +77,7 @@ As noted above, a discussion of data cleaning and data wrangling does not belong
 
 There's a famous saying in writing [that appears to have first appeared in a 1913 Cambridge Lecture by Arthur Quiller-Couch](https://slate.com/culture/2013/10/kill-your-darlings-writing-advice-what-writer-really-said-to-murder-your-babies.html):
 
-> If you here require a practical rule of me, I will present you with this: 'Whenever you feel an impulse to perpetrate a piece of exceptionally fine writing, obey it — whole-heartedly — and delete it before sending your manuscript to press. **Murder your darlings.**
+> If you here require a practical rule of me, I will present you with this: 'Whenever you feel an impulse to perpetrate a piece of exceptionally fine writing, obey it — whole-heartedly — and delete it before sending your manuscript to press. **Murder your darlings.**'
 
 Well, when it comes to data science, you don't have to murder those darling paragraphs about all the messy data you had to clean up, but you *should* shove them in an appendix.
 
@@ -87,9 +87,13 @@ Oh, and please *never* use verbatim variable names in reports — they're fine i
 
 The exception to the "don't talk about your data manipulations" rule is that when you were forced to exercise substantial discretion in a way that may impact the internal or external validity of the analysis in a meaningful way (for example, selection of control states, or dropping certain time periods from the analysis you feel are too anomalous).
 
-Even in these situations, however, it is usually best to explain the *logic* behind the decisions in the body of the report (like in choosing what entities belong in your control group). However, a full discussion of these kinds of choices belongs in an appendix.
+Even in these situations, however, it is usually best to explain the *logic* behind the decisions in the body of the report (like in choosing what entities belong in your control group). However, a full discussion of these kinds of choices belong in an appendix.
 
-When you do exercise substantial discretion in an analysis (for example, deciding to include certain entities as controls while excluding others), **it's best practice to include some sensitivity analyses in your report** by examining how your results do (or hopefully do not) change if you exercise discretion in slightly different ways. Ideally, you can just reference that "results are similar when [example of doing something a little differently]" in the body of the report and include the sensitivity analysis in an appendix.
+When you do exercise substantial discretion in an analysis (for example, deciding to include certain entities as controls while excluding others), **it's best practice to include some sensitivity analyses in your report** by examining how your results do (or hopefully do not) change if you exercise discretion in slightly different ways. A sensitivity analysis, as a reminder, is where you make different discretionary choices (like choosing what entities to use as controls, or what variables you include in your regression), then re-run your analysis to see if the results change. The goal is to show that while, yes, you did have to exercise discretion in your analysis and data manipulations (we always do!), the choices you were forced to make aren't driving your results and conclusions.
+
+Ideally, you can just reference that "results are similar when [example of doing something a little differently]" in the body of the report and include the sensitivity analysis in an appendix.
+
+If different discretionary choices *do* lead to substantively different results, then you need to (a) try to characterize how fragile your results are (how much do they change in response to how small of a tweak in your choices), and/or (b) defend why the choices you made were correct, and the choices that give different results are not.
 
 ### Figures
 
