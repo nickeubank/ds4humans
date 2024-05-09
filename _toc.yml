@@ -4,7 +4,10 @@
 format: jb-book
 root: landing_page
 parts:
-  - caption:
+  - caption: Class Schedule
+    chapters:
+      - file: 00_class_schedule/class_schedule
+  - caption: Introduction
     chapters:
       - file: 10_introduction/10_our_approach
       - file: 10_introduction/30_solving_the_right_problem

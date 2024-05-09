@@ -1,0 +1,91 @@
+﻿Date,Topic,Do Before Class,In Class
+"Thrs, Jan 11",Course Overview, ,- `Acme Proposal <99_exercises/exercise_first_class_capstone_proposal.ipynb>`_
+"Tues, Jan 16",Solving Problems by Answering Questions,"- `Read, sign, submit syllabus on gradescope. <https://github.com/nickeubank/unifyingdatascience/raw/master/syllabus/Syllabus_UnifyingDataScience.pdf>`_
+- `How to Read <how_to_read.ipynb>`_
+- `Solving Problems <https://ds4humans.com/10_introduction/10_our_approach.html>`_",- `Generating Questions <99_exercises/exercise_generating_questions.ipynb>`_
+"Thrs, Jan 18",Stakeholder Management,"- `Solving the Right Problem <https://ds4humans.com/10_introduction/30_solving_the_right_problem.html>`_
+- `History of Data Science <https://ds4humans.com/10_introduction/40_data_science_in_historical_context.html>`_ 
+- `Why It's Important To Get Your Question Right (30 min video) <https://www.youtube.com/watch?v=kYMfE9u-lMo>`_",- `Stakeholder Management <99_exercises/exercise_stakeholder_management.ipynb>`_
+"Tues, Jan 23",Proscriptive v. Descriptive Questions,- `Descriptive versus Prescriptive Questions <https://ds4humans.com/30_questions/05_descriptive_v_prescriptive.html>`_,
+"Thrs, Jan 25",Exploratory Questions,"- `EDA <https://ds4humans.com/30_questions/07_eda.html>`_
+- `Using Exploratory Questions <https://ds4humans.com/30_questions/10_using_exploratory_questions.html>`_
+- `Answering Exploratory Questions <https://ds4humans.com/30_questions/15_answering_exploratory_questions.html>`_",- `Exercise <99_exercises/exercise_exploratory.ipynb>`_
+"Tues, Jan 30",Exploratory Questions,"- `Internal v. External Validity <https://ds4humans.com/30_questions/17_exploratory_questions_internal_external.html>`_
+- `Writing Good Notebooks <https://nickeubank.github.io/practicaldatascience_book/notebooks/PDS_not_yet_in_coursera/20_programming_concepts/writing_good_jupyter_notebooks.html>`_
+- Start Team Project",- `Explor Assign <team_assignments/UDS_TeamProject_Exploratory.ipynb>`_
+"Thrs, Feb 1",Teams 1,"- `What Project Aristotle Learned <https://github.com/nickeubank/unifyingdatascience/raw/master/team_readings/project_aristotle_nytimes.pdf>`_
+- Edmondson, The Fearless Organization, Chpt 1 (on Canvas)",
+"Tues, Feb 6",Teams 2,"- `Review Team Charter Assignment <https://github.com/nickeubank/unifyingdatascience/raw/master/team_readings/MIDS%20Team%20Charter%20Assignment.docx>`_
+- Edmondson, Teaming, Chpt 2 from ""Cognitive Barriers to Teaming"" (p. 82) to end of Chapter (on Canvas)
+ 
+ Optional: `Fostering Psychological Safety Tips <https://docs.google.com/document/d/1PsnDMS2emcPLgMLFAQCXZjO7C4j2hJ7znOq_g2Zkjgk/export?format=pdf>`_",
+"Thrs, Feb 8",Passive Prediction Questions,"- `Using Passive Prediction <https://ds4humans.com/30_questions/20_using_passive_prediction_questions.html>`_
+- `Answering Passive Prediction <https://ds4humans.com/30_questions/25_answering_passive_prediction.html>`_",- `Ex <99_exercises/exercise_passive_prediction.ipynb>`_
+"Tues, Feb 13",Passive Prediction Questions,"- `Stop Using Black Boxes <https://arxiv.org/abs/1811.10154>`_
+- `Black box models require trusting data too <https://www.nytimes.com/2017/06/13/opinion/how-computers-are-harming-criminal-justice.html>`_
+ 
+ **Optional:**
+ 
+ - `Contraining Artificial Stupidity <https://www.youtube.com/watch?v=Z8MEFI7ZJlA>`_
+ - `Combining explicit models and black boxes in Scientific ML <https://notamonadtutorial.com/scientific-machine-learning-with-julia-the-sciml-ecosystem-b22802951c8a>`_
+",
+"Thrs, Feb 15",Passive Prediction Questions,"- `GAM: The Predictive Silver Bullet <https://multithreaded.stitchfix.com/assets/files/gam.pdf>`_
+- `A Tour of pyGAM <https://pygam.readthedocs.io/en/latest/notebooks/tour_of_pygam.html>`_",- `Ex <99_exercises/exercise_interpretable.ipynb>`_
+"Tues, Feb 20",Causal Questions,"- `Using Causal Questions <https://ds4humans.com/30_questions/30_using_causal_questions.html>`_
+- `Answering Causal Questions <https://ds4humans.com/30_questions/40_answering_causal_questions.html>`_",
+"Thrs, Feb 22",Causal Questions,- `Potential Outcomes Framework <https://ds4humans.com/35_causal/10_potential_outcomes.html>`_,`Exercise <99_exercises/exercise_potential_outcomes1.ipynb>`_
+"Tues, Feb 27",Causal Questions,"- Cunningham, Chpt 4, pp 135 (""Independence Assumption"") - 148 (Stop at ""Randomization Inference"")
+- `Indicator Variables <https://ds4humans.com/35_causal/30_interpreting_indicator_vars.html>`_
+
+(Note `SDO` (Simple Difference in Outcomes) in Cunningham same as ""`\widehat{ATE}` from class)
+
+ Optional:
+  - Read Chpt 4 in Cunningham from start (different presentation of potential outcomes)",`Exercise <99_exercises/exercise_resume_experiment.ipynb>`_
+"Thrs, Feb 29",Causal Questions: Experiments,"Experiments: Internal Validity (In Practice):
+
+- Kohvani, Tang and Xu: Chpt 2 (End to End Example)
+- Kohavi, Tang and Xu: Chpt 3, ""Threats to Internal Validity"" (p. 42-47) 
+- Kohvani, Tang and Xu: Chpt 19 (A/A Testing)",
+"Tues, Mar 5",Causal Questions: Experiments,"Overall Evaluation Criteria: Kohavi, Tang, and Xu Chpt 7.
+
+Finishing Internal Validity: 
+
+- Different Randomizations: Kohavi, Tang and Xu Chpt 22
+
+Experiments: External Validity (In Practice):
+
+- Kohavi, Tang and Xu, Chpt 3, ""Threats to External Validity"" to end (p. 47-54)
+- Kohvai, Tang and Xu, Chpt 23 (Primacy Effects / Long Term Decay)",`Exercise <99_exercises/exercise_abtesting.ipynb>`_
+"Thrs, Mar 7",Optional Class,Optional Class,
+"Tues, Mar 12",**NO CLASS**,,
+"Thrs, Mar 14",**NO CLASS**,,
+"Tues, Mar 19",Causal Questions: Experiments,"Designing Experiments
+
+- Power Calculations: Georgiev, Chpt 4 (Canvas)
+- `Don't stop experiments early! <endogenous_stopping.ipynb>`_
+
+ 
+",`Power Ex <99_exercises/exercise_power_calculations.ipynb>`_
+"Thrs, Mar 21",Review Day,AB Testing Review,
+"Tues, Mar 26",Causal Questions: Experiments,"- Statistical Decision Theory (on Canvas). 550-556
+
+(This is same as IDS 705 Lecture 8 Reading)",
+"Thrs, Mar 28",**MIDTERM**,**MIDTERM**,
+"Tues, Apr 2",Causal Questions: Regression,- `Causal Beyond Experiments <https://ds4humans.com/35_causal/40_causal_inference_beyond_ab_testing.html>`_,- `Link <99_exercises/exercise_regressions_incomeineq.ipynb>`_
+"Thrs, Apr 4",Exploratory Questions Feedback,- Bring comments on other teams' report,
+"Tues, Apr 9",Causal Questions: Matching,"- `The Why of Matching <https://ds4humans.com/35_causal/80_matching_why.html>`_
+- `The How of Matching Summary <https://ds4humans.com/35_causal/90_matching_how.html>`_
+- `Methods for Matching <https://youtu.be/tvMyjDi4dyg?t=910>`_
+
+*Watch the video above from about 15 minutes in (where link starts) till at least 45 minutes in, keep going if you want to learn about propensity score matching problems.*",- `Exercise <99_exercises/exercise_matching.ipynb>`_
+"Thrs, Apr 11",Causal Questions: Differences and Differences / Panels,"- Cunningham, Chpt 9 pp 406 (Difference in Differences) - pp 433 (Stop at ""Importance of Placebos in Diff-in-Diff"")
+ -(Book page numbers at bottom of PDF on canvas. Full chapter is in PDF, more than you need to read.)
+ 
+ Optional but encouraged:
+ (dont need to follow everything, but here's a real diff-in-diff)
+ 
+ - `Enfranchisement and Incarceration <https://www.cambridge.org/core/journals/american-political-science-review/article/enfranchisement-and-incarceration-after-the-1965-voting-rights-act/C68FA7BB8CA313BDD8D9A39BA666A21D>`_
+ - `Diff-in-Diffs at Netflix <https://netflixtechblog.com/key-challenges-with-quasi-experiments-at-netflix-89b4f234b852>`_",
+"Tues, Apr 16",Interpretation of Results,- **Revised Exploratory Due along with Causal Proposal**,- `Exercise <99_exercises/exercise_expected_value.ipynb>`_
+"Wed, April 24",,- **Optional Due Date for Causal Rough Draft (11pm)**,
+"Wed, May 1",,- **Final Causal Report Due**,
