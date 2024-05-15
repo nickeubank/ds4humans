@@ -197,6 +197,7 @@
 <li class="toctree-l1"><a class="reference internal" href="30_questions/17_exploratory_questions_internal_external.html">Internal versus External Validity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="30_questions/20_using_passive_prediction_questions.html">Using Passive Prediction Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="30_questions/25_answering_passive_prediction.html">Answering Passive Prediction Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="30_questions/26_passive_prediction_errors.html">The Right Way To Be Wrong</a></li>
 <li class="toctree-l1"><a class="reference internal" href="30_questions/30_using_causal_questions.html">Using Causal Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="30_questions/40_answering_causal_questions.html">Answering Causal Questions</a></li>
 </ul>
@@ -217,7 +218,8 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Science in Practice</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="40_in_practice/00_backwards_design.html">Backwards Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="40_in_practice/00_how_to_read_this_book.html">How to Read (Academic Edition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="40_in_practice/05_backwards_design.html">Backwards Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="40_in_practice/20_from_data_to_decisions.html">Making Decisions Using Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="40_in_practice/25_writing_to_stakeholders.html">Writing to Stakeholders</a></li>
 </ul>
@@ -420,6 +422,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-problems-with-data-ids-701">Solving Problems with Data (IDS 701)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-succeed-in-this-class">How to Succeed in this Class</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-requisites-for-non-mids-students">Pre-Requisites for Non-MIDS Students</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#course-schedule">Course Schedule</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#syllabus">Syllabus</a></li>
@@ -447,6 +450,12 @@ document.write(`
 <p>The answer lies — at least in significant part — in a failure to provide students with a systematic approach to bringing the techniques learned in statistical modeling and machine learning courses to bear on real-world problems. Data science curricula usually begin with coding, statistics, and model evaluation techniques. All too often, however, that’s where they stop. But while the hardest part of data science <em>classes</em> is often fitting a model well or getting a good AUC score, the hardest part of being an effective <em>professional</em> data scientist is ensuring that the models being fit and the results being interpreted actually solve the problem that motivated you (or your stakeholder) in the first place.</p>
 <p>This class is designed to fill this gap. Through exercises, case studies, and projects, students will develop a <em>systematic</em> understanding of how to approach and manage data science projects from conception through delivery and adoption. It will provide a unified perspective on how the perspectives and tools learned in other courses complement one another, and <em>when</em> different approaches to data science are most appropriate.</p>
 <p>In addition, this course will also provide an in-depth introduction into <em>causal inference</em> — the practice of answering causal questions. Given the interests of MIDS students, this introduction will focus heavily on experiments and A/B testing, but will also cover the use of observational data (data that did not come from an experiment that employed random assignment to treatment) for answering causal questions.</p>
+<section id="how-to-succeed-in-this-class">
+<h3>How to Succeed in this Class<a class="headerlink" href="#how-to-succeed-in-this-class" title="Link to this heading">#</a></h3>
+<p>In Duke course reviews, students are asked, “What would you like to say about this course to a student who is considering taking this course in the future?”</p>
+<p><em>By far</em> the most consistent thing past students say they would like to tell a student considering taking it in the future is to <strong>do the readings and take them seriously.</strong></p>
+<p>There is a tendency among data science students — especially those from a STEM background — to assume that readings that don’t have a lot of math aren’t “serious,” and consequently don’t require substantial focus. That’s a mistake. This course is about the critical reasoning required to make the leap from the relatively clean math of statistics and machine learning to the messiness of real world problems. To help you learn how to do so, the readings are full of examples, ways to think about problems, and problem-solving frameworks to help you cross that wobbly bridge from the clean world of problem sets to the real, under- or mis-defined problems you will face when you enter the work force. But with this type of material, what you get out of it depends on what you put into it, and unlike with a theorem — which you either follow or you don’t — thinking critically happens on many levels. So while it’s easy to skim a reading and — because you weren’t confused by any greek notation — assume you internalized it, succeeding in this class requires actively wrestling with the material, not just letting your eyes glide over it.</p>
+</section>
 <section id="pre-requisites-for-non-mids-students">
 <h3>Pre-Requisites for Non-MIDS Students<a class="headerlink" href="#pre-requisites-for-non-mids-students" title="Link to this heading">#</a></h3>
 <p>This course is primarily designed for students in the Duke Masters in Interdisciplinary Data Science (MIDS) program, but students from other programs are more than welcome if they have the appropriate pre-requisite training. Data Science is a fundamentally interdisciplinary field, so the more perspectives we have represented in the classroom the better!</p>
@@ -456,7 +465,7 @@ document.write(`
 </section>
 <section id="course-schedule">
 <h3>Course Schedule<a class="headerlink" href="#course-schedule" title="Link to this heading">#</a></h3>
-<p>You can find the course schedule here. Note that our schedule is subject to change, but this should give you a good sense of the material we will cover.</p>
+<p>You can find the <a class="reference internal" href="00_class_schedule/class_schedule.html"><span class="doc std std-doc">course schedule here</span></a>. Note that our schedule is subject to change, but this should give you a good sense of the material we will cover.</p>
 </section>
 <section id="syllabus">
 <h3>Syllabus<a class="headerlink" href="#syllabus" title="Link to this heading">#</a></h3>
@@ -533,6 +542,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-problems-with-data-ids-701">Solving Problems with Data (IDS 701)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-succeed-in-this-class">How to Succeed in this Class</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-requisites-for-non-mids-students">Pre-Requisites for Non-MIDS Students</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#course-schedule">Course Schedule</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#syllabus">Syllabus</a></li>

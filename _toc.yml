@@ -22,6 +22,8 @@ parts:
       - file: 30_questions/17_exploratory_questions_internal_external
       - file: 30_questions/20_using_passive_prediction_questions
       - file: 30_questions/25_answering_passive_prediction
+      - file: 30_questions/26_passive_prediction_errors
+        title: The Right Way To Be Wrong
       - file: 30_questions/30_using_causal_questions
       - file: 30_questions/40_answering_causal_questions
   - caption: Causal Inference
@@ -44,7 +46,8 @@ parts:
           - file: 35_causal/90_matching_how
   - caption: Data Science in Practice
     chapters:
-      - file: 40_in_practice/00_backwards_design
+      - file: 40_in_practice/00_how_to_read_this_book
+      - file: 40_in_practice/05_backwards_design
       - file: 40_in_practice/10_ethics
       - file: 40_in_practice/20_from_data_to_decisions
       - file: 40_in_practice/25_writing_to_stakeholders

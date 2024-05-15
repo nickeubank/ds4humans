@@ -16,6 +16,14 @@ This class is designed to fill this gap. Through exercises, case studies, and pr
 
 In addition, this course will also provide an in-depth introduction into *causal inference* — the practice of answering causal questions. Given the interests of MIDS students, this introduction will focus heavily on experiments and A/B testing, but will also cover the use of observational data (data that did not come from an experiment that employed random assignment to treatment) for answering causal questions.
 
+### How to Succeed in this Class
+
+In Duke course reviews, students are asked, "What would you like to say about this course to a student who is considering taking this course in the future?"
+
+*By far* the most consistent thing past students say they would like to tell a student considering taking it in the future is to **do the readings and take them seriously.**
+
+There is a tendency among data science students — especially those from a STEM background — to assume that readings that don't have a lot of math aren't "serious," and consequently don't require substantial focus. That's a mistake. This course is about the critical reasoning required to make the leap from the relatively clean math of statistics and machine learning to the messiness of real world problems. To help you learn how to do so, the readings are full of examples, ways to think about problems, and problem-solving frameworks to help you cross that wobbly bridge from the clean world of problem sets to the real, under- or mis-defined problems you will face when you enter the work force. But with this type of material, what you get out of it depends on what you put into it, and unlike with a theorem — which you either follow or you don't — thinking critically happens on many levels. So while it's easy to skim a reading and — because you weren't confused by any greek notation — assume you internalized it, succeeding in this class requires actively wrestling with the material, not just letting your eyes glide over it.
+
 ### Pre-Requisites for Non-MIDS Students
 
 This course is primarily designed for students in the Duke Masters in Interdisciplinary Data Science (MIDS) program, but students from other programs are more than welcome if they have the appropriate pre-requisite training. Data Science is a fundamentally interdisciplinary field, so the more perspectives we have represented in the classroom the better!
@@ -28,7 +36,7 @@ Finally, students will also be expected to be comfortable collaborating using gi
 
 ### Course Schedule
 
-You can find the course schedule here. Note that our schedule is subject to change, but this should give you a good sense of the material we will cover.
+You can find the [course schedule here](00_class_schedule/class_schedule). Note that our schedule is subject to change, but this should give you a good sense of the material we will cover.
 
 ### Syllabus
 
