@@ -428,6 +428,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#but-what-about-the-mistakes">But What About The Mistakes?</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#area-under-the-curve">Area Under the Curve</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ethics-of-misclassifications">The Ethics of Misclassifications</a></li>
 </ul>
             </nav>
@@ -445,9 +446,16 @@ document.write(`
 <p>With the rise of online machine learning competitions like Kaggle and an academic literature fixated on publishing papers showing marginal improvements in performance metrics on standard benchmarks, you could be forgiven for thinking that the hardest part of data science is finding the right model and features to max out standard metrics like Area Under the Curve (AUC), Accuracy (share of cases correctly classified) or F1 scores.</p>
 <p>However, this is far from the case when it comes to solving real-world problems. Yes, advancement in academic computer science is often tied to one’s ability to write a new algorithm that performs marginally better on standard benchmarks, and most problem sets or online competitions you encounter will pre-specify how model performance will be evaluated.</p>
 <p>But when it comes to solving real-world problems, determining what success looks like is actually a core part of your job as a data scientist. And what makes this task difficult is not how you measure your model’s successes — the number of true positives and true negatives the model generates — but in determining the types of mistakes it makes when it gets things wrong.</p>
-<p>Understanding how a model fails is just as important as minimizing mistakes in the first place (i.e., maximizing accuracy). Depending on the context, there can be <em>huge</em> asymmetries regarding the consequences of false positives and false negatives. Tell a someone with cancer they’re fine (false negative), and the consequence may be the death of the patient from an easily treatable condition; tell someone healthy there’s a chance they have cancer, and you may cause stress and additional tests, but the patient death is very unlikely.</p>
+<p>Understanding how a model fails is just as important as minimizing mistakes in the first place (i.e., maximizing accuracy). Depending on the context, there can be <em>huge</em> asymmetries regarding the consequences of false positives and false negatives. Tell a someone with cancer they’re fine (false negative), and the result may be the death of the patient from an easily treatable condition; tell someone healthy there’s a chance they have cancer, and you may cause stress and additional tests, but the patient death is very unlikely.</p>
 <p>Similarly (but in a much less scary context), classify a credit card applicant as a “good credit risk” who is not actually credit-worthy (a false positive), and your company may lose the credit limit on the card they issue; classify someone as high risk who is actually not, and your company may lose the transaction fees that customer would have generated, but they won’t lose tens of thousands of dollars in unpaid bills.</p>
 <p>When answering Passive Prediction Questions, the choice of how to balance true positives, true negatives, false positives, and false negatives is <em>the</em> bridge between the math of statistics and machine learning and the specifics of real-world problems. And as a result, an ability to speak thoughtfully about how to balance these interests is one of the most important differentiators between data scientists who have only ever fit models for problem sets and data scientists business leaders trust to solve their problems.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In case you need more motivation to care about how best to distribute your true and false positives and negatives to best solve your stakeholder’s problem, allow me to offer the following: if you are comfortable just endorsing a single success metric (accuracy, F1 score, AUC), <em>most</em> Passive Prediction Questions can be answered relatively well by automated tools. And that means that if the only thing that differentiates you from the next data scientist (or generation of chatGPT) is that you can get a slightly higher AUC than the person sitting next to you, how much value do you think you are likely bringing to your stakeholder (and thus how well paid)?</p>
+<p>Don’t believe me? Consider scikit-learn — by design, nearly all of the algorithms in that package have the exact same APIs — you run <code class="docutils literal notranslate"><span class="pre">test_train_split()</span></code>, <code class="docutils literal notranslate"><span class="pre">.fit()</span></code>, and <code class="docutils literal notranslate"><span class="pre">.predict()</span></code>. That means it’s almost trivially easy to write a program that just loops over all the models in the library, fits them, and checks their performance against the simple metric you chose. Indeed, products exist that do just this, often under names like <code class="docutils literal notranslate"><span class="pre">AutoML</span></code>.</p>
+<p>Will these do as well as a well trained data scientist? Not yet — there’s skill in feature engineering and choosing which path to go down when computationally constrained. And if you’re someone working at the forefront of developing new machine learning algorithms or infrastructure, then this does not apply to you. But if you are someone who is primarily interested in applying the best tools of data science to solve real world problems, then you should also bear in mind that anything easily computable lends itself to automation.<a class="footnote-reference brackets" href="#pinker" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+<p>Thinking carefully about your stakeholder’s problem and being able to get them to articulate the relative value they place on true and false positives and negatives, then translating that domain expertise into an optimization problem — <em>that</em> is a task that requires substantially more critical thinking and interpersonal skills, and consequently is less likely to be made obsolete any time soon.</p>
+</div>
 <section id="the-problem-with-accuracy">
 <h2>The Problem with Accuracy<a class="headerlink" href="#the-problem-with-accuracy" title="Link to this heading">#</a></h2>
 <p>Let’s begin our discussion about balancing true and false positives and negatives with my least favorite metric for classification problems: Accuracy.</p>
@@ -461,8 +469,8 @@ document.write(`
 <section id="accuracy-and-imbalanced-data">
 <h3>Accuracy and Imbalanced Data<a class="headerlink" href="#accuracy-and-imbalanced-data" title="Link to this heading">#</a></h3>
 <p>Most data you will encounter in your career will be <em>imbalanced</em>, meaning that one of the outcomes you are trying to predict with your model (assuming a classification task) will be much, much less prevalent than the other. In these situations, because accuracy is just “the share of cases correctly classified,” getting high acccuracy can be achieved trivially by always predicting the more prevalent outcome.</p>
-<p>To illustrate, consider routine mammograms. Mammograms are x-rays of women’s breast tissue used to screen for early signs of breast cancer. In the United States, it is recommended that all women over 40 get a mammogram every two years. Unsurprisingly, therefore, <em>vast</em> majority of routine mammograms are medically unremarkable. According to the Susan G. Komen society, roughly 90% of routine mammograms are perfectly normal and require no followup.<a class="footnote-reference brackets" href="#false-positives" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> Thus a “model” that reports that <em>any</em> routine mammogram it is given is normal will immediately achieve an accuracy score of 90%.</p>
-<p>Moreover, most data scientists wouldn’t even consider 90/10 data to be particularly imbalanced. In any given year in the United States, only about 3% of single-family residential mortgages are in a state of delinquency<a class="footnote-reference brackets" href="#delinquency" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>, and fraudulent credit card purchases <a class="reference external" href="https://www.federalreserve.gov/newsevents/pressreleases/other20181016a.htm">make up less than one-tenth of 1% of all credit card transactions</a>. That means a “model” that reports all mortgages are in good standing or that all credit card transactions are valid will immediately have accuracy scores of 97% and <span class="math notranslate nohighlight">\(&gt;99.9%\)</span>, respectively.</p>
+<p>To illustrate, consider routine mammograms. Mammograms are x-rays of women’s breast tissue used to screen for early signs of breast cancer. In the United States, it is recommended that all women over 40 get a mammogram every two years. Unsurprisingly, therefore, <em>vast</em> majority of routine mammograms are medically unremarkable. According to the Susan G. Komen society, roughly 90% of routine mammograms are perfectly normal and require no followup.<a class="footnote-reference brackets" href="#false-positives" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> Thus a “model” that reports that <em>any</em> routine mammogram it is given is normal will immediately achieve an accuracy score of 90%.</p>
+<p>Moreover, most data scientists wouldn’t even consider 90/10 data to be particularly imbalanced. In any given year in the United States, only about 3% of single-family residential mortgages are in a state of delinquency<a class="footnote-reference brackets" href="#delinquency" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>, and fraudulent credit card purchases <a class="reference external" href="https://www.federalreserve.gov/newsevents/pressreleases/other20181016a.htm">make up less than one-tenth of 1% of all credit card transactions</a>. That means a “model” that reports all mortgages are in good standing or that all credit card transactions are valid will immediately have accuracy scores of 97% and <span class="math notranslate nohighlight">\(&gt;99.9%\)</span>, respectively.</p>
 </section>
 <section id="relative-to-what">
 <h3>Relative to What?<a class="headerlink" href="#relative-to-what" title="Link to this heading">#</a></h3>
@@ -475,16 +483,32 @@ document.write(`
 <p>Accuracy says <em>nothing</em> about how different types of mistakes are being balanced, which is why accuracy is sometimes a fun statistic to use on problem sets but a <em>terrible</em> metric in the real world.</p>
 </section>
 </section>
+<section id="area-under-the-curve">
+<h2>Area Under the Curve<a class="headerlink" href="#area-under-the-curve" title="Link to this heading">#</a></h2>
+</section>
 <section id="the-ethics-of-misclassifications">
 <h2>The Ethics of Misclassifications<a class="headerlink" href="#the-ethics-of-misclassifications" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>It is better that ten guilty persons escape than that one innocent suffer.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>William Blackstone</p></li>
+</ul>
+<p>The author presents two classes of fairness concepts: Disparate Treatment Fairness (concepts related to the decision-making process itself), and Disparate Impact Metrics (those related to the fairness of the results of the application of an algorithm).</p>
+<p>One example of a Disparate Treatment Fairness concept the author references is colorblindness—i.e., not using race itself in making a decision, presumably by not allowing for the use of race as an input into an algorithm.</p>
+<p>What potential problems do you see with colorblindness as a governing fairness principle? Hint: think like a data scientist—why might removing the “race” variable from a dataset be insufficient to generate fair outcomes?</p>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="false-positives" role="doc-footnote">
+<aside class="footnote brackets" id="pinker" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>An idea closely related to a point made by Steven Pinker in his 1994 book <em>The Language Instinct</em>: “The main lesson of thirty-five years of AI research is that the hard problems are easy and the easy problems are hard. The mental abilities of a four-year-old that we take for granted – recognizing a face, lifting a pencil, walking across a room, answering a question – in fact solve some of the hardest engineering problems ever conceived… As the new generation of intelligent devices appears, it will be the stock analysts and petrochemical engineers and parole board members who are in danger of being replaced by machines. The gardeners, receptionists, and cooks are secure in their jobs for decades to come.”</p>
+</aside>
+<aside class="footnote brackets" id="false-positives" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
 <p>The vast majority of the roughly 10% of scans that are abnormal are eventually determined to be false positives.</p>
 </aside>
 <aside class="footnote brackets" id="delinquency" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
 <p>In other words, they have failed to make a mortgage payment for at least a certain period of days.</p>
 </aside>
 </aside>
@@ -561,6 +585,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#but-what-about-the-mistakes">But What About The Mistakes?</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#area-under-the-curve">Area Under the Curve</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ethics-of-misclassifications">The Ethics of Misclassifications</a></li>
 </ul>
   </nav></div>
