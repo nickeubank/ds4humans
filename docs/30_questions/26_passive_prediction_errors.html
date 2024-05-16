@@ -428,7 +428,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#but-what-about-the-mistakes">But What About The Mistakes?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#area-under-the-curve">Area Under the Curve</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roc-and-area-under-the-curve-auc">ROC and Area Under the Curve (AUC)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-the-best-way-to-be-wrong">Choosing the Best Way to be Wrong</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ethics-of-misclassifications">The Ethics of Misclassifications</a></li>
 </ul>
             </nav>
@@ -483,20 +484,58 @@ document.write(`
 <p>Accuracy says <em>nothing</em> about how different types of mistakes are being balanced, which is why accuracy is sometimes a fun statistic to use on problem sets but a <em>terrible</em> metric in the real world.</p>
 </section>
 </section>
-<section id="area-under-the-curve">
-<h2>Area Under the Curve<a class="headerlink" href="#area-under-the-curve" title="Link to this heading">#</a></h2>
+<section id="roc-and-area-under-the-curve-auc">
+<h2>ROC and Area Under the Curve (AUC)<a class="headerlink" href="#roc-and-area-under-the-curve-auc" title="Link to this heading">#</a></h2>
+<p>“OK, fine,” I hear you say, “but no one uses accuracy anymore — we all use ROC AUC scores!”</p>
+<p>First, again, I can tell you from reading hundreds of essays and looking at hundreds of resumes, accuracy is still an <em>extremely</em> commonly used metric. But setting that aside…</p>
+<p>Yes, AUC is certainly a more holistic metric than accuracy. Where accuracy evaluates the share of cases correctly classified, AUC averages the share of correct positive predictions across the full range of classification thresholds (one of the reasons it is commonly used in competitions). But it is not a substitute for thinking carefully about the correct metric <em>for the specific problem you are seeking to solve</em>.</p>
+<p>First, most models are deployed at a specific classification threshold, so averaging across all classification thresholds may create a good <em>general purpose</em> indicator of a model’s performance, but it makes AUC poorly suited to evaluating how well a model will perform in any <em>specific</em> context (i.e., at a specific classification threshold).</p>
+<p>Second, the ROC AUC metric is myopically focused on the proportion of correct positive predictions. But depending on our problem, we may also care about the ratio of false negatives to false positives or other properties of our negative predictions.</p>
+</section>
+<section id="choosing-the-best-way-to-be-wrong">
+<h2>Choosing the Best Way to be Wrong<a class="headerlink" href="#choosing-the-best-way-to-be-wrong" title="Link to this heading">#</a></h2>
+<p>How, then, should one approach being more thoughtful about model evaluation?</p>
+<p>The first step is always to evaluate the <em>relative value</em> of the four different types of classifications: true positives, true negatives, false positives, and false negatives. Writing a model that reviews the results of blood tests for signs of a terminal but treatable disease? You probably want to associate a strong negative value with false negatives (where you tell a sick patient they’re healthy) and a smaller negative value with false positives (being told you might have a lethal condition is stressful, even if later tests (which may have their own risks) may show it to be a false positive!). And you may then normalize your true positives and true negatives to zero.</p>
+<p>You can then fit your classification model and, for each classification threshold, calculate the “cost” of the resulting distribution of true and false positives and negatives. Find the model and classification threshold that minimizes this problem-specific cost function, and you’ve identified the model and threshold that’s best <em>for your specific problem</em>.</p>
+<p>Where do these values come from? Sometimes your stakeholder will be able to tell you the actual financial cost of different types of errors (e.g., when deciding whether to issue someone a credit card), but other times these values are more subjective. What’s the relative cost of falsely telling someone they may have a terminal disease condition? How might that vary depending on the risks associated with any followup procedures required to confirm a diagnosis or the amount of time it takes for the diagnosis to be confirmed? Those are hard, subjective questions you may not have the domain expertise to answer yourself. But because you <em>understand</em> the role of these values in how your eventual model will operate, you can raise these questions with your stakeholder (who should have better domain knowledge) and solicit values from them.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Up until now, we’ve emphasized how we manage errors in the context of discrete, binary classification tasks, but it is worth emphasizing that this is only because binary classification is the easiest context in which to think about these problems. However, the issues raised her apply equally to classification tasks with more than two categories, and to efforts to answer Passive Prediction Questions about continuous outcomes. Latent in any model you use is a cost function, and implicit in that cost function is how mistakes are evaluated.</p>
+<p>Linear regression, for example, minimizes the sum of squared errors across all observations, and (by default) it gives equal weight to the squared error associated with each observation. But if you don’t feel that’s an appropriate weighting scheme, you are not bound to it — weighted linear regression is a version of linear regression where the user provides a set of weights to associate with each observation. Have some customers you know are more valuable to your company? Perhaps you want to have the model give more weight to errors associated with those customers so the final model performs better for those customers. Or working with data from stores with different sales volumes? Maybe you want to give more weight to stores with larger sales volumes.</p>
+<p>Don’t want to work with squared errors at all? Great! There’s a whole discipline called <a class="reference external" href="https://www.statsmodels.org/stable/examples/notebooks/generated/robust_models_1.html">robust linear modeling</a> that uses different norms for evaluating errors (often with the goal of reducing the influence of outliers, as the name implies, but all they are doing is modifying how the errors the model seeks to minimize are handled).</p>
+</div>
 </section>
 <section id="the-ethics-of-misclassifications">
 <h2>The Ethics of Misclassifications<a class="headerlink" href="#the-ethics-of-misclassifications" title="Link to this heading">#</a></h2>
+<p>How our models make mistakes is often not just a financial decision; when statistical models are used to make high stakes decisions — like who is sent to prison and who is let out on bail pending trial — how errors are distributed can often be deeply, <em>deeply</em> ethically frought issue.</p>
+<p>To illustrate, let’s consider the example of Risk Assessment models. Risk Assessment models are models used in the US criminal justice system that are designed to help judges and parole boards determine the risk that a criminal defendant or incarcerated person may re-offend if released from jail. These are increasingly commonly used for purposes like determining whether arrested individuals should be released while they await trial and whether incarcerated individuals should be paroled (released before the end of their prison sentence to a half-way house or monitored release).</p>
+<p>The way Risk Assessment models are being used in the US has many, many problems. But a recent debate about an aspect of one of the most commonly used models — the COMPAS Risk Model — is illuminating about the moral issues that arise when handling misclassifications. If you would like to learn more about this debate and difference concepts of algorithmic fairness, I strongly recommend <a class="reference external" href="https://www.yalelawjournal.org/article/bias-in-bias-out">Bias In, Bias Out</a> (2019), a Yale Law Journal article by <a class="reference external" href="https://www.law.upenn.edu/faculty/sgmayson">Sandra G. Mayson</a>.</p>
+<p>In 2016, the investigative news outlet ProPublica published a piece about COMPAS called <a class="reference external" href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">Machine Bias</a>. In it, journalists Julia Angwin, Jeff Larson, Surya Mattu and Lauren Kirchner used data from Florida to evaluate how well the COMPAS risk assessment model predicted criminal recitivism (the term for when a criminal defendant commits another crime in the future).</p>
+<p>The <a class="reference external" href="https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm">ProPublica analysis determined</a>, in part, that:</p>
 <blockquote>
-<div><p>It is better that ten guilty persons escape than that one innocent suffer.</p>
+<div><p>Black defendants were often predicted to be at a higher risk of recidivism than they actually were. Our analysis found that black defendants who did not recidivate over a two-year period were nearly twice as likely to be misclassified as higher risk compared to their white counterparts (45 percent vs. 23 percent).</p>
 </div></blockquote>
-<ul class="simple">
-<li><p>William Blackstone</p></li>
-</ul>
-<p>The author presents two classes of fairness concepts: Disparate Treatment Fairness (concepts related to the decision-making process itself), and Disparate Impact Metrics (those related to the fairness of the results of the application of an algorithm).</p>
-<p>One example of a Disparate Treatment Fairness concept the author references is colorblindness—i.e., not using race itself in making a decision, presumably by not allowing for the use of race as an input into an algorithm.</p>
-<p>What potential problems do you see with colorblindness as a governing fairness principle? Hint: think like a data scientist—why might removing the “race” variable from a dataset be insufficient to generate fair outcomes?</p>
+<p>In other words, the false positive rate for Black defendants was higher than it was for White defendants.</p>
+<p>While apparently rather damning of the model, COMPAS’ response was that this was actually a consequence of the fact that their model generated equal True Positive Rates across Black and White defendants. And while I am generally loath to defend COMPAS, as I think it has <em>many</em> problems and should not be in use, in this particular case they have a point.</p>
+<p>As Sandra Mayson points out in her paper, the issue is that the likelihood someone will be arrested for a future crime (be arrested for recitivism) is imbalanced by race. As a consequence, a model that has the same True Positive Rate for Black and White defendants (i.e., the share of people predicted to re-offend who do re-offend is the same for both groups) will <em>necessarily</em> have different False Positive Rates for the two groups.</p>
+<p>To illustrate, consider the following figure from Mayson’s paper with two groups, drawn as grey and black. Solid outlines are individuals who do not recitivate, while hollow figures are those who are re-arrested. In the grey group, 2/10 individuals are re-arrested, while only 1/10 are re-arrested in the black group. The vertical line represents the classification threshold used by the model.</p>
+<p>Note that this implies the grey outlines are in the situation akin to that of Black Americans (more likely to be arrested for recitivism) and the black outlines are in the position of White Americans (less likely to be rearrested), which is a little confusing.</p>
+<p><img alt="groups with different false positive rates" src="../_images/mayson_fig1.png" /></p>
+<p>With the line in the location shown in the figure, we can see that the model has the same True Positive Rate for both populations — grey and black (50%). But as a result, the <em>False</em> Positive Rate is higher for the grey individuals (2/8). Thus while the ProPublica finding is true — the False Positive Rate of COMPAS is higher for Black defendants — the only way to even this out would be to shift the classification threshold for the black outlines over, as illustrated in Figure 2 from her paper:</p>
+<p><img alt="groups with different true positive rates" src="../_images/mayson_fig2.png" /></p>
+<p>This balances the False Positive Rates for the two groups, but in doing so results in the True Positive Rate being lower for the black outlines.</p>
+<p>Can we do better? Well, we could get equal True Positive Rates and False Positive Rates, but only by accepting differential False <em>Negative</em> rates, as illustrated in Mayson’s Figure 3:</p>
+<p><img alt="groups with different false negative rates" src="../_images/mayson_fig3.png" /></p>
+<p>As Mayson writes:</p>
+<blockquote>
+<div><p>As this example illustrates, if the base rate of the predicted outcome differs across racial groups, it is impossible to achieve (1) predictive parity; (2) parity in false-positive rates; and (3) parity in false-negative rates at the same time (unless prediction is perfect, which it never is). Computer scientists have provided mathematical proofs of this fact.<a class="footnote-reference brackets" href="#impossibility" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a> When base rates differ, we must prioritize one of these metrics at the expense of another. Race neutrality is not attainable.</p>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please note that in the discussion of imbalanced recitivism arrest rates, I said <em>arrested for</em> recitivism — a huge problem with all of these risk assessment models is that we know from many studies that even in situations where Black and White Americans <em>commit</em> crimes at similar rates (like drug use), Black Americans are substantially more likely to be <em>arrested</em> for those crimes. Thus, an imbalance in arrests for recitivism do not necessarily imply differences in <em>actual</em> recitivism.</p>
+<p>Indeed, this form of inequity is also a problem on the input side — Risk Assessment models take into account whether a defendant has prior convictions, but given Black Americans are more likely to be arrested even in situations where were know criminal behavior occurs at similar rates for Black and White Americans, and Black Americans are likely to have lower-incomes and thus less likely to have lawyers who can get charges dismissed, these models tend to treat them as higher risk.</p>
+</div>
+<p>So what is the right answer? Well, there isn’t one — each of these different schemes is defensible under different ethical frameworks. And that’s the problem — there’s no algorithm or machine learning metric that can tell you the “right” answer in a situation like this — it requires critical thought, engagement with <a class="reference internal" href="05_descriptive_v_prescriptive.html"><span class="std std-doc">Proscriptive Questions</span></a>, and careful discussion with your stakeholder.</p>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="pinker" role="doc-footnote">
@@ -510,6 +549,10 @@ document.write(`
 <aside class="footnote brackets" id="delinquency" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
 <p>In other words, they have failed to make a mortgage payment for at least a certain period of days.</p>
+</aside>
+<aside class="footnote brackets" id="impossibility" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
+<p>See Alexandra Chouldechova, <em>Fair Prediction with Disparate Impact: A Study of Bias in Recidivism Prediction Instruments</em>, 5 BIG DATA 153 (2017) and Jon Kleinberg et al., <em>Inherent Trade-offs in the Fair Determination of Risk Scores</em>, LEIBNIZ INT’L PROC. INFORMATICS, Jan. 2017, at 43:1, 43:4.</p>
 </aside>
 </aside>
 </section>
@@ -585,7 +628,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#but-what-about-the-mistakes">But What About The Mistakes?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#area-under-the-curve">Area Under the Curve</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roc-and-area-under-the-curve-auc">ROC and Area Under the Curve (AUC)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-the-best-way-to-be-wrong">Choosing the Best Way to be Wrong</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ethics-of-misclassifications">The Ethics of Misclassifications</a></li>
 </ul>
   </nav></div>
