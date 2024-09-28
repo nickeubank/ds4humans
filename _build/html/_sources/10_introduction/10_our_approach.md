@@ -14,6 +14,14 @@ The answer lies — in significant part — in a failure to provide students wit
 
 This book is designed to fill this gap between neatly curated classroom exercises and the messiness of the real world.  It will provide a unified perspective on how the perspectives and statistical tools learned in other courses complement one another, and *when* different approaches to data science are most appropriate to use. More importantly, though, it provides a framework for understanding your goals as a data scientist, and how to achieve them.
 
+### The Three Big Ideas
+
+This book is organized around three key ideas:
+
+1. **Data science is about solving problems.** All too often, data scientists get lost in the technical details of models and lose sight of the bigger picture. Data science is not about maximizing accuracy or AUC scores — it's about using data and quantitative methods to solve problems, and at the end of the day the only "metric" that matters is whether your work has solved the problem you set out to address.
+2. **Data scientists solve problems by answering questions, and the question you are asking determines what tool is appropriate.** At their core, all data science tools are tools for answering questions. Learning to recognize this — and learning to recognize the types of questions data scientists answer and their role in problem-solving — is key to navigating the ambiguity of real-world problem solving.
+3. **Reasoning rigorously about uncertainty and errors is what differentiates good data scientists from great data scientists.** Data science isn't just about minimizing classification errors and uncertainty — it's also about deciding how unavoidable errors should be distributed, and how to weigh the risks and trade-offs inherent in probabilistic decision-making rigorously and in a manner that takes into account the problem you are trying to solve.
+
 <!-- Nevertheless, after many years as a professional data scientist — working on everything from World Bank development programs to voting rights and gerrymandering litigation as well as conducting — and teaching and mentoring data science Master's students, I have developed a framework,  to bridge the gap of  -->
 
 ```{note} Is this book for me?

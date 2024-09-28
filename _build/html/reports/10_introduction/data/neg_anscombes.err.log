@@ -1,20 +1,20 @@
 Traceback (most recent call last):
-  File "/Users/nce8/opt/miniconda3/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+  File "/Users/nce8/miniforge3/lib/python3.12/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
-  File "/Users/nce8/opt/miniconda3/lib/python3.11/site-packages/nbclient/client.py", line 1314, in execute
+  File "/Users/nce8/miniforge3/lib/python3.12/site-packages/nbclient/client.py", line 1314, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/nce8/opt/miniconda3/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+  File "/Users/nce8/miniforge3/lib/python3.12/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
     return loop.run_until_complete(inner)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/nce8/opt/miniconda3/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+  File "/Users/nce8/miniforge3/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
     return future.result()
            ^^^^^^^^^^^^^^^
-  File "/Users/nce8/opt/miniconda3/lib/python3.11/site-packages/nbclient/client.py", line 709, in async_execute
+  File "/Users/nce8/miniforge3/lib/python3.12/site-packages/nbclient/client.py", line 709, in async_execute
     await self.async_execute_cell(
-  File "/Users/nce8/opt/miniconda3/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+  File "/Users/nce8/miniforge3/lib/python3.12/site-packages/nbclient/client.py", line 1062, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/Users/nce8/opt/miniconda3/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+  File "/Users/nce8/miniforge3/lib/python3.12/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
@@ -38,69 +38,11 @@ for i in range(1, 5):
 
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mNoMatchingVersions[0m                        Traceback (most recent call last)
-Cell [0;32mIn[1], line 16[0m
-[1;32m     14[0m o [38;5;241m=[39m fit [38;5;241m+[39m c
-[1;32m     15[0m o[38;5;241m.[39mshow()
-[0;32m---> 16[0m [43maltair_saver[49m[38;5;241;43m.[39;49m[43msave[49m[43m([49m[43mo[49m[43m,[49m[43m [49m[38;5;124;43mf[39;49m[38;5;124;43m"[39;49m[38;5;124;43m../images/anscombes_[39;49m[38;5;132;43;01m{[39;49;00m[43mi[49m[38;5;132;43;01m}[39;49;00m[38;5;124;43m.png[39;49m[38;5;124;43m"[39;49m[43m)[49m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [0;32mIn[1], line 1[0m
+[0;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01maltair[39;00m [38;5;28;01mas[39;00m [38;5;21;01malt[39;00m
+[1;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01maltair_saver[39;00m
+[1;32m      3[0m [38;5;28;01mimport[39;00m [38;5;21;01mpandas[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpd[39;00m
 
-File [0;32m~/opt/miniconda3/lib/python3.11/site-packages/altair_saver/_core.py:172[0m, in [0;36msave[0;34m(chart, fp, fmt, mode, embed_options, method, suppress_data_warning, **kwargs)[0m
-[1;32m    169[0m Saver [38;5;241m=[39m _select_saver(method, mode[38;5;241m=[39mmode, fmt[38;5;241m=[39mfmt, fp[38;5;241m=[39mfp)
-[1;32m    170[0m saver [38;5;241m=[39m Saver(spec, mode[38;5;241m=[39mmode, embed_options[38;5;241m=[39membed_options, [38;5;241m*[39m[38;5;241m*[39mkwargs)
-[0;32m--> 172[0m [38;5;28;01mreturn[39;00m [43msaver[49m[38;5;241;43m.[39;49m[43msave[49m[43m([49m[43mfp[49m[38;5;241;43m=[39;49m[43mfp[49m[43m,[49m[43m [49m[43mfmt[49m[38;5;241;43m=[39;49m[43mfmt[49m[43m)[49m
-
-File [0;32m~/opt/miniconda3/lib/python3.11/site-packages/altair_saver/savers/_saver.py:121[0m, in [0;36mSaver.save[0;34m(self, fp, fmt)[0m
-[1;32m    118[0m [38;5;28;01mif[39;00m fmt [38;5;129;01mnot[39;00m [38;5;129;01min[39;00m [38;5;28mself[39m[38;5;241m.[39mvalid_formats[[38;5;28mself[39m[38;5;241m.[39m_mode]:
-[1;32m    119[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mGot fmt=[39m[38;5;132;01m{[39;00mfmt[38;5;132;01m}[39;00m[38;5;124m; expected one of [39m[38;5;132;01m{[39;00m[38;5;28mself[39m[38;5;241m.[39mvalid_formats[38;5;132;01m}[39;00m[38;5;124m"[39m)
-[0;32m--> 121[0m content [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_serialize[49m[43m([49m[43mfmt[49m[43m,[49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43msave[39;49m[38;5;124;43m"[39;49m[43m)[49m
-[1;32m    122[0m [38;5;28;01mif[39;00m fp [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
-[1;32m    123[0m     [38;5;28;01mif[39;00m [38;5;28misinstance[39m(content, [38;5;28mdict[39m):
-
-File [0;32m~/opt/miniconda3/lib/python3.11/site-packages/altair_saver/savers/_selenium.py:284[0m, in [0;36mSeleniumSaver._serialize[0;34m(self, fmt, content_type)[0m
-[1;32m    283[0m [38;5;28;01mdef[39;00m [38;5;21m_serialize[39m([38;5;28mself[39m, fmt: [38;5;28mstr[39m, content_type: [38;5;28mstr[39m) [38;5;241m-[39m[38;5;241m>[39m MimebundleContent:
-[0;32m--> 284[0m     out [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_extract[49m[43m([49m[43mfmt[49m[43m)[49m
-[1;32m    285[0m     [38;5;28;01mif[39;00m fmt [38;5;241m==[39m [38;5;124m"[39m[38;5;124mpng[39m[38;5;124m"[39m:
-[1;32m    286[0m         [38;5;28;01massert[39;00m [38;5;28misinstance[39m(out, [38;5;28mstr[39m)
-
-File [0;32m~/opt/miniconda3/lib/python3.11/site-packages/altair_saver/savers/_selenium.py:237[0m, in [0;36mSeleniumSaver._extract[0;34m(self, fmt)[0m
-[1;32m    232[0m driver [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_registry[38;5;241m.[39mget([38;5;28mself[39m[38;5;241m.[39m_webdriver, [38;5;28mself[39m[38;5;241m.[39m_driver_timeout)
-[1;32m    234[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39m_offline:
-[1;32m    235[0m     js_resources [38;5;241m=[39m {
-[1;32m    236[0m         [38;5;124m"[39m[38;5;124mvega.js[39m[38;5;124m"[39m: get_bundled_script([38;5;124m"[39m[38;5;124mvega[39m[38;5;124m"[39m, [38;5;28mself[39m[38;5;241m.[39m_package_versions[[38;5;124m"[39m[38;5;124mvega[39m[38;5;124m"[39m]),
-[0;32m--> 237[0m         [38;5;124m"[39m[38;5;124mvega-lite.js[39m[38;5;124m"[39m: [43mget_bundled_script[49m[43m([49m
-[1;32m    238[0m [43m            [49m[38;5;124;43m"[39;49m[38;5;124;43mvega-lite[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_package_versions[49m[43m[[49m[38;5;124;43m"[39;49m[38;5;124;43mvega-lite[39;49m[38;5;124;43m"[39;49m[43m][49m
-[1;32m    239[0m [43m        [49m[43m)[49m,
-[1;32m    240[0m         [38;5;124m"[39m[38;5;124mvega-embed.js[39m[38;5;124m"[39m: get_bundled_script(
-[1;32m    241[0m             [38;5;124m"[39m[38;5;124mvega-embed[39m[38;5;124m"[39m, [38;5;28mself[39m[38;5;241m.[39m_package_versions[[38;5;124m"[39m[38;5;124mvega-embed[39m[38;5;124m"[39m]
-[1;32m    242[0m         ),
-[1;32m    243[0m     }
-[1;32m    244[0m     html [38;5;241m=[39m HTML_TEMPLATE[38;5;241m.[39mformat(
-[1;32m    245[0m         vega_url[38;5;241m=[39m[38;5;124m"[39m[38;5;124m/vega.js[39m[38;5;124m"[39m,
-[1;32m    246[0m         vegalite_url[38;5;241m=[39m[38;5;124m"[39m[38;5;124m/vega-lite.js[39m[38;5;124m"[39m,
-[1;32m    247[0m         vegaembed_url[38;5;241m=[39m[38;5;124m"[39m[38;5;124m/vega-embed.js[39m[38;5;124m"[39m,
-[1;32m    248[0m     )
-[1;32m    249[0m [38;5;28;01melse[39;00m:
-
-File [0;32m~/opt/miniconda3/lib/python3.11/site-packages/altair_viewer/_scripts.py:40[0m, in [0;36mget_bundled_script[0;34m(package, version)[0m
-[1;32m     36[0m [38;5;28;01mif[39;00m package [38;5;129;01mnot[39;00m [38;5;129;01min[39;00m listing:
-[1;32m     37[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
-[1;32m     38[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124mpackage [39m[38;5;132;01m{[39;00mpackage[38;5;132;01m!r}[39;00m[38;5;124m not recognized. Available: [39m[38;5;132;01m{[39;00m[38;5;28mlist[39m(listing)[38;5;132;01m}[39;00m[38;5;124m"[39m
-[1;32m     39[0m     )
-[0;32m---> 40[0m version_str [38;5;241m=[39m [43mfind_version[49m[43m([49m[43mversion[49m[43m,[49m[43m [49m[43mlisting[49m[43m[[49m[43mpackage[49m[43m][49m[43m)[49m
-[1;32m     41[0m path [38;5;241m=[39m [38;5;124mf[39m[38;5;124m"[39m[38;5;124mscripts/[39m[38;5;132;01m{[39;00mpackage[38;5;132;01m}[39;00m[38;5;124m-[39m[38;5;132;01m{[39;00mversion_str[38;5;132;01m}[39;00m[38;5;124m.js[39m[38;5;124m"[39m
-[1;32m     42[0m content [38;5;241m=[39m pkgutil[38;5;241m.[39mget_data([38;5;124m"[39m[38;5;124maltair_viewer[39m[38;5;124m"[39m, path)
-
-File [0;32m~/opt/miniconda3/lib/python3.11/site-packages/altair_viewer/_utils.py:212[0m, in [0;36mfind_version[0;34m(version, candidates, strict_micro)[0m
-[1;32m    210[0m matches [38;5;241m=[39m [c [38;5;28;01mfor[39;00m c [38;5;129;01min[39;00m cand [38;5;28;01mif[39;00m v[38;5;241m.[39mmatches(c)]
-[1;32m    211[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m matches:
-[0;32m--> 212[0m     [38;5;28;01mraise[39;00m NoMatchingVersions(
-[1;32m    213[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124mNo matches for version=[39m[38;5;132;01m{[39;00mversion[38;5;132;01m!r}[39;00m[38;5;124m among [39m[38;5;132;01m{[39;00mcandidates[38;5;132;01m}[39;00m[38;5;124m.[39m[38;5;130;01m\n[39;00m[38;5;124m"[39m
-[1;32m    214[0m         [38;5;124m"[39m[38;5;124mOften this can be fixed by updating altair_viewer:[39m[38;5;130;01m\n[39;00m[38;5;124m"[39m
-[1;32m    215[0m         [38;5;124m"[39m[38;5;124m    pip install -U altair_viewer[39m[38;5;124m"[39m
-[1;32m    216[0m     )
-[1;32m    217[0m [38;5;28;01mreturn[39;00m [38;5;28mstr[39m(matches[[38;5;241m-[39m[38;5;241m1[39m])
-
-[0;31mNoMatchingVersions[0m: No matches for version='5.17.0' among ['4.0.2', '4.8.1', '4.17.0'].
-Often this can be fixed by updating altair_viewer:
-    pip install -U altair_viewer
+[0;31mModuleNotFoundError[0m: No module named 'altair'
 

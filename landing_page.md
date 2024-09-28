@@ -2,7 +2,9 @@
 
 This website is both the course site for the Duke Interdisciplinary Data Science Course *Solving Problems with Data* (IDS 701), as well as the beginning of what I hope will eventually become a stand-alone textbook by [Nick Eubank](https://www.nickeubank.com).
 
-If you *aren't* a Duke IDS 701 student, feel free to explore away using the table of contents on the left, or browse the schedule in which topics are covered in the class in the [class schedule](class_schedule) link. If you *are* a MIDS student, here's a little more about the course.
+**If you *aren't* a Duke IDS 701 student** and wish to explore the content of the course, I'd suggest starting with the [Introduction chapter here](10_introduction/10_our_approach). You're also welcome to browse the class schedule of topics covered in the class in the [class schedule](00_class_schedule/class_schedule) link.
+
+If you *are* a MIDS student, here's a little more about the course.
 
 ## Solving Problems with Data (IDS 701)
 

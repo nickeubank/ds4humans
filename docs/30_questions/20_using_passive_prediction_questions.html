@@ -14,39 +14,39 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -72,27 +72,23 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -114,8 +110,13 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -139,6 +140,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../landing_page.html">
   
@@ -160,7 +163,7 @@
 
  <script>
  document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
     <span class="search-button__default-text">Search</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -205,15 +208,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../35_causal/10_potential_outcomes.html">The Potential Outcomes Framework</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../35_causal/30_interpreting_indicator_vars.html">Indicator Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../35_causal/40_causal_inference_beyond_ab_testing.html">Causal Beyond Experiments</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../35_causal/50_fixed_effects_and_causal_inference.html">Fixed Effects</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../35_causal/50_fixed_effects_and_causal_inference.html">Fixed Effects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../35_causal/60_fixed_effects.html">Implementing Fixed Effects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../35_causal/70_fixed_effects_v_hierarchical.html">Fixed Effects v. Hierarchical Models</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../35_causal/80_matching_why.html">Matching</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../35_causal/80_matching_why.html">Matching</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../35_causal/90_matching_how.html">How to Match</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Science in Practice</span></p>
 <ul class="nav bd-sidenav">
@@ -240,7 +243,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -249,14 +252,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -381,10 +384,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -392,14 +395,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -443,7 +446,7 @@ document.write(`
 <p>In the past few chapters, we explored the role of Exploratory Questions in helping data scientists better understand the problems they seek to solve and to prioritize subsequent efforts. While useful, however, answering Exploratory Questions is rarely sufficient to solve a stakeholder’s problem in and of itself. To really solve problems, often data scientists must turn to answering Passive Prediction Questions — the focus of this chapter — and/or Causal Questions (a topic we will return to in future chapters).</p>
 <p>As discussed in the introduction of this book, Passive Prediction Questions are questions about the future or potential outcomes of <em>individual entities</em> (customers, patients, stores, etc.). “How likely is Patient X to experience a heart attack in the next two years?,” for example, or “How likely is it Mortgage Holder Y will fail to make their mortgage payment next month?”</p>
 <p>Unlike Exploratory Questions, data scientists don’t generally come up with “<em>an</em> answer” to Passive Prediction Questions; rather, data scientists answer Passive Prediction Questions by developing statistical models that take the attributes of an entity as inputs and spit out a unique answer <em>for each entity</em>. A company interested in spam detection, for example, might hire a data scientist to develop a model that takes the content of an email as input and, for every email a person receives, answers the question “If the recipient of this email looked at it, would they consider it spam?” The exact statistical machinery one uses will vary across applications, but answering these questions is the realm where terminology like “supervised machine learning” is most likely to be used.</p>
-<p>Since Passive Prediction Questions don’t usually have “<em>an</em> answer,” a data scientist faced with a Passive Prediction challenge will often start by considering the <em>feasibility</em> of developing a model to give individual-level answers to a Passive Prediction Question. “Given data on new customer behavior on my website,” for example, “<strong>can I</strong> predict how much a customer is likely to spend over the next year?” At the end of the day, however, what a stakeholder cares about is not whether one <em>can</em> predict future spending, they care about the actual answer to the question “Given this new customer’s behavior on my website, are they likely to spend a lot over the next year?” for a given customer. For that reason — and because understand exactly what question a model is answering is key to its effective use — this individual-level question will be our focus here.</p>
+<p>Since Passive Prediction Questions don’t usually have “<em>an</em> answer,” a data scientist faced with a Passive Prediction challenge will often start by considering the <em>feasibility</em> of developing a model to give individual-level answers to a Passive Prediction Question. “Given data on new customer behavior on my website,” for example, “<strong>can I</strong> predict how much a customer is likely to spend over the next year?” At the end of the day, however, what a stakeholder cares about is not whether one <em>can</em> predict future spending; they care about the actual answer to the question, “Given this new customer’s behavior on my website, are they likely to spend a lot over the next year?” for a given customer. For that reason — and because understanding exactly what question a model is answering is key to its effective use — this individual-level question will be our focus here.</p>
 <section id="flavors-of-passive-prediction-questions">
 <h2>Flavors of Passive Prediction Questions<a class="headerlink" href="#flavors-of-passive-prediction-questions" title="Link to this heading">#</a></h2>
 <p>Passive Prediction Questions come in two flavors, corresponding to the two primary business purposes detailed above.</p>
@@ -452,8 +455,8 @@ document.write(`
 <section id="ok-but-doesn-t-this-feel-a-little-contrived">
 <h3>OK, but… Doesn’t This Feel a Little Contrived?<a class="headerlink" href="#ok-but-doesn-t-this-feel-a-little-contrived" title="Link to this heading">#</a></h3>
 <p>You would be forgiven for asking whether I’ve gone a little too far in trying to force the simple task of automation into the “all data science tools are tools for answering questions” framework of the book. Yes, I see how you <em>could</em> call an algorithm that automates the review of mammograms a tool for answering the question “if a radiologist were to look at this mammogram, would they conclude it showed evidence of cancer?” But that seems awfully convoluted. Why can’t we just call it an algorithm that looks for cancer in mammograms?</p>
-<p>The answer is that while it is certainly less succinct, but as we discussed in the introduction, because of how these models are developed, it is <em>more accurate</em> to say that our mammogram reading algorithm is trying to answer the question “if a radiologist were to look at this mammogram, would they conclude it showed evidence of cancer?” than to say that it’s “looking for cancer.” The way that most statistical models are developed (“trained”) to answer Passive Prediction Questions is using a large dataset of “training examples” — that is, data in which the outcome we care about is included in the dataset. For predicting individual-level future outcomes, this will be historical data in which outcomes — like surgery complications or factory machine failures — have already occurred. But for automation, this will be data in which a person has already completed the task, and their conclusions or actions have been recorded. To train a mammogram reading algorithm, in other words, you first need a database of mammograms that radiologists have already labelled as indicating cancer or not.</p>
-<p>And this is where the distinction between “predicting what a radiologist would say” and “detecting cancer” becomes important: because this kind of statistical model was trained to emulate the behavior of radiologists in labelled mammograms, any systematic biases held by the human radiologists who reviewed the mammograms in the training data will be recapitulated in the model. Did the radiologists struggle to detect cancer in dense breast tissue? So too will the algorithm trained on their labels.</p>
+<p>The answer is that while it is certainly less succinct, but as we discussed in the introduction, because of how these models are developed, it is <em>more accurate</em> to say that our mammogram reading algorithm is trying to answer the question “if a radiologist were to look at this mammogram, would they conclude it showed evidence of cancer?” than to say that it’s “looking for cancer.” The way that most statistical models are developed (“trained”) to answer Passive Prediction Questions is using a large dataset of “training examples” — that is, data in which the outcome we care about is included in the dataset. For predicting individual-level future outcomes, this will be historical data in which outcomes — like surgery complications or factory machine failures — have already occurred. For automation, this will be data in which a person has already completed the task, and their conclusions or actions have been recorded. To train a mammogram reading algorithm, in other words, you first need a database of mammograms that radiologists have already labeled as indicating cancer or not. And what the model is actually trained to do is not “find cancer” but rather to “give the same answers given by human radiologists.”</p>
+<p>And this is where the distinction between “predicting what a radiologist would say” and “detecting cancer” becomes important: because this kind of statistical model was trained to emulate the behavior of radiologists in labelled mammograms, the model will recapitulate any systematic biases held by the human radiologists who reviewed the mammograms in the training data. Did the radiologists struggle to detect cancer in dense breast tissue? So too will the algorithm trained on their labels.</p>
 <p>The tendency for algorithms to replicate human biases present in training data, unfortunately, extends to gender and racial biases. In 2018, for example, Reuters reported that Amazon was forced to scrap an effort to use machine learning to automatically review resumes because it turned out the <a class="reference external" href="https://www.reuters.com/article/idUSKCN1MK0AG/">algorithm — trained on historic hiring data — was biased against women.</a> The <em>exact</em> details of the source of the bias is unclear — for obvious reasons Amazon is not eager to report on the failure — but my suspicion is that things went wrong in one of two ways.</p>
 <p>The first is that the algorithm was given data on all past Amazon applicant resumes, along with data on which applicants had actually been hired. The algorithm was then effectively trained to answer the question “If an Amazon hiring manager looked at this resume, is it likely they would be hired?” In that case, the algorithm was recapitulating the gender bias of previous hiring managers.</p>
 <p>My second guess is that the algorithm was given the resumes of <em>current</em> employees along with employee reviews. In that case, the algorithm was effectively being asked to answer the question “Given this resume, is it likely this is a person a current manager would rate highly once employed?” In that case, the algorithm was recapitulating gender biases in employee reviews.</p>
@@ -522,7 +525,7 @@ document.write(`
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -590,7 +593,7 @@ By Nick Eubank
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2024.
       <br/>
     
   </p>
@@ -614,8 +617,8 @@ By Nick Eubank
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
