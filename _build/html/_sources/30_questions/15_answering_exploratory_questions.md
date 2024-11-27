@@ -142,7 +142,7 @@ OK... by now you've probably noticed that I've been saying you want to make sure
 
 #### Values
 
-In our previous reading, we talked about how some questions *explicitly* invoke our value systems—proscriptive questions, like "should murders be eligible for parole?," or "is it fair that Americans with more money can donate unlimited amounts of money to Political Action Committees in the United States?"—while others are ostensibly just questions about objective reality. But now we have to blur that line ever so slightly, because even when dealing with questions about objective reality (descriptive questions), our values come into play. How?
+In our previous reading, we talked about how some questions *explicitly* invoke our value systems—prescriptive questions, like "should murders be eligible for parole?," or "is it fair that Americans with more money can donate unlimited amounts of money to Political Action Committees in the United States?"—while others are ostensibly just questions about objective reality. But now we have to blur that line ever so slightly, because even when dealing with questions about objective reality (descriptive questions), our values come into play. How?
 
 Suppose you are a policymaker choosing between two possible policies for reducing $CO_2$ emissions in the United States. You are told:
 
