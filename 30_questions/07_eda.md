@@ -25,7 +25,9 @@ This type of data analysis — looking at summary statistics, calculating distri
 And just as one cannot properly fit or tune a model without a clear sense of the question one is seeking to answer and how that answer is meant to be used, nor can one know what cross-tabulations to compute without having a sense of purpose to make clear what constitutes "meaningfulness."
 
 ```{note}
-"But I do EDA all the time without a clear question!" I hear you cry. "Sometimes I just want to see what patterns there are in the data." To you I say: you may not have realized you had questions in mind, but most of your data explorations have been *implicitly* motivated by a sense of questions you thought might relate to your stakeholder's problem. 
+"But I do EDA all the time without a clear question!" I hear you cry. "Sometimes I just want to see what patterns there are in the data." 
+
+To you I say: you may not have realized you had questions in mind, but most of your data explorations have been *implicitly* motivated by a sense of questions you thought might relate to your stakeholder's problem. 
 
 Perhaps you were looking at a store's retail sales data and decided to see how sales volumes varied by customer age or gender. That may not seem obviously question-motivated, but I put it to you that you had in mind that those are customer demographics to which the store could target advertising or product stocking decisions. And had someone suggested "why don't you look at how sales volumes vary by customer birth month or whether their name starts with a letter in the first half of the alphabet," you would have looked at them funny and said "why on Earth would I do that?"
 

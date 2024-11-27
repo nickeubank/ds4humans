@@ -1,20 +1,4 @@
-# Answering Passive Prediction Questions
-
-As with Exploratory Questions, when answering Passive Prediction Questions there are two major types of concerns: those related to internal validity, and those related to external validity.
-
-## Internal Validity
-
-Of all the places where data science is fragmented, none is more evident than in how data scientists evaluate how effectively we think a model is representing our data, *especially* when focused on prediction.
-
-The first data science perspective on evaluating the internal validity of a model comes from the field of statistics. Statisticians have approached evaluating model fit with, unsurprisingly, methods based on the idea of random sampling and the properties of statistical distributions. They make assumptions about the distributions underlying data and use those to derive theoretically-motivated metrics. That's the origin of statistics like Akaike Information Criterion (AIC), Bayesian Information Criterion (BIC), as well as the emphasis on the validity of the standard errors assigned to factors on the right-hand side of the regression.
-
-When computer scientists were first developing their own machine learning techniques... I'm editorializing a little here, but I think it's safe to say that initially they either didn't *know about* a lot about these metrics, or they thought that they could do a better job investing their own. So they developed the "split-train-test" approach to model evaluation: they split their data into two parts, train their model on part of the data, then test how well the model is able to predict the (known) outcomes in the test dataset.
-
-Of course, over time these two fields have largely converged in adopting one another's methods, and some—like cross-validation—live comfortably in the middle. But if you're ever wondering why, when you get to a machine learning class, it seems like everything you learned in stats has been abandoned (or end up in a stats class and have the opposite experience), it's largely an artifact of parallel development of methods of model evaluation in computer science and statistics departments.
-
-But the ins and outs of fitting machine learning or statistical models is not the comparative advantage of this text, and so our time is better spent turning to External Validity.
-
-## External Validity
+# Passive Prediction Questions and External Validity
 
 Where *internal validity* is a measure of how well a model captures the meaningful variation in the data we already have, *external validity* is a measure of how well we think that our model is likely to perform when faced with new data.
 
@@ -22,7 +6,7 @@ As we learned before, the external validity of a model is specific to the contex
 
 Some of the factors that influence the External Validity to Passive Prediction Questions are the same as those that shape the External Validity of Exploratory Questions, such as the population represented in the data (patterns in data from one country will often differ from patterns in data from another country), the time period in question (consumer behavior may vary across seasons, and many patterns in data change over longer timespans). But there are other concerns that are a little more specific to Passive Prediction Questions:
 
-### Extrapolation and Training Parameter Ranges
+## Extrapolation and Training Parameter Ranges
 
 Tools for evaluating internal validity help ensure that statistical and machine learning models will tend to fit the data on which they are trained relatively well. However, while most statistical models are capable of generating predicted values over a very broad range of input values, their reliable outside the range of values on which they were trained is often very limited. Asking a model to make predictions for inputs on which the model wasn't trained is called *extrapolating*, and is a great way to get oneself into trouble.
 
@@ -32,7 +16,7 @@ To illustrate, consider the two models in the figure below ([source](https://ece
 
 In addition to reducing overfitting, strategies like regularization are designed to constrain the "wonkiness" of models outside the domain on which they were trained, but almost by definition, absent data in those extended ranges, there's no way to know for certain whether the model will generalize.
 
-#### What Constitutes Extrapolation?
+### What Constitutes Extrapolation?
 
 In the example above, the term extrapolation refers to predicting values below 0 and above 2. But what constitutes an extrapolation depends in part on the complexity of the model. With a nice, interpretable linear model, it's not hard to have confidence that the model will make a reasonable prediction for $x=0.5$, even though that specific value wasn't in the training data. But when one begins to work with highly non-linear models that allow for interactions and aren't easily interpretable — such as deep learning neural networks — the only place one can feel sure of the behavior of the model is at the exact data points in the training data. The same flexibility that allows these models to accommodate unusual non-linear relationships can also lead to bizarre behavior between actual points in the training data. A credit risk model may make perfectly reasonable predictions for a married 45-year-old women of Hispanic descent who lives in Colorado and a married 47-year-old women of Hispanic descent who lives in Colorado because both of those profiles were present in the training data, but make a crazy prediction for a a married 46-year-old women of Hispanic descent who lives in Colorado or a married 45-year-old women of Hispanic descent who lives in Montana.
 
@@ -46,7 +30,7 @@ A common misconception among young data scientists is that the split-train-test 
 While split-train-test can *help* reduce external validity concerns by guarding against over-fitting, a fundamental limitation of the workflow is that training observations and test observations both come from the *same context*. Indeed, because test and training datasets are created by taking a single dataset and randomly splitting the observations, they *should* always have the same properties (at least in expectation) — a guarantee one certainly won't get when moving from the data used to build a model to a real world deployment.
 ```
 
-### Adversarial Users
+## Adversarial Users
 
 Another external validity concern for Passive Prediction Models is *adversarial users*. Adversarial users are users who deliberately attempt to subvert a statistical or machine learning model. The idea of adversarial users might seem like the stuff of spy novels, but they're actually *much* more common than you might think.
 
@@ -83,9 +67,3 @@ It's worth noting that the threat of adversarial users is not a new phenomenon u
 And since no idea is serious until it's been importalized in an XKCD comic:
 
 ![Goodhart's Law XKCD](https://imgs.xkcd.com/comics/goodharts_law.png)
-
-<!-- ## Manipulation and External Validity
-
-Models may exhibit low external validity when applied in contexts that are obviously very different from the data on which it was trained: in a different country, in a different industry, in a different climate, or during a different time of year. But they can sometimes also fail to perform well in situations where everything *looks* similar, but the processes generating the data have changed.
-
-Suppose, for example, we wanted to go back to our example of wanting to reduce complications from surgery. So we build a model that allows us to predict, for each patient going into surgery, the likelihood they will eventually experience complications. -->

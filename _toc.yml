@@ -9,23 +9,49 @@ parts:
       - file: 00_class_schedule/class_schedule
   - caption: Introduction
     chapters:
-      - file: 10_introduction/10_our_approach
-      - file: 10_introduction/30_solving_the_right_problem
+      - file: 10_introduction/10_solving_problems
+        title: "Ch 1: Solving Problems"
+        sections:
+          - file: 10_introduction/20_our_approach
+            title: "The Steps"
+          - file: 10_introduction/22_question_types
+            title: "Question Types"
+          - file: 10_introduction/24_bringing_it_together
+            title: "Bringing It Together"
       - file: 10_introduction/40_data_science_in_historical_context
+        title: "Ch 2: What Is Data Science?"
+  - caption: Problems to Questions
+    chapters:
+      - file: 20_problems_to_questions/10_solving_the_right_problem
+        title: "Ch 4: The Right Question"
+        sections:
+          - file: 20_problems_to_questions/15_solving_the_wrong_problem
+      - file: 20_problems_to_questions/20_stakeholder_management
+        title: "Ch 5: Stakeholder Management"
   - caption: Types of Questions
     chapters:
       - file: 30_questions/05_descriptive_v_prescriptive
+        title: "Ch 6: Descriptive and Prescriptive Qs"
       - file: 30_questions/07_eda
-        title: The Scourge of "EDA"
+        title: "Ch 7: The Scourge of EDA"
       - file: 30_questions/10_using_exploratory_questions
-      - file: 30_questions/15_answering_exploratory_questions
-      - file: 30_questions/17_exploratory_questions_internal_external
+        title: "Ch 8: Exploratory Qs"
+        sections:
+          - file: 30_questions/15_answering_exploratory_questions
+          - file: 30_questions/17_exploratory_questions_internal_external
       - file: 30_questions/20_using_passive_prediction_questions
-      - file: 30_questions/25_answering_passive_prediction
+        title: "Ch 9: Passive Predictive Qs"
+        sections:
+          - file: 30_questions/23_passive_prediction_internal
+          - file: 30_questions/24_passive_prediction_external
       - file: 30_questions/26_passive_prediction_errors
-        title: The Right Way To Be Wrong
+        title: "Ch 10: The Right Way To Be Wrong"
+      - file: 30_questions/27_interpretable_models
+        title: "Ch 11: Interpretable Models"
       - file: 30_questions/30_using_causal_questions
-      - file: 30_questions/40_answering_causal_questions
+        title: "Ch 12: Causal Qs"
+        sections:
+          - file: 30_questions/40_answering_causal_questions
   - caption: Causal Inference
     chapters:
       - file: 35_causal/10_potential_outcomes

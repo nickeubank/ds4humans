@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Thinking About The Right Way To Be Wrong &#8212; Solving Problems With Data</title>
+    <title>The Right Way To Be Wrong &#8212; Solving Problems With Data</title>
   
   
   
@@ -53,9 +53,22 @@
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-RKDPB41DQ2"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-RKDPB41DQ2');
+            </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-RKDPB41DQ2');
+            </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -63,8 +76,8 @@
     <link rel="icon" href="../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Using Causal Questions" href="30_using_causal_questions.html" />
-    <link rel="prev" title="Answering Passive Prediction Questions" href="25_answering_passive_prediction.html" />
+    <link rel="next" title="Performance Differential Is (Often) A Myth" href="27_interpretable_models.html" />
+    <link rel="prev" title="Passive Prediction Questions and External Validity" href="24_passive_prediction_external.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -188,22 +201,47 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../10_introduction/10_our_approach.html">Solving Problems with Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../10_introduction/30_solving_the_right_problem.html">Stakeholder Management &amp; Solving the Right Problem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../10_introduction/40_data_science_in_historical_context.html">What <em>is</em> Data Science: An Historical Perspective</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10_introduction/10_solving_problems.html">Ch 1: Solving Problems</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../10_introduction/20_our_approach.html">The Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_introduction/22_question_types.html">Question Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_introduction/24_bringing_it_together.html">Bringing It Together</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../10_introduction/40_data_science_in_historical_context.html">Ch 2: What Is Data Science?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Problems to Questions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../20_problems_to_questions/10_solving_the_right_problem.html">Ch 4: The Right Question</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../20_problems_to_questions/15_solving_the_wrong_problem.html">What Solving the <em>Wrong</em> Problem Looks Like</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../20_problems_to_questions/20_stakeholder_management.html">Ch 5: Stakeholder Management</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Types of Questions</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="05_descriptive_v_prescriptive.html">Descriptive v. Prescriptive Questions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07_eda.html">The Scourge of "EDA"</a></li>
-<li class="toctree-l1"><a class="reference internal" href="10_using_exploratory_questions.html">Using Exploratory Questions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="15_answering_exploratory_questions.html">Answering Exploratory Questions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="17_exploratory_questions_internal_external.html">Internal versus External Validity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="20_using_passive_prediction_questions.html">Using Passive Prediction Questions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="25_answering_passive_prediction.html">Answering Passive Prediction Questions</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">The Right Way To Be Wrong</a></li>
-<li class="toctree-l1"><a class="reference internal" href="30_using_causal_questions.html">Using Causal Questions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="40_answering_causal_questions.html">Answering Causal Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_descriptive_v_prescriptive.html">Ch 6: Descriptive and Prescriptive Qs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_eda.html">Ch 7: The Scourge of EDA</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="10_using_exploratory_questions.html">Ch 8: Exploratory Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="15_answering_exploratory_questions.html">Answering Exploratory Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="17_exploratory_questions_internal_external.html">Internal versus External Validity</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="20_using_passive_prediction_questions.html">Ch 9: Passive Predictive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="23_passive_prediction_internal.html">Passive Prediction Questions and Internal Validity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="24_passive_prediction_external.html">Passive Prediction Questions and External Validity</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ch 10: The Right Way To Be Wrong</a></li>
+<li class="toctree-l1"><a class="reference internal" href="27_interpretable_models.html">Performance Differential Is (Often) A Myth</a></li>
+
+
+
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="30_using_causal_questions.html">Ch 12: Causal Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="40_answering_causal_questions.html">Answering Causal Questions</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Causal Inference</span></p>
 <ul class="nav bd-sidenav">
@@ -415,7 +453,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Thinking About The Right Way To Be Wrong</h1>
+    <h1>The Right Way To Be Wrong</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -445,12 +483,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="thinking-about-the-right-way-to-be-wrong">
-<h1>Thinking About The Right Way To Be Wrong<a class="headerlink" href="#thinking-about-the-right-way-to-be-wrong" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-right-way-to-be-wrong">
+<h1>The Right Way To Be Wrong<a class="headerlink" href="#the-right-way-to-be-wrong" title="Link to this heading">#</a></h1>
 <p>With the rise of online machine learning competitions like Kaggle and an academic literature fixated on publishing papers showing marginal improvements in performance metrics on standard benchmarks, you could be forgiven for thinking that the hardest part of data science is finding the right model and features to max out standard metrics like Area Under the Curve (AUC), Accuracy (share of cases correctly classified) or F1 scores.</p>
 <p>However, this is far from the case when it comes to solving real-world problems. Yes, advancement in academic computer science is often tied to one’s ability to write a new algorithm that performs marginally better on standard benchmarks, and most problem sets or online competitions you encounter will pre-specify how model performance will be evaluated.</p>
 <p>But when it comes to solving real-world problems, determining what success looks like is actually a core part of your job as a data scientist. And what makes this task difficult is not how you measure your model’s successes — the number of true positives and true negatives the model generates — but in determining the types of mistakes it makes when it gets things wrong.</p>
-<p>Understanding how a model fails is just as important as minimizing mistakes in the first place (i.e., maximizing accuracy). Depending on the context, there can be <em>huge</em> asymmetries regarding the consequences of false positives and false negatives. Tell a someone with cancer they’re fine (false negative), and the result may be the death of the patient from an easily treatable condition; tell someone healthy there’s a chance they have cancer, and you may cause stress and additional tests, but the patient death is very unlikely.</p>
+<p>Understanding how a model fails is just as important as minimizing mistakes in the first place (i.e., maximizing accuracy). Depending on the context, there can be <em>huge</em> asymmetries regarding the consequences of false positives and false negatives. Tell someone with cancer they’re fine (false negative), and the result may be the death of the patient from an easily treatable condition; tell someone healthy there’s a chance they have cancer, and you may cause stress and additional tests, but the patient death is very unlikely.</p>
 <p>Similarly (but in a much less scary context), classify a credit card applicant as a “good credit risk” who is not actually credit-worthy (a false positive), and your company may lose the credit limit on the card they issue; classify someone as high risk who is actually not, and your company may lose the transaction fees that customer would have generated, but they won’t lose tens of thousands of dollars in unpaid bills.</p>
 <p>When answering Passive Prediction Questions, the choice of how to balance true positives, true negatives, false positives, and false negatives is <em>the</em> bridge between the math of statistics and machine learning and the specifics of real-world problems. And as a result, an ability to speak thoughtfully about how to balance these interests is one of the most important differentiators between data scientists who have only ever fit models for problem sets and data scientists business leaders trust to solve their problems.</p>
 <div class="admonition note">
@@ -592,20 +630,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="25_answering_passive_prediction.html"
+       href="24_passive_prediction_external.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Answering Passive Prediction Questions</p>
+        <p class="prev-next-title">Passive Prediction Questions and External Validity</p>
       </div>
     </a>
     <a class="right-next"
-       href="30_using_causal_questions.html"
+       href="27_interpretable_models.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Using Causal Questions</p>
+        <p class="prev-next-title">Performance Differential Is (Often) A Myth</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
