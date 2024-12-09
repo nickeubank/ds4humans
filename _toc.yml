@@ -9,7 +9,7 @@ parts:
       - file: 00_class_schedule/class_schedule
   - caption: Introduction
     chapters:
-      - file: 10_introduction/10_solving_problems
+      - file: 10_introduction/10_solving_problems_with_data
         title: "Ch 1: Solving Problems"
         sections:
           - file: 10_introduction/20_solving_problems
@@ -23,33 +23,33 @@ parts:
   - caption: Problems to Questions
     chapters:
       - file: 20_problems_to_questions/10_solving_the_right_problem
-        title: "Ch 4: The Right Question"
+        title: "Ch 3: The Right Question"
         sections:
           - file: 20_problems_to_questions/15_solving_the_wrong_problem
       - file: 20_problems_to_questions/20_stakeholder_management
-        title: "Ch 5: Stakeholder Management"
+        title: "Ch 4: Stakeholder Management"
   - caption: Types of Questions
     chapters:
       - file: 30_questions/05_descriptive_v_prescriptive
-        title: "Ch 6: Descriptive and Prescriptive Qs"
+        title: "Ch 5: Descriptive and Prescriptive Qs"
       - file: 30_questions/07_eda
-        title: "Ch 7: The Scourge of EDA"
+        title: "Ch 6: The Scourge of EDA"
       - file: 30_questions/10_using_exploratory_questions
-        title: "Ch 8: Exploratory Qs"
+        title: "Ch 7: Exploratory Qs"
         sections:
           - file: 30_questions/15_answering_exploratory_questions
           - file: 30_questions/17_exploratory_questions_internal_external
       - file: 30_questions/20_using_passive_prediction_questions
-        title: "Ch 9: Passive Predictive Qs"
+        title: "Ch 8: Passive Predictive Qs"
         sections:
           - file: 30_questions/23_passive_prediction_internal
           - file: 30_questions/24_passive_prediction_external
       - file: 30_questions/26_passive_prediction_errors
-        title: "Ch 10: The Right Way To Be Wrong"
+        title: "Ch 9: The Right Way To Be Wrong"
       - file: 30_questions/27_interpretable_models
-        title: "Ch 11: Interpretable Models"
+        title: "Ch 10: Interpretable Models"
       - file: 30_questions/30_using_causal_questions
-        title: "Ch 12: Causal Qs"
+        title: "Ch 11: Causal Qs"
         sections:
           - file: 30_questions/40_answering_causal_questions
   - caption: Causal Inference
