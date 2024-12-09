@@ -12,12 +12,12 @@ parts:
       - file: 10_introduction/10_solving_problems
         title: "Ch 1: Solving Problems"
         sections:
-          - file: 10_introduction/20_our_approach
-            title: "The Steps"
+          - file: 10_introduction/20_solving_problems
+            title: "Idea 1: Solving Problems"
           - file: 10_introduction/22_question_types
-            title: "Question Types"
-          - file: 10_introduction/24_bringing_it_together
-            title: "Bringing It Together"
+            title: "Idea 2: Answering Questions"
+          - file: 10_introduction/23_mistakes
+            title: "Idea 3: Being Thoughtful about Being Wrong"
       - file: 10_introduction/40_data_science_in_historical_context
         title: "Ch 2: What Is Data Science?"
   - caption: Problems to Questions

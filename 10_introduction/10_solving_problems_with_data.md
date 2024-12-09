@@ -31,3 +31,7 @@ The goal of this book, to frame things a little differently, is to help young da
 To maintain its focus on the "forest," this book *takes as given* that you have already been introduced to statistical inference and machine learning and know how to faithfully fit a model in a robust manner. That means that topics like hypothesis testing, cross-validation, how to use train-test splits, and how to evaluate a model's AUC will be treated as assumed knowledge.[^assumed] This is in no way meant to suggest these topics aren't important — we will reference them constantly — just that I will not attempt to teach them here, both to maintain focus on the goals of this book, and also because there already exist many other resources that introduce these topics better than I could.
 
 [^assumed]: If you are a Duke student reading this, it's ok if you are not yet familiar with all of these topics so long as you are taking a good machine learning course — like IDS 705 — concurrently.
+
+## Introduction Structure
+
+The remainder of this introductory chapter contains an overview of the Big 3 ideas of the book. All concepts discussed here will also be covered in greater detail in future readings, but before we dive into them in detail, it's helpful to get a sense of the overall approach we will be taking!
