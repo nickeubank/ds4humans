@@ -18,24 +18,32 @@ Now suppose I told you that the model I wrote was this:
 
 ```python
 def my_cancer_detection_model(mammogram):
-    cancer_detected = False
-    return cancer_detected
+    is_scan_abnormal_maybe_cancerous = False
+    return is_scan_abnormal_maybe_cancerous
 ```
 
-Are you still impressed? That model *does* have an accuracy rate of about 90%, so shouldn't I be proud of it?
+How does that have an accuracy of 90%? Simple — according to the Susan G. Komen Society, roughly 90% of routine mammograms are normal and require no followup. Thus a "model" that reports all routine mammograms are normal will immediately achieve an accuracy score of 90%. In fact, the true accuracy of the model is actually higher than 90%, since most mammograms flagged as "abnormal" are determined to not be indicative of cancer after followup (e.g., after biopsies).
 
-Of course not. And to be clear, the problem with this model is not that it the accuracy is only 90% and not, say 95%. The problem with this model is that *it has a False Negative Rate (the share of cases that are positive — in this case, mammograms from women with cancer — that are classified as cancer free) of 100%.* And obviously one of the things we care about most in cancer screenings is minimizing the False Negative Rate.
+So, are you still impressed by my model's 90% accuracy?
 
-Wait, if the accuracy is 90%, how does this model have a False Negative Rate of 100%? Simple — the data is very imbalanced. According to the Susan G. Komen society, roughly 90% of routine mammograms are perfectly normal and require no followup. Thus a "model" that reports all routine mammograms are normal will immediately achieve an accuracy score of 90%. In fact, the true accuracy of the model is actually higher than 90%, since most mammograms flagged as "abnormal" are determined to not be indicative of cancer after followup (e.g., after biopsies).
+Of course not. And to be clear, the problem with this model is *not* that its accuracy is only 90% and not, say 95%. The problem with this model is that *it has a False Negative Rate (the share of cases that are positive — in this case, mammograms from women with cancer — that are classified as cancer free) of 100%.* And since the thing we care about most in cancer screenings is not telling a patient with cancer they're fine (a False Negative), that's a huge problem!
 
-OK, if what we care about is the False Negative Rate, shouldn't we just minimize that? Not so fast — consider this model:
+OK, if what we care about is the False Negative Rate, shouldn't we just minimize the False Negative Rate? Not so fast! Consider this model:
 
 ```python
 def my_no_false_negative_model(mammogram):
-    cancer_detected = True
-    return cancer_detected
+    is_scan_abnormal_maybe_cancerous = True
+    return is_scan_abnormal_maybe_cancerous
 ```
 
-Oh dear. Yes, that model has a 0% False Negative Rate, but a 100% False Positive Rate, meaning anyone subject to this screening would be told they might have cancer and needs followup diagnostic procedures! That's no good either.
+Oh dear. Yes, that model has a 0% False Negative Rate, but it also has a 100% False *Positive* Rate, meaning anyone subject to this screening would be told they might have cancer and needs followup diagnostic procedures! That's no good either.
 
 No, a *good* model for reading mammograms needs to maximize accuracy while also balancing the desire to not subject healthy women to unnecessary procedures (minimize False Positives) *and* the desire to not fail to flag potentially cancerous scans. And that's what I mean when I say that a *great* data scientist is one who is thoughtful about how their models make mistakes. Determining what model is "best" requires more than optimizing a simple objective function — it requires thinking critically about the problem one is trying to solve (Big Idea 1), the substantive impact of different types of model errors in the context of that problem, and using that to inform model selection and evaluation.
+
+<!-- And less you think this is a contrived example, it's not. This particular problem — models that just says everything is from the more prevalent group getting high accuracy scores — happens any time you have *imbalanced data* (the data is mostly of one type). And 90/10 isn't even that imbalanced — fraudulent credit card purchases [make up less than one-tenth of 1% of all credit card transactions](https://www.federalreserve.gov/newsevents/pressreleases/other20181016a.htm). That means a "model" that reports all credit card transactions are valid will immediately have an accuracy score of $>99.9%$.
+
+This is just one example of the kind of problem you will encounter if you aren't thoughtful about the types of errors you make, however. 
+
+ Suppose you train a model to review job applications. You pick a balance of False Positives, False Negatives, and Accuracy that makes sense for you problem, but forget to look at *who* ends up being classified as False Negatives and False Positives. If all of the False Positives (applicants advanced in the hiring process who shouldn't be) turn out to be White men, and all of the False Negatives are women and People of Color, is that something you should worry about? Is it ethical? Is it *legal*?
+
+And  -->
