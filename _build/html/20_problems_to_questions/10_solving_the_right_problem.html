@@ -461,8 +461,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-will-you-know-if-you-ve-solved-the-problem">How will you know if you’ve solved the problem?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract-the-problem">Abstract the Problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-don-t-articulate-the-problem">If You Don’t Articulate The Problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#articulating-and-reframing-your-problem">Articulating and Reframing Your Problem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-you-know-if-you-ve-been-successful">1. How do you know if you’ve been successful?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract-the-problem">2. Abstract the Problem</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-your-questions-specific-and-actionable">Make Your Questions Specific and Actionable</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterate">Iterate</a></li>
 </ul>
@@ -478,6 +482,19 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="solving-the-right-problem">
 <h1>Solving the Right Problem<a class="headerlink" href="#solving-the-right-problem" title="Link to this heading">#</a></h1>
+<p>If data science is the study of how to solve problems using quantitative methods, then the first — and arguably most important — stage in any data science project is to define the problem to be solved.</p>
+<p>While this may seem simple, it is often far from it. Indeed, as noted in the introduction, problems often only appear complicated because they are poorly understood. Reframing or rearticulating a difficult problem is often the key to figuring out how to solve it, which is why the adage “A problem well stated is a problem half solved” has remained popular for so long.</p>
+<aside class="sidebar">
+<p>A problem well stated is a problem half-solved.</p>
+<ul class="simple">
+<li><p>Charles Kettering, Head of Research at General Motors</p></li>
+</ul>
+</aside>
+<p>In this chapter, we will discuss what happens when data scientists fail to appreciate the importance of this stage of a project. With that established, we will then turn to advice on how to approach problem articulation.</p>
+<p>This chapter will be written as if you are the sole actor on a data science project, responsible for everything from problem articulation to execution. But of course, this will rarely be the case in your professional life as a data scientist, especially early in your career. With that in mind, in the next chapter we will turn to the topic of “Stakeholder Management” — the practice of refining your understanding of the problem to be solved with a stakeholder.</p>
+<section id="if-you-don-t-articulate-the-problem">
+<h2>If You Don’t Articulate The Problem<a class="headerlink" href="#if-you-don-t-articulate-the-problem" title="Link to this heading">#</a></h2>
+<p>There are many examples in the world of data science projects going awry because the team behind them failed to properly articulate the problem they wished to solve. Rather than start with one of those true stories, however, I’d like to begin with one of my favorite fictional (and humorous) examples of the phenomenon.</p>
 <p>In Douglas Adams’ comedic sci-fi classic <em>Hitchhiker’s Guide to the Galaxy</em>, a race of hyperintelligent pandimensional beings set out to build a massive supercomputer the size of a city to solve the mysteries of the cosmos once and for all. When they turned on the computer, named Deep Thought, they announced that:</p>
 <blockquote>
 <div><p>“The task we have designed you to perform is this. We want you to tell us… the Answer!”</p>
@@ -490,7 +507,7 @@ document.write(`
 </div></blockquote>
 <p>Seven and a half million years later, when Deep Thought had <em>finally</em> finished its calculations, the descendants of those designers assembled to learn the result of their ancestors’ work.</p>
 <blockquote>
-<div><p>“Er …good morning, O Deep Thought,” said Loonquawl [one descendants] nervously, “do you have … er, that is …”</p>
+<div><p>“Er …good morning, O Deep Thought,” said Loonquawl [one descendant] nervously, “do you have … er, that is …”</p>
 <p>“An answer for you?” interrupted Deep Thought majestically. “Yes. I have.”</p>
 <p>The two [descendants] shivered with expectancy. Their waiting had not been in vain.</p>
 <p>“There really is one?” breathed Phouchg [the other descendant].</p>
@@ -507,38 +524,39 @@ document.write(`
 <p>“But it was the Great Question! The Ultimate Question of Life, the Universe and Everything,” howled Loonquawl.</p>
 <p>“Yes,” said Deep Thought with the air of one who suffers fools gladly, “but what actually is it?”</p>
 <p>A slow stupefied silence crept over the men as they stared at the computer and then at each other.</p>
-<p>“Well, you know, it’s just Everything … everything …” offered Phouchg weakly.</p>
+<p>“Well, you know, it’s just Everything … everything …” offered Phouchg weakly.</p>
 <p>“Exactly!” said Deep Thought. “So once you do know what the question actually is, you’ll know what the answer means.”<a class="footnote-reference brackets" href="#quote" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
 </div></blockquote>
-<p>In addition to establishing the premise for one of the greatest comedic science fiction novels in human history,<a class="footnote-reference brackets" href="#fivepart" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> I feel this passage perfectly exemplifies the three things that cause most data science projects to fail.</p>
-<p>The first is that we are often so enamored with technology that we have absolute faith that if we just throw our problems at it, it will solve them for us. But it won’t. Without our thoughtful, critical guidance, it can’t. It never has, and it never will.</p>
-<p>The second is that the <em>reason</em> this doesn’t work is that if we don’t actually figure out what it is we hope the technology will do for us, and make sure that what we’re asking for will actually solve a real problem, technology couldn’t care less. It will do what it has been asked to do — no more and no less. Garbage in, garbage out.</p>
-<p>But the third reason data science projects fail that is exemplified in this passage is the most subtle. In this passage, we can see that Deep Thought recognizes the idiocy of the request it has been given by Loonqual and Phouchg, it doesn’t do anything about it. And that, unfortunately, is the cardinal sin committed by most young data scientists — they fail to recognize that helping the stakeholder properly specify their problem is a core part of the job.</p>
-<aside class="sidebar">
-<p>And that, unfortunately, is the cardinal sin committed by most young data scientists — they fail to recognize that helping the stakeholder properly specify their problem is a core part of the job.</p>
-</aside>
-<p>At this point, you may be thinking “well, isn’t that <em>their</em> problem? They’re the ones who asked me to do the wrong thing?” And… yes, in some sense it is. But it’s also yours. Once you leave the classroom, you will no longer be evaluated on the complexity of your model or the aesthetics of your visualizations—you’ll be evaluated on whether you’ve made your stakeholder’s life better. And even if it was the stakeholder who originally misspecified their need, if you fail to correct that error and deliver a result that doesn’t help your stakeholder, then that’s all that will be remembered.</p>
-<p>In the next chapter, we will discuss the concept of “stakeholder management:” specific ways you can work with your stakeholder to help refine and improve your mutual understanding of the problem you are seeking to solve before you—like the Deep Thought computer in <em>Hitchhiker’s Guide to the Galaxy</em>—spend weeks dutifully grinding away to solve a misspecified problem, only to deliver a result to their stakeholder that turns out to not be as helpful as expected.</p>
-<p>Not someone who has an obvious stakeholder with whom you can have this type of conversation? Well, stick with me — many of the suggested questions and conversational strategies detailed below are ones I’ve often used in conversation with myself in my academic research, and I assure you they work almost as well when talking to the voices in your head as with another person.</p>
-<p>How then should you — the young data scientist — go about ensuring your efforts are well spent?</p>
-<aside class="sidebar">
-<p>“A problem well stated is a problem half solved.”</p>
-<ul class="simple">
-<li><p>Charles Kettering, Head of Research at General Motors.</p></li>
-</ul>
-</aside>
-<section id="how-will-you-know-if-you-ve-solved-the-problem">
-<h2>How will you know if you’ve solved the problem?<a class="headerlink" href="#how-will-you-know-if-you-ve-solved-the-problem" title="Link to this heading">#</a></h2>
-<p>What does success look like?</p>
+<p>In addition to establishing the premise for one of the greatest comedic science fiction novels in human history,<a class="footnote-reference brackets" href="#fivepart" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> I feel this passage perfectly exemplifies the three reasons most data science projects fail.</p>
+<p><strong>The first is our absolute faith that technology will save us.</strong> All we have to do to solve any problem is feed it into the newest, shiniest AI/LLM/ML model available. Sure, there may be technical challenges associated with configuring the environment, formatting the data, etc., but fundamentally, all that lies between us and success is putting the problem into technology’s hands.</p>
+<p>The second is that when a data science project fails, it’s rarely because the technology itself failed. Rather, <strong>projects usually fail because people failed to ensure that the task they asked their model to accomplish would actually solve their problem.</strong> Technology doesn’t care if the task it’s been given is useful to the user. It will do what it has been asked to do — no more and no less. Garbage in, garbage out.</p>
+<p>Finally, this passage also gives a nod to the third — and perhaps most important reason — that data science projects fail: <strong>data scientists are far too deferential to their stakeholders.</strong> In this passage, we can see that Deep Thought recognizes the idiocy of the request it has been given by its stakeholders — Loonqual and Phouchg — but does nothing about it. And to the degree to which we can think of the Deep Thought personality as a stand-in for the data scientist, this is a troubling realistic illustration of how many data science interactions go. The stakeholder says they want something and the (usually younger) data scientist assumes their only responsibility is to ensure the stakeholder’s request is implemented.</p>
+<p>But as discussed in the introduction of this book, your success as a data scientist will <em>always</em> be evaluated in terms of whether you’ve made your stakeholder’s life better. And if doing precisely what they ask does not improve their lives, that’s the only thing that will matter. No one is blaming Deep Thought in this story, but they sure aren’t excited about what it did, either.</p>
+</section>
+<section id="articulating-and-reframing-your-problem">
+<h2>Articulating and Reframing Your Problem<a class="headerlink" href="#articulating-and-reframing-your-problem" title="Link to this heading">#</a></h2>
+<p>The preceding story gives (an admittedly extreme) example of how things can go wrong when a data science project is not well motivated — in short, large amounts of energy and sweat can go into creating technically impressive results that, in the end, in no way solve a problem or improve the lives of anyone involved.</p>
+<p>How, then, can you avoid that fate? Every problem is different, but here are some strategies to employ when faced with a problem to aid in refinement, reframing, and articulation. As we work through these, we will also work a few examples based on real cases designed to help you get a feel for what this process entails and why it’s so important.</p>
+<section id="how-do-you-know-if-you-ve-been-successful">
+<h3>1. How do you know if you’ve been successful?<a class="headerlink" href="#how-do-you-know-if-you-ve-been-successful" title="Link to this heading">#</a></h3>
+<p>One of the most helpful questions to ask when trying to understand a problem is “how would we know if we’ve successfully solved this problem?” This question is powerful because it abstracts away the question of <em>how</em> you might solve a problem, and instead focuses attention on the <em>goal</em> one is trying to achieve. In other words, the objective of this question is to figure out how you might <em>measure</em> success.</p>
+<p>Crucially, the answer to this question shouldn’t be something like “we have a good model for doing X” — that answer has largely just shifted the question to what constitutes “good.” Rather, try to come up with an answer in terms of the <em>metric</em> or <em>behavior</em> that, if observed, would tell you that you’ve been successful.</p>
+<p>To illustrate the potential power of this question, let’s consider an example I’ve encountered in the real world (with some details changed to protect the anonymity of everyone involved).</p>
+<p>The stakeholder is an online auction site for used construction equipment (front loaders, backhoes, etc.). They want to improve the algorithm that suggests prices to people selling equipment, but they’ve realized that while they have good data on how machinery type impacts prices, their algorithm can’t take into account the condition of equipment being listed. So they’ve hired a data science team to train an image classification model on listings to estimate the condition of each listed piece of machinery.</p>
+<p>So: how would you know if you’ve been successful in solving this stakeholder’s problem?</p>
+<p>At first blush, you might say I would know I was successful if I have a model that has high classification accuracy for equipment condition when fed photos of equipment listed in the past.</p>
+<p>But look more carefully, is that really what the stakeholder cares about? No — because “image classification model” is something young data scientists are familiar with, they tend to latch on to it immediately. “Oh, great, image classification! I can do that. Let’s go!”</p>
+<p>No, the problem motivating the stakeholder is that their price suggestion algorithm doesn’t take into account the condition of equipment going up for sale. Given that, you would know your model was successful if the predicted prices from the model were more in line with final sale prices for equipment of all conditions.</p>
 </section>
 <section id="abstract-the-problem">
-<h2>Abstract the Problem<a class="headerlink" href="#abstract-the-problem" title="Link to this heading">#</a></h2>
+<h3>2. Abstract the Problem<a class="headerlink" href="#abstract-the-problem" title="Link to this heading">#</a></h3>
 <p>So how do you help your stakeholder better understand <em>their</em> problem?</p>
 <p>If I could offer only one piece of advice on how to approach a sticky problem, it would be this: rephrase the problem in a more general manner that abstracts away from the specifics. It’s difficult to overstate how often a “unique” sticky problem becomes very straightforward once you realize it’s a special case of a more general type of problem, or once you realize that your stakeholder has (often unknowingly) introduced constraints to the problem that aren’t actually constraints.</p>
 <p>Perhaps my favorite example of this comes from a talk given by <a class="reference external" href="https://youtu.be/kYMfE9u-lMo?t=1281&amp;amp;si=haO8mlmO5tB4OC9k">Vincent Warmerdam at PyData 2019.</a></p>
 <p>The World Food Program (WFP) is a global leader in food aid provision. As Vincent tells the story — which he reports having heard at an Operations Research Conference — the WFP was struggling with an extremely difficult data science problem: how best to get food from the places it was being grown/stored to the people who needed it most. Essentially, the WFP would receive reports of needs from communities facing food insecurity. One community might report a need for bread and beef, while another might request lentils and meat. The WFP would compile these requests and then set about trying to determine the most efficient way to meet these needs.</p>
 <p>This type of logistics problem is an example of a notoriously difficult problem (essentially a version of the Traveling Salesman Problem, which is NP-Complete, if that means anything to you) that companies like FedEx and UPS buy supercomputers to address. But this particular problem was made extra challenging by all the different types of food the WFP was trying to provide communities.</p>
 <p>What the WFP realized was that they didn’t actually need to provide bread to the village asking for bread. See, humans don’t need <em>bread</em> to avoid starvation — they need a certain number of calories, a certain amount of protein, and a handful of other nutrients.<a class="footnote-reference brackets" href="#nutrients" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> So when a village asks for bread, rice, or wheat, you can instead think of them asking for carbohydrates. And a village asking for beef or beans is actually asking for protein and iron. So by simply abstracting the task from “How best can we meet all these food requests?” to “How best can we meet the nutritional needs indicated by these requests?” the WFP was able to <em>dramatically</em> reduce the number of constraints being imposed on the logistical optimization problem WFP needed to solve, making its task <em>far</em> simpler.</p>
+</section>
 </section>
 <section id="make-your-questions-specific-and-actionable">
 <h2>Make Your Questions Specific and Actionable<a class="headerlink" href="#make-your-questions-specific-and-actionable" title="Link to this heading">#</a></h2>
@@ -635,8 +653,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-will-you-know-if-you-ve-solved-the-problem">How will you know if you’ve solved the problem?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract-the-problem">Abstract the Problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-don-t-articulate-the-problem">If You Don’t Articulate The Problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#articulating-and-reframing-your-problem">Articulating and Reframing Your Problem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-you-know-if-you-ve-been-successful">1. How do you know if you’ve been successful?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract-the-problem">2. Abstract the Problem</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-your-questions-specific-and-actionable">Make Your Questions Specific and Actionable</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterate">Iterate</a></li>
 </ul>

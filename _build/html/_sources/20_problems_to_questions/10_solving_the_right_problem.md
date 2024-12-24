@@ -1,5 +1,22 @@
 # Solving the Right Problem
 
+If data science is the study of how to solve problems using quantitative methods, then the first — and arguably most important — stage in any data science project is to define the problem to be solved.
+
+While this may seem simple, it is often far from it. Indeed, as noted in the introduction, problems often only appear complicated because they are poorly understood. Reframing or rearticulating a difficult problem is often the key to figuring out how to solve it, which is why the adage "A problem well stated is a problem half solved" has remained popular for so long.
+
+```{sidebar}
+A problem well stated is a problem half-solved.
+- Charles Kettering, Head of Research at General Motors
+```
+
+In this chapter, we will discuss what happens when data scientists fail to appreciate the importance of this stage of a project. With that established, we will then turn to advice on how to approach problem articulation.
+
+This chapter will be written as if you are the sole actor on a data science project, responsible for everything from problem articulation to execution. But of course, this will rarely be the case in your professional life as a data scientist, especially early in your career. With that in mind, in the next chapter we will turn to the topic of "Stakeholder Management" — the practice of refining your understanding of the problem to be solved with a stakeholder.
+
+## If You Don't Articulate The Problem
+
+There are many examples in the world of data science projects going awry because the team behind them failed to properly articulate the problem they wished to solve. Rather than start with one of those true stories, however, I'd like to begin with one of my favorite fictional (and humorous) examples of the phenomenon.
+
 In Douglas Adams' comedic sci-fi classic *Hitchhiker's Guide to the Galaxy*, a race of hyperintelligent pandimensional beings set out to build a massive supercomputer the size of a city to solve the mysteries of the cosmos once and for all. When they turned on the computer, named Deep Thought, they announced that:
 
 > "The task we have designed you to perform is this. We want you to tell us... the Answer!"
@@ -18,7 +35,7 @@ In Douglas Adams' comedic sci-fi classic *Hitchhiker's Guide to the Galaxy*, a r
 
 Seven and a half million years later, when Deep Thought had *finally* finished its calculations, the descendants of those designers assembled to learn the result of their ancestors' work.
 
-> "Er ...good morning, O Deep Thought," said Loonquawl [one descendants] nervously, "do you have ... er, that is ..."
+> "Er ...good morning, O Deep Thought," said Loonquawl [one descendant] nervously, "do you have ... er, that is ..."
 >
 > "An answer for you?" interrupted Deep Thought majestically. "Yes. I have."
 >
@@ -52,44 +69,49 @@ Seven and a half million years later, when Deep Thought had *finally* finished i
 >
 > A slow stupefied silence crept over the men as they stared at the computer and then at each other.
 >
-> "Well, you know, it's just Everything ... everything ..." offered Phouchg weakly.
+> "Well, you know, it's just Everything ... everything ..." offered Phouchg weakly.
 >
 > "Exactly!" said Deep Thought. "So once you do know what the question actually is, you'll know what the answer means."[^quote]
 
 [^quote]: Yes, I recognize that it is wildly indulgent to open a chapter with such a long epigraph. But it's my book, and if there's anything to be indulgent about its quotes from *Hitchhiker's Guide to the Galaxy*, damn it!
 
-In addition to establishing the premise for one of the greatest comedic science fiction novels in human history,[^fivepart] I feel this passage perfectly exemplifies the three things that cause most data science projects to fail.
+In addition to establishing the premise for one of the greatest comedic science fiction novels in human history,[^fivepart] I feel this passage perfectly exemplifies the three reasons most data science projects fail.
 
 [^fivepart]: Not least for being the only 5-book trilogy of which I am aware!
 
-The first is that we are often so enamored with technology that we have absolute faith that if we just throw our problems at it, it will solve them for us. But it won’t. Without our thoughtful, critical guidance, it can’t. It never has, and it never will.
+**The first is our absolute faith that technology will save us.** All we have to do to solve any problem is feed it into the newest, shiniest AI/LLM/ML model available. Sure, there may be technical challenges associated with configuring the environment, formatting the data, etc., but fundamentally, all that lies between us and success is putting the problem into technology's hands.
 
-The second is that the *reason* this doesn't work is that if we don't actually figure out what it is we hope the technology will do for us, and make sure that what we're asking for will actually solve a real problem, technology couldn't care less. It will do what it has been asked to do — no more and no less. Garbage in, garbage out.
+The second is that when a data science project fails, it's rarely because the technology itself failed. Rather, **projects usually fail because people failed to ensure that the task they asked their model to accomplish would actually solve their problem.** Technology doesn't care if the task it's been given is useful to the user. It will do what it has been asked to do — no more and no less. Garbage in, garbage out.
 
-But the third reason data science projects fail that is exemplified in this passage is the most subtle. In this passage, we can see that Deep Thought recognizes the idiocy of the request it has been given by Loonqual and Phouchg, it doesn't do anything about it. And that, unfortunately, is the cardinal sin committed by most young data scientists — they fail to recognize that helping the stakeholder properly specify their problem is a core part of the job.
+Finally, this passage also gives a nod to the third — and perhaps most important reason — that data science projects fail: **data scientists are far too deferential to their stakeholders.** In this passage, we can see that Deep Thought recognizes the idiocy of the request it has been given by its stakeholders — Loonqual and Phouchg — but does nothing about it. And to the degree to which we can think of the Deep Thought personality as a stand-in for the data scientist, this is a troubling realistic illustration of how many data science interactions go. The stakeholder says they want something and the (usually younger) data scientist assumes their only responsibility is to ensure the stakeholder's request is implemented.
 
-```{sidebar}
-And that, unfortunately, is the cardinal sin committed by most young data scientists — they fail to recognize that helping the stakeholder properly specify their problem is a core part of the job.
-```
+But as discussed in the introduction of this book, your success as a data scientist will *always* be evaluated in terms of whether you've made your stakeholder's life better. And if doing precisely what they ask does not improve their lives, that's the only thing that will matter. No one is blaming Deep Thought in this story, but they sure aren't excited about what it did, either.
 
-At this point, you may be thinking "well, isn't that *their* problem? They're the ones who asked me to do the wrong thing?" And... yes, in some sense it is. But it's also yours. Once you leave the classroom, you will no longer be evaluated on the complexity of your model or the aesthetics of your visualizations—you'll be evaluated on whether you've made your stakeholder's life better. And even if it was the stakeholder who originally misspecified their need, if you fail to correct that error and deliver a result that doesn't help your stakeholder, then that's all that will be remembered.
+## Articulating and Reframing Your Problem
 
-In the next chapter, we will discuss the concept of "stakeholder management:" specific ways you can work with your stakeholder to help refine and improve your mutual understanding of the problem you are seeking to solve before you—like the Deep Thought computer in *Hitchhiker's Guide to the Galaxy*—spend weeks dutifully grinding away to solve a misspecified problem, only to deliver a result to their stakeholder that turns out to not be as helpful as expected.
+The preceding story gives (an admittedly extreme) example of how things can go wrong when a data science project is not well motivated — in short, large amounts of energy and sweat can go into creating technically impressive results that, in the end, in no way solve a problem or improve the lives of anyone involved.
 
-Not someone who has an obvious stakeholder with whom you can have this type of conversation? Well, stick with me — many of the suggested questions and conversational strategies detailed below are ones I've often used in conversation with myself in my academic research, and I assure you they work almost as well when talking to the voices in your head as with another person.
+How, then, can you avoid that fate? Every problem is different, but here are some strategies to employ when faced with a problem to aid in refinement, reframing, and articulation. As we work through these, we will also work a few examples based on real cases designed to help you get a feel for what this process entails and why it's so important.
 
-How then should you — the young data scientist — go about ensuring your efforts are well spent?
+### 1. How do you know if you've been successful?
 
-```{sidebar}
-"A problem well stated is a problem half solved." 
-- Charles Kettering, Head of Research at General Motors.
-```
+One of the most helpful questions to ask when trying to understand a problem is "how would we know if we've successfully solved this problem?" This question is powerful because it abstracts away the question of *how* you might solve a problem, and instead focuses attention on the *goal* one is trying to achieve. In other words, the objective of this question is to figure out how you might *measure* success.
 
-## How will you know if you've solved the problem?
+Crucially, the answer to this question shouldn't be something like "we have a good model for doing X" — that answer has largely just shifted the question to what constitutes "good." Rather, try to come up with an answer in terms of the *metric* or *behavior* that, if observed, would tell you that you've been successful.
 
-What does success look like?
+To illustrate the potential power of this question, let's consider an example I've encountered in the real world (with some details changed to protect the anonymity of everyone involved).
 
-## Abstract the Problem
+The stakeholder is an online auction site for used construction equipment (front loaders, backhoes, etc.). They want to improve the algorithm that suggests prices to people selling equipment, but they've realized that while they have good data on how machinery type impacts prices, their algorithm can't take into account the condition of equipment being listed. So they've hired a data science team to train an image classification model on listings to estimate the condition of each listed piece of machinery.
+
+So: how would you know if you've been successful in solving this stakeholder's problem?
+
+At first blush, you might say I would know I was successful if I have a model that has high classification accuracy for equipment condition when fed photos of equipment listed in the past.
+
+But look more carefully, is that really what the stakeholder cares about? No — because "image classification model" is something young data scientists are familiar with, they tend to latch on to it immediately. "Oh, great, image classification! I can do that. Let's go!"
+
+No, the problem motivating the stakeholder is that their price suggestion algorithm doesn't take into account the condition of equipment going up for sale. Given that, you would know your model was successful if the predicted prices from the model were more in line with final sale prices for equipment of all conditions.
+
+### 2. Abstract the Problem
 
 So how do you help your stakeholder better understand *their* problem?
 
