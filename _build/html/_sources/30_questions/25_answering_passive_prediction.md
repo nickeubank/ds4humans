@@ -28,7 +28,7 @@ Tools for evaluating internal validity help ensure that statistical and machine 
 
 To illustrate, consider the two models in the figure below ([source](https://ece.uwaterloo.ca/~dwharder/NumericalAnalysis/06LeastSquares/extrapolation/complete.html))—one a linear fit, and one a higher-order polynomial. Both model the data similarly *in the range for which data is available* — and so will perform similarly when one uses the metrics described above to evaluate the model's internal validity — but make very different predictions when asked to extrapolate values of `x` below 0 or above 2.
 
-![example of two models that look similar over ranges with data but extrapolate very differently outside that range](images/extrapolation.gif)
+![example of two models that look similar over ranges with data but extrapolate very differently outside that range](images/extrapolation.jpg)
 
 In addition to reducing overfitting, strategies like regularization are designed to constrain the "wonkiness" of models outside the domain on which they were trained, but almost by definition, absent data in those extended ranges, there's no way to know for certain whether the model will generalize.
 

@@ -21,7 +21,7 @@ execute:
 # Define the name of the latex output file for PDF builds
 latex:
   latex_documents:
-    targetname: book.tex
+    targetname: ds4humans.tex
 
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
@@ -42,3 +42,8 @@ html:
   favicon: logo.jpg
   analytics:
     google_analytics_id: G-RKDPB41DQ2
+
+build:
+  targets:
+    - html
+    - latexpdf
