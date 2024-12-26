@@ -3729,6 +3729,608 @@ But neither of these are directly observable. In the case of No Baseline Differe
 \sphinxAtStartPar
 As a result, it is only through critical thinking and domain knowledge that we can do our best to \sphinxstyleemphasis{reason} about whether we believe these conditions are met in any given situation. And \sphinxstyleemphasis{that} is why causal inference is hard.
 
+\sphinxstepscope
+
+
+\part{Data Science in Practice}
+
+\sphinxstepscope
+
+
+\chapter{How to Read (Academic Edition)}
+\label{\detokenize{40_in_practice/00_how_to_read_this_book:how-to-read-academic-edition}}\label{\detokenize{40_in_practice/00_how_to_read_this_book::doc}}
+\sphinxAtStartPar
+In this class, you will be asked to do significantly more reading than many of you — especially those of you from engineering backgrounds — are used to. Moreover, many of our reading may feel different from a lot of the reading that you’ve done in the past, and so I want to take a moment to discuss \sphinxstyleemphasis{how} you should approach reading in this — and indeed in \sphinxstyleemphasis{any} — reading intensive course.
+
+\sphinxAtStartPar
+Knowing that many students in this class speak English is a second language (and so may find reading more time\sphinxhyphen{}consuming), and many of you also don’t have experience with more reading intensive courses, I have worked very hard to ensure that the readings I assign communicate key concepts as efficiently as possible. But as we will see, learning to answer causal questions well requires wrestling with the complexities that arise when apparently simple math meets the real world, and that unavoidably requires thoughtful exposition.
+
+
+\section{Read Actively}
+\label{\detokenize{40_in_practice/00_how_to_read_this_book:read-actively}}
+\sphinxAtStartPar
+The first major piece of advice I can offer is that you should always be active when reading for this course. That may mean taking notes on a separate piece of paper as you go, or highlighting passages that stand out and adding comments in the margins. But reading of the type you will encounter in this course should never be a \sphinxstyleemphasis{passive} process.
+
+\sphinxAtStartPar
+This is especially true any time you encounter mathematical notation. A key skill in answering causal questions is the ability to map concepts represented in mathematical notation onto facets of real world examples. With that in mind, any time you are reading something written in mathematical notation, it is good practice to think of a specific example and see if you can relate each term you encounter to the real world example.
+
+
+\section{Be Patient with Examples From Different Domains}
+\label{\detokenize{40_in_practice/00_how_to_read_this_book:be-patient-with-examples-from-different-domains}}
+\sphinxAtStartPar
+Data science is an extremely diverse field. This course does its best to embrace that diversity though the use of examples from a wide range of substantive domains. This, at times, causes frustration among students as many examples will necessarily come from domains that don’t feel relevant to your particular interests. Try and resist this urge — while this may \sphinxstyleemphasis{seem} like a problem, it’s actually emblematic of a huge opportunity for intellectual arbitrage (the porting of insights that have been richly developed in one domain to a different domain where they are unfamiliar)!
+
+\sphinxAtStartPar
+This will be particularly relevant when we get to the study of causal inference (the study of how to answer Causal Questions), as there are lots of concepts that have been well\sphinxhyphen{}developed in the social sciences that people are only now starting to apply in industry, meaning many of the best texts and examples will be public policy or social science oriented.
+
+\sphinxAtStartPar
+And while the downside of that is that there aren’t as many great books written about causal inference in industry as you may wish, the upside is that there are lots of opportunities to for young data scientists to innovate by applying these concepts in new ways!
+
+\sphinxAtStartPar
+So please bear with these examples, and practice trying to apply the concepts you read to an industry example that matters to you.
+
+
+\section{Do NOT Summarize with LLMs}
+\label{\detokenize{40_in_practice/00_how_to_read_this_book:do-not-summarize-with-llms}}
+\sphinxAtStartPar
+I fully recognize that there is a strong temptation when faced with a long reading to stuff it into a Large Language Model and ask for a summary. \sphinxstylestrong{Don’t.}
+
+\sphinxAtStartPar
+There are a few reasons for this. The first is that while an LLM can provide you with a broad summary of what you’re reading, it will necessarily have to exclude all the nuance in the original reading. If you just want to figure out if a reading is generally relevant to your interests, that’s fine; but you’re here to learn a subject — one that can can be infuriatingly subtle — and cutting out all those nuances will limit what you can learn \sphinxstyleemphasis{and} prevent you from being able to test your understanding of concepts by wrestling to understand how each new sentence relates to what you’ve read previously. So just as the goal of the readings isn’t to allow you to answer our reading reflection questions (those are just there to draw your attention to especially salient points), nor is the goal of the readings to understanding it at the level of a summary.
+
+\sphinxAtStartPar
+The second big reason is that the process of summarizing material yourself is critical to consolidating your learning. This insight comes, in part, from research on whether students taking notes on computers learn more effectively than students taking notes on paper. This research has found that students taking notes on computers can write much more quickly than students taking notes by hand, but that counter\sphinxhyphen{}intuitively this seems to result in \sphinxstyleemphasis{worse} learning outcomes (based on subsequent learning assessments). Why? It appears that students taking notes on computers are effectively able to \sphinxstyleemphasis{transcribe} everything happening in class, while students taking notes on paper have to think about the material in real time in order to summarize it enough that they can keep up taking notes.
+
+\sphinxAtStartPar
+Letting LLMs summarize material for you seems likely to cause a similar issue — by allowing an algorithm to organize the information in a more concise manner, it deprives \sphinxstyleemphasis{you} of the opportunity to engage with the material to create your own summary, a process that forces you to \sphinxstyleemphasis{actively} think about the connections between concepts. The importance of this type of \sphinxstyleemphasis{active learning} is one of the biggest bedrock findings of research on learning in recent years — students who have material given to them (e.g., through a passive lecture) often think they understand material, but it is the students who learn material actively — through class or group exercises, problem sets, or other activities — who perform better on learning assessments.
+
+\sphinxAtStartPar
+Finally, learning to focus on a reading for a prolonged period of time is an important skill, and one we practice less and less in the modern age. Sometimes letting our attention flitting from thing to thing is fine, but being able to focus for prolonged periods when required is an important skill to cultivate! (If you’re interested, you can find a really interesting discussion of \sphinxhref{https://www.nytimes.com/2022/11/22/opinion/ezra-klein-podcast-maryanne-wolf.html}{this idea here.})
+
+\sphinxstepscope
+
+
+\chapter{Backwards Design}
+\label{\detokenize{40_in_practice/05_backwards_design:backwards-design}}\label{\detokenize{40_in_practice/05_backwards_design::doc}}
+\sphinxAtStartPar
+Backwards Design is a way of developing an efficient strategy for completing a new data science project, and in my view it is one of the most important skills of a professional data scientist.
+
+\sphinxAtStartPar
+If you don’t have a lot of professional data science experience, it may not be obvious why this is an important skill, or even why I call it a “skill.” That’s because most data science students’ experience with project development comes from classroom exercises or sites like kaggle. These types of projects are excellent opportunities for learning, but it is usually the case that – unbeknownst to the student – these projects have been carefully tailored to have clearly defined goals, and they come with data sets that have been cleaned and filter to provide only relevant variables. This is usually done for good reasons – the instructors design these exercises in a way that focuses student attention on the skills that they are trying to develop (like model selection or model interpretation). But as a result, students often come away with the impression that most of what data scientists do is work with statistical models.
+
+\sphinxAtStartPar
+In reality, however, often the most important thing that a data scientist does is (a) develop and articulate a concrete, feasible objective of a data science project, and (b) develop a strategy for achieving that objective efficiently. And Backwards Design is one of the best ways to go about accomplishing both of these goals.
+
+
+\section{Overview}
+\label{\detokenize{40_in_practice/05_backwards_design:overview}}
+\sphinxAtStartPar
+As the name implies, the idea Backwards Design is to \sphinxstyleemphasis{start} by clearly defining where you want to end up at the end of the project, and then working backwards to figure out exactly what you need to do to get there. Backwards Design is actually a common project management strategy and a range of different domains, and so you may already be familiar with the strategy and broad terms. In this class, however, we will focus on a five\sphinxhyphen{}step strategy for doing Backwards Design in data science:
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+Define the problem you want to solve.
+
+\item {} 
+\sphinxAtStartPar
+Define a \sphinxstyleemphasis{question} that you wish to answer to help you solve this problem.
+
+\item {} 
+\sphinxAtStartPar
+Articulate exactly what an answer to your question would look like.
+
+\item {} 
+\sphinxAtStartPar
+Determine the variables you would need in order to generate that answer.
+
+\item {} 
+\sphinxAtStartPar
+Identify data sets with those variables, and develop a strategy for bringing them together.
+
+\end{enumerate}
+
+
+\section{1) Define Your Problem}
+\label{\detokenize{40_in_practice/05_backwards_design:define-your-problem}}
+\sphinxAtStartPar
+This first step should be the most straightforward, and yet you will be surprised at how often it is never actually explicitly addressed. People get so excited about the idea of data science that they will often come to you (the data scientist) with the data set and say “do some data science with this!” So the first thing you should always do when starting a data science project is make sure that you can clearly articulate the objective of the project. In addition, you should always make sure that \sphinxstyleemphasis{your stakeholder} agrees with that articulation of the problem you are trying to address! There’s nothing worse than spending weeks on a project and then discovering that it’s not actually a value to your stakeholder.
+
+\sphinxAtStartPar
+Here are a few examples of defined problems:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+We don’t know how to reduce mass incarceration.
+
+\item {} 
+\sphinxAtStartPar
+My business can’t identify potential new customers.
+
+\item {} 
+\sphinxAtStartPar
+We don’t know who is going to develop Alzheimers, so we can’t test early interventions.
+
+\end{itemize}
+
+
+\section{2) Define the Question You Wish to Answer}
+\label{\detokenize{40_in_practice/05_backwards_design:define-the-question-you-wish-to-answer}}
+\sphinxAtStartPar
+Although not everyone will agree with us, it is my view the data science is fundamentally the practice of using data to quantifiably answer questions about the world.
+
+\sphinxAtStartPar
+For example, when we ran our regressions of birth weight on various demographic variables and whether the mother smoked during pregnancy, those models were answering the question “is maternal smoking associated with lower birth weight (at a statistically significant level after controlling for other confounds)?”
+
+\sphinxAtStartPar
+If someone who runs a commerce website runs an A/B test where users visiting the site are randomly assigned to see two versions of a new landing page, and we then track their purchasing behavior, then when we analyze that data statistically what we’re doing is answering the question “Which of these designs is more effective at getting customers to buy things?”
+
+\sphinxAtStartPar
+And finally we can think of supervised machine learning algorithms as answering two types of question: there’s the broad question that you answer by building a model and evaluating it (“can we identify cancer from patient x\sphinxhyphen{}rays, and if so, how well?”), and then the narrow question the is answered each time the model is run (“given this x\sphinxhyphen{}ray, how likely is this patient to have cancer?”). (There’s a small digression on supervised machine learning and this “data science is about answering questions” conceptual framework at the end of this if you’re interested).
+
+\sphinxAtStartPar
+So the next step in backwards design is to ask yourself: what question, if answered, would help you solve the problem that motivates you?
+
+
+\subsection{Defining a Good Question}
+\label{\detokenize{40_in_practice/05_backwards_design:defining-a-good-question}}
+\sphinxAtStartPar
+A key feature of a good question is one that it is \sphinxstyleemphasis{concrete}, \sphinxstyleemphasis{tractable} and \sphinxstyleemphasis{answerable} by a data science project. Your question meets these criteria if it \sphinxstylestrong{directly implies how you should approach the data science project, and that approach seems feasible.} If your question is so vague that you don’t immediately start thinking about the data you want to collect, it’s not a good motivating question.
+
+\sphinxAtStartPar
+To illustrate, here are a set of \sphinxstyleemphasis{bad} questions to the three problems described above:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+What policies reduce mass incarceration?
+
+\item {} 
+\sphinxAtStartPar
+Can machine learning help me identify potential customers.
+
+\item {} 
+\sphinxAtStartPar
+What indicates Alzheimers?
+
+\end{itemize}
+
+\sphinxAtStartPar
+By contrast, here’s a set of concrete, tractable, and answerable questions:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Does the availability of grand juries result in longer sentences? (Grand juries are a pool of citizens prosecutors can ask for guidance on sentencing. In theory they’re supposed to hold prosecutors accountable, but in reality its often said that prosectors can shape the information grand juries get so they reach the recommendations that prosecutors wanted to begin with).
+
+\item {} 
+\sphinxAtStartPar
+What attributes are common to the customers who buy the most from my business?
+
+\item {} 
+\sphinxAtStartPar
+Are there lab results common in patients who later develop Alzheimers (diagnosed post\sphinxhyphen{}mortem) that we don’t see in patients who don’t go on to develop Alzheimers?
+
+\end{itemize}
+
+\sphinxAtStartPar
+For the first set, we’ve asked questions, but they’re so vague that it’s not clear how you should approach answering the question. In the second set, by contrast, likely first steps are very clear. For example, the first good question clearly implies we need to find data on sentencing from places with and without grand juries. For the second question, its clear we need data on our current customers, and data from the general population for comparison. And for the last question we clearly want lab data from patients with and without diagnosed Alzheimers!
+
+\sphinxAtStartPar
+Moreover, for these answerable questions, you can imagine what the answer to the question will look like: for the first, you could have a regression that regresses sentences on grand jury availability controlling for crime committed; and for the second, you could imagine a table that compares various demographic characteristics of customers to non\sphinxhyphen{}customers.
+
+
+\subsection{Why is Having a Good Question Important?}
+\label{\detokenize{40_in_practice/05_backwards_design:why-is-having-a-good-question-important}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+It will save you from getting lost in your data, since it helps you focus you energy.
+
+\item {} 
+\sphinxAtStartPar
+Being able to articulate the question you wish to answer allows you to make sure that answering that question will actually help address your motivating problem (/make sure that your stateholder agrees that answering your question will help them). There’s \sphinxstyleemphasis{nothing} worse than getting excited, diving into your data, doing lots of work, and then getting a result that doesn’t actually help address the problem that motivated you (but it happens \sphinxstyleemphasis{all the time}).
+
+\end{itemize}
+
+
+\section{3) Write Down What An Answer Would Look Like}
+\label{\detokenize{40_in_practice/05_backwards_design:write-down-what-an-answer-would-look-like}}
+\sphinxAtStartPar
+Seriously. Do it. Not abstractly: I mean draw the graph, figure, table, dataset with columns of predicted values and predictors, or set of model diagnostics you want to generate as a way of answering your question. Literally draw the graph, label the axes, etc.
+
+\sphinxAtStartPar
+Why?
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+If you can’t, then it turns out your question wasn’t sufficiently concrete.
+
+\item {} 
+\sphinxAtStartPar
+You can then show this to your stakeholder to ensure they think this constitutes an answer that would help them solve their problem (and avoid later being told your work doesn’t actually help them)
+
+\item {} 
+\sphinxAtStartPar
+It makes it even clearer what steps you need to do next to generate this result.
+
+\end{itemize}
+
+
+\subsection{Falsifiability}
+\label{\detokenize{40_in_practice/05_backwards_design:falsifiability}}
+\sphinxAtStartPar
+OK. So now you’re written down what an answer to your question looks like. But there’s one other key feature of a good question that we didn’t get into above: it should be \sphinxstyleemphasis{falsifiable}, which means that (a) you should be able to articulate a hypothesis about the answer to your question \sphinxstyleemphasis{and} (b) know what a result to your question would look like.
+
+\sphinxAtStartPar
+So when writing down what your answer should look like, do the following:
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+State a hypothesis about what you think the answer to your question is likely to be.
+
+\item {} 
+\sphinxAtStartPar
+Draw what an answer to your question would look like \sphinxstyleemphasis{if your hypothesis is true}.
+
+\item {} 
+\sphinxAtStartPar
+Draw what an answer to your question would look like \sphinxstyleemphasis{if your hypothesis is false}.
+
+\end{enumerate}
+
+\sphinxAtStartPar
+For example, consider our question about grand juries and sentecing. My hypothesis might be that grand juries result in longer sentences because they insulate prosectors from accountability.
+
+\sphinxAtStartPar
+My result, as described above, could be a regression table where I regress sentences on whether a county has a grand jury along with controls for crime committed.
+
+\sphinxAtStartPar
+The answer if my hypothesis is true is that we’d have a positive coefficient on the presence of grand juries.
+
+\sphinxAtStartPar
+The answer if my hypothesis is false is that we’d have a zero or negative coefficient on the presence of grand juries.
+
+\sphinxAtStartPar
+Why do all this? Because it helps ensure that the way we’re planning to answer our question will actually answer it by generating different results in different states of the world.
+
+
+\section{4) What Data Do You Need?}
+\label{\detokenize{40_in_practice/05_backwards_design:what-data-do-you-need}}
+\sphinxAtStartPar
+Congratulations! You’ve now completed the really hard part of a data science project: defining your goals. Now we turn to the easy stuff.
+
+\sphinxAtStartPar
+First, now you know your goal – the result described above – we turn to how we will actually answer our question. So ask yourself:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+What variables do I need to make the result I described above,
+
+\item {} 
+\sphinxAtStartPar
+What population do I need represented in that data
+
+\end{itemize}
+
+\sphinxAtStartPar
+So let’s think about our business trying to find new customers. Clearly, we need data on (a) customer spending, and (b) the demographics of those same customers.
+
+\sphinxAtStartPar
+We also need data on \sphinxstyleemphasis{both} people who spend a lot, and people who don’t spend a lot so we can compare these two populations. We could do this either by getting data on all our customers and comparing big spenders from people who don’t buy much (if there’s a lot of variation in the data on level of spending), or we could compare current customers to the general public (most of whom aren’t customers).
+
+
+\section{5) Where Can You Get That Data?}
+\label{\detokenize{40_in_practice/05_backwards_design:where-can-you-get-that-data}}
+\sphinxAtStartPar
+OK, now you know the variables you need measured and the populations for whom you need those variables. Now let’s figure out:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Where can I get that data, and
+
+\item {} 
+\sphinxAtStartPar
+If the data will come from different datasets, how will I combine them?
+
+\end{itemize}
+
+\sphinxAtStartPar
+In the customer example above, for example, we can start by looking for the data the company already has on its current customers. What’s in that data?
+
+\sphinxAtStartPar
+We can also look for similar demographic data for non\sphinxhyphen{}customers using a resource like the American Community Survey (the annual survey run by the US Census bureau).
+
+\sphinxAtStartPar
+If we use government data for our comparison group, we’ll then have to make sure we get comparable samples, so we’ll want to make sure we can match our observations on things like age, gender, and where people live, so we’ll need to make sure we have those variables in both datasets.
+
+
+\section{Wrapping Up}
+\label{\detokenize{40_in_practice/05_backwards_design:wrapping-up}}
+\sphinxAtStartPar
+Congratulations!
+
+\sphinxAtStartPar
+By the time you’ve done these 5 steps, you’ve managed to develop a concrete plan for exactly where you’ll focus your time, and you’ve nearly guaranteed that the result you’re working to generate will actually be useful in solving the problem that motivates you or your stakeholder. There’s still a lot of data wrangling, model selection, etc. ahead, but at least you won’t get lost in your data, or do lots of work that ends up no helping anyone!
+
+\sphinxAtStartPar
+\sphinxstylestrong{Want a template for this?} Great news! \sphinxhref{https://github.com/nickeubank/practicaldatascience/raw/master/handouts/PracticalDataScience\_BackwardsDesignTemplate.pdf}{You can download one here!}
+
+
+\section{A Digression on Supervised Machine Learning}
+\label{\detokenize{40_in_practice/05_backwards_design:a-digression-on-supervised-machine-learning}}
+\sphinxAtStartPar
+As noted above, we can think of superived machine learning as a tool that answers two types of questions: the first is the broad question of “can we predict {[}outcome of interest{]} using {[}variables we have{]} and the training set we have access to?”, and the second is the more narrow prediction question “for a given set of predictors, what value of {[}outcome of interest{]} would the model predict for a given observation”?
+
+\sphinxAtStartPar
+The first, I think, is pretty straightforward. But there’s a nuance to the second question that’s super important to understand: when we ask a supervised machine learning it’s prediction for a given observation, what we’re fundamentally asking your model is: \sphinxstylestrong{“how do you think the entity who labeled the data in your training data set would label this new observation?”}
+
+\sphinxAtStartPar
+Because that’s all that supervised machine learning does: it develops models that are designed to replicate the behavior that gave rise to the data set due used for training your model. For example, if you train a supervised machine learning algorithm to label pictures with the name of the animal in the picture by feeding it a bunch of pictures that have been labeled by undergraduates at an American university, than what you are training that machine learning algorithm to do is answer the question “how would an American undergraduate label this photo” every time it sees an unlabeled photograph.
+
+\sphinxAtStartPar
+Obviously different supervised machine learning algorithms go about trying to answer this question in different ways, and some will be more successful than others depending on the context (which is why we spend so much time studying model selection in machine learning courses), but answering this question is \sphinxstyleemphasis{always} the goal to which they aspire.
+
+\sphinxAtStartPar
+This is a bit of a digression, but I think it’s an important one: recognizing that this is all supervised machine learning algorithms do is important because it helps you, the data scientist, understand the limitations of supervised machine learning algorithms. For a surprisingly long time, people thought that machine learning algorithms were incapable of harboring racial or sexist prejudices. They are, after all, just built of math, and math can’t be racist, can it? And so companies like amazon tried to build supervised machine learning algorithms to help them decide who to hire. The problem, though, is that they trained them using data on which people human employees had decided to hire in the past, and data from subjective employee evaluations that had been made by human supervisors. And because this gave rise to an algorithm that looked at people’s resumes and asked itself “what would Amazon’s (very human) hiring staff and supervisors have thought of this person?,” the algorithm of course inherited all the biases of those humans. And so, OOPS!, when Amazon suddenly realized that “their new recruiting engine didn’t like women,” \sphinxhref{https://www.reuters.com/article/us-amazon-com-jobs-automation-insight/amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK08G}{they had to abandon the project}.
+
+\sphinxAtStartPar
+OK, digression on bias in data science complete. For now. :)
+
+\sphinxstepscope
+
+
+\chapter{Making Decisions Using Data}
+\label{\detokenize{40_in_practice/20_from_data_to_decisions:making-decisions-using-data}}\label{\detokenize{40_in_practice/20_from_data_to_decisions::doc}}
+\sphinxAtStartPar
+(This is something that I know I need to add to my classes but I haven’t really managed integrated yet. I talk to my students about that fact that they should just pray at the altar of p<0.05, but instead weigh the relative costs and benefits of Type 1 and Type 2 errors in the context in which they are trying to make a decision. But where I really struggled is the fact that you can’t directly map P values onto decision theory very easily because of all of the weirdnesses of frequentist P values—e.g. A p\sphinxhyphen{}value of 0.05 means that under the null, the odds of a Type 2 is 5\%… but that means the ACTUAL odds of a Type 2 error if you have a p\sphinxhyphen{}value of 0.05\% is pr(null is true) * 0.05. 🤦‍♂️. )
+
+\sphinxstepscope
+
+
+\chapter{Writing to Stakeholders}
+\label{\detokenize{40_in_practice/25_writing_to_stakeholders:writing-to-stakeholders}}\label{\detokenize{40_in_practice/25_writing_to_stakeholders::doc}}
+\sphinxAtStartPar
+In the spirit of what is to follow, I will begin with the most important idea in this reading:
+\begin{quote}
+
+\sphinxAtStartPar
+The key to effective writing to stakeholders is to continually ask yourself — where ever you are in your document, whatever your thinking of writing, and whatever you’re debating including — if my stakeholder stopped reading my report \sphinxstyleemphasis{right at this spot,} have I told them everything I want \sphinxstyleemphasis{them} to have learned.
+\end{quote}
+
+
+\section{Why Learning to Write to Stakeholders is Hard}
+\label{\detokenize{40_in_practice/25_writing_to_stakeholders:why-learning-to-write-to-stakeholders-is-hard}}
+\sphinxAtStartPar
+As students (especially data science students), the way most of us were taught to write reports is to:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+start with an introduction that helps explain the broader context in which the report is being positioned,
+
+\item {} 
+\sphinxAtStartPar
+describes the data that we intend to use,
+
+\item {} 
+\sphinxAtStartPar
+describe that how we have wrangled and cleaned that data,
+
+\item {} 
+\sphinxAtStartPar
+describe how we plan to model that data,
+
+\item {} 
+\sphinxAtStartPar
+report the results,
+
+\item {} 
+\sphinxAtStartPar
+and discuss limitations and tack on a boilerplate conclusion.
+
+\end{itemize}
+
+\sphinxAtStartPar
+This structure makes a lot of sense in the context of a class because the order of presentation mirrors the objectives of the assignment: demonstrate that you understand the substantive topics that are being taught, demonstrate that you are being thoughtful about the data that you are collecting and that you have internalized the emphasis your instructors have placed on the importance of data cleaning, and that you understand the principles of data modeling. Results come last because in the context of a class, your results don’t actually matter. No professor is going to make a major business decision on the basis of a student report, and no government is going set policy on the basis of what you say.
+
+\sphinxAtStartPar
+This structure — which almost entirely front loads material that is not particularly interesting to the instructor — is also viable because it is basically the \sphinxstyleemphasis{job} of the reader (your instructor or teaching assistant) to read everything you wrote.
+
+
+\section{Putting Yourself in the Stakeholder Shoes}
+\label{\detokenize{40_in_practice/25_writing_to_stakeholders:putting-yourself-in-the-stakeholder-shoes}}
+\sphinxAtStartPar
+\sphinxstylestrong{None of that} is true in the real world. In fact, I would argue that being taught to write reports in this manner is about the worst possible preparation one could give students for learning to communicate to real\sphinxhyphen{}world stakeholders for two key reasons:
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+In the real world, the \sphinxstyleemphasis{only} thing that your stakeholder actually cares about are the conclusions you have reached about how to solve their problem (i.e. your results and how they relate to the stakeholder’s problem).
+
+\item {} 
+\sphinxAtStartPar
+There is nothing more scarce in any organization than a decision makers time, and so \sphinxstyleemphasis{the moment} it stops being obvious to the decision maker why the material their reading is directly relevant to solving their problem, there is a very high probability that they will let their attention shift to one of the other hundred critical issues vying for their attention.
+
+\end{enumerate}
+
+\sphinxAtStartPar
+Because of these two facts, when writing to a stakeholder you should always — \sphinxstyleemphasis{always} — be asking yourself two questions:
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+If my stakeholder stopped reading right now, have I already told them the things that I think it is most important they walk away knowing? and
+
+\item {} 
+\sphinxAtStartPar
+At every transition — between sections, between topics, and even between paragraphs — is it explicitly clear to the reader that what follows is relevant to solving the stakeholder’s problem so they have and affirmative reason to not get distracted?
+
+\end{enumerate}
+
+\sphinxAtStartPar
+What does this look like in practice? It depends a little bit on how much of your stakeholder’s attention you think you can get in the best of circumstances (intelligence briefings were written very differently for Donald Trump than for Barack Obama), but the structure I am going to advocate for is roughly the following:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Executive Summary:} A full summary of absolutely everything you want your stakeholder to walk away knowing if they were to read nothing else in about two to four paragraphs. State the problem that you are setting out to address, state the question that you’re going to answer in order to help solve that problem, and at a very high level state how you are going to answer that question, state the answer you have found, reiterate how that result helps solve the problem.
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Context:} With the Executive Summary out of the way, you have hopefully piqued your stakeholder’s interest just enough to double back and provide \sphinxstyleemphasis{a little} more context about the problem you are trying to address and the context and which it is situated. But don’t get complacent — even here, it is important to very clearly and explicitly motivate why all of the information you are providing is relevant to solving the stakeholder’s problem effectively.
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+This is where the answers you generated to your Exploratory Questions fit — they provide information to your stakeholder about why you have chosen to prioritize certain facets of the problem, and why those choices are correct.
+
+\end{itemize}
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Your Strategy:} Now you get to explain how you are going to answer the question that will help solve the stakeholder’s problem in more detail. But don’t get lost in the weeds — the stakeholder only needs to understand enough about your strategy (including your data) to be able to evaluate how much confidence they should have in our results and conclusions.
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+This is perhaps \sphinxstylestrong{the} hardest section for data science students to write, not because they can’t think of what to put here, but because they want to include \sphinxstyleemphasis{way, way too much}. There is a very natural and very human tendency when you finish a project that you have put a tremendous amount of work into to talk about all of the work you did. And most of that work will involve wrestling with data, dealing with merging issues, tuning models, etc. But almost nothing you have done in this domain is something that your stakeholder needs to know about. You can write it all up — there may very well be some people on the stakeholder’s staff who will want to read it — but it belongs at the back of the report in an appendix, \sphinxstyleemphasis{not} in the body of the report.
+
+\item {} 
+\sphinxAtStartPar
+The \sphinxstylestrong{only} exceptions to this rule are places where you exercised substantial \sphinxstyleemphasis{discretion} in how you handled the data or constructed your sample. If you exercised discretion in a substantial way \sphinxstyleemphasis{that may impact how one interprets the conclusions of the report} — for example, you had to choose which states to include in an analysis as control states — you can/should include a \sphinxstyleemphasis{brief} explanation for your reasoning along with a link to an appendix were you discuss those choices in detail.
+
+\end{itemize}
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Your Results:} Now you get to present your results in greater detail. Note that nothing here should come as a surprise to the reader — don’t try and “hide the ball” to build suspense by not revealing your findings till now because while you may \sphinxstyleemphasis{think} what you’ve done is so interesting that the suspense will draw the reader in, in reality, it just means that when your stakeholder doesn’t make it past the Executive Summary, they will not have learned \sphinxstylestrong{the thing} you spent so much time trying to learn.
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Also, note that while this structure still has a results section towards the end, because you have kept your Context and Strategy sections very short, it should actually be coming up much sooner than your results would come up in a normal class report (in terms of the page number on which it appears).
+
+\end{itemize}
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Relating It Back To The Problem:} And now we bring things full circle — now that you presented your results, you have to make sure that your reader hasn’t lost the thread by relating your results back to the problem that motivated your analysis to begin with.
+
+\end{itemize}
+
+
+\subsection{Wow! What a Great Way of Thinking About This? Did You Invent This Yourself?}
+\label{\detokenize{40_in_practice/25_writing_to_stakeholders:wow-what-a-great-way-of-thinking-about-this-did-you-invent-this-yourself}}
+\sphinxAtStartPar
+Obviously not. And now that you are primed to think about how writing can be organized in a manner that reflects the likelihood that most people who pick up a document won’t actually read it all the way to the end, you will start to see how people front load the things they think matter most everywhere.
+
+\sphinxAtStartPar
+Journalism is the quintessential example of this style of writing. \sphinxstyleemphasis{No one} reads entire news articles, so they are always nearly organized with the most critical information up front, after which they double back to fill in additional details for anyone still reading. There are a number of different ways this can be accomplished — for example the \sphinxhref{https://en.wikipedia.org/wiki/Inverted\_pyramid\_(journalism)}{inverted pyramid} — start with “who? what? when? where? how?”, then add important details, then add context — is one of the first article formats journalists are introduced to.
+
+\sphinxAtStartPar
+But the structure I think you’re likely to see most if you start looking for it is that in the first two or three paragraphs of a well\sphinxhyphen{}written news story, you will notice that there is a single paragraph that is designed to summarize everything that the journalist wants you to know about the story — the “\sphinxhref{https://en.wikipedia.org/wiki/Article\_structure\#Nut\_Graph}{nut graph}”.
+
+\sphinxAtStartPar
+Academic publications also usually follow this structure. They start with an abstract (essentially an Executive Summary of the Executive Summary), an “introduction” (which is, in effect, an Executive Summary), a literature review (to establish why what they’re doing is novel and provide some broader context), a not too long discussion of their methodology, their results, and a short conclusion that ties the results back to the motivating question. All the sensitivity analyses, detailed discussion of the data, etc.? Those go into an “Online Only Appendix,” a document that is often easily twice as long as the article itself.
+
+
+\section{Other Points To Bear In Mind}
+\label{\detokenize{40_in_practice/25_writing_to_stakeholders:other-points-to-bear-in-mind}}
+
+\subsection{Putting The Pieces Together}
+\label{\detokenize{40_in_practice/25_writing_to_stakeholders:putting-the-pieces-together}}
+\sphinxAtStartPar
+In this course, we’ve spent a lot of time establishing \sphinxstyleemphasis{taxonomies} — ways of organizing and recognizing the many distinct things that we do as data scientists. The assignments we have done for this class have often been structured in a manner to emphasize these distinctions. But when writing to a stakeholder, you don’t want to hold too rigidly to those distinctions. A good report to a stakeholder will not consist of stapling together all of the assignments we’ve done in this class one after the other. The goal of a good report is to construct a narrative that consistently and effectively communicates a key idea to the reader.
+
+\sphinxAtStartPar
+Many of you will be familiar with the idea of the “five\sphinxhyphen{}paragraph essay.” The five\sphinxhyphen{}paragraph essay is a structure that is often used to introduce students to essay writing — you start with an introductory paragraph, you write three paragraphs, each of which starts with a topic sentence and then includes evidence in support of that topic sentence, and then you write a conclusion paragraph. It is a useful framework for introducing students to essay writing, but it is also a framework that is best left behind as soon as it is understood.
+
+\sphinxAtStartPar
+The emphasis the assignments we have done in this class puts on different types of questions is similar — the goal is to make sure you can recognize the different types of questions and the purposes to which we put them. But your stakeholder report should not include a section called \sphinxstyleemphasis{Exploratory Questions} — rather the answers you generated in answering your Exploratory Questions should be reflected in how you’ve refined your problem statement, and the results of some of those analyses will likely make an appearance as tools for motivating the focus of your final analysis.
+
+
+\subsection{Justify Your Methods With Concrete Examples}
+\label{\detokenize{40_in_practice/25_writing_to_stakeholders:justify-your-methods-with-concrete-examples}}
+\sphinxAtStartPar
+In discussing the methods you choose to use — such as a difference\sphinxhyphen{}in\sphinxhyphen{}difference design or matching — be sure to explain \sphinxstyleemphasis{why} you’re using the method in concrete terms that are relevant to the context in question, and without using technical language your stakeholder may not understand.
+
+\sphinxAtStartPar
+If you’re doing a difference\sphinxhyphen{}in\sphinxhyphen{}difference design (and not just a pre\sphinxhyphen{}post comparison), give examples of specific events that would cause problems for a simple pre\sphinxhyphen{}post analysis but that aren’t a problem for the difference\sphinxhyphen{}in\sphinxhyphen{}difference design you are using. Consider the opioid project from IDS 720. In that project, we estimated the effect of state\sphinxhyphen{}level changes in opioid prescription regulations in states like Florida and Texas on opioid shipments and overdoses. For that project, it was important to give an example — like the US federal government creating a national limit on the amount of opioids manufacturers were allowed to ship to individual clinics around the same time — that would cause incorrect inferences to be drawn from a simple pre\sphinxhyphen{}post comparison, but not from our design of choice (a difference\sphinxhyphen{}in\sphinxhyphen{}difference).
+
+\sphinxAtStartPar
+If you don’t include an example like this, it won’t be clear to the stakeholder why you feel fancy techniques are necessary. And if you can’t think of an example like this, then maybe you don’t \sphinxstyleemphasis{need} the fancy technique at all!
+
+
+\subsection{Data Cleaning}
+\label{\detokenize{40_in_practice/25_writing_to_stakeholders:data-cleaning}}
+\sphinxAtStartPar
+As noted above, a discussion of data cleaning and data wrangling does not belong in the body of your report. Data cleaning is where you probably spent \sphinxstyleemphasis{most} of your actual time, so it’s natural to want to demonstrate how much effort you put into a project by detailing all of the painstaking merging, string cleaning, harmonizing, etc. work you put into your project. All of that can go into an appendix, but including it in a report only makes it more likely that all of that effort will go to waste because reading about it will bore your stakeholder into setting down your report before you want them to.
+
+\sphinxAtStartPar
+There’s a famous saying in writing \sphinxhref{https://slate.com/culture/2013/10/kill-your-darlings-writing-advice-what-writer-really-said-to-murder-your-babies.html}{that appears to have first appeared in a 1913 Cambridge Lecture by Arthur Quiller\sphinxhyphen{}Couch}:
+\begin{quote}
+
+\sphinxAtStartPar
+If you here require a practical rule of me, I will present you with this: ‘Whenever you feel an impulse to perpetrate a piece of exceptionally fine writing, obey it — whole\sphinxhyphen{}heartedly — and delete it before sending your manuscript to press. \sphinxstylestrong{Murder your darlings.}’
+\end{quote}
+
+\sphinxAtStartPar
+Well, when it comes to data science, you don’t have to murder those darling paragraphs about all the messy data you had to clean up, but you \sphinxstyleemphasis{should} shove them in an appendix.
+
+\sphinxAtStartPar
+Oh, and please \sphinxstyleemphasis{never} use verbatim variable names in reports — they’re fine in appendices, but in the body of a report you should explain what you’re measuring in substantive terms someone without the data documentation can understand.
+
+
+\subsection{Discretion}
+\label{\detokenize{40_in_practice/25_writing_to_stakeholders:discretion}}
+\sphinxAtStartPar
+The exception to the “don’t talk about your data manipulations” rule is that when you were forced to exercise substantial discretion in a way that may impact the internal or external validity of the analysis in a meaningful way (for example, selection of control states, or dropping certain time periods from the analysis you feel are too anomalous).
+
+\sphinxAtStartPar
+Even in these situations, however, it is usually best to explain the \sphinxstyleemphasis{logic} behind the decisions in the body of the report (like in choosing what entities belong in your control group). However, a full discussion of these kinds of choices belong in an appendix.
+
+\sphinxAtStartPar
+When you do exercise substantial discretion in an analysis (for example, deciding to include certain entities as controls while excluding others), \sphinxstylestrong{it’s best practice to include some sensitivity analyses in your report} by examining how your results do (or hopefully do not) change if you exercise discretion in slightly different ways. A sensitivity analysis, as a reminder, is where you make different discretionary choices (like choosing what entities to use as controls, or what variables you include in your regression), then re\sphinxhyphen{}run your analysis to see if the results change. The goal is to show that while, yes, you did have to exercise discretion in your analysis and data manipulations (we always do!), the choices you were forced to make aren’t driving your results and conclusions.
+
+\sphinxAtStartPar
+Ideally, you can just reference that “results are similar when {[}example of doing something a little differently{]}” in the body of the report and include the sensitivity analysis in an appendix.
+
+\sphinxAtStartPar
+If different discretionary choices \sphinxstyleemphasis{do} lead to substantively different results, then you need to (a) try to characterize how fragile your results are (how much do they change in response to how small of a tweak in your choices), and/or (b) defend why the choices you made were correct, and the choices that give different results are not.
+
+
+\subsection{Figures}
+\label{\detokenize{40_in_practice/25_writing_to_stakeholders:figures}}
+\sphinxAtStartPar
+Not everyone may agree with this approach, but my philosophy with plots is that they should be more or less freestanding — if a reader were to only look at the figures in a report, the labels on the axes, the titles, and any notes associated with the figure, they should be able to get a pretty good understanding what’s going on without having to go read the text in the report.
+
+\sphinxAtStartPar
+For example, this plot (which, yes, \sphinxhref{https://www.cambridge.org/core/journals/american-political-science-review/article/enfranchisement-and-incarceration-after-the-1965-voting-rights-act/C68FA7BB8CA313BDD8D9A39BA666A21D}{is from a paper on which I am a co\sphinxhyphen{}author}, but all credit for the figure quality goes to my coauthor):
+
+\sphinxAtStartPar
+\sphinxincludegraphics{{njc_diff_in_diff}.png}
+
+
+\subsection{Limitations}
+\label{\detokenize{40_in_practice/25_writing_to_stakeholders:limitations}}
+\sphinxAtStartPar
+There is a tendency for students to use their “Limitations” sections to, well… just try and cover their butts by throwing out anything they can think of about the paper that is imperfect. That’s ok in the classroom, but it’s not useful in the real world.
+
+\sphinxAtStartPar
+The point of a Limitations section isn’t to demonstrate your ability to identify any imperfections in the study; the point of a limitation section is to give your stakeholder a sense of how much confidence they should have in the results presented in the report \sphinxstyleemphasis{from your professional perspective.} Just because you had to make an assumption does not mean that the assumption constitutes a “limitation” of the study unless you have reason to think that the assumption is unlikely to be true (or is sufficiently untrue as to impact the results). Please only include things in your limitation section that you think really are substantive limitations!
+
+
+
+
+
+\sphinxstepscope
+
+
+\part{Advanced Topics}
+
+\sphinxstepscope
+
+
+\chapter{Interpretable Models}
+\label{\detokenize{40_advanced_topics/30_interpretability:interpretable-models}}\label{\detokenize{40_advanced_topics/30_interpretability::doc}}
+\sphinxAtStartPar
+For most applications, perform just as well as fancy pants models. \sphinxurl{https://arxiv.org/abs/1811.10154}
+Allow for non\sphinxhyphen{}specialists to see what goes into a model to debate ethics (after all, we data scientists have specialized knowledge when it comes to statistical methods, but not ethics)
+
 
 
 
