@@ -42,8 +42,3 @@ html:
   favicon: logo.jpg
   analytics:
     google_analytics_id: G-RKDPB41DQ2
-
-build:
-  targets:
-    - html
-    - latexpdf
