@@ -1,56 +1,72 @@
 
-# What Solving the *Wrong* Problem Looks Like
+# Solving The Wrong Problem: Examples
 
-## Recruitment
+In the last section, we discussed *why* understanding your problem is so important, reasons data scientists often fail to do so, and a few suggestions for ways to improve your understanding of the problem you are trying to solve.
 
-## Outliers
+In this section, we will work a longer example to illustrate what "getting the problem wrong, then adapting and getting it right" looks like in practice.
 
-## Pizza Ads
+## Pizza Ltd. Advertising
 
-Our discussion up to this point has been a little abstract, so to illustrate what it means to "mis-specifying a problem." The details of this example are fictitious, but the underlying logic of this example is not; indeed, the insight illustrated by this example is central to one of the biggest pivots in how people think about online advertising.
+Pizza Ltd. is a (fictitious) pizza delivery chain interested in improving their online sales. Last year they increased their online advertising budget three-fold, but saw almost no change in their online sales, despite increasing in-store sales.
 
-You have been hired by the advertising division of a fictitious national pizza chain—let's call it Little Papa Dominos (LPD). LPD spends a *lot* on online advertising, but their resources aren't being deployed as effectively as they could be. They spend more than most of their competitors, and yet their online sales are lagging.
+You have been hired to help improve the effectiveness of their advertising. Pizza Ltd. provides you with data on their previous advertising campaigns, including information on ad impressions and clicks broken down by user demographics, geography, and past interactions with Pizza Ltd.
 
-After consulting industry groups and online advertising experts, they discovered that the rate at which people click their ads (their ads' *click-through rate*, or CTR) is well below the industry average.
+"Well," you reason, "maybe the problem is that Pizza Ltd's ads aren't being shown to the right people. After all, it seems unlikely that any ad for pizza—no matter how appealing—is likely to draw a click if it's shown to a 75-year-old at 7 am." And sure enough, the data provided by Pizza Ltd shows that they are not doing a lot of ad targeting — their ads are being shown to an extremely diverse set of users, including many who probably aren't that interested in pizza!
 
-To address the problem, they've hired you—a newly minted Data Scientist—to improve the CTR of their ads. They give you a large budget, access to all the cloud computing resources you need, and even a small staff.
+Using the data provided, you train a model to answer the question, "given a user's demographics and online behavior, how likely are they to click on a Pizza Ltd. ad?" You try out a few different models, tune the model parameters, and eventually settle on a neural network model with extremely high precision *and* recall. Hooray!
 
-"Well," you reason, "maybe the problem is that our ads aren't being shown to the right people. After all, it seems unlikely that any ad for pizza—no matter how appealing—is likely to draw a click if it's shown to a 75-year-old at 7 am." So you set out to build a statistical model to answer the question, "given a user's demographics and online behavior, how likely are they to click on one of LPDs ads?" If you can answer that, you figure, LPD can prioritize buying the ad spots for the types of users most likely to click on their ads.
+As expected, the model shows that Pizza Ltd. was showing too many ads to people who were probably not even that interested in pizza, when they should have been targeting people who have ordered pizza from Pizza Ltd in the past, people searching for "Pizza Ltd," and people who live close to Pizza Ltd locations.
 
-To develop that model, you use your budget to run your ads on different sites and at different times. You then use that data (and those glorious cloud computing resources) to train a machine learning model that predicts whether someone will click on one of your ad based on the user's demographics and ad placement. You try out a few different models, tune the model parameters, and eventually settle on a neural network model with extremely high precision *and* recall. Hooray!
+You hand over your model to Pizza Ltd, who immediately reallocate their ads based on their models. Within a week, Pizza Ltd. sees that the share of ad impressions that result in clicks and pizza purchases has increased five-fold. Everyone congratulates you, and you move on to the next project feeling very smug.
 
-LPD uses the model to target users likely to click their ads, and almost immediately the CTR of their ads increases 5-fold! Not only that, but the share of people who click on ads that go on to buy a pizza has also increased. Everyone congratulates you, and you move on to the next project feeling very smug.
+### The Other Shoe Drops
 
-A few months later, though, you are called into a meeting with the LPD advertising team and the company's Chief Financial Officer. They've been looking over the numbers, and despite the huge rise in CTR, they seem to be getting fewer online orders than before you arrived. CTR rates are up, but somehow it isn't generating greater profits.
+A few months later, you are called into a meeting with the Pizza ltd advertising team, online sales team, and the company's Chief Financial Officer (CFO). They've been looking over the numbers, and despite the huge rise in ad clicks, ad clicks per impression, ad clicks per dollar spent, *and* clicks that result in sales, when they crunch their quarterly sale numbers they find that, to their surprise, overall online sales haven't risen at all. Moreover, in-store sales are stable, searches for Pizza Ltd. haven't declined, and social media sentiment and posting rates all seem stable, suggesting the fact overall sales haven't risen isn't related to a decline in overall demand.
 
-Can you figure out what went wrong?
+So, what went wrong?
 
-OK, this is the place in most books where the authors ask you that question, and you look up at the ceiling for a minute, shrug, and then read on.
+> OK, this is the place in most books where the authors ask you that question, and you look up at the ceiling for a minute, shrug, and then read on.
+>
+> But I'm really, *really* serious about this: close your laptop, stand up, set a 5-minute timer on your phone, and go for a walk. Ponder this example. See if you can figure out what's going on. This is *precisely* the kind of problem you will soon face as a professional data scientist, so why not practice trying to think through the problem?
 
-But I'm really, *really* serious about this: close your laptop, stand up, set a 5-minute timer on your phone, and go for a walk. Ponder this example. See if you can figure out what's going on. This is *precisely* the kind of problem you will soon face as a professional data scientist, so why not practice trying to think through the problem?
+### Using Our Problem Refinement Skills
 
-## Solving The Wrong Problem
+To help us work through this problem, let's begin by asking the questions we learned in our last reading.
 
-So what happened?
+First, **how will we know if we're successful?** Implicitly, we were assuming that we would know we were successful if the number of impressions that resulted in clicks rose. But as is clear from the concerns raised by Pizza Ltd's advertising team, online sales team, and CFO, the fact that clicks rose did *not* indicate success.
 
-The reason an increased click rate wasn't making LPD richer is that LPD's problem was never the fact they had a low CTR; LPD's *real* problem was that they weren't getting a lot of orders online. And because Little Papa Domino's problem wasn't a low CTR, being able to answer the question "How likely is a given user to click on an ad" *didn't actually solve their real problem*.
+What would indicate success? As indicated by both the problem statement at the top of this example and by the description of the concerns raised by the Pizza Ltd. CFO, *we would know we were successful if we saw an increase in online sales.*
 
-What question, if answered, would have helped solve their problem? "Given a user's demographics and online behavior, *how much more likely are they to buy a pizza* from LPD if we show them an ad?"
+OK, but... we got people to click the ads, right? We show ads, we hope people click. And we did a great job of figuring out how to show the ads to people who would click the ads! How is this our fault?
 
-Or, expressed more succinctly, LPD *thought* their problem was that their ads weren't *getting clicks,* but really their problem was that their ads weren't *driving increased sales*.
+Well, *was* our problem that not enough people were clicking the ads? What is the goal of an advertisement — online or in the real world? Is it to be clicked on?
 
-The difference is subtle, but critically important: someone clicking an ad doesn't make Little Papa Dominos any money. Someone clicking an ad *and ordering a pizza* doesn't necessarily make LPD any money. Why? Because they may be someone who would have bought a pizza from LPD anyway, whether you showed them an ad or not. The person who was already thinking of ordering a pizza from LPD is *precisely* the type of person your algorithm may have targeted, and who may have clicked the ad to save themselves a Google search!
+No — often clicking on an ad is an indicator the ad has worked, but in focusing on that immediate (and easy to measure) outcome, we're missing the point of ads. So let's abstract our idea of what we're trying to accomplish. Are we trying to get people who see one of our ads online to click on that ad? No. Are we trying to get people who see one of our ads online to click that ad and buy a pizza? Closer, but still no.
 
-But the person LPD *wants* to show an ad to isn't the person who was already thinking of ordering a pizza from LPD, it's the person who was thinking of a pizza but wasn't sure who to order it from, or the person who wanted dinner but didn't know what to get. They may be less likely to click the ad than the person who was about to Google "Little Papa Dominos," but their precisely the type of user who is more likely to buy a pizza from LPD as a result of seeing an ad than they would have been otherwise.
+No, let's get away from all the specifics of clicks, and clicks that convert into sales. Those are specifics that are distracting us. **Fully abstracted and generalized**, our problem is that we don't know how to deploy our ads to **increase** online sales.
 
-### Counter-Factual Advertising
+And the way to *increase* sales is to show the ads to the people whose likelihood of buying a pizza will increase the most as a result of seeing the ad. In other words, we want to show our ads to the people on whom they will have the largest *effect* on the likelihood of buying a pizza.
 
-Lest you think this example is contrived, it's not. The realization that the goal of ads isn't to maximize clicks but rather to induce the largest possible change in purchasing behavior is one of the most important ideas in online advertising. It has had a huge impact on how online advertising works, and how people evaluate the success of ad campaigns.
+How is this different from maximizing clicks or clicks that turn into sales? Simple — consider a person who *has already decided to buy a pizza from Pizza Ltd.* If they happen to see an ad on their way to buying their pizza, they may click on it to save a few dollars (if there's a coupon in the ad) or a few keystrokes (have you ever typed the name of a company into google and clicked the top link to get to their homepage — a link that was actually an ad the company paid for?[^racketeeringmodel]).
 
-Indeed, this is why companies like Meta and Google are so eager to track user behavior across apps and websites. When Meta and Google can "follow" users after they've clicked an ad, they can evaluate ad performance based not on clicks but on customer behavior. When paired with their ability to show ads to some users and not to others and track both groups as they move around the web, Meta and Google can see whether users who see the ads are more likely to make purchases than those who don't. This allows them to estimate the true effect of ads on sales, data they use to improve ad targeting *and* justify higher prices to advertisers.
+[^racketeeringmodel]: To be clear, I'm not saying that paying for ads at the top of Google for the name of one's own company are always a bad idea — they may prevent a competitor pizza chain from buying that spot and convincing the searcher to change their plans and order from the competitor instead. Basically, these ads sometimes amount to paying Google to not sell your business to someone else. But that's a nuance that's mostly a distraction at this point.
 
-## Next Up: Types of Questions
+Even though that customer clicked the ad, and even though that user bought a pizza, the ad didn't *cause* them to buy a pizza. In fact, the ad had no effect on the likelihood they'd buy a pizza.[^alwaystaker] And if the ad included a coupon, then not only has the ad not increased online sales, but it's reduced profits from the sale because of the coupon *and* you had to pay for that ad impression and click!
 
-Having established the importance of first articulating the problem one seeks to solve, we will shortly turn to developing our understanding of the three types of questions introduced in the first chapter of this book.
+Even though this is *not* someone you want to show an ad too, however, this is precisely the type of user that a naive model designed to target the people most likely to click an ad would suggest targeting. Not because the statistical model did the wrong thing, but because in answering the question you asked it to answer — "what kind of users are most likely to click on a Pizza Ltd. ad?" — wasn't a question whose answer helped solve your problem.
 
-First, though, a quick digression into understanding the historical context of data science. This may feel like an odd topic to talk through in a technical data science text, but as we'll see understanding how we got to where we are today is key to successfully navigating modern data science.
+[^alwaystaker]: If you've taken any causal inference courses, you're reconize that while I'm describing is an "always-taker" — someone who is going to engage in a behavior regardless of whether they are subject to a treatment of interest (here, encountering an ad) or not.
+
+## Counter-Factual Advertising
+
+So how should Pizza Ltd. have approached solving their problem? The answer — as we'll explore in detail in later readings — is that they should have run an A/B experiment. Track a group of users, and show a random subset of those users a Pizza Ltd. ad. Then measure the effect of the ads by comparing online purchase rates between the group that saw ads and the group that didn't.
+
+This data can then be used to improve targeting by looking at the difference in purchase rates between the group that saw the ad and the group that didn't for different demographic sub-populations (younger users, men versus women, users in different geographic areas, etc.). And of course this strategy can also be used to test different ads to figure out what ad is most effective.
+
+This idea — that the goal of ads is to have an *effect* on consumer purchase behavior, not to be clicked on — is often referred to as "counter-factual advertising,"[^cite] and it's the basis for how nearly all major advertising platforms work today.
+
+It's also why companies like Meta and Google are so eager to track user behavior across apps and websites. To demonstrate the effectiveness of ads, these companies need to be able to not only track users after they click an ad (to see whether they eventually make a purchase), but also track users who *haven't* seen an ad (so they can establish a behavioral baseline for the "control" group of users who haven't seen an ad). This allows these companies to estimate the true effect of ads on sales, data they use to improve ad targeting *and* justify higher prices to advertisers.
+
+[^cite]: I'm not sure of the first citation for this idea in relation to online advertising, but [this is one well-cited early paper on the topic](https://dl.acm.org/doi/10.5555/2567709.2567766).
+
+<!-- I could do something on outlier detection — is the goal to detect in training data, or create a tool that can quickly adapt/be tuned by users? -->
