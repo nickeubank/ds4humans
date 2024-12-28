@@ -14,7 +14,7 @@ Unlike Descriptive Questions, Prescriptive Questions don't have correct answers.
 
 ![Question Taxonomy](images/question_tree.png)
 
-```{Note}
+```{note}
 The terms "Prescriptive" and "Descriptive" are commonly used for these concepts in the natural sciences, but different academic silos sometimes use different terms. Social scientists, for example, tend to prefer the terms "Positive" in place of Descriptive and "Normative" instead of Prescriptive. These are only difference in nomenclature, however, not substantive meaning.
 ```
 

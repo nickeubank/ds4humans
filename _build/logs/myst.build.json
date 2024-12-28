@@ -1,6 +1,8 @@
 {
   "input": {
-    "files": [],
+    "files": [
+      "."
+    ],
     "opts": {
       "execute": false,
       "pdf": false,
@@ -11,7 +13,7 @@
       "xml": false,
       "meca": false,
       "cff": false,
-      "site": true,
+      "site": false,
       "html": false,
       "all": false,
       "doiBib": false,
@@ -21,8 +23,7 @@
       "strict": false,
       "ci": false,
       "maxSizeWebp": 1572864
-    },
-    "performSiteBuild": true
+    }
   },
   "exports": []
 }

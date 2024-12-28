@@ -84,16 +84,22 @@ When we move from the individual to the population, the causal effect needs to b
 The first quantity we will investigate is the Average Treatment Effect, abbreviated as the ATE. We can define this quantity as:
 
 $$
-ATE =& \frac{1}{N}\sum_{i \in {1, 2, 3 ... N}}\delta_i \\
-=& \frac{1}{N}\sum_{i \in {1, 2, 3 ... N}}Y^1_i - Y^0_i
+\begin{aligned}
+    ATE =& \frac{1}{N}\sum_{i \in {1, 2, 3 ... N}}\delta_i \\
+    =& \frac{1}{N}\sum_{i \in {1, 2, 3 ... N}}Y^1_i - Y^0_i
+\end{aligned}
 $$
 
 To avoid the constant need for summation notation, however, let's assume our data is a random sample from the population we care about and move to working with expectations ($E()$):
 
 $$
-ATE & = E(\delta_i) \\
-& = E(Y^1_i - Y^0_i) \\
-& = E(Y^1_i) - E(Y^0_i)
+\begin{aligned}
+
+    ATE & = E(\delta_i) \\
+    & = E(Y^1_i - Y^0_i) \\
+    & = E(Y^1_i) - E(Y^0_i)
+
+\end{aligned}
 $$
 
 (We can bring the expectation inside the parentheses in this last step because the expectation is a linear operator.)
@@ -147,8 +153,12 @@ $$
 We can then shuffle these terms around to isolate two distinct quantities of interest: The Average Treatment Effect on the Treated (ATT), and Baseline Differences:
 
 $$
+\begin{aligned}
+
 \widehat{ATE }&=  E(Y_i^1|D_i = 1) - E(Y_i^0|D_i = 0) + E(Y_i^0|D_i = 1) - E(Y_i^0|D_i = 1) \\
 &= \underbrace{E(Y^1_i|D_i = 1) - E(Y_i^0|D_i = 1)}_\text{$ATT$} + \underbrace{E(Y^0_i|D_i = 1) - E(Y_i^0|D_i = 0)}_\text{Baseline Difference}
+
+\end{aligned}
 $$
 
 ### Baseline Differences
@@ -186,8 +196,12 @@ So what, then, is ATT?
 Perhaps the easiest way to understand $ATT$ is to directly compare the formulas for $ATT$ with $ATE$:
 
 $$
+\begin{aligned}
+
 ATT =& E(Y^1_i|D_i = 1) - E(Y_i^0|D_i = 1) \\
 ATE =& E(Y^1_i) - E(Y_i^0)
+
+\end{aligned}
 $$
 
 As you can see, the only difference between the two terms is that $ATT$ is just the $ATE$ *for the population of entities that were actually subject to the treatment ($D_i = 1$).
@@ -197,8 +211,12 @@ So for our estimated correlation $\widehat{ATE}$ to be the same as the Average T
 Well, as you may recall, the Average Treatment Effect is just an average effect of the treatment for everyone being studied. That means that if $\lambda$ is the share of the population for which $D_i = 1$, then $ATE$ is:
 
 $$
+\begin{aligned}
+
 ATE =& E(Y^1_i) - E(Y_i^0) \\
  =& \lambda \left(\underbrace{E(Y^1_i | D_i = 1) - E(Y_i^0 | D_i = 1)}_\text{ATT}\right) + (1-\lambda) \left(\underbrace{E(Y^1_i | D_i = 0) - E(Y_i^0 | D_i = 0)}_\text{Avg Treatment Effect on Untreated}\right)
+
+\end{aligned}
 $$
 
 So when does $ATT = ATE$? When $E(Y^1_i | D_i = 1) - E(Y_i^0 | D_i = 1) = E(Y^1_i | D_i = 0) - E(Y_i^0 | D_i = 0)$. Or, in substantive terms, when the average effect of our treatment is the same for the subpopulation we observe experiencing the treatment as it is for the subpopulation that we observe *not* experiencing the treatment:
@@ -207,9 +225,15 @@ So when does $ATT = ATE$? When $E(Y^1_i | D_i = 1) - E(Y_i^0 | D_i = 1) = E(Y^1_
 **No Differential Treatment Effects:**
 
 $$
+\begin{aligned}
+
 ATT &= E(Y^1_i|D_i = 0) - E(Y_i^0|D_i = 0) \\
 E(Y^1_i|D_i = 1) - E(Y_i^0|D_i = 1) &= E(Y^1_i|D_i = 0) - E(Y_i^0|D_i = 0)
+
+\end{aligned}
 $$(eqn:condition_2)
+
+
 ```
 
 ```{note}
@@ -237,8 +261,13 @@ But if we really want to get a good estimate of the Average Treatment Effect for
 Any now the big catch: we need two conditions to be true to be sure we are getting a good estimate of a causal effect:
 
 $$
+\begin{aligned}
+
 0 & = E(Y^0_i|D_i = 1) - E(Y_i^0|D_i = 0)\\
 E(Y^1_i|D_i = 1) - E(Y_i^0|D_i = 1) &= E(Y^1_i|D_i = 0) - E(Y_i^0|D_i = 0)
+
+
+\end{aligned}
 $$
 
 But neither of these are directly observable. In the case of No Baseline Differences, we can never directly observe $E(Y^0_i|D_i = 1)$. And in the case of No Differential Treatment Effects, neither $E(Y_i^0|D_i = 1)$ nor $E(Y_i^0|D_i = 1)$ are observable.

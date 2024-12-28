@@ -1,0 +1,97 @@
+version: 1
+project:
+  title: Solving Problems With Data
+  authors:
+    - name: Nick Eubank
+  copyright: "2025"
+  github: nickeubank/ds4humans
+  bibliography:
+    - references.bib
+  exports:
+    - format: pdf
+      template: plain_latex_book
+      output: exports/ds4humans.pdf
+  toc:
+    - file: landing_page.md
+    - title: Class Schedule
+      children:
+        - file: 00_class_schedule/class_schedule.md
+    - title: Introduction
+      children:
+        - file: 10_introduction/10_solving_problems_with_data.md
+          title: "Ch 1: Solving Problems"
+          children:
+            - file: 10_introduction/20_solving_problems.md
+              title: "Idea 1: Solving Problems"
+            - file: 10_introduction/22_question_types.md
+              title: "Idea 2: Answering Questions"
+            - file: 10_introduction/23_mistakes.md
+              title: "Idea 3: Being Thoughtful about Being Wrong"
+        - file: 10_introduction/40_data_science_in_historical_context.md
+          title: "Ch 2: What Is Data Science?"
+    - title: Problems to Questions
+      children:
+        - file: 20_problems_to_questions/10_solving_the_right_problem.md
+          title: "Ch 3: Solving the Right Question"
+          children:
+            - file: 20_problems_to_questions/15_solving_the_wrong_problem.md
+        - file: 20_problems_to_questions/20_stakeholder_management.md
+          title: "Ch 4: Stakeholder Management"
+    - title: Types of Questions
+      children:
+        - file: 30_questions/05_descriptive_v_prescriptive.md
+          title: "Ch 5: Descriptive and Prescriptive Qs"
+        - file: 30_questions/07_eda.md
+          title: "Ch 6: The Scourge of EDA"
+        - file: 30_questions/10_using_exploratory_questions.md
+          title: "Ch 7: Exploratory Qs"
+          children:
+            - file: 30_questions/15_answering_exploratory_questions.md
+            - file: 30_questions/17_exploratory_questions_internal_external.md
+        - file: 30_questions/20_using_passive_prediction_questions.md
+          title: "Ch 8: Passive Predictive Qs"
+          children:
+            - file: 30_questions/23_passive_prediction_internal.md
+            - file: 30_questions/24_passive_prediction_external.md
+        - file: 30_questions/26_passive_prediction_errors.md
+          title: "Ch 9: The Right Way To Be Wrong"
+        - file: 30_questions/27_interpretable_models.md
+          title: "Ch 10: Interpretable Models"
+        - file: 30_questions/30_using_causal_questions.md
+          title: "Ch 11: Causal Qs"
+          children:
+            - file: 30_questions/40_answering_causal_questions.md
+    - title: Causal Inference
+      children:
+        - file: 35_causal/10_potential_outcomes.md
+        - file: 35_causal/30_interpreting_indicator_vars.ipynb
+          title: Indicator Variables
+        - file: 35_causal/40_causal_inference_beyond_ab_testing.ipynb
+          title: Causal Beyond Experiments
+        - file: 35_causal/50_fixed_effects_and_causal_inference.ipynb
+          title: Fixed Effects
+          children:
+            - file: 35_causal/60_fixed_effects.ipynb
+              title: Implementing Fixed Effects
+            - file: 35_causal/70_fixed_effects_v_hierarchical.ipynb
+              title: Fixed Effects v. Hierarchical Models
+        - file: 35_causal/80_matching_why.ipynb
+          title: Matching
+          children:
+            - file: 35_causal/90_matching_how.ipynb
+    - title: Data Science in Practice
+      children:
+        - file: 40_in_practice/00_how_to_read_this_book.md
+        - file: 40_in_practice/05_backwards_design.ipynb
+        - file: 40_in_practice/10_ethics_and_bias.md
+        - file: 40_in_practice/20_from_data_to_decisions.md
+        - file: 40_in_practice/25_writing_to_stakeholders.md
+    - title: Advanced Topics
+      children:
+        - file: 40_advanced_topics/30_interpretability.md
+site:
+  options:
+    logo: logo.jpg
+    favicon: logo.jpg
+    analytics_google: G-RKDPB41DQ2
+  template: book-theme
