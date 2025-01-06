@@ -1,0 +1,1306 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Decision Making from AB Testing &#8212; Solving Problems With Data</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-RKDPB41DQ2"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-RKDPB41DQ2');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-RKDPB41DQ2');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '99_exercises/private_exercises/exercise_expected_value';</script>
+    <link rel="icon" href="../../_static/logo.jpg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../landing_page.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.jpg" class="logo__image only-light" alt="Solving Problems With Data - Home"/>
+    <script>document.write(`<img src="../../_static/logo.jpg" class="logo__image only-dark" alt="Solving Problems With Data - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../landing_page.html">
+                    Welcome to DS4Humans
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Class Schedule</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../00_class_schedule/class_schedule.html">Class Schedule</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../10_introduction/10_solving_problems_with_data.html">Ch 1: Solving Problems</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../10_introduction/20_solving_problems.html">Idea 1: Solving Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_introduction/22_question_types.html">Idea 2: Answering Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_introduction/23_mistakes.html">Idea 3: Being Thoughtful about Being Wrong</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../10_introduction/40_data_science_in_historical_context.html">Ch 2: What Is Data Science?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Problems to Questions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../20_problems_to_questions/10_solving_the_right_problem.html">Ch 3: Solving the Right Question</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../20_problems_to_questions/15_solving_the_wrong_problem.html">Solving The Wrong Problem: Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../20_problems_to_questions/20_stakeholder_management.html">Ch 4: Stakeholder Management</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Types of Questions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../30_questions/05_descriptive_v_prescriptive.html">Ch 5: Descriptive and Prescriptive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../30_questions/06_descriptive_prescriptive_examples.html">Tradeoff Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../30_questions/10_using_exploratory_questions.html">Ch 6: Exploratory Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../30_questions/15_answering_exploratory_questions.html">Answering Exploratory Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../30_questions/17_exploratory_questions_internal_external.html">Internal versus External Validity</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../30_questions/07_eda.html">Ch 7: The Scourge of EDA</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../30_questions/20_using_passive_prediction_questions.html">Ch 8: Passive Predictive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../30_questions/23_passive_prediction_internal.html">Passive Prediction Questions and Internal Validity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../30_questions/24_passive_prediction_external.html">Passive Prediction Questions and External Validity</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../30_questions/26_passive_prediction_errors.html">Ch 9: The Right Way To Be Wrong</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../30_questions/27_interpretable_models.html">Performance Differential Is (Often) A Myth</a></li>
+
+
+
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../30_questions/30_using_causal_questions.html">Ch 11: Causal Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../30_questions/40_answering_causal_questions.html">Answering Causal Questions</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Causal Inference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../35_causal/10_potential_outcomes.html">The Potential Outcomes Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../35_causal/30_interpreting_indicator_vars.html">Indicator Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../35_causal/40_causal_inference_beyond_ab_testing.html">Causal Beyond Experiments</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../35_causal/50_fixed_effects_and_causal_inference.html">Fixed Effects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../35_causal/60_fixed_effects.html">Implementing Fixed Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../35_causal/70_fixed_effects_v_hierarchical.html">Fixed Effects v. Hierarchical Models</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../35_causal/80_matching_why.html">Matching</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../35_causal/90_matching_how.html">How to Match</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Science in Practice</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../40_in_practice/00_how_to_read_this_book.html">How to Read (Academic Edition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../40_in_practice/05_backwards_design.html">Backwards Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../40_in_practice/20_from_data_to_decisions.html">Making Decisions Using Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../40_in_practice/25_writing_to_stakeholders.html">Writing to Stakeholders</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../40_advanced_topics/30_interpretability.html">Interpretable Models</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/nickeubank/ds4humans" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F99_exercises/private_exercises/exercise_expected_value.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/99_exercises/private_exercises/exercise_expected_value.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Decision Making from AB Testing</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-context">Exercise Context</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4">Exercise 4</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bootstrapping">Bootstrapping</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5">Exercise 5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6">Exercise 6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7">Exercise 7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8">Exercise 8</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-we-just-did">What We Just Did</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rejecting-the-null">Rejecting the Null</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confidence-intervals">Confidence Intervals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-it-means-for-this-to-be-frequentist">What It Means For This To Be Frequentist</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-slightly-heretical-bayesian-perspective">A (Slightly Heretical) Bayesian Perspective</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outcome-simulation">Outcome Simulation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-9">Exercise 9</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#you-did-it">You Did It!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10">Exercise 10</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11">Exercise 11</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12">Exercise 12</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-13">Exercise 13</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-math">The Math</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bayes-rule-and-frequentist-statistics">Bayes Rule and Frequentist Statistics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ok-why-do-i-care">OK, why do I care?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reason-1-it-is-critically-important-that-you-understand-what-p-values-and-other-frequentist-statistics-are-and-what-they-are-not">Reason 1: It is <em>critically</em> important that you understand what p-values and other Frequentist statistics are, and what they are not.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reason-2-there-is-a-special-case-where-p-ate-x-p-x-ate">Reason 2: There <em>is</em> a special case where <span class="math notranslate nohighlight">\(P(ATE| X) = P(X| ATE)\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reason-3-the-bernstein-von-mises-theorem">Reason 3: The Bernstein-von Mises Theorem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#doing-it-like-a-bayesian">Doing It Like A Bayesian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#still-reading">Still Reading?</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="decision-making-from-ab-testing">
+<h1>Decision Making from AB Testing<a class="headerlink" href="#decision-making-from-ab-testing" title="Link to this heading">#</a></h1>
+<p>Most presentations of A/B testing tend to emphasize a binary approach to decision making: we run an AB test, then evaluate whether we can reject the null hypothesis of no effect. If we reject the null hypothesis of no effect, then we deploy the change; if not, we maintain the status quo.</p>
+<p>We have also seen some approaches that bring a little much needed nuance to this approach: in our <a class="reference external" href="https://www.amazon.com/Trustworthy-Online-Controlled-Experiments-Practical/dp/1108724264">Trustworthy Online Controlled Experiments</a>, the authors have emphasized that we should evaluate <em>both</em></p>
+<ul class="simple">
+<li><p>Can we reject the null hypothesis of no effect (to establish our results are statistically significant), and</p></li>
+<li><p>Whether the estimated effect is of <em>practical significance</em>, by which they mean “does the effect size look large enough that it would be profitable to deploy.”</p></li>
+</ul>
+<p>And finally, you’ve probably seen cases that do the thing you should probably be doing (at least within this regime):</p>
+<ul class="simple">
+<li><p>Rather than evaluating statistical significance with respect to a null hypothesis of no effect, evaluate statistical significance with respect to a null hypothesis of “the effect is less than the size needed for deployment to be profitable (i.e., less than or equal to the threshold for practical significance).”</p></li>
+</ul>
+<p>In these exercises, we will examine an approach to analyzing the results of an A/B test that is a little less black and white, and I think provides a more holistic, easy to understand, and sophisticated way of interpreting A/B test results. It comes with a couple caveats, but I’d argue none that don’t apply to the approaches described above.</p>
+<p>In short, we will:</p>
+<ul class="simple">
+<li><p>Analyze our data using the Frequentist statistical methods you are familiar with. Rather than just looking at p-values and rejecting or not rejecting a null hypothesis, however, we will instead interpret our results as probability distributions for what effect we might expect our experiment to have if we were to deploy it more broadly.</p></li>
+<li><p>We will use this probability distribution as the basis for some Monte Carlo simulation-based analyses of the likelihood of different outcomes.</p></li>
+<li><p>Finally, we will touch on how this way of thinking about the result of our analyses relates to the Bayesian approach to statistical analysis.</p></li>
+</ul>
+<p>That probably sounds pretty abstract, so to make it all more concrete, let’s just start by doing our usual type of analysis of an A/B test.</p>
+<section id="exercise-context">
+<h2>Exercise Context<a class="headerlink" href="#exercise-context" title="Link to this heading">#</a></h2>
+<p>In these exercises, we will be working with a tweaked version of data from <a class="reference external" href="https://www.kaggle.com/datasets/chebotinaa/fast-food-marketing-campaign-ab-test">IBM Watson Analytics from a marketing A/B test conducted in the state of Washington.</a></p>
+<p>The context in which this data was generated is:</p>
+<blockquote>
+<div><p>A fast-food chain plans to add a new item to its menu. However, they are still undecided whether to run a new marketing campaign for promoting the new product. In order to determine whether the promotion will increase sales, a promotion has been deployed at a random sample of stores to promote the new item. Weekly sales of the new item are recorded for the first four weeks.</p>
+</div></blockquote>
+<p>The data consists of the following variables:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">MarketID</span></code>: unique identifier for market</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MarketSize</span></code>: size of market area by sales</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LocationID</span></code>: unique identifier for store location</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AgeOfStore</span></code>: age of store in years</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Promotion</span></code>: did the location receive the promotion (was it treated).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">week</span></code>: one of four weeks when the promotions were run</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SalesInThousands</span></code>: sales amount for a specific <code class="docutils literal notranslate"><span class="pre">LocationID</span></code>, <code class="docutils literal notranslate"><span class="pre">Promotion</span></code>, and <code class="docutils literal notranslate"><span class="pre">week</span></code></p></li>
+</ul>
+<p>(And yes, despite my general distaste for them, this is a pretty darn clean dataset. You’re welcome. :) )</p>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<section id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Link to this heading">#</a></h3>
+<p>Load the dataset — <code class="docutils literal notranslate"><span class="pre">WA_Marketing_Campaign.csv</span></code> from <a class="reference external" href="https://github.com/nickeubank/MIDS_Data/tree/master/fast_food_ab_test">this repository.</a> Please use this copy (not data from the Kaggle competition from which it was drawn) as I’ve made a number of modifications to the data for this exercise.</p>
+</section>
+<section id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Link to this heading">#</a></h3>
+<p>This data is currently structured as a “panel dataset”, meaning that there are multiple observations for each store, one per week for four weeks. To simplify our analysis, let’s sum up sales from across all four weeks for each store so we only have one observation per store.</p>
+<p>(In a dataset where multiple observations come from the same entity at different points in time, a proper analysis requires accounting for the fact that the different observations for each entity are not independent of one another using a method like clustering of our standard errors.)</p>
+<p>You should end up with 90 observations (one per <code class="docutils literal notranslate"><span class="pre">LocationID</span></code>, the identifier for individual stores).</p>
+</section>
+<section id="exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Link to this heading">#</a></h3>
+<p>Now, using a simple linear regression in <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>, estimate the simple difference in means between stores with and without the promotion.</p>
+<p>(We’re skipping a lot of “learn about your data” and “validate your randomization by checking balance” steps — this is bad practice, but again I want us to stay focused on the analysis and interpretation for this exercise, so you can just trust it’s ok.)</p>
+<p>Based on this simple regression, would you reject the null hypothesis that the experiment had no effect using a p-value threshold of 0.05?</p>
+</section>
+<section id="exercise-4">
+<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Link to this heading">#</a></h3>
+<p>We have a lot of important controls in this dataset, so add in categorical controls for <code class="docutils literal notranslate"><span class="pre">MarketID</span></code> and <code class="docutils literal notranslate"><span class="pre">log(AgeOfStore)</span></code>.</p>
+<p>Now would you feel comfortable rejecting the null hypothesis of no effect at a p-value threshold of 0.05?</p>
+</section>
+</section>
+<section id="bootstrapping">
+<h2>Bootstrapping<a class="headerlink" href="#bootstrapping" title="Link to this heading">#</a></h2>
+<p>When we run a linear regression — like the one above — standard errors are calculated under the assumption that certain assumptions about our data are true. Generally speaking, those are that our regression errors are normally distributed and homoskedastic.</p>
+<p>These analytically-derived standard errors are not the only way one can calculate standard errors, however. A different approach — and one whose validity does not rest on any distributional assumptions: bootstrapping.</p>
+<p>Within Frequentist statistics, the meaning of standard errors is “how would our estimates vary if we conducted our study all over again, drawing a new set of observations from the same population each time?”</p>
+<p>Bootstrapping takes this idea seriously. Essentially bootstrapping is the process of simulating drawing new observations from the larger population and observing how our estimate varies across different draws of data. In doing so, bootstrapping only relies on the idea that our data was randomly drawn from a larger population, not any distributional assumptions. In most cases, that makes it much more robust.</p>
+<p>OK, but obviously we can’t go re-run this marketing experiment again, so how do we get more data? It turns out that sampling from our actual data <em>with replacement</em> to get new datasets of the same size as our original dataset is a statistically valid way to simulate re-running the experiment.</p>
+<p>(I know I’ve hinted at the fact we’ll be talking about Bayesian inference later, but to be clear, this is not Bayesian — this is just a different way of calculating standard errors within Frequentist statistics that doesn’t require the distributional assumptions of the standard errors we get from a normal regression).</p>
+<section id="exercise-5">
+<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Link to this heading">#</a></h3>
+<p>To create a bootstrapped estimate of the difference in means between treatment and control, create a loop that runs 10,000 times, and at each step:</p>
+<ol class="arabic simple">
+<li><p>Creates a new dataset by sampling — with replacement — from our original dataset. This new dataset should be the same size as our original dataset.</p></li>
+<li><p>Runs the regression we specified above (total sales over four weeks regressed on <code class="docutils literal notranslate"><span class="pre">Promotion</span></code>, <code class="docutils literal notranslate"><span class="pre">MarketID</span></code>, and <code class="docutils literal notranslate"><span class="pre">log(AgeOfStore)</span></code>).</p></li>
+<li><p>Extracts the coefficient on <code class="docutils literal notranslate"><span class="pre">Promotion</span></code> from said regression and stores it in a new series or numpy array.</p></li>
+</ol>
+<p>As usual with loops, don’t try and write the final loop all at once — put together one pass, then put it in a loop that runs a few times, then finally a loop that runs all 100,000 times.</p>
+<p>(Note: the reason we collapsed our data to one-observation-per-LocationID is that if we’d still had multiple weeks per store, we’d have to re-sample our data a little differently. In particular, we’d have to randomly draw from a list of stores, then pull all the observations per store to simulate “drawing” new <em>stores</em> with replacement, rather than drawing observations with replacement.)</p>
+</section>
+<section id="exercise-6">
+<h3>Exercise 6<a class="headerlink" href="#exercise-6" title="Link to this heading">#</a></h3>
+<p>What is the average value of your bootstrapped estimate? What is the standard deviation? Finally, plot a histogram of your estimates.</p>
+<p>If it’s helpful, recall that pandas Series have a <code class="docutils literal notranslate"><span class="pre">.hist()</span></code> method for this purpose. I’d also recommend using the <code class="docutils literal notranslate"><span class="pre">bins</span></code> keyword if it’s too lumpy.</p>
+<p>How does the distribution of these bootstrapped estimates compare with the coefficient estimate (and its standard error) from your regression.</p>
+</section>
+<section id="exercise-7">
+<h3>Exercise 7<a class="headerlink" href="#exercise-7" title="Link to this heading">#</a></h3>
+<p>While there is a way to get p-values from bootstrapping, it actually requires a different kind of bootstrapping we don’t want/need to get into here.</p>
+<p>But what we <em>can</em> ask is “if we did this experiment again, what is the likelihood that we’d get an estimate of the effect of <code class="docutils literal notranslate"><span class="pre">Promotion</span></code> that is 0 or less?” We do this by looking to see if 0 is within the 95% confidence interval of our estimate.</p>
+<p>This we can compute by sorting our estimates and looking at the bottom 2.5% (since confidence intervals are two-tailed, the 95% confidence interval excludes 2.5% of the probability mass on both sides). If that cutoff is above 0, we can say that 0 is outside the 95% confidence interval of our estimate.</p>
+<p>What is the lower 2.5% cutoff?</p>
+</section>
+<section id="exercise-8">
+<h3>Exercise 8<a class="headerlink" href="#exercise-8" title="Link to this heading">#</a></h3>
+<p>Given the answer you got to Exercise 5 (very similar mean and standard deviation to what you got from the analytically calculated standard errors), you may be wondering why we bothered bootstrapping. And you wouldn’t be wrong — as it turns out, the errors in the vanilla linear regression we ran above are quite normally distributed, and as a result, the standard errors are also accurate.</p>
+<p>To illustrate, here’s a Q-Q plot of the regression residuals. <a class="reference external" href="https://en.wikipedia.org/wiki/Q%E2%80%93Q_plot">Q-Q plot</a> plots the quantiles of data against quantiles of a perfect distribution (here a normal distribution). The closer the data is to the expected line, the closer the data is to being distributed according to the specified distribution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">statsmodels.graphics.gofplots</span> <span class="kn">import</span> <span class="n">qqplot</span>
+
+<span class="n">qqplot</span><span class="p">(</span><span class="n">fit_model</span><span class="o">.</span><span class="n">resid</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">statsmodels.graphics.gofplots</span> <span class="kn">import</span> <span class="n">qqplot</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">qqplot</span><span class="p">(</span><span class="n">fit_model</span><span class="o">.</span><span class="n">resid</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;fit_model&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>And if we overlay data sampled from a normal distribution with the standard error given by the regression, we’d also get a distribution similar to that generated by our bootstrap:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn.objects</span> <span class="k">as</span> <span class="nn">so</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">style</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span>
+
+<span class="c1"># Get normal draws according to analytic regression</span>
+<span class="c1"># standard errors</span>
+<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">npr</span>
+
+<span class="n">normal_draws</span> <span class="o">=</span> <span class="n">npr</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span>
+    <span class="n">loc</span><span class="o">=</span><span class="n">fit_model</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;Promotion&quot;</span><span class="p">],</span> <span class="n">scale</span><span class="o">=</span><span class="n">fit_model</span><span class="o">.</span><span class="n">bse</span><span class="p">[</span><span class="s2">&quot;Promotion&quot;</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="mi">100_000</span>
+<span class="p">)</span>
+<span class="n">normals</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;estimates&quot;</span><span class="p">:</span> <span class="n">normal_draws</span><span class="p">,</span> <span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;Normal Draws&quot;</span><span class="p">})</span>
+
+<span class="c1"># Combine with bootstrap estimates for ease of plotting</span>
+<span class="n">boot</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;estimates&quot;</span><span class="p">:</span> <span class="n">estimates</span><span class="p">,</span> <span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;Bootstrap&quot;</span><span class="p">})</span>
+<span class="n">normal_and_boot</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">normals</span><span class="p">,</span> <span class="n">boot</span><span class="p">])</span>
+
+<span class="p">(</span>
+    <span class="n">so</span><span class="o">.</span><span class="n">Plot</span><span class="p">(</span><span class="n">normal_and_boot</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;estimates&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;source&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">so</span><span class="o">.</span><span class="n">Bars</span><span class="p">(),</span> <span class="n">so</span><span class="o">.</span><span class="n">Hist</span><span class="p">(</span><span class="n">stat</span><span class="o">=</span><span class="s2">&quot;density&quot;</span><span class="p">,</span> <span class="n">common_bins</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+    <span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Normal Distribution Draws v. Bootstrap&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">theme</span><span class="p">({</span><span class="o">**</span><span class="n">style</span><span class="o">.</span><span class="n">library</span><span class="p">[</span><span class="s2">&quot;seaborn-v0_8-whitegrid&quot;</span><span class="p">]})</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../../_images/de369ddbf931fe1f66892f0f470890719502020a2086fc2780dd6474c780370b.png"><img alt="../../_images/de369ddbf931fe1f66892f0f470890719502020a2086fc2780dd6474c780370b.png" src="../../_images/de369ddbf931fe1f66892f0f470890719502020a2086fc2780dd6474c780370b.png" style="width: 643.4499999999999px; height: 378.25px;" /></a>
+</div>
+</div>
+<p>But as well see very soon, in addition to being more flexible in terms of being able to accommodate data that is not normally distributed, we’re going to make use of the array of sampled estimates bootstrapping generated in just a moment…</p>
+</section>
+</section>
+<section id="what-we-just-did">
+<h2>What We Just Did<a class="headerlink" href="#what-we-just-did" title="Link to this heading">#</a></h2>
+<p>Let’s talk a little about the different quantities we’ve calculated and how we can interpret them.</p>
+<section id="rejecting-the-null">
+<h3>Rejecting the Null<a class="headerlink" href="#rejecting-the-null" title="Link to this heading">#</a></h3>
+<p>The first thing we did was run a regular linear regression. That gave us a p-value, which is the probability that we would observe a difference between our treatment and control groups (i.e., a value of the coefficient on <code class="docutils literal notranslate"><span class="pre">Promotion</span></code>) at least as large as it was <em>if the null hypothesis that <code class="docutils literal notranslate"><span class="pre">Promotion</span></code> had no effect</em>. In the simplest approach to frequentist statistics, that’s kinda where we start.</p>
+<p>A more sophisticated Frequentist would:</p>
+<ol class="arabic simple">
+<li><p>make sure that the errors in that regression were pretty normally distributed and homoskedastic (since that’s required for our regular linear regression coefficients and standard errors to be correct),</p></li>
+<li><p>evaluate if the magnitude of the coefficient suggested it was <em>practically significant</em> (big enough that, if that were the true effect of the Promotion, it would be economically worthwhile to roll out the Promotion).</p></li>
+</ol>
+<p>And perhaps an especially diligent Frequentist would go one step further and specify a different null hypothesis — namely, that the Promotion’s effect was less than or equal to the practical significance threshold. Then they could get a p-value that would tell them “how likely it is we would see a coefficient at least this big if the true effect were [our threshold for practical significance] or less?” This we could do with a post-regression test (<code class="docutils literal notranslate"><span class="pre">result.t_test(&quot;Promotion</span> <span class="pre">-</span> <span class="pre">15</span> <span class="pre">=</span> <span class="pre">0&quot;)</span></code> if <code class="docutils literal notranslate"><span class="pre">15</span></code> were the threshold for practical significance).</p>
+</section>
+<section id="confidence-intervals">
+<h3>Confidence Intervals<a class="headerlink" href="#confidence-intervals" title="Link to this heading">#</a></h3>
+<p>The second thing we did was to estimate the effect of <code class="docutils literal notranslate"><span class="pre">Promotion</span></code> using bootstrapping. This is also a Frequentist method, but one that doesn’t require we make any assumptions about the distribution of the data (i.e., we don’t have to assume the regression errors are normally distributed or homoskedastic). This approach doesn’t lend itself to p-values (there is a way to do something similar to bootstrapping to get p-values), but it gives us confidence intervals we can use similarly. These tell us that if we did this experiment over and over, we think the likelihood we’d get a coefficient on <code class="docutils literal notranslate"><span class="pre">Promotion</span></code> equal to or less than zero is definitely less than 0.05, which is kinda analogous to (though not the same as) a p-value.</p>
+<p>(Note that in this case, the errors from the regression <em>were</em> pretty close to being normally distributed and homoskedastic, which is why our bootstrapped distribution and the results from <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> looked very similar).</p>
+</section>
+<section id="what-it-means-for-this-to-be-frequentist">
+<h3>What It Means For This To Be Frequentist<a class="headerlink" href="#what-it-means-for-this-to-be-frequentist" title="Link to this heading">#</a></h3>
+<p>Everything we’ve done up until now, as I mentioned, we’ve done using traditional tools of Frequentist statistics, and we’ve been careful to interpret the results the way a Frequentist would: as an effort to characterize the uncertainty of our <em>estimate</em> of the true effect of Promotion.</p>
+<p>That’s because in Frequentist statistics, uncertainty comes from the fact that while there is a “True” effect of Promotion that gives rise to the data we observe, when we pull a finite set of N observations from this True Population, those N observations may not be perfectly representative of the population as a whole. Thus, we have uncertainty about whether the quantity we estimate is an accurate reflection of the “True” parameter value that underlies the data generating process that gives rise to all real data.</p>
+<p>(You’ll notice I’m using a lot of scare-quotes and weird capitalizations: that’s because a key assumption of Frequentist statistics is that there <em>is</em> a True Effect, and a True Population. But… those are kinda made-up?)</p>
+<p>So how else can we think about this?</p>
+</section>
+</section>
+<section id="a-slightly-heretical-bayesian-perspective">
+<h2>A (Slightly Heretical) Bayesian Perspective<a class="headerlink" href="#a-slightly-heretical-bayesian-perspective" title="Link to this heading">#</a></h2>
+<p>Bayesians see things differently. Rather than trying to estimate the value of the <em>One True Parameter</em>, Bayesians think that all knowledge of the world is probabilistic, and everything is uncertain to one degree or another. Bayesian inference, therefore, is all about trying to think carefully about this uncertainty, and crucially to understand how we should update our beliefs about the world when we get new information (e.g., data).</p>
+<p>A Bayesian analysis begins with the analyst articulating their current beliefs about the likely values of the parameter of interest (their “prior beliefs,” often just referred to as “priors”). Then they use Bayes Rule to update those beliefs using the data being analyzed. This then generates a new, updated set of beliefs — called “posterior beliefs” or “posteriors” — which embody the analysts new, updated beliefs about the likely values of the parameter of interest.</p>
+<p>As a result, they don’t talk about the distribution of our <em>estimate</em> of the parameter, they talk about the probability distribution of the value of the parameter of interest itself.</p>
+<p>And now the part that’s a little heretical: one way to think about the “empirical distribution of <em>our estimate</em> of the effect of Promotion” is as our best guess for the likely distribution of our best guess for the value of the effect of Promotion.</p>
+<p>Or, to be more precise (and to ensure Bayesian’s don’t get <em>too</em> mad at me), if our dataset it’s too small, we can interpret that distribution as telling us:</p>
+<p><strong>In a world where we know nothing about the promotion we’re studying except the results of the statistical analysis, this is also our best guess for the probability distribution of the true effect of the Promotion.</strong></p>
+<p>Now, to be clear, the caveat I included above — that this is only true <strong>in a world where we know nothing about the likely effect of the promotion except the results of the statistical analysis</strong> — is a big one. In the language of Bayesian statistics, saying we know nothing except the results of this analysis is analogous to saying we are starting with flat (also sometimes called “uninformative”) priors.</p>
+<p>And that’s not a small thing — for example, the company that launched this campaign presumably at least <em>suspects</em> the promotion will improve sales. And based on its experience with past promotions, it is also probably pretty confident of the <em>approximate</em> magnitude of the biggest effect it may detect. For example, they probably know it won’t 10x sales. And if we were doing a proper Bayesian analysis, we would take that kind of information into account by introducing what are called “weakly informative priors.” (For a more detailed discussion with equations, hang on till the end of this exercise.)</p>
+<p>But the distribution of our estimates of the effect of the promotion we got above is precisely the same distribution a Bayesian would get if they used purely Bayesian statistics and methods, provided they started with flat priors. Indeed, I’ll demonstrate that at the end of this reading.</p>
+<p>I bring this up for two reasons.</p>
+<p>First, I think there is merit in understanding this place where Frequentist and Bayesian statistics intersect. They are founded on different philosophies about the source of uncertainty, and in more sophisticated applications they diverge substantially. But they are also not entirely alien to one another.</p>
+<p>But second, as I’ve mentioned before, I don’t think it’s the end of the world to sometimes use Frequentist statistical machinery and still reflect on it a little like a “poor man’s Bayesian estimate.” Yes, a fully Bayesian empirical analysis would likely generate somewhat different results, but unless you are using strong priors (asserting you have a significant sense of the likely effect of the promotion), the results you get will be relatively similar to what we are getting here.</p>
+<p>And if we decide that, as applied analysts, we’re ok with thinking about that distribution as a probability of treatment effects we’re likely to experience if we rolled out our experiment, we can do some really fun things.</p>
+</section>
+<section id="outcome-simulation">
+<h2>Outcome Simulation<a class="headerlink" href="#outcome-simulation" title="Link to this heading">#</a></h2>
+<p>Interpreting the result above as the probability distribution of the effect of our promotion is only interesting if we find a way to do something with it. So let’s have some fun using Monte Carlos simulation techniques.</p>
+<p>Suppose we chose to deploy our promotion — what is likely to happen? We know that the most likely outcome is that the promotion will improve sales by our estimated ATE, but what are the range of possible outcomes? Even if we expect the promotion will <em>probably</em> make money, maybe what you’re really worried about is loss-avoidance, in which case what you want to know is actually “what are the odds we <em>lose</em> money?” And how can we integrate information about the cost economics of the promotion into how we answer those questions? Let’s find out!</p>
+<section id="exercise-9">
+<h3>Exercise 9<a class="headerlink" href="#exercise-9" title="Link to this heading">#</a></h3>
+<p>Let’s start with a simple example. Suppose that our promotion has a fixed cost per store per month. More specifically, suppose that it costs 17,000 dollars per store per month to run the promotion. What is the probability that, if the fast food company deployed the promotion, it would actually <em>lose</em> money?</p>
+<p>To answer this question, simply figure out how to compute the company’s per-store profit as a function of the ATE of the promotion.</p>
+<p>Then, for each estimate of the ATE we bootstrapped, calculate the profit if that estimate turned out to be the true ATE.</p>
+<p>Then calculate the share of bootstrapped “worlds” in which the per-store profits from the promotion were negative.</p>
+</section>
+<section id="you-did-it">
+<h3>You Did It!<a class="headerlink" href="#you-did-it" title="Link to this heading">#</a></h3>
+<p>Congratulations! You just did your first “scenario modelling!” And now you can probably see one of the reasons I chose to bootstrap our standard errors — it naturally generated this array of simulated draws of the Average Treatment Effect we can use for modelling!</p>
+<p>That isn’t to say bootstrapping is strictly necessary to do this type of analysis — because our data was relatively normally distributed, we could have done our scenario planning by using the <code class="docutils literal notranslate"><span class="pre">numpy.random.normal()</span></code> function to simulate draws from the normal distribution implied by our normal <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> results. But why add that step when?</p>
+</section>
+<section id="exercise-10">
+<h3>Exercise 10<a class="headerlink" href="#exercise-10" title="Link to this heading">#</a></h3>
+<p>OK, that wasn’t a particularly complicated scenario. Let’s suppose, instead, that the promotion costs $17,000 more per store per month, <em>and</em> 50 dollars per 1,000 in sales.</p>
+<p>Now what’s the probability you make LESS money with the promotion than without?</p>
+</section>
+<section id="exercise-11">
+<h3>Exercise 11<a class="headerlink" href="#exercise-11" title="Link to this heading">#</a></h3>
+<p>Now suppose that the firm that ran the Promotion is so confident in their promotional strategy that they approach you with an unusual pricing model. <em>They</em> think that the promotion will drive so much more sales than 18,000 per store that they say:</p>
+<ul class="simple">
+<li><p>You don’t have to pay them <em>anything</em> for the first $18,000 increase in sales per store.</p></li>
+<li><p>Beyond those first 18,000 units sold:</p>
+<ul>
+<li><p>For every 1,000 in sales beyond 18,000, what you pay us will increase <em>non-linearly</em> — namel, you’ll have to pay 10 dollars per <span class="math notranslate nohighlight">\(1,000^{1.02}\)</span> in increased sales.</p></li>
+</ul>
+</li>
+</ul>
+<p>What are the odds you’ll lose money under this deal?</p>
+<p>NOTE: Because we’re using exponents, make sure to convert your units from “sales in 1,000s” to total sales by multiplying by 1,000.</p>
+</section>
+<section id="exercise-12">
+<h3>Exercise 12<a class="headerlink" href="#exercise-12" title="Link to this heading">#</a></h3>
+<p>Can you show your boss the full probability distribution of potential outcomes? Use 100 bins to ensure you get good granularity in the tails.</p>
+</section>
+<section id="exercise-13">
+<h3>Exercise 13<a class="headerlink" href="#exercise-13" title="Link to this heading">#</a></h3>
+<p>Fine, your boss is boring; she just wants to know the Expected Monetary Value of the promotion (recall the Expected Monetary Value of a decision under uncertainty is just <span class="math notranslate nohighlight">\(\sum_{i \in I} p_i v_i\)</span> where <span class="math notranslate nohighlight">\(p_i\)</span> is the probability of outcome <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(v_i\)</span> is the monetary value of outcome <span class="math notranslate nohighlight">\(i\)</span>). What would that be?</p>
+</section>
+</section>
+<section id="the-math">
+<h2>The Math<a class="headerlink" href="#the-math" title="Link to this heading">#</a></h2>
+<p>As I promised above, let’s take a moment to review why we can think of this distribution as being equal to the probability distribution of our true ATE <em>if and only if</em> we are willing to assume we know nothing other than the results of this study.</p>
+<section id="bayes-rule-and-frequentist-statistics">
+<h3>Bayes Rule and Frequentist Statistics<a class="headerlink" href="#bayes-rule-and-frequentist-statistics" title="Link to this heading">#</a></h3>
+<p>As discussed previously, one of the challenges with the standard, Frequentist approach to A/B testing is that the statistics we get from these analyses (like p-values) rarely correspond to the substantive quantities we care about most.</p>
+<p>In statistical notation, our estimate of the distribution of our estimate of the Average Treatment Effect can be written: <span class="math notranslate nohighlight">\(P(X|ATE)\)</span> where <span class="math notranslate nohighlight">\(X\)</span> is the data generated by our A/B test conditional on the <span class="math notranslate nohighlight">\(ATE\)</span>.</p>
+<p>We sometimes fool ourselves into thinking that this quantity corresponds precisely to what we care about: the probability distribution of the true ATE given our estimate <span class="math notranslate nohighlight">\(P(ATE|X)\)</span>.</p>
+<p>But as you can see, <span class="math notranslate nohighlight">\(P(X|ATE) \neq P(ATE|X)\)</span>.</p>
+<p>Thankfully, though, Bayes Rule does provide us with a way of determining how these quantities relate to each other. Bayes rule is often written as:</p>
+<div class="math notranslate nohighlight">
+\[P(A | B) = \frac{P(A \cap B)}{P(B)}\]</div>
+<p>We can rewrite <span class="math notranslate nohighlight">\(P(A \cap B)\)</span> as <span class="math notranslate nohighlight">\(P(B | A) * P(A)\)</span>, let <span class="math notranslate nohighlight">\(A\)</span> be <span class="math notranslate nohighlight">\(ATE\)</span> and <span class="math notranslate nohighlight">\(B\)</span> be our data <span class="math notranslate nohighlight">\(X\)</span> to help us understand our problem better:</p>
+<div class="math notranslate nohighlight">
+\[P(ATE | X) = \frac{P(X|ATE) * P(ATE)}{P(X)}\]</div>
+<p>Here, we can see that quantity we are interested in (the probability distribution of <span class="math notranslate nohighlight">\(ATE\)</span>) on the left-hand side of the equation. We can also see that the first term on the right-hand side of the equation (<span class="math notranslate nohighlight">\(P(X|ATE)\)</span>) is the distribution we got from bootstrapping (or regular regression packages, conditional on some distributional assumptions). This leaves us with only two terms we need to understand: <span class="math notranslate nohighlight">\(P(ATE)\)</span> and <span class="math notranslate nohighlight">\(P(X)\)</span>.</p>
+<p>We call <span class="math notranslate nohighlight">\(P(ATE)\)</span> our unconditional <em>prior</em> belief about <span class="math notranslate nohighlight">\(ATE\)</span> — unconditional because we aren’t conditioning on <span class="math notranslate nohighlight">\(X\)</span> (the results of our analysis). This, in other words, what values of <span class="math notranslate nohighlight">\(ATE\)</span> were plausible before your analysis began.</p>
+<p>And <span class="math notranslate nohighlight">\(P(X)\)</span>? This term is actually kinda annoying and not that interesting, so we generally ignore it. Because we know that the left-hand side of our equation is a probability distribution, we know that the right-hand side has to integrate out to 1 (with respect to all possible values of <span class="math notranslate nohighlight">\(A\)</span>, which in this case is just whether the conditional probability distribution of <span class="math notranslate nohighlight">\(ATE\)</span>). So rather than trying to compute <span class="math notranslate nohighlight">\(P(X)\)</span> directly, we usually figure out what it <em>must be</em> indirectly by figuring out what normalization gives us a valid probability distribution.</p>
+<p>As a result, we often just say that the left-hand side of the equation is <em>proportional</em> to the right-hand side, and write this using the <span class="math notranslate nohighlight">\(\propto\)</span> symbol:</p>
+<div class="math notranslate nohighlight">
+\[P(ATE | X) \propto P(X|ATE) * P(ATE )\]</div>
+</section>
+<section id="ok-why-do-i-care">
+<h3>OK, why do I care?<a class="headerlink" href="#ok-why-do-i-care" title="Link to this heading">#</a></h3>
+<p>OK, that was a lot of math. Why do I care about all this?</p>
+<p>Two reasons:</p>
+</section>
+<section id="reason-1-it-is-critically-important-that-you-understand-what-p-values-and-other-frequentist-statistics-are-and-what-they-are-not">
+<h3>Reason 1: It is <em>critically</em> important that you understand what p-values and other Frequentist statistics are, and what they are not.<a class="headerlink" href="#reason-1-it-is-critically-important-that-you-understand-what-p-values-and-other-frequentist-statistics-are-and-what-they-are-not" title="Link to this heading">#</a></h3>
+<p>P-values, as we discussed previously, are the probability of observing our data given the null hypothesis is true — i.e, <span class="math notranslate nohighlight">\(P(X|Null)\)</span>. It is <em>not</em> the probability that the null is true given the data (<span class="math notranslate nohighlight">\(P(Null|X)\)</span>).</p>
+<p>If you get a p-value of 0.05 from an AB test showing that <em>increasing</em> latency increases user retention on a website, you should not assume that “Oh, well this only had a 5% probability of happening by chance! Latency must be increasing retention!” Rather, you should say “um, I have a pretty strong sense (a prior, <span class="math notranslate nohighlight">\(P(Null)\)</span>) that increasing latency does <em>not</em> increase retention. So I’m gonna be much more skeptical of that result than an AB test that shows a <em>decrease</em> in latency increases user retention with a p-value of 0.05.</p>
+</section>
+<section id="reason-2-there-is-a-special-case-where-p-ate-x-p-x-ate">
+<h3>Reason 2: There <em>is</em> a special case where <span class="math notranslate nohighlight">\(P(ATE| X) = P(X| ATE)\)</span><a class="headerlink" href="#reason-2-there-is-a-special-case-where-p-ate-x-p-x-ate" title="Link to this heading">#</a></h3>
+<p>Suppose you know <em>nothing</em> about the treatment you seek to test. All possible outcomes, in your mind, are <em>equally</em> likely. This is the case of what is called a flat prior (also sometimes called an <em>uninformative prior</em>), and it essentially means <span class="math notranslate nohighlight">\(P(ATE)\)</span> is a constant for all possible outcomes.</p>
+<p>If <span class="math notranslate nohighlight">\(P(ATE)\)</span> is a constant, then <span class="math notranslate nohighlight">\(P(ATE| X) \propto P(X| ATE) * c\)</span> for some constant <span class="math notranslate nohighlight">\(c\)</span>. This implies <span class="math notranslate nohighlight">\(P(ATE| X) \propto P(X| ATE)\)</span> (since constants drop out when doing proportionate comparisons).</p>
+<p>Now, I want to emphasize that assuming that all outcomes of <span class="math notranslate nohighlight">\(P(ATE)\)</span> are equally likely is a <em>very</em> weird thing to assume. After all, you’re doing an A/B test because you have some suspicion that your treatment will have an effect, right?</p>
+<p>But I think it’s helpful to consider this case as a way of understanding the relationship between Frequentist statistics like p-values and the quantities we often actually care about (like the probability that the Null hypothesis of no effect is true): namely, if we are willing to assume that the world started with the study we are conducting and ends with the study we are conducting, and that we know nothing except what is in our dataset, then these two <em>substantively and theoretically distinct</em> quantities will be the same.</p>
+</section>
+<section id="reason-3-the-bernstein-von-mises-theorem">
+<h3>Reason 3: The Bernstein-von Mises Theorem<a class="headerlink" href="#reason-3-the-bernstein-von-mises-theorem" title="Link to this heading">#</a></h3>
+<p>My reasoning 2 above is a <em>liiiiitle</em> hand-wavy. I think it’s entirely appropriate for applied use, and it’s a common perspective among many of my peers. However, it isn’t <em>quite</em> precise enough for a pure statistician. What <em>is</em> precise enough, however, is the <a class="reference external" href="https://en.wikipedia.org/wiki/Bernstein%E2%80%93von_Mises_theorem">Bernstein-von Mises Theory</a> which formalizes that logic for situations where your datasets get large (i.e. it’s an asymptotic proof). I’m not gonna try and go into, but I do want to link to it in case it interests you.</p>
+</section>
+</section>
+<section id="doing-it-like-a-bayesian">
+<h2>Doing It Like A Bayesian<a class="headerlink" href="#doing-it-like-a-bayesian" title="Link to this heading">#</a></h2>
+<p>And now, finally, I feel obligated to show you how you can do this using fully Bayesian machinery so we can compare results and you can see I’m not hiding anything under my hat.</p>
+<p>I’m doing this will a little hesitancy because, just as showing someone how to run a regression without explaining the assumptions that underlie it is a little like handing them a loaded gun, so too is showing you how to fit a Bayesian model without teaching you how Bayesian stats work in detail feels a little dangerous. But as the goal here is to give you a <em>sense</em> of how these things work, here we go.</p>
+<p>If you want to follow along, we’ll be using the <a class="reference external" href="https://bambinos.github.io/bambi/notebooks/getting_started.html">bambi package</a>, which provides an easy API for doing linear modelling using the library PyMC as a backend. To use it, install <code class="docutils literal notranslate"><span class="pre">bambi</span></code> and <code class="docutils literal notranslate"><span class="pre">arviz</span></code>. Note that Bayesian analysis comes with some pretty heavy duty computational libraries, so you may run into problems if you don’t install these packages in a new, clean environment.</p>
+<p>Also note that <code class="docutils literal notranslate"><span class="pre">bambi</span></code> <em>looks</em> like it uses formulas the way that <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> do, but the library doing it isn’t patsy, so you’ll find you have to make a few changes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">bambi</span> <span class="k">as</span> <span class="nn">bmb</span>
+<span class="kn">import</span> <span class="nn">arviz</span> <span class="k">as</span> <span class="nn">az</span>
+
+<span class="c1"># Prep vars since formula doesn&#39;t work the same way</span>
+<span class="n">sales</span><span class="p">[</span><span class="s2">&quot;MarketID&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">sales</span><span class="p">[</span><span class="s2">&quot;MarketID&quot;</span><span class="p">])</span>
+<span class="n">sales</span><span class="p">[</span><span class="s2">&quot;log_AgeOfStore&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">sales</span><span class="p">[</span><span class="s2">&quot;AgeOfStore&quot;</span><span class="p">])</span>
+<span class="n">sales</span><span class="p">[</span><span class="s2">&quot;MarketID&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span>
+
+<span class="c1"># Fit a linear model</span>
+<span class="c1"># with flat / uninformative priors.</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">bmb</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span>
+    <span class="s2">&quot;total_sales ~ Promotion + log_AgeOfStore + MarketID&quot;</span><span class="p">,</span>
+    <span class="n">sales</span><span class="p">,</span>
+    <span class="n">priors</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;common&quot;</span><span class="p">:</span> <span class="n">bmb</span><span class="o">.</span><span class="n">Prior</span><span class="p">(</span><span class="s2">&quot;Flat&quot;</span><span class="p">)},</span>
+<span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">draws</span><span class="o">=</span><span class="mi">10_000</span><span class="p">,</span> <span class="n">chains</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">az</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Auto-assigning NUTS sampler...
+Initializing NUTS using jitter+adapt_diag...
+Multiprocess sampling (4 chains in 4 jobs)
+NUTS: [total_sales_sigma, Intercept, Promotion, log_AgeOfStore, MarketID]
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "96a47c02582c4a698e7e4b2eee2be29d", "version_major": 2, "version_minor": 0}</script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sampling 4 chains for 1_000 tune and 10_000 draw iterations (4_000 + 40_000 draws total) took 8 seconds.
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mean</th>
+      <th>sd</th>
+      <th>hdi_3%</th>
+      <th>hdi_97%</th>
+      <th>mcse_mean</th>
+      <th>mcse_sd</th>
+      <th>ess_bulk</th>
+      <th>ess_tail</th>
+      <th>r_hat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Intercept</th>
+      <td>143.366</td>
+      <td>5.028</td>
+      <td>134.008</td>
+      <td>152.991</td>
+      <td>0.038</td>
+      <td>0.027</td>
+      <td>17146.0</td>
+      <td>23705.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>MarketID[2]</th>
+      <td>103.607</td>
+      <td>5.933</td>
+      <td>92.444</td>
+      <td>114.985</td>
+      <td>0.040</td>
+      <td>0.028</td>
+      <td>22270.0</td>
+      <td>27075.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>MarketID[3]</th>
+      <td>197.929</td>
+      <td>4.781</td>
+      <td>189.058</td>
+      <td>207.141</td>
+      <td>0.038</td>
+      <td>0.027</td>
+      <td>16222.0</td>
+      <td>24485.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>MarketID[4]</th>
+      <td>73.436</td>
+      <td>6.129</td>
+      <td>61.705</td>
+      <td>84.858</td>
+      <td>0.040</td>
+      <td>0.028</td>
+      <td>23936.0</td>
+      <td>29035.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>MarketID[5]</th>
+      <td>62.162</td>
+      <td>5.627</td>
+      <td>51.337</td>
+      <td>72.605</td>
+      <td>0.039</td>
+      <td>0.028</td>
+      <td>20781.0</td>
+      <td>26505.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>MarketID[6]</th>
+      <td>3.976</td>
+      <td>5.228</td>
+      <td>-5.847</td>
+      <td>13.878</td>
+      <td>0.038</td>
+      <td>0.027</td>
+      <td>18780.0</td>
+      <td>26073.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>MarketID[7]</th>
+      <td>37.410</td>
+      <td>5.027</td>
+      <td>27.855</td>
+      <td>46.844</td>
+      <td>0.038</td>
+      <td>0.027</td>
+      <td>17975.0</td>
+      <td>26799.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>MarketID[8]</th>
+      <td>50.425</td>
+      <td>5.065</td>
+      <td>40.914</td>
+      <td>60.084</td>
+      <td>0.037</td>
+      <td>0.026</td>
+      <td>18380.0</td>
+      <td>26934.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>MarketID[9]</th>
+      <td>66.364</td>
+      <td>5.425</td>
+      <td>56.299</td>
+      <td>76.761</td>
+      <td>0.039</td>
+      <td>0.027</td>
+      <td>19555.0</td>
+      <td>26818.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>MarketID[10]</th>
+      <td>79.693</td>
+      <td>5.256</td>
+      <td>69.880</td>
+      <td>89.649</td>
+      <td>0.039</td>
+      <td>0.027</td>
+      <td>18565.0</td>
+      <td>26965.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>Promotion</th>
+      <td>19.473</td>
+      <td>2.392</td>
+      <td>15.041</td>
+      <td>24.037</td>
+      <td>0.010</td>
+      <td>0.007</td>
+      <td>58978.0</td>
+      <td>29622.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>log_AgeOfStore</th>
+      <td>-1.270</td>
+      <td>1.329</td>
+      <td>-3.768</td>
+      <td>1.251</td>
+      <td>0.006</td>
+      <td>0.005</td>
+      <td>56647.0</td>
+      <td>28731.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>total_sales_sigma</th>
+      <td>10.698</td>
+      <td>0.872</td>
+      <td>9.110</td>
+      <td>12.352</td>
+      <td>0.004</td>
+      <td>0.003</td>
+      <td>43596.0</td>
+      <td>30830.0</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Now let’s compare the results from our bootstrap approach above to what we get from the Bayesian model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get sampled observations of the value of Promotion from Bambi.</span>
+<span class="n">bambi_draws</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">posterior</span><span class="p">[</span><span class="s2">&quot;Promotion&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now I&#39;m going to sample from the posterior of the model</span>
+<span class="n">pymc</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="p">{</span><span class="s2">&quot;estimated_ATE&quot;</span><span class="p">:</span> <span class="n">bambi_draws</span><span class="p">,</span> <span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;posterior draws with flat priors&quot;</span><span class="p">}</span>
+<span class="p">)</span>
+<span class="n">bootstrap</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;estimated_ATE&quot;</span><span class="p">:</span> <span class="n">estimates</span><span class="p">,</span> <span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;bootstrap estimates&quot;</span><span class="p">})</span>
+<span class="n">all_draws</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">bootstrap</span><span class="p">,</span> <span class="n">pymc</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn.objects</span> <span class="k">as</span> <span class="nn">so</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">style</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span>
+
+
+<span class="p">(</span>
+    <span class="n">so</span><span class="o">.</span><span class="n">Plot</span><span class="p">(</span><span class="n">all_draws</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;estimated_ATE&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;source&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">add</span><span class="p">(</span>
+        <span class="n">so</span><span class="o">.</span><span class="n">Bars</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">),</span> <span class="n">so</span><span class="o">.</span><span class="n">Hist</span><span class="p">(</span><span class="n">stat</span><span class="o">=</span><span class="s2">&quot;density&quot;</span><span class="p">,</span> <span class="n">common_bins</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Bootstrap Estimate Distribution v Posterior Samples (flat priors)&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">theme</span><span class="p">({</span><span class="o">**</span><span class="n">style</span><span class="o">.</span><span class="n">library</span><span class="p">[</span><span class="s2">&quot;seaborn-v0_8-whitegrid&quot;</span><span class="p">]})</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../../_images/d0f1d2d560aae960a6858ee70207801734a2b3fc591922982ef2b4f8ed314d44.png"><img alt="../../_images/d0f1d2d560aae960a6858ee70207801734a2b3fc591922982ef2b4f8ed314d44.png" src="../../_images/d0f1d2d560aae960a6858ee70207801734a2b3fc591922982ef2b4f8ed314d44.png" style="width: 730.15px; height: 378.25px;" /></a>
+</div>
+</div>
+<p>See? Nearly the same!</p>
+<p>Now again, a true Bayesian would never use Flat priors, and if I let Bambi pick what are called “weakly informative” priors (basically priors that way “I really don’t think there are really extreme values”), you’ll see we get something very similar, but with slightly more probability mass in the middle of the distribution:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># If priors are not specified, weakly informative choices are made</span>
+<span class="c1"># https://mc-stan.org/rstanarm/articles/priors.html#default-weakly-informative-prior-distributions-1</span>
+
+<span class="n">weakly_informative_prior_model</span> <span class="o">=</span> <span class="n">bmb</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span>
+    <span class="s2">&quot;total_sales ~ Promotion + log_AgeOfStore + MarketID&quot;</span><span class="p">,</span>
+    <span class="n">sales</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">weakly_informative_prior_results</span> <span class="o">=</span> <span class="n">weakly_informative_prior_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+    <span class="n">draws</span><span class="o">=</span><span class="mi">10_000</span><span class="p">,</span> <span class="n">chains</span><span class="o">=</span><span class="mi">4</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Auto-assigning NUTS sampler...
+Initializing NUTS using jitter+adapt_diag...
+Multiprocess sampling (4 chains in 4 jobs)
+NUTS: [total_sales_sigma, Intercept, Promotion, log_AgeOfStore, MarketID]
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "3f55dde3815f4cf3881930df67232125", "version_major": 2, "version_minor": 0}</script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sampling 4 chains for 1_000 tune and 10_000 draw iterations (4_000 + 40_000 draws total) took 8 seconds.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weakly_informative_bambi_draws</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">weakly_informative_prior_results</span><span class="o">.</span><span class="n">posterior</span><span class="p">[</span><span class="s2">&quot;Promotion&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">values</span>
+<span class="p">)</span>
+
+<span class="n">weakly_informative_draws</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;estimated_ATE&quot;</span><span class="p">:</span> <span class="n">weakly_informative_bambi_draws</span><span class="p">,</span>
+        <span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;Posterior Samples with Weakly Informative Estimates&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+<span class="n">all_draws</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">all_draws</span><span class="p">,</span> <span class="n">weakly_informative_draws</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">so</span><span class="o">.</span><span class="n">Plot</span><span class="p">(</span>
+        <span class="n">all_draws</span><span class="p">[</span><span class="n">all_draws</span><span class="o">.</span><span class="n">source</span> <span class="o">!=</span> <span class="s2">&quot;posterior draws with flat priors&quot;</span><span class="p">],</span>
+        <span class="n">x</span><span class="o">=</span><span class="s2">&quot;estimated_ATE&quot;</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;source&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">add</span><span class="p">(</span>
+        <span class="n">so</span><span class="o">.</span><span class="n">Bars</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">),</span> <span class="n">so</span><span class="o">.</span><span class="n">Hist</span><span class="p">(</span><span class="n">stat</span><span class="o">=</span><span class="s2">&quot;density&quot;</span><span class="p">,</span> <span class="n">common_bins</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">label</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Bootstrap Estimate Distribution v Posterior Samples with Weakly Informative Priors&quot;</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">theme</span><span class="p">({</span><span class="o">**</span><span class="n">style</span><span class="o">.</span><span class="n">library</span><span class="p">[</span><span class="s2">&quot;seaborn-v0_8-whitegrid&quot;</span><span class="p">]})</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../../_images/90a9e77e5b42f74156293d0f99ab01fe544f527c344bbe5e711e8bf987cc8977.png"><img alt="../../_images/90a9e77e5b42f74156293d0f99ab01fe544f527c344bbe5e711e8bf987cc8977.png" src="../../_images/90a9e77e5b42f74156293d0f99ab01fe544f527c344bbe5e711e8bf987cc8977.png" style="width: 859.775px; height: 378.25px;" /></a>
+</div>
+</div>
+</section>
+<section id="still-reading">
+<h2>Still Reading?<a class="headerlink" href="#still-reading" title="Link to this heading">#</a></h2>
+<p>Then you should take a class on applied Bayesian statistics. It’s very cool, and honestly just makes way, <em>way</em> more sense than Frequentist stats. And now that computers are superfast, we can do Bayesian statistics <em>far</em> more easily than we could just a decade ago.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./99_exercises/private_exercises"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-context">Exercise Context</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4">Exercise 4</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bootstrapping">Bootstrapping</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5">Exercise 5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6">Exercise 6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7">Exercise 7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8">Exercise 8</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-we-just-did">What We Just Did</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rejecting-the-null">Rejecting the Null</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confidence-intervals">Confidence Intervals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-it-means-for-this-to-be-frequentist">What It Means For This To Be Frequentist</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-slightly-heretical-bayesian-perspective">A (Slightly Heretical) Bayesian Perspective</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outcome-simulation">Outcome Simulation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-9">Exercise 9</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#you-did-it">You Did It!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10">Exercise 10</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11">Exercise 11</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12">Exercise 12</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-13">Exercise 13</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-math">The Math</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bayes-rule-and-frequentist-statistics">Bayes Rule and Frequentist Statistics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ok-why-do-i-care">OK, why do I care?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reason-1-it-is-critically-important-that-you-understand-what-p-values-and-other-frequentist-statistics-are-and-what-they-are-not">Reason 1: It is <em>critically</em> important that you understand what p-values and other Frequentist statistics are, and what they are not.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reason-2-there-is-a-special-case-where-p-ate-x-p-x-ate">Reason 2: There <em>is</em> a special case where <span class="math notranslate nohighlight">\(P(ATE| X) = P(X| ATE)\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reason-3-the-bernstein-von-mises-theorem">Reason 3: The Bernstein-von Mises Theorem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#doing-it-like-a-bayesian">Doing It Like A Bayesian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#still-reading">Still Reading?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Nick Eubank
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,830 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Predicting Mortgage Delinquency Risk &#8212; Solving Problems With Data</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-RKDPB41DQ2"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-RKDPB41DQ2');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-RKDPB41DQ2');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '99_exercises/private_exercises/exercise_passive_prediction';</script>
+    <link rel="icon" href="../../_static/logo.jpg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../landing_page.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.jpg" class="logo__image only-light" alt="Solving Problems With Data - Home"/>
+    <script>document.write(`<img src="../../_static/logo.jpg" class="logo__image only-dark" alt="Solving Problems With Data - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../landing_page.html">
+                    Welcome to DS4Humans
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Class Schedule</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../00_class_schedule/class_schedule.html">Class Schedule</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../10_introduction/10_solving_problems_with_data.html">Ch 1: Solving Problems</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../10_introduction/20_solving_problems.html">Idea 1: Solving Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_introduction/22_question_types.html">Idea 2: Answering Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_introduction/23_mistakes.html">Idea 3: Being Thoughtful about Being Wrong</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../10_introduction/40_data_science_in_historical_context.html">Ch 2: What Is Data Science?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Problems to Questions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../20_problems_to_questions/10_solving_the_right_problem.html">Ch 3: Solving the Right Question</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../20_problems_to_questions/15_solving_the_wrong_problem.html">Solving The Wrong Problem: Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../20_problems_to_questions/20_stakeholder_management.html">Ch 4: Stakeholder Management</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Types of Questions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../30_questions/05_descriptive_v_prescriptive.html">Ch 5: Descriptive and Prescriptive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../30_questions/06_descriptive_prescriptive_examples.html">Tradeoff Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../30_questions/10_using_exploratory_questions.html">Ch 6: Exploratory Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../30_questions/15_answering_exploratory_questions.html">Answering Exploratory Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../30_questions/17_exploratory_questions_internal_external.html">Internal versus External Validity</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../30_questions/07_eda.html">Ch 7: The Scourge of EDA</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../30_questions/20_using_passive_prediction_questions.html">Ch 8: Passive Predictive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../30_questions/23_passive_prediction_internal.html">Passive Prediction Questions and Internal Validity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../30_questions/24_passive_prediction_external.html">Passive Prediction Questions and External Validity</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../30_questions/26_passive_prediction_errors.html">Ch 9: The Right Way To Be Wrong</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../30_questions/27_interpretable_models.html">Performance Differential Is (Often) A Myth</a></li>
+
+
+
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../30_questions/30_using_causal_questions.html">Ch 11: Causal Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../30_questions/40_answering_causal_questions.html">Answering Causal Questions</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Causal Inference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../35_causal/10_potential_outcomes.html">The Potential Outcomes Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../35_causal/30_interpreting_indicator_vars.html">Indicator Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../35_causal/40_causal_inference_beyond_ab_testing.html">Causal Beyond Experiments</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../35_causal/50_fixed_effects_and_causal_inference.html">Fixed Effects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../35_causal/60_fixed_effects.html">Implementing Fixed Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../35_causal/70_fixed_effects_v_hierarchical.html">Fixed Effects v. Hierarchical Models</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../35_causal/80_matching_why.html">Matching</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../35_causal/90_matching_how.html">How to Match</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Science in Practice</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../40_in_practice/00_how_to_read_this_book.html">How to Read (Academic Edition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../40_in_practice/05_backwards_design.html">Backwards Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../40_in_practice/20_from_data_to_decisions.html">Making Decisions Using Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../40_in_practice/25_writing_to_stakeholders.html">Writing to Stakeholders</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../40_advanced_topics/30_interpretability.html">Interpretable Models</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/nickeubank/ds4humans" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F99_exercises/private_exercises/exercise_passive_prediction.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/99_exercises/private_exercises/exercise_passive_prediction.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Predicting Mortgage Delinquency Risk</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gradescope-autograding">Gradescope Autograding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#submission-limits">Submission Limits</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning-and-organization">Data Cleaning and Organization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4">Exercise 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5">Exercise 5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6">Exercise 6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7">Exercise 7</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-delinquency-risk">Modelling Delinquency Risk</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8">Exercise 8</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-9">Exercise 9</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10">Exercise 10</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11">Exercise 11</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12">Exercise 12</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-13">Exercise 13</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-14">Exercise 14</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-15">Exercise 15</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#now-to-the-future">Now To The Future</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-16">Exercise 16</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-17">Exercise 17</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-18">Exercise 18</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="predicting-mortgage-delinquency-risk">
+<h1>Predicting Mortgage Delinquency Risk<a class="headerlink" href="#predicting-mortgage-delinquency-risk" title="Link to this heading">#</a></h1>
+<p><strong>Note: this is a new exercise, so if you find something weird, please bring it to my attention.</strong></p>
+<p>You have been hired by a mortgage servicing firm (a company that buys mortgages and then collects mortgage payments from homeowners) to build a model to answer the question:</p>
+<p><strong>Given all available information about a newly issued mortgage, what is the likelihood that the mortgage will enter delinquency (the homeowner will be at least 30 days late on a mortgage payment) during the first two years of the mortgage?</strong></p>
+<p>The servicer’s hope, obviously, is to differentiate between mortgages to try and purchase (those that will be consistently paid) and mortgages they wish to avoid.</p>
+<p>For this task, you have been given <a class="reference external" href="https://www.freddiemac.com/research/datasets/sf-loanlevel-dataset">REAL data on a sample of all US Standard single family home mortgages purchased or insured by Freddie Mac</a> in a single calendar year along with payment data from that and two subsequent years.</p>
+<section id="gradescope-autograding">
+<h2>Gradescope Autograding<a class="headerlink" href="#gradescope-autograding" title="Link to this heading">#</a></h2>
+<p>Please follow <a class="reference external" href="https://www.practicaldatascience.org/html/autograder_guidelines.html">all standard guidance</a> for submitting this assignment to the Gradescope autograder, including storing your solutions in a dictionary called <code class="docutils literal notranslate"><span class="pre">results</span></code> and ensuring your notebook runs from the start to completion without any errors.</p>
+<p>For this assignment, please name your file <code class="docutils literal notranslate"><span class="pre">exercise_passive_prediction.ipynb</span></code> before uploading.</p>
+<p>You can check that you have answers for all questions in your <code class="docutils literal notranslate"><span class="pre">results</span></code> dictionary with this code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="nb">set</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">==</span> <span class="p">{</span>
+    <span class="s2">&quot;ex2_merge_type&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ex4_num_mortgages&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ex5_num_obs&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ex7_num_mortgages&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ex7_share_delinquent&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ex10_num_obs&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ex12_roc_auc&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ex14_false_omission_rate&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ex16_num_obs&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ex16_share_delinquent&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ex17_false_omission_rate&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<section id="submission-limits">
+<h3>Submission Limits<a class="headerlink" href="#submission-limits" title="Link to this heading">#</a></h3>
+<p>Please remember that you are <strong>only allowed FOUR submissions to the autograder.</strong> Your last submission (if you submit 4 or fewer times), or your third submission (if you submit more than 4 times) will determine your grade Submissions that error out will <strong>not</strong> count against this total.</p>
+<p>That’s one more than usual in case there are issues with exercise clarity.</p>
+</section>
+</section>
+<section id="data-cleaning-and-organization">
+<h2>Data Cleaning and Organization<a class="headerlink" href="#data-cleaning-and-organization" title="Link to this heading">#</a></h2>
+<p>Data for this exercise can be <a class="reference external" href="https://github.com/nickeubank/MIDS_Data/tree/master/mortgages/2004">found here</a>. This folder includes both the data to be used and documentation, though you can find <a class="reference external" href="https://www.freddiemac.com/research/datasets/sf-loanlevel-dataset">supplemental documentation here</a>.</p>
+<p>The only difference between this data and the original Freddie Mac sampled data is that I’ve limited the scope of service data to three calendar years.</p>
+<section id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Link to this heading">#</a></h3>
+<p>Begin by loading both:</p>
+<ul class="simple">
+<li><p>the mortgage origination file (<code class="docutils literal notranslate"><span class="pre">sample_orig_2004.txt</span></code>). This <em>should</em> contain information on all mortgages issued in 2004, along with non-time varying features of these mortgages (the initial amount, the credit score of the applicant, etc.), and</p></li>
+<li><p>the servicing data (<code class="docutils literal notranslate"><span class="pre">sample_svcg_2004orig_3years.txt</span></code>). This contains monthly records of all recorded payments (or non-payments) for all mortgages issued in 2004 during the calendar years of 2004, 2005, and 2006.</p></li>
+</ul>
+<p>So the autograder can see the data, be sure to load it directly from a URL (don’t download and load from your own system).</p>
+<p>Load the data AND ensure your data has column names. You will likely need to reference the documentation to figure out how to do so.</p>
+</section>
+<section id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Link to this heading">#</a></h3>
+<p>What is the unit of observation in <code class="docutils literal notranslate"><span class="pre">sample_orig_2004.txt</span></code> and in <code class="docutils literal notranslate"><span class="pre">sample_svcg_2004orig_3years.txt</span></code>?</p>
+</section>
+<section id="exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Link to this heading">#</a></h3>
+<p>Merge your two datasets. Be sure to use the <code class="docutils literal notranslate"><span class="pre">validate</span></code> keyword argument in <code class="docutils literal notranslate"><span class="pre">merge</span></code>.</p>
+<p>You will find some records in the origination files not in the servicing file. We need data from both files, so just do an <code class="docutils literal notranslate"><span class="pre">inner</span></code> join.</p>
+<p>Assuming that you list the data associated with <code class="docutils literal notranslate"><span class="pre">sample_orig_2004.txt</span></code> first and <code class="docutils literal notranslate"><span class="pre">sample_svcg_2004orig_3years.txt</span></code> second, what keyword are you passing to <code class="docutils literal notranslate"><span class="pre">validate</span></code>? Store your answer as a string (use one of: <code class="docutils literal notranslate"><span class="pre">&quot;1:1&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;m:1&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;1:m&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;m:m&quot;</span></code>) in a dictionary called <code class="docutils literal notranslate"><span class="pre">results</span></code> under the key <code class="docutils literal notranslate"><span class="pre">ex2_merge_type</span></code>.</p>
+</section>
+<section id="exercise-4">
+<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Link to this heading">#</a></h3>
+<p>Mortgages come in many shapes and flavors, however your servicer is only interested in predicting default for the more standard form of mortgage. Subset your data to only include:</p>
+<ul class="simple">
+<li><p>Mortgages taken out for purchase of a property,</p></li>
+<li><p>With first payments due in the quarter of origination or the first quarter after origination.</p></li>
+</ul>
+<p>(In a perfect world we would just limit our analysis to mortgages where the first payment is due the month after origination. Unfortunately we only know the <em>quarter</em> of origination, so the only way to subset for relatively vanilla mortgages is to look for mortgages where the first payment was due in the same quarter or the quarter after origination.)</p>
+<p>Subset for these mortgages. How many unique mortgages remain in the data?</p>
+<p>Hint: You may need to read the documentation for the <code class="docutils literal notranslate"><span class="pre">Loan</span> <span class="pre">Sequence</span> <span class="pre">Number</span></code> variable.</p>
+<p>Store the resulting number of unique mortgages in <code class="docutils literal notranslate"><span class="pre">results</span></code> under the key <code class="docutils literal notranslate"><span class="pre">ex4_num_mortgages</span></code>.</p>
+</section>
+<section id="exercise-5">
+<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Link to this heading">#</a></h3>
+<p>The servicer wants to predict delinquency during the first 24 payment due dates (you may assume payments are due every month starting with the month the first payment is due). Subset the data to these first 24 (possible) payment due dates.</p>
+<p>Note that not all loans will have 24 records in the servicing file in the first 24 months as a result of data merging issues on behalf of Freddie Mac. As noted in the Freddie Mac documentation:</p>
+<blockquote>
+<div><p>For a given loan, each monthly reporting period in the monthly performance data file combines data elements from multiple reporting cycles and systems at Freddie Mac. As such, perceived data anomalies may be a result of timing mismatches between default/delinquency reporting cycles and investor reporting cycles. Examples of some commonly occurring anomalies in the data are included throughout this section. In all cases, the best information available at the time the Dataset is generated, subject to operational constraints, is used.</p>
+</div></blockquote>
+<p>So subset for the first two years of (possible) payments, resulting in <em>up to</em> 24 observations per mortgage (but potentially less given the data cleanliness issues).</p>
+<p>After this subsetting, store the number of remaining observations (not mortgages, observation) in <code class="docutils literal notranslate"><span class="pre">results</span></code> under the key <code class="docutils literal notranslate"><span class="pre">&quot;ex5_num_obs&quot;</span></code>.</p>
+</section>
+<section id="exercise-6">
+<h3>Exercise 6<a class="headerlink" href="#exercise-6" title="Link to this heading">#</a></h3>
+<p>For each unique mortgage in your dataset, create an indicator variable that takes on a value of 1 if, at any time during this period, the mortgage has been delinquent.</p>
+<p>Delinquency status is stored in the variable <code class="docutils literal notranslate"><span class="pre">CURRENT</span> <span class="pre">LOAN</span> <span class="pre">DELINQUENCY</span> <span class="pre">STATUS</span></code>, and is coded as:</p>
+<blockquote>
+<div><p>CURRENT LOAN DELINQUENCY STATUS – A value corresponding to the number of days the borrower is delinquent, based on the due date of last paid installment (“DDLPI”) reported by servicers to Freddie Mac, and is calculated under the Mortgage Bankers Association (MBA) method.
+If a loan has been acquired by REO, then the Current Loan Delinquency Status will reflect the value corresponding to that status (instead of the value corresponding to the number of days the borrower is delinquent).</p>
+<p>0 = Current, or less than 30 days delinquent</p>
+<p>1 = 30-59 days delinquent</p>
+<p>2=60–89days delinquent</p>
+<p>3=90–119days delinquent</p>
+<p>And so on…</p>
+<p>RA = REO Acquisition</p>
+</div></blockquote>
+</section>
+<section id="exercise-7">
+<h3>Exercise 7<a class="headerlink" href="#exercise-7" title="Link to this heading">#</a></h3>
+<p>At this point, you should be able to drop all servicing variables reported on a monthly basis and just keep information about the original mortgage issuance (and still keep an indicator for whether the mortgage has ever been delinquent).</p>
+<p>Store the final number of mortgages in your data under <code class="docutils literal notranslate"><span class="pre">ex7_num_mortgages</span></code> and the share (between 0 and 1) of mortgages that have been delinquent under <code class="docutils literal notranslate"><span class="pre">ex7_share_delinquent</span></code>.</p>
+</section>
+</section>
+<section id="modelling-delinquency-risk">
+<h2>Modelling Delinquency Risk<a class="headerlink" href="#modelling-delinquency-risk" title="Link to this heading">#</a></h2>
+<p>Your data should now be relatively <a class="reference external" href="https://vita.had.co.nz/papers/tidy-data.pdf">tidy</a>, in the technical sense of the term. And that means it should be relatively straightforward for you to build a model that answers the question “Given the features of a newly originated mortgage, how likely is the mortgage holder to fall into delinquency within the first two years after origination?”</p>
+<section id="exercise-8">
+<h3>Exercise 8<a class="headerlink" href="#exercise-8" title="Link to this heading">#</a></h3>
+<p>First, we need to identify the target for our model useful predictors from the data and do feature engineering.</p>
+<p>Let’s begin with identifying some features that probably <em>aren’t</em> going to be useful. For example, <code class="docutils literal notranslate"><span class="pre">&quot;Metropolitan</span> <span class="pre">Statistical</span> <span class="pre">Area</span> <span class="pre">(MSA)</span> <span class="pre">Or</span> <span class="pre">Metropolitan</span> <span class="pre">Division&quot;</span></code> is probably <em>not</em> an appropriate feature to include in this analysis. Can you figure out why? Make sure to show (quantitatively) why not.</p>
+<p>Hint: should be more than the missing rate.</p>
+<p>Hint 2: how many observations for a given city do you think you’d need to determine if that city had especially high mortgage delinquency rates?</p>
+<p>Hint 3: if not all possible values of a variable are present in your training data, what problem might that cause during testing and deployment?</p>
+</section>
+<section id="exercise-9">
+<h3>Exercise 9<a class="headerlink" href="#exercise-9" title="Link to this heading">#</a></h3>
+<p>For your analysis, include the following variables:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Credit</span> <span class="n">Score</span>
+<span class="n">First</span> <span class="n">Time</span> <span class="n">Homebuyer</span> <span class="n">Flag</span>
+<span class="n">Number</span> <span class="n">of</span> <span class="n">Units</span>
+<span class="n">Mortgage</span> <span class="n">Insurance</span> <span class="n">Percentage</span> <span class="p">(</span><span class="n">MI</span> <span class="o">%</span><span class="p">)</span>
+<span class="n">Occupancy</span> <span class="n">Status</span>
+<span class="n">Original</span> <span class="n">Debt</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">Income</span> <span class="p">(</span><span class="n">DTI</span><span class="p">)</span> <span class="n">Ratio</span>
+<span class="n">Original</span> <span class="n">UPB</span>
+<span class="n">Original</span> <span class="n">Loan</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">Value</span> <span class="p">(</span><span class="n">LTV</span><span class="p">)</span>
+<span class="n">Original</span> <span class="n">Interest</span> <span class="n">Rate</span>
+<span class="n">Channel</span>
+<span class="n">Prepayment</span> <span class="n">Penalty</span> <span class="n">Mortgage</span> <span class="p">(</span><span class="n">PPM</span><span class="p">)</span> <span class="n">Flag</span>
+<span class="n">Amortization</span> <span class="n">Type</span> <span class="p">(</span><span class="n">Formerly</span> <span class="n">Product</span> <span class="n">Type</span><span class="p">)</span>
+<span class="n">Property</span> <span class="n">State</span>
+<span class="n">Property</span> <span class="n">Type</span>
+<span class="n">Original</span> <span class="n">Loan</span> <span class="n">Term</span>
+<span class="n">Number</span> <span class="n">of</span> <span class="n">Borrowers</span>
+<span class="n">Interest</span> <span class="n">Only</span> <span class="p">(</span><span class="n">I</span><span class="o">/</span><span class="n">O</span><span class="p">)</span> <span class="n">Indicator</span>
+</pre></div>
+</div>
+<p>Be sure to clean these variables. When doing so, please treat missing data as missing (e.g., <code class="docutils literal notranslate"><span class="pre">np.nan</span></code>, not as a distinct category).</p>
+</section>
+<section id="exercise-10">
+<h3>Exercise 10<a class="headerlink" href="#exercise-10" title="Link to this heading">#</a></h3>
+<p>The next step in our analysis is to convert our categorical variables to one-hot-encodings and use <code class="docutils literal notranslate"><span class="pre">train_test_split</span></code> to split our data.</p>
+<p>To ensure replicability, <strong>before</strong> you <code class="docutils literal notranslate"><span class="pre">train_test_split</span></code> your data, please sort your data by <code class="docutils literal notranslate"><span class="pre">Loan</span> <span class="pre">Sequence</span> <span class="pre">Number</span></code>. This will ensure when we split the data with a random seed below, everyone will get the same split and the autograder will function.</p>
+<p>You may create your one-hot-encodings however you wish, but I’m a fan of the <a class="reference external" href="https://patsy.readthedocs.io/en/latest/overview.html">patsy library’s</a> <code class="docutils literal notranslate"><span class="pre">dmatrices</span></code> function.</p>
+<p>Hint: You should end up with 8 categorical variables, including some binary flags and <code class="docutils literal notranslate"><span class="pre">Number_of_Borrowers</span></code>, <code class="docutils literal notranslate"><span class="pre">Number_of_Units</span></code> (which you could argue should be continuous, but I think are better treated as categorical).</p>
+<p>Store the number of observations in your final dataset in <code class="docutils literal notranslate"><span class="pre">ex10_num_obs</span></code>.</p>
+</section>
+<section id="exercise-11">
+<h3>Exercise 11<a class="headerlink" href="#exercise-11" title="Link to this heading">#</a></h3>
+<p>Use <code class="docutils literal notranslate"><span class="pre">train_test_split</span></code> from <code class="docutils literal notranslate"><span class="pre">sklearn.model_selection</span></code> to split the data.</p>
+<p>Before you do, Use <code class="docutils literal notranslate"><span class="pre">0.2</span></code> as the <code class="docutils literal notranslate"><span class="pre">test_size</span></code> and use <code class="docutils literal notranslate"><span class="pre">random_state=42</span></code>.</p>
+</section>
+<section id="exercise-12">
+<h3>Exercise 12<a class="headerlink" href="#exercise-12" title="Link to this heading">#</a></h3>
+<p>Now fit a <code class="docutils literal notranslate"><span class="pre">GradientBoostingClassifier</span></code> to the data (from <code class="docutils literal notranslate"><span class="pre">sklearn.ensemble</span></code>). Set <code class="docutils literal notranslate"><span class="pre">random_state=42</span></code>. using <code class="docutils literal notranslate"><span class="pre">roc_auc_score</span></code>, get your ROC AUC score against the test data.</p>
+<p><strong>Please round your answer to four decimal places</strong> - sometimes sklearn models have very small instabilities even after setting a random seed.</p>
+<p>Store in <code class="docutils literal notranslate"><span class="pre">results</span></code> under the key <code class="docutils literal notranslate"><span class="pre">&quot;ex12_roc_auc&quot;</span></code>.</p>
+</section>
+<section id="exercise-13">
+<h3>Exercise 13<a class="headerlink" href="#exercise-13" title="Link to this heading">#</a></h3>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">predict</span></code> method to generate a confusion matrix. What problem do you see with the result?</p>
+</section>
+<section id="exercise-14">
+<h3>Exercise 14<a class="headerlink" href="#exercise-14" title="Link to this heading">#</a></h3>
+<p>To address the problem from Exercise 13, use <code class="docutils literal notranslate"><span class="pre">.predict_proba()</span></code> to set your own threshold for classification. Your stakeholder is mostly concerned with False Negatives (mortgages classified as safe that actually are not), so use an 8% probability threshold to get a good balance of a low <a class="reference external" href="https://en.wikipedia.org/wiki/False_omission_rate">False Omission Rate</a> (the share of predicted negatives that are false negatives) with a reasonable amount of mortgages still being considered “viable.”</p>
+<p>In other words, treat a mortgage as risky (<code class="docutils literal notranslate"><span class="pre">1</span></code>) if the predicted probability is greater than 0.08. Be sure to use “greater than” rather than “greater than or equal to”.</p>
+<p>What is the False Omission Rate at an 8% classification threshold from the model above?</p>
+<p>Store the result under the key <code class="docutils literal notranslate"><span class="pre">&quot;ex14_false_omission_rate&quot;</span></code>.</p>
+</section>
+<section id="exercise-15">
+<h3>Exercise 15<a class="headerlink" href="#exercise-15" title="Link to this heading">#</a></h3>
+<p>Your stakeholder wants to by as many mortgages as it can while maintaining a delinquency rate of purchased mortgages below 5%. Based on your answer above, do you feel like your model can provide that level of performance?</p>
+</section>
+</section>
+<section id="now-to-the-future">
+<h2>Now To The Future<a class="headerlink" href="#now-to-the-future" title="Link to this heading">#</a></h2>
+<p>The preceding analysis is precisely the type of analysis you would do if, in late 2006, you’d been asked to evaluate mortgage performance in the last two years for use going forward. So let’s see how your model performs now!</p>
+<p>In this <a class="reference external" href="https://github.com/nickeubank/MIDS_Data/tree/master/mortgages/2007">folder</a> you will find data on mortgages originated in 2007 along with servicing data from 2007, 2008, and 2009.</p>
+<section id="exercise-16">
+<h3>Exercise 16<a class="headerlink" href="#exercise-16" title="Link to this heading">#</a></h3>
+<p>Please load this data (again, from a URL to help the autograder) and clean it in the same manner as before. As a sanity check, how many observations do you have in the final dataset (after you’ve removed observations with missing values to allow you to generate predicted delinquency rates)?</p>
+<p>Store the final number of observations in <code class="docutils literal notranslate"><span class="pre">&quot;ex16_num_obs&quot;</span></code> and the share of those mortgages that are delinquent in <code class="docutils literal notranslate"><span class="pre">&quot;ex16_share_delinquent&quot;</span></code></p>
+</section>
+<section id="exercise-17">
+<h3>Exercise 17<a class="headerlink" href="#exercise-17" title="Link to this heading">#</a></h3>
+<p>Had your stakeholder purchased mortgages using your model (with the 8% cutoff), what would the resulting False Omission Rate (share of predicted negatives that are false negatives) rate have been? (e.g., compare the predicted values for mortgages using the model trained above with realized outcomes). Store your result under the key <code class="docutils literal notranslate"><span class="pre">&quot;ex17_false_omission_rate&quot;</span></code></p>
+</section>
+<section id="exercise-18">
+<h3>Exercise 18<a class="headerlink" href="#exercise-18" title="Link to this heading">#</a></h3>
+<p>How did the retrospective performance of your model compare to its actual performance moving forward? Why? Did you stay below the 5% target for mortgages that were predicted to be safe but in the end were not set by the stakeholder?</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./99_exercises/private_exercises"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gradescope-autograding">Gradescope Autograding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#submission-limits">Submission Limits</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning-and-organization">Data Cleaning and Organization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4">Exercise 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5">Exercise 5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6">Exercise 6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7">Exercise 7</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-delinquency-risk">Modelling Delinquency Risk</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8">Exercise 8</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-9">Exercise 9</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10">Exercise 10</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11">Exercise 11</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12">Exercise 12</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-13">Exercise 13</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-14">Exercise 14</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-15">Exercise 15</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#now-to-the-future">Now To The Future</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-16">Exercise 16</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-17">Exercise 17</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-18">Exercise 18</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Nick Eubank
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

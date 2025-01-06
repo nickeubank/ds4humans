@@ -32,13 +32,16 @@ parts:
     chapters:
       - file: 30_questions/05_descriptive_v_prescriptive
         title: "Ch 5: Descriptive and Prescriptive Qs"
-      - file: 30_questions/07_eda
-        title: "Ch 6: The Scourge of EDA"
+        sections:
+          - file: 30_questions/06_descriptive_prescriptive_examples
+            title: Tradeoff Examples
       - file: 30_questions/10_using_exploratory_questions
-        title: "Ch 7: Exploratory Qs"
+        title: "Ch 6: Exploratory Qs"
         sections:
           - file: 30_questions/15_answering_exploratory_questions
           - file: 30_questions/17_exploratory_questions_internal_external
+      - file: 30_questions/07_eda
+        title: "Ch 7: The Scourge of EDA"
       - file: 30_questions/20_using_passive_prediction_questions
         title: "Ch 8: Passive Predictive Qs"
         sections:
