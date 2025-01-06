@@ -61,9 +61,7 @@ All of which is to say: young data scientists tend to approach the world with an
 
 ### Principle 2: Don't Assume Your Stakeholder Knows What They Need
 
-A corollary to Step 0 is to not assume your stakeholder understands what they need. So when I say "helping your stakeholder understand their problem is a core part of the job," I don't only mean that it's part of your job *if the stakeholder admits to deep uncertainty about their problem*." Odds are your stakeholder will come to you with a strong statement of what they think they want, but you should take that as a starting point for discussion, not your mandate.
-
-This is particularly true if your stakeholder comes to you with really specific technical suggestions. Often you will be approached by a stakeholder who, rather than laying out a problem, announces they would like you to do X using some data science tool Y. Occasionally the stakeholder doing this knows exactly what they're talking about, and you should use Y to do X.
+While not always true, you should *always* be skeptical of specific technical solutions offered by your stakeholder. Often you will be approached by a stakeholder who, rather than laying out a problem, announces they would like you to do X using some data science tool Y. Occasionally the stakeholder doing this knows exactly what they're talking about, and you should use Y to do X.
 
 More often, however, you're dealing with a stakeholder with just enough knowledge to be dangerous (and to drop buzzwords), but not enough to know how best to solve their problem.
 
@@ -75,7 +73,7 @@ Focus on the stakeholder's *needs*. Only get into implementation details once yo
 
 ### Principle 3: Stakeholder Time Is Precious
 
-It is always good to go into meetings with your stakeholder with a clear sense of your objectives — what you hope to communicate, and what information and feedback you need to get before the meeting ends. When your stakeholder is someone you don't get to meet with regularly, it's good practice to detail these objectives and provide them — in writing — to your stakeholder in advance of your meeting. This will not only ensure that you and your teammates are on the same page (as you will all have reviewed the document before sending it to your stakeholder), but also ensure that your stakeholder has adequete time to reflect on any questions or issues you wish to raise.
+It is always good to go into meetings with your stakeholder with a clear sense of your objectives — what you hope to communicate, and what information and feedback you need to get before the meeting ends. When your stakeholder is someone you don't get to meet with regularly, it's good practice to detail these objectives and provide them — in writing — to your stakeholder in advance of your meeting. This will not only ensure that you and your teammates are on the same page (as you will all have reviewed the document before sending it to your stakeholder), but also ensure that your stakeholder has adequate time to reflect on any questions or issues you wish to raise.
 
 When it comes to your *first* meeting, however, this practice can feel impractical as you may feel so uncertain about the project that you only know the first few questions you want to ask.
 
@@ -83,22 +81,34 @@ But even in a first meeting, preparation is key. Rather than laying out the new 
 
 Time with your stakeholder is *precious*, especially early in a project, make the most of that face time through preparation.
 
+### Principle 4: De-risk by being concrete
 
+Because some stakeholders may think they know more about data science than they really do (and may be reluctant to admit when they're confused), be sure that you regularly ask them *extremely concrete* questions. In particular, be sure you ask concrete questions about what your deliverable might look like, emphasizing the concrete inputs and outputs of whatever you're working on. For example, "if I gave you an algorithm that required [list specific features you might use as inputs], and if it was given that for each item you sold returned a guess for how much a customer might pay for that product if it were on the shelf, would that be of value?"
 
-### Principle 4: Iterate
+Or propose a handful of questions your thinking of answering and ask them if answering those questions would help solve their problem.
+
+This is important because many people have only a vague sense of what they are likely to get as a "deliverable" from the data scientist. They usually have a vague sense that they will get some type of magic machine (a "magic model" or "magic algorithm") that will just make their problem go away. By concretely framing your deliverable as the answer to a question (or a model that would answer a specific question for each entity like a customer or patient that it encounters), you can get much more valuable feedback before you dive into a problem.
+
+```{sidebar}
+The more certain you are your stakeholder understands exactly what you are planning to give them, the less likely you'll work on something they later realize they don't want.
+```
+
+### Principle 5: Iterate
 
 And here's the last but perhaps most important step: **iterate.** Bring your work back to your stakeholder as often as possible.
 
 Many stakeholders find the idea of data science mysterious and abstract and will struggle to understand what is and is not feasible. By bringing them intermediate results, the whole process will start to become more concrete for the stakeholder, and it will help them provide you with better feedback.
 
-The way this book is organized suggests a natural flow from problem articulation to answering Exploratory Questions to prioritize efforts, to answering Passive-Prediction Questions to target individuals for extra attention or automate tasks, and finally to Causal Questions to better understand the effects of that extra attention/automation. In reality, however, a good data scientist is always coming back to the stakeholder, updating their plan, and jumping back in the sequence when new questions arise.
+<!-- ## Strategies for Stakeholder Communication
 
-## Strategies for Stakeholder Communication
+Lest any of that feel too abstract, here are two final principles for stakeholder communication.
 
+First, the suggestions for problem refinement in the last chapter are exercises you can *and should* do with your stakeholder. Bring reformulations and alternative presentations of the problem to them and get their take. 
 
-### Step 3: Ask Questions (Especially Quantitative Ones!)
+Second, 
 
-Be sure to ask a lot of questions of your stakeholder. In particular, I would suggest two types: questions about what success would look like, and questions about the problem itself.
+###  Ask Questions (Especially Quantitative Ones!)
+
 
 ### Questions About Success
 
@@ -140,4 +150,4 @@ Perhaps the best way to figure out if your question is answerable is to write do
 
 ## Reading Reflection Questions
 
-- Why should you care if your stakeholder misspecifies their problem?
+- Why should you care if your stakeholder misspecifies their problem? -->
