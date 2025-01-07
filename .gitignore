@@ -19,8 +19,6 @@
 
 Solutions_*.ipynb
 **/Solutions_*.ipynb
-**/private_exercises/*
-99_exercises/private_exercises/*
-_build/html/99_exercises/private_exercises/*
-docs/html/99_exercises/private_exercises/*
-docs/99_exercises/private_exercises/*
+**/**/private_exercises/*
+
+00_class_schedule/*.xlsx
