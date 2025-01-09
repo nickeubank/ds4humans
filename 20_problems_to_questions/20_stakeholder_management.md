@@ -40,7 +40,7 @@ Getting a sense of where the goalposts are for your stakeholder will both help y
 
 The more you know about your client's needs the better, so ask anything that comes to mind. If the client can answer your question, it will help you better understand the situation; if the client can't answer your question you may find that they are suddenly really interested in knowing the answer, and you immediately have some of your first Exploratory Questions to try to resolve.
 
-In the example of the company that wanted to improve recruitment of high-quality employees in the introduction of this book, I suggested that some of the first exploratory questions you might want to investigate would be things like:
+In the example of the company that wanted to improve recruitment of high-quality employees in the introduction of this book, I suggested that some of the first Exploratory Questions you might want to investigate would be things like:
 
 - How many job applications are you receiving when you post a job?
 - What share of your current job applicants are of high quality?

@@ -1,7 +1,10 @@
 # Descriptive v. Prescriptive Questions
 
+Welcome to Part 3: Types of Questions! Now that we've discussed how data science is all about solving problems, and how refining your understanding of the problem you wish to solve is key to success, it's time to turn our attention to how we, as data scientists, solve problems: by using quantitative methods to answering questions about the world!
 
-In the following chapters, we will be diving into the intricacies of Exploratory, Passive-Prediction, and Causal Questions in detail. First, though, we discuss another important concept: the distinction between "descriptive" and "prescriptive" questions (also referred to as "positive" and "normative" questions in some circles).
+In the following chapters, we will be diving into the intricacies of Exploratory, Passive-Prediction, and Causal Questions in detail. We will discuss the role each of these question types plays in solving problems, and the issues that arise when trying to answer them.
+
+First, however, we need to discuss another important concept: the distinction between "descriptive" and "prescriptive" questions (also referred to as "positive" and "normative" questions, respectively, in some circles, such as the social sciences).
 
 ## Descriptive Questions
 

@@ -1,8 +1,12 @@
 # EDA: The Most Pernicious Term in Data Science
 
-In our next reading, we will turn our attention to *Exploratory Questions.* First, however, it is important to have a candid discussion about what I feel is one of the most problematic concepts in data science education: *Exploratory Data Analysis* or *EDA*.
+After finishing the last section on Exploratory Questions, some readers may be rolling their eyes thinking "yeah, yeah, EDA [Exploratory Data Analysis]. I learned about EDA in my first stats class. When do we get to the good stuff?"
 
-The problem with the term Exploratory Data Analysis is that, if you asked most data scientists what it means, they probably couldn't actually give you a straight answer. If you pressed them further, they would probably say something like "when you look at your data before you start fitting your models."
+If that's you, or if you just don't feel clear on the distinction between answering Exploratory Questions and "Exploratory Data Analysis," commonly referred to by the acronym "EDA," this section is for you.
+
+In my view, and that of many of my colleagues, the practice commonly referred to as "EDA" and students understanding of its role in problem-solving is one of the greatest failures in data science education. 
+
+The problem with the term EDA is that, if you asked most data scientists what it means, they probably couldn't actually give you a straight answer. If you pressed them further, they would probably say something like "exploring your data before you start fitting your models."
 
 While the idea that data scientists should "get to know their data" before fitting a model is well-meaning (you *absolutely* should!), the ubiquitous but uncritical use of the term has given young data scientists the sense that the undirected poking at data is worthy of a capitalized three world title, complete with a universally recognized acronym.
 
@@ -16,7 +20,7 @@ The first activity people call EDA is what I call "learning the structure of you
 
 [^pandas]: In `pandas`, this would be things like `df.columns` to see what variables are in the data, `df.info()` to get a sense of how data is being represented and the number of rows, and simple tools for tabulating unique values like `df["first column"].value_counts()`.
 
-The second activity that often falls under the label EDA is what I call "validating your dataset." It's a poor data scientist who takes the validity of their data on blind faith, so when faced with a new dataset, one should begin with a few "sanity checks" just to make sure things look reasonable. Does the number of observations seem reasonable given what you know about how the data was collected and who is supposed to be represented in the data? If there are date variables in the data, does their range match what should be in this data? And given the specifics of the data, does the range of variables make sense? For example, if you have data on registered voters 18 and over, you should probably check that the age variable has a minimum value of 18 and a maximum value of something sensible (e.g., not 225).
+The second activity that often falls under the label EDA is what I call "*validating* your dataset." It's a poor data scientist who takes the validity of their data on blind faith, so when faced with a new dataset, one should begin with a few "sanity checks" just to make sure things look reasonable. Does the number of observations seem reasonable given what you know about how the data was collected and who is supposed to be represented in the data? If there are date variables in the data, does their range match what should be in this data? And given the specifics of the data, does the range of variables make sense? For example, if you have data on registered voters 18 and over, you should probably check that the age variable has a minimum value of 18 and a maximum value of something sensible (e.g., not 225).
 
 The third and final activity people call EDA is... everything one does with the data before they fit a statistical or machine learning model. This is the second major reason that I feel the very concept of EDA has had a pernicious influence on data science — it implicitly devalues anything done with data that doesn't entail a complicated model as "lesser" or "just a stop on the way towards the "real" analysis," when nothing could be further from the truth.
 
@@ -33,6 +37,23 @@ Perhaps you were looking at a store's retail sales data and decided to see how s
 
 But the problem with approaching your data with *implicit* motivations is that (a) it's hard to reflect on them or evaluate whether they rest on solid assumptions about the stakeholder problem, and (b) without an explicit goal, there's no way to know when you've reached your destination, making it *really*  easy to get lost in the data.
 ```
+
+## Am I Just Being a Curmudgeon?
+
+No — this is a view held by many people who work with data. Not only is it a common (informal) complaint among colleagues, but others have also written on the topic in different forms. In a [wonderful Medium post](https://medium.com/@eytanadar/banning-exploration-in-my-infovis-class-9578676a4705), for example, Eytan Adar discusses his decision to ban his students from using the term EDA entirely:
+
+> I got to have lunch with John Tukey many years ago. We talked about birding. I wish we talked about "Exploratory Data Analysis." For all the clever names he created for things (software, bit, cepstrum, quefrency) what's up with EDA? The name is fundamentally problematic because it's ambiguous. "Explore" can be both transitive (to seek something) and intransitive (to wander, seeking nothing in particular). Tukey's book seems to emphasize the former [...]. The problem is that students think he meant the latter.
+> 
+> Somehow that term has given students, and some professionals, the license to be totally imprecise about what they were building, and (more critically) how to evaluate whether it worked. If you're not seeking anything in particular, any tool that lets you meander through data is perfectly reasonable. It makes the job of deriving insight completely the responsibility of the end-user. In that world, any decision is a reasonable one, evaluation is unnecessary, and there is no grade but an A. But that's not the real world and so I've banned "explore." 
+>
+> Exploration is too unbounded in the context of building a tool. We need to be able to decide when exploration terminates. Forcing students to tell me what they want the end-user to find and/or what decisions they want to enable has led to better projects. 
+
+Obviously in this book I've endorsed the term "Exploratory" as an adjective, rather than a verb — in my few, once you've articulated a concrete Exploratory Question, I think it *does* help motivate subsequent 
+
+[Nathan Yau](https://flowingdata.com/2017/04/28/data-exploration-banned/) makes a similar point about EDA data visualizations: 
+
+> Data exploration with visualization is good, but when someone describes their project as an exploration tool, it often means it lacks focus or direction. Instead it looks like generic graphs that don't answer anything particular and leave all interpretation to the reader.
+
 
 ## Recap
 
