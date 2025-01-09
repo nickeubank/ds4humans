@@ -51,6 +51,40 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "nickeubank/ds4humans");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-RKDPB41DQ2"></script>
@@ -708,7 +742,7 @@ document.write(`
   <th>Date:</th>             <td>Thu, 09 Jan 2025</td> <th>  Prob (F-statistic):</th>  <td> 0.389</td>  
 </tr>
 <tr>
-  <th>Time:</th>                 <td>10:04:59</td>     <th>  Log-Likelihood:    </th> <td> -5768.3</td> 
+  <th>Time:</th>                 <td>18:31:50</td>     <th>  Log-Likelihood:    </th> <td> -5768.3</td> 
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  9919</td>      <th>  AIC:               </th> <td>1.154e+04</td>
@@ -886,7 +920,7 @@ Name: count, dtype: int64
   <th>Date:</th>             <td>Thu, 09 Jan 2025</td> <th>  Prob (F-statistic):</th> <td>1.76e-10</td> 
 </tr>
 <tr>
-  <th>Time:</th>                 <td>10:04:59</td>     <th>  Log-Likelihood:    </th> <td> -5748.0</td> 
+  <th>Time:</th>                 <td>18:31:50</td>     <th>  Log-Likelihood:    </th> <td> -5748.0</td> 
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  9919</td>      <th>  AIC:               </th> <td>1.150e+04</td>
@@ -1056,7 +1090,7 @@ Name: count, dtype: int64
   <th>Date:</th>             <td>Thu, 09 Jan 2025</td> <th>  Prob (F-statistic):</th> <td>3.67e-16</td> 
 </tr>
 <tr>
-  <th>Time:</th>                 <td>10:04:59</td>     <th>  Log-Likelihood:    </th> <td> -5735.2</td> 
+  <th>Time:</th>                 <td>18:31:50</td>     <th>  Log-Likelihood:    </th> <td> -5735.2</td> 
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  9919</td>      <th>  AIC:               </th> <td>1.148e+04</td>
@@ -1162,7 +1196,7 @@ c0            -0.0191      0.012     -1.634      0.102      -0.042       0.004
   <th>Date:</th>             <td>Thu, 09 Jan 2025</td> <th>  Prob (F-statistic):</th> <td>3.67e-16</td> 
 </tr>
 <tr>
-  <th>Time:</th>                 <td>10:04:59</td>     <th>  Log-Likelihood:    </th> <td> -5735.2</td> 
+  <th>Time:</th>                 <td>18:31:50</td>     <th>  Log-Likelihood:    </th> <td> -5735.2</td> 
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  9919</td>      <th>  AIC:               </th> <td>1.148e+04</td>
@@ -1240,7 +1274,7 @@ c0            -0.0191      0.012     -1.634      0.102      -0.042       0.004
   <th>Date:</th>             <td>Thu, 09 Jan 2025</td> <th>  Prob (F-statistic):</th>  <td> 0.124</td>  
 </tr>
 <tr>
-  <th>Time:</th>                 <td>10:04:59</td>     <th>  Log-Likelihood:    </th> <td> -5764.7</td> 
+  <th>Time:</th>                 <td>18:31:50</td>     <th>  Log-Likelihood:    </th> <td> -5764.7</td> 
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  9919</td>      <th>  AIC:               </th> <td>1.154e+04</td>
@@ -1373,7 +1407,7 @@ c0            -0.0006      0.000     -1.389      0.165      -0.001       0.000
   <th>Date:</th>             <td>Thu, 09 Jan 2025</td> <th>  Prob (F-statistic):</th>  <td> 0.124</td>  
 </tr>
 <tr>
-  <th>Time:</th>                 <td>10:04:59</td>     <th>  Log-Likelihood:    </th> <td> -5764.7</td> 
+  <th>Time:</th>                 <td>18:31:50</td>     <th>  Log-Likelihood:    </th> <td> -5764.7</td> 
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  9919</td>      <th>  AIC:               </th> <td>1.154e+04</td>
@@ -1453,7 +1487,7 @@ c0            -0.0006      0.000     -1.389      0.165      -0.001       0.000
   <th>Date:</th>             <td>Thu, 09 Jan 2025</td> <th>  Prob (F-statistic):</th> <td>2.82e-20</td> 
 </tr>
 <tr>
-  <th>Time:</th>                 <td>10:04:59</td>     <th>  Log-Likelihood:    </th> <td> -5717.1</td> 
+  <th>Time:</th>                 <td>18:31:50</td>     <th>  Log-Likelihood:    </th> <td> -5717.1</td> 
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  9919</td>      <th>  AIC:               </th> <td>1.144e+04</td>
