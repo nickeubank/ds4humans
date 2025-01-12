@@ -51,6 +51,40 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "nickeubank/ds4humans");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-RKDPB41DQ2"></script>
@@ -511,8 +545,8 @@ document.write(`
 <tbody>
 <tr class="row-even"><td><p>Th Jan 9</p></td>
 <td><p>Course Overview</p></td>
-<td><p>None</p></td>
-<td><p>Discuss Class</p></td>
+<td><p>Nothing</p></td>
+<td><p>Discuss logistics and structure</p></td>
 </tr>
 <tr class="row-odd"><td><p>Tu Jan 14</p></td>
 <td><p>Solving Problems by Answering Questions</p></td>
@@ -685,6 +719,16 @@ document.write(`
 <td></td>
 </tr>
 <tr class="row-odd"><td><p>Tu Mar 11</p></td>
+<td><p><strong>NO CLASS</strong></p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Th Mar 13</p></td>
+<td><p><strong>NO CLASS</strong></p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Tu Mar 18</p></td>
 <td><p>Causal Questions: Experiments in Practice, Design</p></td>
 <td><p>Designing Experiments</p>
 <ul class="simple">
@@ -694,28 +738,8 @@ document.write(`
 </td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>Th Mar 13</p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>Tu Mar 18</p></td>
-<td><p><strong>NO CLASS</strong></p></td>
-<td></td>
-<td></td>
-</tr>
 <tr class="row-even"><td><p>Th Mar 20</p></td>
-<td><p><strong>NO CLASS</strong></p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>Tu Mar 25</p></td>
-<td><p>Causal Questions: Experiments, Bayesian Analysis</p></td>
-<td><p>AB Testing Review</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Th Mar 27</p></td>
-<td><p>Causal Questions: Experiments, Bayesian Analysis &amp; Decision Theory</p></td>
+<td><p>Causal Questions: Experiments in Practice, P-Value Interpretation</p></td>
 <td><ul class="simple">
 <li><p>Statistical Decision Theory (on Canvas). 550-556</p></li>
 </ul>
@@ -723,12 +747,17 @@ document.write(`
 </td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>Tu Apr 16</p></td>
+<tr class="row-odd"><td><p>Tu Mar 25</p></td>
+<td><p>AB Testing Review</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Th Mar 27</p></td>
 <td><p><strong>MIDTERM</strong></p></td>
 <td><p><strong>MIDTERM</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>Th Apr 3</p></td>
+<tr class="row-odd"><td><p>Tu Apr 1</p></td>
 <td><p>Causal Questions: Regression</p></td>
 <td><ul class="simple">
 <li><p><a class="reference external" href="../35_causal/40_causal_inference_beyond_ab_testing.html">Causal Beyond Experiments</a></p></li>
@@ -736,7 +765,7 @@ document.write(`
 </td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>Tu Apr 8</p></td>
+<tr class="row-even"><td><p>Th Apr 3</p></td>
 <td><p>Causal Questions: Matching</p></td>
 <td><ul class="simple">
 <li><p><a class="reference external" href="../35_causal/80_matching_why.html">The Why of Matching</a></p></li>
@@ -747,7 +776,7 @@ document.write(`
 </td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>Th Apr 9</p></td>
+<tr class="row-odd"><td><p>Tu Apr 8</p></td>
 <td><p>Causal Questions: Differences and Differences / Panels</p></td>
 <td><ul class="simple">
 <li><p>Cunningham, Chpt 9 pp 406 (Difference in Differences) - pp 433 (Stop at “Importance of Placebos in Diff-in-Diff”)</p></li>
@@ -764,8 +793,13 @@ document.write(`
 </td>
 <td></td>
 </tr>
+<tr class="row-even"><td><p>Th Apr 9</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
 <tr class="row-odd"><td><p>Tu Apr 15</p></td>
-<td><p>Interpretation of Results</p></td>
+<td></td>
 <td><ul class="simple">
 <li><p><strong>Revised Exploratory Due along with Causal Proposal</strong></p></li>
 </ul>
