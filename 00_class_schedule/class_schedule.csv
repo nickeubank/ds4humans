@@ -3,7 +3,7 @@ Th Jan 9,Course Overview,Nothing,Discuss logistics and structure
 Tu Jan 14,Solving Problems by Answering Questions,"- `Read, sign, submit syllabus on gradescope. <https://github.com/nickeubank/ds4humans/raw/refs/heads/main/98_syllabus/Syllabus_IDS701.pdf?download=>`_
 - `How to Read <../40_in_practice/00_how_to_read_this_book.html>`_
 - `Chpt 1 <../10_introduction/10_solving_problems_with_data.html>`_ 
-   - **Whenever I list a Chpt number, you may assume it includes all subparts unless I say otherwise.** So this includes all three big idea subsections.",- `Questions Ex <../99_exercises/exercise_class2_probs_and_questions.html>`_
+   - **Whenever I list a Chpt number, you may assume it includes all subparts unless I say otherwise.** So this includes all three big idea subsections.",`Questions Ex <../99_exercises/exercise_class2_probs_and_questions.html>`_
 Th Jan 16,Stakeholder Management,"- `Chpt 3 <../20_problems_to_questions/10_solving_the_right_problem.html>`_
 - `Why It's Important To Get Your Question Right (30 min video) <https://www.youtube.com/watch?v=kYMfE9u-lMo>`_
 - `Chpt 4 <../20_problems_to_questions/20_stakeholder_management.html>`_",
@@ -11,18 +11,20 @@ Tu Jan 21,Proscriptive v. Descriptive Questions,"- `Chpt 2 <../10_introduction/4
 - `Chpt 5 <../30_questions/05_descriptive_v_prescriptive.html>`_",
 Th Jan 23,"Exploratory Questions: Purpose, Internal and External Validity","- `Chpt 6 <../30_questions/10_using_exploratory_questions.html>`_
 - `Chpt 7 <../30_questions/15_answering_exploratory_questions.html>`_",
-Tu Jan 28,Exploratory Questions: Internal Validity Concerns,- `Chpt 8 <../30_questions/16_exploratory_internal_challenges.html>`_,
-Th Jan 30,Teams 1,"- `What Project Aristotle Learned <https://github.com/nickeubank/unifyingdatascience/raw/master/team_readings/project_aristotle_nytimes.pdf>`_
-- Edmondson, The Fearless Organization, Chpt 1 (on Canvas)",
-Tu Feb 4,Teams 2,"- `Review Team Charter Assignment <https://github.com/nickeubank/unifyingdatascience/raw/master/team_readings/MIDS%20Team%20Charter%20Assignment.docx>`_
+Tu Jan 28,Teams 1,"- `What Project Aristotle Learned <https://github.com/nickeubank/unifyingdatascience/raw/master/team_readings/project_aristotle_nytimes.pdf>`_
+- Edmondson, The Fearless Organization, Chpt 1 (on Canvas)
+- **Problem and Questions Due**",
+Th Jan 30,Teams 2,"- `Review Team Charter Assignment <https://github.com/nickeubank/unifyingdatascience/raw/master/team_readings/MIDS%20Team%20Charter%20Assignment.docx>`_
 - Edmondson, Teaming, Chpt 2 from ""Cognitive Barriers to Teaming"" (p. 82) to end of Chapter (on Canvas)
 - Cross Cultural Intelligence
 - When and How to Escalate
  
  Optional: `Fostering Psychological Safety Tips <https://docs.google.com/document/d/1PsnDMS2emcPLgMLFAQCXZjO7C4j2hJ7znOq_g2Zkjgk/export?format=pdf>`_",
+Tu Feb 4,Exploratory Questions: Internal Validity Concerns,- `Chpt 8 <../30_questions/16_exploratory_internal_challenges.html>`_,
 Th Feb 6,Passive Prediction Questions: Purpose and Alignment,"- `Using Passive Prediction <20_using_passive_prediction_questions.html>`_
 - `Answering Passive Prediction <30_questions/25_answering_passive_prediction.html>`_",
-Tu Feb 11,Passive Prediction Questions: Internal and External Validity,- `Right Way To Be Wrong <30_questions/26_passive_prediction_errors.md>`_,
+Tu Feb 11,Passive Prediction Questions: Internal and External Validity,"- `Right Way To Be Wrong <30_questions/26_passive_prediction_errors.md>`_
+- **Exploratory Report Due**",
 Th Feb 13,Giving Feedback,Feedback Exercise?,
 Tu Feb 18,Passive Prediction Questions: Interpretability,"- `Stop Using Black Boxes <https://arxiv.org/abs/1811.10154>`_
 - `Black box models require trusting data too <https://www.nytimes.com/2017/06/13/opinion/how-computers-are-harming-criminal-justice.html>`_
