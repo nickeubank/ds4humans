@@ -1,0 +1,31 @@
+
+# (3) Relevant
+
+> Generating answers that are (1) understandable, (2) faithfully represent patterns in the data, and **(3) are relevant given the problem one is seeking to solve.**
+
+Inherent in creating any summarization is exercising discretion over what variation is relevant (signal) and what variation is not (noise). But just as one person's trash may be another person's treasure, so too may one person's signal be another person's noise, depending on their goals! Crucially, then, the data scientists' guiding star when deciding what is important is whether certain variation in the data is *relevant to the stakeholder's problem*.
+
+As data scientists, we are blessed with an abundance of tools for characterizing different facets of our data. These range from the simple — means, standard deviations, and scatter plots — to the profoundly sophisticated, like clustering algorithms, principal component analyses, and semi-parametric generalized additive models.
+
+Regardless of the specific methods being employed, however, none of these tools can really tell us whether the patterns they identify are meaningful or relevant, and that's because what constitutes a meaningful pattern depends on the problem the stakeholder is seeking to address and the context in which they're operating.
+
+To illustrate the importance of context, suppose you are hired by a hospital to learn what can be done to reduce antibiotic-resistant infections. So you grab data on the various bacteria that had been infecting patients and write a web scraper and Natural Language Processing pipeline to systematically summarize all available research on the cause of these antibiotic-resistant bacteria. Your work is *amazing*, seriously top of the line, and after two months you conclude that in most cases, the cause of antibiotic resistance in the bacteria infecting patients is... the use of antibiotics in livestock.
+
+Now, that analysis may not be *wrong* — you have properly characterized a pattern in the data — but it isn't a pattern that's meaningful to your stakeholder, who has no ability to regulate the livestock industry. That pattern might be meaningful to someone else — like a government regulator — but in this context, with this stakeholder, it just isn't helpful. The features of the data that are important, in other words, depend on what we may be able to do in response to what we learn. And there's no summary statistic, information criterion, or divergence metric that can evaluate whether a pattern of this type is *relevant*.
+
+
+### The Concept of "Best" and Myopic Tools
+
+In our discussion of ensuring that the data summaries one gets from different statistical or unsupervised machine learning tools faithfully represent patterns in the data, I made the point that these tools will *always* provide an answer, regardless of whether it actually tells you much about the data. Tools for answering Exploratory Questions tend to either be simple definitional tools (means, medians, standard deviations) or operate by trying to minimize a loss function (unsupervised machine learning). In the case of definitional tools, the result is the result, even if that means providing a mean that sits neatly in the middle of a bimodal distribution. In the case of algorithms that minimize a loss function, the algorithm will provide the "best" answer (the answer that minimizes the loss function) regardless of whether it's a *good* answer.
+
+There is, however, a second layer to this problem of myopia. Data science tools are incredibly powerful at finding answers to questions of the form "If my goal is to minimize X, how should I do it?" type questions — answers you may have never figured out in millions of years! — but their power lies in figuring out the best way to accomplish an articulated goal, *not* in figuring out what goal to pursue.
+
+This is true at both the macro level (doesn't make sense to look for clusters in my data?) and also at the micro level (when assigning observations to clusters, how do I measure success?). Hidden inside nearly all algorithms you use are a handful of baked-in choices you may not even realize are being made for you. Take clustering, for example. In general, when clustering observations, one has two objectives: maximize the similarity of observations within each cluster and maximize the *dis*similarity of observations in different clusters. But what you might not have thought about very much is that there's an inherent tension between these two objectives — after all, the best way to maximize the similarity of observations within each cluster is to only assign observations to the same cluster if they are identical (a choice that creates lots and lots of very small clusters). And the best way to maximize *dis*similarity between clusters is to only put *really really* different observations in different clusters (resulting in a few really big clusters). So how is your clustering algorithm balancing these two considerations? Is the algorithm's choice of how to balance them in any way a reflection of the balance that makes the most sense in the context of your stakeholder's problem? (I'll give you a hint — the algorithm sure can't answer that question, so you'd better be able to!)
+
+Discretion: it's everywhere, and you're exercising it, whether you realize it or not.
+
+## Recap
+
+The internal validity of an analysis is the degree to which we feel the analysis has properly characterized the underlying patterns and structure in the data being studied. One aspect of internal validity — the aspect most of us have been exposed to our introductory statistics or machine learning courses — is specific to the tool being used, and can often be evaluated by mathematical or statistical means. "Is your regression properly specified?" is a question that can be answered, in part, by looking at your residuals and other diagnostic statistics. 
+
+When it comes to answering Exploratory Questions, however, there is also an aspect of internal validity that cannot be evaluated statistically — namely, are the answers you generated understandable, are they meaningful given the problem you are trying to solve, and do they faithfully represent the underlying patterns in the data? In many ways, these are harder questions to answer, but they are every bit as important.

@@ -41,21 +41,27 @@ parts:
           - file: 30_questions/07_eda
             title: 'Exploratory Qs and the Scourge of "EDA"'
       - file: 30_questions/15_answering_exploratory_questions
-        title: "Ch 7: Answering Exploratory Qs"
+        title: "Ch 7: Internal and External Validity"
+      - file: 30_questions/16_answering_exploratory_internal
+        title: "Ch 8: Internal Validity and Exploratory Qs"
         sections:
-          - file: 30_questions/17_exploratory_internal_challenges
-            title: Internal Validity and Exploratory Qs
+          - file: 30_questions/17_exploratory_internal_understandable
+            title: "1: Understandable"
+          - file: 30_questions/18_exploratory_internal_faithful
+            title: "2: Faithful"
+          - file: 30_questions/19_exploratory_internal_meaningful
+            title: "3: Relevant"
       - file: 30_questions/20_using_passive_prediction_questions
-        title: "Ch 8: Passive Predictive Qs"
+        title: "Ch 9: Passive Predictive Qs"
         sections:
           - file: 30_questions/23_passive_prediction_internal
           - file: 30_questions/24_passive_prediction_external
       - file: 30_questions/26_passive_prediction_errors
-        title: "Ch 9: The Right Way To Be Wrong"
+        title: "Ch 10: The Right Way To Be Wrong"
       - file: 30_questions/27_interpretable_models
-        title: "Ch 10: Interpretable Models"
+        title: "Ch 11: Interpretable Models"
       - file: 30_questions/30_using_causal_questions
-        title: "Ch 11: Causal Qs"
+        title: "Ch 12: Causal Qs"
         sections:
           - file: 30_questions/40_answering_causal_questions
   - caption: Causal Inference
