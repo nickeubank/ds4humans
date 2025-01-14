@@ -5,7 +5,10 @@ Class: Tuesday / Thursday, 1:25-2:40pm
 
 Office Hours: 
 
-- Nick: Thursday, 9:30-10:30am, `https://duke.zoom.us/my/nickeubank <https://duke.zoom.us/my/nickeubank>`_ or Gross Hall 231
+- Nick: Thursday, 9-10am, `https://duke.zoom.us/my/nickeubank <https://duke.zoom.us/my/nickeubank>`_ or Gross Hall 231
+- Katie: Tuesday 9-10am
+- Keon: Wednesday 2-3pm
+- Gunel: Thursday 3-4pm
 
 Texts Used
 ----------
