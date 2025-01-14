@@ -42,7 +42,7 @@ parts:
             title: 'Exploratory Qs and the Scourge of "EDA"'
       - file: 30_questions/15_answering_exploratory_questions
         title: "Ch 7: Internal and External Validity"
-      - file: 30_questions/16_answering_exploratory_internal
+      - file: 30_questions/16_exploratory_internal_challenges
         title: "Ch 8: Internal Validity and Exploratory Qs"
         sections:
           - file: 30_questions/17_exploratory_internal_understandable

@@ -11,19 +11,19 @@ Tu Jan 21,Proscriptive v. Descriptive Questions,"- `Chpt 2 <../10_introduction/4
 - `Chpt 5 <../30_questions/05_descriptive_v_prescriptive.html>`_",
 Th Jan 23,"Exploratory Questions: Purpose, Internal and External Validity","- `Chpt 6 <../30_questions/10_using_exploratory_questions.html>`_
 - `Chpt 7 <../30_questions/15_answering_exploratory_questions.html>`_",
-Tu Jan 28,Teams 1,"- `What Project Aristotle Learned <https://github.com/nickeubank/unifyingdatascience/raw/master/team_readings/project_aristotle_nytimes.pdf>`_
+Tu Jan 28,Exploratory Questions: Internal Validity Concerns,- `Chpt 8 <../30_questions/16_exploratory_internal_challenges.html>`_,
+Th Jan 30,Teams 1,"- `What Project Aristotle Learned <https://github.com/nickeubank/unifyingdatascience/raw/master/team_readings/project_aristotle_nytimes.pdf>`_
 - Edmondson, The Fearless Organization, Chpt 1 (on Canvas)",
-Th Jan 30,Teams 2,"- `Review Team Charter Assignment <https://github.com/nickeubank/unifyingdatascience/raw/master/team_readings/MIDS%20Team%20Charter%20Assignment.docx>`_
+Tu Feb 4,Teams 2,"- `Review Team Charter Assignment <https://github.com/nickeubank/unifyingdatascience/raw/master/team_readings/MIDS%20Team%20Charter%20Assignment.docx>`_
 - Edmondson, Teaming, Chpt 2 from ""Cognitive Barriers to Teaming"" (p. 82) to end of Chapter (on Canvas)
 - Cross Cultural Intelligence
 - When and How to Escalate
  
  Optional: `Fostering Psychological Safety Tips <https://docs.google.com/document/d/1PsnDMS2emcPLgMLFAQCXZjO7C4j2hJ7znOq_g2Zkjgk/export?format=pdf>`_",
-Tu Feb 4,Passive Prediction Questions: Purpose and Alignment,"- `Using Passive Prediction <20_using_passive_prediction_questions.html>`_
+Th Feb 6,Passive Prediction Questions: Purpose and Alignment,"- `Using Passive Prediction <20_using_passive_prediction_questions.html>`_
 - `Answering Passive Prediction <30_questions/25_answering_passive_prediction.html>`_",
-Th Feb 6,Passive Prediction Questions: Internal and External Validity,- `Right Way To Be Wrong <30_questions/26_passive_prediction_errors.md>`_,
-Tu Feb 11,Giving Feedback,Feedback Exercise?,
-Th Feb 13,Passive Prediction Questions: Loss Functions,,
+Tu Feb 11,Passive Prediction Questions: Internal and External Validity,- `Right Way To Be Wrong <30_questions/26_passive_prediction_errors.md>`_,
+Th Feb 13,Giving Feedback,Feedback Exercise?,
 Tu Feb 18,Passive Prediction Questions: Interpretability,"- `Stop Using Black Boxes <https://arxiv.org/abs/1811.10154>`_
 - `Black box models require trusting data too <https://www.nytimes.com/2017/06/13/opinion/how-computers-are-harming-criminal-justice.html>`_
  
@@ -84,7 +84,7 @@ Tu Apr 8,Causal Questions: Differences and Differences / Panels,"- Cunningham, C
  
  - `Enfranchisement and Incarceration <https://www.cambridge.org/core/journals/american-political-science-review/article/enfranchisement-and-incarceration-after-the-1965-voting-rights-act/C68FA7BB8CA313BDD8D9A39BA666A21D>`_
  - `Diff-in-Diffs at Netflix <https://netflixtechblog.com/key-challenges-with-quasi-experiments-at-netflix-89b4f234b852>`_",
-Th Apr 9,,,
+Th Apr 9,,x,
 Tu Apr 15,,- **Revised Exploratory Due along with Causal Proposal**,
 "Wed, April 23",,- **Optional Due Date for Causal Rough Draft (11pm)**,
 "Wed, Apr 30",,- **Final Causal Report Due**,
