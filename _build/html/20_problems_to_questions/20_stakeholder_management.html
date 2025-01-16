@@ -268,10 +268,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/20_using_passive_prediction_questions.html">Ch 9: Passive Predictive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../30_questions/23_passive_prediction_internal.html">Passive Prediction Questions and Internal Validity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../30_questions/24_passive_prediction_external.html">Passive Prediction Questions and External Validity</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../30_questions/26_passive_prediction_errors.html">Ch 10: The Right Way To Be Wrong</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../30_questions/27_interpretable_models.html">Performance Differential Is (Often) A Myth</a></li>
 
 
@@ -503,18 +501,27 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-0-recognize-your-role">Step 0: Recognize Your Role</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-don-t-assume-your-stakeholder-knows-what-they-need">Step 1: Don’t Assume Your Stakeholder Knows What They Need</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-ask-questions-especially-quantitative-ones">Step 3: Ask Questions (Especially Quantitative Ones!)</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principles-for-stakeholder-management">Principles for Stakeholder Management</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#principle-0-your-job-is-to-help-solve-your-stakeholder-s-problem">Principle 0: Your Job is to Help Solve Your Stakeholder’s Problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#principle-1-your-job-is-to-be-a-problem-solving-partner">Principle 1: Your Job is to be a Problem-Solving <em>Partner</em></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#confusing-domain-expertise-for-global-expertise">Confusing Domain Expertise for Global Expertise</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#confusing-your-stakeholder-for-a-professor">Confusing Your Stakeholder for a Professor</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#not-having-confidence-in-your-own-knowledge">Not Having Confidence In Your Own Knowledge</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#principle-2-don-t-assume-your-stakeholder-knows-what-they-need">Principle 2: Don’t Assume Your Stakeholder Knows What They Need</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#principle-3-stakeholder-time-is-precious">Principle 3: Stakeholder Time Is Precious</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#principle-4-iterate">Principle 4: Iterate</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strategies-for-stakeholder-communication">Strategies for Stakeholder Communication</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-ask-questions-especially-quantitative-ones">Step 3: Ask Questions (Especially Quantitative Ones!)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-about-success">Questions About Success</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-about-the-problem">Questions About the Problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strategy-1-propose-questions-you-might-answer">Strategy 1: Propose Questions You Might Answer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strategy-2-make-your-questions-specific-and-actionable">Strategy 2: Make Your Questions Specific and Actionable</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-propose-questions-you-might-answer">Step 4: Propose Questions You Might Answer</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-your-questions-specific-and-actionable">Make Your Questions Specific and Actionable</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-iterate">Step 5: Iterate</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-reflection-questions">Reading Reflection Questions</a></li>
 </ul>
             </nav>
@@ -529,14 +536,48 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="stakeholder-management">
 <h1>Stakeholder Management<a class="headerlink" href="#stakeholder-management" title="Link to this heading">#</a></h1>
-<p>stuff</p>
-<section id="step-0-recognize-your-role">
-<h2>Step 0: Recognize Your Role<a class="headerlink" href="#step-0-recognize-your-role" title="Link to this heading">#</a></h2>
-<p>If you remember nothing else from this chapter, please remember this: helping your stakeholder better understand their problem is a core part of the job.</p>
-<p>Because most stakeholders are older and domain experts in their field, young data scientists tend to err on the side of deference. It is important to be respectful of your stakeholder’s experience and to use their domain expertise, but it is important to also recognize that data science is about <em>pairing</em> domain expertise with computational methods and quantitative insights, and neither you nor your stakeholder is likely to have expertise in <em>both</em> the substantive domain in question <em>and</em> cutting edge quantitative methods. Indeed, if they did, they probably wouldn’t be hiring you!<a class="footnote-reference brackets" href="#google" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> So don’t hesitate to speak up! Ask questions, raise concerns, and while you should do so with <em>some</em> humility, have confidence in your own expertise.</p>
+<p>In our previous two readings, I detailed why it’s critically important to spend as much time understanding the problem you wish to solve as actually developing a solution. But throughout that discussion, I implicitly simplified the discussion by treating you — the reader — as the key stakeholder.</p>
+<p>If you’re fortunate enough to be your own stakeholder — either because you are working in a startup, or are an academic doing your own research — congratulations! You get to apply the preceding lessons directly to solve the problem(s) you care about most.</p>
+<p>But for everyone else, it’s time to engage with one of the most difficult aspects of being a data scientist: stakeholder management.</p>
+<p>For most data scientists, between you and the problem you are being asked to solve will almost always sit a group of key stakeholders. In most cases, the problem you are being asked to solve will actually be <em>their</em> problem, they will be the source of most of the domain knowledge you will need to solve their problem successfully, and they will also be the actors who will be responsible for evaluating you at the end of the project.</p>
+<p>In this chapter, we will discuss principles and strategies for working effectively with stakeholders. This is a critically important skill — as noted above, these will generally be the people responsible for evaluating you at the end of the project! — but one many data scientists fail to recognize is categorically different from the “professor management” they have been practicing for years. It requires deliberate cultivation, reflection, and a recognition that as a professional data scientist, it is now incumbent upon you to see yourself as a <em>partner</em> and <em>colleague</em> to the stakeholders you work with, not a simple subordinate.</p>
+<section id="principles-for-stakeholder-management">
+<h2>Principles for Stakeholder Management<a class="headerlink" href="#principles-for-stakeholder-management" title="Link to this heading">#</a></h2>
+<section id="principle-0-your-job-is-to-help-solve-your-stakeholder-s-problem">
+<h3>Principle 0: Your Job is to Help Solve Your Stakeholder’s Problem<a class="headerlink" href="#principle-0-your-job-is-to-help-solve-your-stakeholder-s-problem" title="Link to this heading">#</a></h3>
+<p>The first Principle of stakeholder management is that you will be evaluated on whether, at the end of your engagement, you’ve solved your stakeholder’s problem, <strong>not</strong> whether you did precisely what they asked you to do. I’ve made this point twice before, but it is important enough it bears repeating a third time.</p>
+<p>That means that if you just follow your stakeholders directions — even when your expertise suggests to you that those directions aren’t the best way to solve a problem — you will <em>not</em> find your stakeholder will be delighted by your skill despite finding they are no better off for having hired you.</p>
 </section>
-<section id="step-1-don-t-assume-your-stakeholder-knows-what-they-need">
-<h2>Step 1: Don’t Assume Your Stakeholder Knows What They Need<a class="headerlink" href="#step-1-don-t-assume-your-stakeholder-knows-what-they-need" title="Link to this heading">#</a></h2>
+<section id="principle-1-your-job-is-to-be-a-problem-solving-partner">
+<h3>Principle 1: Your Job is to be a Problem-Solving <em>Partner</em><a class="headerlink" href="#principle-1-your-job-is-to-be-a-problem-solving-partner" title="Link to this heading">#</a></h3>
+<p>The biggest mistake that young data scientists make when working with stakeholders for the first time is being overly deferential to their stakeholders. This is certainly an understandable mistake, but a mistake nevertheless, given Principle 0.</p>
+<p>Where does this deference come from? I feel is borne from three misperceptions.</p>
+<section id="confusing-domain-expertise-for-global-expertise">
+<h4>Confusing Domain Expertise for Global Expertise<a class="headerlink" href="#confusing-domain-expertise-for-global-expertise" title="Link to this heading">#</a></h4>
+<p>Most stakeholders you work with will be domain experts in their field, and — at least early in your career — will often be more senior. As a result, there is a natural tendency for young data scientists to err on the side of deference.</p>
+<p>While it is important to be respectful of your stakeholder’s domain expertise, it is just as important to recognize <strong>that data science is about <em>pairing</em> domain expertise with computational methods</strong>. And while your stakeholder will almost certainly have greater domain knowledge than you, it is very unlikely they will also know more than you about cutting edge quantitative methods. Indeed, if they did, they probably wouldn’t be hiring you!<a class="footnote-reference brackets" href="#google" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+<aside class="sidebar">
+<p>Data science is about <em>pairing</em> domain expertise with computational methods and quantitative insights, and neither you nor your stakeholder is likely to have expertise in <em>both</em> the substantive domain in question <em>and</em> cutting edge quantitative methods.</p>
+</aside>
+<p>One factor that feeds into this misconception is that most stakeholders know <em>just enough</em> data science to throw around lots of jargon, giving young data science students the (mistaken) impression that their stakeholders know just as much about data science as they know about their domain. But, again, this is almost never the case.</p>
+</section>
+<section id="confusing-your-stakeholder-for-a-professor">
+<h4>Confusing Your Stakeholder for a Professor<a class="headerlink" href="#confusing-your-stakeholder-for-a-professor" title="Link to this heading">#</a></h4>
+<p>Because they’ve never been trained to do anything else, many young data scientists treat their stakeholders the same way they would their professors — as people who know what the right answer looks like, and who should thus be deferred to in determining the right way to solve a problem. But this is a mistaken understanding of both (a) what a professor does in class, and (b) what makes someone a stakeholder.</p>
+<p>A professor (in theory) is someone whose job is to help you achieve a set of specific learning goals. And when they give you an assignment, that assignment has (again, in theory) been developed to help you achieve those learning goals. Assignments from a professor, in other words, are designed with a clear goal in mind and a structure designed to achieve that goal. As a result, professors do generally know everything (or close to everything) there is to know about how to approach an assignment.</p>
+<p><strong>A stakeholder, by contrast, is just a person with a problem.</strong> They may have some <em>ideas</em> for how to solve their problem, but whatever possible solutions they bring to the table are just that: <em>ideas</em>.</p>
+<p>Remember: your time as a data scientist is <em>valuable and expensive</em>. If your stakeholder already knew how to solve their problem, they wouldn’t be paying you for your time. No, the reason your stakeholder is coming to you is that they don’t know what the solution to their problem will look like, and they need help figuring that out.</p>
+<p>That doesn’t mean that a stakeholder won’t come to you with a set of suggestions for how you might start to address a problem, but as we’ll discuss below, these should be viewed as suggestions from a colleague, not directions like those from a professor in a class.</p>
+</section>
+<section id="not-having-confidence-in-your-own-knowledge">
+<h4>Not Having Confidence In Your Own Knowledge<a class="headerlink" href="#not-having-confidence-in-your-own-knowledge" title="Link to this heading">#</a></h4>
+<p>It is often said that “The more you know, the more you realize you don’t know.”<a class="footnote-reference brackets" href="#aristotle" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> And I’d be hard-pressed to find another field where I think this is more common than in data science. The field is expanding so rapidly and in so many directions, that it is only by learning a lot that one can really appreciate the range of frontiers of knowledge that one has only begun to explore.</p>
+<p>And on the other side of the spectrum, <em>far</em> too many people have fit a regression tree in scikit-learn and gotten a high accuracy score, and have taken that as evidence that they are expert data scientists.</p>
+<p>All of which is to say: young data scientists tend to approach the world with an appropriate humility that comes from serious study. But don’t confuse that appropriate humility for a lack of expertise. And just as importantly, don’t confuse the apparent confidence of others for evidence that they know more than you — all too often, the opposite will be true (the fact confidence and knowledge are often negatively correlated is a cognitive bias referred to as the <a class="reference external" href="https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect">Dunning-Kruger effect</a>)!</p>
+</section>
+</section>
+<section id="principle-2-don-t-assume-your-stakeholder-knows-what-they-need">
+<h3>Principle 2: Don’t Assume Your Stakeholder Knows What They Need<a class="headerlink" href="#principle-2-don-t-assume-your-stakeholder-knows-what-they-need" title="Link to this heading">#</a></h3>
 <p>A corollary to Step 0 is to not assume your stakeholder understands what they need. So when I say “helping your stakeholder understand their problem is a core part of the job,” I don’t only mean that it’s part of your job <em>if the stakeholder admits to deep uncertainty about their problem</em>.” Odds are your stakeholder will come to you with a strong statement of what they think they want, but you should take that as a starting point for discussion, not your mandate.</p>
 <p>This is particularly true if your stakeholder comes to you with really specific technical suggestions. Often you will be approached by a stakeholder who, rather than laying out a problem, announces they would like you to do X using some data science tool Y. Occasionally the stakeholder doing this knows exactly what they’re talking about, and you should use Y to do X.</p>
 <p>More often, however, you’re dealing with a stakeholder with just enough knowledge to be dangerous (and to drop buzzwords), but not enough to know how best to solve their problem.</p>
@@ -545,9 +586,26 @@ document.write(`
 <p>Focus on the stakeholder’s <em>needs</em>. Only get into implementation details once you feel you understand the problem well.</p>
 </aside>
 </section>
+<section id="principle-3-stakeholder-time-is-precious">
+<h3>Principle 3: Stakeholder Time Is Precious<a class="headerlink" href="#principle-3-stakeholder-time-is-precious" title="Link to this heading">#</a></h3>
+<p>It is always good to go into meetings with your stakeholder with a clear sense of your objectives — what you hope to communicate, and what information and feedback you need to get before the meeting ends. When your stakeholder is someone you don’t get to meet with regularly, it’s good practice to detail these objectives and provide them — in writing — to your stakeholder in advance of your meeting. This will not only ensure that you and your teammates are on the same page (as you will all have reviewed the document before sending it to your stakeholder), but also ensure that your stakeholder has adequete time to reflect on any questions or issues you wish to raise.</p>
+<p>When it comes to your <em>first</em> meeting, however, this practice can feel impractical as you may feel so uncertain about the project that you only know the first few questions you want to ask.</p>
+<p>But even in a first meeting, preparation is key. Rather than laying out the new issues you wish to raise and questions you want answered, for a first meeting it’s helpful to write out a full <em>tree</em> of lines of inquiry you may wish to propose. In other words, for every question you wish to pose to your stakeholder, try to anticipate some likely responses they make provide, then write down a few followup questions to ask if they provide one of those responses.</p>
+<p>Time with your stakeholder is <em>precious</em>, especially early in a project, make the most of that face time through preparation.</p>
+</section>
+<section id="principle-4-iterate">
+<h3>Principle 4: Iterate<a class="headerlink" href="#principle-4-iterate" title="Link to this heading">#</a></h3>
+<p>And here’s the last but perhaps most important step: <strong>iterate.</strong> Bring your work back to your stakeholder as often as possible.</p>
+<p>Many stakeholders find the idea of data science mysterious and abstract and will struggle to understand what is and is not feasible. By bringing them intermediate results, the whole process will start to become more concrete for the stakeholder, and it will help them provide you with better feedback.</p>
+<p>The way this book is organized suggests a natural flow from problem articulation to answering Exploratory Questions to prioritize efforts, to answering Passive-Prediction Questions to target individuals for extra attention or automate tasks, and finally to Causal Questions to better understand the effects of that extra attention/automation. In reality, however, a good data scientist is always coming back to the stakeholder, updating their plan, and jumping back in the sequence when new questions arise.</p>
+</section>
+</section>
+<section id="strategies-for-stakeholder-communication">
+<h2>Strategies for Stakeholder Communication<a class="headerlink" href="#strategies-for-stakeholder-communication" title="Link to this heading">#</a></h2>
 <section id="step-3-ask-questions-especially-quantitative-ones">
-<h2>Step 3: Ask Questions (Especially Quantitative Ones!)<a class="headerlink" href="#step-3-ask-questions-especially-quantitative-ones" title="Link to this heading">#</a></h2>
+<h3>Step 3: Ask Questions (Especially Quantitative Ones!)<a class="headerlink" href="#step-3-ask-questions-especially-quantitative-ones" title="Link to this heading">#</a></h3>
 <p>Be sure to ask a lot of questions of your stakeholder. In particular, I would suggest two types: questions about what success would look like, and questions about the problem itself.</p>
+</section>
 <section id="questions-about-success">
 <h3>Questions About Success<a class="headerlink" href="#questions-about-success" title="Link to this heading">#</a></h3>
 <p>Getting a sense of where the goalposts are for your stakeholder will both help you know what to target and also help you better understand your stakeholder’s understanding of the problem. Make sure to ask questions like:</p>
@@ -560,7 +618,7 @@ document.write(`
 <section id="questions-about-the-problem">
 <h3>Questions About the Problem<a class="headerlink" href="#questions-about-the-problem" title="Link to this heading">#</a></h3>
 <p>The more you know about your client’s needs the better, so ask anything that comes to mind. If the client can answer your question, it will help you better understand the situation; if the client can’t answer your question you may find that they are suddenly really interested in knowing the answer, and you immediately have some of your first Exploratory Questions to try to resolve.</p>
-<p>In the example of the company that wanted to improve recruitment of high-quality employees in the introduction of this book, I suggested that some of the first Exploratory Questions you might want to investigate would be things like:</p>
+<p>In the example of the company that wanted to improve recruitment of high-quality employees in the introduction of this book, I suggested that some of the first exploratory questions you might want to investigate would be things like:</p>
 <ul class="simple">
 <li><p>How many job applications are you receiving when you post a job?</p></li>
 <li><p>What share of your current job applicants are of high quality?</p></li>
@@ -568,32 +626,19 @@ document.write(`
 <li><p>What share of employees you do hire turn out to be successful employees?</p></li>
 </ul>
 <p>These are all questions that I would ask my stakeholder in one of our first meetings.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Stakeholder Meetings
-It is always good to go into meetings with your stakeholder with a clear sense of your objectives — what you hope to communicate, and what information and feedback you need to get before the meeting ends. When your stakeholder is someone you don’t get to meet with regularly, it’s good practice to detail these objectives and provide them — in writing — to your stakeholder in advance of your meeting. This will not only ensure that you and your teammates are on the same page (as you will all have reviewed the document before sending it to your stakeholder), but also ensure that your stakeholder has adequete time to reflect on any questions or issues you wish to raise.</p>
-<p>When it comes to your <em>first</em> meeting, however, this practice can feel impractical as you may feel so uncertain about the project that you only know the first few questions you want to ask.</p>
-<p>But even in a first meeting, preparation is key. Rather than laying out the new issues you wish to raise and questions you want answered, for a first meeting it’s helpful to write out a full <em>tree</em> of lines of inquiry you may wish to propose. In other words, for every question you wish to pose to your stakeholder, try to anticipate some likely responses they make provide, then write down a few followup questions to ask if they provide one of those responses.</p>
-<p>Time with your stakeholder is <em>precious</em>, especially early in a project, make the most of that face time through preparation.</p>
-</div>
 </section>
-</section>
-<section id="step-4-propose-questions-you-might-answer">
-<h2>Step 4: Propose Questions You Might Answer<a class="headerlink" href="#step-4-propose-questions-you-might-answer" title="Link to this heading">#</a></h2>
+<section id="strategy-1-propose-questions-you-might-answer">
+<h3>Strategy 1: Propose Questions You Might Answer<a class="headerlink" href="#strategy-1-propose-questions-you-might-answer" title="Link to this heading">#</a></h3>
 <p>As a data scientist, answering questions about the world is the instrument you have to solve problems. So once you think you have a sense of your stakeholder’s needs, turn around and propose a handful of questions and ask them if answering those questions would help solve their problem.</p>
 <p>This is important because many people have only a vague sense of what they are likely to get as a “deliverable” from the data scientist. They usually have a vague sense that they will get some type of magic machine (a “magic model” or “magic algorithm”) that will just make their problem go away. By concretely framing your deliverable as the answer to a question (or a model that would answer a specific question for each entity like a customer or patient that it encounters), you can get much more valuable feedback before you dive into a problem.</p>
-<section id="make-your-questions-specific-and-actionable">
-<h3>Make Your Questions Specific and Actionable<a class="headerlink" href="#make-your-questions-specific-and-actionable" title="Link to this heading">#</a></h3>
+</section>
+<section id="strategy-2-make-your-questions-specific-and-actionable">
+<h3>Strategy 2: Make Your Questions Specific and Actionable<a class="headerlink" href="#strategy-2-make-your-questions-specific-and-actionable" title="Link to this heading">#</a></h3>
+<p>[tend to ]</p>
 <p>In developing your questions, it is important to make them specific and actionable. A specific and actionable question makes it very clear what you need to do next. For example, suppose an international aid organization told you they were worried that urbanization in Africa, Asia, and Latin America was impacting efforts to reduce infant mortality. Some examples of specific, actionable questions are: “Is infant mortality higher among recent migrants to urban centers, controlling for income?” or “Are the causes of infant mortality among recent migrants to urban centers different from those living in rural areas?” Reading those questions, you can probably immediately think of what data you’d need to collect, and what regressions you’d want to run to generate answers to those questions.</p>
 <p>Vague questions would be “Is urbanization impacting efforts to reduce infant mortality?”, or “Does urbanization affect infant mortality?” Note that when you read these, they don’t seem to obviously imply a way forward.</p>
 <p>Perhaps the best way to figure out if your question is answerable is to write down what an answer to your question would look like. Seriously – try it. Can you write down, on a piece of paper, the graph, regression table, or machine learning diagnostic statistics (complete with labels on your axes, names for variables, etc.) that would constitute an answer to your question? If not, it’s probably too vague.</p>
 </section>
-</section>
-<section id="step-5-iterate">
-<h2>Step 5: Iterate<a class="headerlink" href="#step-5-iterate" title="Link to this heading">#</a></h2>
-<p>And here’s the last but perhaps most important step: <strong>iterate.</strong> Bring your work back to your stakeholder as often as possible.</p>
-<p>Many stakeholders find the idea of data science mysterious and abstract and will struggle to understand what is and is not feasible. By bringing them intermediate results, the whole process will start to become more concrete for the stakeholder, and it will help them provide you with better feedback.</p>
-<p>The way this book is organized suggests a natural flow from problem articulation to answering Exploratory Questions to prioritize efforts, to answering Passive-Prediction Questions to target individuals for extra attention or automate tasks, and finally to Causal Questions to better understand the effects of that extra attention/automation. In reality, however, a good data scientist is always coming back to the stakeholder, updating their plan, and jumping back in the sequence when new questions arise.</p>
 </section>
 <section id="reading-reflection-questions">
 <h2>Reading Reflection Questions<a class="headerlink" href="#reading-reflection-questions" title="Link to this heading">#</a></h2>
@@ -604,7 +649,11 @@ It is always good to go into meetings with your stakeholder with a clear sense o
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="google" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p>Obviously there are exceptions to this — if you work for a mature tech company like Google or Meta, you may very well end up working under a manager who knows sides of a problem significantly better than you. In my experience, however, is circumstance is the exception, not the rule.</p>
+<p>Obviously there are exceptions to this — if you work for a mature tech company like Google or Meta, you may very well end up working under a manager who knows both sides of a problem significantly better than you. In my experience, however, this circumstance is the exception, not the rule.</p>
+</aside>
+<aside class="footnote brackets" id="aristotle" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>This is commonly attributed to Aristotle, though I don’t think it’s more of a paraphrase of things he wrote than an actual quote.</p>
 </aside>
 </aside>
 </section>
@@ -674,18 +723,27 @@ It is always good to go into meetings with your stakeholder with a clear sense o
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-0-recognize-your-role">Step 0: Recognize Your Role</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-don-t-assume-your-stakeholder-knows-what-they-need">Step 1: Don’t Assume Your Stakeholder Knows What They Need</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-ask-questions-especially-quantitative-ones">Step 3: Ask Questions (Especially Quantitative Ones!)</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principles-for-stakeholder-management">Principles for Stakeholder Management</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#principle-0-your-job-is-to-help-solve-your-stakeholder-s-problem">Principle 0: Your Job is to Help Solve Your Stakeholder’s Problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#principle-1-your-job-is-to-be-a-problem-solving-partner">Principle 1: Your Job is to be a Problem-Solving <em>Partner</em></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#confusing-domain-expertise-for-global-expertise">Confusing Domain Expertise for Global Expertise</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#confusing-your-stakeholder-for-a-professor">Confusing Your Stakeholder for a Professor</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#not-having-confidence-in-your-own-knowledge">Not Having Confidence In Your Own Knowledge</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#principle-2-don-t-assume-your-stakeholder-knows-what-they-need">Principle 2: Don’t Assume Your Stakeholder Knows What They Need</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#principle-3-stakeholder-time-is-precious">Principle 3: Stakeholder Time Is Precious</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#principle-4-iterate">Principle 4: Iterate</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strategies-for-stakeholder-communication">Strategies for Stakeholder Communication</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-ask-questions-especially-quantitative-ones">Step 3: Ask Questions (Especially Quantitative Ones!)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-about-success">Questions About Success</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-about-the-problem">Questions About the Problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strategy-1-propose-questions-you-might-answer">Strategy 1: Propose Questions You Might Answer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strategy-2-make-your-questions-specific-and-actionable">Strategy 2: Make Your Questions Specific and Actionable</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-propose-questions-you-might-answer">Step 4: Propose Questions You Might Answer</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-your-questions-specific-and-actionable">Make Your Questions Specific and Actionable</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-iterate">Step 5: Iterate</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-reflection-questions">Reading Reflection Questions</a></li>
 </ul>
   </nav></div>

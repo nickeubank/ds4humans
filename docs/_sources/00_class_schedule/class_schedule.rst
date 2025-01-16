@@ -7,7 +7,7 @@ Office Hours:
 
 - Nick: Thursday, 9-10am, `https://duke.zoom.us/my/nickeubank <https://duke.zoom.us/my/nickeubank>`_ or Gross Hall 231
 - Katie: Tuesday 9-10am
-- Keon: Wednesday 2-3pm
+- Keon: Wednesday 3-4pm
 - Gunel: Thursday 3-4pm
 
 Texts Used
