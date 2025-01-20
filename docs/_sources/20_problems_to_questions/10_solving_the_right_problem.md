@@ -13,11 +13,11 @@ In this chapter, we will discuss what happens when data scientists fail to appre
 
 This chapter will be written as if you are the sole actor on a data science project, responsible for everything from problem articulation to execution. But of course, this will rarely be the case in your professional life as a data scientist, especially early in your career. With that in mind, in the next chapter we will turn to the topic of "Stakeholder Management" — the practice of refining your understanding of the problem to be solved with a stakeholder.
 
-## What *is* a Problem?
+## What *is* a "Stakeholder Problem?"
 
 Before I dive into the nuances of problem articulation, I should probably start by defining what I mean by "your stakeholder's problem."
 
-A problem, in this context, is something about the world that your stakeholder would like to be different. They have to make a decision about whether to authorize a new drug, but they aren't sure what the consequences of authorization would be. They are losing customers to a competitor. They are a hospital and are being regularly sued for patient falls. All of these are things in your stakeholder's world that they wish would change.
+A problem, in this context, is something about the world that your stakeholder would like to be different. They have to make a decision about whether to authorize a new drug, but they aren't sure what the consequences of authorization would be. They are losing customers to a competitor. They are a hospital and are being regularly sued for patient falls. All of these are things in your stakeholder's world that they wish would change. And we could say their problem has been addressed when that state of the world changes, and your stakeholder is happier as a result.
 
 Critically, a problem isn't just something your stakeholder *wants* to be different; a stakeholder problem is something they are willing to *pay* to make different. After all, the time of a data scientist isn't cheap, so no stakeholder is going to be willing to hire you unless there's something they are willing to allocate resources to resolve.
 
