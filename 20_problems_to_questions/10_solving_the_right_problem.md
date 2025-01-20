@@ -13,6 +13,16 @@ In this chapter, we will discuss what happens when data scientists fail to appre
 
 This chapter will be written as if you are the sole actor on a data science project, responsible for everything from problem articulation to execution. But of course, this will rarely be the case in your professional life as a data scientist, especially early in your career. With that in mind, in the next chapter we will turn to the topic of "Stakeholder Management" — the practice of refining your understanding of the problem to be solved with a stakeholder.
 
+## What *is* a Problem?
+
+Before I dive into the nuances of problem articulation, I should probably start by defining what I mean by "your stakeholder's problem."
+
+A problem, in this context, is something about the world that your stakeholder would like to be different. They have to make a decision about whether to authorize a new drug, but they aren't sure what the consequences of authorization would be. They are losing customers to a competitor. They are a hospital and are being regularly sued for patient falls. All of these are things in your stakeholder's world that they wish would change.
+
+Critically, a problem isn't just something your stakeholder *wants* to be different; a stakeholder problem is something they are willing to *pay* to make different. After all, the time of a data scientist isn't cheap, so no stakeholder is going to be willing to hire you unless there's something they are willing to allocate resources to resolve.
+
+Sometimes, a stakeholder problem will clearly indicate what the remedy will look like — a government regulator charged with deciding whether a drug should be made publically available who isn't sure about the consequences of authorization would be... wants to know the consequences of drug authorization. But this will not always be the case — often it's easy to identify a problem ("we're losing customer's to Bob's Burgers down the street!") in a way that doesn't immediately imply what form a solution would take. And other times, as we'll discuss below, your stakeholder will *assume* they know what form a solution would take, and part of your job will be to differentiate between the actual problem (that you do need to address) and the assumed solution (which you should question, because it *may* be the best way to resolve the problem, but also may not).
+
 ## If You Don't Articulate The Problem
 
 There are many examples in the world of data science of projects going awry because the team behind them failed to properly articulate the problem they wished to solve. Rather than start with one of those true stories, however, I'd like to begin with one of my favorite fictional (and humorous) examples of the phenomenon.
@@ -125,7 +135,7 @@ Alternatively, you may realize that you or your stakeholder has (often unknowing
 
 Perhaps my favorite example of this phenomenon comes from a talk given by [Vincent Warmerdam at PyData 2019.](https://youtu.be/kYMfE9u-lMo?t=1281&si=haO8mlmO5tB4OC9k)
 
-The World Food Program (WFP) is a global leader in food aid provision. As Vincent tells the story — which he reports having heard at an Operations Research Conference — the WFP was struggling with an extremely difficult data science problem: how best to get food from the places it was being grown/stored to the people who needed it most. Essentially, the WFP would receive reports of needs from communities facing food insecurity. One community might report a need for bread and beef, while another might request lentils and meat. The WFP would compile these requests and then set about trying to determine the most efficient way to meet these needs.
+The World Food Program (WFP) is a global leader in food aid provision. As Vincent tells the story — which he reports having heard at an Operations Research Conference — the WFP was struggling with an extremely difficult data science problem: how best to get food from the places it was being grown/stored to the people who needed it most. Essentially, the WFP would receive reports of needs from communities facing food insecurity. One community might report a need for bread and beef, while another might request lentils and chicken. The WFP would compile these requests and then set about trying to determine the most efficient way to meet these needs.
 
 This type of logistics problem is an example of a notoriously difficult problem (essentially a version of the Traveling Salesman Problem, which is NP-Complete, if that means anything to you) that companies like FedEx and UPS buy supercomputers to address. But this particular problem was made extra challenging by all the different types of food the WFP was trying to provide communities.
 

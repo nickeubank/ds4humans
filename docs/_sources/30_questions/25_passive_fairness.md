@@ -15,7 +15,7 @@ To illustrate, let's consider the example of Risk Assessment models. Risk Assess
 
 The way Risk Assessment models are being used in the US has many, many problems. But a recent debate about an aspect of one of the most commonly used models — the COMPAS Risk Model — is illuminating about the moral issues that arise when handling misclassifications. If you would like to learn more about this debate and difference concepts of algorithmic fairness, I strongly recommend [Bias In, Bias Out](https://www.yalelawjournal.org/article/bias-in-bias-out) (2019), a Yale Law Journal article by [Sandra G. Mayson](https://www.law.upenn.edu/faculty/sgmayson).
 
-In 2016, the investigative news outlet ProPublica published a piece about COMPAS called [Machine Bias](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing). In it, journalists Julia Angwin, Jeff Larson, Surya Mattu and Lauren Kirchner used data from Florida to evaluate how well the COMPAS risk assessment model predicted criminal recitivism (the term for when a criminal defendant commits another crime in the future).
+In 2016, the investigative news outlet ProPublica published a piece about COMPAS called [Machine Bias](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing). In it, journalists Julia Angwin, Jeff Larson, Surya Mattu and Lauren Kirchner used data from Florida to evaluate how well the COMPAS risk assessment model predicted criminal recidivism (the term for when a criminal defendant commits another crime in the future).
 
 The [ProPublica analysis determined](https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm), in part, that:
 
