@@ -504,8 +504,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alignment">Alignment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-large-language-models-llms-fit-into-this">How do Large Language Models (LLMs) Fit Into This?</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alignment">Alignment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-large-language-models-llms-fit-into-this">How do Large Language Models (LLMs) Fit Into This?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alignment-and-coding-llms-an-example">Alignment and Coding LLMs: An Example</a></li>
 </ul>
 </li>
@@ -531,18 +531,18 @@ document.write(`
 <p>The way that most statistical models are developed (“trained”) to answer Passive Prediction Questions is by using a large dataset of “training examples” — that is, data in which the outcome we will eventually want to be able to predict is provided. For predicting individual-level future outcomes, this will be historical data in which outcomes — like surgery complications or factory machine failures — have already occurred. For automation, this will be data in which a person has already completed the task you wish to automate, and their conclusions or actions have been recorded. To train a mammogram reading algorithm, in other words, you first need a database of mammograms that radiologists have already labeled as indicating cancer or not. And what the model is actually trained to do is not “find cancer” but rather to “give the same answers given by human radiologists.”</p>
 <p>And this is where the distinction between “predicting what a radiologist would say” and “detecting cancer” becomes important: because this kind of statistical model was trained to emulate the behavior of radiologists in labelled mammograms, the model will recapitulate any systematic biases held by the human radiologists who reviewed the mammograms in the training data. Did the radiologists struggle to detect cancer in dense breast tissue? So too will the algorithm trained on their labels.</p>
 <p>The difference between what you <em>want</em> a model to do (detect cancer) and what it <em>actually</em> does (guesses what a radiologist would do) is referred to as a model’s <em>alignment</em>, and the fact there is nearly always a gap between what we want a model to do and what it actually does is commonly referred to as an “alignment problem.”</p>
+<p>And as we’ll discuss in detail below, often this difference between what we <em>want</em> a model to do (for example, find the best applicant for a job) and what the model is actually doing (like emulating biased human hiring managers) is how biased algorithms arise.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The terms “alignment” and “the alignment problem” I believe originated among computer scientists interested in artificial intelligence (and the possibility we might someday create a super-intelligent AI whose interests may not align with our own). With the rise of LLMs like chatGPT and Gemini, use of the term has spread, and data scientists from a range of backgrounds are becoming increasingly comfortable using the term.</p>
-<p>Interested in AI safety? Then I cannot over-recommend the youvideos of Rob Miles — an AI safety scholar and exceptional science communicator. He has a great <a class="reference external" href="https://www.youtube.com/watch?v=pYXy-A4siMw">Intro to AI Safety talk here</a> that’s a good starting place, and a a HUGE library of videos on AI safety at all levels of granularity and nuance on <a class="reference external" href="https://www.youtube.com/&#64;RobertMilesAI">his channel here</a>.</p>
+<p>Interested in AI safety? Then I cannot over-recommend the youtube videos of Rob Miles — an AI safety scholar and exceptional science communicator. He has a great <a class="reference external" href="https://www.youtube.com/watch?v=pYXy-A4siMw">Intro to AI Safety talk here</a> that’s a good starting place, and a a HUGE library of videos on AI safety at all levels of granularity and nuance on <a class="reference external" href="https://www.youtube.com/&#64;RobertMilesAI">his channel here</a>.</p>
 </div>
-<p>Where does this alignment problem come from? It can live in a few places, but fundamentally, it comes down to the loss-function the model has been given and the data it is trained on.</p>
-</section>
 <section id="how-do-large-language-models-llms-fit-into-this">
-<h2>How do Large Language Models (LLMs) Fit Into This?<a class="headerlink" href="#how-do-large-language-models-llms-fit-into-this" title="Link to this heading">#</a></h2>
+<h3>How do Large Language Models (LLMs) Fit Into This?<a class="headerlink" href="#how-do-large-language-models-llms-fit-into-this" title="Link to this heading">#</a></h3>
 <p>Given their emergence as one of the most high profile examples of something people call “AI” these days, it’s worth directly addressing how LLMs like chatGPT, Llama, Bard, etc. fit into this framework.</p>
 <p>One of the most powerful ways to understand LLMs is to think of them as tools for answering “If I came across this text [whatever text is in the LLMs prompt, pre-prompts, or other inputs in the model’s context window] while wandering around the internet,<a class="footnote-reference brackets" href="#llm-training-data" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> what word am I most likely to encounter next?” LLMs then ask this question over and over, adding the newly selected word to the context window one at a time and then feeding the updated “conversation” back into itself as input to help it predict the next word. Indeed, this repetitiveness is why the technology behind most LLMs is called a <em>recurrent</em> neural network — because it keeps adding a word to the “conversation” you are having (it’s “context window”), then feeding the updated conversation back into the model as an updated input.</p>
 <p>To be clear, this is a little reductionist. First, LLMs are able to <em>abstract</em> away from literal text to something like the meaning of words — they recognize that “pet” and “dog” have similar meanings in the sentences “I took my dog for a walk” and “I took my pet for a walk” — but even these abstractions are the result of looking for common patterns across existing text. And second, LLMs are also “fine-tuned” by having humans rate responses. But these nuances don’t change the fact that <em>fundamentally</em> LLMs are tools for recapitulating text and ideas that already exist in the world, with a strong bias towards what humans have <em>tended</em> to write most on the internet — a truth that both explains some of their power, but also helps to explain their fundamental limitations (e.g., their complete lack of fidelity to the truth, the fact they reflect societies’ gender and racial biases, etc.).</p>
+</section>
 <section id="alignment-and-coding-llms-an-example">
 <h3>Alignment and Coding LLMs: An Example<a class="headerlink" href="#alignment-and-coding-llms-an-example" title="Link to this heading">#</a></h3>
 <p>To illustrate what an alignment issue looks like with LLMs, let’s consider a simple example I’m stealing from <a class="reference external" href="https://www.youtube.com/&#64;RobertMilesAI">Rob Miles</a>, whose work I recommended above.</p>
@@ -652,8 +652,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alignment">Alignment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-large-language-models-llms-fit-into-this">How do Large Language Models (LLMs) Fit Into This?</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alignment">Alignment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-large-language-models-llms-fit-into-this">How do Large Language Models (LLMs) Fit Into This?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alignment-and-coding-llms-an-example">Alignment and Coding LLMs: An Example</a></li>
 </ul>
 </li>

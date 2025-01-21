@@ -92,13 +92,15 @@ Second, the ROC AUC metric is myopically focused on the proportion of correct po
 
 ## Choosing the Best Way to be Wrong
 
-How, then, should one approach being more thoughtful about model evaluation?
+How, then, should one approach being more thoughtful about model evaluation **given there is no single "correct" metric** that is universally correct? 
 
 The first step is always to evaluate the *relative value* of the four different types of classifications: true positives, true negatives, false positives, and false negatives. Writing a model that reviews the results of blood tests for signs of a terminal but treatable disease? You probably want to associate a strong negative value with false negatives (where you tell a sick patient they're healthy) and a smaller negative value with false positives (being told you might have a lethal condition is stressful, even if later tests (which may have their own risks) may show it to be a false positive!). And you may then normalize your true positives and true negatives to zero.
 
 You can then fit your classification model and, for each classification threshold, calculate the "cost" of the resulting distribution of true and false positives and negatives. Find the model and classification threshold that minimizes this problem-specific cost function, and you've identified the model and threshold that's best *for your specific problem*.
 
 Where do these values come from? Sometimes your stakeholder will be able to tell you the actual financial cost of different types of errors (e.g., when deciding whether to issue someone a credit card), but other times these values are more subjective. What's the relative cost of falsely telling someone they may have a terminal disease condition? How might that vary depending on the risks associated with any followup procedures required to confirm a diagnosis or the amount of time it takes for the diagnosis to be confirmed? Those are hard, subjective questions you may not have the domain expertise to answer yourself. But because you *understand* the role of these values in how your eventual model will operate, you can raise these questions with your stakeholder (who should have better domain knowledge) and solicit values from them.
+
+Similarly, I feel quite confident that anyone *using* a mine-detection algorithm would really, *really* appreciate a low false negative rate, and would be happy to tolerate a pretty high false positive rage in exchange.
 
 ```{note}
 Up until now, we've emphasized how we manage errors in the context of discrete, binary classification tasks, but it is worth emphasizing that this is only because binary classification is the easiest context in which to think about these problems. However, the issues raised her apply equally to classification tasks with more than two categories, and to efforts to answer Passive Prediction Questions about continuous outcomes. Latent in any model you use is a cost function, and implicit in that cost function is how mistakes are evaluated. 
@@ -107,3 +109,10 @@ Linear regression, for example, minimizes the sum of squared errors across all o
 
 Don't want to work with squared errors at all? Great! There's a whole discipline called [robust linear modeling](https://www.statsmodels.org/stable/examples/notebooks/generated/robust_models_1.html) that uses different norms for evaluating errors (often with the goal of reducing the influence of outliers, as the name implies, but all they are doing is modifying how the errors the model seeks to minimize are handled).
 ```
+## Recap
+
+- No metric can meaningfully summarize the performance of a model absent information about the broader context.
+- Model performance only begins to be meaningful when compared with *the next best alternative*.
+    - A special case of this occurs with imbalanced data, where the most naive alternative will always be to "always report the dominant class." When data is highly imbalanced (90/10, 99/1, 99.999/0.001), accuracy will always be trivially high, since always reporting the dominant class will have accuracy equal to the share of cases that are the dominant class.
+- Accuracy is the quintessential example a metric people think gives an absolute measure of model quality, but these issues apply to any metric, like AUC.
+- **There is no single "right" way to measure model quality.** A good model balances true positives, true negatives, false positives, and false negatives in a way that reflects the relative real-world consequences of different types of mistakes. 

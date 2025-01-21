@@ -479,9 +479,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -497,14 +495,6 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#my-take">My take</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -516,23 +506,16 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="fairness-and-passive-prediction">
 <h1>Fairness and Passive Prediction<a class="headerlink" href="#fairness-and-passive-prediction" title="Link to this heading">#</a></h1>
-<p><a class="reference external" href="https://www.yalelawjournal.org/article/bias-in-bias-out">“Bias In, Bias Out” by Sandra G. Mayson</a></p>
-<ul class="simple">
-<li><p>Abstract (p. 2218) through end of Part I (p. 2250)</p></li>
-</ul>
-<p>ITS NOT AS LONG AS IT LOOKS — it’s mostly footnotes.</p>
-<section id="my-take">
-<h2>My take<a class="headerlink" href="#my-take" title="Link to this heading">#</a></h2>
-<p>How our models make mistakes is often not just a financial decision; when statistical models are used to make high stakes decisions — like who is sent to prison and who is let out on bail pending trial — how errors are distributed can often be deeply, <em>deeply</em> ethically frought issue.</p>
+<p>How our models make mistakes is often not just a financial decision; when statistical models are used to make high stakes decisions — like who is sent to prison and who is let out on bail pending trial — how errors are distributed can often be deeply, <em>deeply</em> ethically fraught issue.</p>
 <p>To illustrate, let’s consider the example of Risk Assessment models. Risk Assessment models are models used in the US criminal justice system that are designed to help judges and parole boards determine the risk that a criminal defendant or incarcerated person may re-offend if released from jail. These are increasingly commonly used for purposes like determining whether arrested individuals should be released while they await trial and whether incarcerated individuals should be paroled (released before the end of their prison sentence to a half-way house or monitored release).</p>
 <p>The way Risk Assessment models are being used in the US has many, many problems. But a recent debate about an aspect of one of the most commonly used models — the COMPAS Risk Model — is illuminating about the moral issues that arise when handling misclassifications. If you would like to learn more about this debate and difference concepts of algorithmic fairness, I strongly recommend <a class="reference external" href="https://www.yalelawjournal.org/article/bias-in-bias-out">Bias In, Bias Out</a> (2019), a Yale Law Journal article by <a class="reference external" href="https://www.law.upenn.edu/faculty/sgmayson">Sandra G. Mayson</a>.</p>
 <p>In 2016, the investigative news outlet ProPublica published a piece about COMPAS called <a class="reference external" href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">Machine Bias</a>. In it, journalists Julia Angwin, Jeff Larson, Surya Mattu and Lauren Kirchner used data from Florida to evaluate how well the COMPAS risk assessment model predicted criminal recidivism (the term for when a criminal defendant commits another crime in the future).</p>
 <p>The <a class="reference external" href="https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm">ProPublica analysis determined</a>, in part, that:</p>
 <blockquote>
-<div><p>Black defendants were often predicted to be at a higher risk of recidivism than they actually were. Our analysis found that black defendants who did not recidivate over a two-year period were nearly twice as likely to be misclassified as higher risk compared to their white counterparts (45 percent vs. 23 percent).</p>
+<div><p>Black defendants were often predicted to be at a higher risk of recidivism than they actually were. Our analysis found that black defendants who did not recidivate [are newly arrested for committing a crime in the future] over a two-year period were nearly twice as likely to be misclassified as higher risk compared to their white counterparts (45 percent vs. 23 percent).</p>
 </div></blockquote>
-<p>In other words, the false positive rate for Black defendants was higher than it was for White defendants.</p>
-<p>While apparently rather damning of the model, COMPAS’ response was that this was actually a consequence of the fact that their model generated equal True Positive Rates across Black and White defendants. And while I am generally loath to defend COMPAS, as I think it has <em>many</em> problems and should not be in use, in this particular case they have a point.</p>
+<p>In other words, the false positive rate for Black defendants was higher than it was for White defendants.<a class="footnote-reference brackets" href="#capitalize-white" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+<p>While apparently rather damning of the model, COMPAS’ response was that this was actually a consequence of the fact that their model generated equal True Positive Rates across Black and White defendants. And while I am generally loath to defend COMPAS, as I think it has <em>many</em> problems and should not be used, in this particular case they have a point.</p>
 <p>As Sandra Mayson points out in her paper, the issue is that the likelihood someone will be arrested for a future crime (be arrested for recitivism) is imbalanced by race. As a consequence, a model that has the same True Positive Rate for Black and White defendants (i.e., the share of people predicted to re-offend who do re-offend is the same for both groups) will <em>necessarily</em> have different False Positive Rates for the two groups.</p>
 <p>To illustrate, consider the following figure from Mayson’s paper with two groups, drawn as grey and black. Solid outlines are individuals who do not recitivate, while hollow figures are those who are re-arrested. In the grey group, 2/10 individuals are re-arrested, while only 1/10 are re-arrested in the black group. The vertical line represents the classification threshold used by the model.</p>
 <p>Note that this implies the grey outlines are in the situation akin to that of Black Americans (more likely to be arrested for recitivism) and the black outlines are in the position of White Americans (less likely to be rearrested), which is a little confusing.</p>
@@ -544,7 +527,7 @@ document.write(`
 <p><img alt="groups with different false negative rates" src="../_images/mayson_fig3.png" /></p>
 <p>As Mayson writes:</p>
 <blockquote>
-<div><p>As this example illustrates, if the base rate of the predicted outcome differs across racial groups, it is impossible to achieve (1) predictive parity; (2) parity in false-positive rates; and (3) parity in false-negative rates at the same time (unless prediction is perfect, which it never is). Computer scientists have provided mathematical proofs of this fact.<a class="footnote-reference brackets" href="#impossibility" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> When base rates differ, we must prioritize one of these metrics at the expense of another. Race neutrality is not attainable.</p>
+<div><p>As this example illustrates, if the base rate of the predicted outcome differs across racial groups, it is impossible to achieve (1) predictive parity; (2) parity in false-positive rates; and (3) parity in false-negative rates at the same time (unless prediction is perfect, which it never is). Computer scientists have provided mathematical proofs of this fact.<a class="footnote-reference brackets" href="#impossibility" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> When base rates differ, we must prioritize one of these metrics at the expense of another. Race neutrality is not attainable.</p>
 </div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -554,12 +537,15 @@ document.write(`
 <p>So what is the right answer? Well, there isn’t one — each of these different schemes is defensible under different ethical frameworks. And that’s the problem — there’s no algorithm or machine learning metric that can tell you the “right” answer in a situation like this — it requires critical thought, engagement with <a class="reference internal" href="05_descriptive_v_prescriptive.html"><span class="std std-doc">prescriptive Questions</span></a>, and careful discussion with your stakeholder.</p>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="impossibility" role="doc-footnote">
+<aside class="footnote brackets" id="capitalize-white" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>I subscribe to the view — excellently articulated by <a class="reference external" href="https://www.theatlantic.com/ideas/archive/2020/06/time-to-capitalize-blackand-white/613159/?gift=UgvUqS8sUm995p-gPKiVO6whYuC5Y-UXWiJvvQg3jaU&amp;amp;utm_source=copy-link&amp;amp;utm_medium=social&amp;amp;utm_campaign=share">Kwame Anthony Appiah here</a> — that White should be capitalized in the same manner as Black.</p>
+</aside>
+<aside class="footnote brackets" id="impossibility" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
 <p>See Alexandra Chouldechova, <em>Fair Prediction with Disparate Impact: A Study of Bias in Recidivism Prediction Instruments</em>, 5 BIG DATA 153 (2017) and Jon Kleinberg et al., <em>Inherent Trade-offs in the Fair Determination of Risk Scores</em>, LEIBNIZ INT’L PROC. INFORMATICS, Jan. 2017, at 43:1, 43:4.</p>
 </aside>
 </aside>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -616,21 +602,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#my-take">My take</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

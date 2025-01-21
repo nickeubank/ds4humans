@@ -14,15 +14,15 @@ And this is where the distinction between "predicting what a radiologist would s
 
 The difference between what you *want* a model to do (detect cancer) and what it *actually* does (guesses what a radiologist would do) is referred to as a model's *alignment*, and the fact there is nearly always a gap between what we want a model to do and what it actually does is commonly referred to as an "alignment problem."
 
+And as we'll discuss in detail below, often this difference between what we *want* a model to do (for example, find the best applicant for a job) and what the model is actually doing (like emulating biased human hiring managers) is how biased algorithms arise.
+
 ```{note}
 The terms "alignment" and "the alignment problem" I believe originated among computer scientists interested in artificial intelligence (and the possibility we might someday create a super-intelligent AI whose interests may not align with our own). With the rise of LLMs like chatGPT and Gemini, use of the term has spread, and data scientists from a range of backgrounds are becoming increasingly comfortable using the term.
 
-Interested in AI safety? Then I cannot over-recommend the youvideos of Rob Miles — an AI safety scholar and exceptional science communicator. He has a great [Intro to AI Safety talk here](https://www.youtube.com/watch?v=pYXy-A4siMw) that's a good starting place, and a a HUGE library of videos on AI safety at all levels of granularity and nuance on [his channel here](https://www.youtube.com/@RobertMilesAI).
+Interested in AI safety? Then I cannot over-recommend the youtube videos of Rob Miles — an AI safety scholar and exceptional science communicator. He has a great [Intro to AI Safety talk here](https://www.youtube.com/watch?v=pYXy-A4siMw) that's a good starting place, and a a HUGE library of videos on AI safety at all levels of granularity and nuance on [his channel here](https://www.youtube.com/@RobertMilesAI).
 ```
 
-Where does this alignment problem come from? It can live in a few places, but fundamentally, it comes down to the loss-function the model has been given and the data it is trained on.
-
-## How do Large Language Models (LLMs) Fit Into This?
+### How do Large Language Models (LLMs) Fit Into This?
 
 Given their emergence as one of the most high profile examples of something people call "AI" these days, it's worth directly addressing how LLMs like chatGPT, Llama, Bard, etc. fit into this framework.
 

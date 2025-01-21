@@ -10,11 +10,13 @@ In 2016, the investigative news outlet ProPublica published a piece about COMPAS
 
 The [ProPublica analysis determined](https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm), in part, that:
 
-> Black defendants were often predicted to be at a higher risk of recidivism than they actually were. Our analysis found that black defendants who did not recidivate over a two-year period were nearly twice as likely to be misclassified as higher risk compared to their white counterparts (45 percent vs. 23 percent).
+> Black defendants were often predicted to be at a higher risk of recidivism than they actually were. Our analysis found that black defendants who did not recidivate [are newly arrested for committing a crime in the future] over a two-year period were nearly twice as likely to be misclassified as higher risk compared to their white counterparts (45 percent vs. 23 percent).
 
-In other words, the false positive rate for Black defendants was higher than it was for White defendants.
+In other words, the false positive rate for Black defendants was higher than it was for White defendants.[^capitalize_white]
 
-While apparently rather damning of the model, COMPAS' response was that this was actually a consequence of the fact that their model generated equal True Positive Rates across Black and White defendants. And while I am generally loath to defend COMPAS, as I think it has *many* problems and should not be in use, in this particular case they have a point.
+[^capitalize_white]: I subscribe to the view — excellently articulated by [Kwame Anthony Appiah here](https://www.theatlantic.com/ideas/archive/2020/06/time-to-capitalize-blackand-white/613159/?gift=UgvUqS8sUm995p-gPKiVO6whYuC5Y-UXWiJvvQg3jaU&utm_source=copy-link&utm_medium=social&utm_campaign=share) — that White should be capitalized in the same manner as Black.
+
+While apparently rather damning of the model, COMPAS' response was that this was actually a consequence of the fact that their model generated equal True Positive Rates across Black and White defendants. And while I am generally loath to defend COMPAS, as I think it has *many* problems and should not be used, in this particular case they have a point.
 
 As Sandra Mayson points out in her paper, the issue is that the likelihood someone will be arrested for a future crime (be arrested for recitivism) is imbalanced by race. As a consequence, a model that has the same True Positive Rate for Black and White defendants (i.e., the share of people predicted to re-offend who do re-offend is the same for both groups) will *necessarily* have different False Positive Rates for the two groups.
 

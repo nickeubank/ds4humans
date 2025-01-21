@@ -1,10 +1,10 @@
 # Passive Prediction Questions and External Validity
 
-Where *internal validity* is a measure of how well a model captures the meaningful variation in the data we already have, *external validity* is a measure of how well we think that our model is likely to perform when faced with new data.
+In this chapter, we will discuss the concept of External Validity as it pertains to answering Passive Prediction Questions. Where *internal validity* is a measure of how well a model captures the meaningful variation in the data we already have, *external validity* is a measure of how well we think that our model is likely to perform when faced with new data.
 
-As we learned before, the external validity of a model is specific to the context in which a model is being used. A model will generally have very *high* external validity when used to answer Passive-Prediction Questions in a setting that is very similar to the setting from which the data used to train the model was collected, but *low* external validity when applied in geographically, temporally, or socially different settings.
+As we learned before, the external validity of a model is specific to the new context to which one wishes to apply it. A model will generally have very *high* external validity when used to answer Passive Prediction Questions in a setting that is very similar to the setting from which the data used to train the model was collected, but *low* external validity when applied in geographically, temporally, or socially different settings.
 
-Some of the factors that influence the External Validity to Passive Prediction Questions are the same as those that shape the External Validity of Exploratory Questions, such as the population represented in the data (patterns in data from one country will often differ from patterns in data from another country), the time period in question (consumer behavior may vary across seasons, and many patterns in data change over longer timespans). But there are other concerns that are a little more specific to Passive Prediction Questions:
+Some of the factors that influence the External Validity to Passive Prediction Questions are the same as those that shape the External Validity of Exploratory Questions, such as the population represented in the data (patterns in data from one country will often differ from patterns in data from another country), the time period in question (consumer behavior may vary across seasons, and many patterns in data change over longer timespans). But there are other concerns that are a little more specific to Passive Prediction Questions. In this chapter, I will discuss several of these concerns. As with Exploratory Questions, I will a focus on more holistic considerations, since I suspect you've already been exposed to more traditional statistical methods of model evaluation.
 
 ## Extrapolation and Training Parameter Ranges
 
@@ -18,11 +18,23 @@ In addition to reducing overfitting, strategies like regularization are designed
 
 ### What Constitutes Extrapolation?
 
-In the example above, the term extrapolation refers to predicting values below 0 and above 2. But what constitutes an extrapolation depends in part on the complexity of the model. With a nice, interpretable linear model, it's not hard to have confidence that the model will make a reasonable prediction for $x=0.5$, even though that specific value wasn't in the training data. But when one begins to work with highly non-linear models that allow for interactions and aren't easily interpretable — such as deep learning neural networks — the only place one can feel sure of the behavior of the model is at the exact data points in the training data. The same flexibility that allows these models to accommodate unusual non-linear relationships can also lead to bizarre behavior between actual points in the training data. A credit risk model may make perfectly reasonable predictions for a married 45-year-old women of Hispanic descent who lives in Colorado and a married 47-year-old women of Hispanic descent who lives in Colorado because both of those profiles were present in the training data, but make a crazy prediction for a a married 46-year-old women of Hispanic descent who lives in Colorado or a married 45-year-old women of Hispanic descent who lives in Montana.
+In the example above, the term extrapolation refers to predicting values below 0 and above 2. But what constitutes an extrapolation depends in part on the complexity of the model. With a nice, interpretable linear model, it's not hard to have confidence that the model will make a reasonable prediction for $x=0.5$, even though that specific value wasn't in the training data. 
 
-Indeed, it's precisely for this reason that for many high stakes decisions, regulators are increasingly requiring the use of interpretable models that include guarantees (like monotonicity).
+But when working with highly non-linear models — neural networks, random forests, etc. — that aren't interpretable and aren't constrained to smooth functional forms — the only place one can feel sure of the behavior of the model is at the exact data points tested. The same flexibility that allows these models to accommodate unusual non-linear relationships can also lead to bizarre behavior either between points in the training data, or where the model has over-accommodated a couple idiosyncratic training examples (such as odd cases *or* observations with data entry errors).
 
-Basically, the more flexible the model, the more data points are required to constrain the model's behavior (the so-called "curse of dimensionality"), and the more cautious you should become. There's a reason that LLMs hallucinate despite being fed unfathomably large amounts of data.
+For example, a credit risk model may make perfectly reasonable predictions for:
+
+- a married 45-year-old woman of Hispanic descent who lives in Colorado, and 
+- a married 47-year-old woman of Hispanic descent who lives in Colorado 
+
+but make a crazy prediction for: 
+
+- a married 46-year-old woman of Hispanic descent who lives in Colorado, or 
+- a married 45-year-old woman of Hispanic descent who lives in Montana.
+
+Indeed, it's precisely for this reason that for many high stakes decisions, regulators are increasingly requiring the use of interpretable models that include guarantees (like monotonicity) — a topic we will return to in a couple readings.
+
+The more flexible the model, the more data points are required to constrain the model's behavior (the so-called "curse of dimensionality"), and the more cautious you should become. There's a reason that LLMs hallucinate despite being fed unfathomably large amounts of data.
 
 ```{note}
 A common misconception among young data scientists is that the split-train-test workflow commonly used in machine learning innoculates against external validity concerns. After all, the idea of split-train-test is that models are trained on one set of observations and evaluated against an entirely different set of observations.
