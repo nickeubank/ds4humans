@@ -1,15 +1,6 @@
 # Fairness and Passive Prediction
 
-["Bias In, Bias Out" by Sandra G. Mayson](https://www.yalelawjournal.org/article/bias-in-bias-out)
-
-- Abstract (p. 2218) through end of Part I (p. 2250)
-
-ITS NOT AS LONG AS IT LOOKS — it's mostly footnotes.
-
-
-## My take
-
-How our models make mistakes is often not just a financial decision; when statistical models are used to make high stakes decisions — like who is sent to prison and who is let out on bail pending trial — how errors are distributed can often be deeply, *deeply* ethically frought issue.
+How our models make mistakes is often not just a financial decision; when statistical models are used to make high stakes decisions — like who is sent to prison and who is let out on bail pending trial — how errors are distributed can often be deeply, *deeply* ethically fraught issue.
 
 To illustrate, let's consider the example of Risk Assessment models. Risk Assessment models are models used in the US criminal justice system that are designed to help judges and parole boards determine the risk that a criminal defendant or incarcerated person may re-offend if released from jail. These are increasingly commonly used for purposes like determining whether arrested individuals should be released while they await trial and whether incarcerated individuals should be paroled (released before the end of their prison sentence to a half-way house or monitored release).
 

@@ -26,7 +26,7 @@ Thinking carefully about your stakeholder's problem and being able to get them t
 
 ## The Problem with Accuracy
 
-Let's begin our discussion about balancing true and false positives and negatives with my least favorite metric for classification problems: Accuracy.
+Let's begin our discussion about balancing true and false positives and negatives with a discussion of my least favorite metric for classification problems: Accuracy.
 
 There is perhaps no better way for a data scientist to demonstrate they don't know what they're doing than for them to proudly proclaim that their model has an accuracy score of ninety-something percent without additional context. And yet it is a mistake that I see constantly. It is as though, being students, young data scientists implicitly assume that accuracy scores, like grades, exist on an absolute scale, where values in the 90s are "A"s and something to celebrate and values in the 70s are "C"s and something to feel bad about, when in reality neither is necessarily the case.
 
@@ -38,31 +38,47 @@ How do I know this fallacy is common, you ask? As Director of Admissions for the
 
 So why is reporting accuracy scores without context such a problem? There are at least three reasons.
 
-### Accuracy and Imbalanced Data
+### Reason 1: Performance is Relative
 
-Most data you will encounter in your career will be *imbalanced*, meaning that one of the outcomes you are trying to predict with your model (assuming a classification task) will be much, much less prevalent than the other. In these situations, because accuracy is just "the share of cases correctly classified," getting high acccuracy can be achieved trivially by always predicting the more prevalent outcome.
+The first problem with reporting accuracy scores absent context is that the value of a model can only ever be evaluated *relative to the best available alternative.* Over the years, I've developed the sense that students tend to view accuracy as an absolute scale, very much the way they view grades: 99% is terrific (an A+!), between 90% and 99% is good (an A!), 80-90 is so-so (a B), and below 80 is bad. 
 
-To illustrate, consider routine mammograms. Mammograms are x-rays of women's breast tissue used to screen for early signs of breast cancer. In the United States, it is recommended that all women over 40 get a mammogram every two years. Unsurprisingly, therefore, *vast* majority of routine mammograms are medically unremarkable. According to the Susan G. Komen society, roughly 90% of routine mammograms are perfectly normal and require no followup.[^false_positives] Thus a "model" that reports that *any* routine mammogram it is given is normal will immediately achieve an accuracy score of 90%.
+The reality, however, is that the only way to evaluate model performance is with respect to the *best available alternative*. A model with a 93% accuracy score is unlikely to be of particular value to a business if the model they were using before you arrived had an accuracy score of 98%, and your model does not have any other benefits to offset its lower accuracy. Similarly, a model with an accuracy score of 70% may constitute a considerable innovation to a business that could not make predictions more accurately than with 50%-50% odds. In life, decisions have to be made, so the value of a model is not based on whether it's perfect, but whether it beats the status quo.
+
+Treating accuracy as an absolute scale also ignores the fact that model performance will always be limited by the amount of *signal* in the data on which it is trained. A data scientist's job is not to maximize a model's apparent accuracy, but rather to harness the true predictive potential of the data. Any increases in metrics like accuracy beyond the true potential of the data is illusory, and can only come from overfitting. 
+
+Of course, we are not gods, and so we will never know the exact predictive potential of a given dataset, but the principle is one to bear in mind — the potential of a model is always bounded by the data on which is being trained, and the only way to get a model that exceeds that true performance frontier is by overfitting your data (creating an *illusion* of better performance that will not hold up when the model is actually deployed).
+
+### Reason 2: Accuracy and Imbalanced Data
+
+As detailed in the [introductory chapter to this book](../10_introduction/23_mistakes), most data you will encounter in your career will be *imbalanced*, meaning that one of the outcomes you are trying to predict with your model (assuming a classification task) will be much, much less prevalent in the data than the other. In these situations, because accuracy is just "the share of cases correctly classified," getting high accuracy can be achieved trivially by always predicting the more prevalent outcome.
+
+To illustrate, consider routine mammograms. Mammograms are x-rays of women's breast tissue used to screen for early signs of breast cancer. In the United States, it is recommended that all women over 40 get a mammogram every two years. Unsurprisingly, therefore, *vast* majority of routine mammograms are medically unremarkable. According to the Susan G. Komen society, roughly 90% of routine mammograms are perfectly normal and require no followup.[^false_positives] 
 
 [^false_positives]: The vast majority of the roughly 10% of scans that are abnormal are eventually determined to be false positives.
+
+Consequently, it is trivially easy to write a model that achieves 90% accuracy:
+
+```python
+def my_cancer_detection_model(mammogram):
+    is_scan_abnormal_maybe_cancerous = False
+    return is_scan_abnormal_maybe_cancerous
+```
+
+Obviously, of course, this model is worse than useless: it has a 100% False Negative rate (all mammograms that are abnormal are classified as normal), meaning the algorithm will tell *all* patients they are cancer free, including those whose mammograms show indications of cancer.
 
 Moreover, most data scientists wouldn't even consider 90/10 data to be particularly imbalanced. In any given year in the United States, only about 3% of single-family residential mortgages are in a state of delinquency[^delinquency], and fraudulent credit card purchases [make up less than one-tenth of 1% of all credit card transactions](https://www.federalreserve.gov/newsevents/pressreleases/other20181016a.htm). That means a "model" that reports all mortgages are in good standing or that all credit card transactions are valid will immediately have accuracy scores of 97% and $>$ 99.9%, respectively.
 
 [^delinquency]: In other words, they have failed to make a mortgage payment for at least a certain period of days.
 
-### Relative to What?
+Technically, this is just a special case of Reason 1 accuracy is meaningful absent context — *Performance is Relative* — because the most basic model will always be "assume all observations are from the most prevalent class," but given how prevalent this trap is, it's worth being it's own category.
 
-The second problem with reporting accuracy scores absent context is that the value of a model can only ever be evaluated relative to what came before. A model with a 93% accuracy score is unlikely to be of particular value to a business if the model they were using before you arrived had an accuracy score of 98%, and your model does not have any other benefits to offset its lower accuracy. Similarly, a model with an accuracy score of 70% may constitute a considerable innovation to a business that could not make predictions more accurately than with 50%-50% odds.
-
-Indeed, a related issue with treating accuracy as an absolute scale akin to academic grades is that model performance depends on the amount of *signal* in the data on which it is trained. Data only has so much predictive information in it, and in theory, the way a model *should* be evaluated is in terms of how close it comes to harnessing that full predictive potential of the data on which it is being trained. Of course, we are not gods, and so we will never know the exact predictive potential of a given dataset, but the principle is one to bear in mind — the potential of a model is bounded by the data on which is being trained, and the only way to get a model that exceeds that true performance frontier is by overfitting your data (creating an *illusion* of better performance that will not hold up when the model is actually deployed).
-
-### But What About The Mistakes?
+### Reason 3: Accuracy Doesn't Characterize Mistakes
 
 The third reason reporting accuracy scores without context — and indeed the reason that accuracy is a problematic metric in general — is that it tells you nothing about the types of misclassifications your model is making. Are all its errors false positives? Are they all false negatives? In what ratio do they occur?
 
 Accuracy says *nothing* about how different types of mistakes are being balanced, which is why accuracy is sometimes a fun statistic to use on problem sets but a *terrible* metric in the real world.
 
-## ROC and Area Under the Curve (AUC)
+### ROC and Area Under the Curve (AUC)
 
 "OK, fine," I hear you say, "but no one uses accuracy anymore — we all use ROC AUC scores!"
 

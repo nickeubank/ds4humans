@@ -111,7 +111,7 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Fairness and Passive Prediction" href="25_passive_fairness.html" />
-    <link rel="prev" title="Passive Prediction Questions and Internal Validity" href="23_passive_internal_alignment_and_bias.html" />
+    <link rel="prev" title="Passive Prediction, Internal Validity, and Alignment" href="23_passive_internal_alignment_and_bias.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -269,12 +269,12 @@ commentsRunWhenDOMLoaded(addUtterances);
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="20_using_passive_prediction_questions.html">Ch 9: Using Passive Predictive Qs</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="23_passive_internal_alignment_and_bias.html">Ch 10: Internal Validity and Predictive Qs</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="23_passive_internal_alignment_and_bias.html">Ch 10: Predictive Qs &amp; Internal Validity</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Being Wrong the Right Way</a></li>
 <li class="toctree-l2"><a class="reference internal" href="25_passive_fairness.html">Fairness and Errors</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="27_passive_external_general.html">Ch 11: External Validity and Predictive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="27_passive_external_general.html">Ch 11: Predictive Qs &amp; External Validity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="28_passive_external_adversarial_users.html">Adversarial Users</a></li>
 </ul>
 </details></li>
@@ -505,12 +505,12 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-problem-with-accuracy">The Problem with Accuracy</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy-and-imbalanced-data">Accuracy and Imbalanced Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-to-what">Relative to What?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#but-what-about-the-mistakes">But What About The Mistakes?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reason-1-performance-is-relative">Reason 1: Performance is Relative</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reason-2-accuracy-and-imbalanced-data">Reason 2: Accuracy and Imbalanced Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reason-3-accuracy-doesn-t-characterize-mistakes">Reason 3: Accuracy Doesn’t Characterize Mistakes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#roc-and-area-under-the-curve-auc">ROC and Area Under the Curve (AUC)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roc-and-area-under-the-curve-auc">ROC and Area Under the Curve (AUC)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-the-best-way-to-be-wrong">Choosing the Best Way to be Wrong</a></li>
 </ul>
             </nav>
@@ -540,7 +540,7 @@ document.write(`
 </div>
 <section id="the-problem-with-accuracy">
 <h2>The Problem with Accuracy<a class="headerlink" href="#the-problem-with-accuracy" title="Link to this heading">#</a></h2>
-<p>Let’s begin our discussion about balancing true and false positives and negatives with my least favorite metric for classification problems: Accuracy.</p>
+<p>Let’s begin our discussion about balancing true and false positives and negatives with a discussion of my least favorite metric for classification problems: Accuracy.</p>
 <p>There is perhaps no better way for a data scientist to demonstrate they don’t know what they’re doing than for them to proudly proclaim that their model has an accuracy score of ninety-something percent without additional context. And yet it is a mistake that I see constantly. It is as though, being students, young data scientists implicitly assume that accuracy scores, like grades, exist on an absolute scale, where values in the 90s are “A”s and something to celebrate and values in the 70s are “C”s and something to feel bad about, when in reality neither is necessarily the case.</p>
 <aside class="sidebar">
 <p class="sidebar-title">Reporting Accuracy Without Context</p>
@@ -548,30 +548,40 @@ document.write(`
 </aside>
 <p>How do I know this fallacy is common, you ask? As Director of Admissions for the <a class="reference external" href="https://datascience.duke.edu/">Duke Masters of Interdisciplinary Data Science (MIDS)</a> program, I read hundreds of Statements of Purpose essays and resumes every year from aspiring data scientists from around the world. And despite having done this for years, I continue to be shocked by the number of applicants who proudly proclaim something like “I fit a model using XYZ method and was able to achieve a 95% accuracy score,” or report an accuracy score in the 90s in their resume as though those numbers, absent context, were meaningful.</p>
 <p>So why is reporting accuracy scores without context such a problem? There are at least three reasons.</p>
-<section id="accuracy-and-imbalanced-data">
-<h3>Accuracy and Imbalanced Data<a class="headerlink" href="#accuracy-and-imbalanced-data" title="Link to this heading">#</a></h3>
-<p>Most data you will encounter in your career will be <em>imbalanced</em>, meaning that one of the outcomes you are trying to predict with your model (assuming a classification task) will be much, much less prevalent than the other. In these situations, because accuracy is just “the share of cases correctly classified,” getting high acccuracy can be achieved trivially by always predicting the more prevalent outcome.</p>
-<p>To illustrate, consider routine mammograms. Mammograms are x-rays of women’s breast tissue used to screen for early signs of breast cancer. In the United States, it is recommended that all women over 40 get a mammogram every two years. Unsurprisingly, therefore, <em>vast</em> majority of routine mammograms are medically unremarkable. According to the Susan G. Komen society, roughly 90% of routine mammograms are perfectly normal and require no followup.<a class="footnote-reference brackets" href="#false-positives" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> Thus a “model” that reports that <em>any</em> routine mammogram it is given is normal will immediately achieve an accuracy score of 90%.</p>
+<section id="reason-1-performance-is-relative">
+<h3>Reason 1: Performance is Relative<a class="headerlink" href="#reason-1-performance-is-relative" title="Link to this heading">#</a></h3>
+<p>The first problem with reporting accuracy scores absent context is that the value of a model can only ever be evaluated <em>relative to the best available alternative.</em> Over the years, I’ve developed the sense that students tend to view accuracy as an absolute scale, very much the way they view grades: 99% is terrific (an A+!), between 90% and 99% is good (an A!), 80-90 is so-so (a B), and below 80 is bad.</p>
+<p>The reality, however, is that the only way to evaluate model performance is with respect to the <em>best available alternative</em>. A model with a 93% accuracy score is unlikely to be of particular value to a business if the model they were using before you arrived had an accuracy score of 98%, and your model does not have any other benefits to offset its lower accuracy. Similarly, a model with an accuracy score of 70% may constitute a considerable innovation to a business that could not make predictions more accurately than with 50%-50% odds. In life, decisions have to be made, so the value of a model is not based on whether it’s perfect, but whether it beats the status quo.</p>
+<p>Treating accuracy as an absolute scale also ignores the fact that model performance will always be limited by the amount of <em>signal</em> in the data on which it is trained. A data scientist’s job is not to maximize a model’s apparent accuracy, but rather to harness the true predictive potential of the data. Any increases in metrics like accuracy beyond the true potential of the data is illusory, and can only come from overfitting.</p>
+<p>Of course, we are not gods, and so we will never know the exact predictive potential of a given dataset, but the principle is one to bear in mind — the potential of a model is always bounded by the data on which is being trained, and the only way to get a model that exceeds that true performance frontier is by overfitting your data (creating an <em>illusion</em> of better performance that will not hold up when the model is actually deployed).</p>
+</section>
+<section id="reason-2-accuracy-and-imbalanced-data">
+<h3>Reason 2: Accuracy and Imbalanced Data<a class="headerlink" href="#reason-2-accuracy-and-imbalanced-data" title="Link to this heading">#</a></h3>
+<p>As detailed in the <a class="reference internal" href="../10_introduction/23_mistakes.html"><span class="doc std std-doc">introductory chapter to this book</span></a>, most data you will encounter in your career will be <em>imbalanced</em>, meaning that one of the outcomes you are trying to predict with your model (assuming a classification task) will be much, much less prevalent in the data than the other. In these situations, because accuracy is just “the share of cases correctly classified,” getting high accuracy can be achieved trivially by always predicting the more prevalent outcome.</p>
+<p>To illustrate, consider routine mammograms. Mammograms are x-rays of women’s breast tissue used to screen for early signs of breast cancer. In the United States, it is recommended that all women over 40 get a mammogram every two years. Unsurprisingly, therefore, <em>vast</em> majority of routine mammograms are medically unremarkable. According to the Susan G. Komen society, roughly 90% of routine mammograms are perfectly normal and require no followup.<a class="footnote-reference brackets" href="#false-positives" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p>
+<p>Consequently, it is trivially easy to write a model that achieves 90% accuracy:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_cancer_detection_model</span><span class="p">(</span><span class="n">mammogram</span><span class="p">):</span>
+    <span class="n">is_scan_abnormal_maybe_cancerous</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="n">is_scan_abnormal_maybe_cancerous</span>
+</pre></div>
+</div>
+<p>Obviously, of course, this model is worse than useless: it has a 100% False Negative rate (all mammograms that are abnormal are classified as normal), meaning the algorithm will tell <em>all</em> patients they are cancer free, including those whose mammograms show indications of cancer.</p>
 <p>Moreover, most data scientists wouldn’t even consider 90/10 data to be particularly imbalanced. In any given year in the United States, only about 3% of single-family residential mortgages are in a state of delinquency<a class="footnote-reference brackets" href="#delinquency" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>, and fraudulent credit card purchases <a class="reference external" href="https://www.federalreserve.gov/newsevents/pressreleases/other20181016a.htm">make up less than one-tenth of 1% of all credit card transactions</a>. That means a “model” that reports all mortgages are in good standing or that all credit card transactions are valid will immediately have accuracy scores of 97% and <span class="math notranslate nohighlight">\(&gt;\)</span> 99.9%, respectively.</p>
+<p>Technically, this is just a special case of Reason 1 accuracy is meaningful absent context — <em>Performance is Relative</em> — because the most basic model will always be “assume all observations are from the most prevalent class,” but given how prevalent this trap is, it’s worth being it’s own category.</p>
 </section>
-<section id="relative-to-what">
-<h3>Relative to What?<a class="headerlink" href="#relative-to-what" title="Link to this heading">#</a></h3>
-<p>The second problem with reporting accuracy scores absent context is that the value of a model can only ever be evaluated relative to what came before. A model with a 93% accuracy score is unlikely to be of particular value to a business if the model they were using before you arrived had an accuracy score of 98%, and your model does not have any other benefits to offset its lower accuracy. Similarly, a model with an accuracy score of 70% may constitute a considerable innovation to a business that could not make predictions more accurately than with 50%-50% odds.</p>
-<p>Indeed, a related issue with treating accuracy as an absolute scale akin to academic grades is that model performance depends on the amount of <em>signal</em> in the data on which it is trained. Data only has so much predictive information in it, and in theory, the way a model <em>should</em> be evaluated is in terms of how close it comes to harnessing that full predictive potential of the data on which it is being trained. Of course, we are not gods, and so we will never know the exact predictive potential of a given dataset, but the principle is one to bear in mind — the potential of a model is bounded by the data on which is being trained, and the only way to get a model that exceeds that true performance frontier is by overfitting your data (creating an <em>illusion</em> of better performance that will not hold up when the model is actually deployed).</p>
-</section>
-<section id="but-what-about-the-mistakes">
-<h3>But What About The Mistakes?<a class="headerlink" href="#but-what-about-the-mistakes" title="Link to this heading">#</a></h3>
+<section id="reason-3-accuracy-doesn-t-characterize-mistakes">
+<h3>Reason 3: Accuracy Doesn’t Characterize Mistakes<a class="headerlink" href="#reason-3-accuracy-doesn-t-characterize-mistakes" title="Link to this heading">#</a></h3>
 <p>The third reason reporting accuracy scores without context — and indeed the reason that accuracy is a problematic metric in general — is that it tells you nothing about the types of misclassifications your model is making. Are all its errors false positives? Are they all false negatives? In what ratio do they occur?</p>
 <p>Accuracy says <em>nothing</em> about how different types of mistakes are being balanced, which is why accuracy is sometimes a fun statistic to use on problem sets but a <em>terrible</em> metric in the real world.</p>
 </section>
-</section>
 <section id="roc-and-area-under-the-curve-auc">
-<h2>ROC and Area Under the Curve (AUC)<a class="headerlink" href="#roc-and-area-under-the-curve-auc" title="Link to this heading">#</a></h2>
+<h3>ROC and Area Under the Curve (AUC)<a class="headerlink" href="#roc-and-area-under-the-curve-auc" title="Link to this heading">#</a></h3>
 <p>“OK, fine,” I hear you say, “but no one uses accuracy anymore — we all use ROC AUC scores!”</p>
 <p>First, again, I can tell you from reading hundreds of essays and looking at hundreds of resumes, accuracy is still an <em>extremely</em> commonly used metric. But setting that aside…</p>
 <p>Yes, AUC is certainly a more holistic metric than accuracy. Where accuracy evaluates the share of cases correctly classified, AUC averages the share of correct positive predictions across the full range of classification thresholds (one of the reasons it is commonly used in competitions). But it is not a substitute for thinking carefully about the correct metric <em>for the specific problem you are seeking to solve</em>.</p>
 <p>First, most models are deployed at a specific classification threshold, so averaging across all classification thresholds may create a good <em>general purpose</em> indicator of a model’s performance, but it makes AUC poorly suited to evaluating how well a model will perform in any <em>specific</em> context (i.e., at a specific classification threshold).</p>
 <p>Second, the ROC AUC metric is myopically focused on the proportion of correct positive predictions. But depending on our problem, we may also care about the ratio of false negatives to false positives or other properties of our negative predictions.</p>
+</section>
 </section>
 <section id="choosing-the-best-way-to-be-wrong">
 <h2>Choosing the Best Way to be Wrong<a class="headerlink" href="#choosing-the-best-way-to-be-wrong" title="Link to this heading">#</a></h2>
@@ -639,7 +649,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Passive Prediction Questions and Internal Validity</p>
+        <p class="prev-next-title">Passive Prediction, Internal Validity, and Alignment</p>
       </div>
     </a>
     <a class="right-next"
@@ -668,12 +678,12 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-problem-with-accuracy">The Problem with Accuracy</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy-and-imbalanced-data">Accuracy and Imbalanced Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-to-what">Relative to What?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#but-what-about-the-mistakes">But What About The Mistakes?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reason-1-performance-is-relative">Reason 1: Performance is Relative</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reason-2-accuracy-and-imbalanced-data">Reason 2: Accuracy and Imbalanced Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reason-3-accuracy-doesn-t-characterize-mistakes">Reason 3: Accuracy Doesn’t Characterize Mistakes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#roc-and-area-under-the-curve-auc">ROC and Area Under the Curve (AUC)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roc-and-area-under-the-curve-auc">ROC and Area Under the Curve (AUC)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-the-best-way-to-be-wrong">Choosing the Best Way to be Wrong</a></li>
 </ul>
   </nav></div>

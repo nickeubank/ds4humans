@@ -54,14 +54,14 @@ parts:
       - file: 30_questions/20_using_passive_prediction_questions
         title: "Ch 9: Using Passive Predictive Qs"
       - file: 30_questions/23_passive_internal_alignment_and_bias
-        title: "Ch 10: Internal Validity and Predictive Qs"
+        title: "Ch 10: Predictive Qs & Internal Validity"
         sections:
           - file: 30_questions/24_passive_internal_errors
             title: "Being Wrong the Right Way"
           - file: 30_questions/25_passive_fairness
             title: "Fairness and Errors"
       - file: 30_questions/27_passive_external_general
-        title: "Ch 11: External Validity and Predictive Qs"
+        title: "Ch 11: Predictive Qs & External Validity"
         sections:
           - file: 30_questions/28_passive_external_adversarial_users
             title: "Adversarial Users"
