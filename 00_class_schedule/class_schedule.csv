@@ -7,10 +7,10 @@ Tu Jan 14,Solving Problems by Answering Questions,"- `Read, sign, submit syllabu
 Th Jan 16,Stakeholder Management,"- `Chpt 3 <../20_problems_to_questions/10_solving_the_right_problem.html>`_
 - `Why It's Important To Get Your Question Right (30 min video) <https://www.youtube.com/watch?v=kYMfE9u-lMo>`_
 - `Chpt 4 <../20_problems_to_questions/20_stakeholder_management.html>`_",`Stakeholder Ex <../99_exercises/exercise_stakeholder_management.html>`_
-Tu Jan 21,Proscriptive v. Descriptive Questions,"- `Chpt 2 <../10_introduction/40_data_science_in_historical_context.html>`_
+Tu Jan 21,Prescriptive v. Descriptive Questions,"- `Chpt 2 <../10_introduction/40_data_science_in_historical_context.html>`_
 - `Chpt 5 <../30_questions/05_descriptive_v_prescriptive.html>`_",
 Th Jan 23,"Exploratory Questions: Purpose, Internal and External Validity","- `Chpt 6 <../30_questions/10_using_exploratory_questions.html>`_
-- `Chpt 7 <../30_questions/15_answering_exploratory_questions.html>`_",
+- `Chpt 7 <../30_questions/15_answering_exploratory_questions.html>`_",`Team Project <../97_project/00_problem_and_exploratory.html>`_
 Tu Jan 28,Teams 1,"- `What Project Aristotle Learned <https://github.com/nickeubank/unifyingdatascience/raw/master/team_readings/project_aristotle_nytimes.pdf>`_
 - Edmondson, The Fearless Organization, Chpt 1 (on Canvas)
 - **Problem and Questions Due**",
@@ -21,9 +21,9 @@ Th Jan 30,Teams 2,"- `Review Team Charter Assignment <https://github.com/nickeub
  
  Optional: `Fostering Psychological Safety Tips <https://docs.google.com/document/d/1PsnDMS2emcPLgMLFAQCXZjO7C4j2hJ7znOq_g2Zkjgk/export?format=pdf>`_",
 Tu Feb 4,Exploratory Questions: Internal Validity Concerns,- `Chpt 8 <../30_questions/16_exploratory_internal_challenges.html>`_,
-Th Feb 6,Passive Prediction Questions: Purpose and Alignment,"- `Chpt 9 <../30_questions/20_using_passive_prediction_questions.html>`_
-- `Chpt 10 <../30_questions/24_passive_internal_errors.html>`_ BUT NOT FAIRNESS SECTION",
-Tu Feb 11,Passive Prediction Questions: Internal and External Validity,- `Chpt 10 Fairness Section <../30_questions/25_passive_fairness.html>`_,
+Th Feb 6,"Passive Prediction Questions: Purpose, Internal Validity 1","- `Chpt 9 <../30_questions/20_using_passive_prediction_questions.html>`_
+- `Chpt 10 <../30_questions/23_passive_internal_alignment_and_bias.html>`_ BUT NOT FAIRNESS SECTION",
+Tu Feb 11,Passive Prediction Questions: Internal Validity 2,- `Chpt 10 Fairness Section <../30_questions/25_passive_fairness.html>`_,
 Th Feb 13,Passive Prediction Questions: External Validity,"- `Chpt 11 <../30_questions/27_passive_external_general.html>`_
 - **Exploratory Report Due**",
 Tu Feb 18,Passive Prediction Questions: Interpretability,- `Chpt 12 <../30_questions/29_passive_interpretable_models.html>`_,
@@ -80,7 +80,7 @@ Tu Apr 8,Causal Questions: Differences and Differences / Panels,"- Cunningham, C
  
  - `Enfranchisement and Incarceration <https://www.cambridge.org/core/journals/american-political-science-review/article/enfranchisement-and-incarceration-after-the-1965-voting-rights-act/C68FA7BB8CA313BDD8D9A39BA666A21D>`_
  - `Diff-in-Diffs at Netflix <https://netflixtechblog.com/key-challenges-with-quasi-experiments-at-netflix-89b4f234b852>`_",
-Th Apr 9,x,x,
+Th Apr 9,x,x,x
 Tu Apr 15,,- **Revised Exploratory Due along with Causal Proposal**,
 "Wed, April 23",,- **Optional Due Date for Causal Rough Draft (11pm)**,
 "Wed, Apr 30",,- **Final Causal Report Due**,
