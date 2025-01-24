@@ -104,6 +104,8 @@ commentsRunWhenDOMLoaded(addUtterances);
                 gtag('config', 'G-RKDPB41DQ2');
             </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '30_questions/25_passive_fairness';</script>
     <link rel="icon" href="../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -479,7 +481,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -495,6 +499,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-rates-and-risk-models">Error Rates and Risk Models</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -506,35 +518,66 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="fairness-and-passive-prediction">
 <h1>Fairness and Passive Prediction<a class="headerlink" href="#fairness-and-passive-prediction" title="Link to this heading">#</a></h1>
-<p>How our models make mistakes is often not just a financial decision; when statistical models are used to make high stakes decisions — like who is sent to prison and who is let out on bail pending trial — how errors are distributed can often be deeply, <em>deeply</em> ethically fraught issue.</p>
-<p>To illustrate, let’s consider the example of Risk Assessment models. Risk Assessment models are models used in the US criminal justice system that are designed to help judges and parole boards determine the risk that a criminal defendant or incarcerated person may re-offend if released from jail. These are increasingly commonly used for purposes like determining whether arrested individuals should be released while they await trial and whether incarcerated individuals should be paroled (released before the end of their prison sentence to a half-way house or monitored release).</p>
-<p>The way Risk Assessment models are being used in the US has many, many problems. But a recent debate about an aspect of one of the most commonly used models — the COMPAS Risk Model — is illuminating about the moral issues that arise when handling misclassifications. If you would like to learn more about this debate and difference concepts of algorithmic fairness, I strongly recommend <a class="reference external" href="https://www.yalelawjournal.org/article/bias-in-bias-out">Bias In, Bias Out</a> (2019), a Yale Law Journal article by <a class="reference external" href="https://www.law.upenn.edu/faculty/sgmayson">Sandra G. Mayson</a>.</p>
-<p>In 2016, the investigative news outlet ProPublica published a piece about COMPAS called <a class="reference external" href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">Machine Bias</a>. In it, journalists Julia Angwin, Jeff Larson, Surya Mattu and Lauren Kirchner used data from Florida to evaluate how well the COMPAS risk assessment model predicted criminal recidivism (the term for when a criminal defendant commits another crime in the future).</p>
-<p>The <a class="reference external" href="https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm">ProPublica analysis determined</a>, in part, that:</p>
+<p><em>How</em> our models make mistakes is often just as important as the number of mistakes they make, and not just for financial reasons. Statistical models increasingly inform a range of high-stakes decisions — like who should get a donated organ, or whether a criminal defendant is entitled to bail. In these situations, the question of who bears the costs of model errors can be an ethically fraught question.</p>
+<p>To illustrate the ethical questions that arise when deciding what constitutes “fair” when it comes to models that answer Passive Prediction Questions, let’s consider the example of Risk Assessment models. Risk Assessment models are models used in the US criminal justice system to answer the question “if this criminal defendant (or incarcerated person) was released from custody, what is the likelihood they would re-offend within the next X months?” These models are used by judges and parole boards who must determine whether arrested individuals should be released while they await trial and whether incarcerated individuals should be paroled (released before the end of their prison sentence to a half-way house or monitored release).</p>
+<p>The way Risk Assessment models are used in the US raises many questions, many outside the scope of this section. But one aspect of risk assessment models recently garnered a lot of attention: whether their misclassifications (cases where an individual the model identified as low risk re-offends, or where an individual the model identified as high risk does not re-offend) are racially biased.</p>
+<p>The issue of racial bias in misclassifications rose to prominence in 2016 when the investigative news outlet <a class="reference external" href="https://propublica.org">ProPublica</a> published an analysis of the COMPAS Risk Model — one of the most commonly used risk assessment models in the United States. The article — entitled <a class="reference external" href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">Machine Bias</a> — concluded, in part, <a class="reference external" href="https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm">that:</a></p>
 <blockquote>
 <div><p>Black defendants were often predicted to be at a higher risk of recidivism than they actually were. Our analysis found that black defendants who did not recidivate [are newly arrested for committing a crime in the future] over a two-year period were nearly twice as likely to be misclassified as higher risk compared to their white counterparts (45 percent vs. 23 percent).</p>
 </div></blockquote>
-<p>In other words, the false positive rate for Black defendants was higher than it was for White defendants.<a class="footnote-reference brackets" href="#capitalize-white" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
-<p>While apparently rather damning of the model, COMPAS’ response was that this was actually a consequence of the fact that their model generated equal True Positive Rates across Black and White defendants. And while I am generally loath to defend COMPAS, as I think it has <em>many</em> problems and should not be used, in this particular case they have a point.</p>
-<p>As Sandra Mayson points out in her paper, the issue is that the likelihood someone will be arrested for a future crime (be arrested for recitivism) is imbalanced by race. As a consequence, a model that has the same True Positive Rate for Black and White defendants (i.e., the share of people predicted to re-offend who do re-offend is the same for both groups) will <em>necessarily</em> have different False Positive Rates for the two groups.</p>
-<p>To illustrate, consider the following figure from Mayson’s paper with two groups, drawn as grey and black. Solid outlines are individuals who do not recitivate, while hollow figures are those who are re-arrested. In the grey group, 2/10 individuals are re-arrested, while only 1/10 are re-arrested in the black group. The vertical line represents the classification threshold used by the model.</p>
-<p>Note that this implies the grey outlines are in the situation akin to that of Black Americans (more likely to be arrested for recitivism) and the black outlines are in the position of White Americans (less likely to be rearrested), which is a little confusing.</p>
+<p>In other words, the false positive rate (the share of people not re-arrested predicted to be re-arrested) for Black defendants was higher than it was for White defendants.<a class="footnote-reference brackets" href="#capitalize-white" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+<p>While apparently rather damning, COMPAS’ response was that this was actually a consequence of the fact that their model generated equal Positive Predictive rates across Black and White defendants (the share predicted to be re-arrested that are re-arrested is the same for both Black and White defendents). And while I am generally loath to defend COMPAS, in this particular case they have a point.</p>
+<p>As explored by <a class="reference external" href="https://www.law.upenn.edu/faculty/sgmayson">Sandra Mayson</a> in a <a class="reference external" href="https://www.yalelawjournal.org/article/bias-in-bias-out">2019 Yale Law Journal</a> article, the problem is that more Black defendants end up being re-arrested in the future than White defendants (in other words, the outcome of interest is imbalanced by race). This, in turn, imposes a simple, mechanical limit on the ability of the model to achieve racial balance in all error rates for reasons discussed below.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the discussion of imbalanced recitivism arrest rates, I said <em>arrested for</em> recitivism — a huge problem with all of these risk assessment models is that we know from many studies that even in situations where Black and White Americans <em>commit</em> crimes at similar rates (like drug use), Black Americans are substantially more likely to be <em>arrested</em> for those crimes. Thus, an imbalance in arrests for recitivism do not necessarily imply differences in <em>actual</em> recitivism.</p>
+<p>Indeed, this form of inequity is also a problem on the input side — Risk Assessment models take into account whether a defendant has prior convictions, but given Black Americans are more likely to be arrested even in situations where were know criminal behavior occurs at similar rates for Black and White Americans, and Black Americans are likely to have lower-incomes and thus less likely to have lawyers who can get charges dismissed, these models tend to treat them as higher risk.</p>
+</div>
+<section id="error-rates-and-risk-models">
+<h2>Error Rates and Risk Models<a class="headerlink" href="#error-rates-and-risk-models" title="Link to this heading">#</a></h2>
+<p>To illustrate the problem, Mayson’s paper asks the reader time imagine two groups: grey and black. There are ten figures in each group, and the figures are drawn as solid outlines for individuals who are not eventually re-arrested (“negatives”), while hollow figures are those who are eventually re-arrested (“positives”). In the grey group, 2/10 individuals are eventually re-arrested, while only 1/10 are re-arrested in the black group.</p>
+<p>The goal of the risk model, therefore, is to predict which figures are most likely to be re-arrested. The vertical line in the figure represents the classification threshold used by the model (the probability cutoff used to convert continuous imputed probabilities into discrete classifications) — those to the left of the vertical line are those the model has predicted are likely to be re-arrested, while those to the right are those it predicts are unlikely to be re-arrested.</p>
 <p><img alt="groups with different false positive rates" src="../_images/mayson_fig1.png" /></p>
-<p>With the line in the location shown in the figure, we can see that the model has the same True Positive Rate for both populations — grey and black (50%). But as a result, the <em>False</em> Positive Rate is higher for the grey individuals (2/8). Thus while the ProPublica finding is true — the False Positive Rate of COMPAS is higher for Black defendants — the only way to even this out would be to shift the classification threshold for the black outlines over, as illustrated in Figure 2 from her paper:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Confusingly, this coloring implies the grey figures are more likely to be re-arrested, meaning they are in the position of Black Americans while the black figures are in the position of White Americans. Mason made this choice to abstract from the specifics of the racial groups in question, but to be honest I think that just confuses the matter for readers and distracts from the empirical realities. I will use the terms “grey figures” and “black figures” to refer to the illustrative entities in these pictures (note I use the lower case and the term “figures”).</p>
+</div>
+<p>For many data scientists, it will be helpful to think about how this figure relates to a traditional confusion matrix, like the one below:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Predicted Positive</p></th>
+<th class="head"><p>Predicted Negative</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Actual Positive</p></td>
+<td><p>True Positive (TP)</p></td>
+<td><p>False Negative (FN)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Actual Negative</p></td>
+<td><p>False Positive (FP)</p></td>
+<td><p>True Negative (TN)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Where the entire population consists of <span class="math notranslate nohighlight">\(P + N\)</span>, where <span class="math notranslate nohighlight">\(P = TP + FN\)</span> and <span class="math notranslate nohighlight">\(N = FP + TN\)</span>.</p>
+<p>In the image above, there are two True Positives (TP) and two False Positives (FP) for the grey figures. For the black figures, there is one True Positive and one False Positive.</p>
+<p>With the threshold in the location shown in the figure, the model classifies four grey figures and two black figures as “likely to be rearrested.” We also see that for both the grey and black figures, the Positive Predictive value of the model (<span class="math notranslate nohighlight">\(\frac{TP}{TP + FP}\)</span>, or the share of entities predicted to be re-arrested who are re-arrested) is 50%. Mason refers to this as a model that achieves “Predictive Parity.”</p>
+<p>But to achieve this “Predictive Parity,” the <em>False</em> Positive Rate (<span class="math notranslate nohighlight">\(\frac{FP}{N}\)</span>, or the share of people who are not eventually re-arrested who are <em>predicted</em> to be re-arrested) is higher for the grey figures (<span class="math notranslate nohighlight">\(\frac{2}{8} = 25%\)</span>) than the black figures (<span class="math notranslate nohighlight">\(\frac{1}{9} = 11%\)</span>).</p>
+<p>Thus while the ProPublica finding is true — the False Positive Rate of COMPAS is higher for Black defendants — the only way to even this out would be to shift the classification threshold for the black outlines over, reducing the number of grey figures who are not actually re-arrested who are predicted to be re-arrested.</p>
 <p><img alt="groups with different true positive rates" src="../_images/mayson_fig2.png" /></p>
-<p>This balances the False Positive Rates for the two groups, but in doing so results in the True Positive Rate being lower for the black outlines.</p>
-<p>Can we do better? Well, we could get equal True Positive Rates and False Positive Rates, but only by accepting differential False <em>Negative</em> rates, as illustrated in Mayson’s Figure 3:</p>
+<p>This balances the False Positive Rates for the two groups, but in doing so results in the Positive Predictive value of the model being lower for the black outlines.</p>
+<p>Can we do better? Well, we could get equal Positive Predictive value and False Positive Rates for grey and black, but only by accepting differential False <em>Negative</em> rates (<span class="math notranslate nohighlight">\(FN/P\)</span>, or the share of people who are eventually re-arrested the model predicts will not be re-arrested), as illustrated in Mayson’s Figure 3 (in which the False Negative rate for grey is 1/2 = 50% black is 0/1 = 0%):</p>
 <p><img alt="groups with different false negative rates" src="../_images/mayson_fig3.png" /></p>
 <p>As Mayson writes:</p>
 <blockquote>
 <div><p>As this example illustrates, if the base rate of the predicted outcome differs across racial groups, it is impossible to achieve (1) predictive parity; (2) parity in false-positive rates; and (3) parity in false-negative rates at the same time (unless prediction is perfect, which it never is). Computer scientists have provided mathematical proofs of this fact.<a class="footnote-reference brackets" href="#impossibility" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> When base rates differ, we must prioritize one of these metrics at the expense of another. Race neutrality is not attainable.</p>
 </div></blockquote>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Please note that in the discussion of imbalanced recitivism arrest rates, I said <em>arrested for</em> recitivism — a huge problem with all of these risk assessment models is that we know from many studies that even in situations where Black and White Americans <em>commit</em> crimes at similar rates (like drug use), Black Americans are substantially more likely to be <em>arrested</em> for those crimes. Thus, an imbalance in arrests for recitivism do not necessarily imply differences in <em>actual</em> recitivism.</p>
-<p>Indeed, this form of inequity is also a problem on the input side — Risk Assessment models take into account whether a defendant has prior convictions, but given Black Americans are more likely to be arrested even in situations where were know criminal behavior occurs at similar rates for Black and White Americans, and Black Americans are likely to have lower-incomes and thus less likely to have lawyers who can get charges dismissed, these models tend to treat them as higher risk.</p>
-</div>
-<p>So what is the right answer? Well, there isn’t one — each of these different schemes is defensible under different ethical frameworks. And that’s the problem — there’s no algorithm or machine learning metric that can tell you the “right” answer in a situation like this — it requires critical thought, engagement with <a class="reference internal" href="05_descriptive_v_prescriptive.html"><span class="std std-doc">prescriptive Questions</span></a>, and careful discussion with your stakeholder.</p>
+<p>So what’s the “right” answer? What’s the “fair” way to distribute errors? Should the model strive to have the same Positive Predictive value for White and Black defendents? Or the same False Positive rate? Or some balance of the different rates?</p>
+<p>The answer is that there is no <em>right</em> answer — each of these different schemes is defensible under different ethical frameworks. When you have to make choices about the relative desirability (“value”) of different outcomes, you enter the real of ethics and morality, as discussed in our reading on <a class="reference internal" href="05_descriptive_v_prescriptive.html"><span class="std std-doc">Prescriptive Questions</span></a>.</p>
+<p>But hopefully, this example makes clear the complexity <em>and the inescapability</em> of ethical questions when it comes to the use of data science in high stakes decision making.</p>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="capitalize-white" role="doc-footnote">
@@ -546,6 +589,7 @@ document.write(`
 <p>See Alexandra Chouldechova, <em>Fair Prediction with Disparate Impact: A Study of Bias in Recidivism Prediction Instruments</em>, 5 BIG DATA 153 (2017) and Jon Kleinberg et al., <em>Inherent Trade-offs in the Fair Determination of Risk Scores</em>, LEIBNIZ INT’L PROC. INFORMATICS, Jan. 2017, at 43:1, 43:4.</p>
 </aside>
 </aside>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -602,6 +646,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-rates-and-risk-models">Error Rates and Risk Models</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
