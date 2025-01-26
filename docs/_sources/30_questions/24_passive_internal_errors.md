@@ -80,7 +80,7 @@ Accuracy says *nothing* about how different types of mistakes are being balanced
 
 ### ROC and Area Under the Curve (AUC)
 
-"OK, fine," I hear you say, "but no one uses accuracy anymore — we all use ROC AUC scores!"
+"OK, fine," some of you may be saying, "but no one uses accuracy anymore — we all use ROC AUC scores!" (If you're a Duke student concurrently taking IDS 705, it's possible you aren't there yet, but you will be soon.)
 
 First, again, I can tell you from reading hundreds of essays and looking at hundreds of resumes, accuracy is still an *extremely* commonly used metric. But setting that aside...
 
@@ -102,13 +102,14 @@ Where do these values come from? Sometimes your stakeholder will be able to tell
 
 Similarly, I feel quite confident that anyone *using* a mine-detection algorithm would really, *really* appreciate a low false negative rate, and would be happy to tolerate a pretty high false positive rage in exchange.
 
-```{note}
+## Errors with Non-Discrete Choice Models
+
 Up until now, we've emphasized how we manage errors in the context of discrete, binary classification tasks, but it is worth emphasizing that this is only because binary classification is the easiest context in which to think about these problems. However, the issues raised her apply equally to classification tasks with more than two categories, and to efforts to answer Passive Prediction Questions about continuous outcomes. Latent in any model you use is a cost function, and implicit in that cost function is how mistakes are evaluated. 
 
 Linear regression, for example, minimizes the sum of squared errors across all observations, and (by default) it gives equal weight to the squared error associated with each observation. But if you don't feel that's an appropriate weighting scheme, you are not bound to it — weighted linear regression is a version of linear regression where the user provides a set of weights to associate with each observation. Have some customers you know are more valuable to your company? Perhaps you want to have the model give more weight to errors associated with those customers so the final model performs better for those customers. Or working with data from stores with different sales volumes? Maybe you want to give more weight to stores with larger sales volumes.
 
 Don't want to work with squared errors at all? Great! There's a whole discipline called [robust linear modeling](https://www.statsmodels.org/stable/examples/notebooks/generated/robust_models_1.html) that uses different norms for evaluating errors (often with the goal of reducing the influence of outliers, as the name implies, but all they are doing is modifying how the errors the model seeks to minimize are handled).
-```
+
 ## Recap
 
 - No metric can meaningfully summarize the performance of a model absent information about the broader context.

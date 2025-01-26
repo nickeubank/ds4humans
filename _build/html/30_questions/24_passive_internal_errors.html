@@ -512,6 +512,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-the-best-way-to-be-wrong">Choosing the Best Way to be Wrong</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#errors-with-non-discrete-choice-models">Errors with Non-Discrete Choice Models</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap">Recap</a></li>
 </ul>
             </nav>
@@ -577,7 +578,7 @@ document.write(`
 </section>
 <section id="roc-and-area-under-the-curve-auc">
 <h3>ROC and Area Under the Curve (AUC)<a class="headerlink" href="#roc-and-area-under-the-curve-auc" title="Link to this heading">#</a></h3>
-<p>“OK, fine,” I hear you say, “but no one uses accuracy anymore — we all use ROC AUC scores!”</p>
+<p>“OK, fine,” some of you may be saying, “but no one uses accuracy anymore — we all use ROC AUC scores!” (If you’re a Duke student concurrently taking IDS 705, it’s possible you aren’t there yet, but you will be soon.)</p>
 <p>First, again, I can tell you from reading hundreds of essays and looking at hundreds of resumes, accuracy is still an <em>extremely</em> commonly used metric. But setting that aside…</p>
 <p>Yes, AUC is certainly a more holistic metric than accuracy. Where accuracy evaluates the share of cases correctly classified, AUC averages the share of correct positive predictions across the full range of classification thresholds (one of the reasons it is commonly used in competitions). But it is not a substitute for thinking carefully about the correct metric <em>for the specific problem you are seeking to solve</em>.</p>
 <p>First, most models are deployed at a specific classification threshold, so averaging across all classification thresholds may create a good <em>general purpose</em> indicator of a model’s performance, but it makes AUC poorly suited to evaluating how well a model will perform in any <em>specific</em> context (i.e., at a specific classification threshold).</p>
@@ -591,12 +592,12 @@ document.write(`
 <p>You can then fit your classification model and, for each classification threshold, calculate the “cost” of the resulting distribution of true and false positives and negatives. Find the model and classification threshold that minimizes this problem-specific cost function, and you’ve identified the model and threshold that’s best <em>for your specific problem</em>.</p>
 <p>Where do these values come from? Sometimes your stakeholder will be able to tell you the actual financial cost of different types of errors (e.g., when deciding whether to issue someone a credit card), but other times these values are more subjective. What’s the relative cost of falsely telling someone they may have a terminal disease condition? How might that vary depending on the risks associated with any followup procedures required to confirm a diagnosis or the amount of time it takes for the diagnosis to be confirmed? Those are hard, subjective questions you may not have the domain expertise to answer yourself. But because you <em>understand</em> the role of these values in how your eventual model will operate, you can raise these questions with your stakeholder (who should have better domain knowledge) and solicit values from them.</p>
 <p>Similarly, I feel quite confident that anyone <em>using</em> a mine-detection algorithm would really, <em>really</em> appreciate a low false negative rate, and would be happy to tolerate a pretty high false positive rage in exchange.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+</section>
+<section id="errors-with-non-discrete-choice-models">
+<h2>Errors with Non-Discrete Choice Models<a class="headerlink" href="#errors-with-non-discrete-choice-models" title="Link to this heading">#</a></h2>
 <p>Up until now, we’ve emphasized how we manage errors in the context of discrete, binary classification tasks, but it is worth emphasizing that this is only because binary classification is the easiest context in which to think about these problems. However, the issues raised her apply equally to classification tasks with more than two categories, and to efforts to answer Passive Prediction Questions about continuous outcomes. Latent in any model you use is a cost function, and implicit in that cost function is how mistakes are evaluated.</p>
 <p>Linear regression, for example, minimizes the sum of squared errors across all observations, and (by default) it gives equal weight to the squared error associated with each observation. But if you don’t feel that’s an appropriate weighting scheme, you are not bound to it — weighted linear regression is a version of linear regression where the user provides a set of weights to associate with each observation. Have some customers you know are more valuable to your company? Perhaps you want to have the model give more weight to errors associated with those customers so the final model performs better for those customers. Or working with data from stores with different sales volumes? Maybe you want to give more weight to stores with larger sales volumes.</p>
 <p>Don’t want to work with squared errors at all? Great! There’s a whole discipline called <a class="reference external" href="https://www.statsmodels.org/stable/examples/notebooks/generated/robust_models_1.html">robust linear modeling</a> that uses different norms for evaluating errors (often with the goal of reducing the influence of outliers, as the name implies, but all they are doing is modifying how the errors the model seeks to minimize are handled).</p>
-</div>
 </section>
 <section id="recap">
 <h2>Recap<a class="headerlink" href="#recap" title="Link to this heading">#</a></h2>
@@ -702,6 +703,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-the-best-way-to-be-wrong">Choosing the Best Way to be Wrong</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#errors-with-non-discrete-choice-models">Errors with Non-Discrete Choice Models</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap">Recap</a></li>
 </ul>
   </nav></div>
