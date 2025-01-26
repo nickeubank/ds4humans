@@ -55,20 +55,20 @@ parts:
         title: "Ch 9: Using Passive Predictive Qs"
       - file: 30_questions/23_passive_internal_alignment_and_bias
         title: "Ch 10: Predictive Qs & Internal Validity"
+      - file: 30_questions/24_passive_internal_errors
+        title: "Ch 11: Predictive Qs and Being Wrong the Right Way"
         sections:
-          - file: 30_questions/24_passive_internal_errors
-            title: "Being Wrong the Right Way"
           - file: 30_questions/25_passive_fairness
             title: "Fairness and Errors"
       - file: 30_questions/27_passive_external_general
-        title: "Ch 11: Predictive Qs & External Validity"
+        title: "Ch 12: Predictive Qs & External Validity"
         sections:
           - file: 30_questions/28_passive_external_adversarial_users
             title: "Adversarial Users"
       - file: 30_questions/29_passive_interpretable_models
-        title: "Ch 12: Interpretable Models"
+        title: "Ch 13: Interpretable Models"
       - file: 30_questions/30_using_causal_questions
-        title: "Ch 13: Causal Qs"
+        title: "Ch 14: Causal Qs"
         sections:
           - file: 30_questions/40_answering_causal_questions
   - caption: Causal Inference

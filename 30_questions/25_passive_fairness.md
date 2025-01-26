@@ -2,7 +2,7 @@
 
 *How* our models make mistakes is often just as important as the number of mistakes they make, and not just for financial reasons. Statistical models increasingly inform a range of high-stakes decisions — like who should get a donated organ, or whether a criminal defendant is entitled to bail. In these situations, the question of who bears the costs of model errors can be an ethically fraught question.
 
-To illustrate the ethical questions that arise when deciding what constitutes "fair" when it comes to models that answer Passive Prediction Questions, let's consider the example of Risk Assessment models. Risk Assessment models are models used in the US criminal justice system to answer the question "if this criminal defendant (or incarcerated person) was released from custody, what is the likelihood they would re-offend within the next X months?" These models are used by judges and parole boards who must determine whether arrested individuals should be released while they await trial and whether incarcerated individuals should be paroled (released before the end of their prison sentence to a half-way house or monitored release).
+To illustrate the ethical questions that arise when deciding what constitutes "fair" when it comes to models that answer Passive Prediction Questions, let's consider the example of Risk Assessment models in the US criminal justice system. These Risk Assessment models are used to answer the question "if this criminal defendant (or incarcerated person) was released from custody, what is the likelihood they would re-offend within the next X months?" These models are used by judges and parole boards who must determine whether arrested individuals should be released while they await trial and whether incarcerated individuals should be paroled (released before the end of their prison sentence to a half-way house or monitored release).
 
 The way Risk Assessment models are used in the US raises many questions, many outside the scope of this section. But one aspect of risk assessment models recently garnered a lot of attention: whether their misclassifications (cases where an individual the model identified as low risk re-offends, or where an individual the model identified as high risk does not re-offend) are racially biased.
 
@@ -26,15 +26,15 @@ Indeed, this form of inequity is also a problem on the input side — Risk Asses
 
 ## Error Rates and Risk Models
 
-To illustrate the problem, Mayson's paper asks the reader time imagine two groups: grey and black. There are ten figures in each group, and the figures are drawn as solid outlines for individuals who are not eventually re-arrested ("negatives"), while hollow figures are those who are eventually re-arrested ("positives"). In the grey group, 2/10 individuals are eventually re-arrested, while only 1/10 are re-arrested in the black group. 
+To illustrate the problem, Mayson's paper asks the reader to imagine two imaginary groups of individuals, colored grey and black, represented by the two sets of silhouettes in the pictures below. These two groups are Mayson's stand-ins for Black Defendants and White Defendants. 
+
+![groups with different false positive rates](images/mayson_fig1_hc.png)
+
+Within each group, some silhouettes have handcuffs super-imposed. These are the individuals who will eventually be re-arrested. In practice, of course, no one using a Risk Assessment model would know these future "true outcomes" of individuals, but this is the kind of data you'd have when training a model on retrospective data. In the grey group, 2/10 individuals are eventually re-arrested, while only 1/10 are re-arrested in the black group.
+
+**Confusingly, this coloring implies the grey figures are more likely to be re-arrested, meaning they are in the position of Black Americans while the black figures are in the position of White Americans.** Mason made this choice to abstract from the specifics of the racial groups in question, but to be honest I think that just confuses the matter for readers and distracts from the empirical realities. I will use the terms "grey figures" and "black figures" to refer to the illustrative entities in these pictures (note I use the lower case and the term "figures").
 
 The goal of the risk model, therefore, is to predict which figures are most likely to be re-arrested. The vertical line in the figure represents the classification threshold used by the model (the probability cutoff used to convert continuous imputed probabilities into discrete classifications) — those to the left of the vertical line are those the model has predicted are likely to be re-arrested, while those to the right are those it predicts are unlikely to be re-arrested.
-
-![groups with different false positive rates](images/mayson_fig1.png)
-
-```{note}
-Confusingly, this coloring implies the grey figures are more likely to be re-arrested, meaning they are in the position of Black Americans while the black figures are in the position of White Americans. Mason made this choice to abstract from the specifics of the racial groups in question, but to be honest I think that just confuses the matter for readers and distracts from the empirical realities. I will use the terms "grey figures" and "black figures" to refer to the illustrative entities in these pictures (note I use the lower case and the term "figures").
-```
 
 For many data scientists, it will be helpful to think about how this figure relates to a traditional confusion matrix, like the one below:
 
@@ -43,23 +43,23 @@ For many data scientists, it will be helpful to think about how this figure rela
 | Actual Positive| True Positive (TP) | False Negative (FN)|
 | Actual Negative| False Positive (FP)| True Negative (TN) |
 
-Where the entire population consists of $P + N$, where $P = TP + FN$ and $N = FP + TN$.
+Where the entire population consists of $P + N$, where $P = TP + FN$ and $N = FP + TN$, and the "positive" condition corresponds to being re-arrested.
 
-In the image above, there are two True Positives (TP) and two False Positives (FP) for the grey figures. For the black figures, there is one True Positive and one False Positive. 
+In the image above, there are two True Positives (people predicted to be re-arrested who actually do end up re-arrested) and two False Positives (people predicted to be re-arrested who do *not* end up re-arrested) for the grey figures. For the black figures, there is one True Positive and one False Positive. 
 
 With the threshold in the location shown in the figure, the model classifies four grey figures and two black figures as "likely to be rearrested." We also see that for both the grey and black figures, the Positive Predictive value of the model ($\frac{TP}{TP + FP}$, or the share of entities predicted to be re-arrested who are re-arrested) is 50%. Mason refers to this as a model that achieves "Predictive Parity."
 
-But to achieve this "Predictive Parity," the *False* Positive Rate ($\frac{FP}{N}$, or the share of people who are not eventually re-arrested who are *predicted* to be re-arrested) is higher for the grey figures ($\frac{2}{8} = 25\%$) than the black figures ($\frac{1}{9} = 11\%$).
+But to achieve this "Predictive Parity," the False Positive Rate ($\frac{FP}{N}$, or the share of people who are not eventually re-arrested who are *predicted* to be re-arrested) is higher for the grey figures ($\frac{2 \text{ False Positives}}{8 \text{ Negatives}} = 25\%$) than the black figures ($\frac{1 \text{False Positives}}{9 \text{Negatives}} = 11\%$).
 
 Thus while the ProPublica finding is true — the False Positive Rate of COMPAS is higher for Black defendants — the only way to even this out would be to shift the classification threshold for the black outlines over, reducing the number of grey figures who are not actually re-arrested who are predicted to be re-arrested.
 
-![groups with different true positive rates](images/mayson_fig2.png)
+![groups with different true positive rates](images/mayson_fig2_hc.png)
 
 This balances the False Positive Rates for the two groups, but in doing so results in the Positive Predictive value of the model being lower for the black outlines.
 
 Can we do better? Well, we could get equal Positive Predictive value and False Positive Rates for grey and black, but only by accepting differential False *Negative* rates ($FN/P$, or the share of people who are eventually re-arrested the model predicts will not be re-arrested), as illustrated in Mayson's Figure 3 (in which the False Negative rate for grey is 1/2 = 50% black is 0/1 = 0%):
 
-![groups with different false negative rates](images/mayson_fig3.png)
+![groups with different false negative rates](images/mayson_fig3_hc.png)
 
 As Mayson writes:
 
