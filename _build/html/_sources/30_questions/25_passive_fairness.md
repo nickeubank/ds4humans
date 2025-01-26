@@ -49,7 +49,7 @@ In the image above, there are two True Positives (people predicted to be re-arre
 
 With the threshold in the location shown in the figure, the model classifies four grey figures and two black figures as "likely to be rearrested." We also see that for both the grey and black figures, the Positive Predictive value of the model ($\frac{TP}{TP + FP}$, or the share of entities predicted to be re-arrested who are re-arrested) is 50%. Mason refers to this as a model that achieves "Predictive Parity."
 
-But to achieve this "Predictive Parity," the False Positive Rate ($\frac{FP}{N}$, or the share of people who are not eventually re-arrested who are *predicted* to be re-arrested) is higher for the grey figures ($\frac{2 \text{ False Positives}}{8 \text{ Negatives}} = 25\%$) than the black figures ($\frac{1 \text{False Positives}}{9 \text{Negatives}} = 11\%$).
+But to achieve this "Predictive Parity," the False Positive Rate ($\frac{FP}{N}$, or the share of people who are not eventually re-arrested who are *predicted* to be re-arrested) is higher for the grey figures ($\frac{2 \text{ False Positives}}{8 \text{ Negatives}} = 25\%$) than the black figures ($\frac{1 \text{ False Positive}}{9 \text{ Negatives}} = 11\%$).
 
 Thus while the ProPublica finding is true — the False Positive Rate of COMPAS is higher for Black defendants — the only way to even this out would be to shift the classification threshold for the black outlines over, reducing the number of grey figures who are not actually re-arrested who are predicted to be re-arrested.
 
