@@ -2,11 +2,11 @@
 
 # Adversarial Users
 
-Of all external validity concerns data scientists tend to underappreciate, none is as likely to cause serious problems as the existence of *adversarial users*.
+Of all external validity concerns that data scientists tend to underappreciate, none is more likely to cause serious problems than the existence of *adversarial users*.
 
-Adversarial users are users who attempt to subvert to intended functioning on a statistical or machine learning model. At first blush, adversarial users seem the stuff of spy novels and international espionage. In reality, however, they are likely to exist any time an algorithm or model is used to make decisions that are important to people.
+Adversarial users are users who attempt to subvert the intended function of a statistical or machine learning model. At first blush, adversarial users seem the stuff of spy novels and international espionage. In reality, however, they are likely to exist any time an algorithm or model is used to make decisions that are important to people.
 
-The pervasive threat of adversarial users emerges because humans are strategic actors, and once people realize that outcomes they care about — insurance approvals, promotions, hiring, etc. — are being influenced by a formula, they will change their behavior to accommodate/game that formula.
+The pervasive threat of adversarial users emerges because humans are strategic actors. Once people realize that the outcomes they care about — insurance approvals, promotions, hiring, etc. — are being influenced by a formula, they will change their behavior to accommodate or game that formula.
 
 ## Adversarial Users as External Validity Concern
 

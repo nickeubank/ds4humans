@@ -1,10 +1,10 @@
 # Passive Prediction Questions and External Validity
 
-In this chapter, we will discuss the concept of External Validity as it pertains to answering Passive Prediction Questions. Where *internal validity* is a measure of how well a model captures the meaningful variation in the data we already have, *external validity* is a measure of how well we think that our model is likely to perform when faced with new data.
+In this chapter, we will discuss the concept of External Validity as it pertains to answering Passive Prediction Questions. Where *internal validity* measures how well a model captures meaningful variation in the data we already have, *external validity* measures how well our model is likely to perform when faced with new data.
 
-As we learned before, the external validity of a model is specific to the new context to which one wishes to apply it. A model will generally have very *high* external validity when used to answer Passive Prediction Questions in a setting that is very similar to the setting from which the data used to train the model was collected, but *low* external validity when applied in geographically, temporally, or socially different settings.
+As we learned before, a model's external validity is specific to the new context to which it is applied. A model will generally have very *high* external validity when used to answer Passive Prediction Questions in a setting very similar to the setting from which the data used to train the model was collected, but *low* external validity when applied in geographically, temporally, or socially different settings.
 
-Some of the factors that influence the External Validity of Passive Prediction Questions are the same as those that shape the External Validity of Exploratory Questions, such as the population represented in the data (patterns in data from one country will often differ from patterns in data from another country), the time period in question (consumer behavior may vary across seasons, and many patterns in data change over longer timespans). But there are other concerns that are a little more specific to Passive Prediction Questions. In this chapter, I will discuss several of these concerns. As with Exploratory Questions, I will focus on more holistic considerations, since I suspect you've already been exposed to more traditional statistical methods of model evaluation.
+Some of the factors that influence the External Validity of Passive Prediction Questions are the same as those that shape the External Validity of Exploratory Questions, such as the population represented in the data (patterns in data from one country will often differ from patterns in data from another country), the time period in question (consumer behavior may vary across seasons, and many patterns in data change over longer timespans). But there are other concerns that are a little more specific to Passive Prediction Questions. In this chapter, I will discuss several of these concerns. As with Exploratory Questions, I will focus on more holistic considerations since I suspect you've already been exposed to more traditional statistical methods of model evaluation.
 
 ## Extrapolation and Training Parameter Ranges
 
@@ -14,13 +14,13 @@ To illustrate, consider the two models in the figure below ([source](https://ece
 
 ![example of two models that look similar over ranges with data but extrapolate very differently outside that range](images/extrapolation.jpg)
 
-In addition to reducing overfitting, strategies like regularization are designed to constrain the "wonkiness" of models outside the domain on which they were trained, but almost by definition, absent data in those extended ranges, there's no way to know for certain whether the model will generalize.
+Strategies like regularization are designed to constrain the "wonkiness" of models with the goal of making them less likely to go crazy outside the parameter range on which they were trained. Almost by definition, however, absent data in those extended ranges, there's no way to know for certain whether the model will generalize.
 
 ### What Constitutes Extrapolation?
 
-In the example above, the term extrapolation refers to predicting values below 0 and above 2. But what constitutes an extrapolation depends in part on the complexity of the model. With a nice, interpretable linear model, it's not hard to have confidence that the model will make a reasonable prediction for $x=0.5$, even though that specific value wasn't in the training data.
+In the example above, "extrapolation" refers to predicting values below 0 and above 2. However, what constitutes an extrapolation depends in part on the complexity of the model. With a nice, interpretable linear model, it's not hard to have confidence that the model will make a reasonable prediction for $x=0.5$, even though that specific value wasn't in the training data.
 
-But when working with highly non-linear models — neural networks, random forests, etc. — that aren't interpretable and aren't constrained to smooth functional forms — the only place one can feel sure of the behavior of the model is at the exact data points tested. The same flexibility that allows these models to accommodate unusual non-linear relationships can also lead to bizarre behavior either between points in the training data, or where the model has over-accommodated a couple of idiosyncratic training examples (such as odd cases *or* observations with data entry errors).
+But when working with highly non-linear models — neural networks, random forests, etc. — that aren't interpretable and aren't constrained to smooth functional forms — the only place one can feel sure of the behavior of the model is at the exact data points tested. The same flexibility that allows these models to accommodate unusual non-linear relationships can also lead to bizarre behavior either between points in the training data or where the model has over-accommodated a couple of idiosyncratic training examples (such as odd cases *or* observations with data entry errors).
 
 For example, a credit risk model may make perfectly reasonable predictions for:
 
@@ -38,6 +38,12 @@ The more flexible the model, the more data points are required to constrain the 
 
 ## Train-Test-Splits and External Validity
 
-A common misconception among young data scientists is that the train-test-split workflow used in machine learning innoculates against external validity concerns. After all, the idea of split-train-test is that models are trained on one set of observations and evaluated against an entirely different set of observations.
+A common misconception among young data scientists is that the train-test-split workflow used in machine learning inoculates against external validity concerns. After all, the idea of split-train-test is that models are trained on one set of observations and evaluated against an entirely different set of observations.
 
-While train-test-split can *help* reduce external validity concerns by guarding against over-fitting, a fundamental limitation of the workflow is that training observations and test observations both come from the *same context*. Indeed, because test and training datasets are created by taking a single dataset and randomly splitting the observations, they *should* always have the same properties (at least in expectation) — a guarantee one certainly won't get when moving from the data used to build a model to a real-world deployment.
+While train-test-split can *help* reduce external validity concerns by guarding against overfitting, a fundamental limitation of the workflow is that training and test observations both come from the *same context.* Indeed, because test and training datasets are created by randomly splitting the observations from a single dataset, they should always have the same properties (at least in expectation) — a guarantee one certainly won't get when moving from the data used to build a model to a real-world deployment.
+
+
+
+
+
+
