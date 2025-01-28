@@ -65,9 +65,11 @@ parts:
         sections:
           - file: 30_questions/28_passive_external_adversarial_users
             title: "Adversarial Users"
-      - file: 30_questions/29_passive_interpretable_models
+          - file: 30_questions/29_passive_external_adversarial_users_examples
+            title: "Adversarial User Examples"
+      - file: 30_questions/32_passive_interpretable_models
         title: "Ch 13: Interpretable Models"
-      - file: 30_questions/30_using_causal_questions
+      - file: 30_questions/35_using_causal_questions
         title: "Ch 14: Causal Qs"
         sections:
           - file: 30_questions/40_answering_causal_questions
