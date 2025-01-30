@@ -12,4 +12,4 @@ Still stuck? Let me know and we can brainstorm together.
 
 ## Due Date
 
-Your Exploratory Question Report is due **February 11th**.
+Your Exploratory Question Report is due **February 13th**.
