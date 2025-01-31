@@ -36,6 +36,17 @@ Indeed, it's precisely for this reason that for many high-stakes decisions, regu
 
 The more flexible the model, the more data points are required to constrain the model's behavior (the so-called "curse of dimensionality"), and the more cautious you should become. There's a reason that LLMs hallucinate despite being fed unfathomably large amounts of data.
 
+### Extrapolation with Non-Tabular Data
+
+Thinking about "extrapolation" when dealing with tabular is sometimes a little easier than with non-tabular data, like image or video data. Nevertheless, models that take images or video as input are just as sensitive to external validity issues when extrapolating to types of behavior or inputs not seen in their training data.
+
+Here's a terrific example: for several years, car companies have been adding pedestrian detection algorithms to their cars to augment their automated crash prevention systems. Basically, these systems are designed to detect pedestrians in front of the car and apply the brakes if they determine a collision is imminent, just as they do when they sense an impending collision with another car.
+
+Recently, however, the Insurance Institute for Highway Safety (IIHS) realized a problem with these systems: many companies now sell clothes that have reflective materials to help improve pedestrian visibility at night (they're especially popular with runners and dog walkers). But it turns out that car companies didn't train their models using pedestrians wearing reflective strips. As a result, these cars are actually *more* likely to hit pedestrian wearing reflective materials because their vision models fail to recognize what they see as pedestrians, [as explained here](https://www.youtube.com/watch?v=uyVk_VVr2Y8).
+
+Oops!
+
+
 ## Train-Test-Splits and External Validity
 
 A common misconception among young data scientists is that the train-test-split workflow used in machine learning inoculates against external validity concerns. After all, the idea of split-train-test is that models are trained on one set of observations and evaluated against an entirely different set of observations.
