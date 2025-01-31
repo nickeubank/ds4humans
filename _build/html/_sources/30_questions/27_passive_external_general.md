@@ -1,10 +1,10 @@
 # Passive Prediction Questions and External Validity
 
-In this chapter, we will discuss the concept of External Validity as it pertains to answering Passive Prediction Questions. Where *internal validity* measures how well a model captures meaningful variation in the data we already have, *external validity* measures how well our model is likely to perform when faced with new data.
+In this chapter, we will discuss the concept of external validity as it pertains to answering Passive Prediction Questions. Where *internal validity* measures how well a model captures meaningful variation in the data we already have, *external validity* measures how well our model is likely to perform when faced with new data.
 
-As we learned before, a model's external validity is specific to the new context to which it is applied. A model will generally have very *high* external validity when used to answer Passive Prediction Questions in a setting very similar to the setting from which the data used to train the model was collected, but *low* external validity when applied in geographically, temporally, or socially different settings.
+As we learned before, a model's external validity is specific to the new context to which it is applied. A model will generally have very *high* external validity in a setting similar to the training context. In contrast, a model will generally have *low* external validity when applied in settings that differ from the training context geographically, temporally, or culturally. For example, a model trained to detect solar panels in satellite images in Arizona is likely to also perform well in the similarly hot arid climate of New Mexico, but performance would likely be lower in states that have different roof geometry as a result of winter snow like Michigan. That same model would also probably have extremely low external validity if used to detect solar panels in rural India or sub-Saharan Africa where housing structures and the types of panels commonly used are radically different than in the US.
 
-Some of the factors that influence the External Validity of Passive Prediction Questions are the same as those that shape the External Validity of Exploratory Questions, such as the population represented in the data (patterns in data from one country will often differ from patterns in data from another country), the time period in question (consumer behavior may vary across seasons, and many patterns in data change over longer timespans). But there are other concerns that are a little more specific to Passive Prediction Questions. In this chapter, I will discuss several of these concerns. As with Exploratory Questions, I will focus on more holistic considerations since I suspect you've already been exposed to more traditional statistical methods of model evaluation.
+Some of the factors that influence the external validity of Passive Prediction Questions are the same as those that shape the external validity of Exploratory Questions. Models trained on one population or during a specific time period may not generalize, whether used to answer Exploratory or Passive Prediction Questions. There are other concerns that are more specific to Passive Prediction Questions, however, as detailed in this chapter. As in our Exploratory Question readings, I will focus on more holistic considerations as I suspect you've already been exposed to more traditional statistical methods of model evaluation.
 
 ## Extrapolation and Training Parameter Ranges
 
@@ -14,7 +14,9 @@ To illustrate, consider the two models in the figure below ([source](https://ece
 
 ![example of two models that look similar over ranges with data but extrapolate very differently outside that range](images/extrapolation.jpg)
 
-Strategies like regularization are designed to constrain the "wonkiness" of models with the goal of making them less likely to go crazy outside the parameter range on which they were trained. Almost by definition, however, absent data in those extended ranges, there's no way to know for certain whether the model will generalize.
+Strategies like regularization[^regularization] are designed to constrain the "wonkiness" of models with the goal of making them less likely to go crazy outside the parameter range on which they were trained. Almost by definition, however, absent data in those extended ranges, there's no way to know for certain whether the model will generalize.
+
+[^regularization]: Regularization is the practice of modifying the loss function of a model to reward simpler specifications that are less prone to overfitting. Examples include adding a penalty term that penalizes coefficients with large absolute values, using weakly informative priors for Bayesian regression, or limiting the influence of outliers.
 
 ### What Constitutes Extrapolation?
 
