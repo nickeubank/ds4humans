@@ -4,9 +4,9 @@
 
 Of all external validity concerns that data scientists tend to underappreciate, none is more likely to cause serious problems than the existence of *adversarial users*.
 
-Adversarial users are users who attempt to subvert the intended function of a statistical or machine learning model. At first blush, adversarial users seem the stuff of spy novels and international espionage. In reality, however, they are likely to exist any time an algorithm or model is used to make decisions that are important to people.
+Adversarial users are users who attempt to subvert the intended function of a statistical or machine learning model. At first blush, adversarial users seem the stuff of spy novels and international espionage, and indeed the term encompasses people trying to deliberately cheat a system by nefarious means (e.g., [the 2024 TikTok "Infinite Money Glitch"](https://gizmodo.com/idiots-who-tried-tiktoks-viral-free-money-glitch-at-atms-are-getting-reported-for-fraud-2000495838) in which people deposited fake checks and then immediately withdrew money before the check was invalidated). But it also covers situations in which people use a system in a manner that is entirely within its rules, but do so in a way that the system designers did not foresee, resulting in outcomes the system designers do not desire. Indeed, adversarial users are likely to exist any time an algorithm or model is used to make decisions that are important to people.
 
-The pervasive threat of adversarial users emerges because humans are strategic actors. Once people realize that the outcomes they care about — insurance approvals, promotions, hiring, etc. — are being influenced by a formula, they will change their behavior to accommodate or game that formula.
+The pervasive threat of adversarial users emerges because humans are strategic actors. Once people realize that the outcomes they care about — insurance approvals, promotions, hiring, etc. — are being influenced by a formula, they will change their behavior to respond to the incentives created by the system.
 
 ## Adversarial Users as External Validity Concern
 

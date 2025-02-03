@@ -1,12 +1,18 @@
-
-
 # Adversarial User Examples
 
-The fact that an empirical regularity may be a good basis for answering Passive Predictive Questions in historical data but not once the model is actually deployed raises its head far, *far* more often than you might expect. To illustrate, in this reading, I will cover some additional high-profile examples.
+> "Economics can be summed up in four words: people respond to incentives. The rest is commentary."
+
+- Stephen Landsburg
+
+Whenever we deploy a model or algorithm to make decisions, that deployment changes what behavior is rewarded — that is, that deployment changes the *incentives* faced by actors. And people respond to incentives. Indeed, even when we try to design our model to reward *exactly* what we want, alignment issues are sure to arise, creating space between what we *want* our model to reward and what it *actually* rewards.
+
+It is for this reason that an empirical regularity may be a good basis for answering Passive Predictive Questions in historical data, but often fails once the model is actually deployed — because deployment itself causes changes in behavior. 
+
+To illustrate just how pervasive this is, this reading details a set of examples of adversarial users in domains ranging from internet search to car insurance.
 
 ## Search Engine Optimization
 
-The history of Google and other search engines is, essentially, a history of adversarial users ruining things for everyone. Have you ever wondered why, when you search for a recipe online, you have to scroll through paragraphs of pointless narrative before you get to the actual recipe? Or why youtube thumbnails are full of shocked faces and clickbait titles? In short: adversarial users!
+The history of Google and other search engines is, essentially, a history of adversarial users ruining things for everyone. Have you ever wondered why, when you search for a recipe online, you have to scroll through paragraphs of pointless narrative before you get to the actual recipe? Or why YouTube thumbnails are full of shocked faces and clickbait titles? In short: adversarial users!
 
 Google's perpetual challenge is to (a) find features that identify the websites that users want to see at the top of their search results, (b) update their search algorithm to up-rank sites with those features, then (c) find new features to use as everyone figures out what features Google is rewarding and adds them to their spammy sites.
 
@@ -52,7 +58,7 @@ Another context in which adversarial users are a problem (again due to adverse s
 
 ### Reduce the Information Asymmetry
 
-With car insurance, the main strategy companies use is to try and reduce the information asymmetry that gives rise to adverse selection (i.e., learn as much as they can about whether a potential customer is a good driver). Car insurance companies collect as much information on clients as they can before setting a price, like customer accident and traffic ticket histories. Insurance companies also offer discounts to drivers willing to install a device on their car that monitors how they drive (e.g., do they speed, slam the brakes, etc.) if they show evidence someone is a good driver.
+With car insurance, the main strategy companies use is to try and reduce the information asymmetry that gives rise to adverse selection (i.e., learn as much as they can about whether a potential customer is a good driver). Car insurance companies collect as much information on clients as they can before setting a price, like customer accident and traffic ticket histories. Insurance companies also offer discounts to drivers willing to install a device on their car that monitors how they drive (e.g., do they speed, slam the brakes, etc.) if they show evidence someone is a good driver. One of my students even reported that when they applied for car insurance, the company even asked for the GPA!
 
 Insurance companies will even go as far as to secretly buy data [that car manufacturers are quietly (and in some cases, illegally) collecting](https://www.nytimes.com/2024/04/23/technology/general-motors-spying-driver-data-consent.html?unlocked_article_code=1.sE4.eFtk.dNaHXEZcJ5rc&smid=url-share) on individual's driving behavior.
 
@@ -60,11 +66,11 @@ Insurance companies will even go as far as to secretly buy data [that car manufa
 
 Attempting to reduce information asymmetries is one strategy for avoiding adverse selection; another strategy is to limit opportunities for customers to shop around for the policy that is best for *them*. That's the strategy commonly employed by US health insurance companies. If customers could change health insurance any time they wanted, a strategic customer would not enroll in health insurance (or enroll in a low-premium, high deductible, high co-pay policy) when they were healthy, and if they got sick, switch to a more expensive but more generous policy.
 
-To prevent this, US health insurance policies only allow people to enroll or change their policies once a year (during an "open enrollment" period, which is usually October).[qualified] This limits customers' ability to change policies in response to sudden changes in their health status.
+To prevent this, US health insurance policies only allow people to enroll or change their policies once a year (during an "open enrollment" period, which is usually October).[^qualified] This limits customers' ability to change policies in response to sudden changes in their health status.
 
 [^qualified]: Legally, health insurance companies also have to let you change policies if you experience one of several "qualifying life events," like changing jobs or having a baby.
 
-Similarly, some health insurance policies are only open to qualified customers. For example, Duke has several health insurance policies only available to Duke faculty and employees. Because most people can't just "become a Duke employee" because they're especially prone to sickness, adverse selection is less of a concern for this group of customers, allowing the insurance provider to provide them with lower-cost insurance.
+Similarly, some health insurance policies are only open to qualified customers. For example, Duke has several health insurance policies only available to Duke faculty and employees. Most people who are especially prone to illness can't just "become a Duke employee," so adverse selection is less of a concern for this group of customers. That helps ensure Duke employees don't end up with excessive medical bills, allowing the insurance provider to provide Duke employees with lower-cost insurance.
 
 
 
