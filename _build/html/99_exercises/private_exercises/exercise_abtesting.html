@@ -306,6 +306,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li class="toctree-l1"><a class="reference internal" href="../../40_in_practice/05_backwards_design.html">Backwards Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../40_in_practice/20_from_data_to_decisions.html">Making Decisions Using Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../40_in_practice/25_writing_to_stakeholders.html">Writing to Stakeholders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../40_in_practice/30_giving_feedback.html">Giving Effective Feedback (Data Science Edition)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
 <ul class="nav bd-sidenav">
@@ -575,7 +576,7 @@ document.write(`
 </section>
 <section id="gradescope-autograding">
 <h2>Gradescope Autograding<a class="headerlink" href="#gradescope-autograding" title="Link to this heading">#</a></h2>
-<p>Please follow <a class="reference external" href="https://www.practicaldatascience.org/html/autograder_guidelines.html">all standard guidance</a> for submitting this assignment to the Gradescope autograder, including storing your solutions in a dictionary called <code class="docutils literal notranslate"><span class="pre">results</span></code> and ensuring your notebook runs from the start to completion without any errors.</p>
+<p>Please follow <a class="reference external" href="https://www.practicaldatascience.org/ids720_specific/autograder_guidelines.html">all standard guidance</a> for submitting this assignment to the Gradescope autograder, including storing your solutions in a dictionary called <code class="docutils literal notranslate"><span class="pre">results</span></code> and ensuring your notebook runs from the start to completion without any errors.</p>
 <p>For this assignment, please name your file <code class="docutils literal notranslate"><span class="pre">exercise_abtesting.ipynb</span></code> before uploading.</p>
 <p>You can check that you have answers for all questions in your <code class="docutils literal notranslate"><span class="pre">results</span></code> dictionary with this code:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="nb">set</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">==</span> <span class="p">{</span>
@@ -594,8 +595,7 @@ document.write(`
 </div>
 <section id="submission-limits">
 <h3>Submission Limits<a class="headerlink" href="#submission-limits" title="Link to this heading">#</a></h3>
-<p>Please remember that you are <strong>only allowed FOUR submissions to the autograder.</strong> Your last submission (if you submit 4 or fewer times), or your third submission (if you submit more than 4 times) will determine your grade Submissions that error out will <strong>not</strong> count against this total.</p>
-<p>That’s one more than usual in case there are issues with exercise clarity.</p>
+<p>Please remember that you are <strong>only allowed THREE submissions to the autograder.</strong> Your last submission (if you submit 3 or fewer times), or your third submission (if you submit more than 3 times) will determine your grade Submissions that error out will <strong>not</strong> count against this total.</p>
 </section>
 </section>
 <section id="import-the-data">
@@ -604,11 +604,18 @@ document.write(`
 <h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Link to this heading">#</a></h3>
 <p>Begin by importing Udacity’s data on user behavior <a class="reference external" href="https://github.com/nickeubank/MIDS_Data/tree/master/udacity_AB_testing">here.</a></p>
 <p>There are TWO datasets for this test — one for the control data (users who saw the original design), and one for treatment data (users who saw the experimental design). Udacity decided to show their test site to 1/2 of visitors, so there are roughly the same number of users appearing in each dataset (though this is not a requirement of AB tests).</p>
-<p>Please remember to load the data directly from github to assist the autograder.</p>
+<p>Please rmeember to load the data directly from github to assist the autograder.</p>
 </section>
 <section id="exercise-2">
 <h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Link to this heading">#</a></h3>
 <p>Explore the data. Can you identify the unit of observation of the data (e.g. what is represented by each row)?</p>
+<p>To be clear, the columns represent stages in a user funnel:</p>
+<ul class="simple">
+<li><p>Some number of users arrive at the website and are counted as Pageviews,</p></li>
+<li><p>Some portion of those users then click to enroll (and are counted as clicks),</p></li>
+<li><p>Some portion of those users then actually enroll in the free trial (after seeing an informational popup, in the case of treatment individuals),</p></li>
+<li><p>Finally some portion of those users end up paying at the end of the free trial period.</p></li>
+</ul>
 <p>(Note this is not the only way that A/B test data can be collected and/or reported — this is just what Udacity provided, presumably to help address privacy concerns.)</p>
 </section>
 </section>
