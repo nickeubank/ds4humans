@@ -30,6 +30,17 @@ But the details of *how* profilers answer the question of "what part of my code 
 
 A programmer who fails to ask and answer this question may instead find themselves spending hours re-writing functions that are complicated in terms of the structure of their code, but which actually contribute only trivially to the overall runtime of the program. And that is also the same fate that awaits the data scientists who dives into "solving" a problem too quickly without first ensuring they understand the lay of the land.
 
+<!-- ## Student Debt: Another Example
+
+Another example near and dear to many students' hearts (and wallets) is student debt. Student debt in the United States has been rising for years, and is taking on an ever-increasing share of overall household debt. Moreover, students who struggle to make their payments or default are forced to live with the financial consequences of those outcomes for years. 
+
+Given that, one might jump straight to the question of how debt can be reduced. But is the overall level of debt the main problem in the United States? Well, while I think most people would say that the cost of education in the US is far too high, it's not clear that the first thing one would want to do is reduce debt overall, or even focus on the most endebted students. Why? Because if one's concern is *unsustainable* student debt, then one should focus on the borrowers most likely to default. And it turns out the students who borrow the *least* tend to be the students most likely to eventually default. As noted in a recent [Brookings Institution report:](https://www.brookings.edu/articles/the-trouble-with-student-loans-low-earnings-not-high-debt/)
+
+> But the fact is that default is highest among those with the smallest student debts. Of those borrowing under $5,000 for college, 34 percent end up in default. This default rate actually drops as borrowing increases. For those borrowing more than $100,000, the default rate is 18 percent. Among graduate borrowers—who tend to have the largest debts—just seven percent default on their loans.
+
+Student debt defaults occur when students borrow but don't end up with the earnings to support that debt, either because they drop out before graduating or borrowed to pay for a low-quality program. -->
+
+
 ## Using Exploratory Questions to Prioritize Efforts
 
 If the preceding example feels too niche — you want to be a data scientist, after all, not a software engineer! — let's consider a different example. Suppose you've been hired by a new non-profit interested in helping reduce energy use in buildings in the United States. They know that fixed structures (factors, stores, houses, etc.) are responsible for a huge share of US energy consumption, and are interested in figuring out how to drive down that energy use by helping building owners improve the energy efficiency of their buildings (by providing information on things like government subsidies for efficiency improvements and the potential value of energy efficient windows, better heating and cooling, etc.).
