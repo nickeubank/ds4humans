@@ -304,6 +304,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li class="toctree-l1"><a class="reference internal" href="../40_in_practice/05_backwards_design.html">Backwards Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../40_in_practice/20_from_data_to_decisions.html">Making Decisions Using Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../40_in_practice/25_writing_to_stakeholders.html">Writing to Stakeholders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../40_in_practice/30_giving_feedback.html">Giving Effective Feedback (Data Science Edition)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
 <ul class="nav bd-sidenav">
@@ -555,7 +556,7 @@ document.write(`
 <p>For this task, you have been given <a class="reference external" href="https://www.freddiemac.com/research/datasets/sf-loanlevel-dataset">REAL data on a sample of all US Standard single family home mortgages purchased or insured by Freddie Mac</a> in a single calendar year along with payment data from that and two subsequent years.</p>
 <section id="warning">
 <h2>WARNING<a class="headerlink" href="#warning" title="Link to this heading">#</a></h2>
-<p><strong>This assignment is substantially longer than the exercises you may be accustomed to if you were in IDS 720. Please start early!</strong></p>
+<p><strong>This is a longer assignment than many you are accustomed to if you were in IDS 720. Please start early!</strong></p>
 </section>
 <section id="gradescope-autograding">
 <h2>Gradescope Autograding<a class="headerlink" href="#gradescope-autograding" title="Link to this heading">#</a></h2>
@@ -567,7 +568,7 @@ document.write(`
     <span class="s2">&quot;ex5_num_mortgages&quot;</span><span class="p">,</span>
     <span class="s2">&quot;ex5_share_delinquent&quot;</span><span class="p">,</span>
     <span class="s2">&quot;ex7_num_obs&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;ex11_predicted_delinquent&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ex10_predicted_delinquent&quot;</span><span class="p">,</span>
     <span class="s2">&quot;ex11_share_delinquent_weighted&quot;</span><span class="p">,</span>
     <span class="s2">&quot;ex13_optimal_threshold&quot;</span><span class="p">,</span>
     <span class="s2">&quot;ex14_normalized_value&quot;</span><span class="p">,</span>
@@ -669,7 +670,6 @@ If a loan has been acquired by REO, then the Current Loan Delinquency Status wil
 <span class="n">Property</span> <span class="n">Type</span>
 <span class="n">Original</span> <span class="n">Loan</span> <span class="n">Term</span>
 <span class="n">Number</span> <span class="n">of</span> <span class="n">Borrowers</span>
-<span class="n">Interest</span> <span class="n">Only</span> <span class="p">(</span><span class="n">I</span><span class="o">/</span><span class="n">O</span><span class="p">)</span> <span class="n">Indicator</span>
 </pre></div>
 </div>
 <p>Be sure to clean these variables. When doing so, please treat missing data as missing (e.g., <code class="docutils literal notranslate"><span class="pre">np.nan</span></code>, not as a distinct category). You will probably want to consult the documentation on the data for guidance on missing values.</p>
