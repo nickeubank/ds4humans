@@ -304,6 +304,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li class="toctree-l1"><a class="reference internal" href="../40_in_practice/05_backwards_design.html">Backwards Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../40_in_practice/20_from_data_to_decisions.html">Making Decisions Using Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../40_in_practice/25_writing_to_stakeholders.html">Writing to Stakeholders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../40_in_practice/30_giving_feedback.html">Giving Effective Feedback (Data Science Edition)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
 <ul class="nav bd-sidenav">
@@ -480,9 +481,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -498,19 +497,6 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-differential-is-often-a-myth">Performance Differential Is (Often) A Myth</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regulatory-compliance">Regulatory Compliance</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trusting-model-trusting-data">Trusting Model == Trusting Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ethical-transparency">Ethical Transparency</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ease-of-adoption">Ease of Adoption</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#no-magic-not-undue-deference">No Magic, Not Undue Deference</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -522,33 +508,30 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="interpretability-and-passive-prediction">
 <h1>Interpretability and Passive Prediction<a class="headerlink" href="#interpretability-and-passive-prediction" title="Link to this heading">#</a></h1>
-<p><a class="reference external" href="https://arxiv.org/abs/1811.10154">“Stop Using Black Boxes”</a> by Cynthia Rudin. Who is Cynthia Rudin? <a class="reference external" href="https://biostat.duke.edu/news/faculty-cynthia-rudin-wins-1-million-artificial-intelligence-prize-new-nobel">A truly amazing scholar.</a></p>
-<p>Using Black Boxes requires <a class="reference external" href="https://www.nytimes.com/2017/06/13/opinion/how-computers-are-harming-criminal-justice.html?unlocked_article_code=1.pk4.d6Ix.JKuN5_dxK_sS&amp;amp;smid=url-share">trusting the data too</a>.</p>
-<section id="performance-differential-is-often-a-myth">
-<h2>Performance Differential Is (Often) A Myth<a class="headerlink" href="#performance-differential-is-often-a-myth" title="Link to this heading">#</a></h2>
-<p>There’s just only so much signal in the data.</p>
-</section>
-<section id="regulatory-compliance">
-<h2>Regulatory Compliance<a class="headerlink" href="#regulatory-compliance" title="Link to this heading">#</a></h2>
-</section>
-<section id="trusting-model-trusting-data">
-<h2>Trusting Model == Trusting Data<a class="headerlink" href="#trusting-model-trusting-data" title="Link to this heading">#</a></h2>
-</section>
-<section id="ethical-transparency">
-<h2>Ethical Transparency<a class="headerlink" href="#ethical-transparency" title="Link to this heading">#</a></h2>
-</section>
-<section id="ease-of-adoption">
-<h2>Ease of Adoption<a class="headerlink" href="#ease-of-adoption" title="Link to this heading">#</a></h2>
-<p>(Cite study)</p>
-</section>
-<section id="no-magic-not-undue-deference">
-<h2>No Magic, Not Undue Deference<a class="headerlink" href="#no-magic-not-undue-deference" title="Link to this heading">#</a></h2>
+<p>It is my aim, at some point soon, to have my own chapter here. But for now, two external readings that are hard to beat!</p>
 <ul class="simple">
-<li><p>Most models internal, where IP-black-box doesn’t matter</p></li>
-<li><p>Handoff and implementation easier</p></li>
-<li><p>Ethical review.</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1811.10154">“Stop Using Black Boxes”</a> by Cynthia Rudin. Who is Cynthia Rudin? <a class="reference external" href="https://biostat.duke.edu/news/faculty-cynthia-rudin-wins-1-million-artificial-intelligence-prize-new-nobel">A truly amazing scholar.</a></p></li>
+<li><p>Using Black Boxes requires <a class="reference external" href="https://www.nytimes.com/2017/06/13/opinion/how-computers-are-harming-criminal-justice.html?unlocked_article_code=1.pk4.d6Ix.JKuN5_dxK_sS&amp;amp;smid=url-share">trusting the data too</a>.</p></li>
 </ul>
-</section>
+<!-- ## Performance Differential Is (Often) A Myth
+
+There's just only so much signal in the data.
+
+## Regulatory Compliance
+
+## Trusting Model == Trusting Data
+
+## Ethical Transparency
+
+## Ease of Adoption
+
+(Cite study)
+
+## No Magic, Not Undue Deference
+
+- Most models internal, where IP-black-box doesn't matter
+- Handoff and implementation easier
+- Ethical review. -->
 </section>
 
     <script type="text/x-thebe-config">
@@ -605,26 +588,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-differential-is-often-a-myth">Performance Differential Is (Often) A Myth</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regulatory-compliance">Regulatory Compliance</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trusting-model-trusting-data">Trusting Model == Trusting Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ethical-transparency">Ethical Transparency</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ease-of-adoption">Ease of Adoption</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#no-magic-not-undue-deference">No Magic, Not Undue Deference</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
