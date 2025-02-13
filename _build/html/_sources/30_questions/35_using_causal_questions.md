@@ -27,7 +27,7 @@ In the course of developing this model, the Chief discovers that one of the stro
 This leads the Chief to wonder whether they could reduce surgical complications if they treated patients who have high blood pressure with pressure-reducing medications before surgery. In other words, the Chief Surgeon wants to know "What effect would treating patients with high blood pressure have on surgical complication rates?"
 
 Rather than just giving all patients with high blood pressure new drugs (and delaying their surgeries while the drugs take effect), the Chief wants *you* to provide a rigorous answer to her question. After all, high blood pressure *may* be the cause of surgical complications, in which case the blood pressure medication may reduce complications. But it might also be the case that high blood pressure is a *symptom* of a third factor that causes both high blood pressure *and* surgical complications. For example, some lower-income patients may be leading especially stressful lives (leading to high blood pressure) and also have more difficulty taking time off after surgery to recover. In that case, high blood pressure is useful for identifying patients likely to experience surgical complications, but treating the high blood pressure wouldn’t reduce complications since those patients would still be unable to take time off after surgery.
-
+<!-- 
 ## The Two-Fold Challenge of Causal Questions
 
 For reasons we will detail in the next reading, answering Causal Questions is an inherently difficult task for deep epistemological reasons. In short, getting high *internal validity* when trying to answer Causal Questions is really hard. But answering Causal Questions almost always comes with significant external validity challenges as well. 
@@ -54,7 +54,7 @@ In the context of a clinical trial, this issue of external validity may seem eas
 
 [^minority_enrollment]: This seems likely to be due, in part, to hesitancy to enroll in clinical trials by individuals aware of past abuses of minority patients, as in the [Tuskegee Syphilis Study](https://www.cdc.gov/tuskegee/index.html).
 
-Outside of drug or medical device trials, however, external validity can much harder to establish. For example, the functionality of many internet services and apps depends on network effects — testing out a new social feature on Instagram by making it available to only a handful of users in a randomized trial (an A/B test, in the language of tech companies) may not give you a meaningful sense of how the feature would be used if it was visible to all users. The way that bank customers use a new budgeting app in the context of a two-week study may not be indicative of how they would use it over the long run when the feature is no longer new.
+Outside of drug or medical device trials, however, external validity can much harder to establish. For example, the functionality of many internet services and apps depends on network effects — testing out a new social feature on Instagram by making it available to only a handful of users in a randomized trial (an A/B test, in the language of tech companies) may not give you a meaningful sense of how the feature would be used if it was visible to all users. The way that bank customers use a new budgeting app in the context of a two-week study may not be indicative of how they would use it over the long run when the feature is no longer new. -->
 
 ## The Causal Question Work Flow
 
