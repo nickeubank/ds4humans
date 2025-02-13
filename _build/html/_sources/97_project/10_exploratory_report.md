@@ -8,7 +8,7 @@ The report should be written according to the [principles in this document](../4
 
 ## Finding Data
 
-To help you along your way, here's a [compilation of a huge number of public data sources](99_data.md). It's far from exhaustive, but a good place to browse if you're unsure how to answer one of your questions.
+To help you along your way, here's a [compilation of a huge number of public data sources](99_data). It's far from exhaustive, but a good place to browse if you're unsure how to answer one of your questions.
 
 Still stuck? Let me know and we can brainstorm together.
 

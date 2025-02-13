@@ -24,24 +24,30 @@ Th Feb 6,"Passive Prediction Questions: Purpose, Internal Validity 1","- `Chpt 9
 - `Chpt 11 <../30_questions/24_passive_internal_errors.html>`_ ONLY FIRST READING, not Fairness",`Passive P Ex <../99_exercises/exercise_passive_prediction.html>`_
 Tu Feb 11,Passive Prediction Questions: Internal Validity 2,- `Chpt 11 Fairness Section <../30_questions/25_passive_fairness.html>`_,`Car Buyer <../99_exercises/exercise_used_car.html>`_
 Th Feb 13,Passive Prediction Questions: External Validity,"- `Chpt 12 <../30_questions/27_passive_external_general.html>`_
-- **Exploratory Report Due**",
-Tu Feb 18,Passive Prediction Questions: Interpretability,- `Chpt 13 <../30_questions/29_passive_interpretable_models.html>`_,
-Th Feb 20,Causal Questions: Purpose,"- `Using Causal Questions <../30_questions/30_using_causal_questions.html>`_
+- **Exploratory Report Due**",`Feedback <../97_project/20_feedback.html>`_
+Tu Feb 18,Passive Prediction Questions: Interpretability,"- `Chpt 13 <../30_questions/29_passive_interpretable_models.html>`_
+- `Giving Feedback <../40_in_practice/30_giving_feedback.html>`_
+- **Feedback Memos Should Be Shared by Midnight on 18th**",
+Th Feb 20,Feedback Class,"Discuss Feedback
+",
+Tu Feb 25,Causal Questions: Purpose,"- `Using Causal Questions <../30_questions/30_using_causal_questions.html>`_
 - `Answering Causal Questions <../30_questions/40_answering_causal_questions.html>`_",
-Tu Feb 25,Causal Questions: Potential Outcomes,- `Potential Outcomes Framework <../35_causal/10_potential_outcomes.html>`_,
-Th Feb 27,Causal Questions: Potential Outcomes,"- Cunningham, Chpt 4, pp 135 (""Independence Assumption"") - 148 (Stop at ""Randomization Inference"")
+Th Feb 27,Causal Questions: Potential Outcomes,- `Potential Outcomes Framework <../35_causal/10_potential_outcomes.html>`_,
+Tu Mar 4,Causal Questions: Potential Outcomes,"- Cunningham, Chpt 4, pp 135 (""Independence Assumption"") - 148 (Stop at ""Randomization Inference"")
 - `Indicator Variables <../35_causal/30_interpreting_indicator_vars.html>`_
 
 (Note `SDO` (Simple Difference in Outcomes) in Cunningham same as ""`\widehat{ATE}` from class)
 
  Optional:
   - Read Chpt 4 in Cunningham from start (different presentation of potential outcomes)",
-Tu Mar 4,"Causal Questions: Experiments in Practice, Internal Validity","Experiments: Internal Validity (In Practice):
+Th Mar 6,"Causal Questions: Experiments in Practice, Internal Validity","Experiments: Internal Validity (In Practice):
 
 - KTX: Chpt 2 (End to End Example)
 - KTX: Chpt 3, ""Threats to Internal Validity"" (p. 42-47) 
 - KTX: Chpt 19 (A/A Testing)",
-Th Mar 6,"Causal Questions: Experiments in Practice, External Validity","Overall Evaluation Criteria: KTX Chpt 7.
+Tu Mar 11,**NO CLASS**,,
+Th Mar 13,**NO CLASS**,,
+Tu Mar 18,"Causal Questions: Experiments in Practice, External Validity","Overall Evaluation Criteria: KTX Chpt 7.
 
 Finishing Internal Validity: 
 
@@ -51,27 +57,25 @@ Experiments: External Validity (In Practice):
 
 - KTX, Chpt 3, ""Threats to External Validity"" to end (p. 47-54)
 - Kohvai, Tang and Xu, Chpt 23 (Primacy Effects / Long Term Decay)",
-Tu Mar 11,**NO CLASS**,,
-Th Mar 13,**NO CLASS**,,
-Tu Mar 18,"Causal Questions: Experiments in Practice, Design","Designing Experiments
+Th Mar 20,"Causal Questions: Experiments in Practice, Design","Designing Experiments
 
 - Statistical Power and Sample Sizes: GHV Ch 16
 - `Don't stop experiments early! <endogenous_stopping.ipynb>`_
 
  
 ",
-Th Mar 20,"Causal Questions: Experiments in Practice, P-Value Interpretation","- Statistical Decision Theory (on Canvas). 550-556
+Tu Mar 25,"Causal Questions: Experiments in Practice, P-Value Interpretation","- Statistical Decision Theory (on Canvas). 550-556
 
 (This is same as IDS 705 Lecture 8 Reading)",
-Tu Mar 25,AB Testing Review,,
-Th Mar 27,**MIDTERM**,**MIDTERM**,
-Tu Apr 1,Causal Questions: Regression,- `Causal Beyond Experiments <../35_causal/40_causal_inference_beyond_ab_testing.html>`_,
-Th Apr 3,Causal Questions: Matching,"- `The Why of Matching <../35_causal/80_matching_why.html>`_
+Th Mar 27,AB Testing Review,,
+Tu Apr 1,**MIDTERM**,**MIDTERM**,
+Th Apr 3,Causal Questions: Regression,- `Causal Beyond Experiments <../35_causal/40_causal_inference_beyond_ab_testing.html>`_,
+Tu Apr 8,Causal Questions: Matching,"- `The Why of Matching <../35_causal/80_matching_why.html>`_
 - `The How of Matching Summary <../35_causal/90_matching_how.html>`_
 - `Methods for Matching <https://youtu.be/tvMyjDi4dyg?t=910>`_
 
 *Watch the video above from about 15 minutes in (where link starts) till at least 45 minutes in, keep going if you want to learn about propensity score matching problems.*",
-Tu Apr 8,Causal Questions: Differences and Differences / Panels,"- Cunningham, Chpt 9 pp 406 (Difference in Differences) - pp 433 (Stop at ""Importance of Placebos in Diff-in-Diff"")
+Th Apr 9,Causal Questions: Differences and Differences / Panels,"- Cunningham, Chpt 9 pp 406 (Difference in Differences) - pp 433 (Stop at ""Importance of Placebos in Diff-in-Diff"")
  -(Book page numbers at bottom of PDF on canvas. Full chapter is in PDF, more than you need to read.)
  
  Optional but encouraged:
@@ -79,7 +83,6 @@ Tu Apr 8,Causal Questions: Differences and Differences / Panels,"- Cunningham, C
  
  - `Enfranchisement and Incarceration <https://www.cambridge.org/core/journals/american-political-science-review/article/enfranchisement-and-incarceration-after-the-1965-voting-rights-act/C68FA7BB8CA313BDD8D9A39BA666A21D>`_
  - `Diff-in-Diffs at Netflix <https://netflixtechblog.com/key-challenges-with-quasi-experiments-at-netflix-89b4f234b852>`_",
-Th Apr 9,x,x,
-Tu Apr 15,,- **Revised Exploratory Due along with Causal Proposal**,
-"Wed, April 23",,- **Optional Due Date for Causal Rough Draft (11pm)**,
-"Wed, Apr 30",,- **Final Causal Report Due**,
+Tu Apr 15,x,- **Revised Exploratory Due along with Causal Proposal**,x
+"Wed, April 23",x,- **Optional Due Date for Causal Rough Draft (11pm)**,x
+"Wed, Apr 30",x,- **Final Causal Report Due**,x
