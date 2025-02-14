@@ -26,7 +26,19 @@ Delightfully, he also uses [this figure](https://youtu.be/mBEA7PKDmiY?si=pykJpxp
 
 Students tend to feel most comfortable at the lowest of these levels of abstraction — data science classes tend to emphasize factor engineering and model diagnostics, so students have the most practice raising concrete concerns about model fitting and implementation. Yet that is also the domain where most other data scientists are likely to feel most comfortable, and so while feedback at this level is valuable, learning to reflect more on project motivation and how the project fits with the motivating problem often gives one a comparative advantage in providing useful feedback.
 
-## Start with a Summarization
+## Ask What Kind of Feedback Your Colleague is Seeking
+
+Before anything else, be sure to ask your colleague what type of feedback they are looking for. There are times that people are looking for any and all feedback on their project. More often than not, though, your colleagues will be particularly interested in your thoughts on certain aspects of their work, and will already know that some parts of a project need improvement (and so won't want you spending time telling them about issues they are already aware of).
+
+It's also important to bear in mind what changes are feasible. If someone comes to you to practice a presentation they are giving to their boss in two days, there's nothing to be gained by telling them they could have approached the whole project a different way and it would have turned out better. All that type of feedback would accomplish is to wreck their confidence on the eve of a big presentation. 
+
+## Providing Written Feedback
+
+What follows is how I approach providing written feedback. I generally prefer to provide my comments in written form, and I think writing is the best way to force yourself to be precise in your thinking, allows for iteration and revision, and it ensures your colleague can revisit and reflect on the comments you have invested time in providing. 
+
+If you are providing verbal feedback, you may need to modify some of the details of what follows, but I would still suggest following a model *like* this.
+
+### 1. Start with a Summarization
 
 Before you offer suggestions, begin by laying out how you understand the project. Using this framework, lay out what you understand to be:
 
@@ -43,20 +55,20 @@ This exercise is useful for two reasons. First, it helps *you* think through the
 
 Second, summarizing how you understand a project helps the project authors understand what they have communicated to the reader and the basis for the feedback you provide. Moreover, it makes it clear to the recipient of feedback that you gave their project your full attention, which is likely to make them more receptive to critiques.
 
-## Offer Higher-Level Thoughts On The Analysis
+### 2. Offer Higher-Level Thoughts On The Analysis
 
 It's easy to get lost in the weeds — "fix that figure caption," "did you try logging that variable?," or "what about using [trendy new model]?" 
 
 But before you get into more detailed feedback, I find it helpful to provide feedback on the overall strategy of the analysis. In general, this amounts to thinking about whether the different levels of an analysis link up. For example, do you think answering the question the author sets out to answer will really help address the problem that motivated their analysis? Do you think their empirical strategy can actually answer the question they set out to answer?
 
-### Say What You Think The Analysis Did Well
+#### Say What You Think The Analysis Did Well
 
 As you work on this, remember to not just comment on problems — talk about the analysis' strengths too! It's easy to focus on the short-comings of an analysis, but emphasizing the positive not only prevents the recipient from feeling attacked, it also helps them understand the elements of their analysis that they should retain or emphasize.
 
-### Be Constructive
+#### Be Constructive
 
 Whenever you raise a concern, try to also provide some thoughts about how the concern could be addressed. It helps people to know about problems with their analyses before they show them to higher-ups, don't get me wrong, but nothing makes people more grateful than identifying a problem *and* offering a solution. Your suggestion doesn't have to be perfect. Even a so-so suggestion makes the point you see yourself as part of a collaborative enterprise (you're working together towards getting it right!) and may inspire new lines of thinking.
 
-## Then Get Granular, if Appropriate
+### 3. Then Get Granular, if Appropriate
 
 Once you're done with strategic, high-level reflections, *then* you can turn to the granular. But remember, the goal isn't to score points — if you've just suggested that the analysis needs to go in a fundamentally different direction, nitpicking about feature engineering just comes across as petty and annoying. 

@@ -302,7 +302,6 @@ commentsRunWhenDOMLoaded(addUtterances);
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="00_how_to_read_this_book.html">How to Read (Academic Edition)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_backwards_design.html">Backwards Design</a></li>
-<li class="toctree-l1"><a class="reference internal" href="20_from_data_to_decisions.html">Making Decisions Using Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="25_writing_to_stakeholders.html">Writing to Stakeholders</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Giving Effective Feedback (Data Science Edition)</a></li>
 </ul>
@@ -505,13 +504,17 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#levels-of-feedback">Levels of Feedback</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-with-a-summarization">Start with a Summarization</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#offer-higher-level-thoughts-on-the-analysis">Offer Higher-Level Thoughts On The Analysis</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#say-what-you-think-the-analysis-did-well">Say What You Think The Analysis Did Well</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#be-constructive">Be Constructive</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-what-kind-of-feedback-your-colleague-is-seeking">Ask What Kind of Feedback Your Colleague is Seeking</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#providing-written-feedback">Providing Written Feedback</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#start-with-a-summarization">1. Start with a Summarization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#offer-higher-level-thoughts-on-the-analysis">2. Offer Higher-Level Thoughts On The Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#say-what-you-think-the-analysis-did-well">Say What You Think The Analysis Did Well</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#be-constructive">Be Constructive</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#then-get-granular-if-appropriate">Then Get Granular, if Appropriate</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#then-get-granular-if-appropriate">3. Then Get Granular, if Appropriate</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -546,8 +549,17 @@ document.write(`
 <p><img alt="estimand estimator estimate hedgehog" src="../_images/estimand_estimator_estimate.png" /></p>
 <p>Students tend to feel most comfortable at the lowest of these levels of abstraction — data science classes tend to emphasize factor engineering and model diagnostics, so students have the most practice raising concrete concerns about model fitting and implementation. Yet that is also the domain where most other data scientists are likely to feel most comfortable, and so while feedback at this level is valuable, learning to reflect more on project motivation and how the project fits with the motivating problem often gives one a comparative advantage in providing useful feedback.</p>
 </section>
+<section id="ask-what-kind-of-feedback-your-colleague-is-seeking">
+<h2>Ask What Kind of Feedback Your Colleague is Seeking<a class="headerlink" href="#ask-what-kind-of-feedback-your-colleague-is-seeking" title="Link to this heading">#</a></h2>
+<p>Before anything else, be sure to ask your colleague what type of feedback they are looking for. There are times that people are looking for any and all feedback on their project. More often than not, though, your colleagues will be particularly interested in your thoughts on certain aspects of their work, and will already know that some parts of a project need improvement (and so won’t want you spending time telling them about issues they are already aware of).</p>
+<p>It’s also important to bear in mind what changes are feasible. If someone comes to you to practice a presentation they are giving to their boss in two days, there’s nothing to be gained by telling them they could have approached the whole project a different way and it would have turned out better. All that type of feedback would accomplish is to wreck their confidence on the eve of a big presentation.</p>
+</section>
+<section id="providing-written-feedback">
+<h2>Providing Written Feedback<a class="headerlink" href="#providing-written-feedback" title="Link to this heading">#</a></h2>
+<p>What follows is how I approach providing written feedback. I generally prefer to provide my comments in written form, and I think writing is the best way to force yourself to be precise in your thinking, allows for iteration and revision, and it ensures your colleague can revisit and reflect on the comments you have invested time in providing.</p>
+<p>If you are providing verbal feedback, you may need to modify some of the details of what follows, but I would still suggest following a model <em>like</em> this.</p>
 <section id="start-with-a-summarization">
-<h2>Start with a Summarization<a class="headerlink" href="#start-with-a-summarization" title="Link to this heading">#</a></h2>
+<h3>1. Start with a Summarization<a class="headerlink" href="#start-with-a-summarization" title="Link to this heading">#</a></h3>
 <p>Before you offer suggestions, begin by laying out how you understand the project. Using this framework, lay out what you understand to be:</p>
 <ul class="simple">
 <li><p>the problem motivating the project (“This project aims to address [problem]…”),</p></li>
@@ -562,21 +574,22 @@ document.write(`
 <p>Second, summarizing how you understand a project helps the project authors understand what they have communicated to the reader and the basis for the feedback you provide. Moreover, it makes it clear to the recipient of feedback that you gave their project your full attention, which is likely to make them more receptive to critiques.</p>
 </section>
 <section id="offer-higher-level-thoughts-on-the-analysis">
-<h2>Offer Higher-Level Thoughts On The Analysis<a class="headerlink" href="#offer-higher-level-thoughts-on-the-analysis" title="Link to this heading">#</a></h2>
+<h3>2. Offer Higher-Level Thoughts On The Analysis<a class="headerlink" href="#offer-higher-level-thoughts-on-the-analysis" title="Link to this heading">#</a></h3>
 <p>It’s easy to get lost in the weeds — “fix that figure caption,” “did you try logging that variable?,” or “what about using [trendy new model]?”</p>
 <p>But before you get into more detailed feedback, I find it helpful to provide feedback on the overall strategy of the analysis. In general, this amounts to thinking about whether the different levels of an analysis link up. For example, do you think answering the question the author sets out to answer will really help address the problem that motivated their analysis? Do you think their empirical strategy can actually answer the question they set out to answer?</p>
 <section id="say-what-you-think-the-analysis-did-well">
-<h3>Say What You Think The Analysis Did Well<a class="headerlink" href="#say-what-you-think-the-analysis-did-well" title="Link to this heading">#</a></h3>
+<h4>Say What You Think The Analysis Did Well<a class="headerlink" href="#say-what-you-think-the-analysis-did-well" title="Link to this heading">#</a></h4>
 <p>As you work on this, remember to not just comment on problems — talk about the analysis’ strengths too! It’s easy to focus on the short-comings of an analysis, but emphasizing the positive not only prevents the recipient from feeling attacked, it also helps them understand the elements of their analysis that they should retain or emphasize.</p>
 </section>
 <section id="be-constructive">
-<h3>Be Constructive<a class="headerlink" href="#be-constructive" title="Link to this heading">#</a></h3>
+<h4>Be Constructive<a class="headerlink" href="#be-constructive" title="Link to this heading">#</a></h4>
 <p>Whenever you raise a concern, try to also provide some thoughts about how the concern could be addressed. It helps people to know about problems with their analyses before they show them to higher-ups, don’t get me wrong, but nothing makes people more grateful than identifying a problem <em>and</em> offering a solution. Your suggestion doesn’t have to be perfect. Even a so-so suggestion makes the point you see yourself as part of a collaborative enterprise (you’re working together towards getting it right!) and may inspire new lines of thinking.</p>
 </section>
 </section>
 <section id="then-get-granular-if-appropriate">
-<h2>Then Get Granular, if Appropriate<a class="headerlink" href="#then-get-granular-if-appropriate" title="Link to this heading">#</a></h2>
+<h3>3. Then Get Granular, if Appropriate<a class="headerlink" href="#then-get-granular-if-appropriate" title="Link to this heading">#</a></h3>
 <p>Once you’re done with strategic, high-level reflections, <em>then</em> you can turn to the granular. But remember, the goal isn’t to score points — if you’ve just suggested that the analysis needs to go in a fundamentally different direction, nitpicking about feature engineering just comes across as petty and annoying.</p>
+</section>
 </section>
 </section>
 
@@ -645,13 +658,17 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#levels-of-feedback">Levels of Feedback</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-with-a-summarization">Start with a Summarization</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#offer-higher-level-thoughts-on-the-analysis">Offer Higher-Level Thoughts On The Analysis</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#say-what-you-think-the-analysis-did-well">Say What You Think The Analysis Did Well</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#be-constructive">Be Constructive</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-what-kind-of-feedback-your-colleague-is-seeking">Ask What Kind of Feedback Your Colleague is Seeking</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#providing-written-feedback">Providing Written Feedback</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#start-with-a-summarization">1. Start with a Summarization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#offer-higher-level-thoughts-on-the-analysis">2. Offer Higher-Level Thoughts On The Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#say-what-you-think-the-analysis-did-well">Say What You Think The Analysis Did Well</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#be-constructive">Be Constructive</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#then-get-granular-if-appropriate">Then Get Granular, if Appropriate</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#then-get-granular-if-appropriate">3. Then Get Granular, if Appropriate</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
