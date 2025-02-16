@@ -59,7 +59,9 @@ Second, summarizing how you understand a project helps the project authors under
 
 It's easy to get lost in the weeds — "fix that figure caption," "did you try logging that variable?," or "what about using [trendy new model]?" 
 
-But before you get into more detailed feedback, I find it helpful to provide feedback on the overall strategy of the analysis. In general, this amounts to thinking about whether the different levels of an analysis link up. For example, do you think answering the question the author sets out to answer will really help address the problem that motivated their analysis? Do you think their empirical strategy can actually answer the question they set out to answer?
+But before you get into more detailed feedback, I find it helpful to provide feedback on the overall strategy of the analysis. In general, this amounts to thinking about whether the different levels of an analysis link up. For example, do you think answering the question the author sets out to answer will really help address the problem that motivated their analysis? Do you think their empirical strategy can actually answer the question they set out to answer? 
+
+When doing so, pay particular attention to the kind of "slippage" that occurs between levels of an analysis — many projects articulate a problem well and have a clear question they want to answer, but on reflect the question the authors seek to answer won't actually help solve the problem. Similarly, sometimes an analysis will have a good question they want to answer, and a good empirical strategy, but the quantity the empirical strategy would estimate isn't actually quite the answer to the question they authors want to know.
 
 #### Say What You Think The Analysis Did Well
 
