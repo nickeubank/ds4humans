@@ -27,6 +27,9 @@ In the course of developing this model, the Chief discovers that one of the stro
 This leads the Chief to wonder whether they could reduce surgical complications if they treated patients who have high blood pressure with pressure-reducing medications before surgery. In other words, the Chief Surgeon wants to know "What effect would treating patients with high blood pressure have on surgical complication rates?"
 
 Rather than just giving all patients with high blood pressure new drugs (and delaying their surgeries while the drugs take effect), the Chief wants *you* to provide a rigorous answer to her question. After all, high blood pressure *may* be the cause of surgical complications, in which case the blood pressure medication may reduce complications. But it might also be the case that high blood pressure is a *symptom* of a third factor that causes both high blood pressure *and* surgical complications. For example, some lower-income patients may be leading especially stressful lives (leading to high blood pressure) and also have more difficulty taking time off after surgery to recover. In that case, high blood pressure is useful for identifying patients likely to experience surgical complications, but treating the high blood pressure wouldn’t reduce complications since those patients would still be unable to take time off after surgery.
+
+And so, a Causal Question is born!
+
 <!-- 
 ## The Two-Fold Challenge of Causal Questions
 
