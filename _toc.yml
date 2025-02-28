@@ -94,7 +94,6 @@ parts:
   - caption: Data Science in Practice
     chapters:
       - file: 40_in_practice/00_how_to_read_this_book
-      - file: 40_in_practice/05_backwards_design
       - file: 40_in_practice/25_writing_to_stakeholders
       - file: 40_in_practice/30_giving_feedback
   - caption: Advanced Topics
