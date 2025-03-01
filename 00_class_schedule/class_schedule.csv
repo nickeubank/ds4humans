@@ -33,14 +33,13 @@ Th Feb 20,SNOW DAY,,
 Tu Feb 25,Feedback Class,- Read feedback provided to your team. Be prepared to discuss.,- Discuss Feedback
 Th Feb 27,Causal Questions: Purpose,"- `Using Causal Questions <../30_questions/30_using_causal_questions.html>`_
 - `Answering Causal Questions <../30_questions/40_answering_causal_questions.html>`_",
-Tu Mar 4,Causal Questions: Potential Outcomes,- `Potential Outcomes Framework <../35_causal/10_potential_outcomes.html>`_,
-Th Mar 6,Causal Questions: Potential Outcomes,"- Cunningham, Chpt 4, pp 135 (""Independence Assumption"") - 148 (Stop at ""Randomization Inference"")
-- `Indicator Variables <../35_causal/30_interpreting_indicator_vars.html>`_
-
-(Note `SDO` (Simple Difference in Outcomes) in Cunningham same as ""`\widehat{ATE}` from class)
+Tu Mar 4,Causal Questions: Potential Outcomes,"- `Potential Outcomes Framework <../35_causal/10_potential_outcomes.html>`_
 
  Optional:
-  - Read Chpt 4 in Cunningham from start (different presentation of potential outcomes)",
+  - Read Chpt 4 in Cunningham from start (different presentation of potential outcomes).
+  - Note that Cunningham uses the term Simple Difference in Outcomes (SDO) instead of $\widehat{ATE}$ (the term I use). They are perfectly interchangable.",
+Th Mar 6,Causal Questions: Potential Outcomes,"- Cunningham, Chpt 4, pp 135 (""Independence Assumption"") - 148 (Stop at ""Randomization Inference"")
+- `Indicator Variables <../35_causal/30_interpreting_indicator_vars.html>`_",
 Tu Mar 11,**NO CLASS**,,
 Th Mar 13,**NO CLASS**,,
 Tu Mar 18,"Causal Questions: Experiments in Practice, Internal Validity","Experiments: Internal Validity (In Practice):
@@ -87,4 +86,4 @@ Tu Apr 15,Causal Questions: Differences and Differences / Panels,"- Cunningham, 
 
 - **Revised Exploratory Due along with Causal Proposal**",
 "Wed, April 23",x,- **Optional Due Date for Causal Rough Draft (11pm)**,x
-"Wed, Apr 30",x,- **Final Causal Report Due**,x
+"Wed, Apr 30",,- **Final Causal Report Due**,x
