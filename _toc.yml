@@ -76,6 +76,7 @@ parts:
   - caption: Causal Inference
     chapters:
       - file: 35_causal/10_potential_outcomes
+      - file: 35_causal/15_evaluating_real_studies
       - file: 35_causal/30_interpreting_indicator_vars
         title: Indicator Variables
       - file: 35_causal/40_causal_inference_beyond_ab_testing

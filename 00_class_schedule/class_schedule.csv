@@ -37,9 +37,11 @@ Tu Mar 4,Causal Questions: Potential Outcomes,"- `Potential Outcomes Framework <
 
  Optional:
   - Read Chpt 4 in Cunningham from start (different presentation of potential outcomes).
-  - Note that Cunningham uses the term Simple Difference in Outcomes (SDO) instead of $\widehat{ATE}$ (the term I use). They are perfectly interchangable.",
-Th Mar 6,Causal Questions: Potential Outcomes,"- Cunningham, Chpt 4, pp 135 (""Independence Assumption"") - 148 (Stop at ""Randomization Inference"")
-- `Indicator Variables <../35_causal/30_interpreting_indicator_vars.html>`_",
+  - Note that Cunningham uses the term Simple Difference in Outcomes (SDO) instead of $\widehat{ATE}$ (the term I use). They are perfectly interchangable.",- `Ex <../99_exercises/exercise_potential_outcomes1.html>`_
+Th Mar 6,Causal Questions: Potential Outcomes,"- `Evaluating Real Studies <../35_causal/15_evaluating_real_studies.html>`_
+- Cunningham, Chpt 4, pp 135 (""Independence Assumption"") - 148 (Stop at ""Randomization Inference"")
+- `Indicator Variables <../35_causal/30_interpreting_indicator_vars.html>`_
+",
 Tu Mar 11,**NO CLASS**,,
 Th Mar 13,**NO CLASS**,,
 Tu Mar 18,"Causal Questions: Experiments in Practice, Internal Validity","Experiments: Internal Validity (In Practice):
@@ -64,9 +66,8 @@ Tu Mar 25,"Causal Questions: Experiments in Practice, Design","Designing Experim
 
  
 ",
-Th Mar 27,"Causal Questions: Experiments in Practice, P-Value Interpretation","- Statistical Decision Theory (on Canvas). 550-556
-
-(This is same as IDS 705 Lecture 8 Reading)",
+Th Mar 27,"Causal Questions: Experiments in Practice, P-Value Interpretation","- Statistical Decision Theory (on Canvas). 550-556 (This is same as IDS 705 Lecture 8 Reading)
+- `Assessing Statistical Results: Magnitude, Precision, and Model Uncertainty <https://doi.org/10.1080/00031305.2018.1537889>`_",
 Tu Apr 1,AB Testing Review,,
 Th Apr 3,**MIDTERM**,**MIDTERM**,
 Tu Apr 8,Causal Questions: Regression,- `Causal Beyond Experiments <../35_causal/40_causal_inference_beyond_ab_testing.html>`_,
@@ -86,4 +87,4 @@ Tu Apr 15,Causal Questions: Differences and Differences / Panels,"- Cunningham, 
 
 - **Revised Exploratory Due along with Causal Proposal**",
 "Wed, April 23",x,- **Optional Due Date for Causal Rough Draft (11pm)**,x
-"Wed, Apr 30",,- **Final Causal Report Due**,x
+"Wed, Apr 30",x,- **Final Causal Report Due**,x
