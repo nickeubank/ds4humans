@@ -24,6 +24,14 @@ My philosophy on document structure is that the way a document is organized shou
 
 That means that your report will probably *not* have a structure that mirrors the "state a problem and three questions you plan to answer" structure of the last assignment you completed. That structure was chosen to help you organize your thoughts at the problem and question generation stage. But you've now answered those questions and (presumably!) learned a lot in the process, and given your goal has changed and what you know has changed, so too should the structure of your report.
 
+## Writing a Coherent Report
+
+A final suggestion: there are some tasks in data science and in life that can be easily parallelized, and others than cannot. Writing a good, coherent report, in my experience, is very hard to do in a fully parallelized manner. 
+
+The "problem and three questions" structure that you used for the last assignment naturally lends itself to a divide-and-conquer approach in which different people answer and write up different questions. And for the first draft of your report, that's a reasonable strategy. But that approach also tends to create a very fragmented report without a clear message. 
+
+With that in mind, I would recommend that after pulling together a first draft of the various answers your team has collected, get together and discuss what you think is the take-away you want to communicate to your stakeholder. Then, with that in hand, move to a serial workflow in which one person takes a crack at editing *the entire report*. This person should feel unafraid to cut or move things around. Then let someone else read it and make edits. But since the report will be read from start to finish by one person, it makes a lot of sense that it be written (or at least edited) from start to finish by one person at a time.
+
 ## Due Date
 
 Your Exploratory Question Report is due **February 13th**.

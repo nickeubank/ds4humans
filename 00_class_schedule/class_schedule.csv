@@ -34,14 +34,13 @@ Tu Feb 25,Feedback Class,- Read feedback provided to your team. Be prepared to d
 Th Feb 27,Causal Questions: Purpose,"- `Using Causal Questions <../30_questions/30_using_causal_questions.html>`_
 - `Answering Causal Questions <../30_questions/40_answering_causal_questions.html>`_",
 Tu Mar 4,Causal Questions: Potential Outcomes,"- `Potential Outcomes Framework <../35_causal/10_potential_outcomes.html>`_
+- `Evaluating Real Studies <../35_causal/15_evaluating_real_studies.html>`_
 
  Optional:
   - Read Chpt 4 in Cunningham from start (different presentation of potential outcomes).
   - Note that Cunningham uses the term Simple Difference in Outcomes (SDO) instead of $\widehat{ATE}$ (the term I use). They are perfectly interchangable.",- `Ex <../99_exercises/exercise_potential_outcomes1.html>`_
-Th Mar 6,Causal Questions: Potential Outcomes,"- `Evaluating Real Studies <../35_causal/15_evaluating_real_studies.html>`_
-- Cunningham, Chpt 4, pp 135 (""Independence Assumption"") - 148 (Stop at ""Randomization Inference"")
-- `Indicator Variables <../35_causal/30_interpreting_indicator_vars.html>`_
-",
+Th Mar 6,Causal Questions: Potential Outcomes,"- Cunningham, Chpt 4, pp 135 (""Independence Assumption"") - 148 (Stop at ""Randomization Inference"")
+- `Indicator Variables <../35_causal/30_interpreting_indicator_vars.html>`_",- `Ex <../99_exercises/exercise_resume_experiment.html>`_
 Tu Mar 11,**NO CLASS**,,
 Th Mar 13,**NO CLASS**,,
 Tu Mar 18,"Causal Questions: Experiments in Practice, Internal Validity","Experiments: Internal Validity (In Practice):

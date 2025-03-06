@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Assignment 2: Exploratory Question Report &#8212; Solving Problems With Data</title>
+    <title>P-Values and Decisions Making &#8212; Solving Problems With Data</title>
   
   
   
@@ -104,7 +104,9 @@ commentsRunWhenDOMLoaded(addUtterances);
                 gtag('config', 'G-RKDPB41DQ2');
             </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '97_project/10_exploratory_report';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '40_in_practice/40_pvalues_and_decision_making';</script>
     <link rel="icon" href="../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -301,9 +303,9 @@ commentsRunWhenDOMLoaded(addUtterances);
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Science in Practice</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../40_in_practice/00_how_to_read_this_book.html">How to Read (Academic Edition)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../40_in_practice/25_writing_to_stakeholders.html">Writing to Stakeholders</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../40_in_practice/30_giving_feedback.html">Giving Effective Feedback (Data Science Edition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_how_to_read_this_book.html">How to Read (Academic Edition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="25_writing_to_stakeholders.html">Writing to Stakeholders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="30_giving_feedback.html">Giving Effective Feedback (Data Science Edition)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
 <ul class="nav bd-sidenav">
@@ -379,7 +381,7 @@ commentsRunWhenDOMLoaded(addUtterances);
       
       
       
-      <li><a href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F97_project/10_exploratory_report.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F40_in_practice/40_pvalues_and_decision_making.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -409,7 +411,7 @@ commentsRunWhenDOMLoaded(addUtterances);
       
       
       
-      <li><a href="../_sources/97_project/10_exploratory_report.md" target="_blank"
+      <li><a href="../_sources/40_in_practice/40_pvalues_and_decision_making.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -419,7 +421,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -493,7 +495,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Assignment 2: Exploratory Question Report</h1>
+    <h1>P-Values and Decisions Making</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -503,11 +505,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-data">Finding Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#length">Length</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure">Structure</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-a-coherent-report">Writing a Coherent Report</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#due-date">Due Date</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-question">A Question</a></li>
 </ul>
             </nav>
         </div>
@@ -519,35 +517,102 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="assignment-2-exploratory-question-report">
-<h1>Assignment 2: Exploratory Question Report<a class="headerlink" href="#assignment-2-exploratory-question-report" title="Link to this heading">#</a></h1>
-<p>The second project assignment is to answer the Exploratory Questions laid out in your initial proposal. The report should be written to an imaginary but specified stakeholder (please state at the top of the report who you imagine your stakeholder to be).</p>
-<p>It should answer at least three Exploratory Questions. Of the three Exploratory Questions you seek to answer, <strong>at least one</strong> must be answered through your own analysis (i.e., you must load data into Python/R and generate your answers). You <em>may</em> answer up to two by citing reputable sources (if someone else has already found the answer, why re-invent the wheel?!).</p>
-<p>The report should be written according to the <a class="reference internal" href="../40_in_practice/25_writing_to_stakeholders.html"><span class="doc std std-doc">principles in this document</span></a> (which will be familiar to those of you who took <em>Practical Data Science</em>).</p>
-<p><strong>Please start your document with a quick note on who you imagine as your stakeholder (a CEO, a public policy expert, etc.).</strong></p>
-<section id="finding-data">
-<h2>Finding Data<a class="headerlink" href="#finding-data" title="Link to this heading">#</a></h2>
-<p>To help you along your way, here’s a <a class="reference internal" href="99_data.html"><span class="doc std std-doc">compilation of a huge number of public data sources</span></a>. It’s far from exhaustive, but a good place to browse if you’re unsure how to answer one of your questions.</p>
-<p>Still stuck? Let me know and we can brainstorm together.</p>
-</section>
-<section id="length">
-<h2>Length<a class="headerlink" href="#length" title="Link to this heading">#</a></h2>
-<p>I’m relatively flexible on length — I imagine most will be in the three to six-page range, including appendices and figures and provide additional information.</p>
-</section>
-<section id="structure">
-<h2>Structure<a class="headerlink" href="#structure" title="Link to this heading">#</a></h2>
-<p>My philosophy on document structure is that the way a document is organized should always be purely instrumental — that is, you should always organize your document in the way that best serves the goals of the document. As the goal of this report is to communicate what you have learned by answering your Exploratory Questions to your stakeholder, the way you organize your report should reflect that goal (again, review the <a class="reference internal" href="../40_in_practice/25_writing_to_stakeholders.html"><span class="doc std std-doc">Writing to Stakeholders</span></a> reading for guidance on how best to accomplish that goal).</p>
-<p>That means that your report will probably <em>not</em> have a structure that mirrors the “state a problem and three questions you plan to answer” structure of the last assignment you completed. That structure was chosen to help you organize your thoughts at the problem and question generation stage. But you’ve now answered those questions and (presumably!) learned a lot in the process, and given your goal has changed and what you know has changed, so too should the structure of your report.</p>
-</section>
-<section id="writing-a-coherent-report">
-<h2>Writing a Coherent Report<a class="headerlink" href="#writing-a-coherent-report" title="Link to this heading">#</a></h2>
-<p>A final suggestion: there are some tasks in data science and in life that can be easily parallelized, and others than cannot. Writing a good, coherent report, in my experience, is very hard to do in a fully parallelized manner.</p>
-<p>The “problem and three questions” structure that you used for the last assignment naturally lends itself to a divide-and-conquer approach in which different people answer and write up different questions. And for the first draft of your report, that’s a reasonable strategy. But that approach also tends to create a very fragmented report without a clear message.</p>
-<p>With that in mind, I would recommend that after pulling together a first draft of the various answers your team has collected, get together and discuss what you think is the take-away you want to communicate to your stakeholder. Then, with that in hand, move to a serial workflow in which one person takes a crack at editing <em>the entire report</em>. This person should feel unafraid to cut or move things around. Then let someone else read it and make edits. But since the report will be read from start to finish by one person, it makes a lot of sense that it be written (or at least edited) from start to finish by one person at a time.</p>
-</section>
-<section id="due-date">
-<h2>Due Date<a class="headerlink" href="#due-date" title="Link to this heading">#</a></h2>
-<p>Your Exploratory Question Report is due <strong>February 13th</strong>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="p-values-and-decisions-making">
+<h1>P-Values and Decisions Making<a class="headerlink" href="#p-values-and-decisions-making" title="Link to this heading">#</a></h1>
+<p>Of all the fallacies I see data science students make, few are as pervasive and as important as the mis-interpretation of p-values. And to be honest, I can’t fault students. It is all too common for p-values to be mis-used in academic writing and textbooks. And in my own experience, the way most instructors communicate the problem with p-values leaves something to be desired.</p>
+<p>This reading is my effort to communicate the problem with p-values in a way that I have found to be effective in my own classes. If you find it resonates (and/or would resonate better with some changes!) please don’t hesitate to let me know.</p>
+<section id="a-question">
+<h2>A Question<a class="headerlink" href="#a-question" title="Link to this heading">#</a></h2>
+<p>Below is a regression estimating the effects of a 2007 experiment in which a random sample of ultra-poor households in West Bengal were given livestock and 30 or 40 week stipend of 90 rupees a week for 18 months. Development economists then tracked these households — along with a set of control households — for many years. The code below regresses household expenditures three years after the experiment began on whether a given household was “treated” (received the livestock and stipend).<a class="footnote-reference brackets" href="#sample" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+<p>(Development economists measure income by what people are able to buy, grow, and consume every month, since poor households often don’t earn a cash wage.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">&quot;mode.copy_on_write&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">hh</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+    <span class="c1"># &quot;https://github.com/nickeubank/MIDS_Data/raw/&quot;</span>
+    <span class="c1"># &quot;refs/heads/master/cash_transfers/&quot;</span>
+    <span class="c1"># &quot;TUP_cash_transfers_pvalue_exercise.csv&quot;</span>
+    <span class="s2">&quot;/users/nce8/github/MIDS_Data/&quot;</span>
+    <span class="s2">&quot;cash_transfers/TUP_cash_transfers_pvalue_exercise.csv&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s2">&quot;pc_exp_month_el2 ~ treatment&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">hh</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>    <td>pc_exp_month_el2</td> <th>  R-squared:         </th> <td>   0.008</td>
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.006</td>
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   3.467</td>
+</tr>
+<tr>
+  <th>Date:</th>             <td>Thu, 06 Mar 2025</td> <th>  Prob (F-statistic):</th>  <td>0.0633</td> 
+</tr>
+<tr>
+  <th>Time:</th>                 <td>11:34:01</td>     <th>  Log-Likelihood:    </th> <td> -2070.4</td>
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>   431</td>      <th>  AIC:               </th> <td>   4145.</td>
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>   429</td>      <th>  BIC:               </th> <td>   4153.</td>
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     1</td>      <th>                     </th>     <td> </td>   
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>   
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+      <td></td>         <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th> <td>   60.6431</td> <td>    2.081</td> <td>   29.140</td> <td> 0.000</td> <td>   56.553</td> <td>   64.733</td>
+</tr>
+<tr>
+  <th>treatment</th> <td>    5.3161</td> <td>    2.855</td> <td>    1.862</td> <td> 0.063</td> <td>   -0.295</td> <td>   10.928</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td>192.196</td> <th>  Durbin-Watson:     </th> <td>   2.066</td> 
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.000</td>  <th>  Jarque-Bera (JB):  </th> <td>1065.859</td> 
+</tr>
+<tr>
+  <th>Skew:</th>          <td> 1.866</td>  <th>  Prob(JB):          </th> <td>3.56e-232</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 9.740</td>  <th>  Cond. No.          </th> <td>    2.70</td> 
+</tr>
+</table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</div></div>
+</div>
+<p>So here is my question to you:</p>
+<p><strong>What is the probability that the <em>true</em> effect of this experiment was 0 and that the difference we see between the treated and control households is the result of chance variation?</strong></p>
+<p>In other words, what is the probability, given this result, that the experiment didn’t actually do anything?</p>
+<p>Give it some thought, and once you have an answer, <a class="reference internal" href="45_pvalues_and_decision_making_2.html"><span class="doc std std-doc">follow this link to the next page.</span></a></p>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="sample" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>A small confession: I down-sampled the original data to get interesting p-values. The original study was very successful and the p-values on the full study were very, very small, which makes it harder to use as an example.</p>
+</aside>
+</aside>
 </section>
 </section>
 
@@ -564,7 +629,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./97_project"
+            path: "./40_in_practice"
         },
         predefinedOutput: true
     }
@@ -597,11 +662,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-data">Finding Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#length">Length</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure">Structure</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-a-coherent-report">Writing a Coherent Report</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#due-date">Due Date</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-question">A Question</a></li>
 </ul>
   </nav></div>
 
