@@ -73,6 +73,8 @@ parts:
         title: "Ch 14: Causal Qs"
         sections:
           - file: 30_questions/40_answering_causal_questions
+      - file: 30_questions/45_causal_questions_external
+        title: "Ch 15: Causal Qs, Experiments and External Validity"
   - caption: Causal Inference
     chapters:
       - file: 35_causal/10_potential_outcomes
