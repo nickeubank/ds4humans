@@ -24,6 +24,7 @@ The importance of these skills is often underestimated by data science students,
 
 But real-world problems don't come with directions. Indeed, a problem that is clearly defined and for which a solution is obvious isn't a problem anyone will pay you very much to solve. No, classroom exercises are carefully structured to foster learning and to make it possible for instructors to grade and provide feedback at scale. But real problems — the kind you will encounter in industry, government, or research — are hard to even articulate clearly, never mind solve. And that is why, as we will see, what really sets exceptional professional data scientists apart is not their ability to get a high AUC — **it's their ability to navigate and thrive in the face of ambiguous problems and goals.**
 
+
 ## This Is A Book About The Forest, Not The Trees
 
 The goal of this book, to frame things a little differently, is to help young data scientists maintain perspective. Students spend so much time learning individual techniques that they are unable to see the forest for trees. But this is not a book about individual techniques — it's about learning to think strategically about how to use those techniques to solve real problems.
