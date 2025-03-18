@@ -1,0 +1,850 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>A/B Testing the Udacity Website &#8212; Solving Problems With Data</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "nickeubank/ds4humans");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-RKDPB41DQ2"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-RKDPB41DQ2');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-RKDPB41DQ2');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '99_exercises/exercise_abtesting';</script>
+    <link rel="icon" href="../_static/logo.jpg"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../landing_page.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.jpg" class="logo__image only-light" alt="Solving Problems With Data - Home"/>
+    <script>document.write(`<img src="../_static/logo.jpg" class="logo__image only-dark" alt="Solving Problems With Data - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../landing_page.html">
+                    Welcome to DS4Humans
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Class Schedule</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00_class_schedule/class_schedule.html">Class Schedule</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10_introduction/10_solving_problems_with_data.html">Ch 1: Solving Problems</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../10_introduction/20_solving_problems.html">Idea 1: Solving Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_introduction/22_question_types.html">Idea 2: Answering Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_introduction/23_mistakes.html">Idea 3: Being Thoughtful about Being Wrong</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../10_introduction/40_data_science_in_historical_context.html">Ch 2: What Is Data Science?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Problems to Questions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../20_problems_to_questions/10_solving_the_right_problem.html">Ch 3: Solving the Right Question</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../20_problems_to_questions/15_solving_the_wrong_problem.html">Solving The Wrong Problem: Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../20_problems_to_questions/20_stakeholder_management.html">Ch 4: Stakeholder Management</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Types of Questions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/05_descriptive_v_prescriptive.html">Ch 5: Descriptive and Prescriptive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/06_descriptive_prescriptive_examples.html">Tradeoff Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/10_using_exploratory_questions.html">Ch 6: Using Exploratory Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/07_eda.html">Exploratory Qs and the Scourge of "EDA"</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/15_answering_exploratory_questions.html">Ch 7: Internal and External Validity</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/16_exploratory_internal_challenges.html">Ch 8: Internal Validity and Exploratory Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/17_exploratory_internal_understandable.html">1: Understandable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/18_exploratory_internal_faithful.html">2: Faithful</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/19_exploratory_internal_meaningful.html">3: Relevant</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/20_using_passive_prediction_questions.html">Ch 9: Using Passive Predictive Qs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/23_passive_internal_alignment_and_bias.html">Ch 10: Predictive Qs &amp; Internal Validity</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/24_passive_internal_errors.html">Ch 11: Predictive Qs and Being Wrong the Right Way</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/25_passive_fairness.html">Fairness and Errors</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/27_passive_external_general.html">Ch 12: Predictive Qs &amp; External Validity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/28_passive_external_adversarial_users.html">Adversarial Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/29_passive_external_adversarial_users_examples.html">Adversarial User Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/32_passive_interpretable_models.html">Ch 13: Interpretable Models</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/35_using_causal_questions.html">Ch 14: Causal Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/40_answering_causal_questions.html">Answering Causal Questions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/45_causal_questions_external.html">Ch 15: Causal Qs, Experiments and External Validity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Causal Inference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../35_causal/10_potential_outcomes.html">The Potential Outcomes Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../35_causal/15_evaluating_real_studies.html">Evaluating Real Studies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../35_causal/30_interpreting_indicator_vars.html">Indicator Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../35_causal/40_causal_inference_beyond_ab_testing.html">Causal Beyond Experiments</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../35_causal/50_fixed_effects_and_causal_inference.html">Fixed Effects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../35_causal/60_fixed_effects.html">Implementing Fixed Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../35_causal/70_fixed_effects_v_hierarchical.html">Fixed Effects v. Hierarchical Models</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../35_causal/80_matching_why.html">Matching</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../35_causal/90_matching_how.html">How to Match</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Science in Practice</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../40_in_practice/00_how_to_read_this_book.html">How to Read (Academic Edition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../40_in_practice/25_writing_to_stakeholders.html">Writing to Stakeholders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../40_in_practice/30_giving_feedback.html">Giving Effective Feedback (Data Science Edition)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../40_advanced_topics/30_interpretability.html">Interpretable Models</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/nickeubank/ds4humans" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F99_exercises/exercise_abtesting.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/99_exercises/exercise_abtesting.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>A/B Testing the Udacity Website</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#udacity-s-test">Udacity’s Test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gradescope-autograding">Gradescope Autograding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#submission-limits">Submission Limits</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-data">Import the Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pick-your-measures">Pick your measures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4">Exercise 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5">Exercise 5</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validating-the-data">Validating The Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6">Exercise 6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7">Exercise 7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8">Exercise 8</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-9">Exercise 9</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-the-effect-of-experiment">Estimating the Effect of Experiment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10">Exercise 10</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11">Exercise 11</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12">Exercise 12</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-13">Exercise 13</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-14">Exercise 14</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-15">Exercise 15</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="a-b-testing-the-udacity-website">
+<h1>A/B Testing the Udacity Website<a class="headerlink" href="#a-b-testing-the-udacity-website" title="Link to this heading">#</a></h1>
+<p>In these exercises, we’ll be analyzing data on user behavior from an experiment run by Udacity, the online education company. More specifically, we’ll be looking at a test Udacity ran to improve the onboarding process on their site.</p>
+<p>Udacity’s test is an example of an “A/B” test, in which some portion of users visiting a website (or using an app) are randomly selected to see a new version of the site. An analyst can then compare the behavior of users who see a new website design to users seeing their normal website to estimate the effect of rolling out the proposed changes to all users. While this kind of experiment has it’s own name in industry (A/B testing), to be clear it’s just a randomized experiment, and so everything we’ve learned about potential outcomes and randomized experiments apply here.</p>
+<p>(Udacity has generously provides the data from this test under an Apache open-source license, and you can find their <a class="reference external" href="https://www.kaggle.com/tammyrotem/ab-tests-with-python/notebook">original writeup here</a>. If you’re interested in learning more on A/B testing in particular, it seems only fair while we use their data to flag they have a full course on the subject <a class="reference external" href="https://www.udacity.com/course/ab-testing--ud257">here</a>.)</p>
+<section id="udacity-s-test">
+<h2>Udacity’s Test<a class="headerlink" href="#udacity-s-test" title="Link to this heading">#</a></h2>
+<p>The test <a class="reference external" href="https://www.kaggle.com/tammyrotem/ab-tests-with-python/notebook">is described by Udacity as follows</a>:</p>
+<p>At the time of this experiment, Udacity courses currently have two options on the course overview page: “start free trial”, and “access course materials”.</p>
+<p><strong>Current Conditions Before Change</strong></p>
+<ul class="simple">
+<li><p>If the student clicks “start free trial”, they will be asked to enter their credit card information, and then they will be enrolled in a free trial for the paid version of the course. After 14 days, they will automatically be charged unless they cancel first.</p></li>
+<li><p>If the student clicks “access course materials”, they will be able to view the videos and take the quizzes for free, but they will not receive coaching support or a verified certificate, and they will not submit their final project for feedback.</p></li>
+</ul>
+<p><strong>Description of Experimented Change</strong></p>
+<ul class="simple">
+<li><p>In the experiment, Udacity tested a change where if the student clicked “start free trial”, they were asked how much time they had available to devote to the course.</p></li>
+<li><p>If the student indicated 5 or more hours per week, they would be taken through the checkout process as usual. If they indicated fewer than 5 hours per week, a message would appear indicating that Udacity courses usually require a greater time commitment for successful completion, and suggesting that the student might like to access the course materials for free.</p></li>
+<li><p>At this point, the student would have the option to continue enrolling in the free trial, or access the course materials for free instead. This <a class="reference internal" href="#images/udacity_checkyoureready.png"><span class="xref myst">screenshot</span></a> shows what the experiment looks like.</p></li>
+</ul>
+<p><strong>Udacity’s Hope is that…</strong>:</p>
+<blockquote>
+<div><p>this might set clearer expectations for students upfront, thus reducing the number of frustrated students who left the free trial because they didn’t have enough time – without significantly reducing the number of students to continue past the free trial and eventually complete the course. If this hypothesis held true, Udacity could improve the overall student experience and improve coaches’ capacity to support students who are likely to complete the course.</p>
+</div></blockquote>
+</section>
+<section id="gradescope-autograding">
+<h2>Gradescope Autograding<a class="headerlink" href="#gradescope-autograding" title="Link to this heading">#</a></h2>
+<p>Please follow <a class="reference external" href="https://www.practicaldatascience.org/ids720_specific/autograder_guidelines.html">all standard guidance</a> for submitting this assignment to the Gradescope autograder, including storing your solutions in a dictionary called <code class="docutils literal notranslate"><span class="pre">results</span></code> and ensuring your notebook runs from the start to completion without any errors.</p>
+<p>For this assignment, please name your file <code class="docutils literal notranslate"><span class="pre">exercise_abtesting.ipynb</span></code> before uploading.</p>
+<p>You can check that you have answers for all questions in your <code class="docutils literal notranslate"><span class="pre">results</span></code> dictionary with this code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="nb">set</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">==</span> <span class="p">{</span>
+    <span class="s2">&quot;ex4_avg_oec&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ex5_avg_guardrail&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ex7_ttest_pvalue&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ex9_ttest_pvalue_clicks&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ex10_num_obs&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ex11_guard_ate&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ex11_guard_pvalue&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ex11_oec_ate&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ex11_oec_pvalue&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ex14_se_treatment&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<section id="submission-limits">
+<h3>Submission Limits<a class="headerlink" href="#submission-limits" title="Link to this heading">#</a></h3>
+<p>Please remember that you are <strong>only allowed THREE submissions to the autograder.</strong> Your last submission (if you submit 3 or fewer times), or your third submission (if you submit more than 3 times) will determine your grade Submissions that error out will <strong>not</strong> count against this total.</p>
+</section>
+</section>
+<section id="import-the-data">
+<h2>Import the Data<a class="headerlink" href="#import-the-data" title="Link to this heading">#</a></h2>
+<section id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Link to this heading">#</a></h3>
+<p>Begin by importing Udacity’s data on user behavior <a class="reference external" href="https://github.com/nickeubank/MIDS_Data/tree/master/udacity_AB_testing">here.</a></p>
+<p>There are TWO datasets for this test — one for the control data (users who saw the original design), and one for treatment data (users who saw the experimental design). Udacity decided to show their test site to 1/2 of visitors, so there are roughly the same number of users appearing in each dataset (though this is not a requirement of AB tests).</p>
+<p>Please rmeember to load the data directly from github to assist the autograder.</p>
+</section>
+<section id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Link to this heading">#</a></h3>
+<p>Explore the data. Can you identify the unit of observation of the data (e.g. what is represented by each row)?</p>
+<p>To be clear, the columns represent stages in a user funnel:</p>
+<ul class="simple">
+<li><p>Some number of users arrive at the website and are counted as Pageviews,</p></li>
+<li><p>Some portion of those users then click to enroll (and are counted as clicks),</p></li>
+<li><p>Some portion of those users then actually enroll in the free trial (after seeing an informational popup, in the case of treatment individuals),</p></li>
+<li><p>Finally some portion of those users end up paying at the end of the free trial period.</p></li>
+</ul>
+<p>(Note this is not the only way that A/B test data can be collected and/or reported — this is just what Udacity provided, presumably to help address privacy concerns.)</p>
+</section>
+</section>
+<section id="pick-your-measures">
+<h2>Pick your measures<a class="headerlink" href="#pick-your-measures" title="Link to this heading">#</a></h2>
+<section id="exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Link to this heading">#</a></h3>
+<p>The easiest way to analyze this data is to stack it into a single dataset where each observation is a day-treatment-arm (so you should end up with two rows per day, one for those who are in the treated groups, and one for those who were in the control group). Note that currently nothing in the data identifies whether a given observation is a treatment group observation or a control group observation, so you’ll want to make sure to add a “treatment” indicator variable.</p>
+<p>The variables in the data are:</p>
+<ul class="simple">
+<li><p>Pageviews: number of unique users visiting homepage</p></li>
+<li><p>Clicks: number of those users clicking “Start Free Trial”</p></li>
+<li><p>Enrollments: Number of people enrolling in trial</p></li>
+<li><p>Payments: Number of people who eventually pay for the service. Note the <code class="docutils literal notranslate"><span class="pre">payment</span></code> column reports payments for the users who first visited the site on the reported date, not payments occurring on the reported date.</p></li>
+</ul>
+</section>
+<section id="exercise-4">
+<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Link to this heading">#</a></h3>
+<p>Given Udacity’s goals, what outcome are they hoping will be impacted by their manipulation?</p>
+<p>Or, to ask the same question in the language of the Potential Outcomes Framework, what is their <span class="math notranslate nohighlight">\(Y\)</span>?</p>
+<p>Or to ask the same question in the language of Kohavi, Tang and Xu, what is their <em>Overall Evaluation Criterion (OEC)</em>?</p>
+<p>(I’m only asking one question, I’m just trying to phrase it using different terminologies we’ve encountered to help you see how they all fit together)</p>
+<p>When you feel like you have your answer, please compute it. Store the average value of the variable in <code class="docutils literal notranslate"><span class="pre">results</span></code> under the key <code class="docutils literal notranslate"><span class="pre">ex4_avg_oec</span></code>. <strong>Please round your answer to 4 decimal places.</strong></p>
+<p>NOTE: You’ll probably notice you have two choices to make when it comes to actually computing the OEC.</p>
+<ul class="simple">
+<li><p>You could probably imagine either computing a ratio or a difference of two things — please calculate the difference.</p></li>
+<li><p>You may also be unsure whether to normalize by <code class="docutils literal notranslate"><span class="pre">Clicks</span></code>. Normalizing by clicks will help account for variation that comes from day-to-day variation in users, so it’s a good thing to do. With infinite data, you’d expect to get the same results without normalizing by <code class="docutils literal notranslate"><span class="pre">Clicks</span></code> (since on average the same share of users are in each arm of the experiment), but for finite data it’s a good strategy. Note that this is only ok because users make the choice to click or not <em>before</em> they see different versions of the website (it is “pre-treatment”).</p></li>
+</ul>
+<p>Just to make sure you’re on track, your measure should have an average value of <em>about</em> 9%.</p>
+</section>
+<section id="exercise-5">
+<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Link to this heading">#</a></h3>
+<p>Given Udacity’s goals, what outcome are they hoping will <em>not</em> be impacted by their manipulation? In other words, what do they want to measure to ensure their treatment doesn’t have unintended negative consequences that might be really costly to their operation?</p>
+<p>Note that while this isn’t how Kohavi, Tang, and Xu use the term “guardrail metrics” — they usually use the term to refer to things we measure to ensure the experiment is working the way it should — some people would also use the term “guardrail metrics” for something that could be impacted even if the experiment is working correctly, but which the organization wants to track to ensure they aren’t impacted because they are deemed really important.</p>
+<p>Again, please normalize by <code class="docutils literal notranslate"><span class="pre">Clicks</span></code>. Store the average value of this guardrail metric as <code class="docutils literal notranslate"><span class="pre">ex5_avg_guardrail</span></code> and <strong>round your answer to 4 decimal places.</strong></p>
+</section>
+</section>
+<section id="validating-the-data">
+<h2>Validating The Data<a class="headerlink" href="#validating-the-data" title="Link to this heading">#</a></h2>
+<section id="exercise-6">
+<h3>Exercise 6<a class="headerlink" href="#exercise-6" title="Link to this heading">#</a></h3>
+<p>Whenever you are working with experimental data, the first thing you want to do is verify that users actually were randomly sorted into the two arms of the experiment. In this data, half of users were supposed to be shown the old version of the site and half were supposed to see the new version.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Pageviews</span></code> tells you how many unique users visited the welcome site we are experimenting on. <code class="docutils literal notranslate"><span class="pre">Pageviews</span></code> is what is sometimes called an “invariant” or “guardrail” variable, meaning that it shouldn’t vary across treatment arms—after all, people have to visit the site before they get a chance to see the treatment, so there’s no way that being assigned to treatment or control should affect the number of pageviews assigned to each group.</p>
+<p>“Invariant” variables are also an example of what are known as a “pre-treatment” variable, because pageviews are determined before users are manipulated in any way. That makes it analogous to gender or age in experiments where you have demographic data—a person’s age and gender are determined before they experience any manipulations, so the value of any pre-treatment attributes should be the same across the two arms of our experiment. This is what we’ve previously called “checking for balance,” If pre-treatment attributes aren’t balanced, then we may worry our attempt to randomly assign people to different groups failed.  Kohavi, Tang and Xu call this a “trust-based guardrail metric” because it helps us determine if we should trust our data.</p>
+<p>To test the quality of the randomization, calculate the average number of pageviews for the treated group and for the control group. Do they look similar?</p>
+</section>
+<section id="exercise-7">
+<h3>Exercise 7<a class="headerlink" href="#exercise-7" title="Link to this heading">#</a></h3>
+<p>“Similar” is a tricky concept – obviously, we expect <em>some</em> differences across groups since users were <em>randomly</em> divided across treatment arms. The question is whether the differences between groups are larger than we’d expect to emerge given our random assignment process. To evaluate this, let’s use a <code class="docutils literal notranslate"><span class="pre">ttest</span></code> to test the statistical significance of the differences we see.</p>
+<p><strong>Note</strong>: Remember that scipy functions don’t accept <code class="docutils literal notranslate"><span class="pre">pandas</span></code> objects, so you use a scipy function, you have to pass the numpy vectors underlying your data with the <code class="docutils literal notranslate"><span class="pre">.values</span></code> operator (e.g. <code class="docutils literal notranslate"><span class="pre">df.my_column.values</span></code>).</p>
+<p>Does the difference in <code class="docutils literal notranslate"><span class="pre">pageviews</span></code> look statistically significant?</p>
+<p>Store the resulting p-value in <code class="docutils literal notranslate"><span class="pre">ex7_ttest_pvalue</span></code> <strong>rounded to four decimal places.</strong></p>
+</section>
+<section id="exercise-8">
+<h3>Exercise 8<a class="headerlink" href="#exercise-8" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Pageviews</span></code> is not the only “pre-treatment” variable in this data we can use to evaluate balance/use as a guardrail metric. What other measure is pre-treatment? Review the description of the experiment if you’re not sure.</p>
+</section>
+<section id="exercise-9">
+<h3>Exercise 9<a class="headerlink" href="#exercise-9" title="Link to this heading">#</a></h3>
+<p>Check if the other pre-treatment variable is also balanced. Store the p-value of your test of difference in <code class="docutils literal notranslate"><span class="pre">results</span></code> under the key <code class="docutils literal notranslate"><span class="pre">&quot;ex9_ttest_pvalue_clicks&quot;</span></code> <strong>rounded to four decimal places.</strong></p>
+</section>
+</section>
+<section id="estimating-the-effect-of-experiment">
+<h2>Estimating the Effect of Experiment<a class="headerlink" href="#estimating-the-effect-of-experiment" title="Link to this heading">#</a></h2>
+<section id="exercise-10">
+<h3>Exercise 10<a class="headerlink" href="#exercise-10" title="Link to this heading">#</a></h3>
+<p>Now that we’ve validated our randomization, our next task is to estimate our treatment effect. First, though, there’s an issue with your data you’ve been able to largely ignore until now, but which you should get a grip on before estimating your treatment effect — can you tell what it is and what you should do about it?</p>
+<p>Store the number of observations in your data <em>after</em> you’ve addressed this in <code class="docutils literal notranslate"><span class="pre">ex10_num_obs</span></code> (this is mostly meant as a way to sanity check your answer with autograder).</p>
+</section>
+<section id="exercise-11">
+<h3>Exercise 11<a class="headerlink" href="#exercise-11" title="Link to this heading">#</a></h3>
+<p>Now that we’ve established we have good balance (meaning we think randomization was likely successful), we can evaluate the effects of the experiment. Test whether the OEC and the metric you <em>don’t</em> want affected have different average values in the control group and treatment group.</p>
+<p>Because we’ve randomized, this is a consistent estimate of the Average Treatment Effect of Udacity’s website change.</p>
+<p>Calculate the difference in means in your OEC and guardrail metrics using a simple t-test. Store the resulting effect estimates in <code class="docutils literal notranslate"><span class="pre">ex11_oec_ate</span></code> and <code class="docutils literal notranslate"><span class="pre">ex11_guard_ate</span></code> and p-values in <code class="docutils literal notranslate"><span class="pre">ex11_oec_pvalue</span></code> and <code class="docutils literal notranslate"><span class="pre">ex11_guard_pvalue</span></code>. <strong>Please round all answers to 4 decimal places.</strong> Report your ATE in <em>percentage points</em>, where <code class="docutils literal notranslate"><span class="pre">1</span></code> denotes 1 percentage point.</p>
+</section>
+<section id="exercise-12">
+<h3>Exercise 12<a class="headerlink" href="#exercise-12" title="Link to this heading">#</a></h3>
+<p>Do you feel that Udacity achieved their goal? Did their intervention cause them any problems? If they asked you “What would happen if we rolled this out to everyone?” what would you say?</p>
+<p>As you answer this question, a small additional question: up until this point you’ve (presumably) been reporting the default p-values from the tools you are using. These, as you may recall from stats 101, are two-tailed p-values. Do those seem appropriate for your OEC?</p>
+</section>
+<section id="exercise-13">
+<h3>Exercise 13<a class="headerlink" href="#exercise-13" title="Link to this heading">#</a></h3>
+<p>One of the magic things about experiments is that all you have to do is compare averages to get an average treatment effect. However, you <em>can</em> do other things to try and increase the statistical power of your experiments, like add controls in a linear regression model.</p>
+<p>As you likely know, a bivariate regression is exactly equivalent to a t-test, so let’s start by re-estimating the effect of treatment on your OEC using a linear regression. Can you replicate the results from your t-test? They shouldn’t just be close—they should be numerically equivalent (i.e. exactly the same to the limits of floating point number precision).</p>
+</section>
+<section id="exercise-14">
+<h3>Exercise 14<a class="headerlink" href="#exercise-14" title="Link to this heading">#</a></h3>
+<p>Now add indicator variables for the date of each observation. Do the standard errors on your <code class="docutils literal notranslate"><span class="pre">treatment</span></code> variable change? If so, in what direction?</p>
+<p>Store your new standard error in <code class="docutils literal notranslate"><span class="pre">ex14_se_treatment</span></code>. Round your answer to 4 decimal places.</p>
+<p>You should have found that your standard errors decreased by about 30%—this is why, although just comparing means <em>works</em>, if you have additional variables adding them to your analysis can be helpful (all the usual rules for model specification apply — for example, you still want to be careful about overfitting, which one could argue is maybe part of what’s happening here).</p>
+<p>In many other cases, the effect of adding controls is likely to be larger — the date indicators we added to our data are perfectly balanced between treatment and control, so we aren’t adding a lot of data to the model by adding them as variables. They’re accounting for some day-to-day variation (presumably in the types of people coming to the site), but they aren’t controlling for any residual baseline differences the way a control like “gender” or “age” might (since those kind of individual-level attributes will never be perfectly balanced across treatment and control).</p>
+</section>
+<section id="exercise-15">
+<h3>Exercise 15<a class="headerlink" href="#exercise-15" title="Link to this heading">#</a></h3>
+<p>Does this result have any impact on the recommendations you would offer Udacity?</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./99_exercises"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#udacity-s-test">Udacity’s Test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gradescope-autograding">Gradescope Autograding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#submission-limits">Submission Limits</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-data">Import the Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pick-your-measures">Pick your measures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4">Exercise 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5">Exercise 5</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validating-the-data">Validating The Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6">Exercise 6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7">Exercise 7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8">Exercise 8</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-9">Exercise 9</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-the-effect-of-experiment">Estimating the Effect of Experiment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10">Exercise 10</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11">Exercise 11</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12">Exercise 12</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-13">Exercise 13</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-14">Exercise 14</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-15">Exercise 15</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Nick Eubank
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
