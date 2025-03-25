@@ -1,0 +1,689 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Beyond The Experiment &#8212; Solving Problems With Data</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "nickeubank/ds4humans");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-RKDPB41DQ2"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-RKDPB41DQ2');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-RKDPB41DQ2');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '30_questions/50_causal_beyond_ab';</script>
+    <link rel="icon" href="../_static/logo.jpg"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The Potential Outcomes Framework" href="../35_causal/10_potential_outcomes.html" />
+    <link rel="prev" title="Causal Questions, Experiments, and External Validity" href="45_causal_questions_external.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../landing_page.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.jpg" class="logo__image only-light" alt="Solving Problems With Data - Home"/>
+    <script>document.write(`<img src="../_static/logo.jpg" class="logo__image only-dark" alt="Solving Problems With Data - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../landing_page.html">
+                    Welcome to DS4Humans
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Class Schedule</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00_class_schedule/class_schedule.html">Class Schedule</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10_introduction/10_solving_problems_with_data.html">Ch 1: Solving Problems</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../10_introduction/20_solving_problems.html">Idea 1: Solving Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_introduction/22_question_types.html">Idea 2: Answering Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_introduction/23_mistakes.html">Idea 3: Being Thoughtful about Being Wrong</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../10_introduction/40_data_science_in_historical_context.html">Ch 2: What Is Data Science?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Problems to Questions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../20_problems_to_questions/10_solving_the_right_problem.html">Ch 3: Solving the Right Question</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../20_problems_to_questions/15_solving_the_wrong_problem.html">Solving The Wrong Problem: Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../20_problems_to_questions/20_stakeholder_management.html">Ch 4: Stakeholder Management</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Types of Questions</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="05_descriptive_v_prescriptive.html">Ch 5: Descriptive and Prescriptive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="06_descriptive_prescriptive_examples.html">Tradeoff Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="10_using_exploratory_questions.html">Ch 6: Using Exploratory Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="07_eda.html">Exploratory Qs and the Scourge of "EDA"</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="15_answering_exploratory_questions.html">Ch 7: Internal and External Validity</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="16_exploratory_internal_challenges.html">Ch 8: Internal Validity and Exploratory Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="17_exploratory_internal_understandable.html">1: Understandable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="18_exploratory_internal_faithful.html">2: Faithful</a></li>
+<li class="toctree-l2"><a class="reference internal" href="19_exploratory_internal_meaningful.html">3: Relevant</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="20_using_passive_prediction_questions.html">Ch 9: Using Passive Predictive Qs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23_passive_internal_alignment_and_bias.html">Ch 10: Predictive Qs &amp; Internal Validity</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="24_passive_internal_errors.html">Ch 11: Predictive Qs and Being Wrong the Right Way</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="25_passive_fairness.html">Fairness and Errors</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="27_passive_external_general.html">Ch 12: Predictive Qs &amp; External Validity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="28_passive_external_adversarial_users.html">Adversarial Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="29_passive_external_adversarial_users_examples.html">Adversarial User Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="32_passive_interpretable_models.html">Ch 13: Interpretable Models</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="35_using_causal_questions.html">Ch 14: Causal Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="40_answering_causal_questions.html">Answering Causal Questions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="45_causal_questions_external.html">Ch 15: Causal Qs, Experiments and External Validity</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ch 16: Beyond Experiments</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Causal Inference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../35_causal/10_potential_outcomes.html">The Potential Outcomes Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../35_causal/15_evaluating_real_studies.html">Evaluating Real Studies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../35_causal/30_interpreting_indicator_vars.html">Indicator Variables</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../35_causal/50_fixed_effects_and_causal_inference.html">Fixed Effects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../35_causal/60_fixed_effects.html">Implementing Fixed Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../35_causal/70_fixed_effects_v_hierarchical.html">Fixed Effects v. Hierarchical Models</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../35_causal/80_matching_why.html">Matching</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../35_causal/90_matching_how.html">How to Match</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Science in Practice</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../40_in_practice/00_how_to_read_this_book.html">How to Read (Academic Edition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../40_in_practice/25_writing_to_stakeholders.html">Writing to Stakeholders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../40_in_practice/30_giving_feedback.html">Giving Effective Feedback (Data Science Edition)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../40_advanced_topics/30_interpretability.html">Interpretable Models</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/nickeubank/ds4humans" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F30_questions/50_causal_beyond_ab.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/30_questions/50_causal_beyond_ab.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Beyond The Experiment</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-b-testing-isn-t-always-feasible">A/B Testing Isn’t Always Feasible</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-b-testing-isn-t-always-legal-or-ethical">A/B Testing Isn’t Always Legal or Ethical</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#going-beyond-testing-for-the-future">Going Beyond Testing for the Future</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#don-t-want-to-be-limited">Don’t want to be limited</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#not-enough-to-be-able-to-do-it-you-must-be-able-to-explain-it">Not enough to be able to do it; you must be able to <em>explain it</em></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="beyond-the-experiment">
+<h1>Beyond The Experiment<a class="headerlink" href="#beyond-the-experiment" title="Link to this heading">#</a></h1>
+<p><strong>The Role for Causal Inference with Observational Data in Industry</strong></p>
+<p>I don’t think there’s anyone who would question the importance of A/B testing in the tech sector today. It is used <em>constantly</em> to help companies refine their products, better target their ads, and incrementally innovate.</p>
+<p>But while A/B testing is definitely a skill a good data scientist should have in their toolbox, it’s important to understand that it is not the be-all and end-all of causal inference in industry. In this reading, we’ll discuss <em>why</em> it’s important to learn how to think critically about causality when working with observational data (“observational data” is data that we gather by passively observing the world – or that somebody else collected by passively observing the world – rather than data that we get by directly manipulating subjects in an experiment).</p>
+<section id="a-b-testing-isn-t-always-feasible">
+<h2>A/B Testing Isn’t Always Feasible<a class="headerlink" href="#a-b-testing-isn-t-always-feasible" title="Link to this heading">#</a></h2>
+<p>The first reason it’s important to know about tools that go beyond A/B testing is that A/B testing isn’t always feasible. A/B testing only works when you can efficiently randomize people into different treatment arms, and where you can do it at low cost (if running a test is expensive, then even if you want to run the test, you should be doing some analysis first to make sure it’s worth while!). But this isn’t possible for every decision, even in big tech companies. Here’s just a handful of situations where you can’t run an A/B test:</p>
+<ul class="simple">
+<li><p><strong>You Don’t Control The Relevant User Behavior:</strong> Suppose you want to know the effect of, say, following a specific person on facebook or twitter on user satisfaction, or choosing to use a certain function in your product. The “ideal experiment” would be to randomly assign some users to follow the person in question / use your new function, and block others from doing so. But of course you can’t do that! So you have to find other ways to compare followers and non-followers that accounts for ways they may be different in terms of user satisfaction or behavior.</p></li>
+<li><p><strong>It’s a One-Shot Deal:</strong> Suppose you’re trying to decide whether to run a Super Bowl ad, or open a second store. You can’t A/B test these small-N events. When dealing with these types of “big strategic” decisions, the best you can do is look to your companies past experiences / the experiences of other companies that you think are comparable using the best available tools for observational causal inference.</p></li>
+<li><p><strong>Randomization is Bad Business:</strong> It’s one thing to randomize someone’s landing page color scheme; it’s another thing entirely to randomly show people different prices for your products – customers wouldn’t stand for it! Similarly, sometimes you want a big rollout – like the launch of a new title on Netflix, or the premier of a new movie – and an A/B test would interfere with that. (Not an abstract example: here’s <a class="reference external" href="https://netflixtechblog.com/key-challenges-with-quasi-experiments-at-netflix-89b4f234b852">Netflix talking about this constraint</a>).</p></li>
+<li><p><strong>Time Horizons are Too Long:</strong> A/B testing is popular in tech because you get so much data from users so quickly that they’re easy to run <em>on short time horizons</em>. But if you’re thinking about opening more stores across the country, you can’t put your business on hold, pick a few locations, setup new shops, and wait for sales data; you need to get a sense of what’s going to happen <em>now</em>. As we read in <a class="reference external" href="https://www.amazon.com/Trustworthy-Online-Controlled-Experiments-Practical/dp/1108724264">Kohavi, Tang and Xu,</a> A/B tests work best when we have an Overall Evaluation Criterion (OEC) that is “measurable in the short term (the duration of an experiment) yet believed to causally drive long-term strategic objectives.” But when that is not available / the shortest experiment available that would allow you to measure a meaningful OEC would take too long, you need other options!</p></li>
+</ul>
+</section>
+<section id="a-b-testing-isn-t-always-legal-or-ethical">
+<h2>A/B Testing Isn’t Always Legal or Ethical<a class="headerlink" href="#a-b-testing-isn-t-always-legal-or-ethical" title="Link to this heading">#</a></h2>
+<p>Those are all practical business constraints, but there are also ethical and legal constraints many people face.</p>
+<p>For example, if you’re at a social media company and want to study the effects of harassment on customer retention, you can’t randomly assign people to be harassed!</p>
+<p>And even if <em>you</em> think certain experiments are ok, you also have to be mindful of what the public will say. In 2012, Facebook ran an experiment in which they manipulated the emotional valence of posts they saw in their feeds, showing them either more happy posts or more sad posts. The goal was to see how moods spilled over from one user to another on the network.</p>
+<p>The experiment was <em>legal</em>, but when people found out they were having the moods toyed with at random, they <a class="reference external" href="https://www.theatlantic.com/technology/archive/2014/06/everything-we-know-about-facebooks-secret-mood-manipulation-experiment/373648/">were furious</a>.  Now some tech people would say that “everything we do is to try and manipulate consumer happiness, how is this any different? And maybe you even believe that (though I think that, at the very least, deliberately showing people sad things means you’re doing harm, which is a huge no-no in human experimentation). But it doesn’t really matter, because it cost Facebook a lot of good will.</p>
+<p>Similar issues happened with OKCupid when they published research on how they <a class="reference external" href="https://www.nytimes.com/2014/07/29/technology/okcupid-publishes-findings-of-user-experiments.html">manipulated people’s dating profiles</a>. That, honestly, was a pretty standard experiment, but when it comes to messing with people’s hearts… you have to be careful.</p>
+<p>Finally, A/B randomizations aren’t always <em>legal</em>. For example, suppose you’re working in Human Resources for a company that wants to improve retention of younger tech wokers, and you want to offer childcare subsidies to employees. If that workforce is unionized, you <em>can’t</em> offer a benefit to only some people within a specific class of employees due to union contracts.</p>
+</section>
+<section id="going-beyond-testing-for-the-future">
+<h2>Going Beyond Testing for the Future<a class="headerlink" href="#going-beyond-testing-for-the-future" title="Link to this heading">#</a></h2>
+<p>Another limitation of A/B tests is that we usually use them to do small scale tests to motivate larger, future rollouts. But sometimes we want to just measure the effect of a single, large intervention.</p>
+<p>In many areas of business, it’s increasingly common to hire outside companies to do very complicated projects, like administering government programs or providing a service to employees. In these situations, companies have increasingly found that paying vendors based on inputs (hours worked, money spent) doesn’t actually encourage vendors to do a very good job, or to try to be efficient – if you’re being paid on the basis of what you spend, you will obviously you will not have an incentive to cut costs!</p>
+<p>In these situations, companies are increasingly turning to something called “at-risk contracting.” In these arrangements, the company doing the hiring offers to pay the vendor if they achieve a specific outcome. For example, a hospital might hire a company to reduce in-hospital infections and pay them based on reductions in infections, or a company may hire a vendor to minimize the downtime of their internal network, and pay them based on downtime. By tying compensation to the outcome that the hiring party actually cares about, the vendors well incentivized to do precisely what the hiring company wants them to do!</p>
+<p>But in these arrangements, it’s critical to both parties that there’s a good way to measure the effect <em>of the vendor’s efforts</em> or someone will get over or under paid. That’s not an average effect, that’s a specific effect, and something for which experiments are not well-suited.</p>
+<p>In these circumstances, it’s unfortunately the case that people often just measure outcomes before the vendor starts and compare them to outcomes when the vendor finishes. But if the outcome in question is subject to natural variation – such as seasonality – then we expect the outcome to vary whether the vendor does anything or not, and so you need a better causal design (e.g. difference-in-difference) to take those types of confounders into account.</p>
+</section>
+<section id="don-t-want-to-be-limited">
+<h2>Don’t want to be limited<a class="headerlink" href="#don-t-want-to-be-limited" title="Link to this heading">#</a></h2>
+<p>Here’s another important thought: professionally, if you only know how to do A/B testing, you risk limiting your opportunities for upward advancement. Big companies are getting better and better at providing analysts with extremely user friendly A/B testing tools, which means doing A/B tests is getting easier and easier. Twitter, for example, has an <a class="reference external" href="https://blog.twitter.com/engineering/en_us/a/2015/twitter-experimentation-technical-overview.html">internal tool called Duck, Duck, Goose</a> that makes running an A/B test a relatively low-difficulty task. And while running a good A/B test is never easy (as we have discussed at length, even with A/B testing, the internal and external validity of our causal estimates will always be dependent on a wide range of assumptions), it is something that more and more people are learning to do well and which companies are learning to make easier. Thus, if all you know how to do are A/B tests, you may find it increasingly hard to differentiate yourself in the data science market.</p>
+<p>Again, this isn’t to say you shouldn’t learn to do A/B testing, just don’t <em>only</em> learn A/B testing.</p>
+</section>
+<section id="not-enough-to-be-able-to-do-it-you-must-be-able-to-explain-it">
+<h2>Not enough to be able to do it; you must be able to <em>explain it</em><a class="headerlink" href="#not-enough-to-be-able-to-do-it-you-must-be-able-to-explain-it" title="Link to this heading">#</a></h2>
+<p>One final reason it’s important to understand how to apply the logic of causal inference to observational data is that even if <em>you</em> only work with A/B data, it is almost inevitable that you will interact with other people in your company who want to use observational data. In these situations, it’s not enough that <em>you</em> understand the considerations that go into making causal inferences from observational data; you also need to be able to explain those to colleagues.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./30_questions"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="45_causal_questions_external.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Causal Questions, Experiments, and External Validity</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../35_causal/10_potential_outcomes.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">The Potential Outcomes Framework</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-b-testing-isn-t-always-feasible">A/B Testing Isn’t Always Feasible</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-b-testing-isn-t-always-legal-or-ethical">A/B Testing Isn’t Always Legal or Ethical</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#going-beyond-testing-for-the-future">Going Beyond Testing for the Future</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#don-t-want-to-be-limited">Don’t want to be limited</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#not-enough-to-be-able-to-do-it-you-must-be-able-to-explain-it">Not enough to be able to do it; you must be able to <em>explain it</em></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Nick Eubank
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

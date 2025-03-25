@@ -285,13 +285,13 @@ commentsRunWhenDOMLoaded(addUtterances);
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../30_questions/45_causal_questions_external.html">Ch 15: Causal Qs, Experiments and External Validity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/50_causal_beyond_ab.html">Ch 16: Beyond Experiments</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Causal Inference</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../35_causal/10_potential_outcomes.html">The Potential Outcomes Framework</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../35_causal/15_evaluating_real_studies.html">Evaluating Real Studies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../35_causal/30_interpreting_indicator_vars.html">Indicator Variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../35_causal/40_causal_inference_beyond_ab_testing.html">Causal Beyond Experiments</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../35_causal/50_fixed_effects_and_causal_inference.html">Fixed Effects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../35_causal/60_fixed_effects.html">Implementing Fixed Effects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../35_causal/70_fixed_effects_v_hierarchical.html">Fixed Effects v. Hierarchical Models</a></li>
@@ -943,7 +943,7 @@ This difference has a p-value of 0.00004
   <th>Date:</th>             <td>Tue, 25 Mar 2025</td> <th>  Prob (F-statistic):</th> <td>3.96e-05</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>08:48:05</td>     <th>  Log-Likelihood:    </th> <td> -562.24</td>
+  <th>Time:</th>                 <td>14:51:19</td>     <th>  Log-Likelihood:    </th> <td> -562.24</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  4870</td>      <th>  AIC:               </th> <td>   1128.</td>
@@ -1032,7 +1032,7 @@ This difference has a p-value of 0.00004
   <th>Date:</th>             <td>Tue, 25 Mar 2025</td> <th>  Prob (F-statistic):</th> <td>3.04e-05</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>08:48:05</td>     <th>  Log-Likelihood:    </th> <td> -551.02</td>
+  <th>Time:</th>                 <td>14:51:19</td>     <th>  Log-Likelihood:    </th> <td> -551.02</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  4870</td>      <th>  AIC:               </th> <td>   1120.</td>
@@ -1153,7 +1153,7 @@ This difference has a p-value of 0.00004
   <th>Date:</th>             <td>Tue, 25 Mar 2025</td> <th>  Prob (F-statistic):</th>  <td> 0.339</td> 
 </tr>
 <tr>
-  <th>Time:</th>                 <td>08:48:05</td>     <th>  Log-Likelihood:    </th> <td> -550.83</td>
+  <th>Time:</th>                 <td>14:51:19</td>     <th>  Log-Likelihood:    </th> <td> -550.83</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  4870</td>      <th>  AIC:               </th> <td>   1122.</td>
@@ -1254,9 +1254,9 @@ This difference has a p-value of 0.00004
 Black respondents with a college degree are -2.82 percentage points less likely to get a call back than White applicant
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/fs/h_8_rwsn5hvg9mhp0txgc_s9v6191b/T/ipykernel_63503/838979874.py:1: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/fs/h_8_rwsn5hvg9mhp0txgc_s9v6191b/T/ipykernel_82491/838979874.py:1: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   results[&quot;ex8_black_nocollege&quot;] = 100 * float(
-/var/folders/fs/h_8_rwsn5hvg9mhp0txgc_s9v6191b/T/ipykernel_63503/838979874.py:7: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+/var/folders/fs/h_8_rwsn5hvg9mhp0txgc_s9v6191b/T/ipykernel_82491/838979874.py:7: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   results[&quot;ex8_black_college&quot;] = 100 * float(
 </pre></div>
 </div>
@@ -1307,7 +1307,7 @@ Black respondents with a college degree are -2.82 percentage points less likely 
   <th>Date:</th>             <td>Tue, 25 Mar 2025</td> <th>  Prob (F-statistic):</th> <td>6.76e-05</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>08:48:05</td>     <th>  Log-Likelihood:    </th> <td> -551.00</td>
+  <th>Time:</th>                 <td>14:51:19</td>     <th>  Log-Likelihood:    </th> <td> -551.00</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  4870</td>      <th>  AIC:               </th> <td>   1122.</td>
