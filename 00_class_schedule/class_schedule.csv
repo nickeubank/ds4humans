@@ -47,7 +47,7 @@ Tu Mar 18,"Causal Questions: Experiments in Practice, Internal Validity","Experi
 
 - KTX: Chpt 2 (End to End Example)
 - KTX: Chpt 3, ""Threats to Internal Validity"" (p. 42-47) 
-- KTX: Chpt 19 (A/A Testing)",- `Ex <../99_exercises/exercise_abtesting.html>`_
+- KTX: Chpt 19 (A/A Testing)",- `Ex <../99_exercises/exercise_resume_experiment.html>`_
 Th Mar 20,"Causal Questions: Experiments in Practice, External Validity","Overall Evaluation Criteria: KTX Chpt 7.
 
 Finishing Internal Validity: 
@@ -58,24 +58,24 @@ Experiments: External Validity (In Practice):
 
 - `Chpt 15, Experiments and External Validty <../30_questions/45_causal_questions_external.html>`_
 - KTX, Chpt 3, ""Threats to External Validity"" to end (p. 47-54)
-- Kohvai, Tang and Xu, Chpt 23 (Primacy Effects / Long Term Decay)",
+- Kohvai, Tang and Xu, Chpt 23 (Primacy Effects / Long Term Decay)",- `Ex <../99_exercises/exercise_abtesting.html>`_
 Tu Mar 25,"Causal Questions: Experiments in Practice, Design","Designing Experiments
 
 - Statistical Power and Sample Sizes: GHV Ch 16
 - `Don't stop experiments early! <../35_causal/35_endogenous_stopping.html>`_
 
  
-",
+",- `Ex <../99_exercises/exercise_power_calculations.html>`_
 Th Mar 27,"Causal Questions: Experiments in Practice, P-Value Interpretation","- Statistical Decision Theory (on Canvas). 550-556 (This is same as IDS 705 Lecture 8 Reading)
 - `Assessing Statistical Results: Magnitude, Precision, and Model Uncertainty <https://doi.org/10.1080/00031305.2018.1537889>`_",
 Tu Apr 1,AB Testing Review,,
 Th Apr 3,**MIDTERM**,**MIDTERM**,
-Tu Apr 8,Causal Questions: Regression,- `Causal Beyond Experiments <../35_causal/40_causal_inference_beyond_ab_testing.html>`_,
+Tu Apr 8,Causal Questions: Regression,- `Causal Beyond Experiments <../35_causal/40_causal_inference_beyond_ab_testing.html>`_,incomeineq
 Th Apr 9,Causal Questions: Matching,"- `The Why of Matching <../35_causal/80_matching_why.html>`_
 - `The How of Matching Summary <../35_causal/90_matching_how.html>`_
 - `Methods for Matching <https://youtu.be/tvMyjDi4dyg?t=910>`_
 
-*Watch the video above from about 15 minutes in (where link starts) till at least 45 minutes in, keep going if you want to learn about propensity score matching problems.*",
+*Watch the video above from about 15 minutes in (where link starts) till at least 45 minutes in, keep going if you want to learn about propensity score matching problems.*",matching
 Tu Apr 15,Causal Questions: Differences and Differences / Panels,"- Cunningham, Chpt 9 pp 406 (Difference in Differences) - pp 433 (Stop at ""Importance of Placebos in Diff-in-Diff"")
  -(Book page numbers at bottom of PDF on canvas. Full chapter is in PDF, more than you need to read.)
  
