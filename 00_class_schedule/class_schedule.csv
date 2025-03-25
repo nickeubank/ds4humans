@@ -47,7 +47,7 @@ Tu Mar 18,"Causal Questions: Experiments in Practice, Internal Validity","Experi
 
 - KTX: Chpt 2 (End to End Example)
 - KTX: Chpt 3, ""Threats to Internal Validity"" (p. 42-47) 
-- KTX: Chpt 19 (A/A Testing)",- `Ex <../99_exercises/exercise_resume_experiment.html>`_
+- KTX: Chpt 19 (A/A Testing)",- `Ex <../99_exercises/exercise_abtesting.html>`_
 Th Mar 20,"Causal Questions: Experiments in Practice, External Validity","Overall Evaluation Criteria: KTX Chpt 7.
 
 Finishing Internal Validity: 
@@ -58,11 +58,11 @@ Experiments: External Validity (In Practice):
 
 - `Chpt 15, Experiments and External Validty <../30_questions/45_causal_questions_external.html>`_
 - KTX, Chpt 3, ""Threats to External Validity"" to end (p. 47-54)
-- Kohvai, Tang and Xu, Chpt 23 (Primacy Effects / Long Term Decay)",- `Ex <../99_exercises/exercise_abtesting.html>`_
+- Kohvai, Tang and Xu, Chpt 23 (Primacy Effects / Long Term Decay)",
 Tu Mar 25,"Causal Questions: Experiments in Practice, Design","Designing Experiments
 
 - Statistical Power and Sample Sizes: GHV Ch 16
-- `Don't stop experiments early! <endogenous_stopping.ipynb>`_
+- `Don't stop experiments early! <../35_causal/35_endogenous_stopping.html>`_
 
  
 ",
