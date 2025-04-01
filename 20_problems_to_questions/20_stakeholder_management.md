@@ -95,10 +95,7 @@ The way this book is organized suggests a natural flow from problem articulation
 
 ## Strategies for Stakeholder Communication
 
-
-### Step 3: Ask Questions (Especially Quantitative Ones!)
-
-Be sure to ask a lot of questions of your stakeholder. In particular, I would suggest two types: questions about what success would look like, and questions about the problem itself.
+Be sure to ask a lot of questions of your stakeholder. In particular, I would suggest two types of questions: questions about what success would look like, and questions about the problem itself.
 
 ### Questions About Success
 
@@ -120,24 +117,3 @@ In the example of the company that wanted to improve recruitment of high-quality
 - What share of employees you do hire turn out to be successful employees?
 
 These are all questions that I would ask my stakeholder in one of our first meetings.
-
-### Strategy 1: Propose Questions You Might Answer
-
-As a data scientist, answering questions about the world is the instrument you have to solve problems. So once you think you have a sense of your stakeholder's needs, turn around and propose a handful of questions and ask them if answering those questions would help solve their problem.
-
-This is important because many people have only a vague sense of what they are likely to get as a "deliverable" from the data scientist. They usually have a vague sense that they will get some type of magic machine (a "magic model" or "magic algorithm") that will just make their problem go away. By concretely framing your deliverable as the answer to a question (or a model that would answer a specific question for each entity like a customer or patient that it encounters), you can get much more valuable feedback before you dive into a problem.
-
-### Strategy 2: Make Your Questions Specific and Actionable
-
-[tend to ]
-
-In developing your questions, it is important to make them specific and actionable. A specific and actionable question makes it very clear what you need to do next. For example, suppose an international aid organization told you they were worried that urbanization in Africa, Asia, and Latin America was impacting efforts to reduce infant mortality. Some examples of specific, actionable questions are: "Is infant mortality higher among recent migrants to urban centers, controlling for income?" or "Are the causes of infant mortality among recent migrants to urban centers different from those living in rural areas?" Reading those questions, you can probably immediately think of what data you'd need to collect, and what regressions you'd want to run to generate answers to those questions.
-
-Vague questions would be "Is urbanization impacting efforts to reduce infant mortality?", or "Does urbanization affect infant mortality?" Note that when you read these, they don't seem to obviously imply a way forward.
-
-Perhaps the best way to figure out if your question is answerable is to write down what an answer to your question would look like. Seriously -- try it. Can you write down, on a piece of paper, the graph, regression table, or machine learning diagnostic statistics (complete with labels on your axes, names for variables, etc.) that would constitute an answer to your question? If not, it's probably too vague.
-
-
-## Reading Reflection Questions
-
-- Why should you care if your stakeholder misspecifies their problem?

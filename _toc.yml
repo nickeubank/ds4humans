@@ -23,7 +23,7 @@ parts:
   - caption: Problems to Questions
     chapters:
       - file: 20_problems_to_questions/10_solving_the_right_problem
-        title: "Ch 3: Solving the Right Question"
+        title: "Ch 3: Solving the Right Problem"
         sections:
           - file: 20_problems_to_questions/15_solving_the_wrong_problem
       - file: 20_problems_to_questions/20_stakeholder_management
