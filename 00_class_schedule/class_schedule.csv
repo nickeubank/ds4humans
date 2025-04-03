@@ -69,7 +69,7 @@ Tu Mar 25,"Causal Questions: Experiments in Practice, Design","Designing Experim
 Th Mar 27,"Causal Questions: Experiments in Practice, P-Value Interpretation","- Statistical Decision Theory (on Canvas). 550-556 (This is same as IDS 705 Lecture 8 Reading)
 - `Assessing Statistical Results: Magnitude, Precision, and Model Uncertainty <https://doi.org/10.1080/00031305.2018.1537889>`_",`Causal Report <../97_project/30_causal.html>`_
 Tu Apr 1,AB Testing Review,,
-Th Apr 3,Causal Questions: Regression,- `Causal Beyond Experiments <../35_causal/40_causal_inference_beyond_ab_testing.html>`_,
+Th Apr 3,Causal Questions: Regression,- `Causal Beyond Experiments <../35_causal/40_causal_inference_beyond_ab_testing.html>`_,- `Ex <../99_exercises/exercise_regressions_incomeineq.html>`_
 Tu Apr 8,**MIDTERM**,**MIDTERM**,
 Th Apr 9,Causal Questions: Matching,"- `The Why of Matching <../35_causal/80_matching_why.html>`_
 - `The How of Matching Summary <../35_causal/90_matching_how.html>`_
