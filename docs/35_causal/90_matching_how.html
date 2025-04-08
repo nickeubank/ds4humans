@@ -528,16 +528,16 @@ document.write(`
 <p>In this reading, I’ll give a high level summary of how matching works before referring to a youtube lesson a the nitty gritty of a few specific implementations.</p>
 <section id="pruning-your-data">
 <h2>Pruning Your Data<a class="headerlink" href="#pruning-your-data" title="Link to this heading">#</a></h2>
-<p>As noted in our last reading (this reading is a follow-on to <a class="reference internal" href="80_matching_why.html"><span class="std std-doc">The Why of Matching</span></a>, so if you haven’t read that start there), matching could be more appropriately called “pruning”, as the goal is to winnow down your dataset until you have a set of observations for which your control and treatment variables look very similar in terms of observable characteristics. So how do we do that?</p>
+<p>As noted in our last reading (this reading is a follow-on to <a class="reference internal" href="80_matching_why.html"><span class="std std-doc">The Why of Matching</span></a>, so if you haven’t read that, start there), matching could be more appropriately called “pruning,” as the goal is to winnow down your dataset until you have a set of observations for which your control and treatment variables look very similar in terms of observable characteristics. So how do we do that?</p>
 <p>A simple matching algorithm would proceed like this:</p>
 <ol class="arabic simple">
 <li><p>Loop over all your treated observations.</p></li>
 <li><p>For each treated observation, look for the most similar untreated observation (not already in a pair) in terms of your control variables.</p></li>
-<li><p>If that untreated observation is too dissimilar to the treated observation, throw away the treated observation. (As the user you have to pick a threshold for how dissimilar is ok.)</p></li>
+<li><p>If that untreated observation is too dissimilar to the treated observation, throw away the treated observation. (As the user you have to pick a threshold for how dissimilar is ok).</p></li>
 <li><p>If not, call them a pair and keep both.</p></li>
 <li><p>When you’ve finished looping over your treated observations, throw away any unpaired untreated observations.</p></li>
 </ol>
-<p>When you’re done, you’ll have a collected of pairs of observations (one treated, one untreated), where both members of each pair are very similar in terms of their observable control variables. All other data has been thrown away.</p>
+<p>When you’re done, you’ll have a collection of pairs of observations (one treated, one untreated), where the members of each pair are very similar in terms of their observable control variables. All other data has been thrown away.</p>
 <p>To illustrate with the example from the last reading, if we started with this data:
 <img alt="matching_king_1" src="../_images/matching_king_1.png" /></p>
 <p>A simple matching algorithm would probably prune it down to something like this:</p>
@@ -545,22 +545,21 @@ document.write(`
 <p>Then, and here’s the cool part, you take this dataset and analyze just the way you would otherwise! Just run your regression on this dataset!</p>
 <section id="measuring-similarity">
 <h3>Measuring Similarity<a class="headerlink" href="#measuring-similarity" title="Link to this heading">#</a></h3>
-<p>The biggest decision you have to make when doing matching is deciding how you want to measure whether two observations are “similar”. The most simple, commonly used strategy is to measure the dissimilarity of two observations in a pair by:</p>
-<ul class="simple">
-<li><p>For each control variable, calculate the difference between the two observations in the pair (so if one has Education of 20 and one of 14, you’d get 6). Note the example above just has Education, but in reality you likely have dozens of these variables, so you do this for each variable.</p></li>
-<li><p>Normalize those differences by the standard deviation of the variable (so divide 6 by the standard deviation of Education)</p></li>
-<li><p>Square all those differences, add them up, and take the square root. That’s your “similarity” score.</p></li>
-</ul>
-<p>Basically, this is like taking the euclidean distance between the points in some really high dimensional space, except you also normalize distances by their standard deviation, a strategy called “Mahalanobis Distance Matching”.</p>
-<p>Of course it’s not the only strategy – the video linked at the bottom of this reading will direct you to a talk on three very good strategies, as well as their strengths and weaknesses – but that’s generally the idea.</p>
+<p>The biggest decision you have to make when doing matching is deciding how you want to measure whether two observations are “similar.”</p>
+<p>The most simple, commonly used strategy is what is called “Mahalanobis Distance Matching.” In DMD, distance between two observations is measured by:</p>
+<p>Calculate the difference between the observations in their value of each explanatory variable (so in the toy example above, the difference in the value of education).
+Normalize that difference by dividing the difference by the standard deviation of the explanatory variable. This helps ensure that the units of each explanatory variable don’t matter.
+Squared those normalized values, add them up, and take the square root of the sum.</p>
+<p>(So basically, calculate Euclidean distance in terms of units normalized by variables’ standard deviations).</p>
+<p>Of course this is not the only strategy – the video linked at the bottom of this reading will direct you to a talk on three very good strategies, as well as their strengths and weaknesses – but that’s the idea.</p>
 </section>
 </section>
 <section id="when-can-should-i-use-matching">
 <h2>When Can / Should I Use Matching?<a class="headerlink" href="#when-can-should-i-use-matching" title="Link to this heading">#</a></h2>
-<p>Matching is best used in a somewhat odd situation: a place where you have some overlap in what your treated and untreated observations look like (called having “common support”),  but where you also have some areas where they <em>don’t</em> overlap (imbalance).</p>
+<p>Matching is best used in a somewhat odd situation: a place where you have some overlap in what your treated and untreated observations look like (called having “common support”) but where you also have some areas where they <em>don’t</em> overlap (imbalance).</p>
 <p>The first is necessary because when you prune your data, the goal is to keep only observations that look similar, so you need <em>some</em> area of overlap, or you won’t have anything to match!</p>
 <p>At the same time, however, if there’s <em>no</em> imbalance, then you don’t really need to do matching.</p>
-<p>So when should you use it? When your distributions have <strong>both</strong> areas of overlap and areas of imbalance.</p>
+<p>So in other words, you use matching in situations where the distribution of explanatory variables have <strong>both</strong> areas of overlap and areas of imbalance.</p>
 </section>
 <section id="checking-balance">
 <h2>Checking Balance<a class="headerlink" href="#checking-balance" title="Link to this heading">#</a></h2>
