@@ -69,13 +69,14 @@ Tu Mar 25,"Causal Questions: Experiments in Practice, Design","Designing Experim
 Th Mar 27,"Causal Questions: Experiments in Practice, P-Value Interpretation","- Statistical Decision Theory (on Canvas). 550-556 (This is same as IDS 705 Lecture 8 Reading)
 - `Assessing Statistical Results: Magnitude, Precision, and Model Uncertainty <https://doi.org/10.1080/00031305.2018.1537889>`_",`Causal Report <../97_project/30_causal.html>`_
 Tu Apr 1,AB Testing Review,,
-Th Apr 3,Causal Questions: Regression,- `Causal Beyond Experiments <../35_causal/40_causal_inference_beyond_ab_testing.html>`_,- `Ex <../99_exercises/exercise_regressions_incomeineq.html>`_
+Th Apr 3,Causal Questions: Regression,"- `Causal Beyond Experiments <../35_causal/40_causal_inference_beyond_ab_testing.html>`_
+- Angrist and Pischke, Mastering Metrics, Chpt 2",- `Ex <../99_exercises/exercise_resume_experiment.html>`_
 Tu Apr 8,**MIDTERM**,**MIDTERM**,
 Th Apr 9,Causal Questions: Matching,"- `The Why of Matching <../35_causal/80_matching_why.html>`_
 - `The How of Matching Summary <../35_causal/90_matching_how.html>`_
 - `Methods for Matching <https://youtu.be/tvMyjDi4dyg?t=910>`_
 
-*Watch the video above from about 15 minutes in (where link starts) till at least 45 minutes in, keep going if you want to learn about propensity score matching problems.*",
+*Watch the video above from about 15 minutes in (where link starts) till at least 45 minutes in, keep going if you want to learn about propensity score matching problems.*",- `Ex <../99_exercises/exercise_matching.html>`_
 Tu Apr 15,Causal Questions: Differences and Differences / Panels,"- Cunningham, Chpt 9 pp 406 (Difference in Differences) - pp 433 (Stop at ""Importance of Placebos in Diff-in-Diff"")
  -(Book page numbers at bottom of PDF on canvas. Full chapter is in PDF, more than you need to read.)
  
@@ -83,6 +84,6 @@ Tu Apr 15,Causal Questions: Differences and Differences / Panels,"- Cunningham, 
  (dont need to follow everything, but here's a real diff-in-diff)
  
  - `Enfranchisement and Incarceration <https://www.cambridge.org/core/journals/american-political-science-review/article/enfranchisement-and-incarceration-after-the-1965-voting-rights-act/C68FA7BB8CA313BDD8D9A39BA666A21D>`_
- - `Diff-in-Diffs at Netflix <https://netflixtechblog.com/key-challenges-with-quasi-experiments-at-netflix-89b4f234b852>`_",
+ - `Diff-in-Diffs at Netflix <https://netflixtechblog.com/key-challenges-with-quasi-experiments-at-netflix-89b4f234b852>`_",- `Ex <../99_exercises/exercise_diffindiff.html>`_
 "Wed, April 23",x,- **Optional Due Date for Causal Rough Draft (11pm)**,x
 "Wed, Apr 30",x,- **Final Causal Report Due**,x

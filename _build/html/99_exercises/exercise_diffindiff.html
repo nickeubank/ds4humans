@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Class Schedule &#8212; Solving Problems With Data</title>
+    <title>Drug Legalization Difference-in-Difference &#8212; Solving Problems With Data</title>
   
   
   
@@ -104,12 +104,12 @@ commentsRunWhenDOMLoaded(addUtterances);
                 gtag('config', 'G-RKDPB41DQ2');
             </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '00_class_schedule/class_schedule';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '99_exercises/exercise_diffindiff';</script>
     <link rel="icon" href="../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Solving Problems with Data" href="../10_introduction/10_solving_problems_with_data.html" />
-    <link rel="prev" title="Welcome to DS4Humans" href="../landing_page.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -172,6 +172,8 @@ commentsRunWhenDOMLoaded(addUtterances);
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -228,8 +230,8 @@ commentsRunWhenDOMLoaded(addUtterances);
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Class Schedule</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Class Schedule</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00_class_schedule/class_schedule.html">Class Schedule</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul class="nav bd-sidenav">
@@ -380,7 +382,7 @@ commentsRunWhenDOMLoaded(addUtterances);
       
       
       
-      <li><a href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F00_class_schedule/class_schedule.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F99_exercises/exercise_diffindiff.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -410,7 +412,7 @@ commentsRunWhenDOMLoaded(addUtterances);
       
       
       
-      <li><a href="../_sources/00_class_schedule/class_schedule.rst" target="_blank"
+      <li><a href="../_sources/99_exercises/exercise_diffindiff.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -420,7 +422,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.rst</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -494,7 +496,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Class Schedule</h1>
+    <h1>Drug Legalization Difference-in-Difference</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -504,7 +506,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#texts-used">Texts Used</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4">Exercise 4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5">Exercise 5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6">Exercise 6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7">Exercise 7</a></li>
 </ul>
             </nav>
         </div>
@@ -516,355 +524,69 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="class-schedule">
-<h1>Class Schedule<a class="headerlink" href="#class-schedule" title="Link to this heading">#</a></h1>
-<p>Class: Tuesday / Thursday, 1:25-2:40pm</p>
-<p>Office Hours:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="drug-legalization-difference-in-difference">
+<h1>Drug Legalization Difference-in-Difference<a class="headerlink" href="#drug-legalization-difference-in-difference" title="Link to this heading">#</a></h1>
+<p>In recent years, many US states have decided to legalize the use of marijuana.</p>
+<p>When these ideas were first proposed, there were many theories about the relationship between crime and the “War on Drugs” (the term given to US efforts to arrest drug users and dealers over the past several decades).</p>
+<p>In this exercise, we’re going to test a few of those theories using drug arrest data from the state of California.</p>
+<p>Though California has passed a number of laws lessening penalities for marijuana possession over the years, arguably the biggest changes were in  2010, when the state changed the penalty for possessing a small amount of marijuana from a criminal crime to a “civil” penality (meaning those found guilty only had to pay a fine, not go to jail), though possessing, selling, or producing larger quantities remained illegal. Then in 2016, the state fully legalized marijuana for recreational use, not only making possession of small amounts legal, but also creating a regulatory system for producing marijuana for sale.</p>
+<p>Proponents of drug legalization have long argued that the war on drugs contributes to violent crime by creating an opportunity for drug dealers and organized crime to sell and distribute drugs, a business which tends to generate violence when gangs battle over territory. According to this theory, with drug legalization, we should see violent crime decrease after legalization in places where drug arrests had previously been common.</p>
+<p><strong>To be clear,</strong> this is far from the only argument for drug legalization! It is simply the argument we are well positioned to analyze today.</p>
+<p>(Students from Practical Data Science: This should sound familiar! Last semester we did this analysis in a very simple, crude manner; in this class we’ll do it rigorously with your new found difference-in-differences skills!)</p>
+<section id="exercise-1">
+<h2>Exercise 1<a class="headerlink" href="#exercise-1" title="Link to this heading">#</a></h2>
+<p>Download and import California arrest data from <a class="reference external" href="https://www.github.com/nickeubank/MIDS_Data/UDS_arrest_data.csv">https://www.github.com/nickeubank/MIDS_Data/UDS_arrest_data.csv</a>. What is a unit of observation (a single row) in this data? What entities are being tracked, and over what time period?</p>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">VIOLENT</span></code> is a count of arrests for violent offenses, and <code class="docutils literal notranslate"><span class="pre">F_DRUGOFF</span></code> is a count of felony drug arrests. <code class="docutils literal notranslate"><span class="pre">total_population</span></code> is total population.</p>
+</section>
+<section id="exercise-2">
+<h2>Exercise 2<a class="headerlink" href="#exercise-2" title="Link to this heading">#</a></h2>
+<p>In this analysis, we will split our sample into “treated” and “control” counties on the basis of whether a given county had a high average drug arrest rate in the three years before California began drug legalization in 2010. Counties with high drug arrest rates, after all, will be more impacted by drug liberalization policies.</p>
+<p>Calculate each county’s average drug arrest <em>rate</em> for the period from 2007-2009. Then calculate the median value across counties, and create an indicator called <code class="docutils literal notranslate"><span class="pre">treated</span></code> for counties whose average drug arrest rate during this period was above the median average drug arrest rate. In other words, half your counties should be in the “treated” group, and half in “control”.</p>
+<p>Note that this indicator should be <em>time-invariant</em>—if a county is in the treated group, it should always be identified as being in the treated group.</p>
+</section>
+<section id="exercise-3">
+<h2>Exercise 3<a class="headerlink" href="#exercise-3" title="Link to this heading">#</a></h2>
+<p>Our outcome in this analysis is the violent arrest rate – if drug liberalization reduces crime overall, we would expect to see this rate fall in counties with high drug arrest rates after liberalization; if not, we would not expect to see any changes. Create a <code class="docutils literal notranslate"><span class="pre">violent_rate</span></code> variable with is violent arrests per 100,000 people.</p>
+</section>
+<section id="exercise-4">
+<h2>Exercise 4<a class="headerlink" href="#exercise-4" title="Link to this heading">#</a></h2>
+<p>Differences-in-differences get their name from the fact that the estimator, in its most basic implementation, is just the difference between:</p>
 <ul class="simple">
-<li><p>Nick: Thursday, 9-10am, <a class="reference external" href="https://duke.zoom.us/my/nickeubank">https://duke.zoom.us/my/nickeubank</a> or Gross Hall 231</p></li>
-<li><p>Katie: Tuesday 9-10am <a class="reference external" href="https://duke.zoom.us/j/7696790306">https://duke.zoom.us/j/7696790306</a></p></li>
-<li><p>Keon: Wednesday 3-4pm <a class="reference external" href="https://duke.zoom.us/j/97104029366">https://duke.zoom.us/j/97104029366</a></p></li>
-<li><p>Gunel: Thursday 3-4pm <a class="reference external" href="https://duke.zoom.us/j/95439693004">https://duke.zoom.us/j/95439693004</a></p></li>
+<li><p>difference in the average change in outcome among eventually-treated units from before to after when treatment is applied, and</p></li>
+<li><p>difference in the average change in outcome among never-treated units from before to after when treatment (to the treated units).</p></li>
 </ul>
-<section id="texts-used">
-<h2>Texts Used<a class="headerlink" href="#texts-used" title="Link to this heading">#</a></h2>
-<p>This course will make use of readings from a handful of different sources. The main four, in order of the amount they will be used, are:</p>
+<p>(Obviously treatment is never a applied to the never-treated units – when we talk about pre / post, we refer to before and after the point in time in which treatment is applied to the treated units. So if treated units are treated in 2008, then for the never-treated units, we are also comparing outcomes before 2008 to after 2008, even though 2008 has no special significance for the never-treated units).</p>
+<p>In its most basic implementation, therefore, calculating a difference-in-difference estimate requires calculating just 4 numbers:</p>
 <ul class="simple">
-<li><p><strong>DS4H</strong>: <a class="reference external" href="https://ds4humans.com">Data Science for Humans</a> (This website, free.)</p></li>
-<li><p><strong>Cunningham</strong>: <a class="reference external" href="https://www.amazon.com/Causal-Inference-Mixtape-Scott-Cunningham/dp/0300251688">Causal Inference Mixtape</a> ($30 new, $20 used. <a class="reference external" href="https://ebookcentral.proquest.com/lib/duke/detail.action?docID=6425560">Online Access through Duke Library</a>)</p></li>
-<li><p><strong>KTX</strong>: <a class="reference external" href="https://www.amazon.com/gp/product/1108724264/">Trustworthy Online Controlled Experiments: A Practical Guide to A/B Testing</a> ($40 new, $30 used.)</p></li>
-<li><p><strong>GHV</strong>: <a class="reference external" href="https://www.amazon.com/Regression-Stories-Analytical-Methods-Research/dp/1107676517">Regression and Other Stories</a> ($40. Too new to have used versions.)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar y_{T=1,Post}\)</span>  Avg for Treatment, Post-Treatment</p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar y_{T=0,Post}\)</span>  Avg for Control, Post-Treatment</p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar y_{T=1,Pre}\)</span>   Avg for Treatment, Pre-Treatment</p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar y_{T=0,Pre}\)</span>   Avg for Control, Pre-Treatment</p></li>
 </ul>
-<div class="pst-scrollable-table-container"><table class="table">
-<colgroup>
-<col style="width: 7.8%" />
-<col style="width: 29.4%" />
-<col style="width: 49.0%" />
-<col style="width: 13.7%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Date</p></th>
-<th class="head"><p>Topic</p></th>
-<th class="head"><p>Do Before Class</p></th>
-<th class="head"><p>In Class</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Th Jan 9</p></td>
-<td><p>Course Overview</p></td>
-<td><p>Nothing</p></td>
-<td><p>Discuss logistics and structure</p></td>
-</tr>
-<tr class="row-odd"><td><p>Tu Jan 14</p></td>
-<td><p>Solving Problems by Answering Questions</p></td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="https://github.com/nickeubank/ds4humans/raw/refs/heads/main/98_syllabus/Syllabus_IDS701.pdf?download=">Read, sign, submit syllabus on gradescope.</a></p></li>
-<li><p><a class="reference external" href="../40_in_practice/00_how_to_read_this_book.html">How to Read</a></p></li>
-<li><dl class="simple">
-<dt><a class="reference external" href="../10_introduction/10_solving_problems_with_data.html">Chpt 1</a> </dt><dd><ul>
-<li><p><strong>Whenever I list a Chpt number, you may assume it includes all subparts unless I say otherwise.</strong> So this includes all three big idea subsections.</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</td>
-<td><p><a class="reference external" href="../99_exercises/exercise_class2_probs_and_questions.html">Questions Ex</a></p></td>
-</tr>
-<tr class="row-even"><td><p>Th Jan 16</p></td>
-<td><p>Stakeholder Management</p></td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../20_problems_to_questions/10_solving_the_right_problem.html">Chpt 3</a></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=kYMfE9u-lMo">Why It’s Important To Get Your Question Right (30 min video)</a></p></li>
-<li><p><a class="reference external" href="../20_problems_to_questions/20_stakeholder_management.html">Chpt 4</a></p></li>
-</ul>
-</td>
-<td><p><a class="reference external" href="../99_exercises/exercise_stakeholder_management.html">Stakeholder Ex</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>Tu Jan 21</p></td>
-<td><p>Prescriptive v. Descriptive Questions</p></td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../10_introduction/40_data_science_in_historical_context.html">Chpt 2</a></p></li>
-<li><p><a class="reference external" href="../30_questions/05_descriptive_v_prescriptive.html">Chpt 5</a></p></li>
-</ul>
-</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Th Jan 23</p></td>
-<td><p>Exploratory Questions: Purpose, Internal and External Validity</p></td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../30_questions/10_using_exploratory_questions.html">Chpt 6</a></p></li>
-<li><p><a class="reference external" href="../30_questions/15_answering_exploratory_questions.html">Chpt 7</a></p></li>
-</ul>
-</td>
-<td><p><a class="reference external" href="../97_project/00_problem_and_exploratory.html">Team Project</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>Tu Jan 28</p></td>
-<td><p>Teams 1</p></td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="https://github.com/nickeubank/unifyingdatascience/raw/master/team_readings/project_aristotle_nytimes.pdf">What Project Aristotle Learned</a></p></li>
-<li><p>Edmondson, The Fearless Organization, Chpt 1 (on Canvas)</p></li>
-<li><p><strong>Problem and Questions Due</strong></p></li>
-</ul>
-</td>
-<td><p><a class="reference external" href="../99_exercises/exercise_teams1.html">Debrief Ex</a></p></td>
-</tr>
-<tr class="row-even"><td><p>Th Jan 30</p></td>
-<td><p>Teams 2</p></td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="https://github.com/nickeubank/unifyingdatascience/raw/master/team_readings/MIDS%20Team%20Charter%20Assignment.docx">Review Team Charter Assignment</a></p></li>
-<li><p>Edmondson, Teaming, Chpt 2 (on Canvas)</p></li>
-</ul>
-<blockquote>
-<div><p>Optional: <a class="reference external" href="https://docs.google.com/document/d/1PsnDMS2emcPLgMLFAQCXZjO7C4j2hJ7znOq_g2Zkjgk/export?format=pdf">Fostering Psychological Safety Tips</a></p>
-</div></blockquote>
-</td>
-<td><p><a class="reference external" href="../97_project/10_exploratory_report.html">Team Report</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>Tu Feb 4</p></td>
-<td><p>Exploratory Questions: Internal Validity Concerns</p></td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../30_questions/16_exploratory_internal_challenges.html">Chpt 8</a></p></li>
-</ul>
-</td>
-<td><p><a class="reference external" href="../99_exercises/exercise_exploratory.html">Exploratory Ex</a></p></td>
-</tr>
-<tr class="row-even"><td><p>Th Feb 6</p></td>
-<td><p>Passive Prediction Questions: Purpose, Internal Validity 1</p></td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../30_questions/20_using_passive_prediction_questions.html">Chpt 9</a></p></li>
-<li><p><a class="reference external" href="../30_questions/23_passive_internal_alignment_and_bias.html">Chpt 10</a></p></li>
-<li><p><a class="reference external" href="../30_questions/24_passive_internal_errors.html">Chpt 11</a> ONLY FIRST READING, not Fairness</p></li>
-</ul>
-</td>
-<td><p><a class="reference external" href="../99_exercises/exercise_passive_prediction.html">Passive P Ex</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>Tu Feb 11</p></td>
-<td><p>Passive Prediction Questions: Internal Validity 2</p></td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../30_questions/25_passive_fairness.html">Chpt 11 Fairness Section</a></p></li>
-</ul>
-</td>
-<td><p><a class="reference external" href="../99_exercises/exercise_used_car.html">Car Buyer</a></p></td>
-</tr>
-<tr class="row-even"><td><p>Th Feb 13</p></td>
-<td><p>Passive Prediction Questions: External Validity</p></td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../30_questions/27_passive_external_general.html">Chpt 12</a></p></li>
-<li><p><strong>Exploratory Report Due</strong></p></li>
-</ul>
-</td>
-<td><p><a class="reference external" href="../97_project/20_feedback.html">Feedback</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>Tu Feb 18</p></td>
-<td><p>Passive Prediction Questions: Interpretability</p></td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../30_questions/32_passive_interpretable_models.html">Chpt 13</a></p></li>
-<li><p><a class="reference external" href="../40_in_practice/30_giving_feedback.html">Giving Feedback</a></p></li>
-<li><p><strong>Feedback Memos Should Be Shared by Midnight on 18th</strong></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=Z8MEFI7ZJlA">Optional but fun!</a></p></li>
-</ul>
-</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Th Feb 20</p></td>
-<td><p>SNOW DAY</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>Tu Feb 25</p></td>
-<td><p>Feedback Class</p></td>
-<td><ul class="simple">
-<li><p>Read feedback provided to your team. Be prepared to discuss.</p></li>
-</ul>
-</td>
-<td><ul class="simple">
-<li><p>Discuss Feedback</p></li>
-</ul>
-</td>
-</tr>
-<tr class="row-even"><td><p>Th Feb 27</p></td>
-<td><p>Causal Questions: Purpose</p></td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../30_questions/30_using_causal_questions.html">Using Causal Questions</a></p></li>
-<li><p><a class="reference external" href="../30_questions/40_answering_causal_questions.html">Answering Causal Questions</a></p></li>
-</ul>
-</td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>Tu Mar 4</p></td>
-<td><p>Causal Questions: Potential Outcomes</p></td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../35_causal/10_potential_outcomes.html">Potential Outcomes Framework</a></p></li>
-<li><p><a class="reference external" href="../35_causal/15_evaluating_real_studies.html">Evaluating Real Studies</a></p></li>
-</ul>
-<blockquote>
-<div><dl class="simple">
-<dt>Optional:</dt><dd><ul class="simple">
-<li><p>Read Chpt 4 in Cunningham from start (different presentation of potential outcomes).</p></li>
-<li><p>Note that Cunningham uses the term Simple Difference in Outcomes (SDO) instead of $widehat{ATE}$ (the term I use). They are perfectly interchangable.</p></li>
-</ul>
-</dd>
-</dl>
-</div></blockquote>
-</td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../99_exercises/exercise_potential_outcomes1.html">Ex</a></p></li>
-</ul>
-</td>
-</tr>
-<tr class="row-even"><td><p>Th Mar 6</p></td>
-<td><p>Causal Questions: Potential Outcomes</p></td>
-<td><ul class="simple">
-<li><p>Cunningham, Chpt 4, pp 135 (“Independence Assumption”) - 148 (Stop at “Randomization Inference”)</p></li>
-<li><p><a class="reference external" href="../35_causal/30_interpreting_indicator_vars.html">Indicator Variables</a></p></li>
-</ul>
-</td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../99_exercises/exercise_resume_experiment.html">Ex</a></p></li>
-</ul>
-</td>
-</tr>
-<tr class="row-odd"><td><p>Tu Mar 11</p></td>
-<td><p><strong>NO CLASS</strong></p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Th Mar 13</p></td>
-<td><p><strong>NO CLASS</strong></p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>Tu Mar 18</p></td>
-<td><p>Causal Questions: Experiments in Practice, Internal Validity</p></td>
-<td><p>Experiments: Internal Validity (In Practice):</p>
-<ul class="simple">
-<li><p>KTX: Chpt 2 (End to End Example)</p></li>
-<li><p>KTX: Chpt 3, “Threats to Internal Validity” (p. 42-47)</p></li>
-<li><p>KTX: Chpt 19 (A/A Testing)</p></li>
-</ul>
-</td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../99_exercises/exercise_resume_experiment.html">Ex</a></p></li>
-</ul>
-</td>
-</tr>
-<tr class="row-even"><td><p>Th Mar 20</p></td>
-<td><p>Causal Questions: Experiments in Practice, External Validity</p></td>
-<td><p>Overall Evaluation Criteria: KTX Chpt 7.</p>
-<p>Finishing Internal Validity:</p>
-<ul class="simple">
-<li><p>Different Randomizations: KTX Chpt 22</p></li>
-</ul>
-<p>Experiments: External Validity (In Practice):</p>
-<ul class="simple">
-<li><p><a class="reference external" href="../30_questions/45_causal_questions_external.html">Chpt 15, Experiments and External Validty</a></p></li>
-<li><p>KTX, Chpt 3, “Threats to External Validity” to end (p. 47-54)</p></li>
-<li><p>Kohvai, Tang and Xu, Chpt 23 (Primacy Effects / Long Term Decay)</p></li>
-</ul>
-</td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../99_exercises/exercise_abtesting.html">Ex</a></p></li>
-</ul>
-</td>
-</tr>
-<tr class="row-odd"><td><p>Tu Mar 25</p></td>
-<td><p>Causal Questions: Experiments in Practice, Design</p></td>
-<td><p>Designing Experiments</p>
-<ul class="simple">
-<li><p>Statistical Power and Sample Sizes: GHV Ch 16</p></li>
-<li><p><a class="reference external" href="../35_causal/35_endogenous_stopping.html">Don’t stop experiments early!</a></p></li>
-</ul>
-</td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../99_exercises/exercise_power_calculations.html">Ex</a></p></li>
-</ul>
-</td>
-</tr>
-<tr class="row-even"><td><p>Th Mar 27</p></td>
-<td><p>Causal Questions: Experiments in Practice, P-Value Interpretation</p></td>
-<td><ul class="simple">
-<li><p>Statistical Decision Theory (on Canvas). 550-556 (This is same as IDS 705 Lecture 8 Reading)</p></li>
-<li><p><a class="reference external" href="https://doi.org/10.1080/00031305.2018.1537889">Assessing Statistical Results: Magnitude, Precision, and Model Uncertainty</a></p></li>
-</ul>
-</td>
-<td><p><a class="reference external" href="../97_project/30_causal.html">Causal Report</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>Tu Apr 1</p></td>
-<td><p>AB Testing Review</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Th Apr 3</p></td>
-<td><p>Causal Questions: Regression</p></td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../35_causal/40_causal_inference_beyond_ab_testing.html">Causal Beyond Experiments</a></p></li>
-<li><p>Angrist and Pischke, Mastering Metrics, Chpt 2</p></li>
-</ul>
-</td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../99_exercises/exercise_resume_experiment.html">Ex</a></p></li>
-</ul>
-</td>
-</tr>
-<tr class="row-odd"><td><p>Tu Apr 8</p></td>
-<td><p><strong>MIDTERM</strong></p></td>
-<td><p><strong>MIDTERM</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Th Apr 9</p></td>
-<td><p>Causal Questions: Matching</p></td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../35_causal/80_matching_why.html">The Why of Matching</a></p></li>
-<li><p><a class="reference external" href="../35_causal/90_matching_how.html">The How of Matching Summary</a></p></li>
-<li><p><a class="reference external" href="https://youtu.be/tvMyjDi4dyg?t=910">Methods for Matching</a></p></li>
-</ul>
-<p><em>Watch the video above from about 15 minutes in (where link starts) till at least 45 minutes in, keep going if you want to learn about propensity score matching problems.</em></p>
-</td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../99_exercises/exercise_matching.html">Ex</a></p></li>
-</ul>
-</td>
-</tr>
-<tr class="row-odd"><td><p>Tu Apr 15</p></td>
-<td><p>Causal Questions: Differences and Differences / Panels</p></td>
-<td><ul class="simple">
-<li><p>Cunningham, Chpt 9 pp 406 (Difference in Differences) - pp 433 (Stop at “Importance of Placebos in Diff-in-Diff”)</p></li>
-</ul>
-<blockquote>
-<div><p>-(Book page numbers at bottom of PDF on canvas. Full chapter is in PDF, more than you need to read.)</p>
-<p>Optional but encouraged:
-(dont need to follow everything, but here’s a real diff-in-diff)</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.cambridge.org/core/journals/american-political-science-review/article/enfranchisement-and-incarceration-after-the-1965-voting-rights-act/C68FA7BB8CA313BDD8D9A39BA666A21D">Enfranchisement and Incarceration</a></p></li>
-<li><p><a class="reference external" href="https://netflixtechblog.com/key-challenges-with-quasi-experiments-at-netflix-89b4f234b852">Diff-in-Diffs at Netflix</a></p></li>
-</ul>
-</div></blockquote>
-</td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../99_exercises/exercise_diffindiff.html">Ex</a></p></li>
-</ul>
-</td>
-</tr>
-<tr class="row-even"><td><p>Wed, April 23</p></td>
-<td><p>x</p></td>
-<td><ul class="simple">
-<li><p><strong>Optional Due Date for Causal Rough Draft (11pm)</strong></p></li>
-</ul>
-</td>
-<td><p>x</p></td>
-</tr>
-<tr class="row-odd"><td><p>Wed, Apr 30</p></td>
-<td><p>x</p></td>
-<td><ul class="simple">
-<li><p><strong>Final Causal Report Due</strong></p></li>
-</ul>
-</td>
-<td><p>x</p></td>
-</tr>
-</tbody>
-</table>
-</div>
+<p>The difference-in-differences estimator <span class="math notranslate nohighlight">\(\hat \delta\)</span>  is defined as</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\delta}= (\bar{y}_{T=1,\,Post}-\bar{y}_{T=1,\,Pre})-(\bar{y}_{T=0,\,Post}-\bar{y}_{T=0,\,Pre})
+\]</div>
+<p>Calculate (a) the change in violent arrest rates for our treated groups from before legalization to after (<span class="math notranslate nohighlight">\(\bar y_{T=1,Post} - \bar y_{T=1, Pre}\)</span>), and (b) our difference in difference estimator <span class="math notranslate nohighlight">\(\hat\delta\)</span> by calculating these four values. Does doing your difference-in-difference estimate tell you something different from what you’d learn if you had just done a pre-post comparison?</p>
+<p>For the <code class="docutils literal notranslate"><span class="pre">Pre</span></code> period, consider the three years before liberalization begins in 2010 (e.g. 2007-2009). For the <code class="docutils literal notranslate"><span class="pre">Post</span></code> period, consider the three years after final legalization took place (2016-2018). We will ignore the middle period in which marijuana was decriminalized but not yet legal.</p>
+</section>
+<section id="exercise-5">
+<h2>Exercise 5<a class="headerlink" href="#exercise-5" title="Link to this heading">#</a></h2>
+<p>Now calculate <span class="math notranslate nohighlight">\(\hat\delta\)</span> using a regression with an indicator for post-2010, an indicator for treated, and an interaction of the two. Use only the same set of years you used above. How does your estimate compare to the estimate you calculated in Exercise 4?</p>
+<p>What does this tell you about interpretation of interaction terms with two indicator variables?</p>
+<p>Note: You need to cluster your standard errors by county, since we expect counties (over time) to be subject to common fluctuations.</p>
+</section>
+<section id="exercise-6">
+<h2>Exercise 6<a class="headerlink" href="#exercise-6" title="Link to this heading">#</a></h2>
+<p>In the preceding exercise, we did a simple pre-post / treated-control comparison. But one important limitation of these designs is that they do not allow us to test for <em>parallel trends</em>.</p>
+<p><strong>Plot</strong> a difference-in-difference model using data from 2000-2009 (inclusive) and from 2016-2018 (inclusive). Note this will have four different geometric components: a time trend for treated counties pre-2010, a time trend for control counties pre-2010, a time trend for treated counties post-2016 (include 2016), and a time trend for control counties post-2016 (include 2016).</p>
+<p>Do you see evidence of parallel trends for these two datasets? Does that make you feel more or less confident in your diff-in-diff estimates?</p>
+</section>
+<section id="exercise-7">
+<h2>Exercise 7<a class="headerlink" href="#exercise-7" title="Link to this heading">#</a></h2>
+<p>While we can estimate the model described above precisely as a regression, it’s actually much easier to estimate a more flexible model by running the regression we ran in Exercise 5 but with both <code class="docutils literal notranslate"><span class="pre">county</span></code> and <code class="docutils literal notranslate"><span class="pre">year</span></code> fixed effects. Use <code class="docutils literal notranslate"><span class="pre">PanelOLS</span></code> (or <code class="docutils literal notranslate"><span class="pre">lfe</span></code> in R) to estimate this fixed effects regression.</p>
+<p>With all these additional fixed effects, do you find evidence that marijuana legalization reduced violent crime?</p>
 </section>
 </section>
 
@@ -881,7 +603,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./00_class_schedule"
+            path: "./99_exercises"
         },
         predefinedOutput: true
     }
@@ -898,24 +620,6 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../landing_page.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome to DS4Humans</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../10_introduction/10_solving_problems_with_data.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Solving Problems with Data</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -932,7 +636,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#texts-used">Texts Used</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4">Exercise 4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5">Exercise 5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6">Exercise 6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7">Exercise 7</a></li>
 </ul>
   </nav></div>
 
