@@ -1,0 +1,285 @@
+
+
+\documentclass[12pt]{article}
+
+
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage{authblk}
+\usepackage{multirow}
+\usepackage{epsfig}
+\usepackage{subfigure}
+\usepackage{subfloat}
+\usepackage{graphicx}
+\usepackage{lscape}
+\usepackage{amsmath}
+
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{tabularx}
+
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{verbatim, rotating, paralist}
+\usepackage{enumerate}
+\usepackage{natbib}
+\usepackage{multibib}
+\usepackage{pdfsync}
+\usepackage{latexsym}
+\usepackage{amsthm}
+
+
+\usepackage{stmaryrd}
+\usepackage{dsfont}
+\usepackage{hyperref}
+\usepackage{bbm}
+\usepackage{mathtools}
+
+\usepackage{parskip}
+\usepackage{anysize, indentfirst, setspace}
+\usepackage[right=2.1cm, left=2.1cm, top=2.25cm, bottom=2.25cm]{geometry}
+\usepackage{tikz}
+\usepackage{epigraph}
+\usepackage{csquotes}
+\usepackage{appendix}
+\usepackage{enumitem}
+\usepackage{rotating}
+\usepackage{changepage}
+
+
+\renewcommand{\topfraction}{.85}
+\renewcommand{\bottomfraction}{.7}
+\renewcommand{\textfraction}{.15}
+\renewcommand{\floatpagefraction}{.66}
+\renewcommand{\dbltopfraction}{.66}
+\renewcommand{\dblfloatpagefraction}{.66}
+
+\usetikzlibrary{arrows,shapes,backgrounds,positioning,patterns,decorations.pathreplacing}
+\newenvironment{shift}{\begin{adjustwidth}{1cm}{}}{\end{adjustwidth}}
+\setlist{nosep}
+\newcites{sec}{Appendix References}
+
+%\renewcommand{\footnotelayout}{\doublespacing}
+%\linespread{1.5}
+
+\title{Solving Real Problems with Data \\ An Intermediate Data Science Text}
+
+%-----------------------------------BEGIN DOCUMENT--------------------------------%
+\begin{document}
+
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{.125in}
+
+
+\date{\today }
+%\date{April 25, 2021 }
+%\date{November 24, 2020 }
+
+
+\maketitle
+
+\section*{1. The 30-Second Sell}\label{the-30-second-sell}
+
+In my six years working with students in the Duke Masters of
+Interdisciplinary Data Science (MIDS) program --- of which I am now the
+Faculty Director --- I have found that the hardest part of training data
+scientists preparing them for the transition from doing technically
+challenging but well-structured classroom exercises to applying data
+science tools effectively when faced with the ambiguities of real world
+problems. Helping students developing this ability is a focus of our
+program, and this book --- \emph{Solving Real Problems with Data} --- is
+an outgrowth of those efforts.
+
+All too often, data science education is focused on the technical ---
+coding, statistics, and model evaluation. Technical competence is
+unquestionably important, but for applied data scientists interesting in
+using their skills to solve problems (rather than just develop new
+algorithms), it is just as important we prepare students to navigate the
+ambiguity of real-world problems.
+
+\emph{Solving Real Problems with Data} is designed to help fill this gap
+in data science training. It provides readers with a systematic
+framework for thinking about their goals and how to achieve them using
+data science methods. It is written for data scientists who have already
+learned the basics of statistical inference and machine learning, and
+focuses instead on everything that comes before and after fitting a
+model: how to work with stakeholders to clearly articulate the problem
+they want to address; how to formulate questions whose answers will help
+address your stakeholder's problem; how to choose the appropriate tool
+based on the question one seeks to answer; and critically how to
+evaluate and refine one's models based on your stakeholders needs.
+
+With the help of this framework, as well as case studies and exercises,
+\emph{Solving Real Problems with Data} will help data science students
+develop a systematic understanding of how to approach and manage data
+science projects from conception through delivery and adoption. It will
+provide a unified perspective on how the perspectives and tools learned
+in other courses complement one another, and when different approaches
+to data science are most appropriate.
+
+\section*{2. The Market}\label{the-market}
+
+This book is targeted at two markets: courses in applied data science
+programs, and young data scientists interested in improving their
+problem-solving skills. In that sense, it is similar to other books in
+the data science space designed to help young analysts and data
+scientists bridge the gap between the technical and applied, such as
+\emph{Trustworthy Online Controlled Experiments} from Kohavi, Tang and
+Xu (Cambridge University Press, 2020) or \emph{Regressions and Other
+Stories} from Gelman, Hill and Vehtari (Cambridge University Press,
+2020).
+
+\subsection*{Applied Data Science
+Programs}\label{applied-data-science-programs}
+
+This book was developed to address a need in the curriculum of the
+two-year, applied data science program with which I work (MIDS). As
+such, it is well suited to use in any of the numerous applied data
+science programs around the country, including (but not limited to)
+programs like the Vanderbilt Masters in Data Science, the UNC Chapel
+Hill Applied Data Science Masters, the Carnegie Mellon Master of Science
+in Applied Data Science, the Columbia Data Science Institute MS in Data
+Science, the University of Washington Data Science Masters, or the
+Stanford Statistics and Data Science Masters.
+
+This book would also be appropriate for the growing number of data
+science Masters programs targeting specific substantive specializations,
+such as the University of Chicago Masters in Computational Analysis and
+Public Policy, or the new Columbia Masters in Political Analytics.
+
+The book is also particularly well suited to the growing number of
+programs that offer data science as an area of concentration within
+existing programs, like Economics, Political Science, Statistics, and
+Sociology. Many such programs are emerging in an effort to capture
+student excitement about data science, but sometimes struggle to fully
+integrate training in computational methods with substantive questions
+of interest. This book's emphasis on developing critical reasoning and
+problem-solving skills at precisely the place where the technical meets
+the substantive makes it ideally suited for such programs.
+
+Because the book assumes familiarity with the basics of statistical
+inference and machine learning, it fits best in the middle or towards
+the end of a Masters degree or undergraduate major. For example, it is
+an excellent resource to pair with a capstone class, or a class on
+project development.
+
+\subsection*{Young Professionals}\label{young-professionals}
+
+The book is also designed to be of interest to young data scientists in
+industry. Because most assessments (exercises and exams) in data science
+programs are focused on technical competence, and many data science
+hiring processes are organized around technical interviews, students
+frequently get the impression that technical skills are the only skills
+required to be successful. As a result, it is only when students
+graduate that they come to realize they are inadequately prepared to
+effectively work with stakeholders or design and iterate problems.
+
+\section*{3. About The Book}\label{about-the-book}
+
+\section*{4. Competition}\label{competition}
+
+There are \emph{many} books in the data science space, but relatively
+few that I see filling the niche I hope to serve. For example, O'Reilly
+Publishing has published many books on the topic of data science, but
+nearly all emphasize coding and modelling, not critical thinking at the
+interface of the technical and substantive.
+
+The closest peer in terms of \emph{content} is probably \emph{The Art of
+Data Science} by Peng and Matsui (Lulu.com Publishing, 2016). Though
+short, the book aims to provide readers with a similar holistic
+perspective on the lifecycle of a data science project. To be entirely
+honest, I have avoided reading it \emph{too} closely out of a desire to
+avoid letting it color my writing, but there are several distinctions
+between its approach and my own.
+
+First, it does not assume prior familiarity with statistical inference
+or machine learning. As a result, it is forced to operate at a more
+superficial level of analysis, and spends far more ink explaining basic
+concepts. Second, it was written in 2016, and as a result it is unable
+to engage with many of the more recent technical developments in data
+science (e.g., LLMs) or more recent case studies around topics like
+algorithmic bias.
+
+\section*{5. Production Basics}\label{production-basics}
+
+At this time, I have completed a draft of the majority of the book
+manuscript. I have also had the opportunity to use the material in the
+book in class with MIDS students several times, allowing for refinement
+of the material. The current draft compiles to about 140 pages A4, and I
+imagine a final draft would be of similar length. The text has a fair
+number of figures, but I do not see color printing being a requirement.
+It seems like its most natural format would be as an A5 sized book.
+
+In addition to publication of a physical book, I also this the book
+living online in a manner similar to an increasing number of books, like
+\href{https://mixtape.scunning.com/}{Scott Cunningham's \emph{Causal
+Mixtape}} or \href{https://avehtari.github.io/ROS-Examples/}{Gelman,
+Hill, and Vehtari's \emph{Regression and Other Stories}}. Indeed, the
+project has mostly been developed in an online format, as can be seen at
+\url{https://ds4humans.com}. I have primarily written the material in
+Markdown and compiled it to HTML using
+\href{https://jupyterbook.org/en/stable/intro.html}{Jupyter Book}, a
+system with also supports compilation to LaTeX. The current projects
+materials can be found
+\href{https://github.com/nickeubank/ds4humans}{here}, and a PDF build
+can be found
+\href{https://github.com/nickeubank/ds4humans/blob/main/_build/latex/ds4humans.pdf}{here}.
+
+My hope is to work on tightening up the manuscript this summer,
+including filling in some missing sections, then use the refined
+manuscript in my spring course one last time for refinement before
+calling it ``done.'' With that in my, my goal for completion would be
+early summer 2026.
+
+\section*{6. Open Access}\label{open-access}
+
+I am very interested in making the materials in this book open access,
+although I have not yet secured funding specifically for that purpose.
+
+\section*{7. Supplementary Materials}\label{supplementary-materials}
+
+Because I have been using this material in my course, I have also been
+developing exercises to go along with it, including in-class exercises,
+coding exercises, and project outlines. These are all materials I look
+forward to providing alongside the text.
+
+\section*{8. About The Author}\label{about-the-author}
+
+The interdisciplinary and eclectic nature of the book reflects my own
+background. As an undergraduate, I studied Economics and International
+Relations at Pomona College, then set out for what I thought was the
+start of a career as an empirical development economist by joining the
+Development Economic Research Group at the World Bank. After a few years
+analyzing data on the educational ecosystem in India and Pakistan,
+however, I became disillusioned with the approach of macroeconomics and
+turned my interest to the intersection of political science and
+economics. I did some additional work on the topic at the World Bank and
+with the Center for Global Development in Washington, DC, then started a
+PhD at Stanford. While completing my PhD in Political Economy from the
+Stanford Graduate School of Business and an MA in Economics, I
+discovered the power of data science to answer the questions I cared
+about and dove deeply into computer science and computer engineering.
+
+Around the time I completed my PhD, the focus of my work shifted away
+from international development issues for personal reasons. Instead, I
+turned my attention --- and newfound data science skills --- towards the
+US electoral system. Together with Jonathan Rodden, I developed new
+techniques for measuring the fairness of electoral districts and began
+to supplement my academic publishing with working as an Expert
+Consultant on voting rights and gerrymandering litigation.
+
+Today, I am an Assistant Research Professor in Political Science at Duke
+University, the Faculty Director of the Masters of Interdisciplinary
+Data Science (MIDS) program, and Associate Director for the Rhodes
+Information Initiative @ Duke. My research has been published in top
+political science journals --- including the \emph{American Political
+Science Review}, \emph{Political Analysis}, \emph{Quarterly Journal of
+Political Science}, and \emph{Political Science Research and Methods}.
+My work has been covered by \emph{The Economist} and the
+\emph{Washington Post}, and in an Op-Ed in \emph{The Guardian}. And
+perhaps most importantly I have had the privilege to have worked on
+voting rights cases in Kansas, Arizona, Ohio, and North Carolina.
+
+%------------------------------ END OF DOCUMENT ------------------------------------%
+
+\end{document}
