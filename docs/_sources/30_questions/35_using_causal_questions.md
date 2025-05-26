@@ -17,6 +17,7 @@ In this reading, we will discuss both where Causal Questions arise in practice a
 ## When Do Causal Questions Come Up?
 
 Causal Questions arise when stakeholders want to *do* something — buy a Superbowl ad, change how the recommendation engine in their app works, authorize a new prescription drug — but they fear the action they are considering may be costly and not actually work. In these situations, stakeholders will often turn to a data scientist in the hope that the scientist can provide greater certainty about the likely consequences of different courses of action before the stakeholder is forced to act at scale. This, in turn, helps to reduce the risk the stakeholder has to bear when making their decision — something all stakeholders appreciate.
+
 *Usually*, the action the stakeholder is considering will not have been chosen at random. Rather, a stakeholder will generally pose a Causal Question because they have some reason to suspect a given course of action may be beneficial. Indeed, Causal Questions often arise in response to patterns discovered when answering Exploratory or Passive Prediction Questions.
 
 ### Where Causal Questions Come From — An Example

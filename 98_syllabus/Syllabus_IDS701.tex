@@ -94,7 +94,7 @@
 \vspace{.35in}
 
 \begin{center}
-	\textbf{\LARGE{Solving Problems with Data: \\ A Unified Approach to Project Design} }
+	\textbf{\LARGE{IDS 701: Causal Inference \& Solving Problems with Data} }
 \end{center}
 
 
@@ -102,37 +102,35 @@
 
 \section{Course Description}
 
+The aim of this course is to provide students a final jumping off point for students transitioning from their first year of MIDS to their second. To meet the goal of setting MIDS students up for their second year, this course is essentially two half-courses. 
 
-Few fields have shown as much promise to address the world's problems as data science. At the same time, however, recent years have also made clear that today's global challenges will not be met by simply ``throwing data science at the problem'' and hoping things will work out. Even in business, where many assume that Artificial Intelligence is a sure ticket to profits, a major recent study found only > 11\% of businesses that had piloted or employed Artificial Intelligence had reaped a sizeable return on their AI investments.
+\subsection*{Answering Causal Questions}
 
-How, then, should a burgeoning data scientist approach this field full of such promise but also so many pitfalls? And why have so many data science endeavors failed to deliver on their promise?
+In the first half of the semester, students will learn how to answer causal questions — that is, questions about the likely effects of different courses of action you (or a stakeholder you work for) might wish to undertake. The study of how to answer causal questions is known as Causal Inference, and has wide applicability in data science. Whether one is changing the design of a website, launching an advertising campaign, or administering a new drug or medical treatment, etc., causal inference provides data scientists with a rigorous tool set for making accurate predictions about the effects one can expect to see. 
 
-The answer lies — at least in significant part — in a failure to provide students with a systematic approach to bringing the techniques learned in statistical modeling and machine learning courses to bear on real-world problems. Data science curricula usually begin with coding, statistics, and model evaluation techniques. All too often, however, that's where they stop. But while the hardest part of data science \emph{classes} is often fitting a model well or getting a good AUC score, the hardest part of being an effective \emph{professional} data scientist is ensuring that the models being fit and the results being interpreted actually solve the problem that motivated you (or your stakeholder) in the first place.
+In this portion of the class, we will study \emph{both} experimental and observational techniques for answering causal questions. 
 
-This class is designed to fill this gap. Through exercises, case studies, and projects, students will develop a \emph{systematic} understanding of how to approach and manage data science projects from conception through delivery and adoption. It will provide a unified perspective on how the perspectives and tools learned in other courses complement one another, and \emph{when} different approaches to data science are most appropriate.
+\textbf{Experimental causal inference} is the study of how to answer causal questions by randomly assigning entities to either be subjected to the treatment condition you want to understand (new website design, new drug, etc.) or control conditions (the status quo). Experimental methods go by many names, including Randomized Control Trials (RCTs) and A/B testing, and we will discuss how they operate in theory and in practice.
 
-In addition, this course will also provide an in-depth introduction into \emph{causal inference} — the practice of answering causal questions. Given the interests of MIDS students, this introduction will focus heavily on experiments and A/B testing, but will also cover the use of observational data (data that did not come from an experiment that employed random assignment to treatment) for answering causal questions.
+\textbf{Observational causal inference} is the study of how to answer causal questions when you \emph{can't} randomly assign entities to receive a treatment. It is, instead, the study of how to answer causal questions using data you observe in the world around you that you cannot directly control. There are many tools in the observational causal tool box we will cover, including regression, matching, event studies, and differences-in-differences. And as we will discuss, while observational causal inference is sometimes considered to be \emph{second-best} (as compared to experimental methods), that impression is often misplaced.
 
-\subsection{How to Succeed in this Class}
+This half of the class will entail a number of exercises (similar to those assigned in IDS 720), and will culminate in a closed-book mid-term.
+
+\subsection*{Solving Problems with Data}
+
+The second half of the class is designed to help students understand how to effectively deploy all the tools they have learned during their first year in MIDS to solve real problems. This part of the class can be thought of as a module on project design and execution through backwards design. In it, we will discuss the role different approaches to data science (i.e., like statistical inference, machine learning, causal inference) play in solving problems, as well as important professional concepts like stakeholder management, effective teamwork, and statistical decision making.
+
+This part of the class will involve some exercises, some team projects, and an \textbf{in person} final exam. I'm bolding in-person because students sometimes book flights home after classes end but before the end of the semester. \textbf{Please don't do that.}
+
+\section{How to Succeed in this Class}
 
 In Duke course reviews, students are asked, ``What would you like to say about this course to a student who is considering taking this course in the future?''
 
 \textit{By far} the most consistent thing past students say they would like to tell a student considering taking it in the future is to \textbf{do the readings and take them seriously}.
 
-There is a tendency among data science students — especially those from a STEM background — to assume that readings that don't have a lot of math aren't "serious," and consequently don't require substantial focus. That's a mistake. This course is about the critical reasoning required to make the leap from the relatively clean math of statistics and machine learning to the messiness of real world problems. To help you learn how to do so, the readings are full of examples, ways to think about problems, and problem-solving frameworks to help you cross that wobbly bridge from the clean world of problem sets to the real, under- or mis-defined problems you will face when you enter the work force. But with this type of material, what you get out of it depends on what you put into it, and unlike with a theorem — which you either follow or you don't — thinking critically happens on many levels. So while it's easy to skim a reading and — because you weren't confused by any greek notation — assume you internalized it, succeeding in this class requires actively wrestling with the material, not just letting your eyes glide over it.
+There is a tendency among data science students — especially those from a STEM background — to assume that readings that don't have a lot of math aren't "serious," and consequently don't require substantial focus. That's a mistake. This course is about the critical reasoning required to make the leap from the relatively clean math of statistics and machine learning to the messiness of real world problems. To help you learn how to do so, the readings are full of examples, ways to think about problems, and problem-solving frameworks to help you cross that wobbly bridge from the clean world of problem sets to the real, under- or mis-defined problems you will face when you enter the work force. But with this type of material, what you get out of it depends on what you put into it, and unlike with a theorem — which you either follow or you don't — thinking critically happens on many levels. So while it's easy to skim a reading and — because you weren't confused by any Greek notation — assume you internalized it, succeeding in this class requires actively wrestling with the material, not just letting your eyes glide over it.
 
-In other words, **take the readings for this course just as seriously as the exercises.** There is as much learning to be done by thinking deeply about the readings as there is to be gained from doing the exercises, a fact that is also reflected in how the course is graded (individual or two-person exercises make up 20% of your grade, while reading comprehension quizzes and the midterm count for 20% each).
-
-\subsection{Big Ideas}
-
-This course is organized around three big ideas:
-
-\begin{enumerate}
-	\item \textbf{Data science is about solving problems}. All too often, data scientists get lost in the technical details of models and lose sight of the bigger picture. Data science is not about maximizing accuracy or AUC scores — it's about using data and quantitative methods to solve problems, and at the end of the day the only "metric" that matters is whether your work has solved the problem you set out to address.
-	\item \textbf{Data scientists solve problems by answering questions, and the question you are asking determines what tool is appropriate.} At their core, all data science tools are tools for answering questions, whether you realize it or not. Learning to recognize how data scientists use questions to solve problems — and exactly what questions are being answered by the tools you use every day — is key to navigating the ambiguity of real-world problem solving.
-	\item \textbf{Reasoning rigorously about uncertainty and errors is what differentiates good data scientists from great data scientists.} Data science isn't just about minimizing classification errors and uncertainty — it's also about deciding how unavoidable errors should be distributed, and how to weigh the risks and trade-offs inherent in probabilistic decision-making rigorously and in a manner that takes into account the problem you are trying to solve.
-\end{enumerate}
-
+In other words, \textbf{take the readings for this course just as seriously as the exercises.} There is as much learning to be done by thinking deeply about the readings as there is to be gained from doing the exercises, a fact that is also reflected in how the course is graded (individual or two-person exercises make up 20\% of your grade, while reading comprehension quizzes and the midterm count for 20\% each).
 
 \subsection{Pre-Requisites for Non-MIDS Students}
 
@@ -153,6 +151,8 @@ Finally, students will also be expected to be comfortable collaborating using gi
 A major component of good participation is good \emph{preparation}. Because we will often use class time for exercises, it is absolutely critical that students do their assigned readings before \emph{every} class. Students who do not work through the instructional materials they have been assigned before class will not only get very little out of in-class exercises designed to reinforce the assigned materials, but they will also undermine the learning of the students they are asked to work with. With that in mind, students who do not complete their assigned readings before every class should be expected to see this reflected in their participation grades.
 
 \textbf{Cold calling:} In the interest of creating an interactive learning experience, I will often ``cold call'' students with questions about the material we are discussing. My goal with cold calling is not to ``catch'' students who haven't done the reading, but rather to ensure that everyone is getting an opportunity to participate in the discussion. However, students who regularly demonstrate unfamiliarity with readings can expect to receive lower participation scores (not having the right answer will not get you a low score, to be clear! The material in this course is difficult, so I don't always expect everyone to have the right answers on the tip of their tongue, but it's pretty easy for an instructor to recognize the difference between somebody who is wrestling with the material and a student who just hasn't done the reading).
+
+\textbf{Team Contributions:} This class will involve several team exercises. A regular feature of the class will be to provide feedback to your peers about their team contributions — including things they have done well, ways they can improve, and whether they did their fair share. These requests for feedback will be factored into participation scores in addition to potentially entering directly into individual grades on projects. 
 
 Participation will be graded as follows:
 
@@ -206,7 +206,7 @@ For quizzes:
 
 \textbf{Dropping Lowest Scores}
 
-To accommodate the fact that life happens, at the end of the semester, I will drop each student's lowest Reading Reflection (or quiz) \emph{and} lowest Exercise \textbf{that has been completed (see notes about quizzes below).} Essentially, this is a free pass for one exercise and one Reading Reflection/quiz you totally whiff or submit very late. But it is \emph{not} a free pass to \emph{skip} an Exercise or Reading Reflection/quiz — uncompleted Exercises or Reading Reflections are not eligible for being dropped.
+To accommodate the fact that life happens, at the end of the semester, I will drop each student's lowest Reading Quiz \emph{and} lowest Exercise \textbf{that has been completed (see notes about quizzes below).} Essentially, this is a free pass for one exercise and one Reading Reflection/quiz you totally whiff or submit very late. But it is \emph{not} a free pass to \emph{skip} an Exercise — uncompleted Exercises are not eligible for being dropped.
 
 
 % \section{Texts}
@@ -259,9 +259,6 @@ Medical information shared with the SDAO is strictly confidential, and if SDAO d
 
 If you have any problems with SDAO, please let me know as soon as possible.
 
-\section{Final}
-
-While this course does not have a final exam, we may use our ``final'' time slot for group presentations, so please keep it open.
 
 \section{Mental Health and Wellness}
 
@@ -283,7 +280,7 @@ If your mental health concerns and/or stressful events negatively affect your da
 
 \section{Student Signature}
 
-I have read and understand this syllabus. No, seriously: I read the laptop policy, the quiz policy, the attendance policy, the late submission policy, all of it. \\
+I have read and understand this syllabus. No, seriously: I read the laptop policy, the quiz policy, the attendance policy, the late submission policy, all of it, including that I have to be on campus through the end of the semester, not just the end of classes. \\
 
 
 Name: \\

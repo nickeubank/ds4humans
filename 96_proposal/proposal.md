@@ -132,9 +132,9 @@ Here again this books emphasis on starting with a motivating problem aids dramat
 
 **Part 3: Reasoning About Uncertainty and Errors**
 
-*Part 3 is the meatiest portion of the book, and discusses the types of issues that arise when answering different types of questions. The emphasis of this Part is on the types of issues that tend not to be emphasized in introductory statistics or machine learning courses. This Part will therefore skip over topics like overfitting and model diagnostics, and instead focus on concepts like external validity, Goodhart's Law/Campbell's Law/The Lucas Critique, adversarial users, adverse selection in deployment, statistical decision-making, and customizing loss functions to suit the substantive context.*
+*Part 3 is the meatiest portion of the book, and discusses the types of issues that arise when answering different types of questions. The emphasis of this Part is on the types of issues that tend not to be emphasized in introductory statistics or machine learning courses. This Part will therefore skip over topics like overfitting and model diagnostics, and instead focus on concepts like external validity, Goodhart's Law/Campbell's Law/The Lucas Critique, adversarial users, adverse selection in deployment, statistical decision-making, customizing loss functions to suit the substantive context, and the role of ethics in loss-functions.*
 
-- **Chapter 9: Internal and External Validity:** 
+- **Chapter 9: Internal and External Validity:** This chapter revisits what is hopefully (but is not always) a familiar concept for students: the distinction between *internal validity* (how well a model )
 - **Chapter 10: Exploratory Question and Faithful Summarizations:**
 - **Chapter 11: Passive Predictive Questions and The Right Way to be Wrong:**
 - **Chapter 12: Causal Questions and The Challenges of Deployment:**

@@ -1,0 +1,795 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. The 30-Second Sell &#8212; Solving Problems With Data</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "nickeubank/ds4humans");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-RKDPB41DQ2"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-RKDPB41DQ2');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-RKDPB41DQ2');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '96_proposal/proposal';</script>
+    <link rel="icon" href="../_static/logo.jpg"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../landing_page.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.jpg" class="logo__image only-light" alt="Solving Problems With Data - Home"/>
+    <script>document.write(`<img src="../_static/logo.jpg" class="logo__image only-dark" alt="Solving Problems With Data - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../landing_page.html">
+                    Welcome to DS4Humans
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Class Schedule</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00_class_schedule/class_schedule.html">Class Schedule</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10_introduction/10_solving_problems_with_data.html">Ch 1: Solving Problems</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../10_introduction/20_solving_problems.html">Idea 1: Solving Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_introduction/22_question_types.html">Idea 2: Answering Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_introduction/23_mistakes.html">Idea 3: Being Thoughtful about Being Wrong</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Problems to Questions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../20_problems_to_questions/10_solving_the_right_problem.html">Ch 2: Solving the Right Problem</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../20_problems_to_questions/15_solving_the_wrong_problem.html">Solving The Wrong Problem: Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../20_problems_to_questions/20_stakeholder_management.html">Ch 3: Stakeholder Management</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Solving Problems by Answering Questions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/10_using_exploratory_questions.html">Ch 4: Using Exploratory Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/07_eda.html">Exploratory Qs and the Scourge of "EDA"</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/20_using_passive_prediction_questions.html">Ch 5: Using Passive Predictive Qs</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/35_using_causal_questions.html">Ch 6: Causal Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/40_answering_causal_questions.html">Answering Causal Questions</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reasoning About Uncertainty and Errors</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/05_descriptive_v_prescriptive.html">Ch 7: Descriptive and Prescriptive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/06_descriptive_prescriptive_examples.html">Tradeoff Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/15_answering_exploratory_questions.html">Ch 8: Internal and External Validity</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/16_exploratory_internal_challenges.html">Ch 9: Internal Validity and Exploratory Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/17_exploratory_internal_understandable.html">1: Understandable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/18_exploratory_internal_faithful.html">2: Faithful</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/19_exploratory_internal_meaningful.html">3: Relevant</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/23_passive_internal_alignment_and_bias.html">Ch 10: Predictive Qs &amp; Internal Validity</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/24_passive_internal_errors.html">Ch 11: Predictive Qs and Being Wrong the Right Way</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/25_passive_fairness.html">Fairness and Errors</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/27_passive_external_general.html">Ch 12: Predictive Qs &amp; External Validity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/28_passive_external_adversarial_users.html">Adversarial Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/29_passive_external_adversarial_users_examples.html">Adversarial User Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/32_passive_interpretable_models.html">Ch 13: Interpretable Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/45_causal_questions_external.html">Ch 14: Causal Qs, Experiments and External Validity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/50_causal_beyond_ab.html">Ch 15: Beyond Experiments</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Science in Practice</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../10_introduction/40_data_science_in_historical_context.html">Ch 2: What Is Data Science?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../40_in_practice/00_how_to_read_this_book.html">How to Read (Academic Edition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../40_in_practice/25_writing_to_stakeholders.html">Writing to Stakeholders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../40_in_practice/30_giving_feedback.html">Giving Effective Feedback (Data Science Edition)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Causal Inference Extra Bits</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../35_causal/10_potential_outcomes.html">The Potential Outcomes Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../35_causal/15_evaluating_real_studies.html">Evaluating Real Studies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../35_causal/30_interpreting_indicator_vars.html">Indicator Variables</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../35_causal/50_fixed_effects_and_causal_inference.html">Fixed Effects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../35_causal/60_fixed_effects.html">Implementing Fixed Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../35_causal/70_fixed_effects_v_hierarchical.html">Fixed Effects v. Hierarchical Models</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../35_causal/80_matching_why.html">Matching</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../35_causal/90_matching_how.html">How to Match</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/nickeubank/ds4humans" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F96_proposal/proposal.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/96_proposal/proposal.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1. The 30-Second Sell</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1. The 30-Second Sell</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-market">2. The Market</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applied-data-science-programs">Applied Data Science Programs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#young-professionals">Young Professionals</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-book">3. About The Book</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-book">This Book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#four-big-ideas">Four Big Ideas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of Contents</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#competition">4. Competition</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#production-basics">5. Production Basics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#open-access">6. Open Access</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#supplementary-materials">7. Supplementary Materials</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-author">8. About The Author</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="the-30-second-sell">
+<h1>1. The 30-Second Sell<a class="headerlink" href="#the-30-second-sell" title="Link to this heading">#</a></h1>
+<p>In my six years working with students in the Duke Masters of Interdisciplinary Data Science (MIDS) program — of which I am now the Faculty Director — I have found that the hardest part of training data scientists preparing them for the transition from doing technically challenging but well-structured classroom exercises to applying data science tools effectively when faced with the ambiguities of real world problems. Helping students developing this ability is a focus of our program, and this book — <em>Solving Real Problems with Data</em> — is an outgrowth of those efforts.</p>
+<p>All too often, data science education is focused on the technical — coding, statistics, and model evaluation. Technical competence is unquestionably important, but for applied data scientists interesting in using their skills to solve problems (rather than just develop new algorithms), it is just as important we prepare students to navigate the ambiguity of real-world problems.</p>
+<p><em>Solving Real Problems with Data</em> is designed to help fill this gap in data science training. It provides readers with a systematic framework for thinking about their goals and how to achieve them using data science methods. It is written for data scientists who have already learned the basics of statistical inference and machine learning, and focuses instead on everything that comes before and after fitting a model: how to work with stakeholders to clearly articulate the problem they want to address; how to formulate questions whose answers will help address your stakeholder’s problem; how to choose the appropriate tool based on the question one seeks to answer; and critically how to evaluate and refine one’s models based on your stakeholders needs.</p>
+<p>With the help of this framework, as well as case studies and exercises, <em>Solving Real Problems with Data</em> will help data science students develop a systematic understanding of how to approach and manage data science projects from conception through delivery and adoption. It will provide a unified perspective on how the perspectives and tools learned in other courses complement one another, and when different approaches to data science are most appropriate.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="the-market">
+<h1>2. The Market<a class="headerlink" href="#the-market" title="Link to this heading">#</a></h1>
+<p>This book is targeted at two markets: courses in applied data science programs, and young data scientists interested in improving their problem-solving skills. In that sense, it is similar to other books in the data science space designed to help young analysts and data scientists bridge the gap between the technical and applied, such as <em>Trustworthy Online Controlled Experiments</em> from Kohavi, Tang and Xu (Cambridge University Press, 2020) or <em>Regressions and Other Stories</em> from Gelman, Hill and Vehtari (Cambridge University Press, 2020).</p>
+<section id="applied-data-science-programs">
+<h2>Applied Data Science Programs<a class="headerlink" href="#applied-data-science-programs" title="Link to this heading">#</a></h2>
+<p>This book was developed to address a need in the curriculum of the two-year, applied data science program with which I work (MIDS). As such, it is well suited to use in any of the numerous applied data science programs around the country, including (but not limited to) programs like the Vanderbilt Masters in Data Science, the UNC Chapel Hill Applied Data Science Masters, the Carnegie Mellon Master of Science in Applied Data Science, the Columbia Data Science Institute MS in Data Science, the University of Washington Data Science Masters, or the Stanford Statistics and Data Science Masters.</p>
+<p>This book would also be appropriate for the growing number of data science Masters programs targeting specific substantive specializations, such as the University of Chicago Masters in Computational Analysis and Public Policy, or the new Columbia Masters in Political Analytics.</p>
+<p>The book is also particularly well suited to the growing number of programs that offer data science as an area of concentration within existing programs, like Economics, Political Science, Statistics, and Sociology. Many such programs are emerging in an effort to capture student excitement about data science, but sometimes struggle to fully integrate training in computational methods with substantive questions of interest. This book’s emphasis on developing critical reasoning and problem-solving skills at precisely the place where the technical meets the substantive makes it ideally suited for such programs.</p>
+<p>Because the book assumes familiarity with the basics of statistical inference and machine learning, it fits best in the middle or towards the end of a Masters degree or undergraduate major. For example, it is an excellent resource to pair with a capstone class, or a class on project development.</p>
+</section>
+<section id="young-professionals">
+<h2>Young Professionals<a class="headerlink" href="#young-professionals" title="Link to this heading">#</a></h2>
+<p>The book is also designed to be of interest to young data scientists in industry. Because most assessments (exercises and exams) in data science programs are focused on technical competence, and many data science hiring processes are organized around technical interviews, students frequently get the impression that technical skills are the only skills required to be successful. As a result, it is only when students graduate that they come to realize they are inadequately prepared to effectively work with stakeholders or design and iterate problems.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="about-the-book">
+<h1>3. About The Book<a class="headerlink" href="#about-the-book" title="Link to this heading">#</a></h1>
+<p>Few fields have shown as much promise to address the world’s problems as data science. Today, data science is improving our understanding of and adaptation to climate change. It is being used in medicine to speed drug discovery, improve the quality of X-rays and MRIs, and ensure that patients receive appropriate medical care. It is used in courtrooms to fight for fair elections and electoral maps and by data journalists to document and communicate the injustices prevalent in our criminal justice system and issues in policing.</p>
+<p>Data science also enables new technologies that may improve our lives. Autonomous drones are delivering blood and medical supplies to rural health clinics from Rwanda to <a class="reference external" href="https://www.theverge.com/2020/5/27/21270351/zipline-drones-novant-health-medical-center-hospital-supplies-ppe/">North Carolina</a>, and driver-aid features continue to make progress in reducing the over 30,000 traffic deaths and millions of injuries that occur in the US alone every year. And nearly every facet of business — from the way businesses source materials and manage inventory to the way product offerings respond to customer behavior — has been reshaped by data science.</p>
+<p>At the same time, businesses and regulators are also coming to appreciate the potential of data science tools to reinforce racial and gender inequities. Algorithms at Amazon have been found to <a class="reference external" href="https://www.reuters.com/article/us-amazon-com-jobs-automation-insight/amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK08G">discriminate against female job applicants</a>. Medical algorithms have been found to prioritize White patients over Black patients <a class="reference external" href="https://www.wired.com/story/how-algorithm-blocked-kidney-transplants-black-patients/">for kidney transplants</a> and <a class="reference external" href="https://www.washingtonpost.com/health/2019/10/24/racial-bias-medical-algorithm-favors-white-patients-over-sicker-black-patients/">preventative care</a>. In the criminal justice system, algorithms have been found to <a class="reference external" href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">incorrectly identify Black defendants than White defendants as being a “danger to society” when providing risk assessments to judges deciding on pre-trial release, bail and sentencing</a>. And even Meta’s own research has shown its algorithms drive political polarization and division among users, and push users into extremist groups.</p>
+<p>How, then, should a burgeoning data scientist approach this discipline, full of such promise and peril? Why have so many data science endeavors failed to deliver on their promise? And why do we need <em>yet another</em> data science book?</p>
+<section id="this-book">
+<h2>This Book<a class="headerlink" href="#this-book" title="Link to this heading">#</a></h2>
+<p>This book is different from many other data science books you may have read. Where most data science books are designed to teach specific data science techniques or methods, the aim of this book is to provide you with a framework for thinking about your goals and how to achieve them using data science. It is, in a sense, about everything you need to know <em>beyond</em> the technicalities of model fitting. This is about everything that comes <em>before</em> and <em>after</em> you fit your model: it will help you work with stakeholders to clearly articulate the problem they want to address, formulate questions whose answers will help address your stakeholder’s problem, choose an appropriate tool based on the question you seek to answer, and, critically, evaluate and refine your model based on your stakeholders needs.</p>
+<p>The importance of these skills is often underestimated by data science students, and for understandable reasons. Data science curricula usually begin with coding, statistics, and model evaluation techniques. As a result, the hardest part of data science classes is often mastering the technical details of model implementation. Moreover, the limited time available to instructors and the need to support full classes of students means data science exercises almost always have to come with clear directions and problem scaffolding to ensure students meet their learning goals.</p>
+<p>But real-world problems don’t come with directions. Indeed, a problem that is clearly defined and for which a solution is obvious isn’t a problem anyone will pay you very much to solve. No, classroom exercises are carefully structured to foster learning and to make it possible for instructors to grade and provide feedback at scale. But real problems — the kind you will encounter in industry, government, or research — are hard to even articulate clearly, never mind solve. And that is why, as we will see, what really sets exceptional professional data scientists apart is not their ability to get a high AUC — <strong>it’s their ability to navigate and thrive in the face of ambiguous problems and goals.</strong></p>
+</section>
+<section id="four-big-ideas">
+<h2>Four Big Ideas<a class="headerlink" href="#four-big-ideas" title="Link to this heading">#</a></h2>
+<p>This book is organized around four big ideas:</p>
+<ol class="arabic simple">
+<li><p><strong>Data science is about solving problems.</strong></p></li>
+</ol>
+<p>All too often, young data scientists get lost in the technical details of models and lose sight of the bigger picture. Data science is not about maximizing accuracy — it’s about using data and quantitative methods to solve problems, and at the end of the day the only “metric” that matters is whether your work has helped solve the problem you set out to address.</p>
+<p>To some readers, this idea may seem self-evident and uncontroversial. In my experience as an instructor, however, this is not a natural perspective for students. On one level they recognize that data science is generally meant to accomplish a goal — though when asked about the goal of a data scientist they often offer more generic answers like “generate insights from data” or “make recommendations,” but then struggle to explain what makes something an insight, or on what basis one would make a recommendation. This lack of attention to project motivation and design is often further reinforced by classroom projects organized around instructor-provided, clearly articulated goals. And even when students are left free to choose their own topics, those topics are often backwards designed from available datasets and are rarely the subject of faculty feedback.</p>
+<p>That is not the case in this book. Time and again, students are pushed to remember that difficult questions — like how to weigh trade-offs in loss-function specifications — must always be answered <em>in the context of the problem you are trying to solve.</em></p>
+<p>The importance of problem articulation is also the subject of the first two substantive chapters of the book. <strong>Chapter 3: Solving the Right Problem</strong> addresses head-on the importance of clearly articulating your problem in an actionable manner and illustrate through examples what happens if you <em>don’t</em> articulate your problem correctly. It provides concrete suggestions for how to reframe problems, and examples of how reframing of problems has successfully helped simplify apparently intractable problems in the past.</p>
+<p>Then in <strong>Chapter 4: Stakeholder Management</strong>, the book steps back from the unrealistic simplification that the problem is the <em>reader’s</em> problem, and instead acknowledges that most data scientists are working <em>for</em> a stakeholder. This chapter discusses the delicate art of working with stakeholders to refine your mutual understanding of the problem you are trying to solve. Crucially, this chapter discusses the importance of being respectful of the stakeholder and their domain expertise while also not being <em>overly</em> deferential and assuming the stakeholder always knows best — and problem I often see with young data scientists.</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>Data scientists solve problems by answering questions.</strong></p></li>
+</ol>
+<p>The second big idea of the book is that data scientists solve problems by answering questions about the world. Given that, we can reframe the challenge of a data scientist from the more amorphous task of “figuring out how to solve the problem” to the more concrete “what question, if answered, would make it easier to solve this problem?” Moreover, once we’ve articulated a question to answer, we can turn to choosing the best tool for generating an answer to that specific type of question. And it is only at this stage—not at the beginning!—that we start thinking about what statistical method, algorithm, or model is most appropriate.</p>
+<p>This idea emerges from the fact that all data science tools, at their core, are tools for answering questions about the world, and that understanding data science tools through the lens of “what question is this tool answering?” is extremely powerful.</p>
+<p>In the case of some tools — like clustering algorithms or other unsupervised machine learning tools — this idea is relatively uncontroversial. A clustering algorithms answer some form of the question “if I wanted to partition the observations in this data to maximize the similarity of points within each cluster (in terms of a specified set of variables and a similarity metric) and minimize similarity between clusters, how would I do so?”</p>
+<p>In other contexts — like in supervised machine learning — the relevance of this perspective can seem less relevant (or potentially just pedantic). But let’s take the example of a supervised machine learning algorithm designed to classify mammograms as normal or abnormal trained on data labelled by radiologists at a Boston hospital, an example I use in the book. What question is this model answering? It is <em>not</em> answering the question, for any input mammogram, “Is this mammogram normal or abnormal?” Rather, in a very real sense it is answering the question “if this mammogram were shown to one of the Boston radiologists how labelled the training data, how likely are <em>they</em> to label the mammogram as normal or abnormal?” And while we hope the answer to those questions is similar, being explicit about the distinction makes clear how human biases and tendencies end up being replicated in our models.</p>
+<p>For experienced data scientists, this idea is, by this point, second nature. But in my experience, reframing what predictive models are doing in this manner to students very often causes a “light bulb” moment of realization.</p>
+<ol class="arabic simple" start="3">
+<li><p><strong>The questions data scientists answer can be divided into three categories: exploratory, passive predictive, and causal.</strong></p></li>
+</ol>
+<p>This third big idea is where this book departs more substantially from just presenting existing ideas in what I hope is a particularly effective manner and begins to lay out some new concepts. In particular, the book presents students with a novel taxonomy of question types organized around questions’ substantive purposes, not intellectual tradition from which they are drawn or the computational machinery being deployed.</p>
+<p><strong>Exploratory Questions</strong> are questions about patterns and regularities in the world around us. Answering Exploratory Questions helps data scientists better understand the landscape of the problem they wish to solve — for example, by helping them understand where the problem is most acute, or what factors seem most strongly correlated with problem intensity — and often aid in prioritizing subsequent efforts.</p>
+<p>Answering Exploratory Questions is largely the domain of statistical inference and unsupervised machine learning. However, as I emphasize to students, many of the tools and approaches to data science we encounter are artifacts of how university departments are organized, and our substantive goals as data scientists will not always follow the lines we draw between computer science, statistics, and social science departments.</p>
+<p>Answering Exploratory Questions is <strong>not</strong> synonymous with “Exploratory Data Analysis” (EDA). As it is commonly understood and practiced by students, EDA refers to the process of poking around in a new data set before fitting a more complicated statistical model. It entails learning what variables are present, how they are coded, and <em>sometimes</em> looking at general patterns in the data prior to model fitting. Crucially, it is generally defined by what it is <em>not</em> — it is what you do <em>before</em> you fit a complicated model — and by the tools used — EDA consists of plotting distributions or cross-tabulations, not fitting models or doing more sophisticated analyses.</p>
+<p>Answering Exploratory Questions, by contrast, is about achieving a substantive goal — learning about patterns <em>in the world</em> — not the tools used to do it, or what it comes before. Answering an important Exploratory Question may require you to actively seek out new data, merge data from different sources together, and potentially do novel data collection. It may also entail model fitting or use of unsupervised machine learning algorithms to uncover latent patterns.</p>
+<p>Indeed, the book allocates a <a class="reference external" href="https://ds4humans.com/30_questions/07_eda.html">full sub-chapter</a> to discussion of the conceptual problems with how the term EDA is commonly used.</p>
+<p><strong>Passive Prediction Questions</strong> are questions about the unobserved outcomes of individual entities (people, stocks, stores, etc.). Because Passive Prediction Questions are questions about individual entities, they don’t necessarily have one “big” answer. Rather, Passive Prediction Questions are answered by fitting or training a model that can take the characteristics of an individual entity as inputs (e.g., this patient is age 67, has blood pressure of 160/90, and no history of heart disease) and spitting out an answer <em>for that individual</em> (given that, her probability of surgical complications is 82%). This differentiates Passive Prediction Questions from Exploratory Questions, which are about global patterns, not individual level predictions.</p>
+<p>Passive Prediction Questions are usually deployed for one of two business purposes:</p>
+<ol class="arabic simple">
+<li><p>identifying individual entities of particular interest (high-risk patients, high-value clients, factory machinery in need of preventative maintenance, etc.), and</p></li>
+<li><p>automating classification or labeling tasks currently performed by people (reading mammograms, reviewing job applicant resumes, identifying internet posts that violate terms of use).</p></li>
+</ol>
+<p>In general, these two business purposes correspond to the two types of “predictions” being made. Identifying individual entities of particular interest is generally accomplished by creating predictions about what future outcomes are likely to obtain absent intervention. “Given this new customer’s behavior on my website, are they likely to spend a lot over the next year?”</p>
+<p>This ability to make predictions about future outcomes is obviously of tremendous use to stakeholders as it allows them to tailor their approach at the individual level. A hospital that can predict which patients are most likely to experience complications after surgery can allocate their follow-up care resources accordingly. A business that knows which customers are more likely to be big spenders can be sure that those customers are given priority by customer care specialists.</p>
+<p>But the meaning of the term “Prediction” in Passive Prediction Questions extends beyond “predicting the future”. Passive Prediction Questions also encompass efforts to predict how a third party <em>would</em> behave or interpret something about an individual if given the chance. Here we can return to the example of an ML model for reading mammograms. Suppose a hospital stakeholder wanted to automate the reading of mammograms so that rural hospitals without full-time radiologists could give patients diagnoses more quickly (or, more cynically, pay fewer radiologists).
+They could train a model by feeding it a dataset of mammograms labelled by human radiologists. That model would then effectively be answering the question: “if a radiologist looked at this particular scan, would they conclude it is abnormal?”</p>
+<p>The value of this type of prediction to stakeholders is likely also self-evident, as it opens the door for automation and scaling of tasks that would otherwise be too costly or difficult for humans. Indeed, answering this question is the type of task for which machine learning has become most famous. Spam filtering amounts to answering the question “If the user saw this email, would they tag it as spam?” Automated content moderation amounts to answering “Would a Meta contractor conclude the content of this photo violates Facebook’s Community Guidelines?” Indeed, even Large Language Models (LLMs) like chatGPT, Bard, and LLaMA can be understood in this way, as we will discuss later.</p>
+<p>Again, this framing of what supervised machine learning models do as answering this type of question may feel slightly pedantic to some readers, but in my experience it helps students understand how these types of models inherit the limitations of their training data, and open the door to discussion of issues of misalignment which I also address.</p>
+<p>Finally, <strong>Causal Questions</strong> are questions about the likely consequences of actions the stakeholder. Causal Questions arise when stakeholders want to <em>do</em> something — buy a Superbowl ad, change how the recommendation engine in their app works, authorize a new prescription drug — but they fear the action they are considering may be costly and not actually work. In these situations, stakeholders will often turn to a data scientist in the hope that the scientist can provide greater certainty about the likely consequences of different courses of action before the stakeholder is forced to act at scale. This, in turn, helps to reduce the risk the stakeholder has to bear when making their decision — something all stakeholders appreciate.</p>
+<p>By emphasizing that Causal Questions in an applied data scientist’s career are generally motivated by a desire to understand an action the stakeholder is considering taking, this book is able to discuss concepts of external validity much more concretely than in many other texts on causal inference which — in my experience — tend to be motivated by social science questions in which there is no clear, specific intervention in mind for which external validity becomes a first-order concern.</p>
+<ol class="arabic simple" start="4">
+<li><p><strong>Reasoning rigorously about uncertainty and errors is what differentiates good data scientists from great data scientists.</strong> Data science isn’t just about minimizing classification errors and uncertainty — it’s also about deciding how unavoidable errors should be distributed, how to weigh the risks and trade-offs inherent in probabilistic decision-making rigorously and in a manner that takes into account the problem you are trying to solve, and to take uncertainty into account when acting on data.</p></li>
+</ol>
+<p>Here again this books emphasis on starting with a motivating problem aids dramatically in its ability to keep discussion of errors and trade-offs when making decisions under uncertainty concrete. Whether in discussion of the problem with p-values, the distinction between substantive and statistical significance, or in discussing custom loss functions when doing classification, a continual emphasis on how to think about these issues <em>in the context of the problem you are seeking to solve</em> helps keep things concrete.</p>
+</section>
+<section id="table-of-contents">
+<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Chapter 1: Introduction:</strong> An overview of the philosophy of the book and an introduction to the taxonomy of questions used throughout the book.</p></li>
+</ul>
+<p><strong>Part 1: Solving Problems</strong></p>
+<ul class="simple">
+<li><p><strong>Chapter 2: Solving the <em>Right</em> Problem: The Importance of Problem Articulation:</strong> When starting a new project, there is always a temptation to dive into the data. After all, few things in data science feel quite as satisfying as successfully fitting a model. But when you fail to stop and ensure you clearly understand the problem you are trying to solve, it is easy to spend large amounts of energy creating technically impressive results that, in the end, in no way solve a problem or improve the lives of anyone involved.</p></li>
+<li><p><strong>Chapter 3: Stakeholder Management:</strong> Most data scientists are not actually employed to solve their own problems; they are employed to help solve the problem of a stakeholder. The chapter discusses the art of “stakeholder management” — working <em>with</em> a stakeholder to create a clear problem statement and plan.</p></li>
+</ul>
+<p><strong>Part 2: Solving Problems Using Questions</strong></p>
+<p><em>Part 2 details how data scientists use different types of data science questions to solve problems.</em></p>
+<ul class="simple">
+<li><p><strong>Chapter 5: Descriptive v. Prescriptive Questions:</strong> Before discussing each of the three types of questions introduced in the introduction in detail, this chapter takes one step back to introduce the distinction between descriptive questions (questions about how the world <em>is</em>) and prescriptive questions (questions about how the world <em>should</em> be). The main goal of the chapter is to ensure data scientists recognize when the questions they are answering entail value judgments.</p></li>
+<li><p><strong>Chapter 6: Using Exploratory Questions:</strong> Often the most underappreciated type of question, Exploratory Questions play a critical role in helping data scientists ensure they putting their energy in the right places. Exploratory Questions help data scientists better understand the contours of the problem they wish to solve, such as where their problem is most acute (and thus where energy is likely to be best spent addressing the problem), or where the problem may have already been solved (and thus where they may look for inspiration). This chapter also includes an <a class="reference external" href="https://ds4humans.com/30_questions/07_eda.html">extended discussion</a> on the distinction between the practice commonly referred to as “Exploratory Data Analysis (EDA)” and what is meant by Exploratory Questions.</p></li>
+<li><p><strong>Chapter 7: Using Passive Predictive Questions:</strong> Passive Predictive Questions are the trendiest type of question in data science today. This chapter discusses the two major ways Passive Predictive Questions are used in business — identifying individual entities for additional attention and automation. It also dives deeply into the distinction between Exploratory Questions and Passive Predictive Questions. Students often struggle with the idea that the same tool — say, logistic regression — can be used to answer different types of questions, but that the <em>way</em> we use and evaluate model performance changes depending on our goals. Discussing how what matters most when answering Passive Prediction Questions (e.g., classification accuracy) may be different from what matters most when answering Exploratory Questions (e.g., the size of standard errors on regressors) helps students begin to recognize that there is no “one way” to use data science tools correctly; the correct way to use a tool depends on ones substantive goals.</p></li>
+<li><p><strong>Chapter 8: Using Causal Questions:</strong> Causal Questions are some of the most powerful and yet difficult questions in data science to answer. Causal Questions most often arise when a stakeholder is interested in undertaking a high-stakes action, but wishes to de-risk that decision by modelling its likely outcome. This chapter discusses the nature of Causal Questions and what differentiates them from Passive Predictive Questions. It also then touches on the distinction between experimental and observational methods and when each is more appropriate.</p></li>
+</ul>
+<p><strong>Part 3: Reasoning About Uncertainty and Errors</strong></p>
+<p><em>Part 3 is the meatiest portion of the book, and discusses the types of issues that arise when answering different types of questions. The emphasis of this Part is on the types of issues that tend not to be emphasized in introductory statistics or machine learning courses. This Part will therefore skip over topics like overfitting and model diagnostics, and instead focus on concepts like external validity, Goodhart’s Law/Campbell’s Law/The Lucas Critique, adversarial users, adverse selection in deployment, statistical decision-making, customizing loss functions to suit the substantive context, and the role of ethics in loss-functions.</em></p>
+<ul class="simple">
+<li><p><strong>Chapter 9: Internal and External Validity:</strong></p></li>
+<li><p><strong>Chapter 10: Exploratory Question and Faithful Summarizations:</strong></p></li>
+<li><p><strong>Chapter 11: Passive Predictive Questions and The Right Way to be Wrong:</strong></p></li>
+<li><p><strong>Chapter 12: Causal Questions and The Challenges of Deployment:</strong></p></li>
+</ul>
+<p><strong>Part 4: Data Science Professionalization</strong></p>
+<ul class="simple">
+<li><p><strong>Chapter 13: What <em>is</em> Data Science? A Historical Perspective:</strong> Data science has yet to reach the level of maturation of fields like computer science, economics, or mechanical engineering. One consequence of this immaturity is that students often struggle to understand when differences in terminology are substantive and when they simply represent different intellectual traditions coming up with different names for the same phenomenon. In this chapter, I discuss the ways in which the organization of universities has shaped the sometimes myopic exposure to the field many practicing data scientists received in school and the fragmented language around data science. This, I argue, is important for young data scientists to know as it is both the source of some of the most exciting opportunities for intellectual arbitrage across bureaucratic divisions, and also some of the biggest challenges a holistically trained data scientist is likely to face when working with data scientists trained in a more traditional academic silo.</p></li>
+<li><p><strong>Chapter 14: Writing to Stakeholders:</strong></p></li>
+<li><p><strong>Chapter 15: Providing Feedback:</strong></p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="competition">
+<h1>4. Competition<a class="headerlink" href="#competition" title="Link to this heading">#</a></h1>
+<p>There are <em>many</em> books in the data science space, but relatively few that I see filling the niche I hope to serve. For example, O’Reilly Publishing has published many books on the topic of data science, but nearly all emphasize coding and modelling, not critical thinking at the interface of the technical and substantive.</p>
+<p>The closest peer in terms of <em>content</em> is probably <em>The Art of Data Science</em> by Peng and Matsui (<a class="reference external" href="http://Lulu.com">Lulu.com</a> Publishing, 2016). Though short, the book aims to provide readers with a similar holistic perspective on the lifecycle of a data science project. To be entirely honest, I have avoided reading it <em>too</em> closely out of a desire to avoid letting it color my writing, but there are several distinctions between its approach and my own.</p>
+<p>First, it does not assume prior familiarity with statistical inference or machine learning. As a result, it is forced to operate at a more superficial level of analysis, and spends far more ink explaining basic concepts. Second, it was written in 2016, and as a result it is unable to engage with many of the more recent technical developments in data science (e.g., LLMs) or more recent case studies around topics like algorithmic bias.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="production-basics">
+<h1>5. Production Basics<a class="headerlink" href="#production-basics" title="Link to this heading">#</a></h1>
+<p>At this time, I have completed a draft of the majority of the book manuscript. I have also had the opportunity to use the material in the book in class with MIDS students several times, allowing for refinement of the material. The current draft compiles to about 140 pages A4, and I imagine a final draft would be of similar length. The text has a fair number of figures, but I do not see color printing being a requirement. It seems like its most natural format would be as an A5 sized book.</p>
+<p>In addition to publication of a physical book, I also this the book living online in a manner similar to an increasing number of books, like <a class="reference external" href="https://mixtape.scunning.com/">Scott Cunningham’s <em>Causal Mixtape</em></a> or <a class="reference external" href="https://avehtari.github.io/ROS-Examples/">Gelman, Hill, and Vehtari’s <em>Regression and Other Stories</em></a>. Indeed, the project has mostly been developed in an online format, as can be seen at <a class="reference external" href="https://ds4humans.com">https://ds4humans.com</a>. I have primarily written the material in Markdown and compiled it to HTML using <a class="reference external" href="https://jupyterbook.org/en/stable/intro.html">Jupyter Book</a>, a system with also supports compilation to LaTeX. The current projects materials can be found <a class="reference external" href="https://github.com/nickeubank/ds4humans">here</a>, and a PDF build can be found <a class="reference external" href="https://github.com/nickeubank/ds4humans/blob/main/_build/latex/ds4humans.pdf">here</a>.</p>
+<p>My hope is to work on tightening up the manuscript this summer, including filling in some missing sections, then use the refined manuscript in my spring course one last time for refinement before calling it “done.” With that in my, my goal for completion would be early summer 2026.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="open-access">
+<h1>6. Open Access<a class="headerlink" href="#open-access" title="Link to this heading">#</a></h1>
+<p>I am very interested in making the materials in this book open access, although I have not yet secured funding specifically for that purpose.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="supplementary-materials">
+<h1>7. Supplementary Materials<a class="headerlink" href="#supplementary-materials" title="Link to this heading">#</a></h1>
+<p>Because I have been using this material in my course, I have also been developing exercises to go along with it, including in-class exercises, coding exercises, and project outlines. These are all materials I look forward to providing alongside the text.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="about-the-author">
+<h1>8. About The Author<a class="headerlink" href="#about-the-author" title="Link to this heading">#</a></h1>
+<p>The interdisciplinary and eclectic nature of the book reflects my own background. As an undergraduate, I studied Economics and International Relations at Pomona College, then set out for what I thought was the start of a career as an empirical development economist by joining the Development Economic Research Group at the World Bank. After a few years analyzing data on the educational ecosystem in India and Pakistan, however, I became disillusioned with the approach of macroeconomics and turned my interest to the intersection of political science and economics. I did some additional work on the topic at the World Bank and with the Center for Global Development in Washington, DC, then started a PhD at Stanford. While completing my PhD in Political Economy from the Stanford Graduate School of Business and an MA in Economics, I discovered the power of data science to answer the questions I cared about and dove deeply into computer science and computer engineering.</p>
+<p>Around the time I completed my PhD, the focus of my work shifted away from international development issues for personal reasons. Instead, I turned my attention — and newfound data science skills — towards the US electoral system. Together with Jonathan Rodden, I developed new techniques for measuring the fairness of electoral districts and began to supplement my academic publishing with working as an Expert Consultant on voting rights and gerrymandering litigation.</p>
+<p>Today, I am an Assistant Research Professor in Political Science at Duke University, the Faculty Director of the Masters of Interdisciplinary Data Science (MIDS) program, and Associate Director for the Rhodes Information Initiative &#64; Duke. My research has been published in top political science journals — including the <em>American Political Science Review</em>, <em>Political Analysis</em>, <em>Quarterly Journal of Political Science</em>, and <em>Political Science Research and Methods</em>. My work has been covered by <em>The Economist</em> and the <em>Washington Post</em>, and in an Op-Ed in <em>The Guardian</em>. And perhaps most importantly I have had the privilege to have worked on voting rights cases in Kansas, Arizona, Ohio, and North Carolina.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./96_proposal"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1. The 30-Second Sell</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-market">2. The Market</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applied-data-science-programs">Applied Data Science Programs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#young-professionals">Young Professionals</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-book">3. About The Book</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-book">This Book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#four-big-ideas">Four Big Ideas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of Contents</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#competition">4. Competition</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#production-basics">5. Production Basics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#open-access">6. Open Access</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#supplementary-materials">7. Supplementary Materials</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-author">8. About The Author</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Nick Eubank
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
