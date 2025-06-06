@@ -1,8 +1,8 @@
 # Adversarial User Examples
 
 > "Economics can be summed up in four words: people respond to incentives. The rest is commentary."
-
-- Stephen Landsburg
+>
+> - Stephen Landsburg
 
 Whenever we deploy a model or algorithm to make decisions, that deployment changes what behavior is rewarded — that is, that deployment changes the *incentives* faced by actors. And people respond to incentives. Indeed, even when we try to design our model to reward *exactly* what we want, alignment issues are sure to arise, creating space between what we *want* our model to reward and what it *actually* rewards.
 

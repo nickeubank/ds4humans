@@ -1,0 +1,774 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Data Science Memos &#8212; Solving Problems With Data</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "nickeubank/ds4humans");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-RKDPB41DQ2"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-RKDPB41DQ2');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-RKDPB41DQ2');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '40_in_practice/27_data_analysis_memos';</script>
+    <link rel="icon" href="../_static/logo.jpg"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../landing_page.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.jpg" class="logo__image only-light" alt="Solving Problems With Data - Home"/>
+    <script>document.write(`<img src="../_static/logo.jpg" class="logo__image only-dark" alt="Solving Problems With Data - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../landing_page.html">
+                    Welcome to DS4Humans
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Class Schedule</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00_class_schedule/class_schedule.html">Class Schedule</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10_introduction/10_solving_problems_with_data.html">Ch 1: Solving Problems</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../10_introduction/20_solving_problems.html">Idea 1: Solving Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_introduction/22_question_types.html">Idea 2: Answering Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_introduction/23_mistakes.html">Idea 3: Being Thoughtful about Being Wrong</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Problems to Questions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../20_problems_to_questions/10_solving_the_right_problem.html">Ch 2: Solving the Right Problem</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../20_problems_to_questions/15_solving_the_wrong_problem.html">Solving The Wrong Problem: Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../20_problems_to_questions/20_stakeholder_management.html">Ch 3: Stakeholder Management</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Answering Questions, Solving Problems</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/10_using_exploratory_questions.html">Ch 4: Using Exploratory Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/07_eda.html">Exploratory Qs and the Scourge of "EDA"</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/20_using_passive_prediction_questions.html">Ch 5: Using Passive Predictive Qs</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/35_using_causal_questions.html">Ch 6: Causal Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/40_answering_causal_questions.html">Answering Causal Questions</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Uncertainty and Errors</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/05_descriptive_v_prescriptive.html">Ch 7: Descriptive and Prescriptive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/06_descriptive_prescriptive_examples.html">Tradeoff Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/15_answering_exploratory_questions.html">Ch 8: Internal and External Validity</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/16_exploratory_internal_challenges.html">Ch 9: Internal Validity and Exploratory Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/17_exploratory_internal_understandable.html">1: Understandable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/18_exploratory_internal_faithful.html">2: Faithful</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/19_exploratory_internal_meaningful.html">3: Relevant</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/23_passive_internal_alignment_and_bias.html">Ch 10: Predictive Qs &amp; Internal Validity</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/24_passive_internal_errors.html">Ch 11: Predictive Qs and Being Wrong the Right Way</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/25_passive_fairness.html">Fairness and Errors</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/27_passive_external_general.html">Ch 12: Predictive Qs &amp; External Validity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/28_passive_external_adversarial_users.html">Adversarial Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/29_passive_external_adversarial_users_examples.html">Adversarial User Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/32_passive_interpretable_models.html">Ch 13: Interpretable Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/45_causal_questions_external.html">Ch 14: Causal Qs, Experiments and External Validity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/50_causal_beyond_ab.html">Ch 15: Beyond Experiments</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Science in Practice</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../10_introduction/40_data_science_in_historical_context.html">Ch 2: What Is Data Science?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_how_to_read_this_book.html">How to Read (Academic Edition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="25_writing_to_stakeholders.html">Writing to Stakeholders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="30_giving_feedback.html">Giving Effective Feedback (Data Science Edition)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Causal Inference Extra Bits</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../35_causal/10_potential_outcomes.html">The Potential Outcomes Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../35_causal/15_evaluating_real_studies.html">Evaluating Real Studies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../35_causal/30_interpreting_indicator_vars.html">Indicator Variables</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../35_causal/50_fixed_effects_and_causal_inference.html">Fixed Effects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../35_causal/60_fixed_effects.html">Implementing Fixed Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../35_causal/70_fixed_effects_v_hierarchical.html">Fixed Effects v. Hierarchical Models</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../35_causal/80_matching_why.html">Matching</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../35_causal/90_matching_how.html">How to Match</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/nickeubank/ds4humans" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F40_in_practice/27_data_analysis_memos.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/40_in_practice/27_data_analysis_memos.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Data Science Memos</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-data-science-memo-format">The Data Science Memo Format</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-executive-summary-tl-dr-section">The Executive Summary / TL;DR Section</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memo-body">Memo Body</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-to-a-stakeholder">Writing To A Stakeholder</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-stakeholder-s-mindset">A Stakeholder’s Mindset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#don-t-take-reader-attention-for-granted">Don’t take reader attention for granted</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#but-i-can-t-tell-you-my-stakeholder-everything-i-did-in-4-6-pages">But I can’t tell you/my stakeholder everything I did in 4-6 pages!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-mistakes-in-student-writing">Common Mistakes in Student Writing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-what-you-did-how-you-spent-your-time">Writing What You Did / How You Spent Your Time</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendices-for-mids">Appendices for MIDS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rubric">Rubric</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="data-science-memos">
+<h1>Data Science Memos<a class="headerlink" href="#data-science-memos" title="Link to this heading">#</a></h1>
+<p>As you move between organizations in your career, you will be <em>shocked</em> by the number of different ways you will be asked to write up and communicate your analyses. Indeed, odds are you’ve already discovered how much expectations can differ between <em>professors</em> at the same university.</p>
+<p>Regardless of where you go, however, there will always be a need for you to document and circulate your analyses in writing. Presentations are a common tool for sharing results as well, but even in organizations where you are asked to present your findings, you will likely also be asked to provide a written record of your work that can be circulated more widely or kept as a more archival record of a project for the future.</p>
+<p>The variation in expectations for how reports should be formatted and what they should include is more than a small annoyance for students. Forcing students to adjust their writing style from class to class often prevents students from being able to focus their attention on what matters most: mastering the art of clear communication.</p>
+<p>With that in mind, the MIDS program has decided to adopt a single format for written reports across classes. In particular, all MIDS classes will ask that your written reports take the form of 4-6 page <em>Data Science Memos</em>, or DSMs.</p>
+<p>To be clear, the adoption of this format is not a reflection of the fact that we feel this is necessarily the <em>best</em> way to write up your analyses in all situations. Nor are we adopting this format because it is the format you are most likely to encounter after graduation. Depending on your substantive career interests, there is a good chance you will end up in an industry that asks you to write your repots in a different manner.</p>
+<p>Rather, we have chosen DSMs because they are (a) a very common written format in data science, (b) we think it is a style of writing that emphasizes the correct priorities in written communication, and (c) we feel that coordinating around a specific format will allow you to focus on <em>mastering</em> a style of written communication, and we feel that mastery of a specific style of writing will serve you better than being familiar but not great at a number of different report types.</p>
+<section id="the-data-science-memo-format">
+<h2>The Data Science Memo Format<a class="headerlink" href="#the-data-science-memo-format" title="Link to this heading">#</a></h2>
+<p>A DSM is a 4-6 page document designed to communicate a specific take-away to a stakeholder (colleagues on your team, your boss, your client, etc.).</p>
+<section id="the-executive-summary-tl-dr-section">
+<h3>The Executive Summary / TL;DR Section<a class="headerlink" href="#the-executive-summary-tl-dr-section" title="Link to this heading">#</a></h3>
+<p>The memo should start with a one or two paragraph Executive Summary (some companies refer to this section as the <a class="reference external" href="https://en.wikipedia.org/wiki/TL;DR">TL;DR</a> rather than an executive summary). The Executive Summary should contain everything you want a reader to know if they were to only read the summary. It should <em>fully</em> summarize the problem that motivates the project, what the project intends to do, how what it intends to do is meant to help address the problem, and the key take-away of the analysis.</p>
+<p>In other words, the executive summary is not just an introduction meant to draw the reader in. Some students new to this format have the habit of hiding their results or take-aways until the end of the memo as a way to maintain suspense and keep the reader engaged. That is a great tendency in fiction, but in professional settings where your goal is to communicate a specific message to your stakeholder, hiding that message till the end of the memo just increases the odds your stakeholder never gets the message you’re trying to communicate because they got distracted and never finished the memo.</p>
+</section>
+<section id="memo-body">
+<h3>Memo Body<a class="headerlink" href="#memo-body" title="Link to this heading">#</a></h3>
+<p>After the executive summary comes the body of the report. DSMs tend to be media rich documents with lots of carefully chosen figures. Indeed, some people advocate thinking of a data science memo as a series of figures with text only serving the role of “connective tissue” between figures, although whether that makes sense in any specific context depends a lot on the take-away one is trying to communicate and whether it lends itself to visual or textual communication.</p>
+<p>Among data scientists, DSMs are often written as Jupyter Notebooks or R Markdown documents. These memos are then circulated as a pair of files — a much longer Jupyter Notebook/R Markdown (complete with code for reproducibility) and a PDF document generated by exporting the notebook while suppressing code elements.<a class="footnote-reference brackets" href="#tags" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+<p>That should give you a sense of how a DSM is organized, but as for what goes into a DSM in <em>substantive</em> terms, let’s pause for a moment to discuss the principles of stakeholder communication.</p>
+</section>
+</section>
+<section id="writing-to-a-stakeholder">
+<h2>Writing To A Stakeholder<a class="headerlink" href="#writing-to-a-stakeholder" title="Link to this heading">#</a></h2>
+<p>As students (especially data science students), the way most of us were taught to write reports is to:</p>
+<ul class="simple">
+<li><p>start with an introduction that helps explain the broader context in which the report is being positioned,</p></li>
+<li><p>describes the data that we intend to use,</p></li>
+<li><p>describe that how we have wrangled and cleaned that data,</p></li>
+<li><p>describe how we plan to model that data,</p></li>
+<li><p>report the results of that modelling, and</p></li>
+<li><p>discuss limitations and tack on a boilerplate conclusion.</p></li>
+</ul>
+<p>This structure makes a lot of sense in the context of a class because the order of presentation mirrors the objectives of the assignment: demonstrate that you understand the substantive topics that are being taught, demonstrate that you are being thoughtful about the data that you are collecting and that you have internalized the emphasis your instructors have placed on the importance of data cleaning, and that you understand the principles of data modeling. Results come last because in the context of a class, your results don’t actually matter. No professor is going to make a major business decision on the basis of a student report, and no government is going set policy on the basis of what you say.</p>
+<p>This structure — which almost entirely front loads material that is not particularly interesting to the instructor — is also viable because it is basically the <em>job</em> of the reader (your instructor or teaching assistant) to read everything you wrote.</p>
+<p>But when it comes to writing to a stakeholder — your boss, your colleagues, etc. — basically none of this logic holds.</p>
+<section id="a-stakeholder-s-mindset">
+<h3>A Stakeholder’s Mindset<a class="headerlink" href="#a-stakeholder-s-mindset" title="Link to this heading">#</a></h3>
+<p>As you learn to write to stakeholders, it is important to begin by putting yourself in their shoes. What is it that <em>they</em> want to know? And how can I best communicate those facts to them?</p>
+<p>Here are a few facts that are true of most stakeholders:</p>
+<ul class="simple">
+<li><p><strong>They have more to do than time to do it in:</strong> nothing is more scarce in an organization than the time of decision makers. <em>The moment</em> it stops being obvious to your stakeholder why the material they are reading is directly relevant to them, they will stop reading and turn to one of the other hundred critical issues vying for their attention.</p></li>
+<li><p><strong>Their life is full of problems. They want to know things that will help them solve those problems:</strong> Whatever your DSM is trying to communicate to your stakeholder, your stakeholder is only likely to pay attention if you can clearly articulate for them how it will help address a problem that they have. It’s not their job to figure out why different things may be useful (even if you think it should be) — it’s your job to tell them why the thing you are telling them is useful.</p></li>
+<li><p><strong>They aren’t interested in checking your work:</strong> unlike your professors, stakeholders will not generally be interested in checking your work. They only care about knowing things that will help solve their problems. That’s not to say they aren’t interested in seeing the evidence that supports the take-away you are trying to communicate, but they will almost never want to hear about the nitty-gritty details of data cleaning, feature encoding, model validation, etc. (unless your stakeholder is a fellow data scientist and the take-away you wish to communicate is about the best way to do these things in a relevant context).</p></li>
+</ul>
+<p>In light of these facts, what can we conclude about what belongs in your DSM?</p>
+</section>
+<section id="don-t-take-reader-attention-for-granted">
+<h3>Don’t take reader attention for granted<a class="headerlink" href="#don-t-take-reader-attention-for-granted" title="Link to this heading">#</a></h3>
+<p>A good practice for writing to stakeholders is to imagine that while your stakeholder is reading your memo, they are simultaneously being bombarded by distractions. These distractions are constantly trying to get them to put down your memo instead of finishing. Your job as a writer is to (a) minimize the likelihood that they put your memo down, and (b) maximize the likelihood that if they do put it down, they’ve already learned the things you most want them to know.</p>
+<p>Minimizing the likelihood your stakeholder will put down your memo before they finish amounts to ensuring that they are constantly aware of <em>why</em> they should care about what’s in front of that. More than anything, that means you should be <em>constantly motivating</em> everything you are doing by relating it back to a problem that your stakeholder already cares about.</p>
+<p>At every transition — between sections, between topics, and even between paragraphs — it should be explicitly clear to the reader that what follows is relevant to their problem so they have an affirmative reason to maintain their focus.</p>
+<p>Maximizing the likelihood that your stakeholder will learn the things you most want to communicate — even if they don’t finish your memo — requires putting the big idea of your memo up front. Then you can double back and fill in the details you’d <em>like</em> the stakeholder to know if they get far enough. This style of writing is often referred to as an <a class="reference external" href="https://en.wikipedia.org/wiki/Inverted_pyramid_(journalism)">inverted pyramid</a> structure (big take-aways at the top, smaller details at the bottom).</p>
+<p>Journalism is the quintessential example of this style of writing. <em>No one</em> reads entire news articles, so they are always nearly organized with the most critical information up front, after which they double back to fill in additional details for anyone still reading. There are a number of different ways this can be accomplished — start with “who? what? when? where? how?”, then add important details, then add context — is one of the first article formats journalists are introduced to.</p>
+<p>But the structure I think you’re likely to see most if you start looking for it is that in the first two or three paragraphs of a well-written news story, you will notice that there is a single paragraph that is designed to summarize everything that the journalist wants you to know about the story — the “<a class="reference external" href="https://en.wikipedia.org/wiki/Article_structure#Nut_Graph">nut graph</a>”. Then the following paragraphs fill in the details of the story in descending order of importance.</p>
+</section>
+</section>
+<section id="but-i-can-t-tell-you-my-stakeholder-everything-i-did-in-4-6-pages">
+<h2>But I can’t tell you/my stakeholder everything I did in 4-6 pages!<a class="headerlink" href="#but-i-can-t-tell-you-my-stakeholder-everything-i-did-in-4-6-pages" title="Link to this heading">#</a></h2>
+<p>That’s right! Having only 4-6 pages to communicate your take-away is <em>hard</em> (especially when those 4-6 pages include multiple figures). But that’s the point — one of the hardest things to learn to do as a communicator is to decide what is important and what is not, and having a page limit forces you to develop that skill. There’s a reason Blaise Pascal famously said “[i]f I had more time, I would have written a shorter letter.”[^pascal]</p>
+<p>[1] The exact quote, which appeared in “Lettres Provinciales” in 1657, was “[j]e n’ai fait celle-ci plus longue que parce que je n’ai pas eu le loisir de la faire plus courte.” Or, translated literally, “I have made this longer than usual because I have not had time to make it shorter.”</p>
+</section>
+<section id="common-mistakes-in-student-writing">
+<h2>Common Mistakes in Student Writing<a class="headerlink" href="#common-mistakes-in-student-writing" title="Link to this heading">#</a></h2>
+<p>Here are a few common ways students make mistakes in writing.</p>
+<section id="writing-what-you-did-how-you-spent-your-time">
+<h3>Writing What You Did / How You Spent Your Time<a class="headerlink" href="#writing-what-you-did-how-you-spent-your-time" title="Link to this heading">#</a></h3>
+<p>Many students like to write reports that feel like a “letter home from camp” — that is, a list of all the things they did (sometimes in the order in which they did them). This, I think, is another artifact of learning to write to your professors — when writing to an instructor, they more you can show you did a lot of work, the more likely you think your effort is to be rewarded.</p>
+<p>But the goal of a good DSM is not to show you worked really hard — it’s to communicate a specific take-away. And things that don’t help accomplish that goal don’t belong in your memo. In the words of Arthur Quiller-Couch:</p>
+<blockquote>
+<div><p>If you here require a practical rule of me, I will present you with this: ‘Whenever you feel an impulse to perpetrate a piece of exceptionally fine writing, obey it — whole-heartedly — and delete it before sending your manuscript to press. <strong>Murder your darlings.</strong>’</p>
+</div></blockquote>
+<p>Similarly, just because you did Step 1 before Step 2 before Step 3 doesn’t mean “explain 1, then 2, then 3” is the best way to <em>communicate</em> what you want to communicate. Indeed, often times as we work we zero in on what is most important, which means the thing we do <em>last</em> is actually want you may want to put <em>first</em> in your writing.</p>
+<p>A closely related habit is to allocate space in your DSM in proportion to how you spent your time. As data scientists, we spend <em>lots</em> of our lives cleaning data and trying things that don’t pan out. There is a very nature tendency to talk about these things in your DSM. Suppress that urge. Unless they explicitly say otherwise, your stakeholders don’t want to check your work (and in many cases, may not have the expertise required to do so — that’s why they hired you after all!). Discussion of details</p>
+</section>
+<section id="limitations">
+<h3>Limitations<a class="headerlink" href="#limitations" title="Link to this heading">#</a></h3>
+<p>There is a tendency for students to use a “Limitations” sections to, well… just try and cover their butts by throwing out anything they can think of about the paper that is imperfect. That’s ok in the classroom, but it’s not useful in the real world.</p>
+<p>The point of a Limitations section isn’t to demonstrate your ability to identify any imperfections in the study; the point of a limitation section is to give your stakeholder a sense of how much confidence they should have in the results presented in the report <em>from your professional perspective.</em> Just because you had to make an assumption does not mean that the assumption constitutes a “limitation” of the study unless you have reason to think that the assumption is unlikely to be true (or is sufficiently untrue as to impact the results). Please only include things in your limitation section that you think really are substantive limitations!</p>
+<p>ink you allocate to different topics in your DSM will probably not reflect how you spent your time.</p>
+<p>What goes in your DSM should reflect what you think will</p>
+<p>When you step outside the classroom, you will quickly discover that one of the most scarce resources in the world is the time and attention of decisionmakers. And that means that when you have something you want to communicate — and why write something at all if you don’t have something you want to communicate? — the more concisely you can make your point the better.</p>
+<p><strong>None of that</strong> is true in the real world. In fact, I would argue that being taught to write reports in this manner is about the worst possible preparation one could give students for learning to communicate to real-world stakeholders for two key reasons:</p>
+<ol class="arabic simple">
+<li><p>In the real world, the <em>only</em> thing that your stakeholder actually cares about are the conclusions you have reached about how to solve their problem (i.e. your results and how they relate to the stakeholder’s problem).</p></li>
+<li><p>There is nothing more scarce in any organization than a decision makers time, and so <em>the moment</em> it stops being obvious to the decision maker why the material their reading is directly relevant to solving their problem, there is a very high probability that they will let their attention shift to one of the other hundred critical issues vying for their attention.</p></li>
+</ol>
+<p>Because of these two facts, when writing to a stakeholder you should always — <em>always</em> — be asking yourself two questions:</p>
+<ol class="arabic simple">
+<li><p>If my stakeholder stopped reading right now, have I already told them the things that I think it is most important they walk away knowing? and</p></li>
+<li><p>At every transition — between sections, between topics, and even between paragraphs — is it explicitly clear to the reader that what follows is relevant to solving the stakeholder’s problem so they have and affirmative reason to not get distracted?</p></li>
+</ol>
+<p>What does this look like in practice? It depends a little bit on how much of your stakeholder’s attention you think you can get in the best of circumstances (intelligence briefings were written very differently for Donald Trump than for Barack Obama), but the structure I am going to advocate for is roughly the following:</p>
+</section>
+</section>
+<section id="appendices-for-mids">
+<h2>Appendices for MIDS<a class="headerlink" href="#appendices-for-mids" title="Link to this heading">#</a></h2>
+<p>Because we <em>are</em> professors, there will be times that we <em>do</em> need you to “show your work” in your DSMs in a way that is not authentic to what you’d do in a professional setting.</p>
+<p>To accommodate that, faculty may ask that you include appendices in your DSMs that detail things you wouldn’t normally include when writing to a stakeholder. These will be requested by faculty on an assignment-by-assignment basis, and should not impact how you write your main memo.</p>
+</section>
+<section id="rubric">
+<h2>Rubric<a class="headerlink" href="#rubric" title="Link to this heading">#</a></h2>
+<p>*I imagine most items will be score 0-1-2, with 2 being a clear “yes,” 0 a clear “no,” and a 1 for the fuzzy middle.</p>
+<ol class="arabic simple">
+<li><p>Does the memo clearly state the problem that motivates the analysis? (2 points)</p></li>
+<li><p>Does the memo clearly state what it intends to do and how that plan will help address the motivating problem?  (2 points)</p></li>
+<li><p>Does the memo have a clear take-away for the reader?  (2 points)</p></li>
+<li><p>Does the memo start with a short <em>Executive Summary/TL;DR</em> section that states the motivating problem, what the analysis intends to accomplish, how that plan will help address the motivating problem, and the main takeaway of the analysis?  (2 points)</p></li>
+<li><p>Are the figures in the memo clear and well labelled?  (2 points)</p></li>
+</ol>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="tags" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>There are a few ways to accomplish this. With R Markdown, simply add either <code class="docutils literal notranslate"><span class="pre">include=FALSE</span></code> (to hide code and output) or <code class="docutils literal notranslate"><span class="pre">echo=FALSE</span></code> (to only hide the code in a block, but not the output) in the chunk <code class="docutils literal notranslate"><span class="pre">{}</span></code> header. For Jupyter notebooks, people use nbconvert to create an HTML document then print to PDF. In this workflow, suppressing code cells can be accomplished in several ways. Using <code class="docutils literal notranslate"><span class="pre">nbconvert</span></code> from the <a class="reference external" href="https://nbconvert.readthedocs.io/en/latest/usage.html">command line</a>, you can easily set it to suppress all input cells (<code class="docutils literal notranslate"><span class="pre">--no-input</span></code>), all cells with a given tag (<code class="docutils literal notranslate"><span class="pre">--TagRemovePreprocessor.enabled=True</span> <span class="pre">--TagRemovePreprocessor.remove_cell_tags</span> <span class="pre">remove_cell</span></code>), or all cells that match a regular expression pattern (<code class="docutils literal notranslate"><span class="pre">--RegexRemovePreprocessor.patterns=&quot;['\s*\Z']&quot;</span></code>). See <a class="reference external" href="https://nbconvert.readthedocs.io/en/latest/removing_cells.html">this page</a> for more details.</p>
+</aside>
+</aside>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./40_in_practice"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-data-science-memo-format">The Data Science Memo Format</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-executive-summary-tl-dr-section">The Executive Summary / TL;DR Section</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memo-body">Memo Body</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-to-a-stakeholder">Writing To A Stakeholder</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-stakeholder-s-mindset">A Stakeholder’s Mindset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#don-t-take-reader-attention-for-granted">Don’t take reader attention for granted</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#but-i-can-t-tell-you-my-stakeholder-everything-i-did-in-4-6-pages">But I can’t tell you/my stakeholder everything I did in 4-6 pages!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-mistakes-in-student-writing">Common Mistakes in Student Writing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-what-you-did-how-you-spent-your-time">Writing What You Did / How You Spent Your Time</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendices-for-mids">Appendices for MIDS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rubric">Rubric</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Nick Eubank
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

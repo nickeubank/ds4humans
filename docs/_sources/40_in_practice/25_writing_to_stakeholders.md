@@ -24,7 +24,7 @@ This structure — which almost entirely front loads material that is not partic
 **None of that** is true in the real world. In fact, I would argue that being taught to write reports in this manner is about the worst possible preparation one could give students for learning to communicate to real-world stakeholders for two key reasons:
 
 1. In the real world, the *only* thing that your stakeholder actually cares about are the conclusions you have reached about how to solve their problem (i.e. your results and how they relate to the stakeholder's problem).
-2. There is nothing more scarce in any organization than a decision makers time, and so *the moment* it stops being obvious to the decision maker why the material their reading is directly relevant to solving their problem, there is a very high probability that they will let their attention shift to one of the other hundred critical issues vying for their attention.
+2. There is 
 
 Because of these two facts, when writing to a stakeholder you should always — *always* — be asking yourself two questions:
 
@@ -102,13 +102,6 @@ Not everyone may agree with this approach, but my philosophy with plots is that 
 For example, this plot (which, yes, [is from a paper on which I am a co-author](https://www.cambridge.org/core/journals/american-political-science-review/article/enfranchisement-and-incarceration-after-the-1965-voting-rights-act/C68FA7BB8CA313BDD8D9A39BA666A21D), but all credit for the figure quality goes to my coauthor):
 
 ![Diff in Diff from New Jim Crow paper](images/njc_diff_in_diff.png)
-
-### Limitations
-
-There is a tendency for students to use their "Limitations" sections to, well... just try and cover their butts by throwing out anything they can think of about the paper that is imperfect. That's ok in the classroom, but it's not useful in the real world.
-
-The point of a Limitations section isn't to demonstrate your ability to identify any imperfections in the study; the point of a limitation section is to give your stakeholder a sense of how much confidence they should have in the results presented in the report *from your professional perspective.* Just because you had to make an assumption does not mean that the assumption constitutes a "limitation" of the study unless you have reason to think that the assumption is unlikely to be true (or is sufficiently untrue as to impact the results). Please only include things in your limitation section that you think really are substantive limitations!
-
 <!-- ## A Few Final Thoughts on Writing
 
 This is not a class on writing, but communication is a central part of data science, and writing is one of our best tools we have for effective communication.   -->

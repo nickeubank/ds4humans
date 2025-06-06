@@ -156,9 +156,9 @@ Here again this books emphasis on starting with a motivating problem aids dramat
 
 There are *many* books in the data science space, but relatively few that I see filling the niche I hope to serve. For example, O'Reilly Publishing has published many books on the topic of data science, but nearly all emphasize coding and modelling, not critical thinking at the interface of the technical and substantive.
 
-The closest peer in terms of *content* is probably *The Art of Data Science* by Peng and Matsui (Lulu.com Publishing, 2016). Though short, the book aims to provide readers with a similar holistic perspective on the lifecycle of a data science project. To be entirely honest, I have avoided reading it *too* closely out of a desire to avoid letting it color my writing, but there are several distinctions between its approach and my own. 
+- *The Art of Data Science* by Peng and Matsui (Lulu.com Publishing, 2016). The closest peer in terms of content and goals. Aims to provide readers with a similar holistic perspective on the lifecycle of a data science project. However, does not assume prior familiarity with statistical inference or machine learning so operates at a more superficial level. Written in 2016 so does not engage with recent technical developments in data science (e.g., LLMs) or more recent case studies around topics like algorithmic bias.
+- *Quantitative Social Science: An Introduction* by Kosuke Imai (Princeton University Press, 2017). Holistic treatment of data science. However, focused on social scientists, limited by the fact it does not assume prior knowledge of stats or machine learning, lacks discussion of more modern innovations or issues, does not accommodate industry-focused readers.
 
-First, it does not assume prior familiarity with statistical inference or machine learning. As a result, it is forced to operate at a more superficial level of analysis, and spends far more ink explaining basic concepts. Second, it was written in 2016, and as a result it is unable to engage with many of the more recent technical developments in data science (e.g., LLMs) or more recent case studies around topics like algorithmic bias.
 
 # 5. Production Basics
 
