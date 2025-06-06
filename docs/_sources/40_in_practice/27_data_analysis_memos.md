@@ -12,7 +12,6 @@ To be clear, the adoption of this format is not a reflection of the fact that we
 
 Rather, we have chosen DSMs because they are (a) a very common written format in data science, (b) we think it is a style of writing that emphasizes the correct priorities in written communication, and (c) we feel that coordinating around a specific format will allow you to focus on *mastering* a style of written communication, and we feel that mastery of a specific style of writing will serve you better than being familiar but not great at a number of different report types.
 
-
 ## The Data Science Memo Format
 
 A DSM is a 4-6 page document designed to communicate a specific take-away to a stakeholder (colleagues on your team, your boss, your client, etc.). 
@@ -33,7 +32,7 @@ Among data scientists, DSMs are often written as Jupyter Notebooks or R Markdown
 
 That should give you a sense of how a DSM is organized, but as for what goes into a DSM in *substantive* terms, let's pause for a moment to discuss the principles of stakeholder communication.
 
-## Writing To A Stakeholder
+## Learning to Write To Stakeholders
 
 As students (especially data science students), the way most of us were taught to write reports is to:
 
@@ -52,17 +51,13 @@ But when it comes to writing to a stakeholder — your boss, your colleagues, et
 
 ### A Stakeholder's Mindset
 
-As you learn to write to stakeholders, it is important to begin by putting yourself in their shoes. What is it that *they* want to know? And how can I best communicate those facts to them?
+As you learn to write to stakeholders, it is important to begin by putting yourself in their shoes. What is it that *they* want to know? And how can you best communicate those facts to them?
 
 Here are a few facts that are true of most stakeholders:
 
 - **They have more to do than time to do it in:** nothing is more scarce in an organization than the time of decision makers. *The moment* it stops being obvious to your stakeholder why the material they are reading is directly relevant to them, they will stop reading and turn to one of the other hundred critical issues vying for their attention.
 - **Their life is full of problems. They want to know things that will help them solve those problems:** Whatever your DSM is trying to communicate to your stakeholder, your stakeholder is only likely to pay attention if you can clearly articulate for them how it will help address a problem that they have. It's not their job to figure out why different things may be useful (even if you think it should be) — it's your job to tell them why the thing you are telling them is useful. 
 - **They aren't interested in checking your work:** unlike your professors, stakeholders will not generally be interested in checking your work. They only care about knowing things that will help solve their problems. That's not to say they aren't interested in seeing the evidence that supports the take-away you are trying to communicate, but they will almost never want to hear about the nitty-gritty details of data cleaning, feature encoding, model validation, etc. (unless your stakeholder is a fellow data scientist and the take-away you wish to communicate is about the best way to do these things in a relevant context). 
-
-In light of these facts, what can we conclude about what belongs in your DSM?
-
-### Don't take reader attention for granted
 
 A good practice for writing to stakeholders is to imagine that while your stakeholder is reading your memo, they are simultaneously being bombarded by distractions. These distractions are constantly trying to get them to put down your memo instead of finishing. Your job as a writer is to (a) minimize the likelihood that they put your memo down, and (b) maximize the likelihood that if they do put it down, they've already learned the things you most want them to know.
 
@@ -76,12 +71,11 @@ Journalism is the quintessential example of this style of writing. *No one* read
 
 But the structure I think you're likely to see most if you start looking for it is that in the first two or three paragraphs of a well-written news story, you will notice that there is a single paragraph that is designed to summarize everything that the journalist wants you to know about the story — the "[nut graph](https://en.wikipedia.org/wiki/Article_structure#Nut_Graph)". Then the following paragraphs fill in the details of the story in descending order of importance.
 
-## But I can't tell you/my stakeholder everything I did in 4-6 pages!
+### But I can't tell you/my stakeholder everything I did in 4-6 pages!
 
 That's right! Having only 4-6 pages to communicate your take-away is *hard* (especially when those 4-6 pages include multiple figures). But that's the point — one of the hardest things to learn to do as a communicator is to decide what is important and what is not, and having a page limit forces you to develop that skill. There's a reason Blaise Pascal famously said "[i]f I had more time, I would have written a shorter letter."[^pascal]
 
 [1] The exact quote, which appeared in "Lettres Provinciales" in 1657, was "[j]e n'ai fait celle-ci plus longue que parce que je n'ai pas eu le loisir de la faire plus courte." Or, translated literally, "I have made this longer than usual because I have not had time to make it shorter."
-
 
 ## Common Mistakes in Student Writing
 
