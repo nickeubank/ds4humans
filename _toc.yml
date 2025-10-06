@@ -75,7 +75,7 @@ parts:
       - file: 10_introduction/40_data_science_in_historical_context
         title: "Ch 2: What Is Data Science?"
       - file: 40_in_practice/00_how_to_read_this_book
-      - file: 40_in_practice/25_writing_to_stakeholders
+      - file: 40_in_practice/27_data_science_memos
       - file: 40_in_practice/30_giving_feedback
   - caption: Causal Inference Extra Bits
     chapters:
