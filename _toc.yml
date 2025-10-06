@@ -10,14 +10,7 @@ parts:
   - caption: Introduction
     chapters:
       - file: 10_introduction/10_solving_problems_with_data
-        title: "Ch 1: Solving Problems"
-        sections:
-          - file: 10_introduction/20_solving_problems
-            title: "Idea 1: Solving Problems"
-          - file: 10_introduction/22_question_types
-            title: "Idea 2: Answering Questions"
-          - file: 10_introduction/23_mistakes
-            title: "Idea 3: Being Thoughtful about Being Wrong"
+        title: "Ch 1: Solving Problems with Data"
   - caption: Problems to Questions
     chapters:
       - file: 20_problems_to_questions/10_solving_the_right_problem

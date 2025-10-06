@@ -91,7 +91,7 @@ And here's the last but perhaps most important step: **iterate.** Bring your wor
 
 Many stakeholders find the idea of data science mysterious and abstract and will struggle to understand what is and is not feasible. By bringing them intermediate results, the whole process will start to become more concrete for the stakeholder, and it will help them provide you with better feedback.
 
-The way this book is organized suggests a natural flow from problem articulation to answering Exploratory Questions to prioritize efforts, to answering Passive-Prediction Questions to target individuals for extra attention or automate tasks, and finally to Causal Questions to better understand the effects of that extra attention/automation. In reality, however, a good data scientist is always coming back to the stakeholder, updating their plan, and jumping back in the sequence when new questions arise.
+The way this book is organized suggests a natural flow from problem articulation to answering Descriptive Questions to prioritize efforts, to answering Passive-Prediction Questions to target individuals for extra attention or automate tasks, and finally to Causal Questions to better understand the effects of that extra attention/automation. In reality, however, a good data scientist is always coming back to the stakeholder, updating their plan, and jumping back in the sequence when new questions arise.
 
 ## Strategies for Stakeholder Communication
 
@@ -107,9 +107,9 @@ Getting a sense of where the goalposts are for your stakeholder will both help y
 
 ### Questions About the Problem
 
-The more you know about your client's needs the better, so ask anything that comes to mind. If the client can answer your question, it will help you better understand the situation; if the client can't answer your question you may find that they are suddenly really interested in knowing the answer, and you immediately have some of your first Exploratory Questions to try to resolve.
+The more you know about your client's needs the better, so ask anything that comes to mind. If the client can answer your question, it will help you better understand the situation; if the client can't answer your question you may find that they are suddenly really interested in knowing the answer, and you immediately have some of your first Descriptive Questions to try to resolve.
 
-In the example of the company that wanted to improve recruitment of high-quality employees in the introduction of this book, I suggested that some of the first exploratory questions you might want to investigate would be things like:
+In the example of the company that wanted to improve recruitment of high-quality employees in the introduction of this book, I suggested that some of the first Descriptive Questions you might want to investigate would be things like:
 
 - How many job applications are you receiving when you post a job?
 - What share of your current job applicants are of high quality?

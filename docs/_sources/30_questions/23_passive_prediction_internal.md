@@ -1,6 +1,6 @@
 # Passive Prediction Questions and Internal Validity
 
-As with Exploratory Questions, when answering Passive Prediction Questions there are two major types of concerns: those related to internal validity, and those related to external validity.
+As with Descriptive Questions, when answering Passive Prediction Questions there are two major types of concerns: those related to internal validity, and those related to external validity.
 
 ## Internal Validity
 

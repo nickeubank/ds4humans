@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Using Exploratory Questions &#8212; Solving Problems With Data</title>
+    <title>Using Descriptive Questions &#8212; Solving Problems With Data</title>
   
   
   
@@ -478,7 +478,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Using Exploratory Questions</h1>
+    <h1>Using Descriptive Questions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -489,7 +489,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-optimization-an-example">Code Optimization: An Example</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-exploratory-questions-to-prioritize-efforts">Using Exploratory Questions to Prioritize Efforts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-exploratory-questions-to-prioritize-efforts">Using Descriptive Questions to Prioritize Efforts</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-not-methods">Goals, Not Methods</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collecting-merging-and-creating-new-data">Collecting, Merging, and Creating New Data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#but-where-do-i-get-data">But Where Do I Get Data?</a></li>
@@ -507,13 +507,13 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="using-exploratory-questions">
-<h1>Using Exploratory Questions<a class="headerlink" href="#using-exploratory-questions" title="Link to this heading">#</a></h1>
+<h1>Using Descriptive Questions<a class="headerlink" href="#using-exploratory-questions" title="Link to this heading">#</a></h1>
 <p>In Chapters 3 and 4, we covered a number of strategies for better understanding your problem. We discussed how trying to abstract or generalize the problem can often help one realize the problem one faces isn’t as unique as you might have thought, and how focusing on what would constitute success can help you think about a problem free from implementation details you may not have realized you were assuming were inescapable. We also talked about how to extract information from your stakeholder about the problem context. But what <em>then</em>? Those are all great strategies for thinking about the problem differently, but you can only get so far just thinking about the problem. What can you <em>do</em>?</p>
-<p>Enter <em>Exploratory Questions</em>. Exploratory Questions are questions designed to elicit information about our problem space and aid us in prioritizing our efforts and refining our goals. Exploratory Questions are questions about patterns in the world. “What types of customers spend the most in our stores?,” “which hospitals have the highest and lowest complication rates?,” “what share of greenhouse emissions come from short, exceptional periods of peak energy demand and what share come from baseload generation?” are all examples of Exploratory Questions.</p>
-<p>Of the three classes of questions we detail in this book, answering Exploratory Questions often (though not always) requires the least technical sophistication. As a result, Exploratory Questions also often get the least respect. But because of their critical role in improving our understanding of our objectives, learning to ask and answer Exploratory Questions will have a huge influence on your effectiveness as a data scientist.</p>
+<p>Enter <em>Descriptive Questions</em>. Descriptive Questions are questions designed to elicit information about our problem space and aid us in prioritizing our efforts and refining our goals. Descriptive Questions are questions about patterns in the world. “What types of customers spend the most in our stores?,” “which hospitals have the highest and lowest complication rates?,” “what share of greenhouse emissions come from short, exceptional periods of peak energy demand and what share come from baseload generation?” are all examples of Descriptive Questions.</p>
+<p>Of the three classes of questions we detail in this book, answering Descriptive Questions often (though not always) requires the least technical sophistication. As a result, Descriptive Questions also often get the least respect. But because of their critical role in improving our understanding of our objectives, learning to ask and answer Descriptive Questions will have a huge influence on your effectiveness as a data scientist.</p>
 <section id="code-optimization-an-example">
 <h2>Code Optimization: An Example<a class="headerlink" href="#code-optimization-an-example" title="Link to this heading">#</a></h2>
-<p>One of my favorite examples of the value of Exploratory Questions to give data scientists relates to the practice of <em>code optimization</em> — the process of adjusting code to reduce the amount of time it takes to run. Code optimization may feel a long way from figuring out how to minimize surgical complications or target advertisements, but it is very familiar to young data scientists, and illustrates some important aspects of how to solve underdefined problems effectively.</p>
+<p>One of my favorite examples of the value of Descriptive Questions to give data scientists relates to the practice of <em>code optimization</em> — the process of adjusting code to reduce the amount of time it takes to run. Code optimization may feel a long way from figuring out how to minimize surgical complications or target advertisements, but it is very familiar to young data scientists, and illustrates some important aspects of how to solve underdefined problems effectively.</p>
 <p>Data science is full of computationally intensive tasks that, if approached incorrectly, can leave a data scientist staring at their computer for hours, days, or even weeks (if they allow it). As a result, most data scientists will go through a phase in their development when they start constantly worrying about how to make every line of code they write as fast as possible. They bend over backward to write unnatural, unreadable code to ensure that they aren’t wasting a single CPU clock cycle.</p>
 <p>The problem with this is that humans have <em>incredibly</em> bad intuition about what tasks take a computer a long time. It turns out that even in programs that take huge amounts of time to run, it is often the case that <em>most</em> of the program’s runtime is taken up by a single function or loop. As a result, programmers who fixate on ensuring every line of code they write is optimized for speed end up not only wasting their <em>own</em> time, but also writing code that is less natural, harder to maintain, and more likely to contain errors for effectively no benefit.</p>
 <p>Indeed, no less a figure than <a class="reference external" href="https://en.wikipedia.org/wiki/Donald_Knuth">Donald Knuth</a>, one of the greatest programmers in history and author of the famous <a class="reference external" href="https://en.wikipedia.org/wiki/The_Art_of_Computer_Programming"><em>The Art of Computer Programming</em></a>, famously said of this trying to optimize each line of code at the time it is being written (“premature optimization”):</p>
@@ -521,7 +521,7 @@ document.write(`
 <div><p>The real problem is that programmers have spent far too much time worrying about efficiency in the wrong places and at the wrong times; <strong>premature optimization is the root of all evil (or at least most of it) in programming.</strong> [emphasis added]</p>
 </div></blockquote>
 <p>So what is a programmer interested in performance to do?</p>
-<p>Ask Exploratory Questions of their code, of course!</p>
+<p>Ask Descriptive Questions of their code, of course!</p>
 <p>First, programmers write code in as natural a way as possible. Then, <em>if</em> the result is code that is slower than they would like, ask the Exploratory Question: “What lines of code are contributing most to this program taking so long to run?” Then, once the programmer has identified the problematic parts of their code, they seek to optimize it for performance.</p>
 <p>This is accomplished using a tool called a <em>profiler</em>, which dips into a running program every few milliseconds to see what functions are currently running. Then after the program has finished running, it reports how often each part of the program code was found to be running, giving the user a sense of the overall distribution of time spent running different parts of the code.</p>
 <p>But the details of <em>how</em> profilers answer the question of “what part of my code is contributing most to my program’s run time?” is not the important thing here: it’s the way in which this Exploratory Question — which helps the programmer understand how much time different lines of code take to run <em>in relation to one another</em> — helps guide everything the programmer does next.</p>
@@ -537,10 +537,10 @@ Given that, one might jump straight to the question of how debt can be reduced. 
 Student debt defaults occur when students borrow but don't end up with the earnings to support that debt, either because they drop out before graduating or borrowed to pay for a low-quality program. -->
 </section>
 <section id="using-exploratory-questions-to-prioritize-efforts">
-<h2>Using Exploratory Questions to Prioritize Efforts<a class="headerlink" href="#using-exploratory-questions-to-prioritize-efforts" title="Link to this heading">#</a></h2>
+<h2>Using Descriptive Questions to Prioritize Efforts<a class="headerlink" href="#using-exploratory-questions-to-prioritize-efforts" title="Link to this heading">#</a></h2>
 <p>If the preceding example feels too niche — you want to be a data scientist, after all, not a software engineer! — let’s consider a different example. Suppose you’ve been hired by a new non-profit interested in helping reduce energy use in buildings in the United States. They know that fixed structures (factors, stores, houses, etc.) are responsible for a huge share of US energy consumption, and are interested in figuring out how to drive down that energy use by helping building owners improve the energy efficiency of their buildings (by providing information on things like government subsidies for efficiency improvements and the potential value of energy efficient windows, better heating and cooling, etc.).</p>
 <p>You <em>could</em> start out by trying to build a fancy supervised machine learning model that tried to predict the energy use of every building in the US based on infrared satellite data and weather information. Indeed, that may even be what you were asked to do! (See our discussion of how <a class="reference internal" href="#../20_problems_to_questions/30_solving_the_right_problem"><span class="xref myst">stakeholders will often have somewhat wild ideas of what is feasible and what would help most.</span></a>).</p>
-<p>But given this is a new non-profit, it sounds like their real need is probably to figure out how to target their efforts to be most effective. So maybe we should step back and start by trying to answer a few Exploratory Questions that would help the organization decide where to focus its attention:</p>
+<p>But given this is a new non-profit, it sounds like their real need is probably to figure out how to target their efforts to be most effective. So maybe we should step back and start by trying to answer a few Descriptive Questions that would help the organization decide where to focus its attention:</p>
 <ul class="simple">
 <li><p>What <em>type</em> of buildings (industrial, residential, commercial) consume the most power in the US?</p>
 <ul>
@@ -578,10 +578,10 @@ Student debt defaults occur when students borrow but don't end up with the earni
 <section id="goals-not-methods">
 <h2>Goals, Not Methods<a class="headerlink" href="#goals-not-methods" title="Link to this heading">#</a></h2>
 <p>What makes a question an Exploratory Question? Is it the fact that you can answer it with a simple summary statistic, or a scatter plot?</p>
-<p>No — what makes something an Exploratory Question is its <em>purpose</em>, not the tools we use to serve that purpose. Some Exploratory Questions will be answered through simple cross-tabulations. But if the patterns one seeks to understand are more subtle or contingent, they may only be answerable with regressions or unsupervised machine learning algorithms.</p>
+<p>No — what makes something an Exploratory Question is its <em>purpose</em>, not the tools we use to serve that purpose. Some Descriptive Questions will be answered through simple cross-tabulations. But if the patterns one seeks to understand are more subtle or contingent, they may only be answerable with regressions or unsupervised machine learning algorithms.</p>
 <section id="collecting-merging-and-creating-new-data">
 <h3>Collecting, Merging, and Creating New Data<a class="headerlink" href="#collecting-merging-and-creating-new-data" title="Link to this heading">#</a></h3>
-<p>The work of answering Exploratory Questions is also often not in the modelling, but rather in the data collection and merging. Because Exploratory Questions are about understanding how different features relate to one another, collecting and merging datasets that have not previously been pulled together is often key to generating answers. Sometimes this data collection requires no more than finding people who already have the data you need, getting it, and finding a way to merge different data sources (e.g., data on power plant CO2 emissions and data on building energy use), while in other situations this will entail building new datasets yourself by doing things like using Natural Language Processing to make collections of documents (contracts, patient files, public records) analyzable systematically.</p>
+<p>The work of answering Descriptive Questions is also often not in the modelling, but rather in the data collection and merging. Because Descriptive Questions are about understanding how different features relate to one another, collecting and merging datasets that have not previously been pulled together is often key to generating answers. Sometimes this data collection requires no more than finding people who already have the data you need, getting it, and finding a way to merge different data sources (e.g., data on power plant CO2 emissions and data on building energy use), while in other situations this will entail building new datasets yourself by doing things like using Natural Language Processing to make collections of documents (contracts, patient files, public records) analyzable systematically.</p>
 </section>
 <section id="but-where-do-i-get-data">
 <h3>But Where Do I Get Data?<a class="headerlink" href="#but-where-do-i-get-data" title="Link to this heading">#</a></h3>
@@ -657,7 +657,7 @@ Student debt defaults occur when students borrow but don't end up with the earni
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-optimization-an-example">Code Optimization: An Example</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-exploratory-questions-to-prioritize-efforts">Using Exploratory Questions to Prioritize Efforts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-exploratory-questions-to-prioritize-efforts">Using Descriptive Questions to Prioritize Efforts</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-not-methods">Goals, Not Methods</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collecting-merging-and-creating-new-data">Collecting, Merging, and Creating New Data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#but-where-do-i-get-data">But Where Do I Get Data?</a></li>

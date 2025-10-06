@@ -1,6 +1,6 @@
 # Passive Prediction, Internal Validity, and Alignment
 
-In this chapter, we will discuss a range of considerations that come into play when evaluating the internal validity of a model designed to answer a Passive Prediction Question. As with Exploratory Questions, I will assume you are already familiar with the usual methods of quantitatively measuring the quality of a model used for Passive Prediction. Instead, my focus will be on the kind of higher-level considerations that you should reflect on before and after you engage in the standard practices of model fitting and diagnostics you likely learned in your machine learning or statistics course. 
+In this chapter, we will discuss a range of considerations that come into play when evaluating the internal validity of a model designed to answer a Passive Prediction Question. As with Descriptive Questions, I will assume you are already familiar with the usual methods of quantitatively measuring the quality of a model used for Passive Prediction. Instead, my focus will be on the kind of higher-level considerations that you should reflect on before and after you engage in the standard practices of model fitting and diagnostics you likely learned in your machine learning or statistics course. 
 
 ## Alignment
 

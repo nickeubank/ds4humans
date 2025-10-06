@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Answering Exploratory Questions: Internal Validity &#8212; Solving Problems With Data</title>
+    <title>Answering Descriptive Questions: Internal Validity &#8212; Solving Problems With Data</title>
   
   
   
@@ -109,7 +109,7 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="(1) Understandable" href="17_exploratory_internal_understandable.html" />
-    <link rel="prev" title="Answering Exploratory Questions" href="15_answering_exploratory_questions.html" />
+    <link rel="prev" title="Answering Descriptive Questions" href="15_answering_exploratory_questions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -476,7 +476,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Answering Exploratory Questions: Internal Validity</h1>
+    <h1>Answering Descriptive Questions: Internal Validity</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -491,9 +491,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="answering-exploratory-questions-internal-validity">
-<h1>Answering Exploratory Questions: Internal Validity<a class="headerlink" href="#answering-exploratory-questions-internal-validity" title="Link to this heading">#</a></h1>
-<p>While some aspects of internal validity are things you have almost certainly encountered in statistics and machine learning course — is the model overfit to the data? are your standard errors correctly calculated? are you omitting important variables from your regression? — most statistics courses fail to discuss internal validity in more holistic terms. In this section, I wish to take a step back to discuss what we are really trying to accomplish when we answer Exploratory Questions, and how that impacts how we evaluate “internal validity.”</p>
-<p>Whether one uses simple summary statistics (means and medians), plots, or more sophisticated algorithms from the domains of statistical inference and unsupervised machine learning, answering Exploratory Questions always boils down to the same challenge:</p>
+<h1>Answering Descriptive Questions: Internal Validity<a class="headerlink" href="#answering-exploratory-questions-internal-validity" title="Link to this heading">#</a></h1>
+<p>While some aspects of internal validity are things you have almost certainly encountered in statistics and machine learning course — is the model overfit to the data? are your standard errors correctly calculated? are you omitting important variables from your regression? — most statistics courses fail to discuss internal validity in more holistic terms. In this section, I wish to take a step back to discuss what we are really trying to accomplish when we answer Descriptive Questions, and how that impacts how we evaluate “internal validity.”</p>
+<p>Whether one uses simple summary statistics (means and medians), plots, or more sophisticated algorithms from the domains of statistical inference and unsupervised machine learning, answering Descriptive Questions always boils down to the same challenge:</p>
 <p><strong>Generating answers that are (1) understandable, (2) faithfully represent patterns in the data, and (3) are relevant given the problem one is seeking to solve.</strong></p>
 <p>What is meant by these three components exactly? Let’s take each in turn.</p>
 <!-- 
@@ -504,9 +504,9 @@ document.write(`
 Netflix doesn’t just need to figure out what movie you would enjoy watching most; it needs you to understand why the movie is something you were likely to enjoy so you buy into it. -->
 <!-- This issue isn't limited to simple summary statistics, though. Unsupervised machine learning algorithms have the same problem—ask a clustering algorithm to divide a dataset into three clusters, and it will, even if the differences between the groups is *very* small. And ask a Principal Component Analysis algorithm to find a vector that minimizes the sum of squared distances between all points and the vector and it will, even if that vector isn't really measuring any kind of central tendency in the data.
 
-Answering Exploratory Questions will not always entail gathering and merging new sources of data; in some cases, answering Exploratory Questions is about making sense of existing data sets by identifying hidden (latent) patterns. This can be accomplished by a range of tools, but this practice is most commonly associated with *unsupervised machine learning* and statistical inference.
+Answering Descriptive Questions will not always entail gathering and merging new sources of data; in some cases, answering Descriptive Questions is about making sense of existing data sets by identifying hidden (latent) patterns. This can be accomplished by a range of tools, but this practice is most commonly associated with *unsupervised machine learning* and statistical inference.
 
-Answering Exploratory Questions always boils down to the same challenge: taking datasets that aren't comprehensible in their raw form, and identify **meaningful** patterns in the data that can be summarized in a manner that humans can actually wrap their heads around. And why is this hard? Because by definition, answering exploratory questions requires trying to find ways to make the incomprehensible comprehensible by identifying *meaningful* patterns. And while we have many tools for calculating specific types of data summaries—means, medians, clustering algorithms, principal component analyses, etc.—none of these can evaluate whether the summaries they generate are *faithful and meaningful* to the question you are seeking to answer. And it is therefore up to you, the data scientist, to decide what summaries of the data provide a faithful and meaningful representation of the underlying data. -->
+Answering Descriptive Questions always boils down to the same challenge: taking datasets that aren't comprehensible in their raw form, and identify **meaningful** patterns in the data that can be summarized in a manner that humans can actually wrap their heads around. And why is this hard? Because by definition, answering Descriptive Questions requires trying to find ways to make the incomprehensible comprehensible by identifying *meaningful* patterns. And while we have many tools for calculating specific types of data summaries—means, medians, clustering algorithms, principal component analyses, etc.—none of these can evaluate whether the summaries they generate are *faithful and meaningful* to the question you are seeking to answer. And it is therefore up to you, the data scientist, to decide what summaries of the data provide a faithful and meaningful representation of the underlying data. -->
 <!-- 
 ## The Danger of the Helpful Computer
 
@@ -563,7 +563,7 @@ OK, fine, you say—but those are just low-stakes settings. Surely that wouldn't
 
 To be clear, the problem is not *just* that these companies created discriminatory algorithms—as we'll discuss later in this book, almost any machine learning tool trained on public data will end up reflecting all the racist and misogynistic biases of our society. The problem is that *they shipped the racist products!* No one in these companies thought to stop and ask the question: "hey, before we roll this out, should we check to see how this behaves with people who don't look like our predominantly light-skinned workforce?"
 
-(Yes, these are machine learning examples, not Exploratory Questions per se. Machine learning examples get a lot more press, so it's easier to demonstrate to these kinds of news stories. But while the principle that the questions we ask reflect our values is especially important in Exploratory analyses, it also has broad salience, as illustrated here.)
+(Yes, these are machine learning examples, not Descriptive Questions per se. Machine learning examples get a lot more press, so it's easier to demonstrate to these kinds of news stories. But while the principle that the questions we ask reflect our values is especially important in Exploratory analyses, it also has broad salience, as illustrated here.)
 
 So remember: when deciding what to look at and report in your analyses, remember that people will make decisions based on the patterns *you* have decided are important, so if you don't stop to ask a question about, say, gender or racial bias, odds are it won't be something considered by your stakeholders.
 
@@ -573,7 +573,7 @@ simpler representations that we can wrap our heads around to help us understand 
 
 A map showing CO2 emissions by region, or a summary of the features that are most common within each patient cluster, by contrast, *is* something humans can wrap their heads around. And the *reason* it is understandable is due in large part to the fact that these are simple representations of the patterns in the data that matter for the question we seek to answer with all the noise that isn't critical removed. In information theoretic terms, we've taken a huge amount of noisy information and reduced it to just the signal we care about, which can be communicated with far less information.
 
-But there's a challenge that's inherent to this type of process of simplification which you may already be noticing: answering Exploratory Questions requires identifying what is important *and throwing everything else away*. And it is for this reason that answering Exploratory Questions well is dependent on the judgment of the data scientist. -->
+But there's a challenge that's inherent to this type of process of simplification which you may already be noticing: answering Descriptive Questions requires identifying what is important *and throwing everything else away*. And it is for this reason that answering Descriptive Questions well is dependent on the judgment of the data scientist. -->
 <!-- clustering algorithms / naming the clusters / Netflix-->
 <!-- infections by, say, removing fabric chairs that are hard to disinfect, the location of infections is likely important. If, by contrast, you were brought in by someone studying how the ways antibiotics were prescribed impacted infections, you would instead want to focus on the treatment histories of patients. And if you were hired by the hospital itself which just wanted to reduce infections by any means possible, you'd want to study both to know where future efforts might be best targeted. -->
 <div class="toctree-wrapper compound">
@@ -616,7 +616,7 @@ But there's a challenge that's inherent to this type of process of simplificatio
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Answering Exploratory Questions</p>
+        <p class="prev-next-title">Answering Descriptive Questions</p>
       </div>
     </a>
     <a class="right-next"

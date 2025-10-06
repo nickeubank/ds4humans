@@ -1,8 +1,8 @@
 # EDA: The Most Pernicious Term in Data Science
 
-After finishing the last section on Exploratory Questions, some readers may be rolling their eyes thinking "yeah, yeah, EDA [Exploratory Data Analysis]. I learned about EDA in my first stats class. When do we get to the good stuff?"
+After finishing the last section on Descriptive Questions, some readers may be rolling their eyes thinking "yeah, yeah, EDA [Exploratory Data Analysis]. I learned about EDA in my first stats class. When do we get to the good stuff?"
 
-If that's you, or if you just don't feel clear on the distinction between answering Exploratory Questions and "Exploratory Data Analysis," commonly referred to by the acronym "EDA," this section is for you.
+If that's you, or if you just don't feel clear on the distinction between answering Descriptive Questions and "Exploratory Data Analysis," commonly referred to by the acronym "EDA," this section is for you.
 
 In my view, and that of many of my colleagues, the practice commonly referred to as "EDA" and students understanding of its role in problem-solving is one of the greatest failures in data science education. 
 
@@ -64,4 +64,4 @@ So in this book, we will acknowledge the important (but distinct!) goal of two p
 - Learning the structure of your dataset (what constitutes a unit of observation, what variables are in the dataset),
 - Validating your dataset (does the data pass the sniff test? Does it exhibit the basic properties you would expect given what it claims to be?)
 
-But I will *not* use the term EDA itself, and when I differentiate between data science enterprises, I will do so by emphasizing differences in the *end goals* of those activities (answering Exploratory Questions, Passive-Prediction Questions, or Causal Questions), not the methods used to achieve those ends.
+But I will *not* use the term EDA itself, and when I differentiate between data science enterprises, I will do so by emphasizing differences in the *end goals* of those activities (answering Descriptive Questions, Passive-Prediction Questions, or Causal Questions), not the methods used to achieve those ends.

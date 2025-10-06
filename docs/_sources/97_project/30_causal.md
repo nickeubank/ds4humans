@@ -2,7 +2,7 @@
 
 The final portion of your team project in IDS 701 will entail writing a Causal Report in which you answer one Causal Question. The Causal Question you answer should be related to the problem you articulated at the beginning of the semester and should be motivated by the lessons learned while completing your Exploratory Report. 
 
-You are not restricted to the precise problem articulation you used at the beginning of the semester; data science projects can — and should — evolve over time as you learn more about your case. In answering your Exploratory Questions, you (hopefully!) improved your understanding of your problem. The lessons learned during that process should inform what you choose to focus on now. 
+You are not restricted to the precise problem articulation you used at the beginning of the semester; data science projects can — and should — evolve over time as you learn more about your case. In answering your Descriptive Questions, you (hopefully!) improved your understanding of your problem. The lessons learned during that process should inform what you choose to focus on now. 
 
 ## Picking A Causal Question
 

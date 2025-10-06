@@ -1,25 +1,51 @@
-# Solving the Right Problem
+# Solving Problems
 
-If data science is the study of how to solve problems using quantitative methods, then the first — and arguably most important — stage in any data science project is to define the problem to be solved.
+Given the focus of data science coursework on the math, statistics, and programming that is required to use data science tools, one would be forgiven for thinking that understanding these tools is the ultimate goal of data science.
 
-While this may seem simple, it is often far from it. Indeed, as noted in the introduction, problems often only appear complicated because they are poorly understood. Reframing or rearticulating a difficult problem is often the key to figuring out how to solve it, which is why the adage "A problem well stated is a problem half solved" has remained popular for so long.
+At the end of the day, however, your success as a data scientist will not be evaluated by whether you write good code or whether your classification model's AUC score is high. No, your success as a data scientist will always be evaluated based on a much simpler criterion: **did you make your stakeholder's life better by solving a problem they faced?**
+
+```{sidebar}
+Your success as a data scientist will *always* be evaluated by one simple criterion: **did you make your stakeholder's life better by solving a problem they faced?**
+```
+
+In the introductory chapter of this book, I said that that one of the key goals of this book is to help young data scientists understand the broader context of their work. There is perhaps no better way to do that then to always keep this one fact front of mind. The things you practice in class exercises — writing good code and finding a classification model with a high AUC — are things that may *help* you achieve the goal of solving your stakeholder's problem, but they are never sufficient in and of themselves. Indeed, it is hard to overstate how common it is to see talented young data scientists write brilliant, performant code and fit extremely accurate models that predict the wrong property, solve a problem that isn't actually core to the stakeholder's needs, require data not available in deployment, or work in training but won't generalize to the stakeholder's deployment context. The data scientists on these projects often deployed the skills they learned in technical classes magnificently, but this execution was not well-directed in service of the stakeholder — the classic "not seeing the forest for the trees" mistake.
+
+```{note}
+Throughout this book, I will frequently use the term "stakeholder" to refer to the person whose problem that you, the data scientist, is seeking to address. I use this term because, as a young data scientist, you will often be in the position of having to use your data science skills to help someone else. Thus your stakeholder may be your manager, your CEO, or someone at another company you are advising.
+
+However, if you're lucky enough to *not* be directly answerable to someone else, either because you work for yourself or because you're in a field that gives you substantial autonomy like academia, you can simply think of your "stakeholder" as yourself.
+
+If you're interested in developing a consumer-facing product (e.g., you're an independing developer whose thinking of creating a new data-science-based web app), you may also find it useful to think of your customer of the stakeholder, since very few products are successful if they don't solve a problem customers face. 
+```
+
+## Solving the Right Problem
+
+How, then, can we be sure our hard work as data scientists serves the interests of our stakeholder?
+
+The first step in solving any problem is *always* to carefully specify the problem. While this may seem obvious, properly articulating the core problem one seeks to address can be remarkably difficult. Moreover, because everything you will do *after* articulating your problem is premised on having correctly specified your objective, it is *the* greatest determinant of the success of your project. The most sophisticated, efficiently executed, high precision, high recall model in the world isn't worth a lick of good if the results it generates don't solve the problem you or your stakeholder need solved.
+
+Specifying your problem not only ensures that your subsequent efforts are properly directed, but it can also radically simplify your task. Many times problems only *appear* difficult because of how they are presented. As Charles Kettering, Head of Research at General Motors from 1920 to 1947 once said, "A problem well stated is a problem half solved."
 
 ```{sidebar}
 A problem well stated is a problem half-solved.
 - Charles Kettering, Head of Research at General Motors
 ```
 
-In this chapter, we will discuss what happens when data scientists fail to appreciate the importance of this stage of a project. With that established, we will then turn to advice on how to approach problem articulation.
+How do you know if you've "clearly articulated the problem," and how should you go about refining your problem statement with your stakeholder? That is the topic of this and the following Chapters in Part I, as are strategies for using data to help inform this process through iterative refinement of your understanding of the contours of the problem space.
 
 This chapter will be written as if you are the sole actor on a data science project, responsible for everything from problem articulation to execution. But of course, this will rarely be the case in your professional life as a data scientist, especially early in your career. With that in mind, in the next chapter we will turn to the topic of "Stakeholder Management" — the practice of refining your understanding of the problem to be solved with a stakeholder.
 
-## What *is* a "Stakeholder Problem?"
+## What is a Meaningful Problem?
 
-Before I dive into the nuances of problem articulation, I should probably start by defining what I mean by "your stakeholder's problem."
+A meaningful problem is something your stakeholder is *willing to allocate time and money* to making different. If your stakeholder is a business, their problem may be that they are losing customers to a competitor and they don't know how to prevent it. If your stakeholder is a hospital owner, their problem may be that they are regularly being sued when patients fall and get hurt and they would like to find a way to reduce the frequency of falls and lawsuits. Or if your stakeholder is a regulator, then their problem may be that they are uncertain whether authorizing a new drug would cause more harm than benefit and they want to reduce that uncertainty before making a problem. 
 
-A problem, in this context, is something about the world that your stakeholder would like to be different. They have to make a decision about whether to authorize a new drug, but they aren't sure what the consequences of authorization would be. They are losing customers to a competitor. They are a hospital and are being regularly sued for patient falls. All of these are things in your stakeholder's world that they wish would change. And we could say their problem has been addressed when that state of the world changes, and your stakeholder is happier as a result.
+Regardless of the context, though, a meaningful problem is something your stakeholder wants to be different about the world, and which they are willing to put time, effort, and resources into changing. This last part — the willingness to put time, effort, and resources into addressing the problem — is how we know that a given problem isn't just "something that'd be nice," but is actually something that matters, and is thus something worth you putting your energy into address. Solving the problem of "no one cleans their dirty mugs in the office sink" may get you a "good job" in the weekly staff meeting, but it's not a problem whose solution is going to make your stakeholder's life markedly better and get you promoted. And so before you dive into solving a problem, you should always stop to make sure it's something that matters enough that, if told the problem could be solved with sufficient investment, your stakeholder would be willing to put in that investment.
 
-Critically, a problem isn't just something your stakeholder *wants* to be different; a stakeholder problem is something they are willing to *pay* to make different. After all, the time of a data scientist isn't cheap, so no stakeholder is going to be willing to hire you unless there's something they are willing to allocate resources to resolve.
+
+----------
+
+
+
 
 Sometimes, a stakeholder problem will clearly indicate what the remedy will look like — a government regulator charged with deciding whether a drug should be made publically available who isn't sure about the consequences of authorization would be... wants to know the consequences of drug authorization. But this will not always be the case — often it's easy to identify a problem ("we're losing customer's to Bob's Burgers down the street!") in a way that doesn't immediately imply what form a solution would take. And other times, as we'll discuss below, your stakeholder will *assume* they know what form a solution would take, and part of your job will be to differentiate between the actual problem (that you do need to address) and the assumed solution (which you should question, because it *may* be the best way to resolve the problem, but also may not).
 
@@ -148,3 +174,13 @@ How far should you abstract things? To the level that feels most useful. Yes, in
 ### 3. Let Your Articulation Change
 
 My last suggestion is to allow your understanding of the problem you are trying to solve evolve. As your project develops, you will learn new things about your problem context, and you should allow those to inform how you are thinking of your problem. This is true not only for you — the data scientist — but also your stakeholder. We'll discuss stakeholder management more in our next chapter, but you should regularly be asking them: "does the way we've articulated the problem we're trying to solve still feel right to you given everything we've learned?"
+
+## The Role of Domain Expertise
+
+Application is, in many ways, what sets data science apart from the disciplines of mathematics, computer science, and statistics. And to apply the tools of data science tools effectively, by definition, requires an understanding of the domain to which your tools are being deployed. This fact makes many data scientists uncomfortable — after all, many young data scientists do not even know the industry in which they will be employed when the graduate, never mind feel they can lay claim to being a "domain expert" in any specific substantive field.
+
+A consequence of this discomfort is that "domain expertise" is that the term "domain expertise" is often invoked as a way of abdicating responsibility for part of an analysis as "somebody else's problem" (a dangerously powerful construction, as explained by the [incomparable Douglas Adams](99_sep_field)).
+
+But it would be a mistake to view domain expertise as beyond the responsibility of the data scientist for two reasons. First, engaging with the details of a substantive domain to tailor the application of data science methods to solve a specific problem isn't ancillary to the job of a data scientists — it's a data scientist's comparative advantage. Data scientists (generally) are not the most technically skilled mathematicians, statisticians, or programmers — we are professionals who specialize in taking the best insights from all three of these skills sets and adapting them to fit the specific needs of a specific problem. So embrace the role of "domain knowledge!"
+
+The second reason is that while you are unlikely to be a "domain expert" yourself, learning to solicit important information about a domain from true domain experts is a skill unto itself. As we will detail in our readings on "stakeholder management," stakeholders may be experts in their particular substantive domain, but because they (usually) won't understand data science, they are unlikely to ever provide you with the domain knowledge you need to do your job successfully (and you can't get away with just saying "yes, this project failed, but it was because you didn't tell me X!" See the discussion above of the single criterion used to evaluate data scientists). So learning to *partner* with your stakeholder and domain experts to understand a problem is a key part of understanding it properly, and thus eventually solving it.

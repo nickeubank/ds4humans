@@ -2,7 +2,7 @@
 
 In our past readings, we've learned about the value of both Exploratory and Passive Prediction Questions for solving problems. 
 
-Exploratory Questions help us better understand the contours of our problem — where our problem is most acute, whether there are groups who have figured out how to get around the problem on their own, etc. This, in turn, helps us identify where to prioritize our subsequent efforts.
+Descriptive Questions help us better understand the contours of our problem — where our problem is most acute, whether there are groups who have figured out how to get around the problem on their own, etc. This, in turn, helps us identify where to prioritize our subsequent efforts.
 
 Passive Prediction Questions have two main purposes. First, they help us to identify individual entities — patients, customers, products, etc. — to whom we may wish to pay extra attention or recommend certain products. Second, models built to address Passive Prediction Questions can also be used to automate tasks by predicting how a person *would* have classified an entity or behaved in a given setting.
 

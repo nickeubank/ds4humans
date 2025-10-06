@@ -387,15 +387,15 @@ organized around questions' substantive purposes, not intellectual
 tradition from which they are drawn or the computational machinery being
 deployed.
 
-\textbf{Exploratory Questions} are questions about patterns and
-regularities in the world around us. Answering Exploratory Questions
+\textbf{Descriptive Questions} are questions about patterns and
+regularities in the world around us. Answering Descriptive Questions
 helps data scientists better understand the landscape of the problem
 they wish to solve --- for example, by helping them understand where the
 problem is most acute, or what factors seem most strongly correlated
 with problem intensity --- and often aid in prioritizing subsequent
 efforts.
 
-Answering Exploratory Questions is largely the domain of statistical
+Answering Descriptive Questions is largely the domain of statistical
 inference and unsupervised machine learning. However, as I emphasize to
 students, many of the tools and approaches to data science we encounter
 are artifacts of how university departments are organized, and our
@@ -403,7 +403,7 @@ substantive goals as data scientists will not always follow the lines we
 draw between computer science, statistics, and social science
 departments.
 
-Answering Exploratory Questions is \textbf{not} synonymous with
+Answering Descriptive Questions is \textbf{not} synonymous with
 ``Exploratory Data Analysis'' (EDA). As it is commonly understood and
 practiced by students, EDA refers to the process of poking around in a
 new data set before fitting a more complicated statistical model. It
@@ -415,7 +415,7 @@ the tools used --- EDA consists of plotting distributions or
 cross-tabulations, not fitting models or doing more sophisticated
 analyses.
 
-Answering Exploratory Questions, by contrast, is about achieving a
+Answering Descriptive Questions, by contrast, is about achieving a
 substantive goal --- learning about patterns \emph{in the world} --- not
 the tools used to do it, or what it comes before. Answering an important
 Exploratory Question may require you to actively seek out new data,
@@ -437,7 +437,7 @@ can take the characteristics of an individual entity as inputs (e.g.,
 this patient is age 67, has blood pressure of 160/90, and no history of
 heart disease) and spitting out an answer \emph{for that individual}
 (given that, her probability of surgical complications is 82\%). This
-differentiates Passive Prediction Questions from Exploratory Questions,
+differentiates Passive Prediction Questions from Descriptive Questions,
 which are about global patterns, not individual level predictions.
 
 Passive Prediction Questions are usually deployed for one of two
@@ -598,10 +598,10 @@ science questions to solve problems.}
   data scientists recognize when the questions they are answering entail
   value judgments.
 \item
-  \textbf{Chapter 6: Using Exploratory Questions:} Often the most
-  underappreciated type of question, Exploratory Questions play a
+  \textbf{Chapter 6: Using Descriptive Questions:} Often the most
+  underappreciated type of question, Descriptive Questions play a
   critical role in helping data scientists ensure they putting their
-  energy in the right places. Exploratory Questions help data scientists
+  energy in the right places. Descriptive Questions help data scientists
   better understand the contours of the problem they wish to solve, such
   as where their problem is most acute (and thus where energy is likely
   to be best spent addressing the problem), or where the problem may
@@ -610,21 +610,21 @@ science questions to solve problems.}
   \href{https://ds4humans.com/30_questions/07_eda.html}{extended
   discussion} on the distinction between the practice commonly referred
   to as ``Exploratory Data Analysis (EDA)'' and what is meant by
-  Exploratory Questions.
+  Descriptive Questions.
 \item
   \textbf{Chapter 7: Using Passive Predictive Questions:} Passive
   Predictive Questions are the trendiest type of question in data
   science today. This chapter discusses the two major ways Passive
   Predictive Questions are used in business --- identifying individual
   entities for additional attention and automation. It also dives deeply
-  into the distinction between Exploratory Questions and Passive
+  into the distinction between Descriptive Questions and Passive
   Predictive Questions. Students often struggle with the idea that the
   same tool --- say, logistic regression --- can be used to answer
   different types of questions, but that the \emph{way} we use and
   evaluate model performance changes depending on our goals. Discussing
   how what matters most when answering Passive Prediction Questions
   (e.g., classification accuracy) may be different from what matters
-  most when answering Exploratory Questions (e.g., the size of standard
+  most when answering Descriptive Questions (e.g., the size of standard
   errors on regressors) helps students begin to recognize that there is
   no ``one way'' to use data science tools correctly; the correct way to
   use a tool depends on ones substantive goals.
@@ -669,13 +669,13 @@ of ethics in loss-functions.}
   results.
 \item
   \textbf{Chapter 10: Exploratory Question and Faithful Summarizations:}
-  Answering Exploratory Questions can, at times, feel like the easiest
+  Answering Descriptive Questions can, at times, feel like the easiest
   part of data science. But whether one is calculating summary
   statistics or applying unsupervised machine learning models, answering
-  Exploratory Questions requires the data scientist to exercise
+  Descriptive Questions requires the data scientist to exercise
   tremendous discretion and judgment. And when that discretion is not
   exercised thoughtfully, things can easily go awry. Answering
-  Exploratory Questions boils down to generating faithful,
+  Descriptive Questions boils down to generating faithful,
   understandable summaries of meaningful patterns in the data. Yet while
   we have lots of tools that generate summaries of our data, determining
   whether those summaries are faithful representations of the data, and
