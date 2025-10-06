@@ -122,4 +122,28 @@ To accommodate that, faculty may ask that you include appendices in your DSMs th
 
 ## DSM Rubric
 
-To help harmonize expectations around DSMs, 
+To help harmonize expectations around DSMs, all MIDS courses will employ a common rubric for evaluating memos. Some classes may add to this rubric to meet the learning objectives of a specific class, but — to the extent possible by fallible human beings — we will endeavor to apply these rubric items consistently across classes.
+
+To aid with grading scalability, all rubric items in this common rubric may take on one of only three discrete values: 1, 0.5, or 0.
+
+**Does the memo clearly state the problem that motivates the analysis?**
+
+- 1: The memo clearly and explicitly states the problem (or all problems, if more than one) motivating the work presented in the memo. The problem is stated in concrete terms, and is a problem that the declared stakeholder would view as a problem over which they have potential agency.
+- 0.5: Any of:
+  - The work in the memo appears to be motivated by a specific problem, but the problem (problems) is (are) not clearly or explicitly stated.
+  - The problem is explicitly stated, but at a level of generality that it is unclear the stakeholder would feel it is a problem they are in a position to solve ("Large levels of $CO_2$ emissions are causing global warming." is an explicitly stated problem, but not one that any one stakeholder is likely to feel they have agency to solve, especially based on the work in one memo.)
+- 0: The problem motivating the memo is unclear — not only is it not explicitly stated, but a clear motivating problem is also not obvious to the reader.
+
+**Does the memo clearly state what it intends to do and how that plan will help address the motivating problem?**
+
+- 1: The memo clearly and explicitly lays out how the plan of action/analysis for the memo will help address the stakeholder's problem. The logic is clear, and does not omit any large steps (i.e., it does not fall victim to the [Underpants Gnome](https://knowyourmeme.com/memes/profit) problem). Moreover, the steps seem reasonable given the stakeholder to whom the memo is addressed — the memo does *not*, for example, suggest that using the included analysis, the middle-manager will change US antitrust policy.
+- 0.5:
+  - One can imagine how the memo's contents could be used to address the problem, but the logic of how that might be done is not laid out clearly or explicitly
+  - The memo lays out a way that it's contents could be used to help address the problem, but the logic of the reasoning strains credulity
+- 0: How the memo content is meant to help solve the problem is unclear.
+
+**Does the memo have a clear takeaway for the reader?**
+
+**Does the memo start with a short *Executive Summary/TL;DR* section that states the motivating problem, what the analysis intends to accomplish, how that plan will help address the motivating problem, and the main takeaway of the analysis?**
+
+**Are the figures in the memo clear and well labelled?**
