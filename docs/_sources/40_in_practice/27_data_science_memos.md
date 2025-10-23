@@ -142,8 +142,18 @@ To aid with grading scalability, all rubric items in this common rubric may take
   - The memo lays out a way that it's contents could be used to help address the problem, but the logic of the reasoning strains credulity
 - 0: How the memo content is meant to help solve the problem is unclear.
 
-**Does the memo have a clear takeaway for the reader?**
-
 **Does the memo start with a short *Executive Summary/TL;DR* section that states the motivating problem, what the analysis intends to accomplish, how that plan will help address the motivating problem, and the main takeaway of the analysis?**
 
-**Are the figures in the memo clear and well labelled?**
+- 1: Yes, the memo includes an Executive Summary and it does all these tasks.
+- 0.5: There is an Executive Summary, but while it summarizes the memo, it doesn't clearly and explicitly connect the dots from problem to strategy for solving problem to conclusions and take-aways.
+- 0: There is no Executive Summary or it really doesn't meet it's objectives.
+
+**For figures in the memo:**
+
+- **Are all figures clearly labelled and titled?**
+- **Is it clear what each figure in the memo is intended to convey? All figures should have a point they want to communicate to the reader — are those points clear?**
+- **Do all figures serve a clear purpose in the memo?**
+
+- 1: Yes, all figures achieve these goals.
+- 0.5: These goals are sometimes met and sometimes not met, or met for some figures but not others.
+- 0: These goals are being met less often than they are not being met.
