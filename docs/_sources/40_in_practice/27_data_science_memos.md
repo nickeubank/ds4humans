@@ -27,6 +27,10 @@ In other words, the executive summary is not just an introduction meant to draw 
 
 After the summary, most stakeholders appreciate being told the critical decisions about next steps that need to be made based on the memo content. This can also be paired with a concise summary of the information you believe is critical for them to know when making their decisions. This helps stakeholders understand what they should focus on as they read, and (as discussed below) helps ensure you get across your most important points to your stakeholder even if they don’t finish your memo.
 
+In the classroom, this can feel a little hard (since you won't actually get a round of iteration with your imaginary stakeholder). But it's a good practice, so try to add something you'd like if your pretend stakeholder were real.
+
+To be clear, the goal here isn't to have another summary — the idea is to very explicit state what you want to put on your stakeholder's plate to deal with or answer next.
+
 ### Memo Body
 
 After the executive summary comes the body of the report. DSMs tend to be media-rich documents with lots of carefully chosen figures. Indeed, some people advocate thinking of a data science memo as a series of figures with text only serving the role of "connective tissue" between figures, although whether that makes sense in any specific context depends a lot on the takeaway one is trying to communicate and whether it lends itself to visual or textual communication.
@@ -146,7 +150,7 @@ To aid with grading scalability, all rubric items in this common rubric may take
 
 - 1: Yes, the memo includes an Executive Summary and it does all these tasks.
 - 0.5: There is an Executive Summary, but while it summarizes the memo, it doesn't clearly and explicitly connect the dots from problem to strategy for solving problem to conclusions and take-aways.
-- 0: There is no Executive Summary or it really doesn't meet it's objectives.
+- 0: There is no Executive Summary or it really doesn't meet its objectives.
 
 **For figures in the memo:**
 
