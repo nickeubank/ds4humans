@@ -21,11 +21,11 @@ parts:
         title: "Ch 3: Stakeholder Management"
   - caption: Answering Questions, Solving Problems
     chapters:
-      - file: 30_questions/10_using_exploratory_questions
-        title: "Ch 4: Using Exploratory Qs"
+      - file: 30_questions/10_using_descriptive_questions
+        title: "Ch 4: Using Descriptive Qs"
         sections:
           - file: 30_questions/07_eda
-            title: 'Exploratory Qs and the Scourge of "EDA"'
+            title: 'Descriptive Qs and the Scourge of "EDA"'
       - file: 30_questions/20_using_passive_prediction_questions
         title: "Ch 5: Using Passive Predictive Qs"
       - file: 30_questions/35_using_causal_questions
@@ -39,16 +39,16 @@ parts:
         sections:
           - file: 30_questions/06_descriptive_prescriptive_examples
             title: Tradeoff Examples
-      - file: 30_questions/15_answering_exploratory_questions
+      - file: 30_questions/15_answering_descriptive_questions
         title: "Ch 8: Internal and External Validity"
-      - file: 30_questions/16_exploratory_internal_challenges
-        title: "Ch 9: Internal Validity and Exploratory Qs"
+      - file: 30_questions/16_descriptive_internal_challenges
+        title: "Ch 9: Internal Validity and Descriptive Qs"
         sections:
-          - file: 30_questions/17_exploratory_internal_understandable
+          - file: 30_questions/17_descriptive_internal_understandable
             title: "1: Understandable"
-          - file: 30_questions/18_exploratory_internal_faithful
+          - file: 30_questions/18_descriptive_internal_faithful
             title: "2: Faithful"
-          - file: 30_questions/19_exploratory_internal_meaningful
+          - file: 30_questions/19_descriptive_internal_meaningful
             title: "3: Relevant"
       - file: 30_questions/23_passive_internal_alignment_and_bias
         title: "Ch 10: Predictive Qs & Internal Validity"

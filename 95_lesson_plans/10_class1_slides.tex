@@ -1,0 +1,197 @@
+% !TEX program = lualatex
+
+\documentclass[12pt]{beamer}
+% For handout add ,handout after 11pt
+
+\usetheme{auriga}
+\usecolortheme{auriga}
+
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{color}
+
+% Beamer list spacing
+% \setlength{\leftmargini}{1.5em}
+\setlength{\topsep}{2em}
+\setlength{\itemsep}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\parsep}{0pt}
+
+
+% define some colors for a consistent theme across slides
+\definecolor{red}{RGB}{181, 23, 0}
+\definecolor{blue}{RGB}{0, 118, 186}
+\definecolor{gray}{RGB}{146, 146, 146}
+
+
+\title{Welcome to IDS 701!}
+
+\author{Nick Eubank}
+
+\begin{document}
+
+\setbeamercolor{page number in head/foot}{fg=white}
+
+\begin{frame}[c]{}
+
+{\LARGE Welcome to IDS 701!}
+
+\end{frame}
+
+\begin{frame}[c]{Exercise 1}
+
+You are all enrolled in a Data Science Master's Degree. But what \alert{is} Data Science? \\
+
+\vspace*{0.5cm}
+\pause In your group, please:
+
+\begin{enumerate}
+    \item Define ``data science''
+    \item Tell us what you hope to be able to do when you graduate (that you couldn't do before)?
+\end{enumerate}
+
+\end{frame}
+
+
+\begin{frame}[c]{What is data science (in this class)?}
+
+\pause    Study of how to \alert{solve problems} \pause by answering questions \pause using quantitative methods.
+
+\end{frame}
+
+\begin{frame}[c]{Solve problems ``by answering questions''?}
+
+\pause All data science tools can be viewed as methods of answering questions about the world (as embodied in your data).\\
+
+\vspace*{0.5cm}
+
+\pause True in both a narrow technical sense:
+
+$$\operatorname*{argmin}_{a \in \text{possible answers}} \text{Loss Fn}(a)$$
+
+\pause Also true in a more subtle but important sense we'll discuss more later.
+
+\end{frame}
+
+
+\begin{frame}[c]{Solving Problems with Data Science}
+\begin{enumerate}
+    \pause \item Work with stakeholder to articulate the problem you wish to solve.
+    \pause \item Determine what question, if answered, would help address your stakeholder's problem.
+    \begin{itemize}
+        \pause \item Descriptive Questions: Overall distribution of features in the world. \\
+        $\rightarrow$ Useful for prioritizing efforts.
+        \pause \item (Passive) Prediction Questions: Future or unknown outcomes for individuals \\
+        $\rightarrow$ Useful for identifying individuals for additional attention (patients likely to experience complications) \\
+        $\rightarrow$ Useful for automation (how would a human rate this job applicant?)
+        \pause \item Causal Questions: \alert{The first half of this class!}
+    \end{itemize}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[c]{Exercise 2: Causal Questions}
+\pause In your group, please:
+
+\begin{enumerate}
+    \item Tell us what types of problems we can solve by answering causal questions?
+    \item Why is prediction (e.g., supervised machine learning or predicted values from regressions) not enough?
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[c]{Causal Questions}
+Answering causal questions entails predicting the likely consequence of \alert{taking an action}. \\
+
+\vspace*{0.5cm}
+
+\pause When we take an action, we are changing the \alert{data generating process} (the underlying process that generates whatever data we may be feeding into our model). This disruption means that correlations that were present in the data previously may no longer apply.
+\end{frame}
+
+
+\begin{frame}[c]{Why is Prediction Not Enough?}
+Suppose you run a hotel chain. You want to know the likely effect of \alert{raising room rates on occupancy rates.}\\
+\vspace*{0.5cm}
+\pause You collect data on hotel prices and occupancy rates for the past few years. \\
+\vspace*{0.5cm}
+\pause What do you think you'd find?
+\end{frame}
+
+
+\begin{frame}[c]{Why is Prediction Not Enough?}
+Higher prices would be correlated with higher occupancy rates!\\
+\vspace*{0.5cm}
+\pause Do you think raising \emph{your} prices would increase \emph{your} occupancy rates?\\
+\vspace*{0.5cm}
+\pause Why is this past pattern not holding? \\
+\vspace*{0.5cm}
+In the historic data, prices are high because something external was driving up demand. But that is no longer true if you raise your rates unilaterally.
+\end{frame}
+
+\begin{frame}[c]{Why is Prediction Not Enough?}
+
+\begin{quote}
+Correlation does not imply causation.    
+\end{quote}
+
+\end{frame}
+
+
+\begin{frame}[c]{Why is Prediction Not Enough?}
+
+\begin{quote}
+Correlation does not \alert{necessarily} imply causation.    
+\end{quote}
+
+\end{frame}
+
+\begin{frame}[c]{Why is Prediction Not Enough?}
+\begin{quote}
+Correlation does not \alert{necessarily} imply causation.    
+\end{quote}
+Causal inference is about understanding \alert{when} correlation \alert{does} imply causation, and why.
+\end{frame}
+
+\begin{frame}[c]{Class Structure}
+\begin{enumerate}
+    \item Causal Questions:
+    \begin{itemize}
+        \item Theory of Causal Inference
+        \item Experiments
+        \item Non-Experimental (Observational)
+    \end{itemize}
+    \item Project Design (Solving Problems):
+    \begin{itemize}
+        \item Working with Stakeholders
+        \item Types of Questions
+    \end{itemize}
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[c]{Class Structure}
+\begin{enumerate}
+    \item Largely Flipped:
+    \begin{itemize}
+        \item Read Before Class
+        \item Quizzes
+    \end{itemize}
+    \item Website: ds4humans.com
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[c]{Laptop Policy}
+Laptops (phones, etc.) will \alert{not} be allowed in most classes. \\
+
+\vspace*{0.5cm}
+
+\pause We have very clear, experimental evidence that:
+\begin{itemize}
+    \item Even just the \emph{temptation} to jump to social media, etc. is distracting.
+    \item Laptops don't just hurt your learning — they harm the learning of those around you.
+    \item Taking notes by hand is harder and slower... and that makes it work better.
+\end{itemize}
+\end{frame}
+
+
+
+\end{document}

@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -245,6 +245,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Answering Questions, Solving Problems</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/10_using_descriptive_questions.html">Ch 4: Using Descriptive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/07_eda.html">Descriptive Qs and the Scourge of "EDA"</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../30_questions/20_using_passive_prediction_questions.html">Ch 5: Using Passive Predictive Qs</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/35_using_causal_questions.html">Ch 6: Causal Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../30_questions/40_answering_causal_questions.html">Answering Causal Questions</a></li>
@@ -255,6 +259,13 @@ commentsRunWhenDOMLoaded(addUtterances);
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/05_descriptive_v_prescriptive.html">Ch 7: Descriptive and Prescriptive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../30_questions/06_descriptive_prescriptive_examples.html">Tradeoff Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/15_answering_descriptive_questions.html">Ch 8: Internal and External Validity</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/16_descriptive_internal_challenges.html">Ch 9: Internal Validity and Descriptive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/17_descriptive_internal_understandable.html">1: Understandable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/18_descriptive_internal_faithful.html">2: Faithful</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/19_descriptive_internal_meaningful.html">3: Relevant</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../30_questions/23_passive_internal_alignment_and_bias.html">Ch 10: Predictive Qs &amp; Internal Validity</a></li>
@@ -518,336 +529,6 @@ document.write(`
 <li><p><strong>KTX</strong>: <a class="reference external" href="https://www.amazon.com/gp/product/1108724264/">Trustworthy Online Controlled Experiments: A Practical Guide to A/B Testing</a> ($40 new, $30 used.)</p></li>
 <li><p><strong>GHV</strong>: <a class="reference external" href="https://www.amazon.com/Regression-Stories-Analytical-Methods-Research/dp/1107676517">Regression and Other Stories</a> ($40. Too new to have used versions.)</p></li>
 </ul>
-<div class="pst-scrollable-table-container"><table class="table">
-<colgroup>
-<col style="width: 7.8%" />
-<col style="width: 29.4%" />
-<col style="width: 49.0%" />
-<col style="width: 13.7%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Date</p></th>
-<th class="head"><p>Topic</p></th>
-<th class="head"><p>Do Before Class</p></th>
-<th class="head"><p>In Class</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Th Jan 9</p></td>
-<td><p>Course Overview</p></td>
-<td><p>Nothing</p></td>
-<td><p>Discuss logistics and structure</p></td>
-</tr>
-<tr class="row-odd"><td><p>Tu Jan 14</p></td>
-<td><p>Solving Problems by Answering Questions</p></td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="https://github.com/nickeubank/ds4humans/raw/refs/heads/main/98_syllabus/Syllabus_IDS701.pdf?download=">Read, sign, submit syllabus on gradescope.</a></p></li>
-<li><p><a class="reference external" href="../40_in_practice/00_how_to_read_this_book.html">How to Read</a></p></li>
-<li><dl class="simple">
-<dt><a class="reference external" href="../10_introduction/10_solving_problems_with_data.html">Chpt 1</a> </dt><dd><ul>
-<li><p><strong>Whenever I list a Chpt number, you may assume it includes all subparts unless I say otherwise.</strong> So this includes all three big idea subsections.</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</td>
-<td><p><a class="reference external" href="../99_exercises/exercise_class2_probs_and_questions.html">Questions Ex</a></p></td>
-</tr>
-<tr class="row-even"><td><p>Th Jan 16</p></td>
-<td><p>Stakeholder Management</p></td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../20_problems_to_questions/10_solving_the_right_problem.html">Chpt 3</a></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=kYMfE9u-lMo">Why It’s Important To Get Your Question Right (30 min video)</a></p></li>
-<li><p><a class="reference external" href="../20_problems_to_questions/20_stakeholder_management.html">Chpt 4</a></p></li>
-</ul>
-</td>
-<td><p><a class="reference external" href="../99_exercises/exercise_stakeholder_management.html">Stakeholder Ex</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>Tu Jan 21</p></td>
-<td><p>Prescriptive v. Descriptive Questions</p></td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../10_introduction/40_data_science_in_historical_context.html">Chpt 2</a></p></li>
-<li><p><a class="reference external" href="../30_questions/05_descriptive_v_prescriptive.html">Chpt 5</a></p></li>
-</ul>
-</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Th Jan 23</p></td>
-<td><p>Descriptive Questions: Purpose, Internal and External Validity</p></td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../30_questions/10_using_exploratory_questions.html">Chpt 6</a></p></li>
-<li><p><a class="reference external" href="../30_questions/15_answering_exploratory_questions.html">Chpt 7</a></p></li>
-</ul>
-</td>
-<td><p><a class="reference external" href="../97_project/00_problem_and_exploratory.html">Team Project</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>Tu Jan 28</p></td>
-<td><p>Teams 1</p></td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="https://github.com/nickeubank/unifyingdatascience/raw/master/team_readings/project_aristotle_nytimes.pdf">What Project Aristotle Learned</a></p></li>
-<li><p>Edmondson, The Fearless Organization, Chpt 1 (on Canvas)</p></li>
-<li><p><strong>Problem and Questions Due</strong></p></li>
-</ul>
-</td>
-<td><p><a class="reference external" href="../99_exercises/exercise_teams1.html">Debrief Ex</a></p></td>
-</tr>
-<tr class="row-even"><td><p>Th Jan 30</p></td>
-<td><p>Teams 2</p></td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="https://github.com/nickeubank/unifyingdatascience/raw/master/team_readings/MIDS%20Team%20Charter%20Assignment.docx">Review Team Charter Assignment</a></p></li>
-<li><p>Edmondson, Teaming, Chpt 2 (on Canvas)</p></li>
-</ul>
-<blockquote>
-<div><p>Optional: <a class="reference external" href="https://docs.google.com/document/d/1PsnDMS2emcPLgMLFAQCXZjO7C4j2hJ7znOq_g2Zkjgk/export?format=pdf">Fostering Psychological Safety Tips</a></p>
-</div></blockquote>
-</td>
-<td><p><a class="reference external" href="../97_project/10_exploratory_report.html">Team Report</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>Tu Feb 4</p></td>
-<td><p>Descriptive Questions: Internal Validity Concerns</p></td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../30_questions/16_exploratory_internal_challenges.html">Chpt 8</a></p></li>
-</ul>
-</td>
-<td><p><a class="reference external" href="../99_exercises/exercise_exploratory.html">Exploratory Ex</a></p></td>
-</tr>
-<tr class="row-even"><td><p>Th Feb 6</p></td>
-<td><p>Passive Prediction Questions: Purpose, Internal Validity 1</p></td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../30_questions/20_using_passive_prediction_questions.html">Chpt 9</a></p></li>
-<li><p><a class="reference external" href="../30_questions/23_passive_internal_alignment_and_bias.html">Chpt 10</a></p></li>
-<li><p><a class="reference external" href="../30_questions/24_passive_internal_errors.html">Chpt 11</a> ONLY FIRST READING, not Fairness</p></li>
-</ul>
-</td>
-<td><p><a class="reference external" href="../99_exercises/exercise_passive_prediction.html">Passive P Ex</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>Tu Feb 11</p></td>
-<td><p>Passive Prediction Questions: Internal Validity 2</p></td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../30_questions/25_passive_fairness.html">Chpt 11 Fairness Section</a></p></li>
-</ul>
-</td>
-<td><p><a class="reference external" href="../99_exercises/exercise_used_car.html">Car Buyer</a></p></td>
-</tr>
-<tr class="row-even"><td><p>Th Feb 13</p></td>
-<td><p>Passive Prediction Questions: External Validity</p></td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../30_questions/27_passive_external_general.html">Chpt 12</a></p></li>
-<li><p><strong>Exploratory Report Due</strong></p></li>
-</ul>
-</td>
-<td><p><a class="reference external" href="../97_project/20_feedback.html">Feedback</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>Tu Feb 18</p></td>
-<td><p>Passive Prediction Questions: Interpretability</p></td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../30_questions/32_passive_interpretable_models.html">Chpt 13</a></p></li>
-<li><p><a class="reference external" href="../40_in_practice/30_giving_feedback.html">Giving Feedback</a></p></li>
-<li><p><strong>Feedback Memos Should Be Shared by Midnight on 18th</strong></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=Z8MEFI7ZJlA">Optional but fun!</a></p></li>
-</ul>
-</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Th Feb 20</p></td>
-<td><p>SNOW DAY</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>Tu Feb 25</p></td>
-<td><p>Feedback Class</p></td>
-<td><ul class="simple">
-<li><p>Read feedback provided to your team. Be prepared to discuss.</p></li>
-</ul>
-</td>
-<td><ul class="simple">
-<li><p>Discuss Feedback</p></li>
-</ul>
-</td>
-</tr>
-<tr class="row-even"><td><p>Th Feb 27</p></td>
-<td><p>Causal Questions: Purpose</p></td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../30_questions/30_using_causal_questions.html">Using Causal Questions</a></p></li>
-<li><p><a class="reference external" href="../30_questions/40_answering_causal_questions.html">Answering Causal Questions</a></p></li>
-</ul>
-</td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>Tu Mar 4</p></td>
-<td><p>Causal Questions: Potential Outcomes</p></td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../35_causal/10_potential_outcomes.html">Potential Outcomes Framework</a></p></li>
-<li><p><a class="reference external" href="../35_causal/15_evaluating_real_studies.html">Evaluating Real Studies</a></p></li>
-</ul>
-<blockquote>
-<div><dl class="simple">
-<dt>Optional:</dt><dd><ul class="simple">
-<li><p>Read Chpt 4 in Cunningham from start (different presentation of potential outcomes).</p></li>
-<li><p>Note that Cunningham uses the term Simple Difference in Outcomes (SDO) instead of $widehat{ATE}$ (the term I use). They are perfectly interchangable.</p></li>
-</ul>
-</dd>
-</dl>
-</div></blockquote>
-</td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../99_exercises/exercise_potential_outcomes1.html">Ex</a></p></li>
-</ul>
-</td>
-</tr>
-<tr class="row-even"><td><p>Th Mar 6</p></td>
-<td><p>Causal Questions: Potential Outcomes</p></td>
-<td><ul class="simple">
-<li><p>Cunningham, Chpt 4, pp 135 (“Independence Assumption”) - 148 (Stop at “Randomization Inference”)</p></li>
-<li><p><a class="reference external" href="../35_causal/30_interpreting_indicator_vars.html">Indicator Variables</a></p></li>
-</ul>
-</td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../99_exercises/exercise_resume_experiment.html">Ex</a></p></li>
-</ul>
-</td>
-</tr>
-<tr class="row-odd"><td><p>Tu Mar 11</p></td>
-<td><p><strong>NO CLASS</strong></p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Th Mar 13</p></td>
-<td><p><strong>NO CLASS</strong></p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>Tu Mar 18</p></td>
-<td><p>Causal Questions: Experiments in Practice, Internal Validity</p></td>
-<td><p>Experiments: Internal Validity (In Practice):</p>
-<ul class="simple">
-<li><p>KTX: Chpt 2 (End to End Example)</p></li>
-<li><p>KTX: Chpt 3, “Threats to Internal Validity” (p. 42-47)</p></li>
-<li><p>KTX: Chpt 19 (A/A Testing)</p></li>
-</ul>
-</td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../99_exercises/exercise_resume_experiment.html">Ex</a></p></li>
-</ul>
-</td>
-</tr>
-<tr class="row-even"><td><p>Th Mar 20</p></td>
-<td><p>Causal Questions: Experiments in Practice, External Validity</p></td>
-<td><p>Overall Evaluation Criteria: KTX Chpt 7.</p>
-<p>Finishing Internal Validity:</p>
-<ul class="simple">
-<li><p>Different Randomizations: KTX Chpt 22</p></li>
-</ul>
-<p>Experiments: External Validity (In Practice):</p>
-<ul class="simple">
-<li><p><a class="reference external" href="../30_questions/45_causal_questions_external.html">Chpt 15, Experiments and External Validty</a></p></li>
-<li><p>KTX, Chpt 3, “Threats to External Validity” to end (p. 47-54)</p></li>
-<li><p>Kohvai, Tang and Xu, Chpt 23 (Primacy Effects / Long Term Decay)</p></li>
-</ul>
-</td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../99_exercises/exercise_abtesting.html">Ex</a></p></li>
-</ul>
-</td>
-</tr>
-<tr class="row-odd"><td><p>Tu Mar 25</p></td>
-<td><p>Causal Questions: Experiments in Practice, Design</p></td>
-<td><p>Designing Experiments</p>
-<ul class="simple">
-<li><p>Statistical Power and Sample Sizes: GHV Ch 16</p></li>
-<li><p><a class="reference external" href="../35_causal/35_endogenous_stopping.html">Don’t stop experiments early!</a></p></li>
-</ul>
-</td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../99_exercises/exercise_power_calculations.html">Ex</a></p></li>
-</ul>
-</td>
-</tr>
-<tr class="row-even"><td><p>Th Mar 27</p></td>
-<td><p>Causal Questions: Experiments in Practice, P-Value Interpretation</p></td>
-<td><ul class="simple">
-<li><p>Statistical Decision Theory (on Canvas). 550-556 (This is same as IDS 705 Lecture 8 Reading)</p></li>
-<li><p><a class="reference external" href="https://doi.org/10.1080/00031305.2018.1537889">Assessing Statistical Results: Magnitude, Precision, and Model Uncertainty</a></p></li>
-</ul>
-</td>
-<td><p><a class="reference external" href="../97_project/30_causal.html">Causal Report</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>Tu Apr 1</p></td>
-<td><p>AB Testing Review</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Th Apr 3</p></td>
-<td><p>Causal Questions: Regression</p></td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../35_causal/40_causal_inference_beyond_ab_testing.html">Causal Beyond Experiments</a></p></li>
-<li><p>Angrist and Pischke, Mastering Metrics, Chpt 2</p></li>
-</ul>
-</td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../99_exercises/exercise_resume_experiment.html">Ex</a></p></li>
-</ul>
-</td>
-</tr>
-<tr class="row-odd"><td><p>Tu Apr 8</p></td>
-<td><p><strong>MIDTERM</strong></p></td>
-<td><p><strong>MIDTERM</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Th Apr 9</p></td>
-<td><p>Causal Questions: Matching</p></td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../35_causal/80_matching_why.html">The Why of Matching</a></p></li>
-<li><p><a class="reference external" href="../35_causal/90_matching_how.html">The How of Matching Summary</a></p></li>
-<li><p><a class="reference external" href="https://youtu.be/tvMyjDi4dyg?t=910">Methods for Matching</a></p></li>
-</ul>
-<p><em>Watch the video above from about 15 minutes in (where link starts) till at least 45 minutes in, keep going if you want to learn about propensity score matching problems.</em></p>
-</td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../99_exercises/exercise_matching.html">Ex</a></p></li>
-</ul>
-</td>
-</tr>
-<tr class="row-odd"><td><p>Tu Apr 15</p></td>
-<td><p>Causal Questions: Differences and Differences / Panels</p></td>
-<td><ul class="simple">
-<li><p>Cunningham, Chpt 9 pp 406 (Difference in Differences) - pp 433 (Stop at “Importance of Placebos in Diff-in-Diff”)</p></li>
-</ul>
-<blockquote>
-<div><p>-(Book page numbers at bottom of PDF on canvas. Full chapter is in PDF, more than you need to read.)</p>
-<p>Optional but encouraged:
-(dont need to follow everything, but here’s a real diff-in-diff)</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.cambridge.org/core/journals/american-political-science-review/article/enfranchisement-and-incarceration-after-the-1965-voting-rights-act/C68FA7BB8CA313BDD8D9A39BA666A21D">Enfranchisement and Incarceration</a></p></li>
-<li><p><a class="reference external" href="https://netflixtechblog.com/key-challenges-with-quasi-experiments-at-netflix-89b4f234b852">Diff-in-Diffs at Netflix</a></p></li>
-</ul>
-</div></blockquote>
-</td>
-<td><ul class="simple">
-<li><p><a class="reference external" href="../99_exercises/exercise_diffindiff.html">Ex</a></p></li>
-</ul>
-</td>
-</tr>
-<tr class="row-even"><td><p>Wed, April 23</p></td>
-<td><p>x</p></td>
-<td><ul class="simple">
-<li><p><strong>Optional Due Date for Causal Rough Draft (11pm)</strong></p></li>
-</ul>
-</td>
-<td><p>x</p></td>
-</tr>
-<tr class="row-odd"><td><p>Wed, Apr 30</p></td>
-<td><p>x</p></td>
-<td><ul class="simple">
-<li><p><strong>Final Causal Report Due</strong></p></li>
-</ul>
-</td>
-<td><p>x</p></td>
-</tr>
-</tbody>
-</table>
-</div>
 </section>
 </section>
 

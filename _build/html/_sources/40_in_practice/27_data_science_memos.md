@@ -116,7 +116,9 @@ Within MIDS, there are a few modifications to this format to deal with the fact 
 
 ### Specify Your Stakeholder
 
-At the top of your memo, you should add a two or three-sentence summary of your target audience. This should include a specific job title for your target reader, and the technical background you think they have. Your instructor may tell you that this stakeholder has to have certain characteristics for certain assignments.
+At the top of your memo, you should add a two or three-sentence summary of your target audience/the stakeholder you're imagining giving this to. This should include a specific job title for your target reader, and the technical background you think they have. Your instructor may tell you that this stakeholder has to have certain characteristics for certain assignments.
+
+(To be clear, you wouldn't put this at the top of a real memo — the stakeholder is the person you give the memo to!)
 
 ### Appendices
 
