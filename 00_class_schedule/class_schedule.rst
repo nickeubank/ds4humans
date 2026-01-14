@@ -5,10 +5,11 @@ Class: Tuesday / Thursday, 1:25-2:40pm
 
 Office Hours: 
 
-- Nick: Thursday, 9-10am, `https://duke.zoom.us/my/nickeubank <https://duke.zoom.us/my/nickeubank>`_ or Gross Hall 231
-- Katie: Tuesday 9-10am `https://duke.zoom.us/j/7696790306 <https://duke.zoom.us/j/7696790306>`_
-- Keon: Wednesday 3-4pm `https://duke.zoom.us/j/97104029366 <https://duke.zoom.us/j/97104029366>`_
-- Gunel: Thursday 3-4pm `https://duke.zoom.us/j/95439693004 <https://duke.zoom.us/j/95439693004>`_
+`Nick <https://duke.zoom.us/my/nickeubank>`_ (Zoom or in Gross 231): Thursday 9 am - 10:00 am. *Please email me in advance if you plan to attend.* I'll *usually* be there regardless, but knowing people are coming is useful if conflicts arise.
+
+`Diego <https://duke.zoom.us/j/93574019912>`_ (Zoom or Gross Hall 2nd Floor, 230K): Monday 12:00 - 1:00 pm
+
+`Meron <https://duke.zoom.us/j/7699232186>`_ (Zoom or Gross Hall 2nd Floor, 230N): Wednesday 12:00 - 1:00 pm.
 
 Texts Used
 ----------
