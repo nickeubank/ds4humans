@@ -15,7 +15,7 @@ While this question may *seem* simple, this question has actually been the subje
 In this course, we will use the *Counterfactual Model of Causality* (sometimes called the Neyman-Rubin causal model). In plain English, it posits that for "doing X to cause Y," it must be the case that if we do X, then Y will occur, and if we did not do X, Y would not occur. This is by far the most used definition of causality today, and yet remarkably, it only emerged in the 20th Century and was only really fleshed out in the 1970s. Yeah... that recently.
 
 ```{sidebar} Counterfactual Model of Causality
-For it to be the case that doing X causes Y", it must be the case that if we do X, then Y will occur, and if we did not do X, then Y would not occur.
+For it to be the case that "doing X causes Y," it must be the case that if we do X, then Y will occur, and if we do not do X, then Y will not occur.
 ```
 
 ## Measuring the Effect of X on Y
@@ -62,7 +62,7 @@ But just as we investigate and prosecute crimes despite our inability to ever be
 
 At this point, it is worth pausing to reflect on a question it may not have occurred to you to ask above — if answering Causal Questions is usually about *predicting* what would happen if we were to act on the world in a certain way, then how/why is it different from answering the kind of Passive-Prediction Questions we discussed previously?
 
-There are a number of different ways one can frame the answer to this question. Still, the one I like most for Data Scientists is that when answering a Passive-Predictive Question, we can usually achieve our goals simply by identifying *correlations* that we think are likely to persist into the future. For example, suppose we run the maintenance department for a rental car company. The fact that a car whose *Check Engine* light is on is a car that is likely to break down if it isn't taken to a mechanic is enough for us to identify cars in trouble! Obviously, the *Check Engine* light isn't *causing* the cars to break down, but it doesn't have be useful.
+There are a number of different ways one can frame the answer to this question. Still, the one I like most for Data Scientists is that when answering a Passive-Predictive Question, we can usually achieve our goals simply by identifying *correlations* that we think are likely to persist into the future. For example, suppose we run the maintenance department for a rental car company. The fact that a car whose *Check Engine* light is on is a car that is likely to break down if it isn't taken to a mechanic is enough for us to identify cars in trouble! Obviously, the *Check Engine* light isn't *causing* the cars to break down, but it doesn't have to be the cause of cars breaking down to be useful.
 
 But when seeking to answer Causal Questions, we wish to go beyond just identifying cars in trouble and instead predict what might happen to cars if we *chose to act* in different ways. This requires going beyond simple Passive Prediction because, in choosing to act, we ask how things might turn out in a world where we are behaving differently than we are currently — in other words, we are no longer being passive.
 
@@ -83,4 +83,3 @@ Depending on what classes you may have taken in the past, you may have heard the
 In this reading, we learned — in an intuitive sense — why answering Causal Questions is inherently hard. But this explanation, while accurate, is a little informal to be rigorous. In the readings that follow, we will be introduced to the *Potential Outcomes Framework* — the formal statistical framework that underlies the Neyman-Rubin Counterfactual Model of Causality. This framework will help us reason more systematically about how and when methods like randomized experiments, linear regression, matching, and differences-in-differences can help us answer Causal Questions.
 
 But first, in the interest of not losing perspective on the forest for the trees, a discussion of *how* Causal Questions are used in practice.
-

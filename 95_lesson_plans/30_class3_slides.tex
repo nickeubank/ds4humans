@@ -1,0 +1,97 @@
+% !TEX program = lualatex
+
+\documentclass[12pt]{beamer}
+% For handout add ,handout after 11pt
+
+\usetheme{auriga}
+\usecolortheme{auriga}
+
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{color}
+\usepackage{fontspec}
+
+% Set up emoji support with a fallback font
+\newfontfamily\emojifont{Apple Color Emoji}[Renderer=Harfbuzz]
+\DeclareTextFontCommand{\emoji}{\emojifont}
+
+% Beamer list spacing
+% \setlength{\leftmargini}{1.5em}
+\setlength{\topsep}{2em}
+\setlength{\itemsep}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\parsep}{0pt}
+
+
+% define some colors for a consistent theme across slides
+\definecolor{red}{RGB}{181, 23, 0}
+\definecolor{blue}{RGB}{0, 118, 186}
+\definecolor{gray}{RGB}{146, 146, 146}
+
+
+\title{Potential Outcomes Recap}
+
+\author{Nick Eubank}
+
+\date{\vspace*{.3in} \date}
+
+\begin{document}
+
+\setbeamercolor{page number in head/foot}{fg=white}
+
+\begin{frame}[c]{}
+    \titlepage
+\end{frame}
+
+\begin{frame}[c]{The Big Picture}
+\begin{itemize}
+    \pause \item Our goal: Estimate \alert{Average Treatment Effect (ATE)}
+    \pause \item We can \alert{measure}: \\[1ex] $\widehat{ATE} = E(Y^1|D=1) - E(Y^0|D=0)$
+    \pause \item If \alert{no baseline differences}: \\[1ex] $\widehat{ATE} = ATT$
+    \pause \item If also \alert{no differential treatment effects}: \\[1ex]
+    $\widehat{ATE} = ATT = ATE$ {\emoji 🥳}
+\end{itemize}    
+\end{frame}
+
+\begin{frame}[c]{Why do we care about ATE?}
+We want to answer causal questions because \alert{we are considering taking an action at scale}, and want to know the likely effect. \\
+\vspace{0.5cm}
+\pause 
+In our study, we will have some people treated and some untreated. \\
+\vspace{0.5cm}
+\pause 
+But if we take the action being considered, \alert{we will do it for everyone.}
+\begin{itemize}
+    \item Authorize a new drug.
+    \item Change the price of a product.
+    \item Change webpage design.
+\end{itemize}
+\pause Average effect will be ATE.
+\end{frame}
+
+\begin{frame}[c]{No Baseline Differences}
+\vspace{-1cm}
+    $$E(Y^0|D=1) - E(Y^0|D=0) = 0$$
+\alert{In a world without treatment}, outcomes Y are the same (on average) for both groups. \\
+\vspace{0.5cm}
+\begin{itemize}
+    \pause \item Does \alert{NOT} require no differences between $D=0$ and $D=1$, 
+    \pause \item Does \alert{NOT} require no differences in $Y$ across individuals.
+\end{itemize}
+\vspace{0.5cm}
+\pause Requires \alert{no average differences in outcome Y between $D=0$ and $D=1$}.
+\end{frame}
+
+
+\begin{frame}[c]{No Differential Treatment Effects}
+\vspace{-1cm}
+    $$E(Y^1|D=1) - E(Y^0|D=1) =  E(Y^1|D=0) - E(Y^0|D=0)$$
+The effect of $T$ is the same (on average) for both groups. \\
+\vspace{0.5cm}
+\begin{itemize}
+    \pause \item If not met, but no baseline differences is met, still get \emph{a} treatment effect: ATT.
+\end{itemize}
+\end{frame}
+
+\end{document}

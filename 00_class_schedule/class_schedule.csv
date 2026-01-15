@@ -1,14 +1,14 @@
 ﻿Date,Topic,Do Before Class,In Class
 Th Jan 8,- Welcome Class,None,"- Class Motivation
 - Structure"
-Tu Jan 13,Causal Questions: Purpose,"- `Using Causal Questions <../30_questions/35_using_causal_questions.html>`_
+Tu Jan 13,Causal Questions: Purpose,"- `Using Causal Questions <../30_questions/30_using_causal_questions.html>`_
 - `Answering Causal Questions <../30_questions/40_answering_causal_questions.html>`_
-- `Read, sign, and submit syllabus <https://github.com/nickeubank/ds4humans/raw/refs/heads/main/98_syllabus/Syllabus_IDS701.pdf?download=>`_",
+- `Read, sign, and submit syllabus <https://github.com/nickeubank/ds4humans/raw/refs/heads/main/98_syllabus/Syllabus_IDS701.pdf?download=>`_",- Potential Outcomes
 Th Jan 15,Causal Questions: Potential Outcomes,"- `Potential Outcomes Framework <../35_causal/10_potential_outcomes.html>`_
 
  Optional:
   - Read Chpt 4 in Cunningham from start (different presentation of potential outcomes).
-  - Note that Cunningham uses the term Simple Difference in Outcomes (SDO) instead of $\widehat{ATE}$ (the term I use). They are perfectly interchangable.",
+  - Note that Cunningham uses the term Simple Difference in Outcomes (SDO) instead of $\widehat{ATE}$ (the term I use). They are perfectly interchangable.",- `Ex <../99_exercises/exercise_potential_outcomes1.html>`_
 Tu Jan 20,Causal Questions: Potential Outcomes,"- Cunningham, Chpt 4, pp 135 (""Independence Assumption"") - 148 (Stop at ""Randomization Inference"")
 - `Indicator Variables <../35_causal/30_interpreting_indicator_vars.html>`_",
 Th Jan 22,"Causal Questions: Experiments in Practice, Internal Validity","Experiments: Internal Validity (In Practice):
