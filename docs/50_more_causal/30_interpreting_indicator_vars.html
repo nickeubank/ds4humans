@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -737,10 +737,10 @@ document.write(`
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>  0.7416</td> 
 </tr>
 <tr>
-  <th>Date:</th>             <td>Thu, 08 Jan 2026</td> <th>  Prob (F-statistic):</th>  <td> 0.389</td>  
+  <th>Date:</th>             <td>Thu, 15 Jan 2026</td> <th>  Prob (F-statistic):</th>  <td> 0.389</td>  
 </tr>
 <tr>
-  <th>Time:</th>                 <td>10:41:46</td>     <th>  Log-Likelihood:    </th> <td> -5768.3</td> 
+  <th>Time:</th>                 <td>14:25:27</td>     <th>  Log-Likelihood:    </th> <td> -5768.3</td> 
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  9919</td>      <th>  AIC:               </th> <td>1.154e+04</td>
@@ -915,10 +915,10 @@ Name: count, dtype: int64
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   40.81</td> 
 </tr>
 <tr>
-  <th>Date:</th>             <td>Thu, 08 Jan 2026</td> <th>  Prob (F-statistic):</th> <td>1.76e-10</td> 
+  <th>Date:</th>             <td>Thu, 15 Jan 2026</td> <th>  Prob (F-statistic):</th> <td>1.76e-10</td> 
 </tr>
 <tr>
-  <th>Time:</th>                 <td>10:41:46</td>     <th>  Log-Likelihood:    </th> <td> -5748.0</td> 
+  <th>Time:</th>                 <td>14:25:27</td>     <th>  Log-Likelihood:    </th> <td> -5748.0</td> 
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  9919</td>      <th>  AIC:               </th> <td>1.150e+04</td>
@@ -1085,10 +1085,10 @@ Name: count, dtype: int64
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   35.67</td> 
 </tr>
 <tr>
-  <th>Date:</th>             <td>Thu, 08 Jan 2026</td> <th>  Prob (F-statistic):</th> <td>3.67e-16</td> 
+  <th>Date:</th>             <td>Thu, 15 Jan 2026</td> <th>  Prob (F-statistic):</th> <td>3.67e-16</td> 
 </tr>
 <tr>
-  <th>Time:</th>                 <td>10:41:46</td>     <th>  Log-Likelihood:    </th> <td> -5735.2</td> 
+  <th>Time:</th>                 <td>14:25:27</td>     <th>  Log-Likelihood:    </th> <td> -5735.2</td> 
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  9919</td>      <th>  AIC:               </th> <td>1.148e+04</td>
@@ -1140,8 +1140,8 @@ Name: count, dtype: int64
 <p>But what about the difference between Democrats and Unaffiliated voters? Well, turns out the regression doesn’t give us that directly. To get that, we have to do some additional math.</p>
 <p>First, it’s easy to estimate the difference in coefficients:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dem</span> <span class="o">-</span> <span class="n">unaffiliated</span> <span class="o">=</span> <span class="p">(</span><span class="n">dem</span> <span class="o">-</span> <span class="n">republican</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">unaffiliated</span> <span class="o">-</span> <span class="n">republican</span><span class="p">)</span>
-                   <span class="o">=</span> <span class="o">-</span><span class="mf">0.08</span> <span class="o">-</span> <span class="o">-</span><span class="mf">0.06</span>
-                   <span class="o">=</span> <span class="o">-</span><span class="mf">0.02</span>
+                   <span class="o">=</span> <span class="o">-</span><span class="mf">0.0797</span> <span class="o">-</span> <span class="o">-</span><span class="mf">0.0606</span>
+                   <span class="o">=</span> <span class="o">-</span><span class="mf">0.0191</span>
 </pre></div>
 </div>
 <p>So in other words, Democrats have 2 percentage point lower turnout than Unaffiliated voters.</p>
@@ -1191,10 +1191,10 @@ c0            -0.0191      0.012     -1.634      0.102      -0.042       0.004
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   35.67</td> 
 </tr>
 <tr>
-  <th>Date:</th>             <td>Thu, 08 Jan 2026</td> <th>  Prob (F-statistic):</th> <td>3.67e-16</td> 
+  <th>Date:</th>             <td>Thu, 15 Jan 2026</td> <th>  Prob (F-statistic):</th> <td>3.67e-16</td> 
 </tr>
 <tr>
-  <th>Time:</th>                 <td>10:41:46</td>     <th>  Log-Likelihood:    </th> <td> -5735.2</td> 
+  <th>Time:</th>                 <td>14:25:27</td>     <th>  Log-Likelihood:    </th> <td> -5735.2</td> 
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  9919</td>      <th>  AIC:               </th> <td>1.148e+04</td>
@@ -1269,10 +1269,10 @@ c0            -0.0191      0.012     -1.634      0.102      -0.042       0.004
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   1.917</td> 
 </tr>
 <tr>
-  <th>Date:</th>             <td>Thu, 08 Jan 2026</td> <th>  Prob (F-statistic):</th>  <td> 0.124</td>  
+  <th>Date:</th>             <td>Thu, 15 Jan 2026</td> <th>  Prob (F-statistic):</th>  <td> 0.124</td>  
 </tr>
 <tr>
-  <th>Time:</th>                 <td>10:41:46</td>     <th>  Log-Likelihood:    </th> <td> -5764.7</td> 
+  <th>Time:</th>                 <td>14:25:27</td>     <th>  Log-Likelihood:    </th> <td> -5764.7</td> 
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  9919</td>      <th>  AIC:               </th> <td>1.154e+04</td>
@@ -1327,7 +1327,7 @@ c0            -0.0191      0.012     -1.634      0.102      -0.042       0.004
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">female</span></code> (0.09): Controlling for age, women are 9 percentage points more likely to vote than men.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">age</span></code> (0.0009): As men get one year older, they become 0.09 percentage points more likely to vote.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">age_x_female</span></code> (-0.0015): As women get one year older, the likelihood they vote increases by -0.1 percentage point <em>less</em> than men.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">age_x_female</span></code> (-0.0015): As women get one year older, the likelihood they vote increases by -0.15 percentage point <em>less</em> than men. Or, said differently, the likelihood they vote will decrease <em>as compared to men</em> by 0.15 percentage points a year.</p></li>
 </ul>
 <p>So how much does women’s turnout increase if they age one year? 0.0009 + -0.0015 = -0.0006. So female turnout actually <em>declines</em> by 0.06 percentage points a year.</p>
 <p>Now let’s talk statistical significance. The p-value on age shows us that there’s a statistically significant relationship between age and turnout <strong>for men</strong>. The p-value for <code class="docutils literal notranslate"><span class="pre">age_x_female</span></code> tells us that there’s a statistically significant <strong>difference</strong> between men and women in how turnout varies with age. But is there a statistically significant relationship between age and turnout for women?</p>
@@ -1402,10 +1402,10 @@ c0            -0.0006      0.000     -1.389      0.165      -0.001       0.000
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   1.917</td> 
 </tr>
 <tr>
-  <th>Date:</th>             <td>Thu, 08 Jan 2026</td> <th>  Prob (F-statistic):</th>  <td> 0.124</td>  
+  <th>Date:</th>             <td>Thu, 15 Jan 2026</td> <th>  Prob (F-statistic):</th>  <td> 0.124</td>  
 </tr>
 <tr>
-  <th>Time:</th>                 <td>10:41:46</td>     <th>  Log-Likelihood:    </th> <td> -5764.7</td> 
+  <th>Time:</th>                 <td>14:25:27</td>     <th>  Log-Likelihood:    </th> <td> -5764.7</td> 
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  9919</td>      <th>  AIC:               </th> <td>1.154e+04</td>
@@ -1482,10 +1482,10 @@ c0            -0.0006      0.000     -1.389      0.165      -0.001       0.000
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   31.53</td> 
 </tr>
 <tr>
-  <th>Date:</th>             <td>Thu, 08 Jan 2026</td> <th>  Prob (F-statistic):</th> <td>2.82e-20</td> 
+  <th>Date:</th>             <td>Thu, 15 Jan 2026</td> <th>  Prob (F-statistic):</th> <td>2.82e-20</td> 
 </tr>
 <tr>
-  <th>Time:</th>                 <td>10:41:46</td>     <th>  Log-Likelihood:    </th> <td> -5717.1</td> 
+  <th>Time:</th>                 <td>14:25:27</td>     <th>  Log-Likelihood:    </th> <td> -5717.1</td> 
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  9919</td>      <th>  AIC:               </th> <td>1.144e+04</td>
