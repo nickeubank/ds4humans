@@ -1,0 +1,146 @@
+% !TEX program = lualatex
+
+\documentclass[12pt]{beamer}
+% For handout add ,handout after 11pt
+
+\usetheme{auriga}
+\usecolortheme{auriga}
+
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{color}
+
+% Set up emoji support with a fallback font
+\newfontfamily\emojifont{Apple Color Emoji}[Renderer=Harfbuzz]
+\DeclareTextFontCommand{\emoji}{\emojifont}
+
+% Beamer list spacing
+% \setlength{\leftmargini}{1.5em}
+\setlength{\topsep}{1em}
+\setlength{\itemsep}{1em}
+\setlength{\parskip}{1.5em}
+\setlength{\parsep}{0.5em}
+
+% define some colors for a consistent theme across slides
+\definecolor{red}{RGB}{181, 23, 0}
+\definecolor{blue}{RGB}{0, 118, 186}
+\definecolor{gray}{RGB}{146, 146, 146}
+
+\title{SUTVA \& Indicator Variables}
+
+\author{Nick Eubank}
+
+\date{\vspace*{.3in} \date}
+
+\begin{document}
+\setbeamercolor{page number in head/foot}{fg=white}
+
+\begin{frame}[c]{}
+    \titlepage
+\end{frame}
+
+\begin{frame}[c]{Potential Outcome Assumptions}
+Hiding in all that math is a big assumption: \\[1.5ex]
+
+\alert{Stable Unit Treatment Value Assumption (SUTVA)}
+
+\begin{itemize}
+    \item Treatment is homogeneous across units
+    \item Treatment status of one unit does not effect treatment status of others.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[c]{SUTVA Exercise 1}
+It's 2021, and the Covid Epidemic is in fully swing. Duke wants to test a new covid vaccine. \\[1.5ex]
+
+They propose give half of Duke students the vaccine and half a place. \\[1.5ex]
+
+They then intend to measure differences in covid positive rates over the following 3 months.
+
+\begin{itemize}
+    \item Why does this violate SUTVA? 
+    \item How could you fix the problem?
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[c]{SUTVA Exercise 1: Answers}
+\begin{itemize}
+    \item Why does this violate SUTVA? \\[1ex]
+    \pause Duke students who receive placebo are at less risk of covid because half of their friends are no longer getting sick! By making control and treatment look more similar than they would if everyone was treated or if everyone was untreated, \alert{the estimated effect of the vaccine will be lower than the true ATE.}
+    \pause \item How could you fix the problem?
+    \begin{itemize}
+        \item Treat (or don't treat) entire dorms.
+        \item Give it to a much smaller proportion of students. 
+        \item Don't use Duke students — use people from Durham.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+% \begin{frame}[c]{SUTVA Exercise 1}
+% Instagram is testing a change to their feed algorithm. \\[1ex]
+
+% The treatment is that for 10\% of users, their feeds will only show happy content. \\[1ex]
+
+% They outcome they measure is whether these users spend more time on Instagram than users with the current feed algorithm. 
+
+% \begin{itemize}
+%     \item Why does this violate SUTVA? 
+%     \item How could you fix the problem?
+% \end{itemize}
+
+% \end{frame}
+
+\begin{frame}[c]{SUTVA Exercise 2}
+Uber is considering paying drivers more per trip to entice more drivers onto the road.\\[1.5ex]
+
+\pause They run an experiment where 10\% drivers in Durham experience this higher pay model.\\[1.5ex]
+
+The outcome they measure is overall driver earnings.
+
+\begin{itemize}
+    \item Why does this violate SUTVA? 
+    \item How could you fix the problem?
+\end{itemize}
+\end{frame}
+
+\begin{frame}[c]{SUTVA Exercise 2: Answers}
+
+\begin{itemize}
+    \item Why does this violate SUTVA? \\[1.5ex]
+    \begin{itemize}
+        \pause \item The higher pay may cause more drivers to be out on the road from the treatment group.
+        \pause \item This will make it harder for control drivers to pick up rides.
+        \pause \item But also: it won't increase people on the road as much as the new rate would if it were offered to all drivers, so the drivers with higher pay will face \emph{less} competition for rides than if everyone had the treatment.
+        \pause \item So this would \alert{increase} the apparent effectiveness of the policy.
+    \end{itemize}    
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[c]{SUTVA Exercise 2: Answers}
+
+\begin{itemize}
+    \pause \item How could you fix the problem?
+    \begin{itemize}
+        \pause \item Assign entire cities to control or treatment. Compare cities.
+        \pause \item Randomize across days or weeks.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[c]{Indicator Vars: Does Applicant Get Loan? (Binary Outcome)}
+\includegraphics[width=0.8\textwidth]{images/loan_regression_interact.png}
+\vspace*{-0.4cm}
+\small
+\begin{enumerate}
+    \item How much more likely is a White college grad to get a loan than a White non-college grad? (``poc'' = ``person of color'')\\[-0.5em]
+    \item How much more likely is a non-White college grad to get a loan than a non-White non-college grad?\\[-0.5em]
+    \item How much more likely is a non-White college grad to get a loan than a White non-college grad?
+\end{enumerate}
+\end{frame}
+
+\end{document}
