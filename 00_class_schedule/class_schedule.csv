@@ -10,7 +10,7 @@ Th Jan 15,Causal Questions: Potential Outcomes,"- `Potential Outcomes Framework 
   - Read Chpt 4 in Cunningham from start (different presentation of potential outcomes).
   - Note that Cunningham uses the term Simple Difference in Outcomes (SDO) instead of $\widehat{ATE}$ (the term I use). They are perfectly interchangable.",- `Ex <../99_exercises/exercise_potential_outcomes1.html>`_
 Tu Jan 20,Causal Questions: Potential Outcomes,"- Cunningham, Chpt 4, pp 135 (""Independence Assumption"") - 148 (Stop at ""Randomization Inference"")
-- `Indicator Variables <../35_causal/30_interpreting_indicator_vars.html>`_",
+- `Indicator Variables <../35_causal/30_interpreting_indicator_vars.html>`_",- `Ex <../99_exercises/exercise_resume_experiment.html>`_
 Th Jan 22,"Causal Questions: Experiments in Practice, Internal Validity","Experiments: Internal Validity (In Practice):
 
 - KTX: Chpt 2 (End to End Example)
