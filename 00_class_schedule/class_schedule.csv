@@ -15,36 +15,35 @@ Th Jan 22,"Causal Questions: Experiments in Practice, Internal Validity","- `Lim
 
 Experiments: Internal Validity (In Practice):
 
-- KTX: Chpt 2 (End to End Example)",
+- KTX: Chpt 2 (End to End Example)",- `Ex <../99_exercises/exercise_resume_experiment.html>`_
 Tu Jan 27,"Causal Questions: Experiments in Practice, Internal Validity","Finishing Internal Validity: 
 
 - KTX: Chpt 3, ""Threats to Internal Validity"" (p. 42-47) 
 - KTX: Chpt 19 (A/A Testing)
-- Different Randomizations: KTX Chpt 22 (all)
-",
+- KTX: Chpt 22 (Managing Spillovers)
+",- `Ex <../99_exercises/exercise_abtesting.html>`_
 Th Jan 29,"Causal Questions: Experiments in Practice, External Validity","Experiments: External Validity (In Practice):
 
-- `Chpt 15, Experiments and External Validty <../30_questions/45_causal_questions_external.html>`_
-- KTX, Chpt 3, """"Threats to External Validity"""" to end (p. 47-54)
-- KTX, Chpt 23 (Primacy Effects / Long Term Decay)""",
-Tu Feb 3,"Causal Questions: Experiments in Practice, Design",Overall Evaluation Criteria: KTX Chpt 7.,
-Th Feb 5,,"Designing Experiments
+- `Experiments and External Validty <../30_questions/45_causal_questions_external.html>`_
+- KTX: Chpt 3, ""Threats to External Validity"" to end (p. 47-54)
+- KTX: Chpt 23 (read all)","Causal Questions: Experiments in Practice, External Validity"
+Tu Feb 3,"Causal Questions: Experiments in Practice, Design","- KTX: Chpt 7 (Overall Evaluation Criteria)
+- `Don't stop experiments early! <../35_causal/35_endogenous_stopping.html>`_",
+Th Feb 5,"Causal Questions: Experiments in Practice, Design","Designing Experiments
 
-- Statistical Power and Sample Sizes: GHV Ch 16
-- `Don't stop experiments early! <../35_causal/35_endogenous_stopping.html>`_
-
- 
-",
+- Ellis, Chpt 3 (On Canvas)
+- Optional: Statistical Power and Sample Sizes: GHV Ch 16 
+",- `Ex <../99_exercises/exercise_power_calculations.html>`_
 Tu Feb 10,"Causal Questions: Experiments in Practice, P-Value Interpretation","- Statistical Decision Theory (on Canvas). 550-556 (This is same as IDS 705 Lecture 8 Reading)
-- `Assessing Statistical Results: Magnitude, Precision, and Model Uncertainty <https://doi.org/10.1080/00031305.2018.1537889>`_",
+- `Assessing Statistical Results: Magnitude, Precision, and Model Uncertainty <https://doi.org/10.1080/00031305.2018.1537889>`_",`Causal Report <../97_project/30_causal.html>`_
 Th Feb 12,AB Testing Review,,
 Tu Feb 17,Causal Questions: Regression,"- `Causal Beyond Experiments <../35_causal/40_causal_inference_beyond_ab_testing.html>`_
-- Angrist and Pischke, Mastering Metrics, Chpt 2",
+- Angrist and Pischke, Mastering Metrics, Chpt 2",- `Ex <../99_exercises/exercise_resume_experiment.html>`_
 Th Feb 19,Causal Questions: Matching,"- `The Why of Matching <../35_causal/80_matching_why.html>`_
 - `The How of Matching Summary <../35_causal/90_matching_how.html>`_
 - `Methods for Matching <https://youtu.be/tvMyjDi4dyg?t=910>`_
 
-*Watch the video above from about 15 minutes in (where link starts) till at least 45 minutes in, keep going if you want to learn about propensity score matching problems.*",
+*Watch the video above from about 15 minutes in (where link starts) till at least 45 minutes in, keep going if you want to learn about propensity score matching problems.*",- `Ex <../99_exercises/exercise_matching.html>`_
 Tu Feb 24,Causal Questions: Matching,"- Cunningham, Chpt 5, 206 (""Propensity Score Methods"") - 234 (Start of ""Coarsened exact matching"")
 - `Why You Should Never Use Propensity Score Matching <https://youtu.be/rBv39pK1iEs?si=9S3SigdBIc0BrcRR>`_",
 Th Feb 26,Causal Questions: Panels and Fixed Effects,,
@@ -56,32 +55,32 @@ Th Mar 5,Causal Questions: Differences and Differences / ,"- Cunningham, Chpt 9 
  (dont need to follow everything, but here's a real diff-in-diff)
  
  - `Enfranchisement and Incarceration <https://www.cambridge.org/core/journals/american-political-science-review/article/enfranchisement-and-incarceration-after-the-1965-voting-rights-act/C68FA7BB8CA313BDD8D9A39BA666A21D>`_
- - `Diff-in-Diffs at Netflix <https://netflixtechblog.com/key-challenges-with-quasi-experiments-at-netflix-89b4f234b852>`_",
+ - `Diff-in-Diffs at Netflix <https://netflixtechblog.com/key-challenges-with-quasi-experiments-at-netflix-89b4f234b852>`_",- `Ex <../99_exercises/exercise_diffindiff.html>`_
 Tu Mar 10,**NO CLASS**,,
 Th Mar 12,**NO CLASS**,,
 Tu Mar 17,Teams 1,"- `What Project Aristotle Learned <https://github.com/nickeubank/unifyingdatascience/raw/master/team_readings/project_aristotle_nytimes.pdf>`_
 - Edmondson, The Fearless Organization, Chpt 1 (on Canvas)
-- **Problem and Questions Due**",
+- **Problem and Questions Due**",`Debrief Ex <../99_exercises/exercise_teams1.html>`_
 Th Mar 19,Teams 2,"- `Review Team Charter Assignment <https://github.com/nickeubank/unifyingdatascience/raw/master/team_readings/MIDS%20Team%20Charter%20Assignment.docx>`_
 - Edmondson, Teaming, Chpt 2 (on Canvas)
  
- Optional: `Fostering Psychological Safety Tips <https://docs.google.com/document/d/1PsnDMS2emcPLgMLFAQCXZjO7C4j2hJ7znOq_g2Zkjgk/export?format=pdf>`_",
+ Optional: `Fostering Psychological Safety Tips <https://docs.google.com/document/d/1PsnDMS2emcPLgMLFAQCXZjO7C4j2hJ7znOq_g2Zkjgk/export?format=pdf>`_",`Team Report <../97_project/10_exploratory_report.html>`_
 Tu Mar 24,Prescriptive v. Descriptive Questions,"- `Chpt 2 <../10_introduction/40_data_science_in_historical_context.html>`_
 - `Chpt 5 <../30_questions/05_descriptive_v_prescriptive.html>`_",
 Th Mar 26,"Exploratory Questions: Purpose, Internal and External Validity","- `Chpt 6 <../30_questions/10_using_exploratory_questions.html>`_
-- `Chpt 7 <../30_questions/15_answering_exploratory_questions.html>`_",
+- `Chpt 7 <../30_questions/15_answering_exploratory_questions.html>`_",`Team Project <../97_project/00_problem_and_exploratory.html>`_
 Tu Mar 31,Solving Problems by Answering Questions,"- `Read, sign, submit syllabus on gradescope. <https://github.com/nickeubank/ds4humans/raw/refs/heads/main/98_syllabus/Syllabus_IDS701.pdf?download=>`_
 - `How to Read <../40_in_practice/00_how_to_read_this_book.html>`_
 - `Chpt 1 <../10_introduction/10_solving_problems_with_data.html>`_ 
-   - **Whenever I list a Chpt number, you may assume it includes all subparts unless I say otherwise.** So this includes all three big idea subsections.",
+   - **Whenever I list a Chpt number, you may assume it includes all subparts unless I say otherwise.** So this includes all three big idea subsections.",`Questions Ex <../99_exercises/exercise_class2_probs_and_questions.html>`_
 Th Apr 2,Stakeholder Management,"- `Chpt 3 <../20_problems_to_questions/10_solving_the_right_problem.html>`_
 - `Why It's Important To Get Your Question Right (30 min video) <https://www.youtube.com/watch?v=kYMfE9u-lMo>`_
-- `Chpt 4 <../20_problems_to_questions/20_stakeholder_management.html>`_",
-Tu Apr 7,Exploratory Questions: Internal Validity Concerns,- `Chpt 8 <../30_questions/16_exploratory_internal_challenges.html>`_,
+- `Chpt 4 <../20_problems_to_questions/20_stakeholder_management.html>`_",`Stakeholder Ex <../99_exercises/exercise_stakeholder_management.html>`_
+Tu Apr 7,Exploratory Questions: Internal Validity Concerns,- `Chpt 8 <../30_questions/16_exploratory_internal_challenges.html>`_,`Exploratory Ex <../99_exercises/exercise_exploratory.html>`_
 Th Apr 9,"Passive Prediction Questions: Purpose, Internal Validity 1","- `Chpt 9 <../30_questions/20_using_passive_prediction_questions.html>`_
 - `Chpt 10 <../30_questions/23_passive_internal_alignment_and_bias.html>`_
 - `Chpt 11 <../30_questions/24_passive_internal_errors.html>`_ ONLY FIRST READING, not Fairness
-- `Total Error Framework <https://academic.oup.com/poq/article/85/S1/399/6359490>`_",
-Tu Apr 14,Passive Prediction Questions: Internal Validity 2,- `Chpt 11 Fairness Section <../30_questions/25_passive_fairness.html>`_,
-April 16-26,Graduate Reading Period,- **Optional Due Date for Causal Rough Draft (11pm)**,
-April 30ish,In Person Final Exam,- **YES AN IN PERSON FINAL — PLEASE EXPECT TO BE HERE IN PERSON**,
+- `Total Error Framework <https://academic.oup.com/poq/article/85/S1/399/6359490>`_",`Passive P Ex <../99_exercises/exercise_passive_prediction.html>`_
+Tu Apr 14,Passive Prediction Questions: Internal Validity 2,- `Chpt 11 Fairness Section <../30_questions/25_passive_fairness.html>`_,`Car Buyer <../99_exercises/exercise_used_car.html>`_
+April 16-26,Graduate Reading Period,- **Optional Due Date for Causal Rough Draft (11pm)**,x
+April 30ish,In Person Final Exam,- **YES AN IN PERSON FINAL — PLEASE EXPECT TO BE HERE IN PERSON**,x

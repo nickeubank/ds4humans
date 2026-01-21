@@ -20,7 +20,7 @@ This course will make use of readings from a handful of different sources. The m
 - **Cunningham**: `Causal Inference Mixtape <https://www.amazon.com/Causal-Inference-Mixtape-Scott-Cunningham/dp/0300251688>`_ ($30 new, $20 used. `Online Access through Duke Library <https://ebookcentral.proquest.com/lib/duke/detail.action?docID=6425560>`_)
 - **KTX**: `Trustworthy Online Controlled Experiments: A Practical Guide to A/B Testing <https://www.amazon.com/gp/product/1108724264/>`_ ($40 new, $30 used.)
 - **GHV**: `Regression and Other Stories <https://www.amazon.com/Regression-Stories-Analytical-Methods-Research/dp/1107676517>`_ ($40. Too new to have used versions.)
-
+- **Ellis**: `The Essential Guide to Effect Sizes <https://www.amazon.com/Essential-Guide-Effect-Sizes-Interpretation/dp/0521142466>`_ (Free online through duke library)
 
 .. csv-table::
    :file: class_schedule.csv

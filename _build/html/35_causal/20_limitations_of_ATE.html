@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Limitations of Experiments (and Average Treatment Effects) &#8212; Solving Problems With Data</title>
+    <title>Limitations of Average Treatment Effects &#8212; Solving Problems With Data</title>
   
   
   
@@ -406,7 +406,7 @@ commentsRunWhenDOMLoaded(addUtterances);
       
       
       
-      <li><a href="../_sources/35_causal/20_limitations_of_ATE.ipynb" target="_blank"
+      <li><a href="../_sources/35_causal/20_limitations_of_ATE.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -416,7 +416,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -490,7 +490,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Limitations of Experiments (and Average Treatment Effects)</h1>
+    <h1>Limitations of Average Treatment Effects</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -513,23 +513,23 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="limitations-of-experiments-and-average-treatment-effects">
-<h1>Limitations of Experiments (and Average Treatment Effects)<a class="headerlink" href="#limitations-of-experiments-and-average-treatment-effects" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="limitations-of-average-treatment-effects">
+<h1>Limitations of Average Treatment Effects<a class="headerlink" href="#limitations-of-average-treatment-effects" title="Link to this heading">#</a></h1>
 <p>We’ve now discussed at length all the magical things we get from randomized experiments. But let’s take a moment to also discuss some of the limitations – both practical and conceptual – of experiments and the “average treatment effect” (ATE) framework.</p>
 <section id="who-s-average">
 <h2>Who’s Average?<a class="headerlink" href="#who-s-average" title="Link to this heading">#</a></h2>
 <p>Of all the potential problems with ATE, perhaps the biggest is that <em>it’s just an average</em>.</p>
 <p>If everyone in our data has the same response to treatment (in the lingo, if we have “homogeneous treatment effects”), then this isn’t a problem – estimating the average treatment amounts to estimating every individual’s individual treatment effect.</p>
 <p>In the real world, however, there are almost always heterogeneous (varying) treatment effects across groups and individuals.</p>
-<p>Consider the following example: In 2018, the FDA approved a new drug for treating chronic migraines (Aimovig) that is being hailed by some as a “game changer” in migraine treatment. As is required for drug approval in the US, the pharmaceutical companies developing Aimovig had to undergo clinical trials in which a random sample of people with chronic migraines were given Aimovig (treatment), and a random sample was not (control). They then calculated an “Average Treatment Effect,” which the FDA then used to determine whether to release the drug. If you see an ad for Aimovig, you’ll probably see this ATE reported as follows:</p>
+<p>Consider the following example: In 2018, the FDA approved a new drug for treating chronic migraines (Aimovig) that is being hailed by some as a “game changer” in migraine treatment. As is required for drug approval in the US, the pharmaceutical companies developing Aimovig had to conduct clinical trials in which a random sample of people with chronic migraines received Aimovig (treatment), and a random sample did not (control). They then calculated an “Average Treatment Effect,” which the FDA then used to determine whether to release the drug. If you see an ad for Aimovig, you’ll probably see this ATE reported as follows:</p>
 <p><img alt="migraine_average_effect" src="../_images/migraine_average_effect1.png" /></p>
 <p>Cool! Setting aside the fact the companies selling Aimovig are pushing the reduction in migraines count from before the trial to after (and hiding the actual difference between control and treatment in the fine print – <em>any</em> medical intervention tends to reduces symptoms, so you really do have to compare outcomes between treatment and control groups), the ATE of the drug appears to be about 2-3 fewer days of migraine a month (reduction of 6-7 in treatment minus 4 in control) for people who have 15+ headaches and &gt;8 migraines a month.</p>
 <p>That’s good – chronic migraines can be a crippling disability, and any improvements are exciting – but you’d be excused for asking why people are so excited about what seems like a relatively small reduction.</p>
 <p>The answer is that the treatment effect of Aimovig is <em>extremely</em> heterogeneous. <em>Most</em> people who take Aimovig see little to no benefit, but <em>some</em> (depending on your criteria, something like 40%) see their migraine frequency fall by 50% or more.</p>
 <p>And herein lies the problem of ATE: it doesn’t tell us about the <em>distribution</em> of effects.</p>
-<p>To help understand heterogeneous effects, it is common in analyzing experiments to look for differences in outcomes among sub-populations. For example, we might split our sample into men and women, and see if the treatment effect among men is different from the treatment effect among women.</p>
+<p>To help understand heterogeneous effects, it is common in experimental analyses to look for differences in outcomes across subpopulations. For example, we might split our sample into men and women and see whether the treatment effect differs between the two groups.</p>
 <p>This can be especially important in interventions that may have disproportionate impacts on certain sub-populations. A sales tax, for example, may have a low average effect on the amount of money households have to spend on their children’s education, but among low-income households, that effect may be very large.</p>
-<p>Here again, we see the role of researcher values in data science – if you <em>just</em> present someone with an average treatment effect, they will generally interpret it as “the” treatment effect, so it’s up to you to ensure that decision makers are aware of not just the <em>average</em> effect of an action, but also the distribution of consequences.</p>
+<p>Here again, we see the role of researcher discretion and values in data science — if you <em>just</em> present someone with an average treatment effect, they will generally interpret it as “the” treatment effect, so it’s up to you to ensure that decision makers are aware of not just the <em>average</em> effect of an action, but also the distribution of consequences.</p>
 <p>(On a technical note: splitting your sample also reduces the sample size in each bucket, so it reduces your statistical power. That means it isn’t always feasible – usually you can only do it for proportionately large groups in your data (men and women), but not small groups (say, Latino households with two children making less than $30,000 a year.)</p>
 </section>
 <section id="heterogeneous-treatment-effects-no-differential-treatment-effects">
