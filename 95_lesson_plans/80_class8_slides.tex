@@ -1,0 +1,86 @@
+% !TEX program = lualatex
+
+\documentclass[12pt]{beamer}
+% For handout add ,handout after 11pt
+
+\usetheme{auriga}
+\usecolortheme{auriga}
+
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{color}
+
+% Set up emoji support with a fallback font
+\newfontfamily\emojifont{Apple Color Emoji}[Renderer=Harfbuzz]
+\DeclareTextFontCommand{\emoji}{\emojifont}
+
+% Beamer list spacing
+% \setlength{\leftmargini}{1.5em}
+\setlength{\topsep}{1em}
+\setlength{\itemsep}{1em}
+\setlength{\parskip}{1.5em}
+\setlength{\parsep}{0.5em}
+
+% define some colors for a consistent theme across slides
+\definecolor{red}{RGB}{181, 23, 0}
+\definecolor{blue}{RGB}{0, 118, 186}
+\definecolor{gray}{RGB}{146, 146, 146}
+
+\title{Overall Evaluation Criteria \& P-Values}
+
+\author{Nick Eubank}
+
+\date{\vspace*{.3in} \date}
+
+\begin{document}
+\setbeamercolor{page number in head/foot}{fg=white}
+
+\begin{frame}[c]{}
+    \titlepage
+\end{frame}
+
+
+\begin{frame}[c]{P-Values}
+\includegraphics[width=\textwidth]{images/resume_experiment_regression_table.png}
+
+\alert{What is the probability that the *true* effect} of reporting computer skills on your resume \alert{is 0} and that the difference we see between resumes with and without reported computer skills is the result of chance variation?
+\end{frame}
+
+\begin{frame}[c]{P-Values}
+
+Want to know: $Pr(H_0 \text{ is true})$\\[1ex]
+where $H_0$ is our Null Hypothesis of zero effect. 
+
+\pause Or, to be more precise, we want to know:
+
+$\text{what we want to know: } Pr(H_0 \text{ is true}|\text{Observed Data})$
+
+\pause And doesn't that *feel* like what a p-value is?
+
+\end{frame}
+
+\begin{frame}[c]{P-Values}
+But p-value \alert{$\neq$} $Pr(H_0 \text{ is true}|\text{Observed Data})$ \\[2ex]
+
+\pause p-value \alert{$\equiv$} $Pr(\text{Observed Data}|H_0 \text{ is true})$ \\[1ex]
+\pause probability we would observe a coefficient at least this large \emph{in a world where the Null Hypothesis is true}
+\end{frame}
+
+\begin{frame}[c]{P-Values}
+
+How do $Pr(\text{Observed Data}| H_0 \text{ is true})$ and $Pr(H_0 \text{ is true}|\text{Observed Data})$ relate? \\[1ex]
+
+\pause The answer is given by Bayes Rule:
+
+$$Pr(A|B) = \frac{Pr(B|A)Pr(A)}{Pr(B)}$$
+
+\pause 
+Fudging a little:
+
+$$Pr(H_0 \text{ is true}|\text{Data}) = \frac{\alert{Pr(\text{Data}| H_0 \text{is true})} * Pr(H_0 \text{is true})}{Pr(\text{Data})}$$
+
+\end{frame}
+
+
+\end{document}
