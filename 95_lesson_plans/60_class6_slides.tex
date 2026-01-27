@@ -1,0 +1,64 @@
+% !TEX program = lualatex
+
+\documentclass[12pt]{beamer}
+% For handout add ,handout after 11pt
+
+\usetheme{auriga}
+\usecolortheme{auriga}
+
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{color}
+
+% Set up emoji support with a fallback font
+\newfontfamily\emojifont{Apple Color Emoji}[Renderer=Harfbuzz]
+\DeclareTextFontCommand{\emoji}{\emojifont}
+
+% Beamer list spacing
+% \setlength{\leftmargini}{1.5em}
+\setlength{\topsep}{1em}
+\setlength{\itemsep}{1em}
+\setlength{\parskip}{1.5em}
+\setlength{\parsep}{0.5em}
+
+% define some colors for a consistent theme across slides
+\definecolor{red}{RGB}{181, 23, 0}
+\definecolor{blue}{RGB}{0, 118, 186}
+\definecolor{gray}{RGB}{146, 146, 146}
+
+\title{Experiments and Internal Validity}
+
+\author{Nick Eubank}
+
+\date{\vspace*{.3in} \date}
+
+\begin{document}
+\setbeamercolor{page number in head/foot}{fg=white}
+
+\begin{frame}[c]{}
+    \titlepage
+\end{frame}
+
+\begin{frame}[c]{Experiments \& Causal Assumptions}
+\begin{enumerate}
+    \item No baseline differences\\[1ex]
+    Very likely (known probability) given \alert{randomization \& law of large numbers.} 
+    \pause \item No differential treatment effects\\[1ex] 
+    Very likely (known probability) given \alert{randomization \& law of large numbers.} 
+    \pause \item SUTVA / No Interference: \\[1ex]
+    Choice of randomization units. \\[1ex]
+    Requires \alert{critical reasoning/domain expertise}. 
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[c]{Experimental Internal Validity Checks}
+
+\begin{enumerate}
+    \pause \item Balance tests: are pre-treatment co-variates balanced across arms?
+    \pause \item Sample ratio: does number of people in treatment and control match expectation given randomization?
+    \pause \item A/A test: checks whether testing infrastructure induces differences.
+\end{enumerate}
+\end{frame}
+
+\end{document}
