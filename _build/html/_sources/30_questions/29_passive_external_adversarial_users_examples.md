@@ -6,7 +6,7 @@
 
 Whenever we deploy a model or algorithm to make decisions, that deployment changes what behavior is rewarded — that is, that deployment changes the *incentives* faced by actors. And people respond to incentives. Indeed, even when we try to design our model to reward *exactly* what we want, alignment issues are sure to arise, creating space between what we *want* our model to reward and what it *actually* rewards.
 
-It is for this reason that an empirical regularity may be a good basis for answering Passive Predictive Questions in historical data, but often fails once the model is actually deployed — because deployment itself causes changes in behavior. 
+It is for this reason that an empirical regularity may be a good basis for answering Passive Predictive Questions in historical data, but often fails once the model is actually deployed — because deployment itself causes changes in behavior.
 
 To illustrate just how pervasive this is, this reading details a set of examples of adversarial users in domains ranging from internet search to car insurance.
 
@@ -71,13 +71,3 @@ To prevent this, US health insurance policies only allow people to enroll or cha
 [^qualified]: Legally, health insurance companies also have to let you change policies if you experience one of several "qualifying life events," like changing jobs or having a baby.
 
 Similarly, some health insurance policies are only open to qualified customers. For example, Duke has several health insurance policies only available to Duke faculty and employees. Most people who are especially prone to illness can't just "become a Duke employee," so adverse selection is less of a concern for this group of customers. That helps ensure Duke employees don't end up with excessive medical bills, allowing the insurance provider to provide Duke employees with lower-cost insurance.
-
-
-
-
-
-
-
-
-
-
