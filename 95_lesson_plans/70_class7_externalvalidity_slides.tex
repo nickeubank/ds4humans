@@ -1,0 +1,217 @@
+% !TEX program = lualatex
+
+\documentclass[12pt]{beamer}
+% For handout add ,handout after 11pt
+
+\usetheme{auriga}
+\usecolortheme{auriga}
+
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{color}
+
+% Set up emoji support with a fallback font
+\newfontfamily\emojifont{Apple Color Emoji}[Renderer=Harfbuzz]
+\DeclareTextFontCommand{\emoji}{\emojifont}
+
+% Beamer list spacing
+% \setlength{\leftmargini}{1.5em}
+\setlength{\topsep}{1em}
+\setlength{\itemsep}{1em}
+\setlength{\parskip}{1.5em}
+\setlength{\parsep}{0.5em}
+
+% define some colors for a consistent theme across slides
+\definecolor{red}{RGB}{181, 23, 0}
+\definecolor{blue}{RGB}{0, 118, 186}
+\definecolor{gray}{RGB}{146, 146, 146}
+
+\title{Experiments and External Validity}
+
+\author{Nick Eubank}
+
+\date{\vspace*{.3in} \date}
+
+\begin{document}
+\setbeamercolor{page number in head/foot}{fg=white}
+
+\begin{frame}[c]{}
+    \titlepage
+\end{frame}
+
+\begin{frame}[c]{External Validity}
+External validity is the extent to which \alert{the effect measured in a study} is a good estimate for \alert{the effect in a different context.} \\[1ex]
+\pause Do the results \emph{generalize.} \\[2ex]
+\pause External validity can depend on many things:
+\begin{itemize}
+    \pause \item Are the entities in the study drawn from the same population in the new setting?
+    \pause \item Is the treatment the same in the new setting?
+    \pause \item Is the broader context the same in the new setting (artificiality)?
+\end{itemize}
+\end{frame}
+
+\begin{frame}[c]{External Validity: Sample Composition}
+White men \alert{over-represented} in medical studies.
+\begin{itemize}
+    \pause \item Cardiac drug doses often too high for women.
+    \pause \item Other cardiac drugs interact poorly with gene common in Asian and Pacific Islanders.
+    \pause \item Turns out Multiple Sclerosis driven by a different mutation in Black than European descendants.
+\end{itemize}
+\pause Psychology studies mostly run on Western, Educated students from Industrialized, Rich, and Democratic countries (they're WEIRD). \\[1ex]
+\end{frame}
+
+\begin{frame}[c]{External Validity: Treatment Differences}
+A new car dealer sends out mailers offering \$3,000 off list.\\[1ex]
+Customers who receive more likely to come buy car in following 6 months. \\[1ex]
+\pause Will that generalize to:
+\begin{itemize}
+    \item \$1,000 discount?
+    \item Mailers from used car dealership?
+    \item Coupons handed out by hand?
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[c]{External Validity: Artificiality}
+Often a \alert{tension between internal and external validity.} \\[1ex]
+\pause More control (in lab, measure everything, etc.), the more likely to get internal validity. \\[1ex]
+\alert{BUT:} \\[1ex]
+May create an artificiality that reduces external validity.\\[1ex]
+\pause (One explanation for medical study issues)
+\begin{itemize}
+    \item \alert{Hawthorne Effect}: People behave differently when know observed. \\[1ex]
+    \pause Originally documented in studies of workers.  
+\end{itemize}
+\end{frame}
+
+\begin{frame}[c]{External Validity}
+But enough of the easy causes...
+\end{frame}
+
+
+\begin{frame}[c]{External Validity: Exercise 1}
+Durham Hard Cider Company (DHCC) has a new hard cider. Available Durham restaurants, but sales are weak. \\[1ex]
+
+ \pause DHCC offered free samples in randomly selected Durham restaurants. Sales of new cider \alert{jumped 30\% in following weeks}. \\[1ex]
+
+\begin{itemize}
+    \pause \item Do you think free samples would have \alert{the same effect in Chapel Hill?} \\[1ex] 
+    In other words, do you think this result is \alert{likely to generalize/have high external validity to Chapel Hill?}
+    \pause \item Do you think free samples would have \alert{the same effect for Bud Light?}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[c]{External Validity}
+The external validity of a study is not \alert{singular}. \\[1ex] 
+\pause External validity is always defined \alert{with respect to the context to which one wishes to generalize the results.} \\[2ex] 
+
+\pause The same study may have very \alert{high} external validity to the context of one business, but \alert{low} external validity to the context of another business. \\[1ex]
+\pause Distinguishes internal validity from external validity.
+\end{frame}
+
+
+\begin{frame}[c]{External Validity: Exercise 2a}
+Apple offers a \$300 discount on laptops in a randomly selected set of cities. \\[1ex]
+
+Sales on day of the sale so good (compared to sales in other cities), Apple considering lowering list prices. 
+
+\begin{itemize}
+    \pause \item Do you think sales would increase the same amount \alert{if Apple reduced prices everywhere?}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[c]{External Validity: Exercise 2b}
+A national used car dealership chain offers \$1,000 discount at locations in a random set of cities. \\[1ex]
+
+Sales on day of the sale so good (compared to sales in their other locations), company considering lowering list prices. 
+
+\begin{itemize}
+    \pause \item Do you think sales would increase the same amount \alert{if the dealer reduced prices everywhere?}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[c]{External Validity: Time-shifting \& Competition}
+Primacy and novelty effects are the only reason short-term studies may not generalize. \\[1ex]
+\pause Sales and promotions have multiple effects on consumers.
+\begin{itemize}
+    \pause \item Win customers from competitors \\[0.5ex]
+    \pause Real gains (though competitors may eventually respond)
+    \pause \item Time-shift purchases \\[0.5ex]
+    \pause Illusory gains.
+\end{itemize}
+\pause Relative magnitudes depend on produce and market structure.
+\end{frame}
+
+\begin{frame}[c]{External Validity: Exercise 3a}
+Bing has launched a new algorithm that makes search results slightly worse. \\[1ex]
+
+A/B testing shows that because users don't get the ``right'' result as quickly, they tend to search more and thus see more ads, increasing revenue!
+
+\begin{itemize}
+    \pause \item If you ran Bing, would you adopt this new algorithm?
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[c]{External Validity: Exercise 3b}
+Google has launched a new algorithm that makes search results slightly worse. \\[1ex]
+
+A/B testing shows that because users don't get the ``right'' result as quickly, they tend to search more and thus see more ads, increasing revenue!
+
+\begin{itemize}
+    \pause \item If you ran Google, would you adopt this new algorithm? \\[1ex]
+    \pause \item Guess what? They did! (According to a lot of docs and reporting from google trial)
+\end{itemize}
+\end{frame}
+
+\begin{frame}[c]{External Validity: Exercise 4}
+Google is revising its algorithm (to actually help customers). \\[1ex]
+
+Google has found good recipe sites (non-spam sites) tend to have additional, novel prose around the recipe. \\[1ex]
+
+A/B testing shows promoting these pages increases user recipe searches over 1 month period. \\[1ex]
+
+\begin{itemize}
+    \pause \item Do you think this result is likely to hold if rolled out globally \alert{over the long run?} Why or why not?
+\end{itemize}
+\end{frame}
+
+\begin{frame}[c]{External Validity: General Equilibrium Effects}
+In reading, discussed Rajasthani nurses.\\[1ex]
+\pause \alert{Adversarial users} are people who \alert{change their behavior in response to the deployment of an algorithm} specifically to take advantage of the system. \\[1ex]
+\pause Search Engine Optimization (SEO) is one of the quintessential examples. \\[2ex]
+We'll talk more about this later this semester — it comes up a \emph{lot} in machine learning — but other examples include:
+
+\begin{itemize}
+    \item Financial fraud: keeping purchases under \$10,000, or stealing tiny amounts from lots of accounts.
+    \item Content policing: ``unalive,'' ``seggs''
+    \item Surge pricing: drivers who coordinate to create apparent driver ``shortages'' by all signing off.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[c]{External Validity: Recap}
+    \begin{enumerate}
+    \pause\item External validity is not singular.
+    \pause \item Simple considerations: 
+        \begin{itemize}
+            \pause \item Sample composition
+            \pause \item Treatment substance
+            \pause \item Broader context/artificiality
+        \end{itemize}
+    \pause \item Short-versus-long term
+        \begin{itemize}
+            \pause \item Primacy and novelty effects
+            \pause \item Time-switching v. competition
+        \end{itemize}
+    \pause \item General Equilibrium Effects
+        \begin{itemize}
+            \item Political Responses (Rajasthan)
+            \item Adversarial Users
+        \end{itemize}
+    \pause \item Others?
+    \end{enumerate}
+\end{frame}
+
+\end{document}
