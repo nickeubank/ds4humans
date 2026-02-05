@@ -635,13 +635,14 @@ document.write(`
 <p>Or, to ask the same question in the language of the Potential Outcomes Framework, what is their <span class="math notranslate nohighlight">\(Y\)</span>?</p>
 <p>Or to ask the same question in the language of Kohavi, Tang and Xu, what is their <em>Overall Evaluation Criterion (OEC)</em>?</p>
 <p>(I’m only asking one question, I’m just trying to phrase it using different terminologies we’ve encountered to help you see how they all fit together)</p>
-<p>When you feel like you have your answer, please compute it. Store the average value of the variable in <code class="docutils literal notranslate"><span class="pre">results</span></code> under the key <code class="docutils literal notranslate"><span class="pre">ex4_avg_oec</span></code>. <strong>Please round your answer to 4 decimal places.</strong></p>
+<p>When you feel like you have your answer, please compute it. Store the <strong>average value of the OEC variable</strong> you constructed in <code class="docutils literal notranslate"><span class="pre">results</span></code> under the key <code class="docutils literal notranslate"><span class="pre">ex4_avg_oec</span></code>. <strong>Please round your answer to 4 decimal places.</strong></p>
+<p>The goal here is not to measure the treatment effect yet, just to construct the OEC and make sure you did it correctly.</p>
 <p>NOTE: You’ll probably notice you have two choices to make when it comes to actually computing the OEC.</p>
 <ul class="simple">
 <li><p>You could probably imagine either computing a ratio or a difference of two things — please calculate the difference.</p></li>
 <li><p>You may also be unsure whether to normalize by <code class="docutils literal notranslate"><span class="pre">Clicks</span></code>. Normalizing by clicks will help account for variation that comes from day-to-day variation in users, so it’s a good thing to do. With infinite data, you’d expect to get the same results without normalizing by <code class="docutils literal notranslate"><span class="pre">Clicks</span></code> (since on average the same share of users are in each arm of the experiment), but for finite data it’s a good strategy. Note that this is only ok because users make the choice to click or not <em>before</em> they see different versions of the website (it is “pre-treatment”).</p></li>
 </ul>
-<p>Just to make sure you’re on track, your measure should have an average value of <em>about</em> 9%.</p>
+<p>Just to make sure you’re on track, your measure should have an average value of <em>about</em> 9% (but you should submit to autograder as 0.09xx).</p>
 </section>
 <section id="exercise-5">
 <h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Link to this heading">#</a></h3>
