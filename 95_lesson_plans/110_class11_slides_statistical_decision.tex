@@ -75,12 +75,12 @@ Frequentist:
     \pause In binary setting: null hypothesis is true or not
     \pause \item But our estimates are uncertain because of sampling.
 \end{itemize}
-Bayesian:
+\pause Bayesian:
 \begin{itemize}
-    \item $\theta$ is a random variable.
-    \item We are trying to estimate the distribution of likely values of $\theta$.
+    \pause \item $\theta$ is a random variable.
+    \pause \item We are trying to estimate the distribution of likely values of $\theta$.
+    \pause \item Explicitly accounts for prior beliefs.
 \end{itemize}
-Fundamentally: is the random variable \alert{the data} or \alert{$\theta$}?
 \end{frame}
 
 \begin{frame}[c]{Frameworks}
@@ -89,7 +89,7 @@ Fundamentally: is the random variable \alert{the data} or \alert{$\theta$}?
     \begin{itemize}
         \pause \item Frequentist.
         \pause \item Binary decision.
-        \pause \item 🤮
+        \pause \item \emoji{🤮}
     \end{itemize}
     \pause \item \alert{Maximum Likelihood Estimation}
     \begin{itemize}
@@ -120,6 +120,22 @@ The distribution of the Maximum Likelihood Estimator ($Pr(data|\theta)$) converg
 
 \pause So in small sample you have to be careful, but treating confidence intervals \alert{as if} they are the distribution of the likely true value of a coefficient is \alert{defensible}.
 \end{frame}
+
+\begin{frame}[c]{Bernstein-von Mises Theorem}
+How fast does MLE Sampling Distribution converge to Bayesian Posterior Distribution?\\[2ex]
+Depends, but in general faster when priors are weak (meaning before you ran your analysis, you would put similar likelihood on all possible values of $\theta$).
+\begin{itemize}
+    \pause \item The stronger your priors, the slower the convergence.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Bernstein-von Mises Theorem}
+Why? \\[2ex]
+\pause \alert{Priors is information that sets Frequentist and Bayesian stats apart}. \\[1ex]
+\pause But eventually, enough data will always overwhelm your priors. \\[1ex]
+\pause At that point, Frequentist and Bayesian begin to converge.
+\end{frame}
+
 
 \begin{frame}[c]{Summary}
 \begin{enumerate}
