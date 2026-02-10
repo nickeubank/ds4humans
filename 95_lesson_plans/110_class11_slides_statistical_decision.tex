@@ -1,0 +1,151 @@
+% !TEX program = lualatex
+
+\documentclass[12pt]{beamer}
+% For handout add ,handout after 11pt
+
+\usetheme{auriga}
+\usecolortheme{auriga}
+
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{color}
+
+% Set up emoji support with a fallback font
+\newfontfamily\emojifont{Apple Color Emoji}[Renderer=Harfbuzz]
+\DeclareTextFontCommand{\emoji}{\emojifont}
+
+% Beamer list spacing
+% \setlength{\leftmargini}{1.5em}
+\setlength{\topsep}{1em}
+\setlength{\itemsep}{1em}
+\setlength{\parskip}{1.5em}
+\setlength{\parsep}{0.5em}
+
+% define some colors for a consistent theme across slides
+\definecolor{red}{RGB}{181, 23, 0}
+\definecolor{blue}{RGB}{0, 118, 186}
+\definecolor{gray}{RGB}{146, 146, 146}
+
+\title{Statistical Decision-Making \& Uncertainty}
+
+\author{Nick Eubank}
+
+\date{\vspace*{.3in} \date}
+
+\begin{document}
+\setbeamercolor{page number in head/foot}{fg=white}
+
+\begin{frame}[c]{}
+    \titlepage
+\end{frame}
+
+
+\begin{frame}[c]{Frequentist Hypothesis Testing}
+\pause \alert{Binary} Decision Making: Reject Null Hypothesis if $p <$ threshold.
+\begin{enumerate}
+    \pause \item ``No effect'' is a strawman
+    \pause \item Binary. But ``surely, God loves the .06 nearly as much as the .05.''
+    \pause \item Conflated: depends on sample size \alert{and} effect size.
+\end{enumerate}
+\end{frame}
+
+
+
+\begin{frame}[c]{Frequentist Hypothesis Testing}
+``Statistical Significance'' does not mean \alert{substantively} significant. \\[1ex]
+\begin{itemize}
+    \pause \item $H_0$ of zero effect is a straw man.
+    \pause \item Consequently, there will \alert{always exist} a sample size that will allow you to reject the null hypothesis of zero. Always.
+\end{itemize}
+\pause So clearly we can't just rely on hypothesis testing.
+\end{frame}
+
+\begin{frame}[c]{Evaluating Evidence}
+Empirical research generates \alert{evidence}. \\[1ex]
+\pause Interpretation of evidence requires \alert{judgment.}  \\[2ex]
+\pause So how can we evaluate results more holistically?
+\end{frame}
+
+\begin{frame}[c]{Frameworks}
+Frequentist:
+\begin{itemize}
+    \pause \item There is a single value of $\theta$\\
+    \pause i.e., $\theta$ is not a random variable!\\
+    \pause In binary setting: null hypothesis is true or not
+    \pause \item But our estimates are uncertain because of sampling.
+\end{itemize}
+Bayesian:
+\begin{itemize}
+    \item $\theta$ is a random variable.
+    \item We are trying to estimate the distribution of likely values of $\theta$.
+\end{itemize}
+Fundamentally: is the random variable \alert{the data} or \alert{$\theta$}?
+\end{frame}
+
+\begin{frame}[c]{Frameworks}
+\begin{enumerate}
+    \item \alert{Hypothesis Testing}
+    \begin{itemize}
+        \pause \item Frequentist.
+        \pause \item Binary decision.
+        \pause \item 🤮
+    \end{itemize}
+    \pause \item \alert{Maximum Likelihood Estimation}
+    \begin{itemize}
+        \pause \item Still frequentist. \\
+        \pause \item Gives estimate of ``most likely'' value.\\
+        \pause \item Asymptotically, gives sampling distribution of estimate \alert{$Pr(\text{data}| \theta)$}.
+    \end{itemize}
+    \pause \item \alert{Bayesian}
+    \begin{itemize}
+        \item Matches intuitive idea: estimating \alert{$Pr(\theta|\text{data})$}.
+    \end{itemize}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[c]{Confidence Intervals}
+\pause Suppose we move from \emph{Hypothesis Testing} framework to \emph{Maximum Likelihood} framework.\\[1ex]
+\pause Under some assumptions, coefficient is MLE estimate $\theta$\\[1ex]
+\pause Asymptotically, our estimate has a Normal sampling distribution:
+$$\hat{\theta} \sim N(\theta, \sigma^2)$$
+\pause Matching confidence intervals given in regression.\\[1ex]
+So can we say that there's a 95\% probability that the true value of $\theta$ is inside that confidence interval? \\[1ex]
+\pause \emph{Technically} no — it is, or it isn't.\\[1ex] 
+Before you collect data, you can say there's a 95\% chance you'll draw data that generates an estimate with a confidence interval that includes true $\theta$. \pause \alert{But...}
+\end{frame}
+
+\begin{frame}[c]{Bernstein-von Mises Theorem}
+The distribution of the Maximum Likelihood Estimator ($Pr(data|\theta)$) converges to the Bayesian posterior distribution $Pr(\theta|data)$ as $n\rightarrow \infty$ given ``reasonable'' priors.\\[1ex]
+
+\pause So in small sample you have to be careful, but treating confidence intervals \alert{as if} they are the distribution of the likely true value of a coefficient is \alert{defensible}.
+\end{frame}
+
+\begin{frame}[c]{Summary}
+\begin{enumerate}
+    \item Hypothesis Testing
+    \begin{itemize}
+        \pause \item Defined in small samples, but very problematic.
+        \pause \item Binary, conflates magnitude and precision.
+    \end{itemize}
+    \pause \item Maximum Likelihood
+    \begin{itemize}
+        \pause \item Still frequentist, still kinda incoherent.
+        \pause \item \emph{But} it converges to Bayesian as $n\rightarrow \infty$
+    \end{itemize}
+    \pause\item Bayesian
+    \begin{itemize}
+        \pause \item What you're thinking of intuitively.
+    \end{itemize}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[c]{Summary}
+    \alert{In large samples}, treating confidence intervals \alert{as if} they are the distribution of the likely true value of a coefficient is \alert{defensible}.\\[1ex]
+    \pause Caveats:
+    \begin{itemize}
+        \pause \item Assumes MLE properly specified (ignores model uncertainty).
+        \pause \item Not true in small samples!
+    \end{itemize}
+\end{frame}
+\end{document}
