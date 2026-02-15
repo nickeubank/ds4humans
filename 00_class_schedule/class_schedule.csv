@@ -36,7 +36,7 @@ Th Feb 5,"Causal Questions: Experiments in Practice, Design","Designing Experime
 Tu Feb 10,"Causal Questions: Experiments in Practice, P-Value Interpretation","- Statistical Decision Theory (on Canvas). 550-556 (This is same as IDS 705 Lecture 8 Reading)
 - `Assessing Statistical Results: Magnitude, Precision, and Model Uncertainty <https://doi.org/10.1080/00031305.2018.1537889>`_",
 Th Feb 12,AB Testing Review,,
-Tu Feb 17,Causal Questions: Regression,"- `Causal Beyond Experiments <../35_causal/40_causal_inference_beyond_ab_testing.html>`_
+Tu Feb 17,Causal Questions: Regression,"- `Causal Beyond Experiments <../30_questions/50_causal_beyond_ab.html>`_
 - Angrist and Pischke, Mastering Metrics, Chpt 2",
 Th Feb 19,Causal Questions: Matching,"- `The Why of Matching <../35_causal/80_matching_why.html>`_
 - `The How of Matching Summary <../35_causal/90_matching_how.html>`_
@@ -81,5 +81,5 @@ Th Apr 9,"Passive Prediction Questions: Purpose, Internal Validity 1","- `Chpt 9
 - `Chpt 11 <../30_questions/24_passive_internal_errors.html>`_ ONLY FIRST READING, not Fairness
 - `Total Error Framework <https://academic.oup.com/poq/article/85/S1/399/6359490>`_",
 Tu Apr 14,Passive Prediction Questions: Internal Validity 2,- `Chpt 11 Fairness Section <../30_questions/25_passive_fairness.html>`_,
-April 16-26,Graduate Reading Period,- **Optional Due Date for Causal Rough Draft (11pm)**,x
-April 30ish,In Person Final Exam,- **YES AN IN PERSON FINAL — PLEASE EXPECT TO BE HERE IN PERSON**,x
+April 16-26,Graduate Reading Period,- **Optional Due Date for Causal Rough Draft (11pm)**,
+April 30ish,In Person Final Exam,- **YES AN IN PERSON FINAL — PLEASE EXPECT TO BE HERE IN PERSON**,
