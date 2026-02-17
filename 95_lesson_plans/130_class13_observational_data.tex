@@ -1,0 +1,82 @@
+% !TEX program = lualatex
+
+\documentclass[12pt]{beamer}
+% For handout add ,handout after 11pt
+
+\usetheme{auriga}
+\usecolortheme{auriga}
+
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{color}
+
+% Set up emoji support with a fallback font
+\newfontfamily\emojifont{Apple Color Emoji}[Renderer=Harfbuzz]
+\DeclareTextFontCommand{\emoji}{\emojifont}
+
+% Beamer list spacing
+% \setlength{\leftmargini}{1.5em}
+\setlength{\topsep}{1em}
+\setlength{\itemsep}{1em}
+\setlength{\parskip}{1.5em}
+\setlength{\parsep}{0.5em}
+
+% define some colors for a consistent theme across slides
+\definecolor{red}{RGB}{181, 23, 0}
+\definecolor{blue}{RGB}{0, 118, 186}
+\definecolor{gray}{RGB}{146, 146, 146}
+
+\title{Observational Data \& Regressions}
+
+\author{Nick Eubank}
+
+\date{\vspace*{.3in} \date}
+
+\begin{document}
+\setbeamercolor{page number in head/foot}{fg=white}
+
+\begin{frame}[c]{}
+    \titlepage
+\end{frame}
+
+\begin{frame}
+    \frametitle{Omitted Variable Bias}
+We want to know the effect of $D_i$ on $Y$. Suppose the causal relationship is:
+    \begin{eqnarray}
+    Y_i = \alpha^L + \beta^L D_i + \gamma A_i + e_i^L
+    \end{eqnarray}
+\pause But suppose we \emph{estimate}:
+\begin{eqnarray}
+Y_i =\alpha^S + \beta^S D_i + e_i^S
+\end{eqnarray}
+\pause Omitted Variable Bias is the difference between the true coefficient $\beta^L$ and the coefficient we estimate $\beta^S$.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Omitted Variable Bias}
+    \begin{eqnarray}
+    Y_i &=& \alpha^L + \beta^L D_i + \gamma A_i + e_i^L  \nonumber\\
+Y_i &=&\alpha^S + \beta^S D_i + e_i^S \nonumber
+\end{eqnarray}
+    So what is $\beta^L - \beta^S$?
+\pause 
+    \begin{eqnarray}
+\beta^L - \beta^S &=& \text{relation between }A_i\text{ and }D_i * \text{ Effect of } A_i \nonumber \\
+\pause \beta^L - \beta^S &=& \pi_1 * \gamma \nonumber
+    \end{eqnarray}
+Where $\pi_1$ comes from estimating $A_i = \pi_0 + \pi_1D_i + \mu_i$
+\end{frame}
+
+\begin{frame}
+    \frametitle{Omitted Variable Bias}
+    \begin{eqnarray}
+\beta^L - \beta^S &=& \text{relation between }A_i\text{ and }D_i * \text{ Effect of } A_i \nonumber \\
+\beta^L - \beta^S &=& \pi_1 * \gamma \nonumber
+\end{eqnarray}
+Remember our 2x2 discussion of baseline differences $E(Y^0|D=1) = E(Y^0|D=0)$? \\[1ex]
+\pause Asked for reason people with different $Y^0$ would sort differentially into $D=0$ and $D=1$. \\[1ex]
+\pause In other words, we needed an unobserved factor ($A_i$) that was correlated with $D$ ($\pi_1 \neq 0$) and $Y^0$ ($\gamma \neq 0$).
+\end{frame}
+
+\end{document}
