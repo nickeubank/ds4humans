@@ -41,6 +41,25 @@
 \end{frame}
 
 \begin{frame}
+    \frametitle{Observational Data}
+No baseline differences: $E(Y^0|D=1) = E(Y^0|D=0)$ \\[1ex]
+\begin{itemize}
+    \pause \item Experiments: ensure with Law of Large Numbers
+\end{itemize}
+\pause If we can't randomize, then we don't get to rely on LLN. So then what? \\[1ex]
+\pause Welcome to observational data!
+\end{frame}
+
+\begin{frame}
+    \frametitle{Observational Data}
+Suppose there \emph{are} baseline differences. \\[1ex]
+\pause Suppose also that we understand the source of those differences! \\[1ex]
+\pause Can we \emph{adjust} for those differences? \\[1ex]
+\pause $E(Y^0|D=1, X) = E(Y^0|D=0, X)$ \\[1ex]
+That's what causal inference with observational data is all about.
+\end{frame}
+
+\begin{frame}
     \frametitle{Omitted Variable Bias}
 We want to know the effect of $D_i$ on $Y$. Suppose the causal relationship is:
     \begin{eqnarray}
