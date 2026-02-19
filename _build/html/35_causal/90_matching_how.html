@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -526,7 +526,7 @@ document.write(`
 <ol class="arabic simple">
 <li><p>Loop over all your treated observations.</p></li>
 <li><p>For each treated observation, look for the most similar untreated observation (not already in a pair) in terms of your control variables.</p></li>
-<li><p>If that untreated observation is too dissimilar to the treated observation, throw away the treated observation. (As the user you have to pick a threshold for how dissimilar is ok).</p></li>
+<li><p>If that untreated observation is too dissimilar to the treated observation, throw away the treated observation. (As the user, you have to pick a threshold for how dissimilar is ok).</p></li>
 <li><p>If not, call them a pair and keep both.</p></li>
 <li><p>When you’ve finished looping over your treated observations, throw away any unpaired untreated observations.</p></li>
 </ol>
@@ -539,35 +539,37 @@ document.write(`
 <section id="measuring-similarity">
 <h3>Measuring Similarity<a class="headerlink" href="#measuring-similarity" title="Link to this heading">#</a></h3>
 <p>The biggest decision you have to make when doing matching is deciding how you want to measure whether two observations are “similar.”</p>
-<p>The most simple, commonly used strategy is what is called “Mahalanobis Distance Matching.” In DMD, distance between two observations is measured by:</p>
-<p>Calculate the difference between the observations in their value of each explanatory variable (so in the toy example above, the difference in the value of education).
-Normalize that difference by dividing the difference by the standard deviation of the explanatory variable. This helps ensure that the units of each explanatory variable don’t matter.
-Squared those normalized values, add them up, and take the square root of the sum.</p>
+<p>The simplest, most commonly used strategy is called “Mahalanobis Distance Matching.” In MDM, the distance between two observations is measured by:</p>
+<ul class="simple">
+<li><p>Calculating the difference between the observations in the value of each explanatory variable (so in the toy example above, the difference in the value of education)</p></li>
+<li><p>Normalizing that difference by dividing the difference by the standard deviation of the explanatory variable. This helps ensure that the units of each explanatory variable don’t matter.</p></li>
+<li><p>Squaring those normalized values, add them up, and take the square root of the sum.</p></li>
+</ul>
 <p>(So basically, calculate Euclidean distance in terms of units normalized by variables’ standard deviations).</p>
-<p>Of course this is not the only strategy – the video linked at the bottom of this reading will direct you to a talk on three very good strategies, as well as their strengths and weaknesses – but that’s the idea.</p>
+<p>Of course, this is not the only strategy – the video linked at the bottom of this reading will direct you to a talk on three very good strategies, as well as their strengths and weaknesses – but that’s the idea.</p>
 </section>
 </section>
 <section id="when-can-should-i-use-matching">
 <h2>When Can / Should I Use Matching?<a class="headerlink" href="#when-can-should-i-use-matching" title="Link to this heading">#</a></h2>
 <p>Matching is best used in a somewhat odd situation: a place where you have some overlap in what your treated and untreated observations look like (called having “common support”) but where you also have some areas where they <em>don’t</em> overlap (imbalance).</p>
-<p>The first is necessary because when you prune your data, the goal is to keep only observations that look similar, so you need <em>some</em> area of overlap, or you won’t have anything to match!</p>
+<p>The first is necessary because, when you prune your data, the goal is to keep only observations that look similar, so you need <em>some</em> overlap, or you won’t have anything to match!</p>
 <p>At the same time, however, if there’s <em>no</em> imbalance, then you don’t really need to do matching.</p>
-<p>So in other words, you use matching in situations where the distribution of explanatory variables have <strong>both</strong> areas of overlap and areas of imbalance.</p>
+<p>So, in other words, you use matching when the distribution of explanatory variables has <strong>both</strong> areas of overlap and imbalance.</p>
 </section>
 <section id="checking-balance">
 <h2>Checking Balance<a class="headerlink" href="#checking-balance" title="Link to this heading">#</a></h2>
-<p>There’s a balance you have to strike when matching: the more strict you are about the maximium dissimilarity you’re willing to include before you throw out a pair of observations, the more balanced your final dataset will be, but the smaller your dataset will be do.</p>
+<p>There’s a balance you have to strike when matching: the more strict you are about the maximum dissimilarity you’re willing to include before you throw out a pair of observations, the more balanced your final dataset will be, but the smaller your dataset will be.</p>
 <p>Right? If you reject any pairs that aren’t almost exactly identical, you’ll end up with less data, but what’s left will be more balanced.</p>
-<p>So for your application, you have to decide on whether it’s better to have the statistical power of more observations, or the better balance from fewer.</p>
+<p>So, for your application, you have to decide whether it’s better to have the statistical power of more observations or a better balance from fewer.</p>
 </section>
 <section id="analyze">
 <h2>Analyze!<a class="headerlink" href="#analyze" title="Link to this heading">#</a></h2>
-<p>Now the best part of matching: now you just do do what you would have done normally.</p>
+<p>Now the best part of matching: you just do what you would normally do.</p>
 <p>In other words, you can think of this as a kind of “pre-processing step”, and now you can carry forward by feeding this into a regression just the way you would with the original data.</p>
 </section>
 <section id="specific-models">
 <h2>Specific Models<a class="headerlink" href="#specific-models" title="Link to this heading">#</a></h2>
-<p>OK, for the details of a few common models, please go watch this great video by Gary King – you can probably start 15 minuntes in, and should watch till at least 45 minutes, though what follows is also really interesting!</p>
+<p>OK, for the details of a few common models, please go watch this great video by Gary King – you can probably start at 15 minutes in and watch till at least 45 minutes, though what follows is also really interesting!</p>
 <p><a class="reference external" href="https://youtu.be/tvMyjDi4dyg?t=910">Gary King on Matching</a></p>
 </section>
 </section>

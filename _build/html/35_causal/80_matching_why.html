@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -528,64 +528,65 @@ document.write(`
 <p>“But wait!” you may say: we have all sorts of test statistics for evaluating what fits our data best, so shouldn’t we be able to just pick the specification with the best [insert test statistic of choice here]?</p>
 <p>Yes… most of the time. But you get into trouble when you want to use a model fit on data that covers a certain range of values to make predictions about outcomes outside that range. For example, consider the following example:</p>
 <p><img alt="basic_dependency.png" src="../_images/basic_dependency.png" /></p>
-<p>Here, we have a model where <em>either</em> a quadratic functional form or a linear functional form fits our data extremely well. <em>Maybe</em> there’s a third decimal place distinction in some test statistics, but really, they’re the same <em>in the area where we have our actual data</em>.</p>
+<p>Here, we have a model in which <em>either</em> a quadratic or a linear functional form fits our data extremely well. <em>Maybe</em> there’s a third decimal place distinction in some test statistics, but really, they’re the same <em>in the area where we have our actual data</em>.</p>
 <p>Now suppose you’re asked to make predictions about outcomes at, say, <span class="math notranslate nohighlight">\(x=5\)</span>. Out there, the functional form you choose has a tremendous impact! This is an example of “model dependence” that you can’t resolve with standard regression diagnostics.</p>
 <p>Note that “model dependence” is a condition that depends on the application. If you fit this model to predict <span class="math notranslate nohighlight">\(Y\)</span> at <span class="math notranslate nohighlight">\(x=1.02315\)</span>, there’s probably very little model dependence. But if you want to predict a value at <span class="math notranslate nohighlight">\(x=5\)</span>, there is. Something we’ll come back to.</p>
 </section>
 <section id="model-dependency-causal-inference-and-imbalance">
 <h2>Model Dependency, Causal Inference, and Imbalance<a class="headerlink" href="#model-dependency-causal-inference-and-imbalance" title="Link to this heading">#</a></h2>
 <p>OK, fine, but I <em>know</em> I’m never supposed to extrapolate that far from my data, so who cares?</p>
-<p>Well… funny story: it turns out we do this in causal inference all the time. That’s because if our treatment group and our control groups look very different from one another, then we are sometimes actually extrapolating a relationship we estimate <em>from the control group data</em> to estimate what the treatment group would look like in areas where we have no actual data from the treatment group.</p>
-<p>To illustrate, suppose we have the following observational data (i.e. this is data from the world, not a randomized experiment). It’s made up, but let’s pretend it comes from a survey of consumers, where Treatment is whether the customer came to the store with a coupon, and “Outcome” is spending. Red T’s are consumers who came into the store with coupons, blue Cs are consumers who came in without coupons. (Again: they chose whether to bring in coupons — this is not an experiment!)</p>
+<p>Well… funny story: it turns out we do this in causal inference all the time. That’s because if our treatment and control groups look very different from one another, we sometimes actually extrapolate a relationship we estimate <em>from the control group data</em> to what the treatment group would look like in areas where we have no actual data from the treatment group.</p>
+<p>To illustrate, suppose we have the following observational data (i.e., that is, data from the world, not a randomized experiment). It’s made up, but let’s pretend it comes from a consumer survey, where “Treatment” is whether the customer came to the store with a coupon, and “Outcome” is spending. Red T’s are consumers who came into the store with coupons, blue Cs are consumers who came in without coupons. (Again: they chose whether to bring in coupons — this is not an experiment!)</p>
 <p><img alt="matching_king_1" src="../_images/matching_king_1.png" /></p>
-<p>As you can see, this data is badly <em>imbalanced</em>, meaning that consumers’ education values are very different for our control and treatment populations. For the control group, Education ranges all the way from 12-28 years, while our treated group only has observations between 16 and 24.</p>
-<p><strong>Warning:</strong> the way the term “imbalanced” is being used in this literature is very different from how it is used in the machine learning literature (where it describes data in which a target variable is mostly of one class). This is just another situation where scholars from different academic traditions use the same term but mean entirely different things.</p>
+<p>As you can see, this data is severely <em>imbalanced</em>, meaning that consumers’ educational values differ significantly between our control and treatment populations. For the control group, Education ranges all the way from 12-28 years, while our treated group only has observations between 16 and 24.</p>
+<p><strong>Warning:</strong> The way the term “imbalanced” is being used in this literature is very different from how it is used in the machine learning literature (where it describes data in which a target variable is mostly of one class). This is just another situation where scholars from different academic traditions use the same term but mean entirely different things.</p>
 <p>Why does this matter? Suppose we fit the following regression:</p>
 <div class="math notranslate nohighlight">
 \[Y = \alpha + \beta_1 treat + \beta_2 educ + \epsilon\]</div>
 <p>That fit would look something like this:</p>
 <p><img alt="matching_king_2" src="../_images/matching_king_2.png" /></p>
 <p>As you can see, Treatment is above Control, so our model is saying our coupon had a large positive treatment effect!</p>
-<p>That clearly seems stange, though. The model is not doing a good job of fitting those control observations, so instead let’s try this:</p>
+<p>That clearly seems strange, though. The model is not doing a good job of fitting those control observations, so instead let’s try this:</p>
 <div class="math notranslate nohighlight">
 \[Y = \alpha + \beta_1 treat + \beta_2 educ + \beta_3 educ^2 + \epsilon\]</div>
 <p>That looks like this:</p>
 <p><img alt="matching_king_3" src="../_images/matching_king_3.png" /></p>
 <p>Well, now the model suggests the treatment effect is <em>negative</em> (the red fit is lower than the blue fit)!</p>
-<p>So which is right? Well, the thing that should probably make us uncomfortable is that the way we drew that red parabola is that while we technically fit the model on the full dataset, the shape of that curve is being driven entirely by control observations (since there are no treated observations on either side of the education distribution). Our treatment observations played no meaningful role in the inverted U-shape the model is estimating.</p>
-<p>Now, if you want to take a strong theoretical position and say “I’m really confident education plays the same role for people who brought in coupons as those who did not,” then you can stop here. But if you think it’s possible that the way education shapes spending is different for control consumers and treated consumers, then it should make you uncomfortable that our model of the relationship between education and spending is coming entirely from control consumers.</p>
+<p>So which is right? Well, the thing that should probably make us uncomfortable is that the way we drew that red parabola is that while we technically fit the model on the full dataset, the shape of that curve is being driven entirely by control observations (since there are no treated observations on either side of the education distribution). Our treatment observations played no meaningful role in the inverted U-shape that the model is estimating.</p>
+<p>Now, if you want to take a strong theoretical position and say, “I’m really confident education plays the same role for people who brought in coupons as those who did not,” then you can stop here. But if you think it’s possible that the way education shapes spending is different for control consumers and treated consumers, then it should make you uncomfortable that our model of the relationship between education and spending is coming entirely from control consumers.</p>
 <p>And that’s where matching comes in.</p>
 </section>
 <section id="matching-better-thought-of-as-pruning">
 <h2>Matching: Better thought of as pruning<a class="headerlink" href="#matching-better-thought-of-as-pruning" title="Link to this heading">#</a></h2>
 <p>When you hear the term “matching,” your first thought is probably that the method’s goal is to find pairs of observations that are similar and compare them. And you wouldn’t be <em>wrong</em> in thinking that, but I think that framing misses what <em>differentiates</em> matching from methods like regression.</p>
-<p>A better way to think of matching is as a method for <em>pruning</em> observations — like those control observations with high and low educations — that can’t be matched to similar treated observations.</p>
-<p>In other words, at its core, matching is about pruning back your dataset until you’re left with control and treatment observations that look relatively similar. Any control observations that are completely unlike any treatment observation (in terms of our explanatory variables) you drop, and any treatment observations that are completely unlike any controls you drop.</p>
+<p>A better way to think of matching is as a method for <em>pruning</em> observations — like control observations with high and low education levels — that can’t be matched to similar treated observations.</p>
+<p>In other words, at its core, matching is about pruning back your dataset until you’re left with control and treatment observations that look relatively similar. Any control observations that are completely unlike any treatment observation (in terms of our explanatory variables), you drop, and any treatment observations that are completely unlike any controls, you drop.</p>
 <p>So if we did a form of matching on this dataset — the technical details of exactly what form of matching we did don’t matter — we’d end up with a dataset that looks something like this, where dropped observations are greyed out:</p>
 <p><img alt="matching_king_4" src="../_images/matching_king_4.png" /></p>
-<p>As you can see, we’ve dropped all the control observations that are completely unlike our treatment variables. As a result, the range of education for control variables and treatment variables is about the same — we have a “balanced” dataset.</p>
-<p>And now it doesn’t matter if we do a simple linear fit or if we include a quadratic term – the results look exactly the same (i.e. no model dependence):</p>
+<p>As you can see, we’ve dropped all the control observations that are completely unlike our treatment variables. As a result, the ranges of the control and treatment variables are about the same — we have a “balanced” dataset.</p>
+<p>And now it doesn’t matter if we do a simple linear fit or if we include a quadratic term – the results look exactly the same (i.e., no model dependence):</p>
 <p><img alt="matching_king_5" src="../_images/matching_king_5.png" /></p>
+<p>And if we limit our focus to these observations, we see that regardless of the functional form we put in our regression, we get no treatment effect.</p>
 <p>And if we limit our focus to these observations, we see that regardless of the functional form we put in our regression, we get no treatment effect.</p>
 </section>
 <section id="the-cost-of-matching">
 <h2>The Cost of Matching<a class="headerlink" href="#the-cost-of-matching" title="Link to this heading">#</a></h2>
-<p>So, what do we lose when we do matching? The main answer is that the group of people for whom our treatment effect is being estimated is changing dramatically. We aren’t estimating an effect for the whole population we started with; we’re only estimating the effect for this smaller group where T and C overlap, which may or may not be useful in later applications.</p>
-<p>In these observational causal studies, we often have far more control observations than treatment observations. Moreover, the control observations will often cover a much bigger range of your explanatory variables. If not many people get treated, it makes sense that the people who get treated may all look similar and so may fall into a smaller range of, say, education than the general populous.</p>
-<p>In these situations – where during matching you get to keep all your treated observations because they all have close controls, but you drop some controls — then what you’re estimating is the Average Treated on the Treated, which isn’t half bad (it’s often all we get with observational data).</p>
-<p>But the impact is a little more complicated if you have Treated observations that don’t look like <em>any</em> control observations. If you end up dropping both control and treatment observations during matching, then you’re estimating an effect on… the sample of people in the range of explanatory variables for which there are both treated and untreated observations. And that’s a more unusual quantity.</p>
+<p>So, what do we lose when we do matching? The main answer is that the group of people for whom our treatment effect is being estimated is changing dramatically. We aren’t estimating the effect for the whole population we started with; we’re only estimating it for this smaller group where T and C overlap, which may or may not be useful in later applications.</p>
+<p>In these observational causal studies, we often have far more control observations than treatment observations. Moreover, the control observations will often cover a much bigger range of your explanatory variables. If not many people get treated, it makes sense that the people who get treated may all look similar and so may fall into a smaller range of, say, education than the general population.</p>
+<p>In these situations – where, during matching, you get to keep all your treated observations because they all have close controls, but you drop some controls — then what you’re estimating is the Average Treated on the Treated, which isn’t half bad (it’s often all we get with observational data).</p>
+<p>But the impact is a little more complicated if you have treated observations that don’t look like <em>any</em> control observations. If you end up dropping both control and treatment observations during matching, then you’re estimating an effect on… the sample of people in the range of explanatory variables for which there are both treated and untreated observations. And that’s a more unusual quantity.</p>
 </section>
 <section id="causal-inference-assumptions">
 <h2>Causal Inference Assumptions<a class="headerlink" href="#causal-inference-assumptions" title="Link to this heading">#</a></h2>
 <p>Before closing our discussion of the high-level pros and cons of matching, it’s worth emphasizing one crucial point: both matching and good old-fashioned linear regression rest on the same basic assumption when it comes to causal inference: there are no baseline differences between the treatment and control groups <em>after conditioning on observable variables</em>. In matching, we are just conditioning on observatory variables differently.</p>
-<p>Matching, in other words, is a way to address possible <em>modeling errors</em>, not to fundamentally change what assumptions we’re making about the differences between treatment and control groups in terms of potential outcomes.</p>
+<p>Matching, in other words, is a way to address possible <em>modeling errors</em>, not to fundamentally change the assumptions we make about the differences between treatment and control groups in terms of potential outcomes.</p>
 </section>
 <section id="in-summary">
 <h2>In Summary<a class="headerlink" href="#in-summary" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Matching is really best thought of a way of <strong>pruning</strong> your data to a sample where C and T observations look similar (impoves balance)</p></li>
+<li><p>Matching is really best thought of as a way of <strong>pruning</strong> your data to a sample where C and T observations look similar (improves balance)</p></li>
 <li><p>Where the original data has observations of C and T that <em>don’t</em> look similar (it’s imbalanced), matching helps reduce the sensitivity of results to the functional form assumptions you make in your regression.</p></li>
-<li><p>But by changing the data on which you’re making an estimate, you are also changing the actually population for which you’re estimating your effect, which may be important to understand.</p></li>
+<li><p>But by changing the data on which you’re making an estimate, you are also changing the actual population for which you’re estimating your effect, which may be important to understand.</p></li>
 <li><p>To use matching for causal inference, you have to make the same basic assumption you use for regular linear regression: controlling for observable differences is enough to eliminate baseline differences in terms of potential outcomes for our treated and untreated observations.</p></li>
 </ul>
 </section>
