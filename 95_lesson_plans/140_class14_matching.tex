@@ -1,0 +1,238 @@
+% !TEX program = lualatex
+
+\documentclass[12pt]{beamer}
+% For handout add ,handout after 11pt
+
+\usetheme{auriga}
+\usecolortheme{auriga}
+
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{color}
+\usepackage{tikz}
+
+% Set up emoji support with a fallback font
+\newfontfamily\emojifont{Apple Color Emoji}[Renderer=Harfbuzz]
+\DeclareTextFontCommand{\emoji}{\emojifont}
+
+% Beamer list spacing
+% \setlength{\leftmargini}{1.5em}
+\setlength{\topsep}{1em}
+\setlength{\itemsep}{1em}
+\setlength{\parskip}{1.5em}
+\setlength{\parsep}{0.5em}
+
+% define some colors for a consistent theme across slides
+\definecolor{red}{RGB}{181, 23, 0}
+\definecolor{blue}{RGB}{0, 118, 186}
+\definecolor{gray}{RGB}{146, 146, 146}
+
+\title{Functional Forms \& Matching}
+
+\author{Nick Eubank}
+
+\date{\vspace*{.3in} \date}
+
+\begin{document}
+\setbeamercolor{page number in head/foot}{fg=white}
+
+\begin{frame}[c]{}
+    \titlepage
+\end{frame}
+
+\begin{frame}
+    \frametitle{Functional Forms}
+\pause You work for a mortgage lender building a credit-risk model.\\[1ex]
+You are analyzing historic mortgages, regressing delinquency on mortgage features. \\[1ex]
+\pause You fit the following model:
+\begin{eqnarray}
+    delinquency_i = \beta_0 &+& \beta_1 credit\_score_i + \beta_2 income_i \nonumber \\
+    & +&  \beta_3 interest\_rate_i + \epsilon_i \nonumber
+\end{eqnarray}
+What \alert{functional form assumptions} are implicit in this specification?
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Functional Forms}
+\begin{eqnarray}
+    delinquency_i = \beta_0 &+& \beta_1 credit\_score_i + \beta_2 income_i \nonumber \\
+    & +&  \beta_3 interest\_rate_i + \epsilon_i \nonumber
+\end{eqnarray}
+\pause Question 1:
+\begin{itemize}
+    \item Borrower A's income rises from \$20,000 to \$30,000
+    \item Borrower B's income rises from \$100,000 to \$110,000
+\end{itemize}
+\pause Does Borrower A's delinquency risk decrease \alert{by more, less or the same amount} as Borrower B's risk?
+\end{frame}
+
+\begin{frame}
+    \frametitle{Functional Forms}
+\begin{eqnarray}
+    delinquency_i = \beta_0 &+& \beta_1 credit\_score_i + \beta_2 ln(income)_i \nonumber \\
+    & +&  \beta_3 interest\_rate_i + \epsilon_i \nonumber
+\end{eqnarray}
+\pause Question 2:
+\begin{itemize}
+    \item Borrower A's income rises from \$20,000 to \$30,000
+    \item Borrower B's income rises from \$100,000 to \$110,000
+\end{itemize}
+\pause Does Borrower A's delinquency risk decrease \alert{by more, less or the same amount} as Borrower B's risk?
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Functional Forms}
+\begin{eqnarray}
+    delinquency_i = \beta_0 &+& \beta_1 credit\_score_i + \beta_2 income_i \nonumber \\
+    & +&  \beta_3 interest\_rate_i + \epsilon_i \nonumber
+\end{eqnarray}
+\pause Question 3:
+\begin{itemize}
+    \item Borrower A has an income of \$50,000.
+    \item Borrower B has an income of \$500,000.
+\end{itemize}
+\pause Interest rates rise by 1 percentage point.\\[1ex]
+\pause Does Borrower A's delinquency risk decrease \alert{by more, less or the same amount} as Borrower B's risk?
+\end{frame}
+
+\begin{frame}
+    \frametitle{Matching \& Functional Forms}
+The promise of Matching is that it helps solve these problems. \\[1ex]
+\pause So is it a \alert{silver bullet} for letting the data determine how our features impact outcomes?
+\end{frame}
+
+\begin{frame}
+    \frametitle{}
+
+    \begin{center}
+    \begin{tikzpicture}[scale=1.5]
+        % Draw grey grid lines
+        \draw[gray, thin] (0,0) grid (3,3);
+        
+        % Draw axes
+        \draw[->] (0,0) -- (3.5,0) node[right] {$x$};
+        \draw[->] (0,0) -- (0,3.5) node[above] {$y$};
+        
+        % Add tick marks and labels for x-axis
+        \foreach \x in {0,1,2,3}
+            \draw (\x,0.05) -- (\x,-0.05) node[below] {\x};
+        
+        % Add tick marks and labels for y-axis
+        \foreach \y in {0,1,2,3}
+            \draw (0.05,\y) -- (-0.05,\y) node[left] {\y};
+        
+        % Add points
+        \filldraw[black] (1,1) circle (2pt);
+        \filldraw[blue] (2,2) circle (2pt) node[above right=2pt] {Obs 1: (2,2)};
+        \filldraw[red] (3,1.5) circle (2pt) node[right=2pt] {Obs 2: (3, 1.5)};
+    \end{tikzpicture}
+    \end{center}
+\pause Which point should be matched with the Black point? Why?
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{}
+
+    \begin{center}
+    \begin{tikzpicture}[scale=1.5]
+        % Draw grey grid lines
+        \draw[gray, thin] (0,0) grid (3,3);
+        
+        % Draw axes
+        \draw[->] (0,0) -- (3.5,0) node[right] {$x$};
+        \draw[->] (0,0) -- (0,3.5) node[above] {$y$};
+        
+        % Add tick marks and labels for x-axis
+        \foreach \x in {0,1,2,3}
+            \draw (\x,0.05) -- (\x,-0.05) node[below] {\x};
+        
+        % Add tick marks and labels for y-axis
+        \foreach \y in {0,1,2,3}
+            \draw (0.05,\y) -- (-0.05,\y) node[left] {\y};
+        
+        % Add points
+        \filldraw[black] (1,1) circle (2pt);
+        \filldraw[blue] (2,2) circle (2pt) node[above right=2pt] {Obs 1: (2,2)};
+        \filldraw[red] (3,1.5) circle (2pt) node[right=2pt] {Obs 2: (3, 1.5)};
+    \end{tikzpicture}
+    \end{center}
+\pause $\sigma_x = \sigma_y = 1$\\[1ex] Now which point?
+\end{frame}
+
+\begin{frame}
+    \frametitle{}
+
+    \begin{center}
+    \begin{tikzpicture}[scale=1.5]
+        % Draw grey grid lines
+        \draw[gray, thin] (0,0) grid (3,3);
+        
+        % Draw axes
+        \draw[->] (0,0) -- (3.5,0) node[right] {$x$};
+        \draw[->] (0,0) -- (0,3.5) node[above] {$y$};
+        
+        % Add tick marks and labels for x-axis
+        \foreach \x in {0,1,2,3}
+            \draw (\x,0.05) -- (\x,-0.05) node[below] {\x};
+        
+        % Add tick marks and labels for y-axis
+        \foreach \y in {0,1,2,3}
+            \draw (0.05,\y) -- (-0.05,\y) node[left] {\y};
+        
+        % Add points
+        \filldraw[black] (1,1) circle (2pt);
+        \filldraw[blue] (2,2) circle (2pt) node[above right=2pt] {Obs 1: (2,2)};
+        \filldraw[red] (3,1.5) circle (2pt) node[right=2pt] {Obs 2: (3, 1.5)};
+    \end{tikzpicture}
+    \end{center}
+    \vspace*{-1cm}
+\pause Suppose we add a new outlier data point to our dataset. We won't keep it when matching, but it means
+\alert{$\sigma_x = 3$} while \alert{$\sigma_y = 1$} still.\\[1ex] 
+Now which point?
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{}
+
+    \begin{center}
+    \begin{tikzpicture}[scale=1.5]
+        % Draw grey grid lines
+        \draw[gray, thin] (0,0) grid (3,3);
+        
+        % Draw axes
+        \draw[->] (0,0) -- (3.5,0) node[right] {$x$};
+        \draw[->] (0,0) -- (0,3.5) node[above] {$y$};
+        
+        % Add tick marks and labels for x-axis
+        \foreach \x in {0,1,2,3}
+            \draw (\x,0.05) -- (\x,-0.05) node[below] {\x};
+        
+        % Add tick marks and labels for y-axis
+        \foreach \y in {0,1,2,3}
+            \draw (0.05,\y) -- (-0.05,\y) node[left] {\y};
+        
+        % Add points
+        \filldraw[black] (1,1) circle (2pt);
+        \filldraw[blue] (2,2) circle (2pt) node[above right=2pt] {Obs 1: (2,2)};
+        \filldraw[red] (3,1.5) circle (2pt) node[right=2pt] {Obs 2: (3, 1.5)};
+    \end{tikzpicture}
+    \end{center}
+\vspace*{-1cm}
+    \pause \small Our goal is to match observations with same \alert{potential outcomes}. Does this new point impact how $x$ impacts observation's potential outcomes? \\[0.5ex]
+\pause Then why did we let it shape the point to which we matched?
+\end{frame}
+
+\begin{frame}
+    \frametitle{Matching and ``Similarity''}
+
+Matching doesn't assume functional forms like regressions.\\[1ex]
+\pause But you do still have to \alert{define your similarity measure!} \\[1ex]
+\pause And that requires choosing \alert{relative importance weights of different features}, even if that isn't explicitly obvious.
+\end{frame}
+
+\end{document}
