@@ -118,11 +118,11 @@ The promise of Matching is that it helps solve these problems. \\[1ex]
         
         % Add tick marks and labels for x-axis
         \foreach \x in {0,1,2,3}
-            \draw (\x,0.05) -- (\x,-0.05) node[below] {\x};
+            \draw (\x,0.05) -- (\x,-0.05) node[below] {\x_1};
         
         % Add tick marks and labels for y-axis
         \foreach \y in {0,1,2,3}
-            \draw (0.05,\y) -- (-0.05,\y) node[left] {\y};
+            \draw (0.05,\y) -- (-0.05,\y) node[left] {\x_2};
         
         % Add points
         \filldraw[black] (1,1) circle (2pt);
@@ -148,11 +148,11 @@ The promise of Matching is that it helps solve these problems. \\[1ex]
         
         % Add tick marks and labels for x-axis
         \foreach \x in {0,1,2,3}
-            \draw (\x,0.05) -- (\x,-0.05) node[below] {\x};
+            \draw (\x,0.05) -- (\x,-0.05) node[below] {\x_1};
         
         % Add tick marks and labels for y-axis
         \foreach \y in {0,1,2,3}
-            \draw (0.05,\y) -- (-0.05,\y) node[left] {\y};
+            \draw (0.05,\y) -- (-0.05,\y) node[left] {\x_2};
         
         % Add points
         \filldraw[black] (1,1) circle (2pt);
@@ -160,7 +160,7 @@ The promise of Matching is that it helps solve these problems. \\[1ex]
         \filldraw[red] (3,1.5) circle (2pt) node[right=2pt] {Obs 2: (3, 1.5)};
     \end{tikzpicture}
     \end{center}
-\pause $\sigma_x = \sigma_y = 1$\\[1ex] Now which point?
+\pause $\sigma_{x1} = \sigma_{x2} = 1$ \\[1ex] Now which point?
 \end{frame}
 
 \begin{frame}
@@ -177,11 +177,11 @@ The promise of Matching is that it helps solve these problems. \\[1ex]
         
         % Add tick marks and labels for x-axis
         \foreach \x in {0,1,2,3}
-            \draw (\x,0.05) -- (\x,-0.05) node[below] {\x};
+            \draw (\x,0.05) -- (\x,-0.05) node[below] {\x_1};
         
         % Add tick marks and labels for y-axis
         \foreach \y in {0,1,2,3}
-            \draw (0.05,\y) -- (-0.05,\y) node[left] {\y};
+            \draw (0.05,\y) -- (-0.05,\y) node[left] {\x_2};
         
         % Add points
         \filldraw[black] (1,1) circle (2pt);
@@ -191,8 +191,8 @@ The promise of Matching is that it helps solve these problems. \\[1ex]
     \end{center}
     \vspace*{-1cm}
 \pause Suppose we add a new outlier data point to our dataset. We won't keep it when matching, but it means
-\alert{$\sigma_x = 3$} while \alert{$\sigma_y = 1$} still.\\[1ex] 
-Now which point?
+\alert{$\sigma_{x1} = 3$} while \alert{$\sigma_{x2} = 1$} still.\\[1ex] 
+Now which point? (Hint: $\sqrt{(\frac{1}{3}})^2 + 1^2)} > \sqrt{(\frac{2}{3}})^2 + 0.5^2)}$
 \end{frame}
 
 
@@ -210,11 +210,11 @@ Now which point?
         
         % Add tick marks and labels for x-axis
         \foreach \x in {0,1,2,3}
-            \draw (\x,0.05) -- (\x,-0.05) node[below] {\x};
+            \draw (\x,0.05) -- (\x,-0.05) node[below] {\x_1};
         
         % Add tick marks and labels for y-axis
         \foreach \y in {0,1,2,3}
-            \draw (0.05,\y) -- (-0.05,\y) node[left] {\y};
+            \draw (0.05,\y) -- (-0.05,\y) node[left] {\x_2};
         
         % Add points
         \filldraw[black] (1,1) circle (2pt);
