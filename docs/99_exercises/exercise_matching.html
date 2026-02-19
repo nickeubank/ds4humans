@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -104,8 +104,6 @@ commentsRunWhenDOMLoaded(addUtterances);
                 gtag('config', 'G-RKDPB41DQ2');
             </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '99_exercises/exercise_matching';</script>
     <link rel="icon" href="../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -500,44 +498,33 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matching-packages-python-v-r">Matching Packages: Python v. R</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-dame-flame">Installing dame-flame.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-setup">Data Setup</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-to-know-your-data">Getting To Know Your Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gradescope-autograding">Gradescope Autograding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#submission-limits">Submission Limits</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-prep">Data Prep</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matching">Matching!</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4">Exercise 4</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5">Exercise 5</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-do-matching-with-dame">Let’s Do Matching with DAME</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6">Exercise 6</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7">Exercise 7</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreting-dame-output">Interpreting DAME output</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matching">Matching!</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8">Exercise 8</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-9">Exercise 9</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10">Exercise 10</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-back-a-dataset">Getting Back a Dataset</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11">Exercise 11</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-your-matches-and-analyze">Check Your Matches and Analyze</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyzing-matches">Analyzing Matches</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12">Exercise 12</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-13">Exercise 13</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-14">Exercise 14</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-15">Exercise 15</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-16">Exercise 16</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-forms-of-matching">Other Forms of Matching</a></li>
 </ul>
             </nav>
         </div>
@@ -551,261 +538,172 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="matching-exercise">
 <h1>Matching Exercise<a class="headerlink" href="#matching-exercise" title="Link to this heading">#</a></h1>
-<p>In this exercise, we’ll be evaluating how getting a college degree impacts earnings in the US using matching.</p>
-<section id="matching-packages-python-v-r">
-<h2>Matching Packages: Python v. R<a class="headerlink" href="#matching-packages-python-v-r" title="Link to this heading">#</a></h2>
-<p>Just as the best tools for machine learning tend to be in Python since they’re developed by CS people (who prefer Python), most of the best tools for causal inference are implemented in R since innovation in causal inference tends to be lead by social scientists using R. As a result, the most well developed matching package is called <a class="reference external" href="https://kosukeimai.github.io/MatchIt/index.html">MatchIt</a>, and is only available in R (though you can always call it from Python using <code class="docutils literal notranslate"><span class="pre">rpy2</span></code>).</p>
-<p>In the last couple years, though, a group of computer scientists and statisticians here at Duke have made some great advancements in matching (especially the computational side of things), and they recently released a set of matching packages in both R and Python that we’ll be using today. They have some great algorithms we’ll use today, but be aware these packages aren’t as mature, and aren’t general purpose packages yet. So if you ever get deep into matching, be aware you will probably still want to make at least partial use of the R package <a class="reference external" href="https://kosukeimai.github.io/MatchIt/index.html">MatchIt</a>, as well as some other R packages for new innovative techniques (like <a class="reference external" href="https://projects.iq.harvard.edu/frontier/home">Matching Frontier estimation</a>), or <a class="reference external" href="https://almost-matching-exactly.github.io/AHB-R-package/">Adaptive Hyper-Box Matching</a>.</p>
+<p>You have been hired by a mortgage firm (a company that both issues and collects mortgage payments from homeowners). This servicing firm is thinking about entering the market for “no money down” mortgages — mortgages in which the buyer does not have to pay a large percentage of the value of the house when they take out the loan (in the US, most people pay 20% of the value of a house up front when taking out a mortgage). Instead, they just pay a slightly higher interest rate.</p>
+<p>Before they start offering this product, though, they want to know the effect this option will have on the likelihood people who take out a mortgage from them will make their payments. In other words, they want to know:</p>
+<p><strong>What is the effect of a mortgage being issued as a “no money down” mortgage on the likelihood that the mortgage will enter delinquency (the homeowner will be at least 30 days late on a mortgage payment) during the first two years of the mortgage?</strong></p>
+<p>On the one hand, we might expect that someone taking out a “no money down” mortgage would be <em>less</em> likely to enter delinquency because they didn’t have to put a lot of cash into a down payment, making it easier for them to afford their payments.</p>
+<p>On the other hand, the kind of people who can put 20% down on a house are the kind of people who are able to save effectively, so someone who opts for a “no money down” mortgage with a higher interest rate (instead of saving to pay the 20% down payment) may be more likely to also struggle to make their regular payments.</p>
+<section id="data">
+<h2>Data<a class="headerlink" href="#data" title="Link to this heading">#</a></h2>
+<p>To answer this question, you have been given <a class="reference external" href="https://www.freddiemac.com/research/datasets/sf-loanlevel-dataset">REAL data on a sample of all US Standard single family home mortgages purchased or insured by Freddie Mac</a>. This is a random sample of standard mortgages issued in the calendar year 2004.</p>
 </section>
-<section id="installing-dame-flame">
-<h2>Installing dame-flame.<a class="headerlink" href="#installing-dame-flame" title="Link to this heading">#</a></h2>
-<p>For this lesson, begin by installing <code class="docutils literal notranslate"><span class="pre">dame-flame</span></code> with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">dame-flame</span></code> (it’s not on conda yet).</p>
-<p><a class="reference external" href="https://almost-matching-exactly.github.io/DAME-FLAME-Python-Package">DAME</a> is an algorithm that we can use for a version of coarse exact matching. The package only accepts a list of categorical variables, and then attempts to match pairs that match exactly on those variables. That means that if you want to match on, say, age, you have to break it up into categories (say, under 18, 18-29, 30-39, etc. etc.).</p>
-<p>(NOTE: As of 2024, their documentation site is weird: click the dropdowns next to headings to see the content, otherwise the documentation looks deserted)</p>
-<p>Of course, one cannot always find exact matches on all variables, so what DAME does is:</p>
-<ol class="arabic simple">
-<li><p>Find all observations that match on <em>all</em> matching variables.</p></li>
-<li><p>Figure out which matching variable is least useful in predicting the outcome of interest <span class="math notranslate nohighlight">\(Y\)</span> and drops that, then tries to match the remaining observations on the narrowed set of matching variables.</p></li>
-<li><p>This repeats until you run out of variables, all observations are matched, or you hit a stopping run (namely: quality of matches falls below a threshold).</p></li>
-</ol>
-<p>In addition, the lab has also created FLAME, which does the same thing, but employs some tricks to make it <em>massively</em> more computationally efficient, meaning it can be used on datasets with millions of observations (which most matching algorithms cannot). It’s a little less accurate, but an amazing contribution never the less.</p>
-</section>
-<section id="data-setup">
-<h2>Data Setup<a class="headerlink" href="#data-setup" title="Link to this heading">#</a></h2>
-<p>To save you some time and let you focus on matching, I’ve <em>pre-cleaned</em> about one month worth of of data from the US Current Population Survey data we used for our <a class="reference internal" href="#exercises/exercises_regression_incomeineq.ipynb"><span class="xref myst">gender discrimination analysis</span></a>. You can download the data <a class="reference external" href="https://github.com/nickeubank/MIDS_Data/blob/master/Current_Population_Survey/cps_for_matching.dta?raw=true%22">from here</a>, or read it directly with:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cps</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_stata</span><span class="p">(</span>
-    <span class="s2">&quot;https://github.com/nickeubank/MIDS_Data/blob/master&quot;</span>
-    <span class="s2">&quot;/Current_Population_Survey/cps_for_matching.dta?raw=true&quot;</span>
-<span class="p">)</span>
+<section id="gradescope-autograding">
+<h2>Gradescope Autograding<a class="headerlink" href="#gradescope-autograding" title="Link to this heading">#</a></h2>
+<p>Please follow <a class="reference external" href="https://www.practicaldatascience.org/ids720_specific/autograder_guidelines.html">all standard guidance</a> for submitting this assignment to the Gradescope autograder, including storing your solutions in a dictionary called <code class="docutils literal notranslate"><span class="pre">results</span></code> and ensuring your notebook runs from the start to completion without any errors.</p>
+<p>For this assignment, please name your file <code class="docutils literal notranslate"><span class="pre">exercise_matching.ipynb</span></code> before uploading.</p>
+<p>You can check that you have answers for all questions in your <code class="docutils literal notranslate"><span class="pre">results</span></code> dictionary with this code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="nb">set</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">==</span> <span class="p">{</span>
+    <span class="s2">&quot;ex3_shr_delinquent_nmd&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ex3_shr_delinquent_regular&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ex4_share_nmd&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ex6_nmd_regression&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ex9_least_balanced&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ex11_matched_data&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ex11_num_no_money_down&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ex12_bivariate_effect&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ex13_withcoefficients_effect&quot;</span><span class="p">,</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>Load the data and quickly familiarize yourself with its contents.</p>
+<section id="submission-limits">
+<h3>Submission Limits<a class="headerlink" href="#submission-limits" title="Link to this heading">#</a></h3>
+<p>Please remember that you are <strong>only allowed THREE submissions to the autograder.</strong> Your last submission (if you submit 3 or fewer times), or your third submission (if you submit more than 3 times) will determine your grade Submissions that error out will <strong>not</strong> count against this total.</p>
 </section>
-<section id="getting-to-know-your-data">
-<h2>Getting To Know Your Data<a class="headerlink" href="#getting-to-know-your-data" title="Link to this heading">#</a></h2>
-<p>Before you start matching, it is important to examine your data to ensure that matching is feasible (you have some overlap the the features of people in the treated and untreated groups), and also that there is a reason <em>to</em> match: either you’re unsure about some of the functional forms at play, or your have some imbalance between the two groups.</p>
+</section>
+<section id="data-prep">
+<h2>Data Prep<a class="headerlink" href="#data-prep" title="Link to this heading">#</a></h2>
 <section id="exercise-1">
 <h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Link to this heading">#</a></h3>
-<p>Show the raw difference of <code class="docutils literal notranslate"><span class="pre">annual_earnings</span></code> between those with and without a college degree (<code class="docutils literal notranslate"><span class="pre">has_college</span></code>). Is the difference statistically significant?</p>
+<p>To save you some time and let you focus on matching, I’ve done some pre-cleaning of this data a little. Later on this semester I’ll ask you to work with a raw-er and more complete version of this data, but for now, please download the mortgage data here from <a class="github reference external" href="https://github.com/nickeubank/MIDS_Data/raw/refs/heads/master/mortgages/exercise_matching/standard_mortgages.parquet">nickeubank/MIDS_Data</a>.</p>
 </section>
 <section id="exercise-2">
 <h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Link to this heading">#</a></h3>
-<p>Next we can check for balance. Check the share of people in different racial groups who have college degrees. Are those differences statistically significant? (Remember how to check for difference in distributions of categorical variables).</p>
-<p>Race is coded as White Non-Hispanic (0), Black Non-Hispanic (1), Hispanic (2), Other (3).</p>
-<p>Does the data seem balanced?</p>
+<p><code class="docutils literal notranslate"><span class="pre">Original</span> <span class="pre">Loan-to-Value</span> <span class="pre">(LTV)</span></code> is the share of the original value of the home that was borrowed. A value of 100 means there was no down payment (“no money down”), while higher values indicate a down payment was made.</p>
+<p>If you look at the values of <code class="docutils literal notranslate"><span class="pre">Original</span> <span class="pre">Loan-to-Value</span> <span class="pre">(LTV)</span></code> in the data, you will see there is a distribution of values. <em>Truly</em> no money down mortgages are actually pretty rare — about 1.4% of mortgages — but <em>almost</em> no money down mortgages (mortgages where the borrower only pays a 5% down payment) are a lot more common (about 10% of mortgages). So let’s focus our analysis on those 95% LTV mortgages — they aren’t <em>quite</em> no money down, but they’re pretty close. From this point forward, when I say “no-money-down mortgages,” I mean 95% LTV mortgages.</p>
+<p>To keep things simple, let’s compare these (almost) no money down mortgages to mortgages with a 20% down payment (LTV value of 80). This is the modal mortgage in the US.</p>
+<p>Once you’ve limited your data to mortgages with LTVs of 95% and 80%, what share of the mortgages you still have were no-money-down (LTV 95%) mortgages? Store your answer under the key <code class="docutils literal notranslate"><span class="pre">&quot;ex2_share_nmd&quot;</span></code>.</p>
 </section>
 <section id="exercise-3">
 <h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Link to this heading">#</a></h3>
-<p>One of the other advantages of matching is that even when you have balanced data, you don’t have to go through the process of testing out different functional forms to see what fits the data base.</p>
-<p>In our last exercise, we looked at the relationship between gender and earnings “controlling for age”, where we just put in age as a linear control. Plot a non-linear regression of <code class="docutils literal notranslate"><span class="pre">annual_earnings</span></code> on age (<code class="docutils literal notranslate"><span class="pre">PolyFit(order=3)</span></code> is fine.)</p>
-<p>Does the relationship look linear?</p>
-<p>Does this speak to why it’s nice to not have to think about functional forms with matching as much?</p>
+<p>Now let’s see how delinquency rates compare between regular and no-money-down mortgages. Store the share of mortgages that are ever delinquent under the keys <code class="docutils literal notranslate"><span class="pre">&quot;ex3_shr_delinquent_regular&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;ex3_shr_delinquent_nmd&quot;</span></code></p>
+</section>
+<section id="exercise-4">
+<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Link to this heading">#</a></h3>
+<p>Now, is this difference the result of not having to put money down, or is it the result of different lending standards?</p>
+<p>Let’s take a look at a few descriptive statistics to try and answer this question.</p>
+<p>First, plot two histograms on the same plot — one with the credit score for regular mortgage borrowers, and one with the credit score for no-money-down mortgage borrowers. Then do the same with the size of the mortgage (<code class="docutils literal notranslate"><span class="pre">&quot;Original</span> <span class="pre">UPB&quot;</span></code>) and original interest rates (<code class="docutils literal notranslate"><span class="pre">&quot;Original</span> <span class="pre">Interest</span> <span class="pre">Rate&quot;</span></code>).</p>
+<p>Make sure you’re plotting densities not frequencies.</p>
+<p>Do these look like the same borrowers? (High credit scores mean people are deemed to be at lower risk of defaulting on their loans).</p>
+</section>
+<section id="exercise-5">
+<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Link to this heading">#</a></h3>
+<p>Matching brings value when you have an imbalance in covariates between your control and treatment groups. At the same time, matching only works when there isn’t too much imbalance — you need an area of “common support” where you have both control and treatment observations for certain ranges of your covariates.</p>
+<p>Looking back at your results from Exercise 6, does it seem like this data might be a good candidate for matching?</p>
+</section>
+<section id="exercise-6">
+<h3>Exercise 6<a class="headerlink" href="#exercise-6" title="Link to this heading">#</a></h3>
+<p>To establish a baseline of sorts, regress your “delinquent” variable on:</p>
+<ul class="simple">
+<li><p>whether the loan is a no-money-down mortgage,</p></li>
+<li><p>borrower credit score,</p></li>
+<li><p>whether borrower is a first time home buyer, and</p></li>
+<li><p>the original interest rate.</p></li>
+</ul>
+<p>Use a linear model and (because the dependent variable is 0-1) heteroskedastic robust standard errors. Store the estimated effect of a mortgage being no-money-down (the coefficient on no-money-down indicator) in <code class="docutils literal notranslate"><span class="pre">results</span></code> under the key <code class="docutils literal notranslate"><span class="pre">ex6_nmd_regression</span></code>.</p>
+<p>(Note: if you use the formula api from statsmodels, you may have to change some variable names)</p>
+</section>
+<section id="exercise-7">
+<h3>Exercise 7<a class="headerlink" href="#exercise-7" title="Link to this heading">#</a></h3>
+<p>Matching is great because of its ability to reduce dependence on functional form assumptions (do you assume the dependent variable increases linearly with the dependent variable, or the log of the dependent variable, or the square, etc.). This is most powerful where there is some “extrapolation” taking place because of an imbalance in covariates, because there’s no good way to validate those extrapolations. But it also simplifies the general problem of worrying about function forms.</p>
+<p>To illustrate, we just fit our model with a range of covariates included as linear controls. But do we know that delinquency decreases linearly with credit scores?</p>
+<p>Just looking at delinquency and credit scores, fit a lowess regression (or other model with a flexible functional form) to see if that relationship is indeed linear.</p>
+<p>Now do the same for delinquency and the original interest rate. Does that seem linear?</p>
+<p>What does this tell you about the accuracy of your regression estimates above?</p>
 </section>
 </section>
 <section id="matching">
 <h2>Matching!<a class="headerlink" href="#matching" title="Link to this heading">#</a></h2>
-<p>Because DAME is an implementation of exact matching, we have to discretize all of our continuous variables. Thankfully, in this case we only have <code class="docutils literal notranslate"><span class="pre">age</span></code>, so this shouldn’t be too hard!</p>
-<section id="exercise-4">
-<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Link to this heading">#</a></h3>
-<p>Create a new variable that discretizes age into a single value for each decade of age.</p>
-<p>Because CPS only has employment data on people 18 or over, though, include people who are 18 or 19 with the 20 year olds so that group isn’t too small, and if you see any other really small groups, please merge those too.</p>
-</section>
-<section id="exercise-5">
-<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Link to this heading">#</a></h3>
-<p>We also have to covert our string variables into numeric variables for DAME, so convert <code class="docutils literal notranslate"><span class="pre">county</span></code> and <code class="docutils literal notranslate"><span class="pre">class94</span></code> to a numeric vector of intergers.</p>
-<p>(Note: it’s not clear whether <code class="docutils literal notranslate"><span class="pre">class94</span></code> belongs: if it reflects people choosing fields based on passion, it belongs; if people choose certain jobs because of their degrees, its not something we’d actually want in our regression.</p>
-<p>Hint: if you use <code class="docutils literal notranslate"><span class="pre">pd.Categorical</span></code> to convert you var to a categorical, you can pull the underlying integer codes with <code class="docutils literal notranslate"><span class="pre">.codes</span></code>.</p>
-</section>
-</section>
-<section id="let-s-do-matching-with-dame">
-<h2>Let’s Do Matching with DAME<a class="headerlink" href="#let-s-do-matching-with-dame" title="Link to this heading">#</a></h2>
-<section id="exercise-6">
-<h3>Exercise 6<a class="headerlink" href="#exercise-6" title="Link to this heading">#</a></h3>
-<p>First, drop all the variables you <em>don’t</em> want in matching (e.g. your original <code class="docutils literal notranslate"><span class="pre">age</span></code> variable), and any observations for which <code class="docutils literal notranslate"><span class="pre">annual_earnings</span></code> is missing.</p>
-<p>You will probably also have to drop a column named <code class="docutils literal notranslate"><span class="pre">index</span></code>: DAME will try and match on ANY included variables, and so because there was a column called <code class="docutils literal notranslate"><span class="pre">index</span></code> in the data we imported, if we leave it in DAME will try (and obviously fail) to match on index.</p>
-<p>Also, it’s best to reset your index, as <code class="docutils literal notranslate"><span class="pre">dame_flame</span></code> using index labels (e.g., the values in <code class="docutils literal notranslate"><span class="pre">df.index</span></code>) to identify matches. So you want to be sure those are unique.</p>
-</section>
-<section id="exercise-7">
-<h3>Exercise 7<a class="headerlink" href="#exercise-7" title="Link to this heading">#</a></h3>
-<p>The syntax of <code class="docutils literal notranslate"><span class="pre">dame_flame</span></code> is similar to the syntax of <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>. If you start with a dataset called <code class="docutils literal notranslate"><span class="pre">my_data</span></code> with a <code class="docutils literal notranslate"><span class="pre">treat</span></code> variable with treatment assignment and an <code class="docutils literal notranslate"><span class="pre">outcome</span></code> variable for my outcome of interest (<span class="math notranslate nohighlight">\(Y\)</span>), the syntax to do basic matching would be:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dame_flame</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">dame_flame</span><span class="o">.</span><span class="n">matching</span><span class="o">.</span><span class="n">DAME</span><span class="p">(</span>
-    <span class="n">repeats</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">verbose</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-    <span class="n">want_pe</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">stop_unmatched_t</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
-    <span class="n">for_matching</span><span class="p">,</span>
-    <span class="n">treatment_column_name</span><span class="o">=</span><span class="s2">&quot;has_college&quot;</span><span class="p">,</span>
-    <span class="n">outcome_column_name</span><span class="o">=</span><span class="s2">&quot;annual_earnings&quot;</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">for_matching</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Where the arguments:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">repeats=False</span></code> says that I only want each observation to get matched once. We’ll talk about what happens if we use <code class="docutils literal notranslate"><span class="pre">repeats=True</span></code> below.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">verbose=3</span></code> tells dame to report everything it’s doing as it goes.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">want_pe</span></code> says “please include the predictive error in your printout at each step”. This is a measure of match quality.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">stop_unmatched_t</span></code> says “once you’ve matched all the treatment units, you can stop.”</p></li>
-</ul>
-<p>So run DAME on your data!</p>
-</section>
-</section>
-<section id="interpreting-dame-output">
-<h2>Interpreting DAME output<a class="headerlink" href="#interpreting-dame-output" title="Link to this heading">#</a></h2>
-<p>The output you get from doing this <em>should</em> be reports from about 19 iterations of matching. In each iteration, you’ll see a description of the number of matches made in the iteration, the number of treatment units still unmatched, and the number of control units unmatched.</p>
-<p>In the first iteration, the algorithm tries to match observations that match on <em>all</em> the variables in your data. That’s why in the first iteration, you see the set of variables being dropped is an empty set (<code class="docutils literal notranslate"><span class="pre">Covariates</span> <span class="pre">dropped</span> <span class="pre">so</span> <span class="pre">far:</span> <span class="pre">set()</span></code>) — it <em>hasn’t</em> dropped any variables:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Completed</span> <span class="n">iteration</span> <span class="mi">0</span> <span class="n">of</span> <span class="n">matching</span>
-	<span class="n">Number</span> <span class="n">of</span> <span class="n">matched</span> <span class="n">groups</span> <span class="n">formed</span> <span class="ow">in</span> <span class="n">total</span><span class="p">:</span>  <span class="mi">620</span>
-	<span class="n">Unmatched</span> <span class="n">treated</span> <span class="n">units</span><span class="p">:</span>  <span class="mi">987</span> <span class="n">out</span> <span class="n">of</span> <span class="n">a</span> <span class="n">total</span> <span class="n">of</span>  <span class="mi">4062</span> <span class="n">treated</span> <span class="n">units</span>
-	<span class="n">Unmatched</span> <span class="n">control</span> <span class="n">units</span><span class="p">:</span>  <span class="mi">1312</span> <span class="n">out</span> <span class="n">of</span> <span class="n">a</span> <span class="n">total</span> <span class="n">of</span>  <span class="mi">6145</span> <span class="n">control</span> <span class="n">units</span>
-	<span class="n">Number</span> <span class="n">of</span> <span class="n">matches</span> <span class="n">made</span> <span class="n">this</span> <span class="n">iteration</span><span class="p">:</span>  <span class="mi">7908</span>
-	<span class="n">Number</span> <span class="n">of</span> <span class="n">matches</span> <span class="n">made</span> <span class="n">so</span> <span class="n">far</span><span class="p">:</span>  <span class="mi">7908</span>
-	<span class="n">Covariates</span> <span class="n">dropped</span> <span class="n">so</span> <span class="n">far</span><span class="p">:</span>  <span class="nb">set</span><span class="p">()</span>
-	<span class="n">Predictive</span> <span class="n">error</span> <span class="n">of</span> <span class="n">covariate</span> <span class="nb">set</span> <span class="n">used</span> <span class="n">to</span> <span class="n">match</span><span class="p">:</span>  <span class="mf">1705794861.8368878</span>
-</pre></div>
-</div>
-<p>(Note depending on how you binned ages, you may get slightly different results than this)</p>
-<p>But as we can see from this output, the algorithm found 7,908 perfect matches—pairs of observations (one treated, one untreated) that had <em>exactly</em> the same value of all the variables we included. But we also see we still have 987 <em>unmatched</em> treated units, so what do we do?</p>
-<p>The answer is that if we want to match more of our treatment variables, we have to try and match on a subset of our variables.</p>
-<p>But what variable should we drop? This is the secret sauce of DAME. DAME picks the variables to drop by trying to predict our outcome <span class="math notranslate nohighlight">\(Y\)</span> using all our variables (by default using a ridge regression), then it drops the matching variable that is contributing the least to that prediction. Since our goal in matching is to eliminate baseline differences (<span class="math notranslate nohighlight">\(E(Y_0|D=1) - E(Y_1|D=0)\)</span>), dropping the covariates least related to <span class="math notranslate nohighlight">\(Y\)</span> makes sense.</p>
-<p>As a result, in the second iteration (called iteration 1, since it uses 0-based indexing), we see that the variable it drops first is <code class="docutils literal notranslate"><span class="pre">county</span></code>, and it’s subsequently able to make another 2,114 new matches on the remaining variables!</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Completed</span> <span class="n">iteration</span> <span class="mi">1</span> <span class="n">of</span> <span class="n">matching</span>
-	<span class="n">Number</span> <span class="n">of</span> <span class="n">matched</span> <span class="n">groups</span> <span class="n">formed</span> <span class="ow">in</span> <span class="n">total</span><span class="p">:</span>  <span class="mi">770</span>
-	<span class="n">Unmatched</span> <span class="n">treated</span> <span class="n">units</span><span class="p">:</span>  <span class="mi">93</span> <span class="n">out</span> <span class="n">of</span> <span class="n">a</span> <span class="n">total</span> <span class="n">of</span>  <span class="mi">4062</span> <span class="n">treated</span> <span class="n">units</span>
-	<span class="n">Unmatched</span> <span class="n">control</span> <span class="n">units</span><span class="p">:</span>  <span class="mi">92</span> <span class="n">out</span> <span class="n">of</span> <span class="n">a</span> <span class="n">total</span> <span class="n">of</span>  <span class="mi">6145</span> <span class="n">control</span> <span class="n">units</span>
-	<span class="n">Number</span> <span class="n">of</span> <span class="n">matches</span> <span class="n">made</span> <span class="n">this</span> <span class="n">iteration</span><span class="p">:</span>  <span class="mi">2114</span>
-	<span class="n">Number</span> <span class="n">of</span> <span class="n">matches</span> <span class="n">made</span> <span class="n">so</span> <span class="n">far</span><span class="p">:</span>  <span class="mi">10022</span>
-	<span class="n">Covariates</span> <span class="n">dropped</span> <span class="n">so</span> <span class="n">far</span><span class="p">:</span>  <span class="nb">frozenset</span><span class="p">({</span><span class="s1">&#39;county&#39;</span><span class="p">})</span>
-	<span class="n">Predictive</span> <span class="n">error</span> <span class="n">of</span> <span class="n">covariate</span> <span class="nb">set</span> <span class="n">used</span> <span class="n">to</span> <span class="n">match</span><span class="p">:</span>  <span class="mf">1705898840.114076</span>
-</pre></div>
-</div>
-<p>And so DAME continues until its matched all treated observations, and even then it keeps going to evaluate different covariates it might exclude.</p>
+<p>OK, let’s finally do some matching!</p>
+<p>To do our matching, we will be using pymatchit, a port of the exceptionally good <a class="reference external" href="https://kosukeimai.github.io/MatchIt/index.html">MatchIt</a> which is only natively available in R. <a class="reference external" href="https://kosukeimai.github.io/MatchIt/articles/matching-methods.html">It supports genetic matching, exact matching, coarsened exact matching, nearest neighbor matching, subclass matching, cardinality matching, and more.</a>.</p>
+<p>This library was just recently created (and I have to imagine with significant LLM help), so it’s a little early to be using it. With that said, matching is one area where R packages (namely MatchIt) are still well ahead of Python libraries, and after looking things over pretty carefully it seems well implemented — it has a reasonable test suite, includes diagnostic plots (which are something that’s so often missing from Python matching and are great for learning), and testing the matching algorithm we’re using (coarse exact matching) things seem to match between R and this package. So let’s try it. :)</p>
+<p>So install it with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pymatchit-causal</span></code> (<strong>not</strong> <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pymatchit</span></code>), and quickly review the <a class="reference external" href="https://github.com/jtuenner/">README for the repo here</a>.</p>
 <section id="exercise-8">
 <h3>Exercise 8<a class="headerlink" href="#exercise-8" title="Link to this heading">#</a></h3>
-<p>Congratulations! You just on your first one-to-many matching!</p>
-<p>The next step is to think about which of the matches that DAME generated are good enough for inclusion in our analysis. As you may recall, one of the choices you have to make as a researcher when doing matching is how “good” a match has to be in order to be included in your final data set. By default, DAME will keep dropping matching variables until it has been able to match all the treated observations or runs out of variables. It will do this no matter how bad the matches start to become – if it ends up with the treated observation and a control observation that can only be matched on gender, it will match them just on gender, even though we probably don’t think that that’s a “good” match.</p>
-<p>The way to control this behavior is to tell DAME when to stop manually using the <code class="docutils literal notranslate"><span class="pre">early_stop_iterations</span></code> argument to tell the matching algorithm when to stop.</p>
-<p>So when is a good time to stop? There’s no objective or “right” answer to that question. It fundamentally comes down to a trade-off between bias (which gets higher is you allow more low quality matches into your data) and variance (which will go down as you increase the number of matches you keep).</p>
-<p>But one way to start the process of picking a cut point is to examine how the quality of matches evolves over iterations. DAME keeps this information in <code class="docutils literal notranslate"><span class="pre">model.pe_each_iter</span></code>. This shows, for each iteration, the “prediction error” resulting from dropping the variables excluded in each step. This “prediction error” is the difference in the mean-squared error of regressing <span class="math notranslate nohighlight">\(Y\)</span> on our matching variables (by default in a ridge regression) with all variables versus with the subset being used for matching in a given iteration. By design, of course, this is always increasing.</p>
-<p>To see how this evolves, plot your <code class="docutils literal notranslate"><span class="pre">pe</span></code> against iteration numbers. You can also see the <code class="docutils literal notranslate"><span class="pre">pe</span></code> values for each iteration reported in the output from when DAME ran above if you want to make your you’re lining up the errors with iterations right.</p>
-<p>Are there any points where the match quality seems to fall off dramatically?</p>
+<p>Let’s do some coarsened exact matching.</p>
+<p>In particular, we will match on <code class="docutils literal notranslate"><span class="pre">credit_score</span></code>, <code class="docutils literal notranslate"><span class="pre">original_interest_rate</span></code>, and <code class="docutils literal notranslate"><span class="pre">first_time_homebuyer_flag</span></code>.</p>
+<p>Recall that with coarsened exact matching, we have to specify how continuous variables (like <code class="docutils literal notranslate"><span class="pre">credit_score</span></code> and <code class="docutils literal notranslate"><span class="pre">original_interest_rate</span></code>) should be coarsened. This is accomplished with the <code class="docutils literal notranslate"><span class="pre">cutpoints</span></code> keyword. Note the <code class="docutils literal notranslate"><span class="pre">cutpoints</span></code> takes the upper and lower values to be bounds — so <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> will create two groups: between 1 and 2 and between 2 and 3. Values below 1 and above 3 will be dropped.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pymatchit</span> <span class="kn">import</span> <span class="n">MatchIt</span>
+
+<span class="n">mortgages</span><span class="p">[</span><span class="s2">&quot;first_time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">mortgages</span><span class="p">[</span><span class="s2">&quot;first_time_homebuyer_flag&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Y&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;int&quot;</span><span class="p">)</span>
+
+<span class="c1"># Deterministic sort to ensure</span>
+<span class="c1"># random seed generates same result</span>
+<span class="n">mortgages</span> <span class="o">=</span> <span class="n">mortgages</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;loan_sequence_number&quot;</span><span class="p">)</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="n">MatchIt</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">mortgages</span><span class="p">,</span>
+    <span class="n">method</span><span class="o">=</span><span class="s2">&quot;cem&quot;</span><span class="p">,</span>
+    <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span>
+    <span class="n">estimand</span><span class="o">=</span><span class="s2">&quot;ATE&quot;</span><span class="p">,</span>
+    <span class="n">cutpoints</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;credit_score&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="mi">575</span><span class="p">,</span> <span class="mi">650</span><span class="p">,</span> <span class="mi">675</span><span class="p">,</span> <span class="mi">700</span><span class="p">,</span> <span class="mi">720</span><span class="p">,</span> <span class="mi">740</span><span class="p">,</span> <span class="mi">760</span><span class="p">,</span> <span class="mi">780</span><span class="p">,</span> <span class="mi">800</span><span class="p">],</span>
+        <span class="s2">&quot;original_interest_rate&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">4.25</span><span class="p">,</span> <span class="mf">5.25</span><span class="p">,</span> <span class="mf">6.25</span><span class="p">,</span> <span class="mf">7.25</span><span class="p">,</span> <span class="mf">8.25</span><span class="p">],</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+
+
+<span class="c1"># Format: treatment_variable ~ covariate1 + covariate2 + ...</span>
+<span class="n">m</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="s2">&quot;no_money_down ~ credit_score + original_interest_rate &quot;</span> <span class="s2">&quot;+ first_time&quot;</span><span class="p">)</span>
+
+</pre></div>
+</div>
 </section>
 <section id="exercise-9">
 <h3>Exercise 9<a class="headerlink" href="#exercise-9" title="Link to this heading">#</a></h3>
-<p>Suppose we want to ensure we have at least 10,000 observations in our matched data—where might you cut off the data to get a sample size of at least that but before a big quality falloff?</p>
+<p>The first thing to do after matching is to see if the merge worked well.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">m.plot(type=&quot;balance&quot;,</span> <span class="pre">threshold=0.2)</span></code> to see how balanced the matched coefficients look. Which variable appears not to be that well balanced in the matched data? Store your answer as a string in <code class="docutils literal notranslate"><span class="pre">&quot;ex9_least_balanced&quot;</span></code></p>
 </section>
 <section id="exercise-10">
 <h3>Exercise 10<a class="headerlink" href="#exercise-10" title="Link to this heading">#</a></h3>
-<p>Re-run your matching, stopping at the point you picked above using <code class="docutils literal notranslate"><span class="pre">early_stop_iterations</span></code>.</p>
-</section>
-</section>
-<section id="getting-back-a-dataset">
-<h2>Getting Back a Dataset<a class="headerlink" href="#getting-back-a-dataset" title="Link to this heading">#</a></h2>
-<p>OK, my one current complaint with DAME is that it doesn’t just give you back a nice dataset of your matches for analysis. If we look at our results — <code class="docutils literal notranslate"><span class="pre">matches</span></code> — it’s <em>almost</em> what we want, except it has dropped our treatment and outcome columns, and put a string <code class="docutils literal notranslate"><span class="pre">*</span></code> in any entry where a value <em>wasn’t</em> used for matching:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">female</span> <span class="n">simplified_race</span>   <span class="n">county</span>   <span class="n">class94</span>   <span class="n">discretized_age</span>
-<span class="mi">0</span>  <span class="mf">1.0</span>     <span class="mf">0.0</span>              <span class="mf">10.0</span>      <span class="mf">3.0</span>          <span class="mf">5.0</span>
-<span class="mi">1</span>  <span class="mf">0.0</span>     <span class="mf">2.0</span>              <span class="o">*</span>         <span class="mf">3.0</span>          <span class="mf">3.0</span>
-<span class="mi">2</span>  <span class="mf">0.0</span>     <span class="mf">0.0</span>              <span class="mf">8.0</span>        <span class="mf">3.0</span>         <span class="mf">6.0</span>
-<span class="mi">3</span>  <span class="mf">0.0</span>     <span class="mf">0.0</span>              <span class="o">*</span>         <span class="mf">1.0</span>          <span class="mf">4.0</span>
-<span class="mi">4</span>  <span class="mf">0.0</span>     <span class="mf">0.0</span>              <span class="mf">24.0</span>      <span class="mf">3.0</span>          <span class="mf">3.0</span>
-</pre></div>
-</div>
-<p>So for now (though I think this will get updated in the package), we’ll have to do it ourselves! Just copy-paste this:</p>
+<p>Let’s tighten up our cutpoints to try and get better matches on interest rates. Try:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="k">def</span> <span class="nf">get_dataframe</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">result_of_fit</span><span class="p">):</span>
-
-    <span class="c1"># Get original data</span>
-    <span class="n">better</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">input_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">result_of_fit</span><span class="o">.</span><span class="n">index</span><span class="p">]</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">better</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">is_unique</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Need index values in input data to be unique&quot;</span><span class="p">)</span>
-
-    <span class="c1"># Get match groups for clustering</span>
-    <span class="n">better</span><span class="p">[</span><span class="s2">&quot;match_group&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-    <span class="n">better</span><span class="p">[</span><span class="s2">&quot;match_group_size&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">units_per_group</span><span class="p">):</span>
-        <span class="n">better</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">group</span><span class="p">,</span> <span class="s2">&quot;match_group&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">idx</span>
-        <span class="n">better</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">group</span><span class="p">,</span> <span class="s2">&quot;match_group_size&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
-
-    <span class="c1"># Get weights. I THINK this is right?! At least for with repeat=False?</span>
-    <span class="n">t</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">treatment_column_name</span>
-    <span class="n">better</span><span class="p">[</span><span class="s2">&quot;t_in_group&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">better</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;match_group&quot;</span><span class="p">)[</span><span class="n">t</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">)</span>
-
-    <span class="c1"># Make weights</span>
-    <span class="n">better</span><span class="p">[</span><span class="s2">&quot;weights&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-    <span class="n">better</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">better</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;weights&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># treaments are 1</span>
-
-    <span class="c1"># Controls start as proportional to num of treatments</span>
-    <span class="c1"># each observation is matched to.</span>
-    <span class="n">better</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">better</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;weights&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">better</span><span class="p">[</span><span class="s2">&quot;t_in_group&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span>
-        <span class="n">better</span><span class="p">[</span><span class="s2">&quot;match_group_size&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">better</span><span class="p">[</span><span class="s2">&quot;t_in_group&quot;</span><span class="p">]</span>
-    <span class="p">)</span>
-
-    <span class="c1"># Then re-normalize for num unique control observations.</span>
-    <span class="n">control_weights</span> <span class="o">=</span> <span class="n">better</span><span class="p">[</span><span class="n">better</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">][</span><span class="s2">&quot;weights&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-
-    <span class="n">num_control_obs</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">better</span><span class="p">[</span><span class="n">better</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">())</span>
-    <span class="n">renormalization</span> <span class="o">=</span> <span class="n">num_control_obs</span> <span class="o">/</span> <span class="n">control_weights</span>
-    <span class="n">better</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">better</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;weights&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="n">better</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">better</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;weights&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">renormalization</span>
-    <span class="p">)</span>
-    <span class="k">assert</span> <span class="n">better</span><span class="o">.</span><span class="n">weights</span><span class="o">.</span><span class="n">notnull</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-
-    <span class="n">better</span> <span class="o">=</span> <span class="n">better</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;t_in_group&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="s2">&quot;columns&quot;</span><span class="p">)</span>
-
-    <span class="c1"># Make sure right length and values!</span>
-    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">result_of_fit</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">better</span><span class="p">)</span>
-    <span class="k">assert</span> <span class="n">better</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">better</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;weights&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">==</span> <span class="n">num_control_obs</span>
-
-    <span class="k">return</span> <span class="n">better</span>
+<span class="n">cutpoints</span><span class="o">=</span><span class="p">{</span>
+    <span class="s2">&quot;credit_score&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="mi">575</span><span class="p">,</span> <span class="mi">650</span><span class="p">,</span> <span class="mi">675</span><span class="p">,</span> <span class="mi">700</span><span class="p">,</span> <span class="mi">720</span><span class="p">,</span> <span class="mi">740</span><span class="p">,</span> <span class="mi">760</span><span class="p">,</span> <span class="mi">780</span><span class="p">,</span> <span class="mi">800</span><span class="p">],</span>
+    <span class="s2">&quot;original_interest_rate&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">4.25</span><span class="p">,</span> <span class="mf">8.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">),</span>
+<span class="p">}</span>
 
 </pre></div>
 </div>
+<p>Then check your balance plot.</p>
+</section>
 <section id="exercise-11">
 <h3>Exercise 11<a class="headerlink" href="#exercise-11" title="Link to this heading">#</a></h3>
-<p>Copy-paste that code and run it with your original data, your (fit) model, and what you got back when you ran <code class="docutils literal notranslate"><span class="pre">result_of_fit</span></code>. Then we’ll work with the output of that. You should get back a single dataframe of the same length as your original model.</p>
-</section>
-</section>
-<section id="check-your-matches-and-analyze">
-<h2>Check Your Matches and Analyze<a class="headerlink" href="#check-your-matches-and-analyze" title="Link to this heading">#</a></h2>
-<section id="exercise-12">
-<h3>Exercise 12<a class="headerlink" href="#exercise-12" title="Link to this heading">#</a></h3>
-<p>We previously tested balance on <code class="docutils literal notranslate"><span class="pre">simplified_race</span></code> and <code class="docutils literal notranslate"><span class="pre">county</span></code>. Check those again. Are there still statistically significant differences in college education by <code class="docutils literal notranslate"><span class="pre">simplified_race</span></code>?</p>
-<p>Note that when you test for this, you’ll need to take into account the <code class="docutils literal notranslate"><span class="pre">weights</span></code> column you got back from <code class="docutils literal notranslate"><span class="pre">get_dataframe</span></code>. What DAME does is not actually the 1-to-1 matching described in our readings — instead, however many observations that exact match it finds it puts in the same “group”. (These groups are identified in the dataframe you got from <code class="docutils literal notranslate"><span class="pre">get_dataframe</span></code> by the column <code class="docutils literal notranslate"><span class="pre">match_group</span></code>, and the size of each group is in <code class="docutils literal notranslate"><span class="pre">match_group_size</span></code>.)</p>
-<p>So to analyze the data, you need to use the <code class="docutils literal notranslate"><span class="pre">wls</span></code> (weighted least squares) function in <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>. For example, if your data is called <code class="docutils literal notranslate"><span class="pre">matched_data</span></code>, you might run:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">smf</span><span class="o">.</span><span class="n">wls</span><span class="p">(</span>
-    <span class="s2">&quot;has_college ~ C(simplified_race)&quot;</span><span class="p">,</span> <span class="n">matched_data</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">matched_data</span><span class="p">[</span><span class="s2">&quot;weights&quot;</span><span class="p">]</span>
-<span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+<p>Given we’re still getting a lot of matched observations, so let’s tighten credit ratings too! Try:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cutpoints</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;credit_score&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span>
+    <span class="s2">&quot;original_interest_rate&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">4.25</span><span class="p">,</span> <span class="mf">8.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">),</span>
+<span class="p">}</span>
 </pre></div>
 </div>
+<p>Store your final number of matches in <code class="docutils literal notranslate"><span class="pre">ex11_num_matches</span></code> (you can get this from <code class="docutils literal notranslate"><span class="pre">len(m.matched_data)</span></code>) and the final number of matched treated units (no money down mortgages) in <code class="docutils literal notranslate"><span class="pre">&quot;ex11_num_no_money_down&quot;</span></code>.</p>
+</section>
+</section>
+<section id="analyzing-matches">
+<h2>Analyzing Matches<a class="headerlink" href="#analyzing-matches" title="Link to this heading">#</a></h2>
+<p>Assuming you feel ok with the matches at this point, let’s do some analyses!</p>
+<section id="exercise-12">
+<h3>Exercise 12<a class="headerlink" href="#exercise-12" title="Link to this heading">#</a></h3>
+<p>Using statsmodels, fit a weighted regression using the data in <code class="docutils literal notranslate"><span class="pre">m.matched_data</span></code> with just <code class="docutils literal notranslate"><span class="pre">no_money_down</span></code> as a regressor. Store the resulting coefficient in <code class="docutils literal notranslate"><span class="pre">&quot;ex12_bivariate_effect&quot;</span></code>.</p>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">pymatchit</span></code> can provide two different types of weights — weights for estimating ATE, and weights for estimating ATT.</p>
+<p>To estimate ATT, the weight of a treated (here, <code class="docutils literal notranslate"><span class="pre">no_money_down</span></code>) observation will always be 1, and the weight for a control observation will be the number of treatment observations in the coarse match group divided by the number of controls.</p>
+<p>To estimate ATE, the weights are just the total observations in the coarse match group divided by number of treatment observations (for treated observations) and total observations in the coarse match group divided by the number of control observations (for control observations).</p>
+<p>Here, we’ve specified the estimate is <code class="docutils literal notranslate"><span class="pre">&quot;ATE&quot;</span></code>, so we get weights for estimating ATE.</p>
 </section>
 <section id="exercise-13">
 <h3>Exercise 13<a class="headerlink" href="#exercise-13" title="Link to this heading">#</a></h3>
-<p>Now use a weighted least squares regression on your matched data to regress annual earnings on <em>just</em> having a college eduction. What is the apparent effect of a BA? How does that compare to our initial estimate using the raw CPS data (before matching)?</p>
+<p>Because not all our coefficients matched perfectly, its good practice to include the matching variables in your regression in their original form. So estimate your model again, this time with <code class="docutils literal notranslate"><span class="pre">no_money_down</span></code>, <code class="docutils literal notranslate"><span class="pre">credit_score</span></code>, <code class="docutils literal notranslate"><span class="pre">original_interest_rate</span></code> and <code class="docutils literal notranslate"><span class="pre">first_time</span></code> in the regression. Store the new estimated effect in <code class="docutils literal notranslate"><span class="pre">&quot;ex13_withcoefficients_effect&quot;</span></code>.</p>
 </section>
-<section id="exercise-14">
-<h3>Exercise 14<a class="headerlink" href="#exercise-14" title="Link to this heading">#</a></h3>
-<p>Now include our other matching variables as controls (e.g. all the coefficients you gave to DAME to use). Does the coefficient change?</p>
-</section>
-<section id="exercise-15">
-<h3>Exercise 15<a class="headerlink" href="#exercise-15" title="Link to this heading">#</a></h3>
-<p>If you stopped matching after the eighth iteration (Iteration <code class="docutils literal notranslate"><span class="pre">7</span></code>) back in Exercise 10, you may be wondering if that was a good choice! Let’s check by restricting our attention to ONLY exact matches (<code class="docutils literal notranslate"><span class="pre">iteration</span> <span class="pre">=</span> <span class="pre">0</span></code>). Run that match.</p>
-</section>
-<section id="exercise-16">
-<h3>Exercise 16<a class="headerlink" href="#exercise-16" title="Link to this heading">#</a></h3>
-<p>Now use a weighted linear regression on your matched data to regress annual earnings on <em>just</em> having a college eduction. Is that different from what you had when you allowed more low quality matches?</p>
-</section>
-</section>
-<section id="other-forms-of-matching">
-<h2>Other Forms of Matching<a class="headerlink" href="#other-forms-of-matching" title="Link to this heading">#</a></h2>
-<p>OK, hopefully this gives you a taste of matching! There are, of course, <em>many</em> other permutations to be aware of though.</p>
-<ul class="simple">
-<li><p>Matching with replacement.  In this exercise, we set <code class="docutils literal notranslate"><span class="pre">repeat=False</span></code>, so each observation could only end up in our final dataset once. However, if we use <code class="docutils literal notranslate"><span class="pre">repeat=True</span></code>, if an untreated observation is the closest observation to multiple treated observations, it may get put in the dataset multiple times. We can still use this dataset in <em>almost</em> the same way, though, except we have to make use of weights so that if an observation appears, say, twice, each observation has a weight that’s 1/2 the weight of an observation only appearing once.</p></li>
-<li><p>Matching with continuous variables: DAME is used for exact matching, but if you have lots of continuous variables, you can also match on those. In fact, the Almost Exact Matching Lab also has a library called <a class="reference external" href="https://almost-matching-exactly.github.io/MALTS/">MALTS</a> that will do matching with continuous variables. That package does something <em>like</em> Mahalanobis Distance matching, but ulike Mahalanobis, which calculates the distance between observations in terms of the difference in all the matching variables normalized by each matching variable’s standard deviation, MALTS does something much more clever. (Here’s <a class="reference external" href="https://arxiv.org/abs/1811.07415">the paper</a> describing the technique if you want all the details). Basically, it figures out how well each matching variable predicts our outcome <span class="math notranslate nohighlight">\(Y\)</span>, then weights the different variables by their predictive power instead of just normalizing by something arbitrary like their standard deviation. As a result, final matches will prioritize matching more closely on variables that are outcome-relevant. In addition, when it sees a categorical variable, it recognizes that and only pairs observations when they are an exact match on that categorical variable.</p></li>
-<li><p>If you’re dataset is huge, use <code class="docutils literal notranslate"><span class="pre">FLAME</span></code>: this dataset is small, but if you have lots of observations and lots of matching variable, the computational complexity of this task explodes, so the AEML created FLAME, which works with millions of observations at only a small cost to match quality.</p></li>
-</ul>
 </section>
 </section>
 
@@ -855,44 +753,33 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matching-packages-python-v-r">Matching Packages: Python v. R</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-dame-flame">Installing dame-flame.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-setup">Data Setup</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-to-know-your-data">Getting To Know Your Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gradescope-autograding">Gradescope Autograding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#submission-limits">Submission Limits</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-prep">Data Prep</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matching">Matching!</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4">Exercise 4</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5">Exercise 5</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-do-matching-with-dame">Let’s Do Matching with DAME</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6">Exercise 6</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7">Exercise 7</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreting-dame-output">Interpreting DAME output</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matching">Matching!</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8">Exercise 8</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-9">Exercise 9</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10">Exercise 10</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-back-a-dataset">Getting Back a Dataset</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11">Exercise 11</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-your-matches-and-analyze">Check Your Matches and Analyze</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyzing-matches">Analyzing Matches</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12">Exercise 12</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-13">Exercise 13</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-14">Exercise 14</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-15">Exercise 15</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-16">Exercise 16</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-forms-of-matching">Other Forms of Matching</a></li>
 </ul>
   </nav></div>
 
