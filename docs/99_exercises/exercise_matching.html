@@ -609,6 +609,7 @@ document.write(`
 <li><p>whether borrower is a first time home buyer, and</p></li>
 <li><p>the original interest rate.</p></li>
 </ul>
+<p><strong>Drop observations where first-time home buyer is <code class="docutils literal notranslate"><span class="pre">9</span></code>.</strong></p>
 <p>Use a linear model and (because the dependent variable is 0-1) heteroskedastic robust standard errors. Store the estimated effect of a mortgage being no-money-down (the coefficient on no-money-down indicator) in <code class="docutils literal notranslate"><span class="pre">results</span></code> under the key <code class="docutils literal notranslate"><span class="pre">ex6_nmd_regression</span></code>.</p>
 <p>(Note: if you use the formula api from statsmodels, you may have to change some variable names)</p>
 </section>
