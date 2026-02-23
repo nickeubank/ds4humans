@@ -1,0 +1,172 @@
+% !TEX program = lualatex
+
+\documentclass[12pt]{beamer}
+% For handout add ,handout after 11pt
+
+\usetheme{auriga}
+\usecolortheme{auriga}
+
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{color}
+\usepackage{tikz}
+
+% Set up emoji support with a fallback font
+\newfontfamily\emojifont{Apple Color Emoji}[Renderer=Harfbuzz]
+\DeclareTextFontCommand{\emoji}{\emojifont}
+
+% Beamer list spacing
+% \setlength{\leftmargini}{1.5em}
+\setlength{\topsep}{1em}
+\setlength{\itemsep}{1em}
+\setlength{\parskip}{1.5em}
+\setlength{\parsep}{0.5em}
+
+% define some colors for a consistent theme across slides
+\definecolor{red}{RGB}{181, 23, 0}
+\definecolor{blue}{RGB}{0, 118, 186}
+\definecolor{gray}{RGB}{146, 146, 146}
+\newcommand{\indep}{\perp\!\!\!\perp}
+\title{Curse of Dimensionality, \\ Propensity Scores \& Matching}
+
+\author{Nick Eubank}
+
+\date{\vspace*{.3in} \date}
+
+\begin{document}
+\setbeamercolor{page number in head/foot}{fg=white}
+
+\begin{frame}[c]{}
+    \titlepage
+\end{frame}
+
+\begin{frame}
+    \frametitle{Curse of Dimensionality}
+Assume we are doing Coarse Exact Matching on 200 observation dataset. \alert{100 obs Treated, 100 obs control}.  \\[1ex]
+
+Assume two covariates, $x_1 \in {1, 2, 3, 4}$ and $x_2 \in {1, 2, 3, 4}$. 
+
+\pause Assume uniformly distributed. How many T and how many C in each matching ``bucket''?
+
+\pause $\frac{100}{4^2} = \frac{100}{16} = 6.25$ T and $6.25$ C.\\[1ex]
+\pause We're matching, so probably \emph{not} uniform, but prob fine.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Curse of Dimensionality}
+Assume we are doing Coarse Exact Matching on 200 observation dataset. \alert{100 obs Treated, 100 obs control}.  \\[1ex]
+
+Assume \alert{three} covariates, $x_1 \in {1, 2, 3, 4}$, $x_2 \in {1, 2, 3, 4}$, $x_3 \in {1, 2, 3, 4}$. 
+
+Assume uniformly distributed. How many T and how many C in each matching ``bucket''?
+
+\pause $\frac{100}{4^3} = \frac{100}{64} = 1.5$ T and $1.5$ C.\\[1ex]
+\pause Sure to be plenty of empty cells, but also cells that match.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Curse of Dimensionality}
+Assume we are doing Coarse Exact Matching on 200 observation dataset. \alert{100 obs Treated, 100 obs control}.  \\[1ex]
+
+Assume \alert{four} covariates, $x_1 \in {1, 2, 3, 4}$, $x_2 \in {1, 2, 3, 4}$, $x_3 \in {1, 2, 3, 4}$ and $x_4 \in {1, 2, 3, 4}$.
+
+Assume uniformly distributed. How many T and how many C in each matching ``bucket''?
+
+\pause $\frac{100}{4^4} = \frac{100}{256} = 0.4$ T and $0.4$ C.\\[1ex]
+\pause Oof... mostly empty cells?
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Curse of Dimensionality}
+Assume we are doing Coarse Exact Matching on 200 observation dataset. \alert{100 obs Treated, 100 obs control}.  \\[1ex]
+
+Assume \alert{five} covariates, $x_1 \in {1, 2, 3, 4}$, $x_2 \in {1, 2, 3, 4}$, $x_3 \in {1, 2, 3, 4}$ and $x_4 \in {1, 2, 3, 4}$, $x_5 \in {1, 2, 3, 4}$.
+
+Assume uniformly distributed. How many T and how many C in each matching ``bucket''?
+
+\pause $\frac{100}{4^5} = \frac{100}{1,025} = 0.1$ T and $0.1$ C.\\[1ex]
+\pause Oof... Even if most are in an area of overlap, getting \emph{real} hard.
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Curse of Dimensionality}
+Even with just \alert{five} covariates, each with only \alert{four discrete values (no continuous variables!)}, finding matches gets quickly fast! \\[1ex]
+\pause \alert{Curse of Dimensionality}: adding dimensions increases the distance between points fast. 
+\pause Challenge with matching on covariates \\[1ex]
+(in theory and, historically, in practice. Can be hard computationally!) \\
+\vspace*{1cm}
+\pause Thus the allure of \alert{propensity score matching}.
+\end{frame}
+
+
+
+\begin{frame}
+    \frametitle{Conditional Independence Assumption}
+As discussed before, our goal in observational causal inference is to find and condition on covariates $X$ such that:
+\begin{equation*}
+    E(Y^{0} | D_i=1, X) = E(Y^{0} | D_i=0, X)
+\end{equation*}
+Statisticians generally use the slightly stronger \alert{Conditional Independence Assumption} (which implies No Baseline Differences): \\[1ex]
+\begin{equation*}
+(Y^1, Y^0) \indep D | X
+\end{equation*}
+So when you see $(Y^1, Y^0) \indep D | X$, that implies no baseline differences (and also no differential treatment effects).
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Propensity Scores}
+\alert{Propensity Score Theorem}: 
+\begin{eqnarray*}
+    \text{if } (Y^1_i, Y^0_i) \indep D_i | X \\
+    \text{then} (Y^1_i, Y^0_i) \indep D_i | p(X_i) \\
+\end{eqnarray*}
+Where $p(X_i)$ is the propensity score: $p(X) \equiv Pr(D_i=1 | X_i)$ \\[1ex]
+\pause Mathematical Proof in Angrist and Pischke, \emph{Mostly Harmless Econometrics}, Sec 3.3.2. or \url{https://youtu.be/nnC1tlircdE}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Propensity Scores Matching}
+Why does conditioning on Propensity Score $\rightarrow$ No Baseline Differences? \\[1ex]
+\pause  Matching on covariates $X_i$ makes intuitive sense: \\[1ex]
+\indent Pair T and C observations that look the same and thus (we hope) have as close to the same \alert{potential outcomes} ($Y^0_i, Y^1_i$) as possible. \\[2ex]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Propensity Scores Matching}
+Why does conditioning on Propensity Score $\rightarrow$ No Baseline Differences? \\[1ex]
+\pause What does matching on $Pr(D_i = 1|X_i)$ accomplish? \\[1ex]
+\pause There's no $Y^0_i$ in that equation! \\[1ex]
+Baseline differences are violated when a factor ($X_i$) is correlated with $Y^0_i$ and $D_i$. \\[1ex]
+\pause Propensity Score Matching \alert{just focuses on breaking correlation between factors $X_i$ and $D_i$.} 
+\end{frame}
+
+\begin{frame}
+    \frametitle{Propensity Scores Matching}
+Strengths:
+\begin{enumerate}
+    \pause \item Matching on a scalar is easy!
+    \pause \item Asymptotically, it breaks the correlation between $X_i$ and $D_i$.
+\end{enumerate}
+\pause Weakness: 
+\begin{enumerate}
+    \item You \emph{aren't} trying to make pairs as comparable as possible in terms of $Y^0_i, Y^1_i$. \\
+    \begin{itemize}
+        \pause \item Thus sample left after matching may be unbalanced and inefficient.
+    \end{itemize} 
+    \pause \item Proofs assume you \emph{know} $Pr(D_i=1|X_i)$. Issues when estimating.
+\end{enumerate} 
+\end{frame}
+
+\begin{frame}
+    \frametitle{My (Opinionated) Summary}
+\begin{itemize}
+    \item If you have data to match on covariates, do.
+    \item Propensity score matching is an OK choice if (a) you have a strong understanding of the true $Pr(D_i=1|X_i)$ and (b) you aren't dropping too many observations (potentially giving rise to imbalance).
+\end{itemize}
+\end{frame}
+
+\end{document}
