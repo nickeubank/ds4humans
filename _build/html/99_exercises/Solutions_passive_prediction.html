@@ -6,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Predicting Mortgage Delinquency Risk &#8212; Solving Problems With Data</title>
   
@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -612,10 +612,16 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">&quot;mode.copy_on_write&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/fs/h_8_rwsn5hvg9mhp0txgc_s9v6191b/T/ipykernel_62179/550003088.py:4: Pandas4Warning: The &#39;mode.copy_on_write&#39; option is deprecated. Copy-on-Write can no longer be disabled (it is always enabled with pandas &gt;= 3.0), and setting the option has no impact. This option will be removed in pandas 4.0.
+  pd.set_option(&quot;mode.copy_on_write&quot;, True)
 </pre></div>
 </div>
 </div>
@@ -721,7 +727,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/fs/h_8_rwsn5hvg9mhp0txgc_s9v6191b/T/ipykernel_11500/4057295142.py:9: DtypeWarning: Columns (3,7,23) have mixed types. Specify dtype option on import or set low_memory=False.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/fs/h_8_rwsn5hvg9mhp0txgc_s9v6191b/T/ipykernel_62179/4057295142.py:9: DtypeWarning: Columns (0: Current Loan Delinquency Status, 1: Modification Flag, 2: Step Modification Flag) have mixed types. Specify dtype option on import or set low_memory=False.
   servicing = pd.read_csv(
 </pre></div>
 </div>
@@ -855,7 +861,7 @@ If a loan has been acquired by REO, then the Current Loan Delinquency Status wil
        &#39;Property Valuation Method&#39;, &#39;Interest Only (I/O) Indicator&#39;,
        &#39;Mortgage Insurance Cancellation Indicator&#39;, &#39;Monthly Reporting Period&#39;,
        &#39;Current Loan Delinquency Status&#39;, &#39;_merge&#39;, &#39;ever_delinquent&#39;],
-      dtype=&#39;object&#39;)
+      dtype=&#39;str&#39;)
 </pre></div>
 </div>
 </div>
@@ -1009,7 +1015,7 @@ Name: count, dtype: int64
 <p>You may create your one-hot-encodings however you wish, but I’m a fan of the <a class="reference external" href="https://patsy.readthedocs.io/en/latest/overview.html">patsy library’s</a> <code class="docutils literal notranslate"><span class="pre">dmatrices</span></code> function.</p>
 <p><strong>Hint:</strong> You should end up with 8 categorical variables, including some binary flags and <code class="docutils literal notranslate"><span class="pre">Number_of_Borrowers</span></code>, <code class="docutils literal notranslate"><span class="pre">Number_of_Units</span></code> (which you could argue should be continuous, but I think are better treated as categorical).</p>
 <p><strong>Hint 2:</strong> To use <code class="docutils literal notranslate"><span class="pre">patsy</span></code>, you will probably need to make some changes to the names of your variables. To make your life easier, you may wish to use a little snippet like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
 <span class="n">mortgages_2004</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">mortgages_2004</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
 <span class="n">mortgages_2004</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">&quot;[%/()-]&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">mortgages_2004</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
 </pre></div>
@@ -1018,8 +1024,8 @@ Name: count, dtype: int64
 <p>Store the number of observations in your final dataset in <code class="docutils literal notranslate"><span class="pre">ex7_num_obs</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">patsy</span>
-<span class="kn">import</span> <span class="nn">re</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">patsy</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
 
 <span class="c1"># Patsy can&#39;t handle this type of punctuation in formulas</span>
 <span class="n">for_ml</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">for_ml</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
@@ -1038,7 +1044,7 @@ Name: count, dtype: int64
        &#39;Amortization_Type_Formerly_Product_Type&#39;, &#39;Property_State&#39;,
        &#39;Property_Type&#39;, &#39;Original_Loan_Term&#39;, &#39;Number_of_Borrowers&#39;,
        &#39;ever_delinquent&#39;, &#39;Loan_Sequence_Number&#39;],
-      dtype=&#39;object&#39;)
+      dtype=&#39;str&#39;)
 </pre></div>
 </div>
 </div>
@@ -1203,11 +1209,24 @@ Name: count, dtype: int64
 <p>Before you do, Use <code class="docutils literal notranslate"><span class="pre">0.2</span></code> as the <code class="docutils literal notranslate"><span class="pre">test_size</span></code> and use <code class="docutils literal notranslate"><span class="pre">random_state=42</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
 
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
     <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
 <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">19</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;sklearn&#39;
 </pre></div>
 </div>
 </div>
@@ -1218,7 +1237,7 @@ Name: count, dtype: int64
 <p>Now fit a <code class="docutils literal notranslate"><span class="pre">GradientBoostingClassifier</span></code> to the data (from <code class="docutils literal notranslate"><span class="pre">sklearn.ensemble</span></code>). Set <code class="docutils literal notranslate"><span class="pre">random_state=42</span></code> when instantiating your <code class="docutils literal notranslate"><span class="pre">GradientBoostingClassifier</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">GradientBoostingClassifier</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">GradientBoostingClassifier</span>
 
 <span class="n">gb</span> <span class="o">=</span> <span class="n">GradientBoostingClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
 <span class="n">gb</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span>
@@ -1782,10 +1801,10 @@ weighting is now 0.298.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn.objects</span> <span class="k">as</span> <span class="nn">so</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">style</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">seaborn.objects</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">so</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">style</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 
 <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span>
 
@@ -1822,7 +1841,7 @@ weighting is now 0.298.
 <p>Please also plot your threshold against value calculations.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="n">threshold</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">value</span><span class="p">(</span><span class="n">threshold</span><span class="p">):</span>
 
     <span class="n">TRUE_POS</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">TRUE_NEG</span> <span class="o">=</span> <span class="mi">1</span>
@@ -2000,7 +2019,7 @@ Name: value, dtype: float64
 2007 data has 481,871 servicing records
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/fs/h_8_rwsn5hvg9mhp0txgc_s9v6191b/T/ipykernel_11500/1217561400.py:13: DtypeWarning: Columns (7,23) have mixed types. Specify dtype option on import or set low_memory=False.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/fs/h_8_rwsn5hvg9mhp0txgc_s9v6191b/T/ipykernel_1882/1217561400.py:13: DtypeWarning: Columns (7,23) have mixed types. Specify dtype option on import or set low_memory=False.
   servicing_2007 = pd.read_csv(
 </pre></div>
 </div>

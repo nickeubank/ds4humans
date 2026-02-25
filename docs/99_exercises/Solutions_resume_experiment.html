@@ -6,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Resume Experiment Analysis &#8212; Solving Problems With Data</title>
   
@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -593,19 +593,25 @@ document.write(`
 <p>Store the p-values associated with your t-test of these variables in <code class="docutils literal notranslate"><span class="pre">ex2_pvalue_female</span></code>, <code class="docutils literal notranslate"><span class="pre">ex2_pvalue_computerskills</span></code>, and <code class="docutils literal notranslate"><span class="pre">ex2_pvalue_yearsexp</span></code>. <strong>Round your values to 2 decimal places.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">&quot;mode.copy_on_write&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
 
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
-<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>
 
 <span class="n">resumes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_stata</span><span class="p">(</span>
     <span class="s2">&quot;https://github.com/nickeubank/MIDS_Data/blob/master/resume_experiment/&quot;</span>
     <span class="s2">&quot;resume_experiment.dta?raw=true&quot;</span>
 <span class="p">)</span>
 <span class="n">results</span> <span class="o">=</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/fs/h_8_rwsn5hvg9mhp0txgc_s9v6191b/T/ipykernel_62226/2972821652.py:4: Pandas4Warning: The &#39;mode.copy_on_write&#39; option is deprecated. Copy-on-Write can no longer be disabled (it is always enabled with pandas &gt;= 3.0), and setting the option has no impact. This option will be removed in pandas 4.0.
+  pd.set_option(&quot;mode.copy_on_write&quot;, True)
 </pre></div>
 </div>
 </div>
@@ -820,7 +826,7 @@ and the p-value for this difference is 0.85
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.stats</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">scipy.stats</span>
 
 <span class="n">chi2</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">dof</span><span class="p">,</span> <span class="n">expected</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">chi2_contingency</span><span class="p">(</span><span class="n">ctab</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
 
@@ -914,7 +920,7 @@ This difference has a p-value of 0.00004
 <p>Store the p-value associated with <code class="docutils literal notranslate"><span class="pre">black</span></code> in <code class="docutils literal notranslate"><span class="pre">&quot;ex6_black_pvalue&quot;</span></code>. <strong>Please round your pvalue to 5 decimal places.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.formula.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">smf</span>
 
 <span class="n">model</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s2">&quot;call ~ black&quot;</span><span class="p">,</span> <span class="n">resumes</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 <span class="n">model</span><span class="o">.</span><span class="n">get_robustcov_results</span><span class="p">(</span><span class="n">cov_type</span><span class="o">=</span><span class="s2">&quot;HC3&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
@@ -934,10 +940,10 @@ This difference has a p-value of 0.00004
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   16.92</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Mon, 06 Oct 2025</td> <th>  Prob (F-statistic):</th> <td>3.96e-05</td>
+  <th>Date:</th>             <td>Wed, 25 Feb 2026</td> <th>  Prob (F-statistic):</th> <td>3.96e-05</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>16:13:50</td>     <th>  Log-Likelihood:    </th> <td> -562.24</td>
+  <th>Time:</th>                 <td>08:02:13</td>     <th>  Log-Likelihood:    </th> <td> -562.24</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  4870</td>      <th>  AIC:               </th> <td>   1128.</td>
@@ -1001,7 +1007,7 @@ This difference has a p-value of 0.00004
 <p>Now let’s see if we can improve our estimates by adding in other variables as controls. Add in <code class="docutils literal notranslate"><span class="pre">education</span></code>, <code class="docutils literal notranslate"><span class="pre">yearsexp</span></code>, <code class="docutils literal notranslate"><span class="pre">female</span></code>, and <code class="docutils literal notranslate"><span class="pre">computerskills</span></code>—be sure to treat education as a categorical variable!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.formula.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">smf</span>
 
 <span class="n">model</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span>
     <span class="s2">&quot;call ~ black + C(education) + yearsexp + computerskills + female&quot;</span><span class="p">,</span> <span class="n">resumes</span>
@@ -1023,10 +1029,10 @@ This difference has a p-value of 0.00004
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   4.350</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Mon, 06 Oct 2025</td> <th>  Prob (F-statistic):</th> <td>3.04e-05</td>
+  <th>Date:</th>             <td>Wed, 25 Feb 2026</td> <th>  Prob (F-statistic):</th> <td>3.04e-05</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>16:13:50</td>     <th>  Log-Likelihood:    </th> <td> -551.02</td>
+  <th>Time:</th>                 <td>08:02:13</td>     <th>  Log-Likelihood:    </th> <td> -551.02</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  4870</td>      <th>  AIC:               </th> <td>   1120.</td>
@@ -1128,7 +1134,7 @@ This difference has a p-value of 0.00004
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/nce8/miniforge3/lib/python3.12/site-packages/statsmodels/base/model.py:1894: ValueWarning: covariance of constraints does not have full rank. The number of constraints is 10, but rank is 1
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/nce8/miniforge3/lib/python3.13/site-packages/statsmodels/base/model.py:1894: ValueWarning: covariance of constraints does not have full rank. The number of constraints is 10, but rank is 1
   warnings.warn(&#39;covariance of constraints does not have full &#39;
 </pre></div>
 </div>
@@ -1141,13 +1147,13 @@ This difference has a p-value of 0.00004
   <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.006</td>
 </tr>
 <tr>
-  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>  0.9161</td>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>  0.9166</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Mon, 06 Oct 2025</td> <th>  Prob (F-statistic):</th>  <td> 0.339</td> 
+  <th>Date:</th>             <td>Wed, 25 Feb 2026</td> <th>  Prob (F-statistic):</th>  <td> 0.338</td> 
 </tr>
 <tr>
-  <th>Time:</th>                 <td>16:13:50</td>     <th>  Log-Likelihood:    </th> <td> -550.83</td>
+  <th>Time:</th>                 <td>08:02:13</td>     <th>  Log-Likelihood:    </th> <td> -550.83</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  4870</td>      <th>  AIC:               </th> <td>   1122.</td>
@@ -1167,45 +1173,45 @@ This difference has a p-value of 0.00004
                 <td></td>                  <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
 </tr>
 <tr>
-  <th>Intercept</th>                    <td>    0.0896</td> <td>    0.039</td> <td>    2.301</td> <td> 0.021</td> <td>    0.013</td> <td>    0.166</td>
+  <th>Intercept</th>                    <td>    0.0896</td> <td>    0.039</td> <td>    2.300</td> <td> 0.021</td> <td>    0.013</td> <td>    0.166</td>
 </tr>
 <tr>
-  <th>college_degree[T.True]</th>       <td>-4.911e+10</td> <td> 5.13e+10</td> <td>   -0.957</td> <td> 0.339</td> <td> -1.5e+11</td> <td> 5.15e+10</td>
+  <th>college_degree[T.True]</th>       <td>-4.913e+10</td> <td> 5.13e+10</td> <td>   -0.957</td> <td> 0.338</td> <td> -1.5e+11</td> <td> 5.15e+10</td>
 </tr>
 <tr>
-  <th>C(education)[T.1]</th>            <td>   -0.0023</td> <td>    0.057</td> <td>   -0.040</td> <td> 0.968</td> <td>   -0.114</td> <td>    0.110</td>
+  <th>C(education)[T.1]</th>            <td>   -0.0022</td> <td>    0.057</td> <td>   -0.039</td> <td> 0.969</td> <td>   -0.114</td> <td>    0.110</td>
 </tr>
 <tr>
-  <th>C(education)[T.2]</th>            <td>   -0.0012</td> <td>    0.041</td> <td>   -0.030</td> <td> 0.976</td> <td>   -0.082</td> <td>    0.080</td>
+  <th>C(education)[T.2]</th>            <td>   -0.0012</td> <td>    0.041</td> <td>   -0.029</td> <td> 0.977</td> <td>   -0.082</td> <td>    0.080</td>
 </tr>
 <tr>
-  <th>C(education)[T.3]</th>            <td>   -0.0035</td> <td>    0.039</td> <td>   -0.089</td> <td> 0.929</td> <td>   -0.079</td> <td>    0.073</td>
+  <th>C(education)[T.3]</th>            <td>   -0.0034</td> <td>    0.039</td> <td>   -0.089</td> <td> 0.929</td> <td>   -0.079</td> <td>    0.073</td>
 </tr>
 <tr>
-  <th>C(education)[T.4]</th>            <td> 4.911e+10</td> <td> 5.13e+10</td> <td>    0.957</td> <td> 0.339</td> <td>-5.15e+10</td> <td>  1.5e+11</td>
+  <th>C(education)[T.4]</th>            <td> 4.913e+10</td> <td> 5.13e+10</td> <td>    0.957</td> <td> 0.338</td> <td>-5.15e+10</td> <td>  1.5e+11</td>
 </tr>
 <tr>
   <th>black</th>                        <td>   -0.0406</td> <td>    0.015</td> <td>   -2.741</td> <td> 0.006</td> <td>   -0.070</td> <td>   -0.012</td>
 </tr>
 <tr>
-  <th>black:college_degree[T.True]</th> <td>    0.0125</td> <td>    0.015</td> <td>    0.841</td> <td> 0.401</td> <td>   -0.017</td> <td>    0.042</td>
+  <th>black:college_degree[T.True]</th> <td>    0.0125</td> <td>    0.015</td> <td>    0.841</td> <td> 0.400</td> <td>   -0.017</td> <td>    0.042</td>
 </tr>
 <tr>
-  <th>yearsexp</th>                     <td>    0.0032</td> <td>    0.001</td> <td>    5.429</td> <td> 0.000</td> <td>    0.002</td> <td>    0.004</td>
+  <th>yearsexp</th>                     <td>    0.0032</td> <td>    0.001</td> <td>    5.428</td> <td> 0.000</td> <td>    0.002</td> <td>    0.004</td>
 </tr>
 <tr>
-  <th>computerskills</th>               <td>   -0.0186</td> <td>    0.006</td> <td>   -3.229</td> <td> 0.001</td> <td>   -0.030</td> <td>   -0.007</td>
+  <th>computerskills</th>               <td>   -0.0186</td> <td>    0.006</td> <td>   -3.230</td> <td> 0.001</td> <td>   -0.030</td> <td>   -0.007</td>
 </tr>
 <tr>
-  <th>female</th>                       <td>    0.0112</td> <td>    0.004</td> <td>    2.865</td> <td> 0.004</td> <td>    0.004</td> <td>    0.019</td>
+  <th>female</th>                       <td>    0.0112</td> <td>    0.004</td> <td>    2.866</td> <td> 0.004</td> <td>    0.004</td> <td>    0.019</td>
 </tr>
 </table>
 <table class="simpletable">
 <tr>
-  <th>Omnibus:</th>       <td>2949.852</td> <th>  Durbin-Watson:     </th> <td>   1.449</td> 
+  <th>Omnibus:</th>       <td>2949.858</td> <th>  Durbin-Watson:     </th> <td>   1.449</td> 
 </tr>
 <tr>
-  <th>Prob(Omnibus):</th>  <td> 0.000</td>  <th>  Jarque-Bera (JB):  </th> <td>18619.292</td>
+  <th>Prob(Omnibus):</th>  <td> 0.000</td>  <th>  Jarque-Bera (JB):  </th> <td>18619.387</td>
 </tr>
 <tr>
   <th>Skew:</th>           <td> 3.046</td>  <th>  Prob(JB):          </th> <td>    0.00</td> 
@@ -1213,7 +1219,7 @@ This difference has a p-value of 0.00004
 <tr>
   <th>Kurtosis:</th>       <td>10.392</td>  <th>  Cond. No.          </th> <td>4.86e+14</td> 
 </tr>
-</table><br/><br/>Notes:<br/>[1] Standard Errors are heteroscedasticity robust (HC3)<br/>[2] The smallest eigenvalue is 1.85e-24. This might indicate that there are<br/>strong multicollinearity problems or that the design matrix is singular.</div></div>
+</table><br/><br/>Notes:<br/>[1] Standard Errors are heteroscedasticity robust (HC3)<br/>[2] The smallest eigenvalue is 1.84e-24. This might indicate that there are<br/>strong multicollinearity problems or that the design matrix is singular.</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1244,14 +1250,21 @@ This difference has a p-value of 0.00004
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Black respondents without a college degree are -4.06 percentage points less likely to get a call back than White applicant.
-Black respondents with a college degree are -2.82 percentage points less likely to get a call back than White applicant
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/fs/h_8_rwsn5hvg9mhp0txgc_s9v6191b/T/ipykernel_30799/838979874.py:1: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
-  results[&quot;ex8_black_nocollege&quot;] = 100 * float(
-/var/folders/fs/h_8_rwsn5hvg9mhp0txgc_s9v6191b/T/ipykernel_30799/838979874.py:7: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
-  results[&quot;ex8_black_college&quot;] = 100 * float(
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">results</span><span class="p">[</span><span class="s2">&quot;ex8_black_nocollege&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="nb">float</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">fit_model</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">fit_model</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">exog_names</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;black&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">results</span><span class="p">[</span><span class="s2">&quot;ex8_black_nocollege&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;ex8_black_nocollege&quot;</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">results</span><span class="p">[</span><span class="s2">&quot;ex8_black_college&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="nb">float</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">fit_model</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">fit_model</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">exog_names</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;black&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="o">+</span> <span class="n">fit_model</span><span class="o">.</span><span class="n">params</span><span class="p">[</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>         <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">fit_model</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">exog_names</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;black:college_degree[T.True]&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="p">)</span>
+
+<span class="ne">TypeError</span>: only 0-dimensional arrays can be converted to Python scalars
 </pre></div>
 </div>
 </div>
@@ -1298,10 +1311,10 @@ Black respondents with a college degree are -2.82 percentage points less likely 
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   3.866</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Mon, 06 Oct 2025</td> <th>  Prob (F-statistic):</th> <td>6.76e-05</td>
+  <th>Date:</th>             <td>Tue, 01 Apr 2025</td> <th>  Prob (F-statistic):</th> <td>6.76e-05</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>16:13:50</td>     <th>  Log-Likelihood:    </th> <td> -551.00</td>
+  <th>Time:</th>                 <td>17:12:00</td>     <th>  Log-Likelihood:    </th> <td> -551.00</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  4870</td>      <th>  AIC:               </th> <td>   1122.</td>
@@ -1530,31 +1543,10 @@ ex10_experiment_v_us is type &lt;class &#39;str&#39;&gt;
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;autograder/solutions.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
     <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">outfile</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">24</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">json</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;autograder/solutions.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">outfile</span><span class="p">)</span>
-
-<span class="nn">File ~/miniforge3/lib/python3.12/site-packages/IPython/core/interactiveshell.py:324,</span> in <span class="ni">_modified_open</span><span class="nt">(file, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">317</span> <span class="k">if</span> <span class="n">file</span> <span class="ow">in</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}:</span>
-<span class="g g-Whitespace">    </span><span class="mi">318</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">319</span>         <span class="sa">f</span><span class="s2">&quot;IPython won&#39;t let you open fd=</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2"> by default &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">320</span>         <span class="s2">&quot;as it is likely to crash IPython. If you know what you are doing, &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">321</span>         <span class="s2">&quot;you can use builtins&#39; open.&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">322</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">324</span> <span class="k">return</span> <span class="n">io_open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;autograder/solutions.json&#39;
 </pre></div>
 </div>
 </div>

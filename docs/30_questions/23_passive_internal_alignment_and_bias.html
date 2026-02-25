@@ -6,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Passive Prediction, Internal Validity, and Alignment &#8212; Solving Problems With Data</title>
   
@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -545,7 +545,7 @@ document.write(`
 <p>When we use a coding assistant LLM, what we <em>want</em> is for it to help us write good code. But LLMs aren’t designed to write <em>good</em> code, they’re designed to write the code that is most like what they would find on a website/github repo if what came before it looked like the code in the file you’re working on.</p>
 <p>A consequence of this is that if you have a project where you’ve been writing <em>bad</em> code, what your coding assistant is likely to do is fill in <em>more bad code</em>. And crucially, it isn’t filling in bad code because it <em>can’t</em> write good code — it’s not a problem of capability — it fills in bad code because what the model does and what we want it to do are different things.</p>
 <p>To illustrate, suppose I start writing a function to add two numbers, <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>. And suppose I was a really bad programmer who started off with something like:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_two_numbers</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add_two_numbers</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">0</span>
     <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -575,7 +575,7 @@ document.write(`
 </aside>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="llm-training-data" role="doc-footnote">
+<aside class="footnote brackets" id="llm-training-data" role="note">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p>A more accurate way to phrase this would be “If I came across this text <em>in my training data</em>…” For most LLMs, “my training data” is a corpus that consists of both text that is <em>not</em> on the internet — like every book every published — and fails to include many things that <em>are</em> on the internet but which are difficult to crawl in an automated way. You can learn more about the corpus of internet text used by many LLMs — the 9.5 petabyte <em>Common Crawl</em> dataset — <a class="reference external" href="https://foundation.mozilla.org/en/research/library/generative-ai-training-data/common-crawl/">here.</a> But it does seem very clear the <em>vast</em> majority of training data comes from the internet. LLMs makers are becoming increasingly caggy about what data they use for training — in part because they don’t wish to make copyright lawsuits against them <em>too</em> easy — but books made up only <a class="reference external" href="https://arxiv.org/abs/2302.13971">4.5% of the training data for Meta’s first version of LLaMa</a>.</p>
 </aside>

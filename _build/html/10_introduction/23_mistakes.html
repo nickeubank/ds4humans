@@ -6,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Idea 3: Being Thoughtful About Being Wrong &#8212; Solving Problems With Data</title>
   
@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -511,7 +511,7 @@ document.write(`
 <p>I assume that these authors believe that this type of declaration reflects well on them — after all, 96% accuracy means only 4% of observations were mis-classified! But the truth is that reporting a high accuracy absent addition information about model performance actually tells me more about the author’s failure to understand this third Big Idea of the book than it tells me about their modelling prowess.</p>
 <p>To illustrate why, suppose I told you I had developed a model that could predict breast cancer in mammograms with an accuracy of over 90%. That’d be amazing, right? Mammograms cost roughly $10 <em>billion</em> dollars a year in the US alone,<a class="footnote-reference brackets" href="#mammogram-costs" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> so any reduction in need for skilled radiologists to review mammograms would be a huge win for women’s health and healthcare costs, right?</p>
 <p>Now suppose I told you that the model I wrote was this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_cancer_detection_model</span><span class="p">(</span><span class="n">mammogram</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">my_cancer_detection_model</span><span class="p">(</span><span class="n">mammogram</span><span class="p">):</span>
     <span class="n">is_scan_abnormal_maybe_cancerous</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="k">return</span> <span class="n">is_scan_abnormal_maybe_cancerous</span>
 </pre></div>
@@ -520,7 +520,7 @@ document.write(`
 <p>So, are you still impressed by my model’s 90% accuracy?</p>
 <p>Of course not. And to be clear, the problem with this model is <em>not</em> that its accuracy is only 90% and not, say 95%. The problem with this model is that <em>it has a False Negative Rate (the share of cases that are positive — in this case, mammograms from women with cancer — that are classified as cancer free) of 100%.</em> And since the thing we care about most in cancer screenings is not telling a patient with cancer they’re fine (a False Negative), that’s a huge problem!</p>
 <p>OK, if what we care about is the False Negative Rate, shouldn’t we just minimize the False Negative Rate? Not so fast! Consider this model:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_no_false_negative_model</span><span class="p">(</span><span class="n">mammogram</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">my_no_false_negative_model</span><span class="p">(</span><span class="n">mammogram</span><span class="p">):</span>
     <span class="n">is_scan_abnormal_maybe_cancerous</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="k">return</span> <span class="n">is_scan_abnormal_maybe_cancerous</span>
 </pre></div>
@@ -536,7 +536,7 @@ This is just one example of the kind of problem you will encounter if you aren't
 And  -->
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="mammogram-costs" role="doc-footnote">
+<aside class="footnote brackets" id="mammogram-costs" role="note">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4142190/">“Aggregate Cost of Mammography Screening in the United States: Comparison of Current Practice and Advocated Guidelines”</a>, <em>Annals of Internal Medicine</em>, February 2014.</p>
 </aside>
