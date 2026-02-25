@@ -46,7 +46,7 @@ Th Feb 19,Causal Questions: Matching,"- `The Why of Matching <../35_causal/80_ma
 Tu Feb 24,Causal Questions: Matching,"- Cunningham, Chpt 5, 206 (""Propensity Score Methods"") - 234 (Start of ""Coarsened exact matching"")
 - `Why You Should Never Use Propensity Score Matching <https://youtu.be/rBv39pK1iEs?si=9S3SigdBIc0BrcRR>`_",
 Th Feb 26,Causal Questions: Panels and Fixed Effects,"- `Understanding Fixed Effects <../35_causal/50_fixed_effects_and_causal_inference.html>`_
-- Using Fixed Effects <../35_causal/60_fixed_effects.html>`_",
+- `Using Fixed Effects <../35_causal/60_fixed_effects.html>`_",
 Tu Mar 3,**MIDTERM**,**MIDTERM**,
 Th Mar 5,Causal Questions: Differences and Differences / ,"- Cunningham, Chpt 9 pp 406 (Difference in Differences) - pp 433 (Stop at ""Importance of Placebos in Diff-in-Diff"")
  -(Book page numbers at bottom of PDF on canvas. Full chapter is in PDF, more than you need to read.)
