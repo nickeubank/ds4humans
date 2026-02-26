@@ -613,6 +613,7 @@ FatalityRate_i = \beta_0 + \beta_1 \times BeerTax_i
 <section id="id1">
 <h2>Exercise 6<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>Implement the above entity-demeaned approach to estimate the fixed-effects model by hand (use basic functions, not full tools like <code class="docutils literal notranslate"><span class="pre">PanelOLS</span></code> or <code class="docutils literal notranslate"><span class="pre">C()</span></code> notation in <code class="docutils literal notranslate"><span class="pre">python</span></code>).</p>
+<p>Store your coefficient as <code class="docutils literal notranslate"><span class="pre">&quot;ex6_demeaned_beta&quot;</span></code>.</p>
 <p>Compare your answer to the answer you got in Ex 5.</p>
 </section>
 <section id="exercise-7">
@@ -628,9 +629,8 @@ FatalityRate_i = \beta_0 + \beta_1 \times BeerTax_i
 <p>Explain (a) the type of phenomenon we control for by adding <code class="docutils literal notranslate"><span class="pre">year</span></code> fixed effects, and (b) your choice of covariates.</p>
 <p>Put your beer tax coefficient in <code class="docutils literal notranslate"><span class="pre">&quot;ex8_twfe_beta&quot;</span></code>.</p>
 <p>Interpret the result.</p>
-<p>\begin{align}
-FatalityRate_{it} = \alpha + \beta BeerTax_{it} + X_{it} + State_i + Year_t + \epsilon_{it}
-\end{align}</p>
+<div class="math notranslate nohighlight">
+\[FatalityRate_{it} = \alpha + \beta BeerTax_{it} + State_i + Year_t + \epsilon_{it}\]</div>
 </section>
 </section>
 
