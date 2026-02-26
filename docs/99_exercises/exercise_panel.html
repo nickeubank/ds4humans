@@ -587,27 +587,26 @@ FatalityRate_i = \beta_0 + \beta_1 \times BeerTax_i
 </section>
 <section id="exercise-6">
 <h2>Exercise 6<a class="headerlink" href="#exercise-6" title="Link to this heading">#</a></h2>
-<p>Explain whey your results in Exercises 4 (without fixed effects) and Exercise 5 (with state fixed effects) look so different. What does this imply about states with high beer taxes?</p>
+<p>Explain why your results in Exercises 4 (without fixed effects) and Exercise 5 (with state fixed effects) look so different. What does this imply about states with high beer taxes?</p>
 </section>
 <section id="fixed-effects-by-demeaning">
 <h2>Fixed Effects by Demeaning<a class="headerlink" href="#fixed-effects-by-demeaning" title="Link to this heading">#</a></h2>
 <p>Rather than just add indicator variables, we’ll now use a different strategy for estimating fixed effects called an “entity-demeaning.” This method is more computationally efficient, and can also help you understand how fixed effects work.</p>
 <p>Let’s begin by assuming we want to estimate the following fixed-effect model:</p>
-<p>\begin{align}
-FatalityRate_{it} = \alpha + \beta BeerTax_{it} + \Psi Z_i + \epsilon_{it} \tag{1}
-\end{align}</p>
+<div class="math notranslate nohighlight">
+\[FatalityRate_{it} = \alpha + \beta BeerTax_{it} + \Psi Z_i + \epsilon_{it}\]</div>
 <p>Where <span class="math notranslate nohighlight">\(FatalityRate_{it}\)</span> is the fatality rate of state <span class="math notranslate nohighlight">\(i\)</span> in year <span class="math notranslate nohighlight">\(t\)</span>, <span class="math notranslate nohighlight">\(\beta BeerTax_{it}\)</span> is the beer tax of state <span class="math notranslate nohighlight">\(i\)</span> in year <span class="math notranslate nohighlight">\(t\)</span>. <span class="math notranslate nohighlight">\(Z_i\)</span> is a state fixed effect.</p>
 <p>Rather than adding indicator variables, however, we’ll use entity-demean as follows:</p>
 <p>First, we take the average on both sides of the regression. Here <span class="math notranslate nohighlight">\(n\)</span> is the number of periods.</p>
-<p>\begin{align*}
-\frac{1}{n} \sum_{i=1}^n FatalityRate_{it} =&amp;  ,\alpha+ \beta_1 \frac{1}{n} \sum_{i=1}^n BeerTax_{it} + \Psi \frac{1}{n} \sum_{i=1}^n Z_i + \frac{1}{n} \sum_{i=1}^n \epsilon_{it} \
-\overline{FatalityRate}_i =&amp; ,\alpha+ \beta_1 \overline{BeerTax}_i + \Psi  Z_i + \overline{\epsilon}_i.  \tag{2}
-\end{align*}</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{n} \sum_{i=1}^n FatalityRate_{it} =  \,\alpha+ \beta_1 \frac{1}{n} \sum_{i=1}^n BeerTax_{it} + \Psi \frac{1}{n} \sum_{i=1}^n Z_i + \frac{1}{n} \sum_{i=1}^n \epsilon_{it}\]</div>
+<div class="math notranslate nohighlight">
+\[\overline{FatalityRate}_i = \,\alpha+ \beta_1 \overline{BeerTax}_i + \Psi  Z_i + \overline{\epsilon}_i\]</div>
 <p>Substracting the  from the main equation yields:</p>
-<p>\begin{align*}
-FatalityRate_{it} - \overline{FatalityRate}<em>i =&amp; , \beta_1(BeerTax</em>{it}-\overline{BeerTax}<em>i) + \Psi (Z_i - Z_i) + (\epsilon</em>{it} - \overline{\epsilon}<em>i)  \
-\overset{\sim}{FatalityRate}</em>{it} =&amp; , \beta_1 \overset{\sim}{BeerTax}<em>{it} + \overset{\sim}{\epsilon}</em>{it}  \tag{3}
-\end{align*}</p>
+<div class="math notranslate nohighlight">
+\[FatalityRate_{it} - \overline{FatalityRate}_i = \, \beta_1(BeerTax_{it}-\overline{BeerTax}_i) + \Psi (Z_i - Z_i) + (\epsilon_{it} - \overline{\epsilon}_i) \]</div>
+<div class="math notranslate nohighlight">
+\[\overset{\sim}{FatalityRate}_{it} = \, \beta_1 \overset{\sim}{BeerTax}_{it} + \overset{\sim}{\epsilon}_{it} \]</div>
 <p>Where the <span class="math notranslate nohighlight">\(\sim\)</span> means values have been demeaned by group.</p>
 <p>By taking the difference between the value of each observation (state-year) and the mean value of the entity (state) over n periods, we analyze how the within-state variation of beer tax affects that of the fatality rate. Moreover, by doing so we no longer need to estimate the fixed effects of <span class="math notranslate nohighlight">\(Z_i\)</span>, saving computing power if we are working on a dataset with a large number of fixed effects.</p>
 </section>
