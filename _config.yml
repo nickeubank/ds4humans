@@ -7,8 +7,8 @@ logo: logo.jpg
 copyright: "2024"
 
 sphinx:
-  extra_extensions:
-    - sphinx_jupyterbook_latex
+  # extra_extensions:
+  #   - sphinx_jupyterbook_latex
   config:
     language: en
     html_extra_path: ["static_root_files"]
@@ -19,13 +19,13 @@ execute:
   execute_notebooks: force
 
 # Define the name of the latex output file for PDF builds
-latex:
-  latex_documents:
-    targetname: ds4humans.tex
+# latex:
+#   latex_documents:
+#     targetname: ds4humans.tex
 
 # Add a bibtex file so that we can create citations
-bibtex_bibfiles:
-  - references.bib
+# bibtex_bibfiles:
+#   - references.bib
 
 # Information about where the book exists on the web
 repository:
