@@ -10,7 +10,7 @@ In the case of some tools — such as clustering algorithms and other unsupervis
 
 In other contexts — like supervised machine learning — this perspective may seem less relevant (or even just pedantic). But let's take the example of a supervised machine learning algorithm designed to classify mammograms as normal or abnormal, trained on data labelled by radiologists at a Boston hospital, an example I use in the book. What question is this model answering? It is *not* answering the question, for any input mammogram, "Is this mammogram normal or abnormal?" Rather, in a very real sense, it is answering the question "if this mammogram were shown to one of the Boston radiologists, how would they label the training data, how likely are *they* to label the mammogram as normal or abnormal?" And while we hope the answers to those questions are similar, being explicit about the distinction clarifies how human biases and tendencies are replicated in our models.
 
-## Answering Questions
+## Idea 3: Types of Questions
 
 Which brings us to the third big idea of this book: **The questions data scientists answer can be divided into three categories: Descriptive, Passive Predictive, and Causal.** Each of these question types serves a different purpose in solving problems, and the type of question you are seeking to answer bears on what tools you should use and what constitutes a successful answer. The remainder of this chapter provides an introduction to each of these question types and the purposes they serve before we take up each in detail in the chapters that follow.
 

@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -502,7 +502,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answering-questions">Answering Questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#idea-3-types-of-questions">Idea 3: Types of Questions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example">An Example</a></li>
 </ul>
             </nav>
@@ -522,8 +522,8 @@ document.write(`
 <p>This idea emerges from the fact that all data science tools, at their core, are tools for answering questions about the world, and that understanding data science tools through the lens of “what question is this tool answering?” is extremely powerful.</p>
 <p>In the case of some tools — such as clustering algorithms and other unsupervised machine learning methods — this idea is relatively uncontroversial. A clustering algorithm answers some form of the question “if I wanted to partition the observations in this data to maximize the similarity of points within each cluster (in terms of a specified set of variables and a similarity metric) and minimize similarity between clusters, how would I do so?”</p>
 <p>In other contexts — like supervised machine learning — this perspective may seem less relevant (or even just pedantic). But let’s take the example of a supervised machine learning algorithm designed to classify mammograms as normal or abnormal, trained on data labelled by radiologists at a Boston hospital, an example I use in the book. What question is this model answering? It is <em>not</em> answering the question, for any input mammogram, “Is this mammogram normal or abnormal?” Rather, in a very real sense, it is answering the question “if this mammogram were shown to one of the Boston radiologists, how would they label the training data, how likely are <em>they</em> to label the mammogram as normal or abnormal?” And while we hope the answers to those questions are similar, being explicit about the distinction clarifies how human biases and tendencies are replicated in our models.</p>
-<section id="answering-questions">
-<h2>Answering Questions<a class="headerlink" href="#answering-questions" title="Link to this heading">#</a></h2>
+<section id="idea-3-types-of-questions">
+<h2>Idea 3: Types of Questions<a class="headerlink" href="#idea-3-types-of-questions" title="Link to this heading">#</a></h2>
 <p>Which brings us to the third big idea of this book: <strong>The questions data scientists answer can be divided into three categories: Descriptive, Passive Predictive, and Causal.</strong> Each of these question types serves a different purpose in solving problems, and the type of question you are seeking to answer bears on what tools you should use and what constitutes a successful answer. The remainder of this chapter provides an introduction to each of these question types and the purposes they serve before we take up each in detail in the chapters that follow.</p>
 <p><strong>Descriptive Questions</strong> are questions about patterns and regularities in the world around us. Answering Descriptive Questions helps data scientists better understand the landscape of the problem they wish to solve — for example, by helping them understand where the problem is most acute, or what factors seem most strongly correlated with problem intensity — and often aid in prioritizing subsequent efforts.</p>
 <p>Answering Descriptive Questions is largely the domain of statistical inference and unsupervised machine learning. However, as I emphasize to students, many of the tools and approaches to data science we encounter are artifacts of how university departments are organized, and our substantive goals as data scientists will not always follow the lines we draw between computer science, statistics, and social science departments.</p>
@@ -626,7 +626,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answering-questions">Answering Questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#idea-3-types-of-questions">Idea 3: Types of Questions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example">An Example</a></li>
 </ul>
   </nav></div>
