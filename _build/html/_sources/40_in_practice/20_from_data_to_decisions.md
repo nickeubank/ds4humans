@@ -1,3 +1,0 @@
-# Making Decisions Using Data
-
-(This is something that I know I need to add to my classes but I haven’t really managed integrated yet. I talk to my students about that fact that they should just pray at the altar of p<0.05, but instead weigh the relative costs and benefits of Type 1 and Type 2 errors in the context in which they are trying to make a decision. But where I really struggled is the fact that you can’t directly map P values onto decision theory very easily because of all of the weirdnesses of frequentist P values—e.g. A p-value of 0.05 means that under the null, the odds of a Type 2 is 5%... but that means the ACTUAL odds of a Type 2 error if you have a p-value of 0.05% is pr(null is true) * 0.05. 🤦‍♂️. )

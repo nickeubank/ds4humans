@@ -4,7 +4,7 @@ After finishing the last section on Descriptive Questions, some readers may be r
 
 If that's you, or if you just don't feel clear on the distinction between answering Descriptive Questions and "Exploratory Data Analysis," commonly referred to by the acronym "EDA," this section is for you.
 
-In my view, and that of many of my colleagues, the practice commonly referred to as "EDA" and students understanding of its role in problem-solving is one of the greatest failures in data science education. 
+In my view, and that of many of my colleagues, the practice commonly referred to as "EDA" and students understanding of its role in problem-solving is one of the greatest failures in data science education.
 
 The problem with the term EDA is that, if you asked most data scientists what it means, they probably couldn't actually give you a straight answer. If you pressed them further, they would probably say something like "exploring your data before you start fitting your models."
 
@@ -43,17 +43,16 @@ But the problem with approaching your data with *implicit* motivations is that (
 No — this is a view held by many people who work with data. Not only is it a common (informal) complaint among colleagues, but others have also written on the topic in different forms. In a [wonderful Medium post](https://medium.com/@eytanadar/banning-exploration-in-my-infovis-class-9578676a4705), for example, Eytan Adar discusses his decision to ban his students from using the term EDA entirely:
 
 > I got to have lunch with John Tukey many years ago. We talked about birding. I wish we talked about "Exploratory Data Analysis." For all the clever names he created for things (software, bit, cepstrum, quefrency) what's up with EDA? The name is fundamentally problematic because it's ambiguous. "Explore" can be both transitive (to seek something) and intransitive (to wander, seeking nothing in particular). Tukey's book seems to emphasize the former [...]. The problem is that students think he meant the latter.
-> 
-> Somehow that term has given students, and some professionals, the license to be totally imprecise about what they were building, and (more critically) how to evaluate whether it worked. If you're not seeking anything in particular, any tool that lets you meander through data is perfectly reasonable. It makes the job of deriving insight completely the responsibility of the end-user. In that world, any decision is a reasonable one, evaluation is unnecessary, and there is no grade but an A. But that's not the real world and so I've banned "explore." 
 >
-> Exploration is too unbounded in the context of building a tool. We need to be able to decide when exploration terminates. Forcing students to tell me what they want the end-user to find and/or what decisions they want to enable has led to better projects. 
+> Somehow that term has given students, and some professionals, the license to be totally imprecise about what they were building, and (more critically) how to evaluate whether it worked. If you're not seeking anything in particular, any tool that lets you meander through data is perfectly reasonable. It makes the job of deriving insight completely the responsibility of the end-user. In that world, any decision is a reasonable one, evaluation is unnecessary, and there is no grade but an A. But that's not the real world and so I've banned "explore."
+>
+> Exploration is too unbounded in the context of building a tool. We need to be able to decide when exploration terminates. Forcing students to tell me what they want the end-user to find and/or what decisions they want to enable has led to better projects.
 
-Obviously in this book I've endorsed the term "Exploratory" as an adjective, rather than a verb — in my few, once you've articulated a concrete Exploratory Question, I think it *does* help motivate subsequent 
+Obviously in this book I've endorsed the term "Exploratory" as an adjective, rather than a verb — in my few, once you've articulated a concrete Exploratory Question, I think it *does* help motivate subsequent
 
-[Nathan Yau](https://flowingdata.com/2017/04/28/data-exploration-banned/) makes a similar point about EDA data visualizations: 
+[Nathan Yau](https://flowingdata.com/2017/04/28/data-exploration-banned/) makes a similar point about EDA data visualizations:
 
 > Data exploration with visualization is good, but when someone describes their project as an exploration tool, it often means it lacks focus or direction. Instead it looks like generic graphs that don't answer anything particular and leave all interpretation to the reader.
-
 
 ## Recap
 

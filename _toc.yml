@@ -21,28 +21,32 @@ parts:
         title: "Ch 3: Stakeholder Management"
   - caption: Answering Questions, Solving Problems
     chapters:
+      - file: 30_questions/00_solving_problems_by_answering_questions
+        title: "Ch 4: Answering Questions"
+        sections:
+          - file: 30_questions/02_relation_to_inference_and_prediction
       - file: 30_questions/10_using_descriptive_questions
-        title: "Ch 4: Using Descriptive Qs"
+        title: "Ch 5: Using Descriptive Qs"
         sections:
           - file: 30_questions/07_eda
             title: 'Descriptive Qs and the Scourge of "EDA"'
       - file: 30_questions/20_using_passive_prediction_questions
-        title: "Ch 5: Using Passive Predictive Qs"
+        title: "Ch 6: Using Passive Predictive Qs"
       - file: 30_questions/35_using_causal_questions
-        title: "Ch 6: Causal Qs"
+        title: "Ch 7: Causal Qs"
         sections:
           - file: 30_questions/40_answering_causal_questions
   - caption: Uncertainty and Errors
     chapters:
       - file: 30_questions/05_descriptive_v_prescriptive
-        title: "Ch 7: Descriptive and Prescriptive Qs"
+        title: "Ch 8: Descriptive and Prescriptive Qs"
         sections:
           - file: 30_questions/06_descriptive_prescriptive_examples
             title: Tradeoff Examples
       - file: 30_questions/15_answering_descriptive_questions
-        title: "Ch 8: Internal and External Validity"
+        title: "Ch 9: Internal and External Validity"
       - file: 30_questions/16_descriptive_internal_challenges
-        title: "Ch 9: Internal Validity and Descriptive Qs"
+        title: "Ch 10: Internal Validity and Descriptive Qs"
         sections:
           - file: 30_questions/17_descriptive_internal_understandable
             title: "1: Understandable"
@@ -51,25 +55,25 @@ parts:
           - file: 30_questions/19_descriptive_internal_meaningful
             title: "3: Relevant"
       - file: 30_questions/23_passive_internal_alignment_and_bias
-        title: "Ch 10: Predictive Qs & Internal Validity"
+        title: "Ch 11: Predictive Qs & Internal Validity"
       - file: 30_questions/24_passive_internal_errors
-        title: "Ch 11: Predictive Qs and Being Wrong the Right Way"
+        title: "Ch 12: Predictive Qs and Being Wrong the Right Way"
         sections:
           - file: 30_questions/25_passive_fairness
             title: "Fairness and Errors"
       - file: 30_questions/27_passive_external_general
-        title: "Ch 12: Predictive Qs & External Validity"
+        title: "Ch 13: Predictive Qs & External Validity"
         sections:
           - file: 30_questions/28_passive_external_adversarial_users
             title: "Adversarial Users"
           - file: 30_questions/29_passive_external_adversarial_users_examples
             title: "Adversarial User Examples"
       - file: 30_questions/32_passive_interpretable_models
-        title: "Ch 13: Interpretable Models"
+        title: "Ch 14: Interpretable Models"
       - file: 30_questions/45_causal_questions_external
-        title: "Ch 14: Causal Qs, Experiments and External Validity"
+        title: "Ch 15: Causal Qs, Experiments and External Validity"
       - file: 30_questions/50_causal_beyond_ab
-        title: "Ch 15: Beyond Experiments"
+        title: "Ch 16: Beyond Experiments"
   - caption: Data Science in Practice
     chapters:
       - file: 10_introduction/40_data_science_in_historical_context
