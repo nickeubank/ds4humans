@@ -25,24 +25,23 @@ parts:
         title: "Ch 4: Answering Questions"
         sections:
           - file: 30_questions/02_relation_to_inference_and_prediction
+      - file: 30_questions/05_positive_v_normative
+        title: "Ch 5: Normative and Positive"
+        sections:
+          - file: 30_questions/06_positive_v_normative_examples
       - file: 30_questions/10_using_descriptive_questions
-        title: "Ch 5: Using Descriptive Qs"
+        title: "Ch 6: Using Descriptive Qs"
         sections:
           - file: 30_questions/07_eda
             title: 'Descriptive Qs and the Scourge of "EDA"'
       - file: 30_questions/20_using_passive_prediction_questions
-        title: "Ch 6: Using Passive Predictive Qs"
+        title: "Ch 7: Using Passive Predictive Qs"
       - file: 30_questions/35_using_causal_questions
-        title: "Ch 7: Causal Qs"
+        title: "Ch 8: Causal Qs"
         sections:
           - file: 30_questions/40_answering_causal_questions
   - caption: Uncertainty and Errors
     chapters:
-      - file: 30_questions/05_descriptive_v_prescriptive
-        title: "Ch 8: Descriptive and Prescriptive Qs"
-        sections:
-          - file: 30_questions/06_descriptive_prescriptive_examples
-            title: Tradeoff Examples
       - file: 30_questions/15_answering_descriptive_questions
         title: "Ch 9: Internal and External Validity"
       - file: 30_questions/16_descriptive_internal_challenges
@@ -77,7 +76,7 @@ parts:
   - caption: Data Science in Practice
     chapters:
       - file: 10_introduction/40_data_science_in_historical_context
-        title: "Ch 2: What Is Data Science?"
+        title: "Ch 17: What Is Data Science?"
       - file: 40_in_practice/00_how_to_read_this_book
       - file: 40_in_practice/27_data_science_memos
       - file: 40_in_practice/30_giving_feedback
