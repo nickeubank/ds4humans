@@ -61,24 +61,23 @@ Tu Mar 17,Causal Questions: Differences and Differences / ,"- Cunningham, Chpt 9
  - `Enfranchisement and Incarceration <https://www.cambridge.org/core/journals/american-political-science-review/article/enfranchisement-and-incarceration-after-the-1965-voting-rights-act/C68FA7BB8CA313BDD8D9A39BA666A21D>`_
  - `Diff-in-Diffs at Netflix <https://netflixtechblog.com/key-challenges-with-quasi-experiments-at-netflix-89b4f234b852>`_",- `Ex <../99_exercises/exercise_diffindiff.html>`_
 Th Mar 19,Teams 1,"- `What Project Aristotle Learned <https://github.com/nickeubank/unifyingdatascience/raw/master/team_readings/project_aristotle_nytimes.pdf>`_
-- Edmondson, The Fearless Organization, Chpt 1 (on Canvas)
-- **Problem and Questions Due**",`Debrief Ex <../99_exercises/exercise_teams1.html>`_
+- Edmondson, The Fearless Organization, Chpt 1 (on Canvas)",`Debrief Ex <../99_exercises/exercise_teams1.html>`_
 Tu Mar 24,Teams 2,"- `Review Team Charter Assignment <https://github.com/nickeubank/unifyingdatascience/raw/master/team_readings/MIDS%20Team%20Charter%20Assignment.docx>`_
 - Edmondson, Teaming, Chpt 2 (on Canvas)
  
- Optional: `Fostering Psychological Safety Tips <https://docs.google.com/document/d/1PsnDMS2emcPLgMLFAQCXZjO7C4j2hJ7znOq_g2Zkjgk/export?format=pdf>`_",`Team Report <../97_project/10_exploratory_report.html>`_
+ Optional: `Fostering Psychological Safety Tips <https://docs.google.com/document/d/1PsnDMS2emcPLgMLFAQCXZjO7C4j2hJ7znOq_g2Zkjgk/export?format=pdf>`_",
 Th Mar 26,Solving Problems,"- `Solving Probs with Data <https://ds4humans.com/10_introduction/10_solving_problems_with_data.html>`_
 - `Solving Right Problem (include second page with  solving wrong problem example) <https://ds4humans.com/20_problems_to_questions/10_solving_the_right_problem.html>`_
-- `Stakeholder Management <https://ds4humans.com/20_problems_to_questions/20_stakeholder_management.html>`_",`Stakeholder Ex <../99_exercises/exercise_stakeholder_management.html>`_
+- `Stakeholder Management <https://ds4humans.com/20_problems_to_questions/20_stakeholder_management.html>`_",
 Tu Mar 31,Answering Questions,"- `Answering Questions (include inference/prediction comparison) <https://ds4humans.com/30_questions/00_solving_problems_by_answering_questions.html>`_
-- `Why It's Important To Get Your Question Right (30 min video) <https://www.youtube.com/watch?v=kYMfE9u-lMo>`_",`Questions Ex <../99_exercises/exercise_probs_and_questions.html>`_
+- `Why It's Important To Get Your Question Right (30 min video) <https://www.youtube.com/watch?v=kYMfE9u-lMo>`_",
 Th Apr 2,"Positive v. Normative Questions
 EDA","- `Chpt 5 <../30_questions/05_positive_v_normative.html>`_
 - `Scourge of EDA <../30_questions/30_questions/07_eda.html>`_",
 Tu Apr 7,"Passive Prediction Questions: Purpose, Internal Validity 1","- `Chpt 9 <../30_questions/20_using_passive_prediction_questions.html>`_
 - `Chpt 10 <../30_questions/23_passive_internal_alignment_and_bias.html>`_
-- `Chpt 11 <../30_questions/24_passive_internal_errors.html>`_ ONLY FIRST READING, not Fairness",`Passive P Ex <../99_exercises/exercise_passive_prediction.html>`_
+- `Chpt 11 <../30_questions/24_passive_internal_errors.html>`_ ONLY FIRST READING, not Fairness",
 Th Apr 9,"Passive Prediction Questions: Fairness, Internal Validity 2",- `Fairness <../30_questions/25_passive_fairness.html>`_,
-Tu Apr 14,Passive Prediction: External Validity,- `Passive External Validity (whole chapter) <../30_questions/27_passive_external_general.html>`_,`Car Buyer <../99_exercises/exercise_used_car.html>`_
-April 16-26,Graduate Reading Period,- **Optional Due Date for Causal Rough Draft (11pm)**,x
-April 30ish,In Person Final Exam,- **YES AN IN PERSON FINAL — PLEASE EXPECT TO BE HERE IN PERSON**,x
+Tu Apr 14,Passive Prediction: External Validity,- `Passive External Validity (whole chapter) <../30_questions/27_passive_external_general.html>`_,
+April 16-26,Graduate Reading Period,- **Optional Due Date for Causal Rough Draft (11pm)**,
+April 30ish,In Person Final Exam,- **YES AN IN PERSON FINAL — PLEASE EXPECT TO BE HERE IN PERSON**,
