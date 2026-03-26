@@ -104,6 +104,8 @@ commentsRunWhenDOMLoaded(addUtterances);
                 gtag('config', 'G-RKDPB41DQ2');
             </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '97_project/final_project';</script>
     <link rel="icon" href="../_static/logo.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -527,7 +529,7 @@ document.write(`
 <p>The first element of your project will be a project proposal. Your project proposal must follow the approach laid out in your <a class="reference external" href="https://ds4humans.com/10_introduction/10_solving_problems_with_data.html">Solving Problems with Data</a> readings. In particular, you must specify:</p>
 <ol class="arabic simple">
 <li><p>The substantive problem that motivates your project, and which you wish to help solve.</p></li>
-<li><p>The Causal Question you will seek to answer, and how answering that question will help to solve your motivating problem.</p></li>
+<li><p>The Causal Question you will seek to answer, and how answering that question will help to solve your motivating problem. In specifying your Causal Question, you should be very explicit about your causal factor of interest (your <span class="math notranslate nohighlight">\(D\)</span>) and your outcome of interest (<span class="math notranslate nohighlight">\(Y\)</span>).</p></li>
 <li><p>What you expect the answer to your question to look like. Please be concrete — what figure or table do you imagine being in your final report? If it is a figure (and a data visualization is usually an important part of the presentation of results), what will the axes be? Be sure the figure or table will answer your question!</p>
 <ul class="simple">
 <li><p>When imagining this result, think about the ideal result you could imagine — at this stage, don’t worry too much about whether you will be able to find a data source that will allow you to create this figure. This is an important exercise for clarifying what you are trying to achieve <em>in principle</em>. All too often, data scientists get too bogged down in the details of what’s in a specific dataset. There’s a time for that, but to ensure you have a clear understanding of what you are trying to achieve — the question you are asking and what the platonic ideal of an answer to that question would look like — start without considering feasibility or the practicalities of data availability.</p></li>
