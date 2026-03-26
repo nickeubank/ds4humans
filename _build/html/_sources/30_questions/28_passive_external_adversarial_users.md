@@ -1,5 +1,4 @@
 
-
 # Adversarial Users
 
 Of all external validity concerns that data scientists tend to underappreciate, none is more likely to cause serious problems than the existence of *adversarial users*.
@@ -15,7 +14,7 @@ Adversarial users emerge because as soon as a model is deployed to make decision
 To the best of my knowledge, the term "adversarial users" is only used by computer scientists, but the concept that using any type of formula for evaluation or decision-making will immediately change how people behave (and thus the validity of the formula) has a long and storied history as immortalized by some famous "laws:"
 
 > "When a measure becomes a target, it ceases to be a good measure."
-> 
+>
 > - [Goodhart's Law, named for Charles Goodhart.](https://en.wikipedia.org/wiki/Goodhart%27s_law)
 
 > "The more any quantitative social indicator is used for social decision-making, the more subject it will be to corruption pressures and the more apt it will be to distort and corrupt the social processes it is intended to monitor"
@@ -23,14 +22,14 @@ To the best of my knowledge, the term "adversarial users" is only used by comput
 > - [Campbell's Law, named for Donald Campbell](https://en.wikipedia.org/wiki/Campbell%27s_law)
 
 > "Given that the structure of any [statistical] model consists of optimal decision rules of economic agents, and that optimal decision rules vary systematically with changes in the structure of series relevant to the decision maker, it follows that any change in policy will systematically alter the structure of [statistical] models."
-> 
+>
 > - [Lucas Critique, named for Robert Lucas](https://en.wikipedia.org/wiki/Lucas_critique)
 
 And since no idea is serious until it's been immortalized in an XKCD comic:
 
 ![Goodhart's Law XKCD](https://imgs.xkcd.com/comics/goodharts_law.png)
 
-## Robograders: A Close To Home Example
+## Robograders: A Close-to-Home Example
 
 To illustrate what "adversarial users" look like in what may feel like a familiar context, consider the Essay RoboGrader. Training an algorithm to answer the question "If a human English professor read this essay, what score would they give it?" is relatively straightforward — get a bunch of essays, give them to some English professors, then fit a supervised machine learning algorithm to that training data. What could go wrong?
 
@@ -43,8 +42,3 @@ But what happens when humans realize they aren't being graded by humans? Well, n
 This works because the essay writers who used polysyllabic words and long sentences in the training data happened to also be the students who were writing good essays. These were reliable predictors of scores in essays people wrote for humans. But they *aren't* a reliable predictor of essay quality in a world where students know the essays *aren't* being written for humans, just machines.
 
 Another way of thinking about this is that we're back to the issue of alignment problems: they *want* the algorithm to reward good writing, but that's not actually what they trained it to do. In this case, however, the alignment problem is rearing its head because people are actively trying to exploit this difference.
-
-
-
-
-

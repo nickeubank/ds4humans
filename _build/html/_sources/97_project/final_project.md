@@ -18,11 +18,11 @@ The first element of your project will be a project proposal. Your project propo
 
 ### Data Sources
 
-As you are thinking about sources of data, you may find this list of [data sources helpful](./99_data.md).
+As you are thinking about sources of data, you may find this [list of data sources](./99_data.md) helpful.
 
 ## Final Deliverable: Data Science Memo
 
-Your final deliverable should take the form of a 4-6 page Data Science Memo, [following the guidelines laid out here](https://ds4humans.com/40_in_practice/27_data_science_memos.html). I won't recapitulate the linked guidelines, except to emphasize the point that what we are looking for is not a document in which you demonstrate all the hard work you did by detailing all the technical details of your project—we are interested in a document written for a stakeholder that communicates **what you've learned and why it matters.**
+Your final deliverable should take the form of a 4-6 page Data Science Memo, [following the guidelines laid out here](https://ds4humans.com/40_in_practice/27_data_science_memos.html). I won't recapitulate the linked guidelines, except to emphasize the point that what we are looking for is not a document in which you demonstrate all the hard work you did by detailing all the technical details of your project—we are interested in a document written for a stakeholder that communicates **what you've learned and why it matters**.
 
 ## Due Dates
 

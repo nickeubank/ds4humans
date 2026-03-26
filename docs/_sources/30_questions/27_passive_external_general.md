@@ -48,15 +48,8 @@ Recently, however, the Insurance Institute for Highway Safety (IIHS) realized a 
 
 Oops!
 
-
 ## Train-Test-Splits and External Validity
 
 A common misconception among young data scientists is that the train-test-split workflow used in machine learning inoculates against external validity concerns. After all, the idea of split-train-test is that models are trained on one set of observations and evaluated against an entirely different set of observations.
 
 While train-test-split can *help* reduce external validity concerns by guarding against overfitting, a fundamental limitation of the workflow is that training and test observations both come from the *same context.* Indeed, because test and training datasets are created by randomly splitting the observations from a single dataset, they should always have the same properties (at least in expectation) — a guarantee one certainly won't get when moving from the data used to build a model to a real-world deployment.
-
-
-
-
-
-

@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -251,22 +251,22 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li class="toctree-l2"><a class="reference internal" href="02_relation_to_inference_and_prediction.html">Relationship to Inference and Prediction</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="10_using_descriptive_questions.html">Ch 5: Using Descriptive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="05_positive_v_normative.html">Ch 5: Normative and Positive</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="06_positive_v_normative_examples.html">Positive and Normative Questions in Practice</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="10_using_descriptive_questions.html">Ch 6: Using Descriptive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="07_eda.html">Descriptive Qs and the Scourge of "EDA"</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="20_using_passive_prediction_questions.html">Ch 6: Using Passive Predictive Qs</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="35_using_causal_questions.html">Ch 7: Causal Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1"><a class="reference internal" href="20_using_passive_prediction_questions.html">Ch 7: Using Passive Predictive Qs</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="35_using_causal_questions.html">Ch 8: Causal Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="40_answering_causal_questions.html">Answering Causal Questions</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Uncertainty and Errors</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="05_descriptive_v_prescriptive.html">Ch 8: Descriptive and Prescriptive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="06_descriptive_prescriptive_examples.html">Tradeoff Examples</a></li>
-</ul>
-</details></li>
 <li class="toctree-l1"><a class="reference internal" href="15_answering_descriptive_questions.html">Ch 9: Internal and External Validity</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="16_descriptive_internal_challenges.html">Ch 10: Internal Validity and Descriptive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="17_descriptive_internal_understandable.html">1: Understandable</a></li>
@@ -290,7 +290,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Science in Practice</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../10_introduction/40_data_science_in_historical_context.html">Ch 2: What Is Data Science?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10_introduction/40_data_science_in_historical_context.html">Ch 17: What Is Data Science?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../40_in_practice/00_how_to_read_this_book.html">How to Read (Academic Edition)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../40_in_practice/27_data_science_memos.html">Data Science Memos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../40_in_practice/30_giving_feedback.html">Giving Effective Feedback (Data Science Edition)</a></li>
@@ -553,13 +553,13 @@ document.write(`
 <section id="reason-1-performance-is-relative">
 <h3>Reason 1: Performance is Relative<a class="headerlink" href="#reason-1-performance-is-relative" title="Link to this heading">#</a></h3>
 <p>The first problem with reporting accuracy scores absent context is that the value of a model can only ever be evaluated <em>relative to the best available alternative.</em> Over the years, I’ve developed the sense that students tend to view accuracy as an absolute scale, very much the way they view grades: 99% is terrific (an A+!), between 90% and 99% is good (an A!), 80-90 is so-so (a B), and below 80 is bad.</p>
-<p>The reality, however, is that the only way to evaluate model performance is with respect to the <em>best available alternative</em>. A model with a 93% accuracy score is unlikely to be of particular value to a business if the model they were using before you arrived had an accuracy score of 98%, and your model does not have any other benefits to offset its lower accuracy. Similarly, a model with an accuracy score of 70% may constitute a considerable innovation to a business that could not make predictions more accurately than with 50%-50% odds. In life, decisions have to be made, so the value of a model is not based on whether it’s perfect, but whether it beats the status quo.</p>
-<p>Treating accuracy as an absolute scale also ignores the fact that model performance will always be limited by the amount of <em>signal</em> in the data on which it is trained. A data scientist’s job is not to maximize a model’s apparent accuracy, but rather to harness the true predictive potential of the data. Any increases in metrics like accuracy beyond the true potential of the data is illusory, and can only come from overfitting.</p>
-<p>Of course, we are not gods, and so we will never know the exact predictive potential of a given dataset, but the principle is one to bear in mind — the potential of a model is always bounded by the data on which is being trained, and the only way to get a model that exceeds that true performance frontier is by overfitting your data (creating an <em>illusion</em> of better performance that will not hold up when the model is actually deployed).</p>
+<p>The reality, however, is that the only way to evaluate model performance is with respect to the <em>best available alternative</em>. A model with a 93% accuracy score is unlikely to be of particular value to a business if the model they were using before you arrived had an accuracy score of 98%, and your model does not have any other benefits to offset its lower accuracy. Similarly, a model with an accuracy score of 70% may constitute a considerable innovation to a business that could not make predictions more accurately than with 50%-50% odds. In life, decisions have to be made, so the value of a model is not based on whether it’s perfect, but on whether it beats the status quo.</p>
+<p>Treating accuracy as an absolute scale also ignores the fact that model performance will always be limited by the amount of <em>signal</em> in the data on which it is trained. A data scientist’s job is not to maximize a model’s apparent accuracy, but rather to harness the true predictive potential of the data. Any increases in metrics like accuracy beyond the true potential of the data are illusory, and can only come from overfitting.</p>
+<p>Of course, we are not gods, and so we will never know the exact predictive potential of a given dataset, but the principle is one to bear in mind — the potential of a model is always bounded by the data on which it is being trained, and the only way to get a model that exceeds that true performance frontier is by overfitting your data (creating an <em>illusion</em> of better performance that will not hold up when the model is actually deployed).</p>
 </section>
 <section id="reason-2-accuracy-and-imbalanced-data">
 <h3>Reason 2: Accuracy and Imbalanced Data<a class="headerlink" href="#reason-2-accuracy-and-imbalanced-data" title="Link to this heading">#</a></h3>
-<p>As detailed in the <a class="reference internal" href="../10_introduction/23_mistakes.html"><span class="std std-doc">introductory chapter to this book</span></a>, most data you will encounter in your career will be <em>imbalanced</em>, meaning that one of the outcomes you are trying to predict with your model (assuming a classification task) will be much, much less prevalent in the data than the other. In these situations, because accuracy is just “the share of cases correctly classified,” getting high accuracy can be achieved trivially by always predicting the more prevalent outcome.</p>
+<p>As detailed in the <a class="reference internal" href="../10_introduction/23_mistakes.html"><span class="std std-doc">introductory chapter to this book</span></a>, most data you will encounter in your career will be <em>imbalanced</em>, meaning that one of the outcomes you are trying to predict with your model (assuming a classification task) will be much less prevalent in the data than the other. In these situations, because accuracy is just “the share of cases correctly classified,” getting high accuracy can be achieved trivially by always predicting the more prevalent outcome.</p>
 <p>To illustrate, consider routine mammograms. Mammograms are x-rays of women’s breast tissue used to screen for early signs of breast cancer. In the United States, it is recommended that all women over 40 get a mammogram every two years. Unsurprisingly, therefore, <em>vast</em> majority of routine mammograms are medically unremarkable. According to the Susan G. Komen society, roughly 90% of routine mammograms are perfectly normal and require no followup.<a class="footnote-reference brackets" href="#false-positives" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p>
 <p>Consequently, it is trivially easy to write a model that achieves 90% accuracy:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">my_cancer_detection_model</span><span class="p">(</span><span class="n">mammogram</span><span class="p">):</span>
@@ -567,7 +567,7 @@ document.write(`
     <span class="k">return</span> <span class="n">is_scan_abnormal_maybe_cancerous</span>
 </pre></div>
 </div>
-<p>Obviously, of course, this model is worse than useless: it has a 100% False Negative rate (all mammograms that are abnormal are classified as normal), meaning the algorithm will tell <em>all</em> patients they are cancer free, including those whose mammograms show indications of cancer.</p>
+<p>Obviously, this model is worse than useless: it has a 100% False Negative rate (all mammograms that are abnormal are classified as normal), meaning the algorithm will tell <em>all</em> patients they are cancer-free, including those whose mammograms show indications of cancer.</p>
 <p>Moreover, most data scientists wouldn’t even consider 90/10 data to be particularly imbalanced. In any given year in the United States, only about 3% of single-family residential mortgages are in a state of delinquency<a class="footnote-reference brackets" href="#delinquency" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>, and fraudulent credit card purchases <a class="reference external" href="https://www.federalreserve.gov/newsevents/pressreleases/other20181016a.htm">make up less than one-tenth of 1% of all credit card transactions</a>. That means a “model” that reports all mortgages are in good standing or that all credit card transactions are valid will immediately have accuracy scores of 97% and <span class="math notranslate nohighlight">\(&gt;\)</span> 99.9%, respectively.</p>
 <p>Technically, this is just a special case of Reason 1 accuracy is meaningful absent context — <em>Performance is Relative</em> — because the most basic model will always be “assume all observations are from the most prevalent class,” but given how prevalent this trap is, it’s worth being it’s own category.</p>
 </section>

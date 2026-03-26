@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -249,22 +249,22 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li class="toctree-l2"><a class="reference internal" href="02_relation_to_inference_and_prediction.html">Relationship to Inference and Prediction</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="10_using_descriptive_questions.html">Ch 5: Using Descriptive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="05_positive_v_normative.html">Ch 5: Normative and Positive</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="06_positive_v_normative_examples.html">Positive and Normative Questions in Practice</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="10_using_descriptive_questions.html">Ch 6: Using Descriptive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="07_eda.html">Descriptive Qs and the Scourge of "EDA"</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="20_using_passive_prediction_questions.html">Ch 6: Using Passive Predictive Qs</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="35_using_causal_questions.html">Ch 7: Causal Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1"><a class="reference internal" href="20_using_passive_prediction_questions.html">Ch 7: Using Passive Predictive Qs</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="35_using_causal_questions.html">Ch 8: Causal Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="40_answering_causal_questions.html">Answering Causal Questions</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Uncertainty and Errors</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="05_descriptive_v_prescriptive.html">Ch 8: Descriptive and Prescriptive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="06_descriptive_prescriptive_examples.html">Tradeoff Examples</a></li>
-</ul>
-</details></li>
 <li class="toctree-l1"><a class="reference internal" href="15_answering_descriptive_questions.html">Ch 9: Internal and External Validity</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="16_descriptive_internal_challenges.html">Ch 10: Internal Validity and Descriptive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="17_descriptive_internal_understandable.html">1: Understandable</a></li>
@@ -288,7 +288,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Science in Practice</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../10_introduction/40_data_science_in_historical_context.html">Ch 2: What Is Data Science?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10_introduction/40_data_science_in_historical_context.html">Ch 17: What Is Data Science?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../40_in_practice/00_how_to_read_this_book.html">How to Read (Academic Edition)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../40_in_practice/27_data_science_memos.html">Data Science Memos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../40_in_practice/30_giving_feedback.html">Giving Effective Feedback (Data Science Edition)</a></li>
@@ -530,8 +530,8 @@ document.write(`
 <p>For models designed to predict future events, our training data will be historical data in which the outcomes the model will eventually be designed to predict — like surgical complications or factory machine failures — have already occurred.</p>
 <p>For models designed for automation, our training data will be records of a person completing the task the model will eventually be designed to automate. To train a mammogram reading algorithm, in other words, you first need a database of mammograms that radiologists have already labeled as indicating cancer or not. And what the model is actually trained to do is not “find cancer” but rather to “give the same answers given by human radiologists.”</p>
 <p>This is where the distinction between “predicting what a radiologist would say” and “detecting cancer” becomes important: because this kind of statistical model was trained to emulate the behavior of radiologists in labelled mammograms, the model will recapitulate any systematic biases held by the human radiologists who reviewed the mammograms in the training data. Did the radiologists struggle to detect cancer in dense breast tissue? So too will the algorithm trained on their labels.</p>
-<p>The difference between what you <em>want</em> a model to do (detect cancer) and what it <em>actually</em> does (guesses what a radiologist would do) is referred to as a model’s <em>alignment</em>, and the fact there is nearly always a gap between what we want a model to do and what it actually does is commonly referred to as an “alignment problem.”</p>
-<p>And as we’ll discuss in detail below, often this difference between what we <em>want</em> a model to do (for example, find the best applicant for a job) and what the model is actually doing (like emulating biased human hiring managers) is how biased algorithms arise.</p>
+<p>The difference between what you <em>want</em> a model to do (detect cancer) and what it <em>actually</em> does (guesses what a radiologist would do) is referred to as a model’s <em>alignment</em>, and the fact that there is nearly always a gap between what we want a model to do and what it actually does is commonly referred to as an “alignment problem.”</p>
+<p>And as we’ll discuss in detail below, this difference between what we <em>want</em> a model to do (for example, find the best applicant for a job) and what the model is actually doing (like emulating biased human hiring managers) is often how biased algorithms arise.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The terms “alignment” and “the alignment problem” I believe originated among computer scientists interested in artificial intelligence (and the possibility we might someday create a super-intelligent AI whose interests may not align with our own). With the rise of LLMs like chatGPT and Gemini, use of the term has spread, and data scientists from a range of backgrounds are becoming increasingly comfortable using the term.</p>
@@ -540,7 +540,7 @@ document.write(`
 <section id="how-do-large-language-models-llms-fit-into-this">
 <h3>How do Large Language Models (LLMs) Fit Into This?<a class="headerlink" href="#how-do-large-language-models-llms-fit-into-this" title="Link to this heading">#</a></h3>
 <p>Given their emergence as one of the most high profile examples of something people call “AI” these days, it’s worth directly addressing how LLMs like chatGPT, Llama, Bard, etc. fit into this framework.</p>
-<p>One of the most powerful ways to understand LLMs is to think of them as tools for answering “If I came across this text [whatever text is in the LLMs prompt, pre-prompts, or other inputs in the model’s context window] while wandering around the internet,<a class="footnote-reference brackets" href="#llm-training-data" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> what word am I most likely to encounter next?” LLMs then ask this question over and over, adding the newly selected word to the context window one at a time and then feeding the updated “conversation” back into itself as input to help it predict the next word. Indeed, this repetitiveness is why the technology behind most LLMs is called a <em>recurrent</em> neural network — because it keeps adding a word to the “conversation” you are having (its “context window”), then feeding the updated conversation back into the model as an updated input.</p>
+<p>One of the most powerful ways to understand LLMs is to think of them as tools for answering “If I came across this text [whatever text is in the LLM’s prompt, pre-prompts, or other inputs in the model’s context window] while wandering around the internet,<a class="footnote-reference brackets" href="#llm-training-data" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> what word am I most likely to encounter next?” LLMs then ask this question over and over, adding the newly selected word to the context window one at a time and then feeding the updated “conversation” back into itself as input to help it predict the next word. Indeed, this repetitiveness is why the technology behind most LLMs is called a <em>recurrent</em> neural network — because it keeps adding a word to the “conversation” you are having (its “context window”), then feeding the updated conversation back into the model as an updated input.</p>
 <p>To be clear, this is a little reductionist. First, LLMs are able to <em>abstract</em> away from literal text to something like the meaning of words — they recognize that “pet” and “dog” have similar meanings in the sentences “I took my dog for a walk” and “I took my pet for a walk” — but even these abstractions are the result of looking for common patterns across existing text. And second, LLMs are also “fine-tuned” by having humans rate responses. But these nuances don’t change the fact that <em>fundamentally</em> LLMs are tools for recapitulating text and ideas that already exist in the world, with a strong bias towards what humans have <em>tended</em> to write most on the internet — a truth that both explains some of their power, but also helps to explain their fundamental limitations (e.g., their complete lack of fidelity to the truth, the fact they reflect societies’ gender and racial biases, etc.).</p>
 </section>
 <section id="alignment-and-coding-llms-an-example">

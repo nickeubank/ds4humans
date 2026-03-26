@@ -40,19 +40,19 @@ So why is reporting accuracy scores without context such a problem? There are at
 
 ### Reason 1: Performance is Relative
 
-The first problem with reporting accuracy scores absent context is that the value of a model can only ever be evaluated *relative to the best available alternative.* Over the years, I've developed the sense that students tend to view accuracy as an absolute scale, very much the way they view grades: 99% is terrific (an A+!), between 90% and 99% is good (an A!), 80-90 is so-so (a B), and below 80 is bad. 
+The first problem with reporting accuracy scores absent context is that the value of a model can only ever be evaluated *relative to the best available alternative.* Over the years, I've developed the sense that students tend to view accuracy as an absolute scale, very much the way they view grades: 99% is terrific (an A+!), between 90% and 99% is good (an A!), 80-90 is so-so (a B), and below 80 is bad.
 
-The reality, however, is that the only way to evaluate model performance is with respect to the *best available alternative*. A model with a 93% accuracy score is unlikely to be of particular value to a business if the model they were using before you arrived had an accuracy score of 98%, and your model does not have any other benefits to offset its lower accuracy. Similarly, a model with an accuracy score of 70% may constitute a considerable innovation to a business that could not make predictions more accurately than with 50%-50% odds. In life, decisions have to be made, so the value of a model is not based on whether it's perfect, but whether it beats the status quo.
+The reality, however, is that the only way to evaluate model performance is with respect to the *best available alternative*. A model with a 93% accuracy score is unlikely to be of particular value to a business if the model they were using before you arrived had an accuracy score of 98%, and your model does not have any other benefits to offset its lower accuracy. Similarly, a model with an accuracy score of 70% may constitute a considerable innovation to a business that could not make predictions more accurately than with 50%-50% odds. In life, decisions have to be made, so the value of a model is not based on whether it's perfect, but on whether it beats the status quo.
 
-Treating accuracy as an absolute scale also ignores the fact that model performance will always be limited by the amount of *signal* in the data on which it is trained. A data scientist's job is not to maximize a model's apparent accuracy, but rather to harness the true predictive potential of the data. Any increases in metrics like accuracy beyond the true potential of the data is illusory, and can only come from overfitting. 
+Treating accuracy as an absolute scale also ignores the fact that model performance will always be limited by the amount of *signal* in the data on which it is trained. A data scientist's job is not to maximize a model's apparent accuracy, but rather to harness the true predictive potential of the data. Any increases in metrics like accuracy beyond the true potential of the data are illusory, and can only come from overfitting.
 
-Of course, we are not gods, and so we will never know the exact predictive potential of a given dataset, but the principle is one to bear in mind — the potential of a model is always bounded by the data on which is being trained, and the only way to get a model that exceeds that true performance frontier is by overfitting your data (creating an *illusion* of better performance that will not hold up when the model is actually deployed).
+Of course, we are not gods, and so we will never know the exact predictive potential of a given dataset, but the principle is one to bear in mind — the potential of a model is always bounded by the data on which it is being trained, and the only way to get a model that exceeds that true performance frontier is by overfitting your data (creating an *illusion* of better performance that will not hold up when the model is actually deployed).
 
 ### Reason 2: Accuracy and Imbalanced Data
 
-As detailed in the [introductory chapter to this book](../10_introduction/23_mistakes.md), most data you will encounter in your career will be *imbalanced*, meaning that one of the outcomes you are trying to predict with your model (assuming a classification task) will be much, much less prevalent in the data than the other. In these situations, because accuracy is just "the share of cases correctly classified," getting high accuracy can be achieved trivially by always predicting the more prevalent outcome.
+As detailed in the [introductory chapter to this book](../10_introduction/23_mistakes.md), most data you will encounter in your career will be *imbalanced*, meaning that one of the outcomes you are trying to predict with your model (assuming a classification task) will be much less prevalent in the data than the other. In these situations, because accuracy is just "the share of cases correctly classified," getting high accuracy can be achieved trivially by always predicting the more prevalent outcome.
 
-To illustrate, consider routine mammograms. Mammograms are x-rays of women's breast tissue used to screen for early signs of breast cancer. In the United States, it is recommended that all women over 40 get a mammogram every two years. Unsurprisingly, therefore, *vast* majority of routine mammograms are medically unremarkable. According to the Susan G. Komen society, roughly 90% of routine mammograms are perfectly normal and require no followup.[^false_positives] 
+To illustrate, consider routine mammograms. Mammograms are x-rays of women's breast tissue used to screen for early signs of breast cancer. In the United States, it is recommended that all women over 40 get a mammogram every two years. Unsurprisingly, therefore, *vast* majority of routine mammograms are medically unremarkable. According to the Susan G. Komen society, roughly 90% of routine mammograms are perfectly normal and require no followup.[^false_positives]
 
 [^false_positives]: The vast majority of the roughly 10% of scans that are abnormal are eventually determined to be false positives.
 
@@ -64,7 +64,7 @@ def my_cancer_detection_model(mammogram):
     return is_scan_abnormal_maybe_cancerous
 ```
 
-Obviously, of course, this model is worse than useless: it has a 100% False Negative rate (all mammograms that are abnormal are classified as normal), meaning the algorithm will tell *all* patients they are cancer free, including those whose mammograms show indications of cancer.
+Obviously, this model is worse than useless: it has a 100% False Negative rate (all mammograms that are abnormal are classified as normal), meaning the algorithm will tell *all* patients they are cancer-free, including those whose mammograms show indications of cancer.
 
 Moreover, most data scientists wouldn't even consider 90/10 data to be particularly imbalanced. In any given year in the United States, only about 3% of single-family residential mortgages are in a state of delinquency[^delinquency], and fraudulent credit card purchases [make up less than one-tenth of 1% of all credit card transactions](https://www.federalreserve.gov/newsevents/pressreleases/other20181016a.htm). That means a "model" that reports all mortgages are in good standing or that all credit card transactions are valid will immediately have accuracy scores of 97% and $>$ 99.9%, respectively.
 
@@ -92,7 +92,7 @@ Second, the ROC AUC metric is myopically focused on the proportion of correct po
 
 ## Choosing the Best Way to be Wrong
 
-How, then, should one approach being more thoughtful about model evaluation **given there is no single "correct" metric** that is universally correct? 
+How, then, should one approach being more thoughtful about model evaluation **given there is no single "correct" metric** that is universally correct?
 
 The first step is always to evaluate the *relative value* of the four different types of classifications: true positives, true negatives, false positives, and false negatives. Writing a model that reviews the results of blood tests for signs of a terminal but treatable disease? You probably want to associate a strong negative value with false negatives (where you tell a sick patient they're healthy) and a smaller negative value with false positives (being told you might have a lethal condition is stressful, even if later tests (which may have their own risks) may show it to be a false positive!). And you may then normalize your true positives and true negatives to zero.
 
@@ -104,7 +104,7 @@ Similarly, I feel quite confident that anyone *using* a mine-detection algorithm
 
 ## Errors with Non-Discrete Choice Models
 
-Up until now, we've emphasized how we manage errors in the context of discrete, binary classification tasks, but it is worth emphasizing that this is only because binary classification is the easiest context in which to think about these problems. However, the issues raised her apply equally to classification tasks with more than two categories, and to efforts to answer Passive Prediction Questions about continuous outcomes. Latent in any model you use is a cost function, and implicit in that cost function is how mistakes are evaluated. 
+Up until now, we've emphasized how we manage errors in the context of discrete, binary classification tasks, but it is worth emphasizing that this is only because binary classification is the easiest context in which to think about these problems. However, the issues raised her apply equally to classification tasks with more than two categories, and to efforts to answer Passive Prediction Questions about continuous outcomes. Latent in any model you use is a cost function, and implicit in that cost function is how mistakes are evaluated.
 
 Linear regression, for example, minimizes the sum of squared errors across all observations, and (by default) it gives equal weight to the squared error associated with each observation. But if you don't feel that's an appropriate weighting scheme, you are not bound to it — weighted linear regression is a version of linear regression where the user provides a set of weights to associate with each observation. Have some customers you know are more valuable to your company? Perhaps you want to have the model give more weight to errors associated with those customers so the final model performs better for those customers. Or working with data from stores with different sales volumes? Maybe you want to give more weight to stores with larger sales volumes.
 
@@ -114,6 +114,6 @@ Don't want to work with squared errors at all? Great! There's a whole discipline
 
 - No metric can meaningfully summarize the performance of a model absent information about the broader context.
 - Model performance only begins to be meaningful when compared with *the next best alternative*.
-    - A special case of this occurs with imbalanced data, where the most naive alternative will always be to "always report the dominant class." When data is highly imbalanced (90/10, 99/1, 99.999/0.001), accuracy will always be trivially high, since always reporting the dominant class will have accuracy equal to the share of cases that are the dominant class.
+  - A special case of this occurs with imbalanced data, where the most naive alternative will always be to "always report the dominant class." When data is highly imbalanced (90/10, 99/1, 99.999/0.001), accuracy will always be trivially high, since always reporting the dominant class will have accuracy equal to the share of cases that are the dominant class.
 - Accuracy is the quintessential example a metric people think gives an absolute measure of model quality, but these issues apply to any metric, like AUC.
-- **There is no single "right" way to measure model quality.** A good model balances true positives, true negatives, false positives, and false negatives in a way that reflects the relative real-world consequences of different types of mistakes. 
+- **There is no single "right" way to measure model quality.** A good model balances true positives, true negatives, false positives, and false negatives in a way that reflects the relative real-world consequences of different types of mistakes.

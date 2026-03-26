@@ -1,5 +1,5 @@
 
-# Positive and Normative Questions In Practice
+# Positive and Normative Questions in Practice
 
 Below are two vignettes of groups struggling to answer important questions about the world. Let's read them to see how Positive and Normative Questions interact in the context of real-world problems, and how you (as a data scientist) can wield your skills to be especially impactful.
 
@@ -9,8 +9,8 @@ You have been hired by a medical regulatory board concerned about the rise in op
 
 Why are they stuck?
 
-1) They may be unsure how to value overdose prevention relative to ensuring appropriate patient access to opioids, and/or
-2) They may also be unsure about *how much* opioid regulations that reduce overdoses by a certain amount would limit access for patients in need.
+1. They may be unsure how to value overdose prevention relative to ensuring appropriate patient access to opioids, and/or
+2. They may also be unsure about *how much* opioid regulations that reduce overdoses by a certain amount would limit access for patients in need.
 
 The first of these sources of uncertainty is about a Normative Question — if you could prevent one overdose death at the expense of preventing 10 patients in pain from getting the opioids they need, would you accept that trade-off? You may have an opinion on that question, but unless you have experience with overdoses, addiction, or chronic pain, you probably don't have much to offer to a room full of doctors who have extensive experience with how these things impact patients and their families.
 

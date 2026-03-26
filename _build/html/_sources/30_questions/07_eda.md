@@ -4,11 +4,11 @@ After finishing the last section on Descriptive Questions, some readers may be r
 
 If that's you, or if you just don't feel clear on the distinction between answering Descriptive Questions and "Exploratory Data Analysis," commonly referred to by the acronym "EDA," this section is for you.
 
-In my view, and that of many of my colleagues, the practice commonly referred to as "EDA" and students understanding of its role in problem-solving is one of the greatest failures in data science education.
+In my view, and that of many of my colleagues, the practice commonly referred to as "EDA" and students' understanding of its role in problem-solving is one of the greatest failures in data science education.
 
 The problem with the term EDA is that, if you asked most data scientists what it means, they probably couldn't actually give you a straight answer. If you pressed them further, they would probably say something like "exploring your data before you start fitting your models."
 
-While the idea that data scientists should "get to know their data" before fitting a model is well-meaning (you *absolutely* should!), the ubiquitous but uncritical use of the term has given young data scientists the sense that the undirected poking at data is worthy of a capitalized three world title, complete with a universally recognized acronym.
+While the idea that data scientists should "get to know their data" before fitting a model is well-meaning (you *absolutely* should!), the ubiquitous but uncritical use of the term has given young data scientists the sense that undirected poking at data is worthy of a capitalized three-word title, complete with a universally recognized acronym.
 
 This is problematic because *any* activity that involves data but lacks a clear motivation is doomed to be unending and unproductive. Data science has emerged precisely because our datasets are far too complex for us to understand directly; indeed, I would argue that the job of a data scientist can be summed up, in part, as a person who identifies **meaningful** patterns in our data and makes them comprehensible.
 
@@ -24,7 +24,7 @@ The second activity that often falls under the label EDA is what I call "*valida
 
 The third and final activity people call EDA is... everything one does with the data before they fit a statistical or machine learning model. This is the second major reason that I feel the very concept of EDA has had a pernicious influence on data science — it implicitly devalues anything done with data that doesn't entail a complicated model as "lesser" or "just a stop on the way towards the "real" analysis," when nothing could be further from the truth.
 
-This type of data analysis — looking at summary statistics, calculating distributions of variables, computing tabulations and cross-tabulations of different things to improve one's understanding of the world — is categorically different from "learning the structure of your data," because it is inquiry in the service of better understanding the world, not the structure of your dataset. But it is *not* categorically different analyzing data using statistical models, not just because in many cases generating cross-tabulations or calculating group averages are essentially equivalent to using a statistical method like linear regression, but also because they are both examples of the same enterprise: attempting to answer questions about the world using data in the service of solving problems.
+This type of data analysis — looking at summary statistics, calculating distributions of variables, computing tabulations and cross-tabulations of different things to improve one's understanding of the world — is categorically different from "learning the structure of your data," because it is inquiry in the service of better understanding the world, not the structure of your dataset. But it is *not* categorically different from analyzing data using statistical models, not just because in many cases generating cross-tabulations or calculating group averages are essentially equivalent to using a statistical method like linear regression, but also because they are both examples of the same enterprise: attempting to answer questions about the world using data in the service of solving problems.
 
 And just as one cannot properly fit or tune a model without a clear sense of the question one is seeking to answer and how that answer is meant to be used, nor can one know what cross-tabulations to compute without having a sense of purpose to make clear what constitutes "meaningfulness."
 
@@ -48,7 +48,7 @@ No — this is a view held by many people who work with data. Not only is it a c
 >
 > Exploration is too unbounded in the context of building a tool. We need to be able to decide when exploration terminates. Forcing students to tell me what they want the end-user to find and/or what decisions they want to enable has led to better projects.
 
-Obviously in this book I've endorsed the term "Exploratory" as an adjective, rather than a verb — in my few, once you've articulated a concrete Exploratory Question, I think it *does* help motivate subsequent
+Obviously in this book I've endorsed the term "Exploratory" as an adjective, rather than a verb — once you've articulated a concrete Exploratory Question, I think it *does* help motivate subsequent analysis.
 
 [Nathan Yau](https://flowingdata.com/2017/04/28/data-exploration-banned/) makes a similar point about EDA data visualizations:
 

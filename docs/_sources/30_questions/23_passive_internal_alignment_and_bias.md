@@ -1,24 +1,24 @@
 # Passive Prediction, Internal Validity, and Alignment
 
-In this chapter, we will discuss a range of considerations that come into play when evaluating the internal validity of a model designed to answer a Passive Prediction Question. As with Descriptive Questions, I will assume you are already familiar with the usual methods of quantitatively measuring the quality of a model used for Passive Prediction. Instead, my focus will be on the kind of higher-level considerations that you should reflect on before and after you engage in the standard practices of model fitting and diagnostics you likely learned in your machine learning or statistics course. 
+In this chapter, we will discuss a range of considerations that come into play when evaluating the internal validity of a model designed to answer a Passive Prediction Question. As with Descriptive Questions, I will assume you are already familiar with the usual methods of quantitatively measuring the quality of a model used for Passive Prediction. Instead, my focus will be on the kind of higher-level considerations that you should reflect on before and after you engage in the standard practices of model fitting and diagnostics you likely learned in your machine learning or statistics course.
 
 ## Alignment
 
-After the last chapter, you'd be forgiven for wondering whether I'm crazy (or just a bad writer) given my insistence on referring to a model that reads mammograms as "a model that answers the question: if a radiologist were to look at this mammogram, would they conclude it showed evidence of cancer?" "A model that reads mammograms" is clearer and more succinct, after all. 
+After the last chapter, you'd be forgiven for wondering whether I'm crazy (or just a bad writer) given my insistence on referring to a model that reads mammograms as "a model that answers the question: if a radiologist were to look at this mammogram, would they conclude it showed evidence of cancer?" "A model that reads mammograms" is clearer and more succinct, after all.
 
-So why have I insisted in continuing to discuss models in this way? Because while my formulation is less concise, it is also much more accurate. 
+So why have I insisted in continuing to discuss models in this way? Because while my formulation is less concise, it is also much more accurate.
 
-The way that most statistical models are developed ("trained") to answer Passive Prediction Questions is by using a large dataset of "training examples." These training examples are observations in which the outcome we will eventually ask the model to predict is filled in. 
+The way that most statistical models are developed ("trained") to answer Passive Prediction Questions is by using a large dataset of "training examples." These training examples are observations in which the outcome we will eventually ask the model to predict is filled in.
 
-For models designed to predict future events, our training data will be historical data in which the outcomes the model will eventually be designed to predict — like surgical complications or factory machine failures — have already occurred. 
+For models designed to predict future events, our training data will be historical data in which the outcomes the model will eventually be designed to predict — like surgical complications or factory machine failures — have already occurred.
 
 For models designed for automation, our training data will be records of a person completing the task the model will eventually be designed to automate. To train a mammogram reading algorithm, in other words, you first need a database of mammograms that radiologists have already labeled as indicating cancer or not. And what the model is actually trained to do is not "find cancer" but rather to "give the same answers given by human radiologists."
 
 This is where the distinction between "predicting what a radiologist would say" and "detecting cancer" becomes important: because this kind of statistical model was trained to emulate the behavior of radiologists in labelled mammograms, the model will recapitulate any systematic biases held by the human radiologists who reviewed the mammograms in the training data. Did the radiologists struggle to detect cancer in dense breast tissue? So too will the algorithm trained on their labels.
 
-The difference between what you *want* a model to do (detect cancer) and what it *actually* does (guesses what a radiologist would do) is referred to as a model's *alignment*, and the fact there is nearly always a gap between what we want a model to do and what it actually does is commonly referred to as an "alignment problem."
+The difference between what you *want* a model to do (detect cancer) and what it *actually* does (guesses what a radiologist would do) is referred to as a model's *alignment*, and the fact that there is nearly always a gap between what we want a model to do and what it actually does is commonly referred to as an "alignment problem."
 
-And as we'll discuss in detail below, often this difference between what we *want* a model to do (for example, find the best applicant for a job) and what the model is actually doing (like emulating biased human hiring managers) is how biased algorithms arise.
+And as we'll discuss in detail below, this difference between what we *want* a model to do (for example, find the best applicant for a job) and what the model is actually doing (like emulating biased human hiring managers) is often how biased algorithms arise.
 
 ```{note}
 The terms "alignment" and "the alignment problem" I believe originated among computer scientists interested in artificial intelligence (and the possibility we might someday create a super-intelligent AI whose interests may not align with our own). With the rise of LLMs like chatGPT and Gemini, use of the term has spread, and data scientists from a range of backgrounds are becoming increasingly comfortable using the term.
@@ -30,7 +30,7 @@ Interested in AI safety? Then I cannot over-recommend the youtube videos of Rob 
 
 Given their emergence as one of the most high profile examples of something people call "AI" these days, it's worth directly addressing how LLMs like chatGPT, Llama, Bard, etc. fit into this framework.
 
-One of the most powerful ways to understand LLMs is to think of them as tools for answering "If I came across this text [whatever text is in the LLMs prompt, pre-prompts, or other inputs in the model's context window] while wandering around the internet,[^llm_training_data] what word am I most likely to encounter next?" LLMs then ask this question over and over, adding the newly selected word to the context window one at a time and then feeding the updated "conversation" back into itself as input to help it predict the next word. Indeed, this repetitiveness is why the technology behind most LLMs is called a *recurrent* neural network — because it keeps adding a word to the "conversation" you are having (its "context window"), then feeding the updated conversation back into the model as an updated input.
+One of the most powerful ways to understand LLMs is to think of them as tools for answering "If I came across this text [whatever text is in the LLM's prompt, pre-prompts, or other inputs in the model's context window] while wandering around the internet,[^llm_training_data] what word am I most likely to encounter next?" LLMs then ask this question over and over, adding the newly selected word to the context window one at a time and then feeding the updated "conversation" back into itself as input to help it predict the next word. Indeed, this repetitiveness is why the technology behind most LLMs is called a *recurrent* neural network — because it keeps adding a word to the "conversation" you are having (its "context window"), then feeding the updated conversation back into the model as an updated input.
 
 [^llm_training_data]: A more accurate way to phrase this would be "If I came across this text *in my training data*..." For most LLMs, "my training data" is a corpus that consists of both text that is *not* on the internet — like every book every published — and fails to include many things that *are* on the internet but which are difficult to crawl in an automated way. You can learn more about the corpus of internet text used by many LLMs — the 9.5 petabyte *Common Crawl* dataset — [here.](https://foundation.mozilla.org/en/research/library/generative-ai-training-data/common-crawl/) But it does seem very clear the *vast* majority of training data comes from the internet. LLMs makers are becoming increasingly caggy about what data they use for training — in part because they don't wish to make copyright lawsuits against them *too* easy — but books made up only [4.5% of the training data for Meta's first version of LLaMa](https://arxiv.org/abs/2302.13971).
 
@@ -38,7 +38,7 @@ To be clear, this is a little reductionist. First, LLMs are able to *abstract* a
 
 ### Alignment and Coding LLMs: An Example
 
-To illustrate what an alignment issue looks like with LLMs, let's consider a simple example I'm stealing from [Rob Miles](https://www.youtube.com/@RobertMilesAI), whose work I recommended above. 
+To illustrate what an alignment issue looks like with LLMs, let's consider a simple example I'm stealing from [Rob Miles](https://www.youtube.com/@RobertMilesAI), whose work I recommended above.
 
 When we use a coding assistant LLM, what we *want* is for it to help us write good code. But LLMs aren't designed to write *good* code, they're designed to write the code that is most like what they would find on a website/github repo if what came before it looked like the code in the file you're working on.
 
@@ -64,7 +64,7 @@ This is obviously an extreme example, but it's extreme for the purpose of illust
 
 ## Bias
 
-I've started with the preceding example because it feels relevant for the average young data scientist, but providing less-than-amazing code suggestions is obviously not the reason to be most concerned about alignment issues. The more pervasive and important reason to recognize that the models we use to answer Passive Prediction Questions are not just "finding the best job candidate," "detecting cancer," or "identifying the people most likely to commit a crime," but are instead trying to replicate the (usually human) behavior that gave rise to the training data is that it helps to explain why so many uses of machine learning recapitulate and reinforce human biases. 
+I've started with the preceding example because it feels relevant for the average young data scientist, but providing less-than-amazing code suggestions is obviously not the reason to be most concerned about alignment issues. The more pervasive and important reason to recognize that the models we use to answer Passive Prediction Questions are not just "finding the best job candidate," "detecting cancer," or "identifying the people most likely to commit a crime," but are instead trying to replicate the (usually human) behavior that gave rise to the training data is that it helps to explain why so many uses of machine learning recapitulate and reinforce human biases.
 
 There was a time, not that long ago, that I heard the CEO of a company that marketed a tool for screening job applications say in a nationally broadcast interview "and the best part is our tool helps to reduce bias because an algorithm can't be racist."
 

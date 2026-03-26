@@ -4,7 +4,7 @@ Now that we've discussed how data science is all about solving problems, and how
 
 In the following chapters, we will be diving into the intricacies of Descriptive, Passive-Prediction, and Causal Questions in detail. We will discuss the role each of these question types plays in solving problems and the issues that arise when answering them.
 
-First, however, we need to discuss another important concept: the distinction between "positive" and "normative" questions (sometimes referred to as "descriptive v prescriptive questions" in the natural sciences, though to avoid overloading the term "descriptive," we’ll stick to the social science terminology).
+First, however, we need to discuss another important concept: the distinction between "positive" and "normative" questions (sometimes referred to as "descriptive v. prescriptive questions" in the natural sciences, though to avoid overloading the term "descriptive," we'll stick to the social science terminology).
 
 ## Positive Questions
 
@@ -26,7 +26,7 @@ In answering this question, note that we've started with a description of some e
 
 [^objectivereality2]: I recognize that in asserting the existence of "empirical truth," I may be offending some readers. As discussed above, I suspect that if you are familiar with the philosophical issues raised by my invoking an empirical truth, you will also probably be comfortable with the distinction between prescriptive and positive questions and will forgive me this simplification.
 
-But is there a "correct" answer to the question "should the FDA authorize this drug?" I would argue not — I don't think I would have too much difficulty finding people who would be quite willing to take both sides of that question. Why? Because different people likely hold different views on the relative value of patients being able to engage in sports and exercise versus the value of 1% of patients being permanently paralyzed. Different people likely also hold different views on the relative value of patients being allowed to make those choices for themselves, is greater than the value of avoiding the possibility that some patients may make the decision to take the drug without fully understanding what life with paralysis entails, and who would later regret their decision when they come to better understand the risk they were taking.
+But is there a "correct" answer to the question "should the FDA authorize this drug?" I would argue not — I don't think I would have too much difficulty finding people who would be quite willing to take both sides of that question. Why? Because different people likely hold different views on the relative value of patients being able to engage in sports and exercise versus the value of 1% of patients being permanently paralyzed. Different people likely also hold different views on whether the value of patients being allowed to make those choices for themselves is greater than the value of avoiding the possibility that some patients may make the decision to take the drug without fully understanding what life with paralysis entails, and who would later regret their decision when they come to better understand the risk they were taking.
 
 ### Normative Questions and Ethics
 
@@ -43,7 +43,7 @@ This doesn't *feel* like the same type of question as "should the FDA authorize 
 
 And that's what makes a Normative Question different from a Positive Question: Positive Questions ask you to measure the world, while Normative Questions ask you to decide on the *relative values* of different outcomes.
 
-Does that mean not all Normative Questions are ethical questions, like you may see written around the internet? Well... I think a moral philosopher would probably argue that how we assign value to different things (which is how we decide what we *should* or *ought* to do) is at the root of all moral and ethical systems. Consequently, this is probably more a matter of semantics than substance — all Normative Questions require weighing choices and assigning value to different outcomes. A philosopher would probably say that does make them all ethical, while a layperson may not.
+Does that mean not all Normative Questions are ethical questions, like you may see written around the internet? Well... I think a moral philosopher would probably argue that how we assign value to different things (which is how we decide what we *should* or *ought* to do) is at the root of all moral and ethical systems. Consequently, this is probably more a matter of semantics than substance — all Normative Questions require weighing choices and assigning value to different outcomes. A philosopher would probably say that does make them all ethical, while a layperson might not.
 
 ### Trade-Offs, Decisions, Positive Questions, and Normative Questions
 
@@ -64,4 +64,4 @@ To be clear, this does not mean that the answers you generate as a data scientis
 
 If the focus of this book is Positive Questions, why this digression on Normative Questions?
 
-To help you begin to recognize when the question you are being asked is a Positive Question — with a right or wrong answer, and where your expertise as a data scientist put you in a unique position of authority — or a Normative Question, where answers depend on how one chooses to value different outcomes, and where one's expertise as a data scientist really *doesn't* provide you with any unique standing or authority.
+To help you begin to recognize when the question you are being asked is a Positive Question — with a right or wrong answer, and where your expertise as a data scientist puts you in a unique position of authority — or a Normative Question, where answers depend on how one chooses to value different outcomes, and where one's expertise as a data scientist really *doesn't* provide you with any unique standing or authority.

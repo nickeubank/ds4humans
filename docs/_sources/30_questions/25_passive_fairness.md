@@ -69,7 +69,7 @@ As Mayson writes:
 
 So what's the "right" answer? What's the "fair" way to distribute errors? Should the model strive to have the same Positive Predictive value for White and Black defendents? Or the same False Positive rate? Or some balance of the different rates?
 
-The answer is that there is no *right* answer — each of these different schemes is defensible under different ethical frameworks. When you have to make choices about the relative desirability ("value") of different outcomes, you enter the real of ethics and morality, as discussed in our reading on [Prescriptive Questions](05_descriptive_v_prescriptive.md). 
+The answer is that there is no *right* answer — each of these different schemes is defensible under different ethical frameworks. When you have to make choices about the relative desirability ("value") of different outcomes, you enter the realm of ethics and morality, as discussed in our reading on [Positive and Normative Questions](05_positive_v_normative.md). 
 
 But hopefully, this example makes clear the complexity *and the inescapability* of ethical questions when it comes to the use of data science in high stakes decision making.
 
