@@ -26,7 +26,7 @@ Indeed, this form of inequity is also a problem on the input side — Risk Asses
 
 ## Error Rates and Risk Models
 
-To illustrate the problem, Mayson's paper asks the reader to imagine two imaginary groups of individuals, colored grey and black, represented by the two sets of silhouettes in the pictures below. These two groups are Mayson's stand-ins for Black Defendants and White Defendants. 
+To illustrate the problem, Mayson's paper asks the reader to imagine two imaginary groups of individuals, colored grey and black, represented by the two sets of silhouettes in the pictures below. These two groups are Mayson's stand-ins for Black Defendants and White Defendants.
 
 ![groups with different false positive rates](images/mayson_fig1_hc.png)
 
@@ -45,7 +45,7 @@ For many data scientists, it will be helpful to think about how this figure rela
 
 Where the entire population consists of $P + N$, where $P = TP + FN$ and $N = FP + TN$, and the "positive" condition corresponds to being re-arrested.
 
-In the image above, there are two True Positives (people predicted to be re-arrested who actually do end up re-arrested) and two False Positives (people predicted to be re-arrested who do *not* end up re-arrested) for the grey figures. For the black figures, there is one True Positive and one False Positive. 
+In the image above, there are two True Positives (people predicted to be re-arrested who actually do end up re-arrested) and two False Positives (people predicted to be re-arrested who do *not* end up re-arrested) for the grey figures. For the black figures, there is one True Positive and one False Positive.
 
 With the threshold in the location shown in the figure, the model classifies four grey figures and two black figures as "likely to be rearrested." We also see that for both the grey and black figures, the Positive Predictive value of the model ($\frac{TP}{TP + FP}$, or the share of entities predicted to be re-arrested who are re-arrested) is 50%. Mason refers to this as a model that achieves "Predictive Parity."
 
@@ -69,7 +69,6 @@ As Mayson writes:
 
 So what's the "right" answer? What's the "fair" way to distribute errors? Should the model strive to have the same Positive Predictive value for White and Black defendents? Or the same False Positive rate? Or some balance of the different rates?
 
-The answer is that there is no *right* answer — each of these different schemes is defensible under different ethical frameworks. When you have to make choices about the relative desirability ("value") of different outcomes, you enter the realm of ethics and morality, as discussed in our reading on [Positive and Normative Questions](05_positive_v_normative.md). 
+The answer is that there is no *right* answer — each of these different schemes is defensible under different ethical frameworks. When you have to make choices about the relative desirability ("value") of different outcomes, you enter the realm of ethics and morality, as discussed in our reading on [Positive and Normative Questions](05_positive_v_normative.md).
 
 But hopefully, this example makes clear the complexity *and the inescapability* of ethical questions when it comes to the use of data science in high stakes decision making.
-
