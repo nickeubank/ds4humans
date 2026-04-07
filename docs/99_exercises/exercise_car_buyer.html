@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -249,22 +249,22 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li class="toctree-l2"><a class="reference internal" href="../30_questions/02_relation_to_inference_and_prediction.html">Relationship to Inference and Prediction</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/10_using_descriptive_questions.html">Ch 5: Using Descriptive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/05_positive_v_normative.html">Ch 5: Normative and Positive</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/06_positive_v_normative_examples.html">Positive and Normative Questions in Practice</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/10_using_descriptive_questions.html">Ch 6: Using Descriptive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../30_questions/07_eda.html">Descriptive Qs and the Scourge of "EDA"</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../30_questions/20_using_passive_prediction_questions.html">Ch 6: Using Passive Predictive Qs</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/35_using_causal_questions.html">Ch 7: Causal Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/20_using_passive_prediction_questions.html">Ch 7: Using Passive Predictive Qs</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/35_using_causal_questions.html">Ch 8: Causal Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../30_questions/40_answering_causal_questions.html">Answering Causal Questions</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Uncertainty and Errors</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/05_descriptive_v_prescriptive.html">Ch 8: Descriptive and Prescriptive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../30_questions/06_descriptive_prescriptive_examples.html">Tradeoff Examples</a></li>
-</ul>
-</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../30_questions/15_answering_descriptive_questions.html">Ch 9: Internal and External Validity</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/16_descriptive_internal_challenges.html">Ch 10: Internal Validity and Descriptive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../30_questions/17_descriptive_internal_understandable.html">1: Understandable</a></li>
@@ -288,7 +288,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Science in Practice</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../10_introduction/40_data_science_in_historical_context.html">Ch 2: What Is Data Science?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10_introduction/40_data_science_in_historical_context.html">Ch 17: What Is Data Science?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../40_in_practice/00_how_to_read_this_book.html">How to Read (Academic Edition)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../40_in_practice/27_data_science_memos.html">Data Science Memos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../40_in_practice/30_giving_feedback.html">Giving Effective Feedback (Data Science Edition)</a></li>
@@ -504,7 +504,12 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-kelly-blue-book-estimates-prices">How Kelly Blue Book Estimates Prices</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-money">Making Money</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#today-s-exercise">Today’s Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#today-s-exercise">Today’s Exercise</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#good-condition">Good Condition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fair-condition">Fair Condition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poor-condition">Poor Condition</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -518,12 +523,11 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="kelly-blue-book-buyer">
 <h1>Kelly Blue Book Buyer<a class="headerlink" href="#kelly-blue-book-buyer" title="Link to this heading">#</a></h1>
-<p>Hello!</p>
 <p>You’re a data scientist with Kelly Blue Book, a US company that collects and reports data on car sales. You used to publish a literal blue book with average selling prices for all makes and models of cars — new and used — across the US. This book was considered the gold standard for what constituted a “fair” price for a car, so much so that people discussing car prices talk about cars being “above blue book” (too expensive) or “below blue book” (a great deal!).</p>
-<p>Recently, Kelly Blue Book has been thinking that given all this data it might be a good idea to not just tell people about car prices, but to use their data and models to make a little money themselves.</p>
+<p>Recently, Kelly Blue Book has been thinking that, given all this data, it might be a good idea not just to tell people about car prices but to use its data and models to make a little money itself.</p>
 <section id="how-kelly-blue-book-estimates-prices">
 <h2>How Kelly Blue Book Estimates Prices<a class="headerlink" href="#how-kelly-blue-book-estimates-prices" title="Link to this heading">#</a></h2>
-<p>Kelly Blue Book collects records of all used car sales and reports the range of prices cars for which cars are actually sold based on:</p>
+<p>Kelly Blue Book collects records of all used car sales and reports the range of prices cars for which cars are actually sold for based on:</p>
 <ul class="simple">
 <li><p>Make (e.g., Toyota, Ford)</p></li>
 <li><p>Model (e.g., Camry, F150)</p></li>
@@ -533,20 +537,197 @@ document.write(`
 <li><p>Condition, divided into Excellent, Very Good, Good, and Fair. You can see these categories <a class="reference external" href="https://auto.howstuffworks.com/buying-selling/kelley-blue-book4.htm">detailed here</a>.</p></li>
 </ul>
 <p>Condition is obviously one of the trickier categories, but Kelly Blue Book has a pretty good questionnaire that asks about things like odor, maintenance records, paint chips, etc.</p>
-<p><a class="reference external" href="https://www.kbb.com/detailed-condition-quiz/">In fact, why don’t you go fill it out to get a feel for things!</a> Answer for a real car if you have one or your family recently had one, or just make it up if not.</p>
+<p><a class="reference external" href="https://www.kbb.com/detailed-condition-quiz/">In fact, why don’t you go fill it out to get a feel for things!</a> Answer for a real car if you have one, or your family recently had one, or just make it up if not.</p>
 </section>
 <section id="making-money">
 <h2>Making Money<a class="headerlink" href="#making-money" title="Link to this heading">#</a></h2>
-<p>Kelly Blue Book’s idea is to use their model and data to make guaranteed offers to people who come to their website to check the value of a car they’re thinking of selling.</p>
-<p>The idea is that people may take a slightly lower price than normal to avoid all the annoyances of selling a car through normal channels. If you try to sell your car to a dealer, you have to go to the dealership, negotiate and deal with high-pressure sales people trying to get you buy one of their cars, and be mindful of weird sales tricks. If you sell it yourself, you have to deal with scheduling test drives with interested buyers, making sure that your insurance will let potential buyers test drive the car, you have to avoid scammers, etc.</p>
-<p>So why not offer a cash price that’s a little below market value, then re-sell the car through the kind of dealer auction that you have access to but consumers don’t.</p>
+<p>Kelly Blue Book’s idea is to use its model and data to make guaranteed offers to people who come to its website to check the value of a car they’re thinking of selling.</p>
+<p>The idea is that people may accept a slightly lower price than usual to avoid the annoyances of selling a car through normal channels. If you try to sell your car to a dealer, you have to go to the dealership, negotiate and deal with high-pressure salespeople trying to get you to buy one of their cars, and be mindful of weird sales tricks. If you sell it yourself, you have to deal with scheduling test drives with interested buyers, ensuring your insurance allows potential buyers to test-drive the car, and avoiding scammers.</p>
+<p>So why not offer a cash price slightly below market value, then resell the car through the kind of dealer auction you have access to, but consumers don’t?</p>
 </section>
 <section id="today-s-exercise">
 <h2>Today’s Exercise<a class="headerlink" href="#today-s-exercise" title="Link to this heading">#</a></h2>
-<p>In front of you are two people interested in selling their 2012 Toyota Camrys. Both have 85,000 miles, are the same trim (SE Sedan 4D), and the questionnaire determines they are both in “Good” condition. Your model predicts that, if they sold the cars themselves, they could expect to make between $5,500 and $7,700.</p>
-<p><img alt="kelly blue book price estimate" src="../_images/camry_kbb.png" /></p>
-<p>So, based on that prediction, please make the sellers in front of you an offer (the offer should be the same for the two buyers since the answers they gave on the questionnaire were the same).</p>
-<p>Bear in mind you’ll need to re-sell the car, so don’t pay too much — if you were to pay these sellers $7,700, then even if you re-sold the car for that top value of $7,700, you’d lose money paying taxes and transportation costs. So make sure you give yourself some margin.</p>
+<p>In front of you are two people interested in selling their Toyota Camry’s. Below are the prices your team have estimated as the likely resale price for cars from different years, with different mileages, and in different conditions. These numbers are obviously not the exact models one gets if you go to Kelly Blue Book, but for the purpose of this exercise, you may assume that these are the output of a highly-refined machine learning algorithm.</p>
+<section id="good-condition">
+<h3>Good Condition<a class="headerlink" href="#good-condition" title="Link to this heading">#</a></h3>
+<p><em>“Good condition means the vehicle is free of any major defects. Clean title history, paint/body/interior have only minor blemishes, no major mechanical problems, little or no rust, tires match with substantial tread remaining.”</em></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Model Year</p></th>
+<th class="head text-right"><p>25,000 mi</p></th>
+<th class="head text-right"><p>50,000 mi</p></th>
+<th class="head text-right"><p>75,000 mi</p></th>
+<th class="head text-right"><p>100,000 mi</p></th>
+<th class="head text-right"><p>125,000 mi</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>2026</p></td>
+<td class="text-right"><p>$27,500</p></td>
+<td class="text-right"><p>$25,000</p></td>
+<td class="text-right"><p>$23,000</p></td>
+<td class="text-right"><p>$21,000</p></td>
+<td class="text-right"><p>$19,000</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>2024</p></td>
+<td class="text-right"><p>$24,500</p></td>
+<td class="text-right"><p>$22,500</p></td>
+<td class="text-right"><p>$20,500</p></td>
+<td class="text-right"><p>$18,500</p></td>
+<td class="text-right"><p>$16,500</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>2022</p></td>
+<td class="text-right"><p>$22,000</p></td>
+<td class="text-right"><p>$20,000</p></td>
+<td class="text-right"><p>$18,000</p></td>
+<td class="text-right"><p>$16,000</p></td>
+<td class="text-right"><p>$14,000</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>2020</p></td>
+<td class="text-right"><p>$19,500</p></td>
+<td class="text-right"><p>$17,500</p></td>
+<td class="text-right"><p>$15,500</p></td>
+<td class="text-right"><p>$13,500</p></td>
+<td class="text-right"><p>$11,500</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>2018</p></td>
+<td class="text-right"><p>$17,000</p></td>
+<td class="text-right"><p>$15,000</p></td>
+<td class="text-right"><p>$13,000</p></td>
+<td class="text-right"><p>$11,000</p></td>
+<td class="text-right"><p>$9,500</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>2016</p></td>
+<td class="text-right"><p>$14,500</p></td>
+<td class="text-right"><p>$12,500</p></td>
+<td class="text-right"><p>$10,500</p></td>
+<td class="text-right"><p>$9,000</p></td>
+<td class="text-right"><p>$7,500</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="fair-condition">
+<h3>Fair Condition<a class="headerlink" href="#fair-condition" title="Link to this heading">#</a></h3>
+<p><em>“Fair condition means the vehicle has some repairable cosmetic defects and/or mechanical problems, but is still in reasonable running condition. The vehicle may need some work and reconditioning. Clean title history, no major rust, but may have some body damage or mechanical issues that need attention.”</em></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Model Year</p></th>
+<th class="head text-right"><p>25,000 mi</p></th>
+<th class="head text-right"><p>50,000 mi</p></th>
+<th class="head text-right"><p>75,000 mi</p></th>
+<th class="head text-right"><p>100,000 mi</p></th>
+<th class="head text-right"><p>125,000 mi</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>2026</p></td>
+<td class="text-right"><p>$25,500</p></td>
+<td class="text-right"><p>$23,000</p></td>
+<td class="text-right"><p>$21,000</p></td>
+<td class="text-right"><p>$19,000</p></td>
+<td class="text-right"><p>$17,000</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>2024</p></td>
+<td class="text-right"><p>$22,500</p></td>
+<td class="text-right"><p>$20,500</p></td>
+<td class="text-right"><p>$18,500</p></td>
+<td class="text-right"><p>$16,500</p></td>
+<td class="text-right"><p>$14,500</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>2022</p></td>
+<td class="text-right"><p>$20,000</p></td>
+<td class="text-right"><p>$18,000</p></td>
+<td class="text-right"><p>$16,000</p></td>
+<td class="text-right"><p>$14,000</p></td>
+<td class="text-right"><p>$12,000</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>2020</p></td>
+<td class="text-right"><p>$17,500</p></td>
+<td class="text-right"><p>$15,500</p></td>
+<td class="text-right"><p>$13,500</p></td>
+<td class="text-right"><p>$11,500</p></td>
+<td class="text-right"><p>$9,500</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>2018</p></td>
+<td class="text-right"><p>$15,000</p></td>
+<td class="text-right"><p>$13,000</p></td>
+<td class="text-right"><p>$11,000</p></td>
+<td class="text-right"><p>$9,500</p></td>
+<td class="text-right"><p>$8,000</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>2016</p></td>
+<td class="text-right"><p>$12,500</p></td>
+<td class="text-right"><p>$10,500</p></td>
+<td class="text-right"><p>$8,500</p></td>
+<td class="text-right"><p>$7,500</p></td>
+<td class="text-right"><p>$6,000</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="poor-condition">
+<h3>Poor Condition<a class="headerlink" href="#poor-condition" title="Link to this heading">#</a></h3>
+<p><em>“Poor condition means the vehicle has severe mechanical and/or cosmetic problems and may be in need of serious repair and/or reconditioning. The vehicle may have significant rust, frame damage, or major mechanical issues. It may only be suitable for parts.”</em></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Model Year</p></th>
+<th class="head text-right"><p>25,000 mi</p></th>
+<th class="head text-right"><p>50,000 mi</p></th>
+<th class="head text-right"><p>75,000 mi</p></th>
+<th class="head text-right"><p>100,000 mi</p></th>
+<th class="head text-right"><p>125,000 mi</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>2026</p></td>
+<td class="text-right"><p>$23,000</p></td>
+<td class="text-right"><p>$20,500</p></td>
+<td class="text-right"><p>$18,500</p></td>
+<td class="text-right"><p>$16,500</p></td>
+<td class="text-right"><p>$14,500</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>2024</p></td>
+<td class="text-right"><p>$20,000</p></td>
+<td class="text-right"><p>$18,000</p></td>
+<td class="text-right"><p>$16,000</p></td>
+<td class="text-right"><p>$14,000</p></td>
+<td class="text-right"><p>$12,000</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>2022</p></td>
+<td class="text-right"><p>$17,500</p></td>
+<td class="text-right"><p>$15,500</p></td>
+<td class="text-right"><p>$13,500</p></td>
+<td class="text-right"><p>$11,500</p></td>
+<td class="text-right"><p>$9,500</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>2020</p></td>
+<td class="text-right"><p>$15,000</p></td>
+<td class="text-right"><p>$13,000</p></td>
+<td class="text-right"><p>$11,000</p></td>
+<td class="text-right"><p>$9,000</p></td>
+<td class="text-right"><p>$7,500</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>2018</p></td>
+<td class="text-right"><p>$12,500</p></td>
+<td class="text-right"><p>$10,500</p></td>
+<td class="text-right"><p>$8,500</p></td>
+<td class="text-right"><p>$7,000</p></td>
+<td class="text-right"><p>$6,000</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>2016</p></td>
+<td class="text-right"><p>$10,000</p></td>
+<td class="text-right"><p>$8,000</p></td>
+<td class="text-right"><p>$6,500</p></td>
+<td class="text-right"><p>$5,500</p></td>
+<td class="text-right"><p>$4,500</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 </section>
 </section>
 
@@ -598,7 +779,12 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-kelly-blue-book-estimates-prices">How Kelly Blue Book Estimates Prices</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-money">Making Money</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#today-s-exercise">Today’s Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#today-s-exercise">Today’s Exercise</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#good-condition">Good Condition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fair-condition">Fair Condition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poor-condition">Poor Condition</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
