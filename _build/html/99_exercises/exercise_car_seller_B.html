@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -249,22 +249,22 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li class="toctree-l2"><a class="reference internal" href="../30_questions/02_relation_to_inference_and_prediction.html">Relationship to Inference and Prediction</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/10_using_descriptive_questions.html">Ch 5: Using Descriptive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/05_positive_v_normative.html">Ch 5: Normative and Positive</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/06_positive_v_normative_examples.html">Positive and Normative Questions in Practice</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/10_using_descriptive_questions.html">Ch 6: Using Descriptive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../30_questions/07_eda.html">Descriptive Qs and the Scourge of "EDA"</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../30_questions/20_using_passive_prediction_questions.html">Ch 6: Using Passive Predictive Qs</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/35_using_causal_questions.html">Ch 7: Causal Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/20_using_passive_prediction_questions.html">Ch 7: Using Passive Predictive Qs</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/35_using_causal_questions.html">Ch 8: Causal Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../30_questions/40_answering_causal_questions.html">Answering Causal Questions</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Uncertainty and Errors</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/05_descriptive_v_prescriptive.html">Ch 8: Descriptive and Prescriptive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../30_questions/06_descriptive_prescriptive_examples.html">Tradeoff Examples</a></li>
-</ul>
-</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../30_questions/15_answering_descriptive_questions.html">Ch 9: Internal and External Validity</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/16_descriptive_internal_challenges.html">Ch 10: Internal Validity and Descriptive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../30_questions/17_descriptive_internal_understandable.html">1: Understandable</a></li>
@@ -288,7 +288,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Science in Practice</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../10_introduction/40_data_science_in_historical_context.html">Ch 2: What Is Data Science?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10_introduction/40_data_science_in_historical_context.html">Ch 17: What Is Data Science?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../40_in_practice/00_how_to_read_this_book.html">How to Read (Academic Edition)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../40_in_practice/27_data_science_memos.html">Data Science Memos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../40_in_practice/30_giving_feedback.html">Giving Effective Feedback (Data Science Edition)</a></li>
@@ -518,38 +518,37 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="car-seller-b">
 <h1>Car Seller B<a class="headerlink" href="#car-seller-b" title="Link to this heading">#</a></h1>
-<p>Hello!</p>
-<p>You have just graduated from Duke with your Masters of Interdisciplinary Data Science (MIDS) degree. Congratulations! It’s been a long two years, but you worked hard, made some great friends, learned a <em>tremendous</em> amount, and will be leaving to start your new dream job in a few months.</p>
-<p>Since you’ll be leaving Durham, you’ve decided to sell the 2012 Toyota Camry you purchased when you first arrived in Durham. It’s been a great car and it’s full of some good memories, but you’re moving to [location of dream job], and it’s just not feasible to bring it with you.</p>
+<p>You have just graduated from Duke with your Master’s of Interdisciplinary Data Science (MIDS) degree. Congratulations! It’s been a long two years, but you worked hard, made some great friends, learned a <em>tremendous</em> amount, and will be leaving to start your new dream job in a few months.</p>
+<p>Since you’ll be leaving Durham, you’ve decided to sell the 2018 Toyota Camry you purchased when you first arrived. It’s been a great car, full of good memories, but you’re moving to [location of dream job], and it’s just not feasible to bring it with you.</p>
 <p><img alt="stock camry photo" src="../_images/camry.jpeg" /></p>
 <section id="pricing">
 <h2>Pricing<a class="headerlink" href="#pricing" title="Link to this heading">#</a></h2>
-<p>The first thing you do after you decide to sell your car is go to the Kelly Blue Book (KBB) website to see what <a class="reference external" href="https://www.kbb.com/toyota/camry/2012/">2012 Toyota Camry’s have been selling for you in your area</a>. KBB is basically the “go-to” resource for getting a ballpark value for a used car in the US — they collect records of all used car sales and report the range of prices cars go for based on:</p>
+<p>The first thing you do after you decide to sell your car is go to the Kelly Blue Book (KBB) website to see what 2018 Toyota Camry’s have been selling for you in your area. KBB is basically the “go-to” resource for getting a ballpark value for a used car in the US — they collect records of all used car sales and report the range of prices cars go for based on:</p>
 <ul class="simple">
 <li><p>Make (Toyota)</p></li>
 <li><p>Model (Camry)</p></li>
 <li><p>Trim (the specific options the car came with, yours is a mid-trim, the SE Sedan 4D)</p></li>
-<li><p>Model Year (2012)</p></li>
-<li><p>Mileage on the car (how far it’s been driven in its life — let’s say 85,000 miles)</p></li>
-<li><p>Condition, divided into Excellent, Very Good, Good, and Fair. You can see these categories <a class="reference external" href="https://auto.howstuffworks.com/buying-selling/kelley-blue-book4.htm">detailed here</a>. Your car is probably “Good”:</p>
-<ul>
-<li><p>“Good condition means that the vehicle is free of any major defects. This vehicle has a clean Title History, the paint, body and interior have only minor (if any) blemishes, and there are no major mechanical problems. There should be little or no rust on this vehicle. The tires match and have substantial tread wear left. A “good” vehicle will need some reconditioning to be sold at retail. Most consumer owned vehicles fall into this category.”</p></li>
+<li><p>Model Year (2022)</p></li>
+<li><p>Mileage on the car (how far it’s been driven in its life — let’s say 50,000 miles)</p></li>
+<li><p>Condition, divided into Excellent, Very Good, Good, and Fair. You can see these categories <a class="reference external" href="https://auto.howstuffworks.com/buying-selling/kelley-blue-book4.htm">detailed here</a>.</p></li>
 </ul>
-</li>
-</ul>
+<p>To determine the condition of your car, you use the Kelly Bluebook Online Questionnaire, which leads you to conclude the condition of your car is “Good.”</p>
+<blockquote>
+<div><p>Good condition means that the vehicle is free of any major defects. This vehicle has a clean Title History, the paint, body, and interior have only minor (if any) blemishes, and there are no major mechanical problems. There should be little or no rust on this vehicle. The tires match and have substantial tread wear left. A “good” vehicle will need some reconditioning before it can be sold at retail. Most consumer-owned vehicles fall into this category.</p>
+</div></blockquote>
 <p>Condition is obviously one of the trickier categories, but Kelly Blue Book has a pretty good questionnaire that asks about things like odor, maintenance records, paint chips, etc.</p>
-<p><a class="reference external" href="https://www.kbb.com/detailed-condition-quiz/">In fact, why don’t you go fill it out to get a feel for things!</a> Answer for a real car if you have one or your family recently had one, or just make it up if not.</p>
+<p><a class="reference external" href="https://www.kbb.com/detailed-condition-quiz/">In fact, why don’t you go fill it out to get a feel for things!</a> Answer for a real car if you have one, or your family recently had one, or just make it up if not.</p>
 </section>
 <section id="putting-it-on-the-market">
 <h2>Putting It On The Market<a class="headerlink" href="#putting-it-on-the-market" title="Link to this heading">#</a></h2>
-<p>The Kelly Blue Book quiz says your car is in Good condition, and that if you sold the car yourself, you could probably expect to get between $5,500 and $7,700.</p>
-<p><img alt="kelly blue book price estimate" src="../_images/camry_kbb.png" /></p>
-<p>You want to sell the car, so you put it on the market yourself at what you think is a pretty good price to sell — $6,500, the bottom of that price range.</p>
-<p>But… oh man, you’re feeling a little overwhelmed. Everyone who sees the car wants it. See, your car has a custom paint job that’s <em>beautiful</em> — a gorgeous metallic blue that really makes it stand out from all the other Camry’s on the road. Not only that, but the interior is <em>immaculate</em> — see, you and the previous owners are total neat freaks, so the leather seats basically look like they just came out of the factory. Before you know it, you’re facing a bidding war with people offering you well above Blue Book — up to $8,000! And who knows, if you wait a little longer, you may get even more!</p>
+<p>The Kelly Blue Book quiz says your car is in Good condition, and that if you sold the car yourself, you could probably expect to get about $18,000.</p>
+<p>You want to sell the car, so you put it on the market yourself at what you think is a pretty good price to sell — $17,500, a little below Bluebook.</p>
+<p>But… oh man, you’re feeling a little overwhelmed. Everyone who sees the car wants it. See, your car has a custom paint job that’s <em>beautiful</em> — a gorgeous metallic blue that really makes it stand out from all the other Camry’s on the road. Not only that, but the car has premium after-market leather seats that are way better than the trim suggests, and custom rims.</p>
+<p>Before you know it, you’re facing a bidding war with people offering you well above Blue Book — up to $25,000! And who knows, if you wait a little longer, you may get even more!</p>
 </section>
 <section id="kelly-blue-book-instant-cash-offer">
 <h2>Kelly Blue Book Instant Cash Offer<a class="headerlink" href="#kelly-blue-book-instant-cash-offer" title="Link to this heading">#</a></h2>
-<p>Before you started having people come see the car in person, you discovered that you could get an instant, guaranteed cash offer from Kelly Blue Book! They’re so confident in their pricing model that they offer car owners a guaranteed cash price based on their answers to their survey questions. So why don’t you ask them what they’re willing to offer you before you decide whether to take that $8,000 offer?</p>
+<p>Before you started having people come see the car in person, you discovered that you could get an instant, guaranteed cash offer from Kelly Blue Book! They’re so confident in their pricing model that they offer car owners a guaranteed cash price based on their answers to their survey questions. So why don’t you ask them what they’re willing to offer you before you decide whether to take that $25,000 offer.</p>
 </section>
 </section>
 

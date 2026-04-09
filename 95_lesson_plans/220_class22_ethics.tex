@@ -1,0 +1,65 @@
+% !TEX program = lualatex
+
+\documentclass[12pt]{beamer}
+% For handout add ,handout after 11pt
+
+\usetheme{auriga}
+\usecolortheme{auriga}
+
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{color}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage[normalem]{ulem}
+% Set up emoji support with a fallback font
+\newfontfamily\emojifont{Apple Color Emoji}[Renderer=Harfbuzz]
+\DeclareTextFontCommand{\emoji}{\emojifont}
+
+% Beamer list spacing
+% \setlength{\leftmargini}{1.5em}
+\setlength{\topsep}{1em}
+\setlength{\itemsep}{1em}
+\setlength{\parskip}{1.5em}
+\setlength{\parsep}{0.5em}
+
+% define some colors for a consistent theme across slides
+\definecolor{red}{RGB}{181, 23, 0}
+\definecolor{blue}{RGB}{0, 118, 186}
+\definecolor{gray}{RGB}{146, 146, 146}
+\newcommand{\indep}{\perp\!\!\!\perp}
+\title{Ethics}
+
+\author{Nick Eubank}
+
+\date{\vspace*{.3in} \date}
+
+\begin{document}
+\setbeamercolor{page number in head/foot}{fg=white}
+
+\begin{frame}[c]{}
+    \titlepage
+\end{frame}
+\begin{frame}
+    \frametitle{}
+As a burgeoning data scientist, what role do you think ethics should play in the next stages of your life?
+\end{frame}
+
+\begin{frame}
+    \frametitle{}
+Share a difficult ethical situation in which you've found yourself, ideally in a data science context, and how you dealt with it. \\
+\begin{itemize}
+    \item I will NOT impose on anyone to share with the class who doesn't want to, so sharing with your animal-mates does not mean I will ask for your story to be shared with everyone.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{}
+Do you think data scientists have a privileged role in deciding normative questions when data is involved?
+\end{frame}
+
+
+
+\end{document}

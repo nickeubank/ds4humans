@@ -1,15 +1,15 @@
 # Where To Find Public Data
 
-Below are some resources on places to find public data that may be useful for your projects. 
+Below are some resources on places to find public data that may be useful for your projects.
 
 This list is NOT exhaustive; it is rather meant to help generate ideas and help give you a sense of what exists. If you find that you are interested in a question that would require data that *isn't* on this list, ask me and I may be able to help find it!
 
 ## Good Starting Points
 
 - [IPUMS](https://www.ipums.org/): Just look at that list of data sources! IPUMS is amazing, and includes (just to list a few):
-  - [US American Community Survey](https://usa.ipums.org/usa/acs.shtml): the US runs regular surveys (called the American Community Surveys). Results of these are available for many years for small geographic units over a few decades. They include things like income, race and ethnicity, and both geographic identifiers (in tabular formats), and also GIS shapefiles (for GIS manipulations). Can be very useful for things like estimating consumer demographics in different areas. 
+  - [US American Community Survey](https://usa.ipums.org/usa/acs.shtml): the US runs regular surveys (called the American Community Surveys). Results of these are available for many years for small geographic units over a few decades. They include things like income, race and ethnicity, and both geographic identifiers (in tabular formats), and also GIS shapefiles (for GIS manipulations). Can be very useful for things like estimating consumer demographics in different areas.
   - [International Census Data](https://international.ipums.org/international/): Similarly, census data from over 102 countries is also easily accessible. This data often isn't quite as rich as the US ACS data (censuses have to be shorter than surveys), but still often has questions on health, income, race and ethnicity, etc. Also includes a lot of [GIS data](https://international.ipums.org/international/geography_variables.shtml).
-  - [Health Surveys](https://healthsurveys.ipums.org/) 
+  - [Health Surveys](https://healthsurveys.ipums.org/)
   - [NHGIS](https://www.nhgis.org/): Probably the MOST useful resources for US census and demographic data that comes with GIS information.
 - [Open Energy Information](https://openei.org/wiki/Main_Page): A clearning how of data on electricity producers and utilities, power plants, utility rates, and more.
 - [Duke SEED Data](https://sdoh.duhs.duke.edu/): Data on education access and quality, health care access and quality, neighborhood and built environment, social and community context, and economic stability all linked at the local (census block) level.
@@ -20,29 +20,31 @@ This list is NOT exhaustive; it is rather meant to help generate ideas and help 
 - [The data.gov US Government data repository, full of just insane stuff](https://catalog.data.gov/dataset)
 - [US Mortgage Loan-level data](https://www.freddiemac.com/research/datasets/sf-loanlevel-dataset)
 - [Google Dataset Search](https://datasetsearch.research.google.com/)
+- [Historic Twitter 1% Samples](https://archive.org/details/twitterstream): Archived grabs of the 1% of all tweets on a given day.
+- [Stanford Large Network Dataset Collection](https://snap.stanford.edu/data/)
 
 ## Other Interesting Data Sources
 
-It's hard to overstate how much data is freely available online. 
+It's hard to overstate how much data is freely available online.
 
-- There are datasets on armed conflicts and terrorism ([here](https://www.prio.org/Data/Armed-Conflict/UCDP-PRIO/) and [here](https://acleddata.com/#/dashboard)), 
-- [air pollution information for any location in the world](https://earthdata.nasa.gov/earth-observation-data/near-real-time/hazards-and-disasters/air-quality), 
-- flooding and natural disaster data from satellites (e.g. [here](https://earthdata.nasa.gov/earth-observation-data/near-real-time/hazards-and-disasters/floods)), 
-- measures of democratic institutions and freedom ([here](https://www.systemicpeace.org/polityproject.html)), 
-- data on elections, 
+- There are datasets on armed conflicts and terrorism ([here](https://www.prio.org/Data/Armed-Conflict/UCDP-PRIO/) and [here](https://acleddata.com/#/dashboard)),
+- [air pollution information for any location in the world](https://earthdata.nasa.gov/earth-observation-data/near-real-time/hazards-and-disasters/air-quality),
+- flooding and natural disaster data from satellites (e.g. [here](https://earthdata.nasa.gov/earth-observation-data/near-real-time/hazards-and-disasters/floods)),
+- measures of democratic institutions and freedom ([here](https://www.systemicpeace.org/polityproject.html)),
+- data on elections,
 - [AirBnB Listings](http://insideairbnb.com/get-the-data.html),
-- [trade](https://www.imf.org/en/Data), 
-- [shipping traffic](https://www.data.gov/maritime/), 
+- [trade](https://www.imf.org/en/Data),
+- [shipping traffic](https://www.data.gov/maritime/),
 
-and oh so much more. 
+and oh so much more.
 
 ## Data with a Spatial/GIS Component
 
 Government census data is often the underpinning of spatial analyses, because it's available almost everywhere, is free, and has *tons* of information about... well, everyone!
 
-To be clear, much of this data *includes* spatial information, but you do not necessarily have to have any special geospatial skills to work with this data. 
+To be clear, much of this data *includes* spatial information, but you do not necessarily have to have any special geospatial skills to work with this data.
 
-Many datasets — that do include sophisticated geospatial data — also come with normal tabular datasets. This will usually include information like the state or county name of each row, which may be all you want or need. 
+Many datasets — that do include sophisticated geospatial data — also come with normal tabular datasets. This will usually include information like the state or county name of each row, which may be all you want or need.
 
 The best resource for spatial census data is [NHGIS (for US data)](https://www.nhgis.org/) and [IHGIS (for international data)](https://ihgis.ipums.org/). These projects are run by the same folks -- [IPUMS](https://www.ipums.org/) who we've gone to in the past for individual level census data in the US or internationally. They're *amazing*. You go to their site, tell them the geographic level at which you want data, and they will provide you will a list of available data. A few notes about using these services:
 

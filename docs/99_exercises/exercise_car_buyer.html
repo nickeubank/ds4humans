@@ -502,14 +502,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-kelly-blue-book-estimates-prices">How Kelly Blue Book Estimates Prices</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-money">Making Money</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#today-s-exercise">Today’s Exercise</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#good-condition">Good Condition</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fair-condition">Fair Condition</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poor-condition">Poor Condition</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good-condition">Good Condition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fair-condition">Fair Condition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poor-condition">Poor Condition</a></li>
 </ul>
             </nav>
         </div>
@@ -523,33 +518,11 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="kelly-blue-book-buyer">
 <h1>Kelly Blue Book Buyer<a class="headerlink" href="#kelly-blue-book-buyer" title="Link to this heading">#</a></h1>
-<p>You’re a data scientist with Kelly Blue Book, a US company that collects and reports data on car sales. You used to publish a literal blue book with average selling prices for all makes and models of cars — new and used — across the US. This book was considered the gold standard for what constituted a “fair” price for a car, so much so that people discussing car prices talk about cars being “above blue book” (too expensive) or “below blue book” (a great deal!).</p>
-<p>Recently, Kelly Blue Book has been thinking that, given all this data, it might be a good idea not just to tell people about car prices but to use its data and models to make a little money itself.</p>
-<section id="how-kelly-blue-book-estimates-prices">
-<h2>How Kelly Blue Book Estimates Prices<a class="headerlink" href="#how-kelly-blue-book-estimates-prices" title="Link to this heading">#</a></h2>
-<p>Kelly Blue Book collects records of all used car sales and reports the range of prices cars for which cars are actually sold for based on:</p>
-<ul class="simple">
-<li><p>Make (e.g., Toyota, Ford)</p></li>
-<li><p>Model (e.g., Camry, F150)</p></li>
-<li><p>Trim (the specific options the car came with, like “Limited” or “SE”)</p></li>
-<li><p>Model Year</p></li>
-<li><p>Mileage on the car (how far it’s been driven in its life)</p></li>
-<li><p>Condition, divided into Excellent, Very Good, Good, and Fair. You can see these categories <a class="reference external" href="https://auto.howstuffworks.com/buying-selling/kelley-blue-book4.htm">detailed here</a>.</p></li>
-</ul>
-<p>Condition is obviously one of the trickier categories, but Kelly Blue Book has a pretty good questionnaire that asks about things like odor, maintenance records, paint chips, etc.</p>
-<p><a class="reference external" href="https://www.kbb.com/detailed-condition-quiz/">In fact, why don’t you go fill it out to get a feel for things!</a> Answer for a real car if you have one, or your family recently had one, or just make it up if not.</p>
-</section>
-<section id="making-money">
-<h2>Making Money<a class="headerlink" href="#making-money" title="Link to this heading">#</a></h2>
-<p>Kelly Blue Book’s idea is to use its model and data to make guaranteed offers to people who come to its website to check the value of a car they’re thinking of selling.</p>
-<p>The idea is that people may accept a slightly lower price than usual to avoid the annoyances of selling a car through normal channels. If you try to sell your car to a dealer, you have to go to the dealership, negotiate and deal with high-pressure salespeople trying to get you to buy one of their cars, and be mindful of weird sales tricks. If you sell it yourself, you have to deal with scheduling test drives with interested buyers, ensuring your insurance allows potential buyers to test-drive the car, and avoiding scammers.</p>
-<p>So why not offer a cash price slightly below market value, then resell the car through the kind of dealer auction you have access to, but consumers don’t?</p>
-</section>
-<section id="today-s-exercise">
-<h2>Today’s Exercise<a class="headerlink" href="#today-s-exercise" title="Link to this heading">#</a></h2>
 <p>In front of you are two people interested in selling their Toyota Camry’s. Below are the prices your team have estimated as the likely resale price for cars from different years, with different mileages, and in different conditions. These numbers are obviously not the exact models one gets if you go to Kelly Blue Book, but for the purpose of this exercise, you may assume that these are the output of a highly-refined machine learning algorithm.</p>
+<p>Ask the two people selling used cars about their cars’ condition, model year, and mileage. They should have all this information on hand, including the car’s condition (which they determined by filling out the questionnaire on the Kelly Bluebook website).</p>
+<p><strong>Offer them a price for their car.</strong> Use the tables below to figure out the likely value of the car, then subtract 10% from the price to make your offer (so you can make a profit when you sell the car).</p>
 <section id="good-condition">
-<h3>Good Condition<a class="headerlink" href="#good-condition" title="Link to this heading">#</a></h3>
+<h2>Good Condition<a class="headerlink" href="#good-condition" title="Link to this heading">#</a></h2>
 <p><em>“Good condition means the vehicle is free of any major defects. Clean title history, paint/body/interior have only minor blemishes, no major mechanical problems, little or no rust, tires match with substantial tread remaining.”</em></p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -609,7 +582,7 @@ document.write(`
 </div>
 </section>
 <section id="fair-condition">
-<h3>Fair Condition<a class="headerlink" href="#fair-condition" title="Link to this heading">#</a></h3>
+<h2>Fair Condition<a class="headerlink" href="#fair-condition" title="Link to this heading">#</a></h2>
 <p><em>“Fair condition means the vehicle has some repairable cosmetic defects and/or mechanical problems, but is still in reasonable running condition. The vehicle may need some work and reconditioning. Clean title history, no major rust, but may have some body damage or mechanical issues that need attention.”</em></p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -669,7 +642,7 @@ document.write(`
 </div>
 </section>
 <section id="poor-condition">
-<h3>Poor Condition<a class="headerlink" href="#poor-condition" title="Link to this heading">#</a></h3>
+<h2>Poor Condition<a class="headerlink" href="#poor-condition" title="Link to this heading">#</a></h2>
 <p><em>“Poor condition means the vehicle has severe mechanical and/or cosmetic problems and may be in need of serious repair and/or reconditioning. The vehicle may have significant rust, frame damage, or major mechanical issues. It may only be suitable for parts.”</em></p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -729,7 +702,6 @@ document.write(`
 </div>
 </section>
 </section>
-</section>
 
     <script type="text/x-thebe-config">
     {
@@ -777,14 +749,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-kelly-blue-book-estimates-prices">How Kelly Blue Book Estimates Prices</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-money">Making Money</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#today-s-exercise">Today’s Exercise</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#good-condition">Good Condition</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fair-condition">Fair Condition</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poor-condition">Poor Condition</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good-condition">Good Condition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fair-condition">Fair Condition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poor-condition">Poor Condition</a></li>
 </ul>
   </nav></div>
 
