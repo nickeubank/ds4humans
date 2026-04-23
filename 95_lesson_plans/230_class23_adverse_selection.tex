@@ -38,45 +38,36 @@
 \begin{document}
 \setbeamercolor{page number in head/foot}{fg=white}
 
-\begin{frame}[c]{}
+\begin{frame}[c]\frametitle{Kelly Blue Book Exercise}
 You're a data scientist with Kelly Blue Book, a US company that collects and reports data on car sales. \\[1em]
 
 Your boss asks: given all our data, why just to \alert{tell} people about car prices; why not use it to make a little money ourselves?
 \end{frame}
 
+\begin{frame}
+    \frametitle{How Kelly Blue Book Estimates Prices}
 
-## How Kelly Blue Book Estimates Prices
-
-
-Kelly Blue Book collects records of all used car sales and reports the range of prices cars for which cars are actually sold for based on:
-
-
-- Make (e.g., Toyota, Ford)
-- Model (e.g., Camry, F150)
-- Trim (the specific options the car came with, like "Limited" or "SE")
-- Model Year
-- Mileage on the car (how far it's been driven in its life)
-- Condition, divided into Excellent, Very Good, Good, and Fair. You can see these categories [detailed here](https://auto.howstuffworks.com/buying-selling/kelley-blue-book4.htm).
+Kelly Blue Book records used car sales and reports prices based on:
 
 
-Condition is obviously one of the trickier categories, but Kelly Blue Book has a pretty good questionnaire that asks about things like odor, maintenance records, paint chips, etc.
+\begin{itemize}
+\item Make (e.g., Toyota, Ford)
+\item Model (e.g., Camry, F150)
+\item Trim (the specific options the car came with, like "Limited" or "SE")
+\item Model Year
+\item Mileage on the car (how far it's been driven in its life)
+\item Condition, divided into Excellent, Very Good, Good, and Fair.
+\end{itemize}
+\pause Condition is obviously one of the trickier categories, but Kelly Blue Book has a pretty good questionnaire that asks about things like odor, maintenance records, paint chips, etc.
+\end{frame}
 
-
-[In fact, why don't you go fill it out to get a feel for things!](https://www.kbb.com/detailed-condition-quiz/) Answer for a real car if you have one, or your family recently had one, or just make it up if not.
-
-
-## Making Money
-
-
+\begin{frame}
+    \frametitle{Kelly BB Plan}
 Kelly Blue Book's idea is to use its model and data to make guaranteed offers to people who come to its website to check the value of a car they're thinking of selling.
 
-
-The idea is that people may accept a slightly lower price than usual to avoid the annoyances of selling a car through normal channels. If you try to sell your car to a dealer, you have to go to the dealership, negotiate and deal with high-pressure salespeople trying to get you to buy one of their cars, and be mindful of weird sales tricks. If you sell it yourself, you have to deal with scheduling test drives with interested buyers, ensuring your insurance allows potential buyers to test-drive the car, and avoiding scammers.
-
-
-So why not offer a cash price slightly below market value, then resell the car through the kind of dealer auction you have access to, but consumers don't?
-
+If they offer a little below market, they can make money!
 \end{frame}
+
 \begin{frame}
     \frametitle{}
     \centering
