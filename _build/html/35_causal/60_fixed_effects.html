@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -251,22 +251,22 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li class="toctree-l2"><a class="reference internal" href="../30_questions/02_relation_to_inference_and_prediction.html">Relationship to Inference and Prediction</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/10_using_descriptive_questions.html">Ch 5: Using Descriptive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/05_positive_v_normative.html">Ch 5: Normative and Positive</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/06_positive_v_normative_examples.html">Positive and Normative Questions in Practice</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/10_using_descriptive_questions.html">Ch 6: Using Descriptive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../30_questions/07_eda.html">Descriptive Qs and the Scourge of "EDA"</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../30_questions/20_using_passive_prediction_questions.html">Ch 6: Using Passive Predictive Qs</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/35_using_causal_questions.html">Ch 7: Causal Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/20_using_passive_prediction_questions.html">Ch 7: Using Passive Predictive Qs</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/35_using_causal_questions.html">Ch 8: Causal Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../30_questions/40_answering_causal_questions.html">Answering Causal Questions</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Uncertainty and Errors</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/05_descriptive_v_prescriptive.html">Ch 8: Descriptive and Prescriptive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../30_questions/06_descriptive_prescriptive_examples.html">Tradeoff Examples</a></li>
-</ul>
-</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../30_questions/15_answering_descriptive_questions.html">Ch 9: Internal and External Validity</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/16_descriptive_internal_challenges.html">Ch 10: Internal Validity and Descriptive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../30_questions/17_descriptive_internal_understandable.html">1: Understandable</a></li>
@@ -290,7 +290,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Science in Practice</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../10_introduction/40_data_science_in_historical_context.html">Ch 2: What Is Data Science?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10_introduction/40_data_science_in_historical_context.html">Ch 17: What Is Data Science?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../40_in_practice/00_how_to_read_this_book.html">How to Read (Academic Edition)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../40_in_practice/27_data_science_memos.html">Data Science Memos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../40_in_practice/30_giving_feedback.html">Giving Effective Feedback (Data Science Edition)</a></li>
@@ -551,133 +551,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">HTTPError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Load survey</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">cps</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_stata</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="s2">&quot;https://github.com/nickeubank/MIDS_Data/blob/&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="s2">&quot;master/Current_Population_Survey/morg18.dta?raw=true&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># Limit to people currently employed and working full time.</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">cps</span> <span class="o">=</span> <span class="n">cps</span><span class="p">[</span><span class="n">cps</span><span class="o">.</span><span class="n">lfsr94</span> <span class="o">==</span> <span class="s2">&quot;Employed-At Work&quot;</span><span class="p">]</span>
-
-<span class="nn">File ~/miniforge3/lib/python3.13/site-packages/pandas/io/stata.py:2236,</span> in <span class="ni">read_stata</span><span class="nt">(filepath_or_buffer, convert_dates, convert_categoricals, index_col, convert_missing, preserve_dtypes, columns, order_categoricals, chunksize, iterator, compression, storage_options)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2233</span>     <span class="k">return</span> <span class="n">reader</span>
-<span class="g g-Whitespace">   </span><span class="mi">2235</span> <span class="k">with</span> <span class="n">reader</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2236</span>     <span class="k">return</span> <span class="n">reader</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-
-<span class="nn">File ~/miniforge3/lib/python3.13/site-packages/pandas/io/stata.py:1644,</span> in <span class="ni">StataReader.read</span><span class="nt">(self, nrows, convert_dates, convert_categoricals, index_col, convert_missing, preserve_dtypes, columns, order_categoricals)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1601</span> <span class="k">def</span><span class="w"> </span><span class="nf">read</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1602</span>     <span class="bp">self</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1603</span>     <span class="n">nrows</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>   <span class="mi">1610</span>     <span class="n">order_categoricals</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1611</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1612</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1613</span><span class="sd">     Reads observations from Stata file, converting them into a dataframe</span>
-<span class="g g-Whitespace">   </span><span class="mi">1614</span><span class="sd"> </span>
-<span class="sd">   (...)   1642     DataFrame</span>
-<span class="g g-Whitespace">   </span><span class="mi">1643</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1644</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_ensure_open</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1646</span>     <span class="c1"># Handle options</span>
-<span class="g g-Whitespace">   </span><span class="mi">1647</span>     <span class="k">if</span> <span class="n">convert_dates</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="nn">File ~/miniforge3/lib/python3.13/site-packages/pandas/io/stata.py:1079,</span> in <span class="ni">StataReader._ensure_open</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1075</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1076</span><span class="sd"> Ensure the file has been opened and its header data read.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1077</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1078</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_path_or_buf&quot;</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1079</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_open_file</span><span class="p">()</span>
-
-<span class="nn">File ~/miniforge3/lib/python3.13/site-packages/pandas/io/stata.py:1092,</span> in <span class="ni">StataReader._open_file</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1085</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_entered</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1086</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1087</span>         <span class="s2">&quot;StataReader is being used without using a context manager. &quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1088</span>         <span class="s2">&quot;Using StataReader as a context manager is the only supported method.&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1089</span>         <span class="ne">ResourceWarning</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1090</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">find_stack_level</span><span class="p">(),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1091</span>     <span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1092</span> <span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1093</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_original_path_or_buf</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1094</span>     <span class="s2">&quot;rb&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1095</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_storage_options</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1096</span>     <span class="n">is_text</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1097</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_compression</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1098</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1099</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="s2">&quot;seekable&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">handles</span><span class="o">.</span><span class="n">handle</span><span class="o">.</span><span class="n">seekable</span><span class="p">():</span>
-<span class="g g-Whitespace">   </span><span class="mi">1100</span>     <span class="c1"># If the handle is directly seekable, use it without an extra copy.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1101</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_path_or_buf</span> <span class="o">=</span> <span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
-
-<span class="nn">File ~/miniforge3/lib/python3.13/site-packages/pandas/io/common.py:772,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">769</span>     <span class="n">codecs</span><span class="o">.</span><span class="n">lookup_error</span><span class="p">(</span><span class="n">errors</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">771</span> <span class="c1"># open URLs</span>
-<span class="ne">--&gt; </span><span class="mi">772</span> <span class="n">ioargs</span> <span class="o">=</span> <span class="n">_get_filepath_or_buffer</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">773</span>     <span class="n">path_or_buf</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">774</span>     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">775</span>     <span class="n">compression</span><span class="o">=</span><span class="n">compression</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">776</span>     <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">777</span>     <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">778</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">780</span> <span class="n">handle</span> <span class="o">=</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">filepath_or_buffer</span>
-<span class="g g-Whitespace">    </span><span class="mi">781</span> <span class="n">handles</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">BaseBuffer</span><span class="p">]</span>
-
-<span class="nn">File ~/miniforge3/lib/python3.13/site-packages/pandas/io/common.py:404,</span> in <span class="ni">_get_filepath_or_buffer</span><span class="nt">(filepath_or_buffer, encoding, compression, mode, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">402</span> <span class="c1"># assuming storage_options is to be interpreted as headers</span>
-<span class="g g-Whitespace">    </span><span class="mi">403</span> <span class="n">req_info</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">storage_options</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">404</span> <span class="k">with</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">req_info</span><span class="p">)</span> <span class="k">as</span> <span class="n">req</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">405</span>     <span class="n">content_encoding</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Content-Encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">406</span>     <span class="k">if</span> <span class="n">content_encoding</span> <span class="o">==</span> <span class="s2">&quot;gzip&quot;</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">407</span>         <span class="c1"># Override compression based on Content-Encoding header</span>
-
-<span class="nn">File ~/miniforge3/lib/python3.13/site-packages/pandas/io/common.py:281,</span> in <span class="ni">urlopen</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">275</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">276</span><span class="sd"> Lazy-import wrapper for stdlib urlopen, as that imports a big chunk of</span>
-<span class="g g-Whitespace">    </span><span class="mi">277</span><span class="sd"> the stdlib.</span>
-<span class="g g-Whitespace">    </span><span class="mi">278</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">279</span> <span class="kn">import</span><span class="w"> </span><span class="nn">urllib.request</span>
-<span class="ne">--&gt; </span><span class="mi">281</span> <span class="k">return</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/miniforge3/lib/python3.13/urllib/request.py:189,</span> in <span class="ni">urlopen</span><span class="nt">(url, data, timeout, context)</span>
-<span class="g g-Whitespace">    </span><span class="mi">187</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">188</span>     <span class="n">opener</span> <span class="o">=</span> <span class="n">_opener</span>
-<span class="ne">--&gt; </span><span class="mi">189</span> <span class="k">return</span> <span class="n">opener</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-
-<span class="nn">File ~/miniforge3/lib/python3.13/urllib/request.py:495,</span> in <span class="ni">OpenerDirector.open</span><span class="nt">(self, fullurl, data, timeout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">493</span> <span class="k">for</span> <span class="n">processor</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">protocol</span><span class="p">,</span> <span class="p">[]):</span>
-<span class="g g-Whitespace">    </span><span class="mi">494</span>     <span class="n">meth</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">processor</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">495</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">meth</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">497</span> <span class="k">return</span> <span class="n">response</span>
-
-<span class="nn">File ~/miniforge3/lib/python3.13/urllib/request.py:604,</span> in <span class="ni">HTTPErrorProcessor.http_response</span><span class="nt">(self, request, response)</span>
-<span class="g g-Whitespace">    </span><span class="mi">601</span> <span class="c1"># According to RFC 2616, &quot;2xx&quot; code indicates that the client&#39;s</span>
-<span class="g g-Whitespace">    </span><span class="mi">602</span> <span class="c1"># request was successfully received, understood, and accepted.</span>
-<span class="g g-Whitespace">    </span><span class="mi">603</span> <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">200</span> <span class="o">&lt;=</span> <span class="n">code</span> <span class="o">&lt;</span> <span class="mi">300</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">604</span>     <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">605</span>         <span class="s1">&#39;http&#39;</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">607</span> <span class="k">return</span> <span class="n">response</span>
-
-<span class="nn">File ~/miniforge3/lib/python3.13/urllib/request.py:533,</span> in <span class="ni">OpenerDirector.error</span><span class="nt">(self, proto, *args)</span>
-<span class="g g-Whitespace">    </span><span class="mi">531</span> <span class="k">if</span> <span class="n">http_err</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">532</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="s1">&#39;http_error_default&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">orig_args</span>
-<span class="ne">--&gt; </span><span class="mi">533</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_chain</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
-
-<span class="nn">File ~/miniforge3/lib/python3.13/urllib/request.py:466,</span> in <span class="ni">OpenerDirector._call_chain</span><span class="nt">(self, chain, kind, meth_name, *args)</span>
-<span class="g g-Whitespace">    </span><span class="mi">464</span> <span class="k">for</span> <span class="n">handler</span> <span class="ow">in</span> <span class="n">handlers</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">465</span>     <span class="n">func</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">466</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">467</span>     <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">468</span>         <span class="k">return</span> <span class="n">result</span>
-
-<span class="nn">File ~/miniforge3/lib/python3.13/urllib/request.py:613,</span> in <span class="ni">HTTPDefaultErrorHandler.http_error_default</span><span class="nt">(self, req, fp, code, msg, hdrs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">612</span> <span class="k">def</span><span class="w"> </span><span class="nf">http_error_default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">req</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">613</span>     <span class="k">raise</span> <span class="n">HTTPError</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">full_url</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">,</span> <span class="n">fp</span><span class="p">)</span>
-
-<span class="ne">HTTPError</span>: HTTP Error 429: Too Many Requests
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -700,10 +573,10 @@ document.write(`
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th>  <td>   8393.</td>  
 </tr>
 <tr>
-  <th>Date:</th>             <td>Thu, 14 Mar 2024</td> <th>  Prob (F-statistic):</th>   <td>  0.00</td>   
+  <th>Date:</th>             <td>Fri, 24 Apr 2026</td> <th>  Prob (F-statistic):</th>   <td>  0.00</td>   
 </tr>
 <tr>
-  <th>Time:</th>                 <td>12:47:27</td>     <th>  Log-Likelihood:    </th> <td>-1.4365e+06</td>
+  <th>Time:</th>                 <td>16:09:45</td>     <th>  Log-Likelihood:    </th> <td>-1.4365e+06</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>122603</td>      <th>  AIC:               </th>  <td>2.873e+06</td> 
@@ -1239,29 +1112,9 @@ dtype: int16
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/nce8/opt/miniconda3/lib/python3.11/site-packages/linearmodels/panel/model.py:1214: MissingValueWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/nce8/miniforge3/lib/python3.13/site-packages/linearmodels/panel/model.py:1258: MissingValueWarning: 
 Inputs contain missing values. Dropping rows with missing observations.
   super().__init__(dependent, exog, weights=weights, check_rank=check_rank)
-/Users/nce8/opt/miniconda3/lib/python3.11/site-packages/linearmodels/panel/data.py:594: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
-  group_mu = self._frame.groupby(level=level).transform(&quot;mean&quot;)
-/Users/nce8/opt/miniconda3/lib/python3.11/site-packages/linearmodels/panel/data.py:594: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
-  group_mu = self._frame.groupby(level=level).transform(&quot;mean&quot;)
-/Users/nce8/opt/miniconda3/lib/python3.11/site-packages/linearmodels/panel/data.py:684: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
-  mu = self._frame.groupby(level=level).mean()
-/Users/nce8/opt/miniconda3/lib/python3.11/site-packages/linearmodels/panel/data.py:684: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
-  mu = self._frame.groupby(level=level).mean()
-/Users/nce8/opt/miniconda3/lib/python3.11/site-packages/linearmodels/panel/data.py:644: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
-  out = self._frame.groupby(level=level).count()
-/Users/nce8/opt/miniconda3/lib/python3.11/site-packages/linearmodels/panel/data.py:684: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
-  mu = self._frame.groupby(level=level).mean()
-/Users/nce8/opt/miniconda3/lib/python3.11/site-packages/linearmodels/panel/data.py:594: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
-  group_mu = self._frame.groupby(level=level).transform(&quot;mean&quot;)
-/Users/nce8/opt/miniconda3/lib/python3.11/site-packages/linearmodels/panel/data.py:684: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
-  mu = self._frame.groupby(level=level).mean()
-/Users/nce8/opt/miniconda3/lib/python3.11/site-packages/linearmodels/panel/data.py:684: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
-  mu = self._frame.groupby(level=level).mean()
-/Users/nce8/opt/miniconda3/lib/python3.11/site-packages/linearmodels/panel/data.py:594: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
-  group_mu = self._frame.groupby(level=level).transform(&quot;mean&quot;)
 </pre></div>
 </div>
 <div class="output text_html"><table class="simpletable">
@@ -1276,10 +1129,10 @@ Inputs contain missing values. Dropping rows with missing observations.
   <th>No. Observations:</th>      <td>122603</td>      <th>  R-squared (Within):</th>     <td>0.1414</td>   
 </tr>
 <tr>
-  <th>Date:</th>             <td>Thu, Mar 14 2024</td> <th>  R-squared (Overall):</th>    <td>0.1683</td>   
+  <th>Date:</th>             <td>Fri, Apr 24 2026</td> <th>  R-squared (Overall):</th>    <td>0.1683</td>   
 </tr>
 <tr>
-  <th>Time:</th>                 <td>12:47:30</td>     <th>  Log-likelihood     </th>    <td>-1.43e+06</td> 
+  <th>Time:</th>                 <td>16:09:49</td>     <th>  Log-likelihood     </th>    <td>-1.43e+06</td> 
 </tr>
 <tr>
   <th>Cov. Estimator:</th>       <td>Clustered</td>    <th>                     </th>        <td></td>      
@@ -1335,7 +1188,7 @@ Inputs contain missing values. Dropping rows with missing observations.
 <tr>
   <th>has_college_educ</th>  <td>2.665e+04</td>  <td>1323.8</td>   <td>20.130</td>  <td>0.0000</td>   <td>2.405e+04</td> <td>2.924e+04</td>
 </tr>
-</table><br/><br/>F-test for Poolability: 54.365<br/>P-value: 0.0000<br/>Distribution: F(258,122341)<br/><br/>Included effects: Entity<br/>id: 0x2882e1fd0</div></div>
+</table><br/><br/>F-test for Poolability: 54.365<br/>P-value: 0.0000<br/>Distribution: F(258,122341)<br/><br/>Included effects: Entity<br/>id: 0x30843e270</div></div>
 </div>
 </section>
 </section>

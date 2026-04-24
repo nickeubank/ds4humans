@@ -104,6 +104,18 @@ Similarly, just because you did Step 1 before Step 2 before Step 3 doesn't mean 
 
 A closely related habit is to allocate space in your DSM in proportion to how you spent your time. As data scientists, we spend *lots* of our lives cleaning data and trying things that don't pan out. There is a very natural tendency to talk about these things in your DSM. Suppress that urge. Unless they explicitly say otherwise, your stakeholders don't want to check your work (and in many cases, may not have the expertise required to do so — that's why they hired you after all!). Discussion of details
 
+### Not Communicating Uncertainty
+
+There is almost never a situation in which you should present results without an indication of the level of uncertainty around those results. For example, there's almost never a situation in which you should make a line plot — where average values for a variable at different time-steps are connected by straight lines — without standard errors. But also...
+
+### Not Modelling The Data
+
+While there is some merit in the transparency that comes with plotting average values of a variable at different time steps and connecting them with straight lines, it's almost never the right choice. People are really bad at interpreting raw data — they just aren't good at figuring out how to "smooth" natural fluctuations (especially if you don't provide confidence intervals!).
+
+So help your reader by presenting your results with a basic smoother — a linear regression or lowess and standard errors. You can overlay the raw average values for each time step as shown below — it's a good way to be transparent — but help the reader make sense of the variation in the data.
+
+![njc diff-in-diff](images/lowess_and_raw_averages_plot.png)
+
 ### Limitations
 
 There is a tendency for students to use a "Limitations" sections to, well... just try and cover their butts by throwing out anything they can think of about the paper that is imperfect. That's ok in the classroom, but it's not useful in the real world.
