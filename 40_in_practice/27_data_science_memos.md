@@ -106,7 +106,15 @@ A closely related habit is to allocate space in your DSM in proportion to how yo
 
 ### Not Communicating Uncertainty
 
-There is almost never a situation in which you should present results without an indication of the level of uncertainty around those results. For example, there's almost never a situation in which you should make a line plot — where average values for a variable at different time-steps are connected by straight lines — without standard errors. But also...
+There is almost never a situation in which you should present results without an indication of the level of uncertainty around those results. For example, there's almost never a situation in which you should make a line plot where average values for a variable at different time-steps are connected by straight lines without standard errors:
+
+![basic line plot](images/plain_line.png)
+
+At the *very* least, you should always include standard error bands to give readers a sense of the dispersion of the underlying data:
+
+![line plot with se](images/line_w_se.png)
+
+But even that's not great. Instead...
 
 ### Not Modelling The Data
 
@@ -114,7 +122,7 @@ While there is some merit in the transparency that comes with plotting average v
 
 So help your reader by presenting your results with a basic smoother — a linear regression or lowess and standard errors. You can overlay the raw average values for each time step as shown below — it's a good way to be transparent — but help the reader make sense of the variation in the data.
 
-![njc diff-in-diff](images/lowess_and_raw_averages_plot.png)
+![lowess with raw averages and standard errors](images/lowess_w_se.png)
 
 ### Limitations
 
