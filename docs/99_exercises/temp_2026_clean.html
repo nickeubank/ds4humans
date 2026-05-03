@@ -1,0 +1,956 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>2026 Final for IDS 701 &#8212; Solving Problems With Data</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "nickeubank/ds4humans");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-RKDPB41DQ2"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-RKDPB41DQ2');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-RKDPB41DQ2');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '99_exercises/temp_2026_clean';</script>
+    <link rel="icon" href="../_static/logo.jpg"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../landing_page.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.jpg" class="logo__image only-light" alt="Solving Problems With Data - Home"/>
+    <script>document.write(`<img src="../_static/logo.jpg" class="logo__image only-dark" alt="Solving Problems With Data - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../landing_page.html">
+                    Welcome to DS4Humans
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Class Schedule</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00_class_schedule/class_schedule.html">Class Schedule</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../10_introduction/10_solving_problems_with_data.html">Ch 1: Solving Problems with Data</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Problems to Questions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../20_problems_to_questions/10_solving_the_right_problem.html">Ch 2: Solving the Right Problem</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../20_problems_to_questions/15_solving_the_wrong_problem.html">Solving The Wrong Problem: Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../20_problems_to_questions/20_stakeholder_management.html">Ch 3: Stakeholder Management</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Answering Questions, Solving Problems</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/00_solving_problems_by_answering_questions.html">Ch 4: Answering Questions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/02_relation_to_inference_and_prediction.html">Relationship to Inference and Prediction</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/05_positive_v_normative.html">Ch 5: Normative and Positive</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/06_positive_v_normative_examples.html">Positive and Normative Questions in Practice</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/10_using_descriptive_questions.html">Ch 6: Using Descriptive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/07_eda.html">Descriptive Qs and the Scourge of "EDA"</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/20_using_passive_prediction_questions.html">Ch 7: Using Passive Predictive Qs</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/35_using_causal_questions.html">Ch 8: Causal Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/40_answering_causal_questions.html">Answering Causal Questions</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Uncertainty and Errors</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/15_answering_descriptive_questions.html">Ch 9: Internal and External Validity</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/16_descriptive_internal_challenges.html">Ch 10: Internal Validity and Descriptive Qs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/17_descriptive_internal_understandable.html">1: Understandable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/18_descriptive_internal_faithful.html">2: Faithful</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/19_descriptive_internal_meaningful.html">3: Relevant</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/23_passive_internal_alignment_and_bias.html">Ch 11: Predictive Qs &amp; Internal Validity</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/24_passive_internal_errors.html">Ch 12: Predictive Qs and Being Wrong the Right Way</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/25_passive_fairness.html">Fairness and Errors</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../30_questions/27_passive_external_general.html">Ch 13: Predictive Qs &amp; External Validity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/28_passive_external_adversarial_users.html">Adversarial Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../30_questions/29_passive_external_adversarial_users_examples.html">Adversarial User Examples</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/32_passive_interpretable_models.html">Ch 14: Interpretable Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/45_causal_questions_external.html">Ch 15: Causal Qs, Experiments and External Validity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../30_questions/50_causal_beyond_ab.html">Ch 16: Beyond Experiments</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Science in Practice</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../10_introduction/40_data_science_in_historical_context.html">Ch 17: What Is Data Science?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../40_in_practice/00_how_to_read_this_book.html">How to Read (Academic Edition)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../40_in_practice/27_data_science_memos.html">Data Science Memos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../40_in_practice/30_giving_feedback.html">Giving Effective Feedback (Data Science Edition)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Causal Inference Extra Bits</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../35_causal/10_potential_outcomes.html">The Potential Outcomes Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../35_causal/15_evaluating_real_studies.html">Evaluating Real Studies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../35_causal/30_interpreting_indicator_vars.html">Indicator Variables</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../35_causal/50_fixed_effects_and_causal_inference.html">Fixed Effects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../35_causal/60_fixed_effects.html">Implementing Fixed Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../35_causal/70_fixed_effects_v_hierarchical.html">Fixed Effects v. Hierarchical Models</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../35_causal/80_matching_why.html">Matching</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../35_causal/90_matching_how.html">How to Match</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/nickeubank/ds4humans" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/nickeubank/ds4humans/issues/new?title=Issue%20on%20page%20%2F99_exercises/temp_2026_clean.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/99_exercises/temp_2026_clean.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>2026 Final for IDS 701</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#causal-inference">Causal Inference</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#potential-outcomes">Potential Outcomes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question 3</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question 4</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question 5</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-b-testing">A/B Testing</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question 6</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7">Question 7</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8">Question 8</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observational-causal-inference">Observational Causal Inference</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9">Question 9</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10">Question 10</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#question-11">Question 11</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#question-12">Question 12</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#question-13">Question 13</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teams">Teams</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-14">Question 14</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-15">Question 15</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-and-questions">Problems and Questions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-16">Question 16</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-17">Question 17</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-18">Question 18</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-19">Question 19</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-20">Question 20</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#passive-prediction">Passive Prediction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-21">Question 21</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#question-22">Question 22</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#question-23">Question 23</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="final-for-ids-701">
+<h1>2026 Final for IDS 701<a class="headerlink" href="#final-for-ids-701" title="Link to this heading">#</a></h1>
+<p>Hello, and welcome to the IDS 701 2026 Final! I know this doesn’t <em>feel</em> exciting, but I hope you find this a useful opportunity to practice applying all the knowledge you’ve gained about causal inference over the course of the semester.</p>
+<p>While you will find all <em>questions</em> in this packet, <strong>please record all your answers on your answer sheet.</strong></p>
+<section id="causal-inference">
+<h2>Causal Inference<a class="headerlink" href="#causal-inference" title="Link to this heading">#</a></h2>
+<section id="question-1">
+<h3>Question 1<a class="headerlink" href="#question-1" title="Link to this heading">#</a></h3>
+<p>What is the Fundamental Problem of Causal Inference?</p>
+<p>(a) Causal Questions can only be answered reliably through randomized experiments.
+(b) We can <strong>never</strong> directly observe the same unit being treated and not treated at the same moment in time. And so by definition, we can never directly measure the causal effect of X on Y.
+(c) Answering Causal Questions requires really large sample sizes to estimate causal effects properly.
+(d) Internal validity is easy to ensure when answering Causal Questions, but external validity is extremely hard.
+(e) None of these answers.</p>
+</section>
+<section id="question-2">
+<h3>Question 2<a class="headerlink" href="#question-2" title="Link to this heading">#</a></h3>
+<p>What is the primary purpose of Causal Questions?</p>
+<p>(a) Better understanding a stakeholder’s problem.
+(b) Automation.
+(c) Identifying individual entities for additional attention.
+(d) Estimating the likely impact of an action our stakeholder is considering taking.
+(e) None of these.
+(f) All of these (except the None answer, obviously).</p>
+</section>
+<section id="potential-outcomes">
+<h3>Potential Outcomes<a class="headerlink" href="#potential-outcomes" title="Link to this heading">#</a></h3>
+<p>Duke University is trying to decide on a policy for AI use (or, more specifically, LLM use) among undergraduates.</p>
+<p>To help inform their decision, they conducted a survey in a large <em>Intro to Philosophy</em> class. The class had a clear “you may use AI if you want” policy. Students were then asked whether they had used AI on their final essay. The essays were graded by a group of TAs who did not know which students had used AI.</p>
+<p>When the researchers examined the relationship between AI use and essay grades, they found that students who used AI received lower grades.</p>
+<p>For the following questions, select the choice that correctly maps quantities in this study context to the different components/notation of the Potential Outcomes Framework.</p>
+<p>You may assume that student reports about using AI were truthful.</p>
+<p>For example, $<span class="math notranslate nohighlight">\(E(Y^0| D=0)\)</span>$ would be “The average essay score of students who reported not using AI in the world where they do not use AI.”</p>
+<section id="question-3">
+<h4>Question 3<a class="headerlink" href="#question-3" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[E(Y^1| D=1) - E(Y^0|D=1)\]</div>
+<p>(a) The average difference in essay scores between students who reported using AI and students who reported not using AI in a world where no one uses AI.
+(b) The average difference in essay scores for students who reported not using AI between a world where they <strong>do</strong> use AI and a world where they <strong>do not</strong> use AI (i.e., the average effect of AI on essay scores for the students who reported not using AI).
+(c) For students who reported using AI, the average difference in essay scores between a world where they <strong>do</strong> use AI and a world where they <strong>do not</strong> use AI (i.e., the average effect of AI on essay scores for the students who reported using AI).
+(d) None of these options.</p>
+</section>
+<section id="question-4">
+<h4>Question 4<a class="headerlink" href="#question-4" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[E(Y^0|D=0)\]</div>
+<p>(a) The average essay score of students who <strong>report using</strong> AI in the world where <strong>they do not use</strong>  AI.
+(b) The average essay score of students who <strong>report not using</strong> AI in the world where <strong>they use</strong> AI.
+(c) The average essay score of students who <strong>report using</strong> AI in the world where <strong>they use</strong> AI.
+(d) The average essay score of students who <strong>report not using</strong> AI in the world where <strong>they do not use</strong> AI.
+(e) None of these options.</p>
+</section>
+<section id="question-5">
+<h4>Question 5<a class="headerlink" href="#question-5" title="Link to this heading">#</a></h4>
+<p>Please give one reason—in plain English—why the following condition may hold in the context of this study of AI use and essays.</p>
+<p>This is not multiple choice — please write an answer on your answer sheet.</p>
+<p>As you do so, be specific! Tell me a story about why <em>in the case of this study</em> you think this is likely to be true. One can always say things like “people in the two groups may have been different”, but I want a specific, <strong>affirmative</strong> reason you think they might have been different in a way that meets the condition. (Hint: an affirmative reason requires arguing why TWO things are true).</p>
+<p>It may be the case that $<span class="math notranslate nohighlight">\(E(Y^0| D=1) - E(Y^0| D=0) \neq 0\)</span>$ because… (please write actual answer on answer sheet)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+
+
+</pre></div>
+</div>
+</section>
+</section>
+<section id="a-b-testing">
+<h3>A/B Testing<a class="headerlink" href="#a-b-testing" title="Link to this heading">#</a></h3>
+<section id="question-6">
+<h4>Question 6<a class="headerlink" href="#question-6" title="Link to this heading">#</a></h4>
+<p>When picking an Overall Evaluation Criterion (OEC) when designing an A/B test, it is important to ensure that the OEC you pick has what <strong>two</strong> properties: <strong>Select 2</strong></p>
+<p>(a) Changes in the OEC are a good indicator of whether you are achieving your organization’s long-term goals.
+(b) It is possible to randomly assign the OEC.
+(c) The OEC is something you can measure that responds to your treatment quickly enough and strongly enough that you can detect the impact of a successful intervention in an experiment of reasonable duration.
+(d) Changes in the OEC are uncorrelated with your guardrail metrics.
+(e) The OEC is balanced across all treatment arms.</p>
+</section>
+<section id="question-7">
+<h4>Question 7<a class="headerlink" href="#question-7" title="Link to this heading">#</a></h4>
+<p><img alt="trustworthy ab testing estimation" src="99_exercises/images/trustworthy_ab_testing_estimation_results.png" /></p>
+<p>Above is the plot of some possible outcomes of an A/B test from <em>Trustworthy Online A/B Testing</em>. Which <strong>two</strong> results would the authors of <em>Trustworthy Online A/B Testing</em> say tell you that the treatment you were studying isn’t something you should deploy and that you should move on to studying the next possible treatment? <em>Remember: the center line is 0, and to the right of the right dotted line and to the left of the left dotted line are magnitudes of practical significance</em>.</p>
+<p>(a) Results 1
+(b) Results 2
+(c) Results 3
+(d) Results 4
+(e) Results 5
+(f) Results 6</p>
+</section>
+<section id="question-8">
+<h4>Question 8<a class="headerlink" href="#question-8" title="Link to this heading">#</a></h4>
+<p>A p-value is:</p>
+<p>(a) Probability that the Null Hypothesis is True.
+(b) Probability that the Null Hypothesis is False.
+(c) $<span class="math notranslate nohighlight">\(Pr(\text{coefficient as large as the coefficient observed} | H_{0} \text{ is True})\)</span><span class="math notranslate nohighlight">\(
+(d) \)</span><span class="math notranslate nohighlight">\(Pr( H_{0} \text{ is True} | \text{coefficient as large as the coefficient observed})\)</span>$</p>
+</section>
+</section>
+<section id="observational-causal-inference">
+<h3>Observational Causal Inference<a class="headerlink" href="#observational-causal-inference" title="Link to this heading">#</a></h3>
+<section id="question-9">
+<h4>Question 9<a class="headerlink" href="#question-9" title="Link to this heading">#</a></h4>
+<p>Omitted Variable Bias in a linear regression is:</p>
+<p>(a) The difference between the <em>true</em> value of a coefficient of interest and the <em>estimated</em> value of a coefficient of interest caused by not including a variable in your regression that is correlated with both (a) the dependent variable and (b) the coefficient of interest.
+(b) The bias caused by including too many variables in your regression model.
+(c) The difference between the <em>true</em> value of a coefficient of interest and the <em>estimated</em> value of a coefficient of interest caused by not including a variable in your regression that is correlated with the dependent variable.
+(d) None of these are omitted variable bias.</p>
+</section>
+<section id="question-10">
+<h4>Question 10<a class="headerlink" href="#question-10" title="Link to this heading">#</a></h4>
+<p>A researcher is interested in better understanding what factors lenders consider when deciding whether to grant small business loans.</p>
+<p>To answer this question, the researcher brings in a group of lenders and presents them with a set of loan applications. Lenders were then asked whether they would approve or reject each application.</p>
+<p>The lenders’ responses — 1 if the lender said they would lend to an applicant, 0 if not — were then regressed against attributes of the application. The result of that regression is this table:</p>
+<p><img alt="regression of small business loan decision on applicant features" src="99_exercises/images/loan_regression.png" /></p>
+<p>where <code class="docutils literal notranslate"><span class="pre">has_college</span></code>, <code class="docutils literal notranslate"><span class="pre">female</span></code>, and <code class="docutils literal notranslate"><span class="pre">poc</span></code> are indicators for whether the applicant has a college degree, is female, and identifies as a “Person of Color” (i.e., someone who does not identify as “White”) respectively, and take a value of 1 if the applicant meets the condition.</p>
+<p>Does this regression table show that having a college degree had a causal effect on the decisions made by the lenders?</p>
+<p>(a) Yes: the coefficient on <code class="docutils literal notranslate"><span class="pre">has_college</span></code> is large (the average loan rate was around 45%, and having a college degree increases the likelihood of approval by almost +20 percentage points); the coefficient is very statistically significant (t-stat is over 22!). So we can conclude that having a college degree had a very large causal effect on lender decisions.
+(b) No: while there are some controls in the regression, they probably weren’t sufficient to control for differences between applicants with college degrees and applicants without college degrees.
+(c) No, the R-squared on this model is so low, we really can’t infer anything.
+(d) I really can’t say based on the information I have been provided. I would need to know more about where the applications came from and what data was included on them.</p>
+</section>
+<section id="question-11">
+<h4>Question 11<a class="headerlink" href="#question-11" title="Link to this heading">#</a></h4>
+<p>Now suppose I told you the applications were a random sample of real loan applications, and that the only features on the application were the applicant’s age, gender, race, and educational attainment.</p>
+<p><em>Now</em> does this regression table show that having a college degree had a causal effect on the decisions made by the lenders?</p>
+<p>(a) No: since the having a college degree was not randomly assigned, the coefficient on <code class="docutils literal notranslate"><span class="pre">has_college</span></code> is not a valid causal estimate; it’s just a correlation.
+(b) Yes: the coefficient on <code class="docutils literal notranslate"><span class="pre">has_college</span></code> is large (the average loan rate was around 45%, and having a college degree increases the likelihood of approval by almost +20 percentage points); the coefficient is very statistically significant (t-stat is over 22!). So we can conclude that having a college degree had a very large causal effect on lender decisions.
+(c)  Probably yes: even though having a college degree was not randomly assigned, we have been able to measure all features on the application. Thus even if applicants with and without college degrees are not the same on average, we have all the covariates we need to account for how these differences that may have impacted the lender’s decision. Given that, and the magnitude and statistical significance of the coefficient on <code class="docutils literal notranslate"><span class="pre">has_college</span></code>, it is probably the case that that having a college degree had a large causal effect on the decisions made by lenders. But to be sure, I would want to run some additional diagnostic tests on the model to ensure that I have specified the model correctly.</p>
+</section>
+<section id="question-12">
+<h4>Question 12<a class="headerlink" href="#question-12" title="Link to this heading">#</a></h4>
+<p>Now suppose I told you that the applications that the lenders saw were a random sample of real small business applications that included the applicants age, gender, race, educational attainment, employment history, criminal record, as well as personal statement and business plans.</p>
+<p><em>Now</em> does this regression table show that having a college degree had a causal effect on the decisions made by the lenders?</p>
+<p>(a) No: since having a college degree was not randomly assigned, the coefficient on <code class="docutils literal notranslate"><span class="pre">has_college</span></code> is not a valid causal estimate; it’s just a correlation.
+(b)  Probably No: since having a college degree was not randomly assigned, the applicants with and without college degrees were probably different in many ways. Since our regression only accounts for some of the ways the lender may have been able to tell they were different, the coefficient on <code class="docutils literal notranslate"><span class="pre">has_college</span></code> is likely subject to omitted variable bias. Thus it probably does not reflect the causal effect of having a college degree.
+(c) Probably Yes: the coefficient on <code class="docutils literal notranslate"><span class="pre">has_college</span></code> is large; the coefficient is very statistically significant. Moreover, we are able to control for age, gender, and race, so we can conclude having a college degree had a causal effect on the decisions of lenders.</p>
+</section>
+<section id="question-13">
+<h4>Question 13<a class="headerlink" href="#question-13" title="Link to this heading">#</a></h4>
+<p>Now consider this specification from the context described above.</p>
+<p><img alt="regression of small business loan decision on applicant features with interaction term" src="99_exercises/images/loan_regression_interact.png" /></p>
+<p>Based only on the information in this table, do you think a lender is more likely to give a loan to:</p>
+<ul class="simple">
+<li><p>a White applicant with a college degree, or</p></li>
+<li><p>a Person of Color with a college degree</p></li>
+</ul>
+<p>holding all else (age, gender) constant. <code class="docutils literal notranslate"><span class="pre">poc</span></code> is an indicator for identifying as a Person of Color (i.e., someone who does not identify as White).</p>
+<p>(a) The White applicant with a college degree
+(b) The Person of Color with a college degree
+(c) I can’t say based on just the data you’ve provided.</p>
+</section>
+</section>
+</section>
+<section id="teams">
+<h2>Teams<a class="headerlink" href="#teams" title="Link to this heading">#</a></h2>
+<section id="question-14">
+<h3>Question 14<a class="headerlink" href="#question-14" title="Link to this heading">#</a></h3>
+<p>In a reading on Psychological Safety, you read about a study of teams in a hospital Neonatal Intensive Care Unit (NICU). The study author collected data on team dynamics and medical errors reports. The data showed that teams with better indicators of team collaboration and effectiveness had a <em>higher</em> number of medical error reports.</p>
+<p><strong>What did the researcher conclude was the reason for this result?</strong></p>
+<p>(a) Effective teams weren’t actually committing more medical errors; they were just more likely to admit when errors occurred.
+(b) The measure of team effectiveness actually just measured how well people got along, and teams that were comfortable with each other were <em>too</em> comfortable, leading to mistakes.
+(c) Effective teams were being assigned to more difficult cases, resulting in more demands on the teams and thus more medical errors.
+(d) None of these.</p>
+</section>
+<section id="question-15">
+<h3>Question 15<a class="headerlink" href="#question-15" title="Link to this heading">#</a></h3>
+<p>What is the Fundamental Attribution Error, and why is it a problem?</p>
+<p>(a) It refers to a collective phenomenon where the desire for harmony within a team results in an irrational or dysfunctional decision-making outcome. The problem arises when team members suppress dissenting viewpoints to avoid conflict, ultimately leading to a loss of individual creativity and independent thinking.
+(b) It’s the tendency to believe that other people’s behavior and shortcomings are caused by intrinsic, immutable aspects of their personality rather than the circumstances they face. It causes us to blame <em>people</em> for things that go wrong too much and to under-estimate the role of the situation in which a person has been placed.
+(c) Our tendency to forgive people for mistakes by attributing them to their circumstances, not their personal failings. It tends to make leaders too lenient.
+(d) It is a cognitive bias where an observer’s overall impression of a person influences how they feel and think about that person’s character in specific areas. It becomes problematic in professional settings because one positive trait can lead a manager to overlook significant performance deficits or behavioral red flags.</p>
+</section>
+</section>
+<section id="problems-and-questions">
+<h2>Problems and Questions<a class="headerlink" href="#problems-and-questions" title="Link to this heading">#</a></h2>
+<section id="question-16">
+<h3>Question 16<a class="headerlink" href="#question-16" title="Link to this heading">#</a></h3>
+<p>What are the FOUR Big Ideas from the Data Science 4 Humans (the book I’m writing from which you read many chapters in the second half of the semester)?</p>
+<p>(a) Data scientists solve problems by answering questions.
+(b) While most data science classes may focus on model fitting and diagnostics, <em>most</em> of the work data scientists actually do is cleaning and preparing data for analysis.
+(c) Black box models may outperform interpretable models, but black box models rarely serve the interests of stakeholders.
+(d) Reasoning rigorously about uncertainty and errors is what differentiates good data scientists from great data scientists.
+(e) The questions data scientists answer can be divided into three categories: descriptive, passive predictive, and causal.
+(f) Data science is about solving problems.</p>
+</section>
+<section id="question-17">
+<h3>Question 17<a class="headerlink" href="#question-17" title="Link to this heading">#</a></h3>
+<p>According to the author of Data Science 4 Humans, what is <strong>the</strong> one “metric” that matters for evaluating the success of your work as a data scientist? (please write actual answer on answer sheet)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+
+
+</pre></div>
+</div>
+</section>
+<section id="question-18">
+<h3>Question 18<a class="headerlink" href="#question-18" title="Link to this heading">#</a></h3>
+<p>Which of the following is a Normative Question about marijuana (also known, in various circles, as weed, pot, cannabis, ganja, Mary Jane, and of course, best of all, the Devil’s Lettuce)?</p>
+<p>(a) Does marijuana use lead to the use of other drugs like heroin or cocaine?
+(b) Is it a good idea to legalize recreational marijuana?
+(c) Does recreational marijuana legalization cause violent crime?
+(d) Is marijuana legalization likely to generate tax revenue for local governments?
+(e) None of these are Normative Questions.</p>
+</section>
+<section id="question-19">
+<h3>Question 19<a class="headerlink" href="#question-19" title="Link to this heading">#</a></h3>
+<p>Which of the following is a Normative Question about facial recognition technology?</p>
+<p>(a) Do most commercially available facial recognition models have higher error rates for individuals with dark-skin?
+(b) Does the use of facial recognition by police reduce crime?
+(c) Is facial recognition currently used by the Durham police?
+(d) Should Durham allow police to use facial recognition on patrol car cameras?
+(e) None of these are Normative Questions.</p>
+</section>
+<section id="question-20">
+<h3>Question 20<a class="headerlink" href="#question-20" title="Link to this heading">#</a></h3>
+<p>Which of the following is <strong>NOT</strong> one of my [Nick’s] concerns about the term EDA?</p>
+<p>(a) The term’s prevalence creates the impression students need to invest in really “getting to know their data” before fitting a model. Students should really just be focused on post-modeling diagnostics (e.g., residual plots) to catch errors.
+(b) It conflates several distinct activities under a single name — learning the structure of your data, validating your data, and answering questions about the world without formal modeling.
+(c) It devalues analyses not based on mathematically-complex modeling.
+(d) It creates the impression one can learn a lot about the world by “doing EDA” without first articulating a clear question on seeks to answer.</p>
+</section>
+<section id="passive-prediction">
+<h3>Passive Prediction<a class="headerlink" href="#passive-prediction" title="Link to this heading">#</a></h3>
+</section>
+<section id="question-21">
+<h3>Question 21<a class="headerlink" href="#question-21" title="Link to this heading">#</a></h3>
+<p>Why can’t you evaluate a classification model’s performance just by knowing its accuracy?</p>
+<p>(a) Accuracy doesn’t tell us about the type of errors the model is making.
+(b) Without information about the baseline balance of classes in the data, accuracy is effectively meaningless.
+(c) Performance is relative — we also need to know the performance of the next best available alternative. 51% accuracy may not sound like much, but if the best anyone else has been able to achieve is 50% and there’s a way to make money off a 1% increase in accuracy, it may be business changing.
+(d) These are all reasons accuracy is meaningless without context.</p>
+<section id="question-22">
+<h4>Question 22<a class="headerlink" href="#question-22" title="Link to this heading">#</a></h4>
+<p>Which of the following is true of Split-Train-Test modeling approaches? (Choose as many as are correct)</p>
+<p>(a) Because final model evaluation is applied to the test dataset — which was not used in training, and is thus “external” to what the model was trained on — the measures of model quality we get from this workflow give us a good understanding of a model’s external validity.
+(b) split-train-test helps to prevent overfitting by evaluating the model against a set of observations it did not see during training.
+(c) The purpose of splitting data is to increase the total amount of information available for the gradient descent algorithm, thereby ensuring that the model’s weights are as precise as possible.
+(d) Split-train-test allows us to evaluate the distribution of errors across different types of observations, allowing us to ensure maximum fairness.</p>
+</section>
+<section id="question-23">
+<h4>Question 23<a class="headerlink" href="#question-23" title="Link to this heading">#</a></h4>
+<p>According to Cynthia Rudin, which of the following is <strong>NOT</strong> true of black box models?</p>
+<p>(a) The explanations generated for the black box model <strong>must</strong> be wrong. They cannot have perfect fidelity with respect to the original model. If the explanation was completely faithful to what the original model computes, the explanation would equal the original model, and one would not need the original model in the first place, only the explanation. (In other words, this is a case where the original model would be interpretable.) This leads to the danger that any explanation method for a black box model can be an inaccurate representation of the original model in parts of the feature space.
+(b) Making a Black Box model explainable doesn’t address the problem the fact you can’t assess the impact of input data problems with black box models, like when a typographical error results in an inmate getting an inaccurate risk assessment score.
+(c) Black box models usually outperform interpretable models according to standard evaluation metrics by finding hidden structure in the data.
+(d) Cynthia Rudin would argue these are all true of black box models. (don’t overthink how to interpret this answer — if you think a, b, and c are all true of black box models, select this answer.)</p>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./99_exercises"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#causal-inference">Causal Inference</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#potential-outcomes">Potential Outcomes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question 3</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question 4</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question 5</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-b-testing">A/B Testing</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question 6</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7">Question 7</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8">Question 8</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observational-causal-inference">Observational Causal Inference</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#question-9">Question 9</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#question-10">Question 10</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#question-11">Question 11</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#question-12">Question 12</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#question-13">Question 13</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teams">Teams</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-14">Question 14</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-15">Question 15</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-and-questions">Problems and Questions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-16">Question 16</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-17">Question 17</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-18">Question 18</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-19">Question 19</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-20">Question 20</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#passive-prediction">Passive Prediction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-21">Question 21</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#question-22">Question 22</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#question-23">Question 23</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Nick Eubank
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
