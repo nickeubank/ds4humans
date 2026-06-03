@@ -1,7 +1,7 @@
 # Data Science for Humans Jupyter Book
 
 This repository is a [jupyter book project](https://jupyterbook.org/en/stable/intro.html)
-for Data Science for Humans.
+for Data Science For Humans.
 
 The files here are hosted at the domain [ds4humans.com](http://ds4humans.com).
 
